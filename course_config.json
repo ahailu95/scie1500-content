@@ -1,0 +1,246 @@
+{
+  "courseId": "scie1500_2026_sem1",
+  "courseName": "Analytical Methods for Scientists",
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-22T12:00:00+08:00",
+  
+  "institution": {
+    "id": "uwa",
+    "name": "University of Western Australia",
+    "contentRepoUrl": "https://github.com/ahailu95/sciquant_app",
+    "contentBasePath": "scie1500_2026_sem1",
+    "lectureNotesPath": "lectures",
+    "notebooksPath": "notebooks",
+    "exercisesPath": "exercises",
+    "trackResourceAccess": true
+  },
+  
+  "weeklyResources": {
+    "1": {
+      "week": 1,
+      "lectureNotes": [
+        {
+          "id": "w1_lecture1",
+          "title": "Introduction to Quantitative Methods",
+          "description": "Course overview, types of data, variables, and Python basics",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week01_introduction.md",
+          "source": "github",
+          "requiresAuth": false,
+          "pageCount": 10
+        }
+      ],
+      "videos": [
+        {
+          "id": "w1_video1",
+          "title": "Types of Data: Nominal, Ordinal, Interval and Ratio",
+          "description": "Understanding different types of data and variables",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=hZxnzfnt5v8",
+          "source": "youtube",
+          "requiresAuth": false,
+          "durationSeconds": 492,
+          "thumbnailUrl": "https://img.youtube.com/vi/hZxnzfnt5v8/hqdefault.jpg"
+        },
+        {
+          "id": "w1_video2",
+          "title": "Independent vs Dependent Variables",
+          "description": "Learn to identify variables in experiments",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=nzc1hk87r_Q",
+          "source": "youtube",
+          "requiresAuth": false,
+          "durationSeconds": 215,
+          "thumbnailUrl": "https://img.youtube.com/vi/nzc1hk87r_Q/hqdefault.jpg"
+        }
+      ],
+      "notebooks": [
+        {
+          "id": "w1_nb1",
+          "title": "Introduction to Python for Scientists",
+          "description": "Python basics: variables, arithmetic, lists, and scientific calculations",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/sciquant_app",
+          "notebookPath": "scie1500_2026_sem1/notebooks/week01_python_intro.ipynb",
+          "requiredPackages": ["numpy", "math"],
+          "estimatedTimeMinutes": 45
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w1_ex1",
+          "title": "Week 1 Practice Problems",
+          "description": "Variables, data types, and basic Python exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/exercises/week01_practice.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "2": {
+      "week": 2,
+      "lectureNotes": [
+        {
+          "id": "w2_lecture1",
+          "title": "Units and Dimensional Analysis",
+          "description": "SI units, prefixes, scientific notation, and dimensional analysis",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week02_units.md",
+          "source": "github",
+          "requiresAuth": false,
+          "pageCount": 8
+        }
+      ],
+      "videos": [
+        {
+          "id": "w2_video1",
+          "title": "SI Units of Measurement",
+          "description": "The international system of units explained",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=cSB6P1gLCQo",
+          "source": "youtube",
+          "requiresAuth": false,
+          "durationSeconds": 403,
+          "thumbnailUrl": "https://img.youtube.com/vi/cSB6P1gLCQo/hqdefault.jpg"
+        },
+        {
+          "id": "w2_video2",
+          "title": "Dimensional Analysis Explained",
+          "description": "How to use dimensional analysis to check your work",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=fEUaQdaOBKo",
+          "source": "youtube",
+          "requiresAuth": false,
+          "durationSeconds": 727,
+          "thumbnailUrl": "https://img.youtube.com/vi/fEUaQdaOBKo/hqdefault.jpg"
+        },
+        {
+          "id": "w2_video3",
+          "title": "Scientific Notation Made Easy",
+          "description": "Working with very large and very small numbers",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=i6lfVUp5RW8",
+          "source": "youtube",
+          "requiresAuth": false,
+          "durationSeconds": 471,
+          "thumbnailUrl": "https://img.youtube.com/vi/i6lfVUp5RW8/hqdefault.jpg"
+        }
+      ],
+      "notebooks": [
+        {
+          "id": "w2_nb1",
+          "title": "Units and Dimensional Analysis in Python",
+          "description": "Using the Pint library for automatic unit handling",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/sciquant_app",
+          "notebookPath": "scie1500_2026_sem1/notebooks/week02_units.ipynb",
+          "requiredPackages": ["pint", "numpy"],
+          "estimatedTimeMinutes": 45
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w2_ex1",
+          "title": "Week 2 Practice Problems",
+          "description": "Unit conversions, dimensional analysis, and scientific notation",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/exercises/week02_practice.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "3": {
+      "week": 3,
+      "lectureNotes": [
+        {
+          "id": "w3_lecture1",
+          "title": "Linear Relationships and Graphing",
+          "description": "Linear equations, slope, intercept, and scientific graphing",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week03_linear.md",
+          "source": "github",
+          "requiresAuth": false,
+          "pageCount": 9
+        }
+      ],
+      "videos": [
+        {
+          "id": "w3_video1",
+          "title": "Linear Equations in Science",
+          "description": "Understanding slope and intercept in scientific contexts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=zPG4NjIkCjc",
+          "source": "youtube",
+          "requiresAuth": false,
+          "durationSeconds": 847,
+          "thumbnailUrl": "https://img.youtube.com/vi/zPG4NjIkCjc/hqdefault.jpg"
+        },
+        {
+          "id": "w3_video2",
+          "title": "Linear Regression Explained Simply",
+          "description": "How to fit a line to data and interpret results",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=7ArmBVF2dCs",
+          "source": "youtube",
+          "requiresAuth": false,
+          "durationSeconds": 742,
+          "thumbnailUrl": "https://img.youtube.com/vi/7ArmBVF2dCs/hqdefault.jpg"
+        },
+        {
+          "id": "w3_video3",
+          "title": "R-Squared Explained",
+          "description": "Understanding how well your line fits the data",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=2AQKmw14mHM",
+          "source": "youtube",
+          "requiresAuth": false,
+          "durationSeconds": 661,
+          "thumbnailUrl": "https://img.youtube.com/vi/2AQKmw14mHM/hqdefault.jpg"
+        }
+      ],
+      "notebooks": [
+        {
+          "id": "w3_nb1",
+          "title": "Scientific Plotting with Matplotlib",
+          "description": "Creating publication-quality graphs and fitting linear models",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/sciquant_app",
+          "notebookPath": "scie1500_2026_sem1/notebooks/week03_graphing.ipynb",
+          "requiredPackages": ["numpy", "matplotlib", "scipy"],
+          "estimatedTimeMinutes": 60
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w3_ex1",
+          "title": "Week 3 Practice Problems",
+          "description": "Linear equations, graphing, and regression exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/exercises/week03_practice.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w3_reading1",
+          "title": "Ten Simple Rules for Better Figures",
+          "description": "Guidelines for creating effective scientific visualizations",
+          "type": "reading",
+          "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833",
+          "source": "custom"
+        }
+      ]
+    }
+  },
+  
+  "ragDocumentUrls": [
+    "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week01_introduction.md",
+    "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week02_units.md",
+    "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week03_linear.md"
+  ]
+}
