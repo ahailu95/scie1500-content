@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "lastUpdated": "2025-12-22T12:00:00+08:00",
   
   "institution": {
@@ -60,7 +60,7 @@
           "title": "Introduction to Python for Scientists",
           "description": "Python basics: variables, arithmetic, lists, and scientific calculations",
           "runtime": "googleColab",
-          "githubRepoUrl": "https://github.com/ahailu95/sciquant_app",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
           "notebookPath": "scie1500_2026_sem1/notebooks/week01_python_intro.ipynb",
           "requiredPackages": ["numpy", "math"],
           "estimatedTimeMinutes": 45
@@ -134,7 +134,7 @@
           "title": "Units and Dimensional Analysis in Python",
           "description": "Using the Pint library for automatic unit handling",
           "runtime": "googleColab",
-          "githubRepoUrl": "https://github.com/ahailu95/sciquant_app",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
           "notebookPath": "scie1500_2026_sem1/notebooks/week02_units.ipynb",
           "requiredPackages": ["pint", "numpy"],
           "estimatedTimeMinutes": 45
@@ -208,7 +208,7 @@
           "title": "Scientific Plotting with Matplotlib",
           "description": "Creating publication-quality graphs and fitting linear models",
           "runtime": "googleColab",
-          "githubRepoUrl": "https://github.com/ahailu95/sciquant_app",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
           "notebookPath": "scie1500_2026_sem1/notebooks/week03_graphing.ipynb",
           "requiredPackages": ["numpy", "matplotlib", "scipy"],
           "estimatedTimeMinutes": 60
