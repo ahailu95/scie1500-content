@@ -7,8 +7,8 @@
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
-    "contentRepoUrl": "https://github.com/ahailu95/sciquant_app",
-    "contentBasePath": "scie1500_2026_sem1",
+    "contentRepoUrl": "https://github.com/ahailu95/scie1500-content",
+    "contentBasePath": "",
     "lectureNotesPath": "lectures",
     "notebooksPath": "notebooks",
     "exercisesPath": "exercises",
@@ -24,7 +24,7 @@
           "title": "Introduction to Quantitative Methods",
           "description": "Course overview, types of data, variables, and Python basics",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week01_introduction.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week01_introduction.md",
           "source": "github",
           "requiresAuth": false,
           "pageCount": 10
@@ -72,7 +72,7 @@
           "title": "Week 1 Practice Problems",
           "description": "Variables, data types, and basic Python exercises",
           "type": "exercise",
-          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/exercises/week01_practice.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/exercises/week01_practice.md",
           "source": "github",
           "requiresAuth": false
         }
@@ -87,7 +87,7 @@
           "title": "Units and Dimensional Analysis",
           "description": "SI units, prefixes, scientific notation, and dimensional analysis",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week02_units.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week02_units.md",
           "source": "github",
           "requiresAuth": false,
           "pageCount": 8
@@ -146,7 +146,7 @@
           "title": "Week 2 Practice Problems",
           "description": "Unit conversions, dimensional analysis, and scientific notation",
           "type": "exercise",
-          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/exercises/week02_practice.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/exercises/week02_practice.md",
           "source": "github",
           "requiresAuth": false
         }
@@ -161,7 +161,7 @@
           "title": "Linear Relationships and Graphing",
           "description": "Linear equations, slope, intercept, and scientific graphing",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week03_linear.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week03_linear.md",
           "source": "github",
           "requiresAuth": false,
           "pageCount": 9
@@ -220,7 +220,7 @@
           "title": "Week 3 Practice Problems",
           "description": "Linear equations, graphing, and regression exercises",
           "type": "exercise",
-          "url": "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/exercises/week03_practice.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/exercises/week03_practice.md",
           "source": "github",
           "requiresAuth": false
         }
@@ -239,8 +239,8 @@
   },
   
   "ragDocumentUrls": [
-    "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week01_introduction.md",
-    "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week02_units.md",
-    "https://raw.githubusercontent.com/ahailu95/sciquant_app/main/scie1500_2026_sem1/lectures/week03_linear.md"
+    "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week01_introduction.md",
+    "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week02_units.md",
+    "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week03_linear.md"
   ]
 }
