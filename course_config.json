@@ -1,33 +1,84 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "1.0.4",
-  "lastUpdated": "2025-12-22T12:00:00+08:00",
-  
+  "version": "2.1.0",
+  "lastUpdated": "2026-01-26T22:00:00+08:00",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
     "contentRepoUrl": "https://github.com/ahailu95/scie1500-content",
-    "contentBasePath": "",
     "lectureNotesPath": "lectures",
     "notebooksPath": "notebooks",
-    "exercisesPath": "exercises",
     "trackResourceAccess": true
   },
-  
   "weeklyResources": {
+    "0": {
+      "week": 0,
+      "lectureNotes": [
+        {
+          "id": "w0_lesson",
+          "title": "Week 0: Mathematical Foundations & Python Basics",
+          "description": "Python basics, variables, arithmetic, and foundational concepts",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_0/week0_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w0_lab",
+          "title": "Week 0 Lab Guide",
+          "description": "Hands-on Python introduction exercises",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_0/week0_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w0_lab_notebook",
+          "title": "Notebook Intro Python",
+          "description": "Week 0 lab exercises - Introduction to Python",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_0/LabFiles/Notebook_Intro_Python.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w0_practice",
+          "title": "Week 0 Practice Questions",
+          "description": "Foundational math and Python practice problems",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_0/week0_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
     "1": {
       "week": 1,
       "lectureNotes": [
         {
-          "id": "w1_lecture1",
-          "title": "Introduction to Quantitative Methods",
+          "id": "w1_lesson",
+          "title": "Week 1: Functions and the Language of Scientific Analysis",
           "description": "Course overview, types of data, variables, and Python basics",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week01_introduction.md",
-          "source": "github",
-          "requiresAuth": false,
-          "pageCount": 10
+          "url": "asset://SCIE1500Materials/Week_1/week1_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w1_lab",
+          "title": "Week 1 Lab Guide",
+          "description": "Getting started with Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_1/week1_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
         }
       ],
       "videos": [
@@ -56,24 +107,23 @@
       ],
       "notebooks": [
         {
-          "id": "w1_nb1",
-          "title": "Introduction to Python for Scientists",
-          "description": "Python basics: variables, arithmetic, lists, and scientific calculations",
-          "runtime": "googleColab",
-          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "scie1500_2026_sem1/notebooks/week01_python_intro.ipynb",
-          "requiredPackages": ["numpy", "math"],
-          "estimatedTimeMinutes": 45
+          "id": "w1_lab_notebook",
+          "title": "Week1 Functions Complete",
+          "description": "Week 1 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_1/LabFiles/Week1_Functions_Complete.ipynb",
+          "source": "custom",
+          "requiresAuth": false
         }
       ],
       "exercises": [
         {
-          "id": "w1_ex1",
-          "title": "Week 1 Practice Problems",
+          "id": "w1_practice",
+          "title": "Week 1 Practice Questions",
           "description": "Variables, data types, and basic Python exercises",
           "type": "exercise",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/exercises/week01_practice.md",
-          "source": "github",
+          "url": "asset://SCIE1500Materials/Week_1/week1_practice.json",
+          "source": "custom",
           "requiresAuth": false
         }
       ],
@@ -83,14 +133,22 @@
       "week": 2,
       "lectureNotes": [
         {
-          "id": "w2_lecture1",
-          "title": "Units and Dimensional Analysis",
+          "id": "w2_lesson",
+          "title": "Week 2: Exponential and Logarithmic Functions",
           "description": "SI units, prefixes, scientific notation, and dimensional analysis",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week02_units.md",
-          "source": "github",
-          "requiresAuth": false,
-          "pageCount": 8
+          "url": "asset://SCIE1500Materials/Week_2/week2_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w2_lab",
+          "title": "Week 2 Lab Guide",
+          "description": "Hands-on exercises with units and dimensional analysis",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_2/week2_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
         }
       ],
       "videos": [
@@ -102,8 +160,7 @@
           "url": "https://www.youtube.com/watch?v=cSB6P1gLCQo",
           "source": "youtube",
           "requiresAuth": false,
-          "durationSeconds": 403,
-          "thumbnailUrl": "https://img.youtube.com/vi/cSB6P1gLCQo/hqdefault.jpg"
+          "durationSeconds": 403
         },
         {
           "id": "w2_video2",
@@ -113,41 +170,28 @@
           "url": "https://www.youtube.com/watch?v=fEUaQdaOBKo",
           "source": "youtube",
           "requiresAuth": false,
-          "durationSeconds": 727,
-          "thumbnailUrl": "https://img.youtube.com/vi/fEUaQdaOBKo/hqdefault.jpg"
-        },
-        {
-          "id": "w2_video3",
-          "title": "Scientific Notation Made Easy",
-          "description": "Working with very large and very small numbers",
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=i6lfVUp5RW8",
-          "source": "youtube",
-          "requiresAuth": false,
-          "durationSeconds": 471,
-          "thumbnailUrl": "https://img.youtube.com/vi/i6lfVUp5RW8/hqdefault.jpg"
+          "durationSeconds": 727
         }
       ],
       "notebooks": [
         {
-          "id": "w2_nb1",
-          "title": "Units and Dimensional Analysis in Python",
-          "description": "Using the Pint library for automatic unit handling",
-          "runtime": "googleColab",
-          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "scie1500_2026_sem1/notebooks/week02_units.ipynb",
-          "requiredPackages": ["pint", "numpy"],
-          "estimatedTimeMinutes": 45
+          "id": "w2_lab_notebook",
+          "title": "Week2 Exponential Logarithmic",
+          "description": "Week 2 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_2/LabFiles/Week2_Exponential_Logarithmic.ipynb",
+          "source": "custom",
+          "requiresAuth": false
         }
       ],
       "exercises": [
         {
-          "id": "w2_ex1",
-          "title": "Week 2 Practice Problems",
+          "id": "w2_practice",
+          "title": "Week 2 Practice Questions",
           "description": "Unit conversions, dimensional analysis, and scientific notation",
           "type": "exercise",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/exercises/week02_practice.md",
-          "source": "github",
+          "url": "asset://SCIE1500Materials/Week_2/week2_practice.json",
+          "source": "custom",
           "requiresAuth": false
         }
       ],
@@ -157,14 +201,22 @@
       "week": 3,
       "lectureNotes": [
         {
-          "id": "w3_lecture1",
-          "title": "Linear Relationships and Graphing",
+          "id": "w3_lesson",
+          "title": "Week 3: Logistic Functions and Bounded Growth",
           "description": "Linear equations, slope, intercept, and scientific graphing",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week03_linear.md",
-          "source": "github",
-          "requiresAuth": false,
-          "pageCount": 9
+          "url": "asset://SCIE1500Materials/Week_3/week3_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w3_lab",
+          "title": "Week 3 Lab Guide",
+          "description": "Hands-on graphing and linear regression",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_3/week3_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
         }
       ],
       "videos": [
@@ -176,52 +228,28 @@
           "url": "https://www.youtube.com/watch?v=zPG4NjIkCjc",
           "source": "youtube",
           "requiresAuth": false,
-          "durationSeconds": 847,
-          "thumbnailUrl": "https://img.youtube.com/vi/zPG4NjIkCjc/hqdefault.jpg"
-        },
-        {
-          "id": "w3_video2",
-          "title": "Linear Regression Explained Simply",
-          "description": "How to fit a line to data and interpret results",
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=7ArmBVF2dCs",
-          "source": "youtube",
-          "requiresAuth": false,
-          "durationSeconds": 742,
-          "thumbnailUrl": "https://img.youtube.com/vi/7ArmBVF2dCs/hqdefault.jpg"
-        },
-        {
-          "id": "w3_video3",
-          "title": "R-Squared Explained",
-          "description": "Understanding how well your line fits the data",
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=2AQKmw14mHM",
-          "source": "youtube",
-          "requiresAuth": false,
-          "durationSeconds": 661,
-          "thumbnailUrl": "https://img.youtube.com/vi/2AQKmw14mHM/hqdefault.jpg"
+          "durationSeconds": 847
         }
       ],
       "notebooks": [
         {
-          "id": "w3_nb1",
-          "title": "Scientific Plotting with Matplotlib",
-          "description": "Creating publication-quality graphs and fitting linear models",
-          "runtime": "googleColab",
-          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "scie1500_2026_sem1/notebooks/week03_graphing.ipynb",
-          "requiredPackages": ["numpy", "matplotlib", "scipy"],
-          "estimatedTimeMinutes": 60
+          "id": "w3_lab_notebook",
+          "title": "Week3 Logistic Bounded Growth",
+          "description": "Week 3 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_3/LabFiles/Week3_Logistic_Bounded_Growth.ipynb",
+          "source": "custom",
+          "requiresAuth": false
         }
       ],
       "exercises": [
         {
-          "id": "w3_ex1",
-          "title": "Week 3 Practice Problems",
+          "id": "w3_practice",
+          "title": "Week 3 Practice Questions",
           "description": "Linear equations, graphing, and regression exercises",
           "type": "exercise",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/exercises/week03_practice.md",
-          "source": "github",
+          "url": "asset://SCIE1500Materials/Week_3/week3_practice.json",
+          "source": "custom",
           "requiresAuth": false
         }
       ],
@@ -232,15 +260,434 @@
           "description": "Guidelines for creating effective scientific visualizations",
           "type": "reading",
           "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833",
-          "source": "custom"
+          "source": "custom",
+          "requiresAuth": false
         }
       ]
+    },
+    "4": {
+      "week": 4,
+      "lectureNotes": [
+        {
+          "id": "w4_lesson",
+          "title": "Week 4: Limits, Continuity, and Introduction to Derivatives",
+          "description": "Quadratic, power, and polynomial functions in science",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_4/week4_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w4_lab",
+          "title": "Week 4 Lab Guide",
+          "description": "Exploring nonlinear functions with Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_4/week4_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w4_lab_notebook",
+          "title": "Week4 Limits Continuity Derivatives",
+          "description": "Week 4 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_4/LabFiles/Week4_Limits_Continuity_Derivatives.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w4_practice",
+          "title": "Week 4 Practice Questions",
+          "description": "Nonlinear function exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_4/week4_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "5": {
+      "week": 5,
+      "lectureNotes": [
+        {
+          "id": "w5_lesson",
+          "title": "Week 5: Differentiation Techniques and Optimization",
+          "description": "Function concepts, domain/range, and transformations",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_5/week5_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w5_lab",
+          "title": "Week 5 Lab Guide",
+          "description": "Working with functions in Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_5/week5_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w5_lab_notebook",
+          "title": "Week5 Differentiation Optimization",
+          "description": "Week 5 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_5/LabFiles/Week5_Differentiation_Optimization.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w5_practice",
+          "title": "Week 5 Practice Questions",
+          "description": "Function transformations exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_5/week5_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "6": {
+      "week": 6,
+      "lectureNotes": [
+        {
+          "id": "w6_lesson",
+          "title": "Week 6: Introduction to Integration",
+          "description": "Exponential growth/decay, logarithms, and applications",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_6/week6_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w6_lab",
+          "title": "Week 6 Lab Guide",
+          "description": "Modeling growth and decay with Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_6/week6_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w6_lab_notebook",
+          "title": "Week6 Introduction to Integration",
+          "description": "Week 6 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_6/LabFiles/Week6_Introduction_to_Integration.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w6_practice",
+          "title": "Week 6 Practice Questions",
+          "description": "Exponential and logarithmic exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_6/week6_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "7": {
+      "week": 7,
+      "lectureNotes": [
+        {
+          "id": "w7_lesson",
+          "title": "Week 7: Definite Integrals and Applications",
+          "description": "Arithmetic/geometric sequences, series, population models",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_7/week7_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w7_lab",
+          "title": "Week 7 Lab Guide",
+          "description": "Modeling populations with Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_7/week7_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w7_lab_notebook",
+          "title": "Week7 Definite Integrals Sequences",
+          "description": "Week 7 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_7/LabFiles/Week7_Definite_Integrals_Sequences.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w7_practice",
+          "title": "Week 7 Practice Questions",
+          "description": "Sequences and series exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_7/week7_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "8": {
+      "week": 8,
+      "lectureNotes": [
+        {
+          "id": "w8_lesson",
+          "title": "Week 8: Predator-Prey Dynamics and Systems",
+          "description": "Limits, derivatives, and applications",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_8/week8_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w8_lab",
+          "title": "Week 8 Lab Guide",
+          "description": "Numerical differentiation with Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_8/week8_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w8_lab_notebook",
+          "title": "Week8 Predator Prey Dynamics",
+          "description": "Week 8 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_8/LabFiles/Week8_Predator_Prey_Dynamics.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w8_practice",
+          "title": "Week 8 Practice Questions",
+          "description": "Differentiation exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_8/week8_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "9": {
+      "week": 9,
+      "lectureNotes": [
+        {
+          "id": "w9_lesson",
+          "title": "Week 9: Probability Foundations",
+          "description": "Product rule, quotient rule, chain rule",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_9/week9_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w9_lab",
+          "title": "Week 9 Lab Guide",
+          "description": "Advanced differentiation techniques in Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_9/week9_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w9_lab_notebook",
+          "title": "Week9 Probability Combinatorics",
+          "description": "Week 9 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_9/LabFiles/Week9_Probability_Combinatorics.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w9_practice",
+          "title": "Week 9 Practice Questions",
+          "description": "Advanced differentiation exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_9/week9_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "10": {
+      "week": 10,
+      "lectureNotes": [
+        {
+          "id": "w10_lesson",
+          "title": "Week 10: Random Variables and Hypothesis Testing",
+          "description": "Antiderivatives, definite integrals, and applications",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_10/week10_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w10_lab",
+          "title": "Week 10 Lab Guide",
+          "description": "Numerical integration with Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_10/week10_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w10_lab_notebook",
+          "title": "Week10 Hypothesis Testing",
+          "description": "Week 10 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_10/LabFiles/Week10_Hypothesis_Testing.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w10_practice",
+          "title": "Week 10 Practice Questions",
+          "description": "Integration exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_10/week10_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "11": {
+      "week": 11,
+      "lectureNotes": [
+        {
+          "id": "w11_lesson",
+          "title": "Week 11: Trigonometric Functions and Periodic Models",
+          "description": "Mean, median, mode, variance, standard deviation",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_11/week11_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w11_lab",
+          "title": "Week 11 Lab Guide",
+          "description": "Statistical analysis with Python",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_11/week11_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w11_lab_notebook",
+          "title": "Week11 Trigonometry Complete",
+          "description": "Week 11 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_11/LabFiles/Week11_Trigonometry_Complete.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w11_practice",
+          "title": "Week 11 Practice Questions",
+          "description": "Statistics exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_11/week11_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "12": {
+      "week": 12,
+      "lectureNotes": [
+        {
+          "id": "w12_lesson",
+          "title": "Week 12: Simultaneous Equations and Linear Programming",
+          "description": "Comprehensive review of course concepts",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_12/week12_lesson.md",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w12_lab",
+          "title": "Week 12 Lab Guide",
+          "description": "Final review exercises",
+          "type": "lectureNotes",
+          "url": "asset://SCIE1500Materials/Week_12/week12_lab_guide.md",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [
+        {
+          "id": "w12_lab_notebook",
+          "title": "Week12 SES LP Complete",
+          "description": "Week 12 lab exercises",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_12/LabFiles/Week12_SES_LP_Complete.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "w12_practice",
+          "title": "Week 12 Practice Questions",
+          "description": "Comprehensive review exercises",
+          "type": "exercise",
+          "url": "asset://SCIE1500Materials/Week_12/week12_practice.json",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
     }
   },
-  
-  "ragDocumentUrls": [
-    "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week01_introduction.md",
-    "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week02_units.md",
-    "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/lectures/week03_linear.md"
-  ]
+  "ragDocumentUrls": []
 }
