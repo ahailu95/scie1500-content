@@ -40,10 +40,14 @@
           "id": "w0_lab_notebook",
           "title": "Notebook Intro Python",
           "description": "Week 0 lab exercises - Introduction to Python",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_0/LabFiles/Notebook_Intro_Python.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_0/LabFiles/Notebook_Intro_Python.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -110,10 +114,14 @@
           "id": "w1_lab_notebook",
           "title": "Week1 Functions Complete",
           "description": "Week 1 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_1/LabFiles/Week1_Functions_Complete.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_1/LabFiles/Week1_Functions_Complete.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -178,10 +186,14 @@
           "id": "w2_lab_notebook",
           "title": "Week2 Exponential Logarithmic",
           "description": "Week 2 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_2/LabFiles/Week2_Exponential_Logarithmic.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_2/LabFiles/Week2_Exponential_Logarithmic.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -236,10 +248,14 @@
           "id": "w3_lab_notebook",
           "title": "Week3 Logistic Bounded Growth",
           "description": "Week 3 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_3/LabFiles/Week3_Logistic_Bounded_Growth.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_3/LabFiles/Week3_Logistic_Bounded_Growth.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -293,10 +309,14 @@
           "id": "w4_lab_notebook",
           "title": "Week4 Limits Continuity Derivatives",
           "description": "Week 4 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_4/LabFiles/Week4_Limits_Continuity_Derivatives.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_4/LabFiles/Week4_Limits_Continuity_Derivatives.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -340,10 +360,14 @@
           "id": "w5_lab_notebook",
           "title": "Week5 Differentiation Optimization",
           "description": "Week 5 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_5/LabFiles/Week5_Differentiation_Optimization.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_5/LabFiles/Week5_Differentiation_Optimization.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -387,10 +411,14 @@
           "id": "w6_lab_notebook",
           "title": "Week6 Introduction to Integration",
           "description": "Week 6 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_6/LabFiles/Week6_Introduction_to_Integration.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_6/LabFiles/Week6_Introduction_to_Integration.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -434,10 +462,14 @@
           "id": "w7_lab_notebook",
           "title": "Week7 Definite Integrals Sequences",
           "description": "Week 7 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_7/LabFiles/Week7_Definite_Integrals_Sequences.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_7/LabFiles/Week7_Definite_Integrals_Sequences.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -481,10 +513,14 @@
           "id": "w8_lab_notebook",
           "title": "Week8 Predator Prey Dynamics",
           "description": "Week 8 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_8/LabFiles/Week8_Predator_Prey_Dynamics.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_8/LabFiles/Week8_Predator_Prey_Dynamics.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -528,10 +564,14 @@
           "id": "w9_lab_notebook",
           "title": "Week9 Probability Combinatorics",
           "description": "Week 9 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_9/LabFiles/Week9_Probability_Combinatorics.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_9/LabFiles/Week9_Probability_Combinatorics.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -575,10 +615,14 @@
           "id": "w10_lab_notebook",
           "title": "Week10 Hypothesis Testing",
           "description": "Week 10 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_10/LabFiles/Week10_Hypothesis_Testing.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_10/LabFiles/Week10_Hypothesis_Testing.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -622,10 +666,14 @@
           "id": "w11_lab_notebook",
           "title": "Week11 Trigonometry Complete",
           "description": "Week 11 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_11/LabFiles/Week11_Trigonometry_Complete.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_11/LabFiles/Week11_Trigonometry_Complete.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -669,10 +717,14 @@
           "id": "w12_lab_notebook",
           "title": "Week12 SES LP Complete",
           "description": "Week 12 lab exercises",
-          "type": "notebook",
-          "url": "asset://SCIE1500Materials/Week_12/LabFiles/Week12_SES_LP_Complete.ipynb",
-          "source": "custom",
-          "requiresAuth": false
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "Week_12/LabFiles/Week12_SES_LP_Complete.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
