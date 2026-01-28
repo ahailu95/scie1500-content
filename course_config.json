@@ -42,7 +42,7 @@
           "description": "Week 0 lab exercises - Introduction to Python",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_0/LabFiles/Notebook_Intro_Python.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_0/LabFiles/Notebook_Intro_Python.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -116,7 +116,7 @@
           "description": "Week 1 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_1/LabFiles/Week1_Functions_Complete.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_1/LabFiles/Week1_Functions_Complete.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -188,7 +188,7 @@
           "description": "Week 2 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_2/LabFiles/Week2_Exponential_Logarithmic.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_2/LabFiles/Week2_Exponential_Logarithmic.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -250,7 +250,7 @@
           "description": "Week 3 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_3/LabFiles/Week3_Logistic_Bounded_Growth.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_3/LabFiles/Week3_Logistic_Bounded_Growth.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -311,7 +311,7 @@
           "description": "Week 4 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_4/LabFiles/Week4_Limits_Continuity_Derivatives.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_4/LabFiles/Week4_Limits_Continuity_Derivatives.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -362,7 +362,7 @@
           "description": "Week 5 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_5/LabFiles/Week5_Differentiation_Optimization.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_5/LabFiles/Week5_Differentiation_Optimization.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -413,7 +413,7 @@
           "description": "Week 6 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_6/LabFiles/Week6_Introduction_to_Integration.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_6/LabFiles/Week6_Introduction_to_Integration.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -464,7 +464,7 @@
           "description": "Week 7 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_7/LabFiles/Week7_Definite_Integrals_Sequences.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_7/LabFiles/Week7_Definite_Integrals_Sequences.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -515,7 +515,7 @@
           "description": "Week 8 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_8/LabFiles/Week8_Predator_Prey_Dynamics.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_8/LabFiles/Week8_Predator_Prey_Dynamics.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -566,7 +566,7 @@
           "description": "Week 9 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_9/LabFiles/Week9_Probability_Combinatorics.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_9/LabFiles/Week9_Probability_Combinatorics.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -617,7 +617,7 @@
           "description": "Week 10 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_10/LabFiles/Week10_Hypothesis_Testing.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_10/LabFiles/Week10_Hypothesis_Testing.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -668,7 +668,7 @@
           "description": "Week 11 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_11/LabFiles/Week11_Trigonometry_Complete.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_11/LabFiles/Week11_Trigonometry_Complete.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -719,7 +719,7 @@
           "description": "Week 12 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "Week_12/LabFiles/Week12_SES_LP_Complete.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_12/LabFiles/Week12_SES_LP_Complete.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
