@@ -1,0 +1,112 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-02-16T15:00:00+08:00",
+  
+  "announcements": [
+    {
+      "id": "welcome-2026",
+      "title": "Welcome to SCIE1500 Semester 1 2026!",
+      "message": "Welcome to Analytical Methods for Scientists! We're excited to have you join us this semester.\n\nBefore your first week:\n• Download Miniconda (Python) for lab exercises — see Software section in Course Overview\n• Review the course outline in the app\n• Check your lab schedule — labs run on different days at different campuses\n• Explore the SciQuant app features: AI tutor, weekly lessons, practice questions\n\nTeaching starts Monday 23 February. See you soon!",
+      "publishedAt": "2026-02-16T09:00:00+08:00",
+      "priority": "important",
+      "category": "general",
+      "isPinned": true
+    },
+    {
+      "id": "lab-schedule-campuses",
+      "title": "Lab Schedule: Multiple Campus Options",
+      "message": "Labs are available at multiple times and campuses:\n\n**Crawley Campus:**\n• Monday 10am-12pm (ENCM 206)\n• Monday 2pm-4pm (ENCM 206)\n• Wednesday 1pm-3pm (ENCM 206)\n• Thursday 2pm-4pm (ENCM 207A)\n\n**Albany Campus:**\n• Wednesday 9am-11am (ALBSCI 302/303)\n\nRegister for ONE lab session through StudentConnect. Labs begin Week 1 (24-28 Feb).",
+      "publishedAt": "2026-02-17T09:00:00+08:00",
+      "priority": "important",
+      "category": "schedule",
+      "relatedWeek": 1,
+      "actionUrl": "https://lms.uwa.edu.au",
+      "actionLabel": "View LMS"
+    },
+    {
+      "id": "labour-day-notice",
+      "title": "Labour Day: Monday 2 March — Labs Affected",
+      "message": "Monday 2 March is Labour Day (public holiday). Monday lab sessions are cancelled.\n\nStudents in Monday labs should attend a make-up session:\n• Wednesday 1pm lab has capacity\n• Or complete exercises independently and submit on time\n\nLab 1 submission remains due Tuesday 3 March at 11:59pm.",
+      "publishedAt": "2026-02-25T09:00:00+08:00",
+      "expiresAt": "2026-03-03T00:00:00+08:00",
+      "priority": "urgent",
+      "category": "schedule",
+      "relatedWeek": 1
+    },
+    {
+      "id": "assignment1-released",
+      "title": "Assignment 1 Now Available on LMS",
+      "message": "Assignment 1 has been released on the LMS.\n\n**Due:** Wednesday 1 April at 11:59 PM\n**Weight:** 15%\n**Covers:** Weeks 1-5 material\n\nStart early! Details and submission portal are on the LMS.\n\nReminder: Assessment submissions are due at 11:59 PM (not 3:59 PM or 5:00 PM).",
+      "publishedAt": "2026-03-04T09:00:00+08:00",
+      "expiresAt": "2026-04-02T00:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "relatedWeek": 2,
+      "relatedAssessmentId": "assignment1",
+      "actionUrl": "https://lms.uwa.edu.au",
+      "actionLabel": "View Assignment"
+    },
+    {
+      "id": "mid-sem-break",
+      "title": "Mid-Semester Break: 6-10 April",
+      "message": "There are no lectures or labs during the mid-semester break (6-10 April).\n\nThis is a great time to:\n• Review Weeks 1-6 material using the app's AI tutor\n• Catch up on any incomplete practice questions\n• Get ahead on reading for Act III (Weeks 7-10)\n\nNote: Easter Monday (6 April) falls during the break. Classes resume Monday 14 April.",
+      "publishedAt": "2026-04-01T09:00:00+08:00",
+      "expiresAt": "2026-04-11T00:00:00+08:00",
+      "priority": "normal",
+      "category": "schedule"
+    },
+    {
+      "id": "anzac-day-notice",
+      "title": "Anzac Day: Monday 27 April — Labs Affected",
+      "message": "Monday 27 April is Anzac Day (observed). Monday lab sessions are cancelled.\n\nStudents in Monday labs should attend a make-up session or complete exercises independently.\n\nLab 8 submission remains due Tuesday 28 April at 11:59pm.",
+      "publishedAt": "2026-04-21T09:00:00+08:00",
+      "expiresAt": "2026-04-28T00:00:00+08:00",
+      "priority": "urgent",
+      "category": "schedule",
+      "relatedWeek": 8
+    },
+    {
+      "id": "assignment2-released",
+      "title": "Assignment 2 Now Available on LMS",
+      "message": "Assignment 2 has been released on the LMS.\n\n**Due:** Tuesday 13 May at 11:59 PM\n**Weight:** 15%\n**Covers:** Weeks 7-10 material\n\nDetails and submission portal are on the LMS.",
+      "publishedAt": "2026-04-22T09:00:00+08:00",
+      "expiresAt": "2026-05-14T00:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "relatedWeek": 8,
+      "relatedAssessmentId": "assignment2",
+      "actionUrl": "https://lms.uwa.edu.au",
+      "actionLabel": "View Assignment"
+    },
+    {
+      "id": "lab12-extended-deadline",
+      "title": "Lab 12 Extended Deadline: Tuesday 2 June",
+      "message": "Lab 12 (Week 12) has an extended submission deadline to avoid SWOTVAC.\n\n**Due:** Tuesday 2 June at 11:59 PM (not Tuesday 26 May)\n\nThis is the only lab with a non-standard deadline. UWA policy prohibits assessment deadlines during SWOTVAC (25-29 May).\n\nYou'll have extra time to polish your final lab work before exams begin.",
+      "publishedAt": "2026-05-11T09:00:00+08:00",
+      "expiresAt": "2026-06-03T00:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "relatedWeek": 11,
+      "relatedAssessmentId": "lab12"
+    },
+    {
+      "id": "swotvac-reminder",
+      "title": "SWOTVAC: 25-29 May — Study Week",
+      "message": "SWOTVAC (Study WithOut Teaching VACation) runs 25-29 May.\n\n• No lectures or labs\n• No assessment deadlines (Lab 12 extended to 2 June)\n• Use this week to prepare for exams\n• AI tutor and all app resources remain available\n\nExam period: 30 May to 13 June",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "expiresAt": "2026-05-30T00:00:00+08:00",
+      "priority": "important",
+      "category": "schedule"
+    },
+    {
+      "id": "exam-info",
+      "title": "Final Exam: Centrally Scheduled",
+      "message": "The final exam will be scheduled by the UWA Examinations Office during the exam period (30 May — 13 June).\n\n**Weight:** 50%\n**Format:** Written examination\n**Duration:** TBA\n\nExact date, time, and venue will be announced via:\n• StudentConnect\n• LMS\n• Official UWA exam timetable\n\nScientific calculators permitted. Graphing/programmable calculators NOT permitted.\n\nCheck the LMS regularly for updates.",
+      "publishedAt": "2026-05-16T09:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "actionUrl": "https://www.uwa.edu.au/students/my-course/exams-and-assessment",
+      "actionLabel": "UWA Exam Info"
+    }
+  ]
+}

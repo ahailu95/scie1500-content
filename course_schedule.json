@@ -1,0 +1,316 @@
+{
+  "version": "2.2.3",
+  "lastUpdated": "2026-02-16T16:00:00+08:00",
+  
+  "courseInfo": {
+    "code": "SCIE1500",
+    "name": "Analytical Methods for Scientists",
+    "year": 2026,
+    "semester": 1,
+    "institution": "University of Western Australia",
+    "coordinator": "Dr. Atakelty Hailu",
+    "contactEmail": "atakelty.hailu@uwa.edu.au",
+    "contactEmailSubject": "SCIE1500: ",
+    "outlineUrl": "https://handbooks.uwa.edu.au/unitdetails?code=SCIE1500"
+  },
+  
+  "semesterDates": {
+    "teachingStart": "2026-02-23",
+    "teachingEnd": "2026-05-22",
+    "swotvacStart": "2026-05-25",
+    "swotvacEnd": "2026-05-29",
+    "examsStart": "2026-05-30",
+    "examsEnd": "2026-06-13",
+    "breaks": [
+      {
+        "name": "Mid-semester Break",
+        "start": "2026-04-06",
+        "end": "2026-04-10"
+      }
+    ],
+    "publicHolidays": [
+      {
+        "name": "Labour Day",
+        "date": "2026-03-02",
+        "notes": "Monday labs affected — make-up sessions will be announced via LMS"
+      },
+      {
+        "name": "Good Friday",
+        "date": "2026-04-03",
+        "notes": "No classes"
+      },
+      {
+        "name": "Easter Monday",
+        "date": "2026-04-06",
+        "notes": "Falls within mid-semester break"
+      },
+      {
+        "name": "Anzac Day (observed)",
+        "date": "2026-04-27",
+        "notes": "Monday labs affected — make-up sessions will be announced via LMS"
+      },
+      {
+        "name": "Western Australia Day",
+        "date": "2026-06-01",
+        "notes": "Falls within exam period"
+      }
+    ]
+  },
+  
+  "assessments": [
+    {
+      "id": "assignment1",
+      "name": "Assignment 1",
+      "type": "assignment",
+      "weight": 15,
+      "dueDate": "2026-04-01T23:59:00+08:00",
+      "weekNumber": 6,
+      "description": "Details available on LMS.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [14, 7, 3, 1]
+    },
+    {
+      "id": "assignment2",
+      "name": "Assignment 2",
+      "type": "assignment",
+      "weight": 15,
+      "dueDate": "2026-05-13T23:59:00+08:00",
+      "weekNumber": 11,
+      "description": "Details available on LMS.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [14, 7, 3, 1]
+    },
+    {
+      "id": "lab1",
+      "name": "Lab 1 — Week 1",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-03-03T23:59:00+08:00",
+      "weekNumber": 1,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab2",
+      "name": "Lab 2 — Week 2",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-03-10T23:59:00+08:00",
+      "weekNumber": 2,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab3",
+      "name": "Lab 3 — Week 3",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-03-17T23:59:00+08:00",
+      "weekNumber": 3,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab4",
+      "name": "Lab 4 — Week 4",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-03-24T23:59:00+08:00",
+      "weekNumber": 4,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab5",
+      "name": "Lab 5 — Week 5",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-03-31T23:59:00+08:00",
+      "weekNumber": 5,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab6",
+      "name": "Lab 6 — Week 6",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-04-14T23:59:00+08:00",
+      "weekNumber": 6,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week (note: mid-semester break 6–10 Apr).",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab7",
+      "name": "Lab 7 — Week 7",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-04-21T23:59:00+08:00",
+      "weekNumber": 7,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab8",
+      "name": "Lab 8 — Week 8",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-04-28T23:59:00+08:00",
+      "weekNumber": 8,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab9",
+      "name": "Lab 9 — Week 9",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-05-05T23:59:00+08:00",
+      "weekNumber": 9,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab10",
+      "name": "Lab 10 — Week 10",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-05-12T23:59:00+08:00",
+      "weekNumber": 10,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab11",
+      "name": "Lab 11 — Week 11",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-05-19T23:59:00+08:00",
+      "weekNumber": 11,
+      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    },
+    {
+      "id": "lab12",
+      "name": "Lab 12 — Week 12",
+      "type": "lab",
+      "weight": 1.67,
+      "dueDate": "2026-06-02T23:59:00+08:00",
+      "weekNumber": 12,
+      "description": "Upload completed lab work to LMS by Tuesday 2 June at 11:59pm (extended to first Tuesday after SWOTVAC).",
+      "submissionUrl": "https://lms.uwa.edu.au",
+      "reminderDays": [1]
+    }
+  ],
+  
+  "weeklySchedule": {
+    "lectures": [
+      {
+        "day": "Online",
+        "time": "00:00",
+        "duration": 0,
+        "location": "Notes in App and Recorded Lectures Online",
+        "notes": "Access lecture notes in this app and recorded lectures on LMS (available anytime)"
+      }
+    ],
+    "tutorials": [],
+    "labs": [
+      {
+        "day": "Monday",
+        "time": "10:00",
+        "duration": 120,
+        "location": "Crawley Campus, ENCM 207A",
+        "notes": "Crawley morning session"
+      },
+      {
+        "day": "Monday",
+        "time": "14:00",
+        "duration": 120,
+        "location": "Crawley Campus, ENCM 207A",
+        "notes": "Crawley afternoon session"
+      },
+      {
+        "day": "Wednesday",
+        "time": "13:00",
+        "duration": 120,
+        "location": "Crawley Campus, ENCM 207A",
+        "notes": "Crawley Wednesday session"
+      },
+      {
+        "day": "Thursday",
+        "time": "14:00",
+        "duration": 120,
+        "location": "Crawley Campus, ENCM 207A",
+        "notes": "Crawley Thursday session"
+      },
+      {
+        "day": "Wednesday",
+        "time": "09:00",
+        "duration": 120,
+        "location": "Albany Campus, ALBSCI 302/303",
+        "notes": "Albany campus session"
+      }
+    ],
+    "other": []
+  },
+  
+  "additionalInfo": [
+    {
+      "id": "textbook",
+      "title": "Textbook",
+      "content": "There is no required textbook. Course notes and resources are provided in this app and on LMS.",
+      "icon": "book"
+    },
+    {
+      "id": "software",
+      "title": "Required Software",
+      "content": "Python 3.10+ is required for lab exercises. We recommend Miniconda — a lightweight installer that includes Python, Jupyter Notebook, and the conda package manager. Download the version that matches your operating system and processor chip (e.g. Intel/AMD vs Apple Silicon on Mac). You can also access Python through UniApps or Google Colab.",
+      "icon": "computer",
+      "links": [
+        {
+          "label": "Download Miniconda",
+          "url": "https://docs.conda.io/projects/miniconda/en/latest/"
+        },
+        {
+          "label": "Google Colab",
+          "url": "https://colab.research.google.com"
+        }
+      ]
+    },
+    {
+      "id": "labhandbook",
+      "title": "Lab Handbook",
+      "content": "The Lab Handbook contains important information about lab attendance, participation requirements, and assessment details.",
+      "icon": "menu_book"
+    },
+    {
+      "id": "calculator",
+      "title": "Calculator Policy",
+      "content": "Scientific calculators are permitted in the final exam. Graphing calculators and programmable calculators are NOT permitted.",
+      "icon": "calculate"
+    },
+    {
+      "id": "special-consideration",
+      "title": "Exceptional Variation of Assessment (EVA)",
+      "content": "If you experience exceptional circumstances beyond your control that prevent you from performing to your ability, you can apply for EVA. This includes short-term health conditions, hardship, trauma, unavoidable commitments, and bereavement.",
+      "icon": "medical_services",
+      "links": [
+        {
+          "label": "Apply for EVA",
+          "url": "https://www.uwa.edu.au/students/your-studies/exceptional-variation-of-assessment"
+        }
+      ]
+    }
+  ]
+}
