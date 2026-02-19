@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.1.1",
-  "lastUpdated": "2026-01-26T22:00:00+08:00",
+  "version": "2.3.0",
+  "lastUpdated": "2026-02-20T12:00:00+08:00",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -25,16 +25,17 @@
           "requiresAuth": false
         },
         {
-          "id": "w0_lab",
-          "title": "Week 0 Lab Guide",
-          "description": "Hands-on Python introduction exercises",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_0/week0_lab_guide.md",
+          "id": "w0_integrated_lesson",
+          "title": "📚 Lesson with Code: Mathematical Foundations",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_0/lesson_and_code_week0.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w0_lab_notebook",
@@ -42,7 +43,7 @@
           "description": "Week 0 lab exercises - Introduction to Python",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_0/LabFiles/Notebook_Intro_Python.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_0/LabFiles/Week0_Intro_Python.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -61,7 +62,17 @@
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w0_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 0 - BODMAS, exponents, functions, and more",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "1": {
       "week": 1,
@@ -76,11 +87,11 @@
           "requiresAuth": false
         },
         {
-          "id": "w1_lab",
-          "title": "Week 1 Lab Guide",
-          "description": "Getting started with Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_1/week1_lab_guide.md",
+          "id": "w1_integrated_lesson",
+          "title": "📚 Lesson with Code: Functions & Ocean Plastics",
+          "description": "Interactive notebook with theory and real-world ocean plastic data analysis",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_1/lesson_and_code_week1.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
@@ -109,6 +120,7 @@
           "thumbnailUrl": "https://img.youtube.com/vi/nzc1hk87r_Q/hqdefault.jpg"
         }
       ],
+      "audios": [],
       "notebooks": [
         {
           "id": "w1_lab_notebook",
@@ -135,7 +147,17 @@
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w1_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 1 - functions, graphing, and data analysis",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "2": {
       "week": 2,
@@ -150,11 +172,11 @@
           "requiresAuth": false
         },
         {
-          "id": "w2_lab",
-          "title": "Week 2 Lab Guide",
-          "description": "Hands-on exercises with units and dimensional analysis",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_2/week2_lab_guide.md",
+          "id": "w2_integrated_lesson",
+          "title": "📚 Lesson with Code: Exponential Growth & Modeling",
+          "description": "Interactive notebook with exponential/logarithmic functions and plastic production modeling",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_2/lesson_and_code_week2.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
@@ -181,6 +203,7 @@
           "durationSeconds": 727
         }
       ],
+      "audios": [],
       "notebooks": [
         {
           "id": "w2_lab_notebook",
@@ -207,7 +230,17 @@
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w2_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 2 - Exponentials, logarithms, and growth functions",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "3": {
       "week": 3,
@@ -215,18 +248,18 @@
         {
           "id": "w3_lesson",
           "title": "Week 3: Logistic Functions and Bounded Growth",
-          "description": "Linear equations, slope, intercept, and scientific graphing",
+          "description": "Logistic functions, bounded growth models, carrying capacity, and the Schaefer fishery model",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_3/week3_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w3_lab",
-          "title": "Week 3 Lab Guide",
-          "description": "Hands-on graphing and linear regression",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_3/week3_lab_guide.md",
+          "id": "w3_integrated_lesson",
+          "title": "📚 Lesson with Code: Logistic Functions & Growth Models",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_3/lesson_and_code_week3.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
@@ -234,8 +267,8 @@
       "videos": [
         {
           "id": "w3_video1",
-          "title": "Linear Equations in Science",
-          "description": "Understanding slope and intercept in scientific contexts",
+          "title": "Logistic Growth in Science",
+          "description": "Understanding bounded growth and carrying capacity in scientific contexts",
           "type": "video",
           "url": "https://www.youtube.com/watch?v=zPG4NjIkCjc",
           "source": "youtube",
@@ -243,6 +276,7 @@
           "durationSeconds": 847
         }
       ],
+      "audios": [],
       "notebooks": [
         {
           "id": "w3_lab_notebook",
@@ -262,7 +296,7 @@
         {
           "id": "w3_practice",
           "title": "Week 3 Practice Questions",
-          "description": "Linear equations, graphing, and regression exercises",
+          "description": "Logistic growth, carrying capacity, MSY, and function composition exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_3/week3_practice.json",
           "source": "custom",
@@ -278,6 +312,15 @@
           "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833",
           "source": "custom",
           "requiresAuth": false
+        },
+        {
+          "id": "w3_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 3 - Logistic growth and bounded models",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
         }
       ]
     },
@@ -287,23 +330,24 @@
         {
           "id": "w4_lesson",
           "title": "Week 4: Limits, Continuity, and Introduction to Derivatives",
-          "description": "Quadratic, power, and polynomial functions in science",
+          "description": "Limits, continuity, derivatives as instantaneous rates of change, and numerical differentiation",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_4/week4_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w4_lab",
-          "title": "Week 4 Lab Guide",
-          "description": "Exploring nonlinear functions with Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_4/week4_lab_guide.md",
+          "id": "w4_integrated_lesson",
+          "title": "📚 Lesson with Code: Limits & Derivatives",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_4/lesson_and_code_week4.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w4_lab_notebook",
@@ -323,14 +367,24 @@
         {
           "id": "w4_practice",
           "title": "Week 4 Practice Questions",
-          "description": "Nonlinear function exercises",
+          "description": "Limits, continuity, and introductory derivative exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_4/week4_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w4_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 4 - Differentiation and rates of change",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "5": {
       "week": 5,
@@ -338,23 +392,24 @@
         {
           "id": "w5_lesson",
           "title": "Week 5: Differentiation Techniques and Optimization",
-          "description": "Function concepts, domain/range, and transformations",
+          "description": "Differentiation rules (product, quotient, chain), critical points, and optimization with SymPy",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_5/week5_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w5_lab",
-          "title": "Week 5 Lab Guide",
-          "description": "Working with functions in Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_5/week5_lab_guide.md",
+          "id": "w5_integrated_lesson",
+          "title": "📚 Lesson with Code: Differentiation & Optimization",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_5/lesson_and_code_week5.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w5_lab_notebook",
@@ -374,14 +429,24 @@
         {
           "id": "w5_practice",
           "title": "Week 5 Practice Questions",
-          "description": "Function transformations exercises",
+          "description": "Differentiation techniques, critical points, and optimization exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_5/week5_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w5_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 5 - Optimization and critical points",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "6": {
       "week": 6,
@@ -389,23 +454,24 @@
         {
           "id": "w6_lesson",
           "title": "Week 6: Introduction to Integration",
-          "description": "Exponential growth/decay, logarithms, and applications",
+          "description": "Antiderivatives, the power rule for integration, definite integrals, and area under curves",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_6/week6_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w6_lab",
-          "title": "Week 6 Lab Guide",
-          "description": "Modeling growth and decay with Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_6/week6_lab_guide.md",
+          "id": "w6_integrated_lesson",
+          "title": "📚 Lesson with Code: Introduction to Integration",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_6/lesson_and_code_week6.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w6_lab_notebook",
@@ -425,14 +491,24 @@
         {
           "id": "w6_practice",
           "title": "Week 6 Practice Questions",
-          "description": "Exponential and logarithmic exercises",
+          "description": "Antiderivatives, definite integrals, and area calculation exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_6/week6_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w6_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 6 - Integration and area under curves",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "7": {
       "week": 7,
@@ -440,23 +516,24 @@
         {
           "id": "w7_lesson",
           "title": "Week 7: Definite Integrals and Applications",
-          "description": "Arithmetic/geometric sequences, series, population models",
+          "description": "Fundamental Theorem of Calculus, areas between curves, sequences, and the Malthusian Trap",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_7/week7_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w7_lab",
-          "title": "Week 7 Lab Guide",
-          "description": "Modeling populations with Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_7/week7_lab_guide.md",
+          "id": "w7_integrated_lesson",
+          "title": "📚 Lesson with Code: Definite Integrals & FTC",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_7/lesson_and_code_week7.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w7_lab_notebook",
@@ -476,14 +553,24 @@
         {
           "id": "w7_practice",
           "title": "Week 7 Practice Questions",
-          "description": "Sequences and series exercises",
+          "description": "Definite integrals, areas between curves, sequences, and Malthusian Trap exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_7/week7_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w7_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 7 - Population dynamics and growth models",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "8": {
       "week": 8,
@@ -491,23 +578,24 @@
         {
           "id": "w8_lesson",
           "title": "Week 8: Predator-Prey Dynamics and Systems",
-          "description": "Limits, derivatives, and applications",
+          "description": "Lotka-Volterra predator-prey model, equilibrium points, numerical ODE solving, and phase portraits",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_8/week8_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w8_lab",
-          "title": "Week 8 Lab Guide",
-          "description": "Numerical differentiation with Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_8/week8_lab_guide.md",
+          "id": "w8_integrated_lesson",
+          "title": "📚 Lesson with Code: Predator-Prey Dynamics",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_8/lesson_and_code_week8.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w8_lab_notebook",
@@ -527,14 +615,24 @@
         {
           "id": "w8_practice",
           "title": "Week 8 Practice Questions",
-          "description": "Differentiation exercises",
+          "description": "Predator-prey dynamics, equilibrium analysis, and systems of equations exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_8/week8_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w8_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 8 - Predator-prey dynamics and phase portraits",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "9": {
       "week": 9,
@@ -542,23 +640,24 @@
         {
           "id": "w9_lesson",
           "title": "Week 9: Probability Foundations",
-          "description": "Product rule, quotient rule, chain rule",
+          "description": "Counting principles, permutations, combinations, conditional probability, and the binomial distribution",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_9/week9_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w9_lab",
-          "title": "Week 9 Lab Guide",
-          "description": "Advanced differentiation techniques in Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_9/week9_lab_guide.md",
+          "id": "w9_integrated_lesson",
+          "title": "📚 Lesson with Code: Probability Foundations",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_9/lesson_and_code_week9.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w9_lab_notebook",
@@ -578,14 +677,24 @@
         {
           "id": "w9_practice",
           "title": "Week 9 Practice Questions",
-          "description": "Advanced differentiation exercises",
+          "description": "Probability, combinatorics, conditional probability, and binomial distribution exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_9/week9_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w9_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 9 - Probability distributions",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "10": {
       "week": 10,
@@ -593,23 +702,24 @@
         {
           "id": "w10_lesson",
           "title": "Week 10: Random Variables and Hypothesis Testing",
-          "description": "Antiderivatives, definite integrals, and applications",
+          "description": "Expected value, variance, null/alternative hypotheses, p-values, and binomial hypothesis testing",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_10/week10_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w10_lab",
-          "title": "Week 10 Lab Guide",
-          "description": "Numerical integration with Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_10/week10_lab_guide.md",
+          "id": "w10_integrated_lesson",
+          "title": "📚 Lesson with Code: Random Variables & Hypothesis Testing",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_10/lesson_and_code_week10.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w10_lab_notebook",
@@ -629,14 +739,24 @@
         {
           "id": "w10_practice",
           "title": "Week 10 Practice Questions",
-          "description": "Integration exercises",
+          "description": "Random variables, expected value, variance, and hypothesis testing exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_10/week10_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w10_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 10 - Statistical analysis and hypothesis testing",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "11": {
       "week": 11,
@@ -644,23 +764,24 @@
         {
           "id": "w11_lesson",
           "title": "Week 11: Trigonometric Functions and Periodic Models",
-          "description": "Mean, median, mode, variance, standard deviation",
+          "description": "Radian-degree conversion, trigonometric functions, amplitude/period/frequency, and sinusoidal modeling",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_11/week11_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w11_lab",
-          "title": "Week 11 Lab Guide",
-          "description": "Statistical analysis with Python",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_11/week11_lab_guide.md",
+          "id": "w11_integrated_lesson",
+          "title": "📚 Lesson with Code: Trigonometry & Periodic Models",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_11/lesson_and_code_week11.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w11_lab_notebook",
@@ -680,14 +801,24 @@
         {
           "id": "w11_practice",
           "title": "Week 11 Practice Questions",
-          "description": "Statistics exercises",
+          "description": "Trigonometric functions, radian conversion, and periodic model fitting exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_11/week11_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w11_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 11 - Trigonometry and periodic functions",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     },
     "12": {
       "week": 12,
@@ -695,23 +826,24 @@
         {
           "id": "w12_lesson",
           "title": "Week 12: Simultaneous Equations and Linear Programming",
-          "description": "Comprehensive review of course concepts",
+          "description": "Simultaneous equations, market equilibrium, economic surplus, and linear programming with the corner point theorem",
           "type": "lectureNotes",
           "url": "asset://SCIE1500Materials/Week_12/week12_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
-          "id": "w12_lab",
-          "title": "Week 12 Lab Guide",
-          "description": "Final review exercises",
-          "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_12/week12_lab_guide.md",
+          "id": "w12_integrated_lesson",
+          "title": "📚 Lesson with Code: Linear Programming & Optimization",
+          "description": "Interactive notebook combining theory and executable code examples",
+          "type": "notebook",
+          "url": "asset://SCIE1500Materials/Week_12/lesson_and_code_week12.ipynb",
           "source": "custom",
           "requiresAuth": false
         }
       ],
       "videos": [],
+      "audios": [],
       "notebooks": [
         {
           "id": "w12_lab_notebook",
@@ -731,14 +863,24 @@
         {
           "id": "w12_practice",
           "title": "Week 12 Practice Questions",
-          "description": "Comprehensive review exercises",
+          "description": "Simultaneous equations, linear programming, and constrained optimization exercises",
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_12/week12_practice.json",
           "source": "custom",
           "requiresAuth": false
         }
       ],
-      "additionalReadings": []
+      "additionalReadings": [
+        {
+          "id": "w12_code_snippets",
+          "title": "Python Code Snippets",
+          "description": "Copyable code examples for Week 12 - Linear programming and optimization",
+          "type": "reading",
+          "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ]
     }
   },
   "ragDocumentUrls": []
