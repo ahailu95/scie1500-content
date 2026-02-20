@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.3.5",
+  "version": "2.4.0",
   "lastUpdated": "2026-02-20T12:00:00+08:00",
   "institution": {
     "id": "uwa",
@@ -144,7 +144,7 @@
           "title": "Lesson: Exponential Growth & Modeling",
           "description": "Exponential/logarithmic functions and plastic production modeling",
           "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_2/week1_lesson.md",
+          "url": "asset://SCIE1500Materials/Week_2/week2_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
