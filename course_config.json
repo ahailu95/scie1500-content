@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "lastUpdated": "2026-02-20T12:00:00+08:00",
   "institution": {
     "id": "uwa",
@@ -240,15 +240,6 @@
         }
       ],
       "additionalReadings": [
-        {
-          "id": "w3_reading1",
-          "title": "Ten Simple Rules for Better Figures",
-          "description": "Guidelines for creating effective scientific visualizations",
-          "type": "reading",
-          "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833",
-          "source": "custom",
-          "requiresAuth": false
-        },
         {
           "id": "w3_code_snippets",
           "title": "Python Code Snippets",
