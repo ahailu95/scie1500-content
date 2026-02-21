@@ -1,6 +1,6 @@
 {
-  "version": "2.1.0",
-  "lastUpdated": "2026-02-16T15:00:00+08:00",
+  "version": "2.1.1",
+  "lastUpdated": "2026-02-21T11:25:00+08:00",
   
   "announcements": [
     {
@@ -23,13 +23,11 @@
     {
       "id": "lab-schedule-campuses",
       "title": "Lab Schedule: Multiple Campus Options",
-      "message": "Labs are available at multiple times and campuses:\n\n**Crawley Campus:**\n• Monday 10am-12pm (ENCM 206)\n• Monday 2pm-4pm (ENCM 206)\n• Wednesday 1pm-3pm (ENCM 206)\n• Thursday 2pm-4pm (ENCM 207A)\n\n**Albany Campus:**\n• Wednesday 9am-11am (ALBSCI 302/303)\n\nRegister for ONE lab session through StudentConnect. Labs begin Week 1 (24-28 Feb).",
+      "message": "Labs are available at multiple times and campuses:\n\n**Crawley Campus:**\n• Monday 10am-12pm (ENCM 206)\n• Monday 2pm-4pm (ENCM 206)\n• Wednesday 1pm-3pm (ENCM 206)\n• Thursday 2pm-4pm (ENCM 207A)\n\n**Albany Campus:**\n• Wednesday 9am-11am (ALBSCI 302/303)\n\nRegister for ONE lab session through StudentConnect. Labs begin Week 1 (23-28 Feb).",
       "publishedAt": "2026-02-17T09:00:00+08:00",
       "priority": "important",
       "category": "schedule",
-      "relatedWeek": 1,
-      "actionUrl": "https://lms.uwa.edu.au",
-      "actionLabel": "View LMS"
+      "relatedWeek": 1
     },
     {
       "id": "labour-day-notice",
