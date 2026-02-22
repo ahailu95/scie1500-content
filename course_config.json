@@ -49,6 +49,20 @@
             "matplotlib"
           ],
           "estimatedTimeMinutes": 60
+        },
+        {
+          "id": "w0_getting_started",
+          "title": "Getting Started with Python & Jupyter",
+          "description": "Setup guide covering installation, Python basics, key packages, and first functions",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_0/LabFiles/Getting_Started_with_Python_and_JupyterNotebook.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "pandas"
+          ],
+          "estimatedTimeMinutes": 45
         }
       ],
       "exercises": [
