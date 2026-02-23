@@ -1,14 +1,15 @@
 {
-  "version": "2.1.0",
-  "lastUpdated": "2026-02-22T18:00:00+08:00",
+  "version": "2.2.0",
+  "lastUpdated": "2026-02-23T21:00:00+08:00",
   
   "announcements": [
     {
       "id": "app-update-beta6",
       "title": "App Update Available — Download New Version from LMS",
-      "message": "A new version of SciQuant Assistant is now available on the LMS.\n\n**What's new:**\n• You can now select a **secondary discipline** alongside your primary one — perfect for double majors! The AI tutor will tailor examples to both your fields.\n• Bug fix: Notebook downloads now work correctly.\n\n**How to update:**\n1. Download the new ZIP from the LMS Downloads section\n2. Replace your existing app with the new version\n3. Your profile and settings will be preserved\n\nIf you haven't downloaded the app yet, just grab the latest version — no action needed.",
+      "message": "A revised version of SciQuant Assistant was posted on Sunday 22 Feb (7pm).\n\n**What's new:**\n• It iwll now now select a **secondary discipline** alongside your primary one — perfect for double majors! The AI tutor will tailor examples to both your fields.\n• Bug fix: Notebook downloads now work correctly.\n\n**How to update:**\n1. Download the new ZIP from the LMS Downloads section\n2. Replace your existing app with the new version\n3. Your profile and settings will be preserved\n\nIf you haven't downloaded the app yet, just grab the latest version — no action needed.",
       "publishedAt": "2026-02-22T18:00:00+08:00",
-      "priority": "important",
+      "priority": "important",      
+      "relatedWeek": 1,
       "category": "general"
     },
     {
@@ -16,6 +17,7 @@
       "title": "Welcome to SCIE1500 Semester 1 2026!",
       "message": "Welcome to Analytical Methods for Scientists! We're excited to have you join us this semester.\n\nBefore your first week:\n• Download Miniconda (Python) for lab exercises — see Software section in Course Overview\n• Review the course outline in the app\n• Check your lab schedule — labs run on different days at different campuses\n• Explore the SciQuant app features: AI tutor, weekly lessons, practice questions\n\nTeaching starts Monday 23 February. See you soon!",
       "publishedAt": "2026-02-16T09:00:00+08:00",
+      "expiresAt": "2026-02-27T00:00:00+08:00",
       "priority": "important",
       "category": "general",
       "isPinned": true
@@ -25,6 +27,7 @@
       "title": "Lab Schedule: Multiple Campus Options",
       "message": "Labs are available at multiple times and campuses:\n\n**Crawley Campus:**\n• Monday 10am-12pm (ENCM 206)\n• Monday 2pm-4pm (ENCM 206)\n• Wednesday 1pm-3pm (ENCM 206)\n• Thursday 2pm-4pm (ENCM 207A)\n\n**Albany Campus:**\n• Wednesday 9am-11am (ALBSCI 302/303)\n\nRegister for ONE lab session through StudentConnect. Labs begin Week 1 (24-28 Feb).",
       "publishedAt": "2026-02-17T09:00:00+08:00",
+      "expiresAt": "2026-02-22T00:00:00+08:00",
       "priority": "important",
       "category": "schedule",
       "relatedWeek": 1,
