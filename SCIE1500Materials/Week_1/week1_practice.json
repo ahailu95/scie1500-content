@@ -1,0 +1,412 @@
+{
+  "metadata": {
+    "week": 1,
+    "title": "Functions and the Language of Scientific Analysis",
+    "act": "I: Understanding Systems",
+    "version": "2.0-revised",
+    "source_materials": [
+      "Week_1_ScienceLecture_OceanPollution.pdf",
+      "Week_1_MathLecture_Functions_Part_I.pdf",
+      "Jambeck2015Table1.csv",
+      "global-plastics-production.csv",
+      "PlasticPollution.ipynb"
+    ],
+    "learning_objectives": [
+      "Define functions and distinguish them from general relationships",
+      "Apply the vertical line test to identify functions graphically",
+      "Determine domains from mathematical constraints (square roots, fractions)",
+      "Determine domains from physical/scientific constraints",
+      "Sketch quadratic functions and identify key features (vertex, intercepts)",
+      "Connect mathematical concepts to real pollution and ecological data"
+    ],
+    "exam_alignment": [
+      "MCQ Q10: Domain identification",
+      "MCQ Q11: Function evaluation",
+      "MCQ Q22: Quadratic function identification"
+    ]
+  },
+  "questions": [
+    {
+      "id": "W1-Q1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "exam_model": "MCQ Q10",
+      "topic": "Domain identification",
+      "context": "When modeling environmental systems, ensuring your function is defined for all relevant inputs is critical. A model that produces undefined or imaginary values is scientifically meaningless.",
+      "question": "In which of the following cases is the Domain (D) for the function **not** identified correctly?",
+      "options": {
+        "a": "$y = 5 - 3x$, $D = \\{x : x \\in \\mathbb{R}\\}$",
+        "b": "$y = \\frac{(3x + 6)^{1/2}}{4} - 1$, $D = \\{x : x \\in \\mathbb{R}\\}$",
+        "c": "$y = \\frac{3}{2 - e^{-x}}$, $D = \\{x \\in \\mathbb{R} : x \\neq -\\ln(2)\\}$",
+        "d": "$y = e^{0.2x - 1}$, $D = \\{x : x \\in \\mathbb{R}\\}$",
+        "e": "None of the above"
+      },
+      "correct_answer": "b",
+      "solution": {
+        "explanation": "We need to check each domain claim against the mathematical constraints of each function.",
+        "steps": [
+          {
+            "option": "a",
+            "analysis": "$y = 5 - 3x$ is a linear function with no restrictions.",
+            "verdict": "Domain is correctly stated as all real numbers. ✓"
+          },
+          {
+            "option": "b",
+            "analysis": "$y = \\frac{(3x + 6)^{1/2}}{4} - 1$ contains a square root. We need $(3x + 6) \\geq 0$, which gives $3x \\geq -6$, so $x \\geq -2$.",
+            "verdict": "The stated domain (all real numbers) is INCORRECT. Values like $x = -3$ make the square root undefined. ✗"
+          },
+          {
+            "option": "c",
+            "analysis": "$y = \\frac{3}{2 - e^{-x}}$ is undefined when $2 - e^{-x} = 0$, i.e., $e^{-x} = 2$. Taking natural log: $-x = \\ln(2)$, so $x = -\\ln(2)$.",
+            "verdict": "The exclusion $x \\neq -\\ln(2)$ is correct. ✓"
+          },
+          {
+            "option": "d",
+            "analysis": "$y = e^{0.2x - 1}$ is an exponential function, defined for all real $x$.",
+            "verdict": "Domain is correctly stated as all real numbers. ✓"
+          }
+        ],
+        "final_answer": "Option (b) incorrectly states the domain as all real numbers when it should be $D = \\{x \\in \\mathbb{R} : x \\geq -2\\}$"
+      },
+      "hints": [
+        "Check each function for operations that restrict the domain: square roots, fractions, logarithms.",
+        "For square roots, the expression inside must be non-negative.",
+        "For fractions, the denominator cannot equal zero."
+      ],
+      "common_errors": [
+        "Forgetting that square roots require non-negative arguments",
+        "Not solving the inequality correctly when finding domain restrictions",
+        "Confusing $x \\neq -\\ln(2)$ with $x \\neq \\ln(2)$"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W1-Q2",
+      "type": "multi_part",
+      "difficulty": "medium",
+      "topic": "Function evaluation and domains",
+      "context": "The function $f(x) = \\sqrt{x - 1}$ might model a relationship where measurements are only valid above a threshold value—similar to how plastic concentration measurements require minimum detection limits.",
+      "question": "Consider the function $f(x) = \\sqrt{x - 1}$.",
+      "parts": [
+        {
+          "part": "a",
+          "question": "Determine the domain of $f(x)$.",
+          "answer": "$D = \\{x \\in \\mathbb{R} : x \\geq 1\\}$ or equivalently $[1, \\infty)$",
+          "solution_steps": [
+            "For the square root to be defined, we need $x - 1 \\geq 0$",
+            "Solving: $x \\geq 1$"
+          ]
+        },
+        {
+          "part": "b",
+          "question": "Determine the range of $f(x)$.",
+          "answer": "$R = \\{y \\in \\mathbb{R} : y \\geq 0\\}$ or equivalently $[0, \\infty)$",
+          "solution_steps": [
+            "Since $\\sqrt{x-1} \\geq 0$ for all valid inputs",
+            "And can grow arbitrarily large as $x$ increases",
+            "The range is all non-negative real numbers"
+          ]
+        },
+        {
+          "part": "c",
+          "question": "Calculate $f(2)$, $f(5)$, and $f(10)$.",
+          "answer": "$f(2) = 1$, $f(5) = 2$, $f(10) = 3$",
+          "solution_steps": [
+            "$f(2) = \\sqrt{2-1} = \\sqrt{1} = 1$",
+            "$f(5) = \\sqrt{5-1} = \\sqrt{4} = 2$",
+            "$f(10) = \\sqrt{10-1} = \\sqrt{9} = 3$"
+          ]
+        },
+        {
+          "part": "d",
+          "question": "Find the value of $u$ if $f(u) = 4$.",
+          "answer": "$u = 17$",
+          "solution_steps": [
+            "If $f(u) = 4$, then $\\sqrt{u - 1} = 4$",
+            "Squaring both sides: $u - 1 = 16$",
+            "Therefore $u = 17$"
+          ]
+        },
+        {
+          "part": "e",
+          "question": "Explain why $f(0)$ is undefined.",
+          "answer": "$f(0) = \\sqrt{0 - 1} = \\sqrt{-1}$, which is not a real number. The input $x = 0$ is outside the domain.",
+          "solution_steps": [
+            "$f(0) = \\sqrt{0 - 1} = \\sqrt{-1}$",
+            "The square root of a negative number is not defined in the real numbers",
+            "Since $0 < 1$, the input violates the domain constraint $x \\geq 1$"
+          ]
+        }
+      ],
+      "hints": [
+        "For domain: what values make the expression under the square root negative?",
+        "For range: what's the smallest possible output? Can outputs be arbitrarily large?",
+        "To find $u$ when $f(u) = 4$: set up the equation and solve by squaring both sides."
+      ],
+      "source_reference": "Based on Example 1.1 from Math Functions Lecture",
+      "latex_display": true
+    },
+    {
+      "id": "W1-Q3",
+      "type": "multi_part",
+      "difficulty": "medium",
+      "topic": "Quadratic functions - sketching and analysis",
+      "context": "The cleanup efficiency of a plastic removal operation (tonnes removed per day) varies over time as easily accessible debris is collected first. This mirrors real-world cleanup operations like The Ocean Cleanup project mentioned in the science lecture.",
+      "question": "Suppose the efficiency function is $E(t) = -0.5t^2 + 4t + 2$ where $t$ is days since the operation began.",
+      "parts": [
+        {
+          "part": "a",
+          "question": "What is the y-intercept? Interpret this in context.",
+          "answer": {
+            "value": "$E(0) = 2$",
+            "interpretation": "On day 0, the cleanup operation removes 2 tonnes of plastic per day."
+          },
+          "solution_steps": [
+            "Set $t = 0$: $E(0) = -0.5(0)^2 + 4(0) + 2 = 2$"
+          ]
+        },
+        {
+          "part": "b",
+          "question": "Find the vertex of this parabola. What does it represent?",
+          "answer": {
+            "vertex": "$(4, 10)$",
+            "interpretation": "Maximum efficiency occurs on day 4, when 10 tonnes per day are removed."
+          },
+          "solution_steps": [
+            "Vertex x-coordinate: $t = -\\frac{b}{2a} = -\\frac{4}{2(-0.5)} = -\\frac{4}{-1} = 4$",
+            "Vertex y-coordinate: $E(4) = -0.5(16) + 4(4) + 2 = -8 + 16 + 2 = 10$"
+          ]
+        },
+        {
+          "part": "c",
+          "question": "Find the x-intercepts (if they exist). What do they mean?",
+          "answer": {
+            "values": "$t \\approx 8.47$ and $t \\approx -0.47$",
+            "interpretation": "Efficiency reaches zero around day 8.5. The negative root is physically meaningless."
+          },
+          "solution_steps": [
+            "Set $E(t) = 0$: $-0.5t^2 + 4t + 2 = 0$",
+            "Multiply by $-2$: $t^2 - 8t - 4 = 0$",
+            "Using quadratic formula: $t = \\frac{8 \\pm \\sqrt{64 + 16}}{2} = \\frac{8 \\pm \\sqrt{80}}{2}$",
+            "$t = \\frac{8 \\pm 8.944}{2}$",
+            "$t = 8.472$ or $t = -0.472$"
+          ]
+        },
+        {
+          "part": "d",
+          "question": "What is a sensible domain for this model, and why?",
+          "answer": "$D = \\{t \\in \\mathbb{R} : 0 \\leq t \\leq 8.47\\}$",
+          "solution_steps": [
+            "$t \\geq 0$ because time cannot be negative",
+            "$t \\leq 8.47$ because efficiency cannot be negative (you cannot 'un-remove' plastic)",
+            "The physical constraints restrict the mathematical domain"
+          ]
+        }
+      ],
+      "sketch_requirements": {
+        "key_features": [
+          "Y-intercept at $(0, 2)$",
+          "Maximum at $(4, 10)$",
+          "X-intercept near $(8.5, 0)$",
+          "Parabola opening downward ($a = -0.5 < 0$)"
+        ]
+      },
+      "hints": [
+        "Remember: vertex x-coordinate is $-\\frac{b}{2a}$",
+        "For x-intercepts, you'll need the quadratic formula since this doesn't factor nicely",
+        "Physical domain constraints often differ from pure mathematical constraints"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W1-Q4",
+      "type": "classification",
+      "difficulty": "easy",
+      "topic": "Vertical line test and function identification",
+      "context": "The math lecture (Example 1.2) shows various curves and asks whether they represent functions. The vertical line test states: a graph represents a function if no vertical line intersects the curve more than once.",
+      "question": "For each relationship below, determine whether it defines $y$ as a function of $x$. Justify your answer.",
+      "items": [
+        {
+          "expression": "$y^2 + 2x^2 = 1$",
+          "is_function": false,
+          "justification": "Solving for $y$: $y = \\pm\\sqrt{1 - 2x^2}$. For $x = 0$: $y = \\pm 1$ (two values). A vertical line at $x = 0$ would intersect the curve twice."
+        },
+        {
+          "expression": "$f(x) = x^2 + 4x + 3$",
+          "is_function": true,
+          "justification": "This is a quadratic polynomial. Each value of $x$ produces exactly one value of $y$. The graph is a parabola opening upward."
+        },
+        {
+          "expression": "$g(x) = \\frac{1}{x}$",
+          "is_function": true,
+          "justification": "For each non-zero $x$, there is exactly one output $y = \\frac{1}{x}$. Domain excludes $x = 0$, but within the domain, it's a function."
+        },
+        {
+          "expression": "$x^2 + y^2 = 1$ (circle)",
+          "is_function": false,
+          "justification": "For $x = 0$: $y = \\pm 1$. A vertical line at $x = 0$ intersects the circle at two points $(0, 1)$ and $(0, -1)$."
+        }
+      ],
+      "source_reference": "Based on Example 1.1(b) and Example 1.2 from Math Functions Lecture",
+      "hints": [
+        "Try solving each equation for $y$ in terms of $x$",
+        "If you get $y = \\pm$(something), that means two y-values for one x-value",
+        "Circles and ellipses are typically NOT functions"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W1-Q5",
+      "type": "data_analysis",
+      "difficulty": "hard",
+      "topic": "Applied data analysis - Jambeck dataset",
+      "context": "The Jambeck et al. (2015) data from the science lecture includes coastal population, waste generation rate, and mismanaged plastic waste for 20 countries. This data is used in the lab notebook exercises.",
+      "data_table": {
+        "description": "Top 5 countries by mismanaged plastic waste (MMT/year) from Jambeck et al. (2015)",
+        "columns": [
+          "Rank",
+          "Country",
+          "Coastal Pop. (millions)",
+          "Waste Rate (kg/person/day)",
+          "Mismanaged Plastic (MMT/year)"
+        ],
+        "rows": [
+          [
+            1,
+            "China",
+            262.9,
+            1.1,
+            8.82
+          ],
+          [
+            2,
+            "Indonesia",
+            187.2,
+            0.52,
+            3.22
+          ],
+          [
+            3,
+            "Philippines",
+            83.4,
+            0.5,
+            1.88
+          ],
+          [
+            4,
+            "Vietnam",
+            55.9,
+            0.79,
+            1.83
+          ],
+          [
+            5,
+            "Sri Lanka",
+            14.6,
+            5.1,
+            1.59
+          ]
+        ]
+      },
+      "parts": [
+        {
+          "part": "a",
+          "question": "China has the largest coastal population and the most mismanaged plastic waste. Is the relationship between coastal population and mismanaged waste strictly linear across these 5 countries? How can you tell?",
+          "answer": "NOT strictly linear",
+          "solution_steps": [
+            "If linear, the ratio of mismanaged waste to coastal population would be constant.",
+            "China: $8.82 / 262.9 = 0.0335$",
+            "Indonesia: $3.22 / 187.2 = 0.0172$",
+            "Philippines: $1.88 / 83.4 = 0.0225$",
+            "The ratios vary significantly (0.017 to 0.034), so population alone doesn't determine waste through a simple linear relationship.",
+            "Other factors (waste generation rate, % mismanaged, % plastic) matter."
+          ]
+        },
+        {
+          "part": "b",
+          "question": "Sri Lanka has the smallest coastal population but the highest waste generation rate. Calculate the total daily waste generated by Sri Lanka's coastal population (in million kg/day).",
+          "answer": "74.46 million kg/day (or 74,460 tonnes/day)",
+          "solution_steps": [
+            "Daily waste = Population × Rate",
+            "Daily waste = 14.6 million people × 5.10 kg/person/day",
+            "Daily waste = 74.46 million kg/day"
+          ]
+        },
+        {
+          "part": "c",
+          "question": "If we define a function $W(P) = k \\cdot P$ where $P$ is coastal population (millions) and $W$ is mismanaged plastic waste (MMT/year), what value of $k$ would fit China's data exactly?",
+          "answer": "$k = 0.0335$ MMT/year per million people",
+          "solution_steps": [
+            "For China: $W = k \\cdot P$ implies $8.82 = k \\cdot 262.9$",
+            "$k = \\frac{8.82}{262.9} = 0.0335$"
+          ]
+        },
+        {
+          "part": "d",
+          "question": "Using your value of $k$ from part (c), predict Indonesia's mismanaged plastic waste. How does this compare to the actual value? What does this suggest about the model?",
+          "answer": {
+            "predicted": "6.27 MMT/year",
+            "actual": "3.22 MMT/year",
+            "interpretation": "The simple linear model over-predicts by nearly 2× because Indonesia has a lower waste generation rate and different waste management characteristics than China. A single-variable linear model is inadequate."
+          },
+          "solution_steps": [
+            "Predicted: $W = 0.0335 \\times 187.2 = 6.27$ MMT/year",
+            "Actual: 3.22 MMT/year",
+            "Ratio: $6.27 / 3.22 \\approx 1.95$ (nearly 2× over-prediction)"
+          ]
+        }
+      ],
+      "scientific_connection": "This exercise demonstrates why environmental scientists need multivariate models—single-variable relationships rarely capture complex systems like global plastic pollution.",
+      "lab_connection": "You will work with this exact dataset in the PlasticPollution.ipynb notebook, using pandas to calculate similar statistics.",
+      "hints": [
+        "For part (a): calculate the ratio W/P for each country and compare",
+        "For part (b): simple multiplication of population × rate",
+        "For parts (c) and (d): this tests whether a linear model can generalize"
+      ],
+      "latex_display": true
+    }
+  ],
+  "answer_key": {
+    "W1-Q1": "b",
+    "W1-Q2": {
+      "a": "$D = [1, \\infty)$",
+      "b": "$R = [0, \\infty)$",
+      "c": "$f(2)=1$, $f(5)=2$, $f(10)=3$",
+      "d": "$u = 17$",
+      "e": "$x=0$ is outside domain; $\\sqrt{-1}$ undefined in reals"
+    },
+    "W1-Q3": {
+      "a": "Y-intercept = 2 (initial efficiency)",
+      "b": "Vertex at $(4, 10)$ (maximum efficiency)",
+      "c": "X-intercepts at $t \\approx -0.47$ and $t \\approx 8.47$",
+      "d": "Domain: $[0, 8.47]$ (physical constraints)"
+    },
+    "W1-Q4": {
+      "a": "Not a function (two y-values for some x)",
+      "b": "Function (quadratic)",
+      "c": "Function (for $x \\neq 0$)",
+      "d": "Not a function (circle fails vertical line test)"
+    },
+    "W1-Q5": {
+      "a": "Not linear (ratios vary from 0.017 to 0.034)",
+      "b": "74.46 million kg/day",
+      "c": "$k = 0.0335$",
+      "d": "Predicted 6.27 vs actual 3.22 MMT/year; model inadequate"
+    }
+  },
+  "lab_connection": {
+    "notebook": "PlasticPollution.ipynb",
+    "datasets": [
+      "global-plastics-production.csv",
+      "Jambeck2015Table1.csv"
+    ],
+    "skills_practiced": [
+      "Loading CSV data with pandas",
+      "Creating derived variables (time trend, scaled units)",
+      "Plotting with pandas and matplotlib",
+      "Calculating summary statistics",
+      "Selecting rows based on conditions"
+    ],
+    "connection_notes": "The mathematical foundations from these practice questions—understanding functions, domains, and quadratic behavior—help interpret what the data reveal about accelerating plastic pollution."
+  }
+}
