@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.4.6",
-  "lastUpdated": "2026-02-24T17:23:29.091953+08:00",
+  "version": "2.4.4",
+  "lastUpdated": "2026-02-26T12:00:00+08:00",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -119,6 +119,15 @@
           "url": "https://echo360.net.au/media/0017f13c-e62b-4478-8ce8-83b5fa917d6e/public",
           "source": "custom",
           "requiresAuth": false
+        },
+        {
+          "id": "w1_functions_lecture",
+          "title": "Functions Lecture Video",
+          "description": "Lecture on functions and their applications in scientific analysis",
+          "type": "video",
+          "url": "https://echo360.net.au/media/74bde44c-5ede-428c-baad-16df4f015f94/public",
+          "source": "custom",
+          "requiresAuth": false
         }
       ],
       "audios": [],
@@ -145,8 +154,7 @@
           "type": "exercise",
           "url": "asset://SCIE1500Materials/Week_1/week1_practice.json",
           "source": "custom",
-          "requiresAuth": false,
-          "remoteUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_1/week1_practice.json"
+          "requiresAuth": false
         }
       ],
       "additionalReadings": [
@@ -853,37 +861,5 @@
       ]
     }
   },
-  "ragDocumentUrls": [],
-  "referenceMaterials": [
-    {
-      "id": "student_handbook",
-      "title": "Lab Handbook",
-      "description": "Lab structure, assessment, problem briefs with weekly tabs",
-      "type": "handbook",
-      "url": "https://htmlpreview.github.io/?https://github.com/ahailu95/scie1500-content/blob/main/SCIE1500Materials/SCIE1500_Student_Handbook_with_weekly_tabs.html",
-      "format": "html",
-      "source": "custom",
-      "requiresAuth": false
-    },
-    {
-      "id": "group_worksheets_2_9",
-      "title": "Group Worksheets (Weeks 2-9)",
-      "description": "Collaborative problem-solving worksheets for lab sessions",
-      "type": "worksheet",
-      "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/SCIE1500_Group_Worksheet_Weeks_2_to_9.docx",
-      "format": "docx",
-      "source": "custom",
-      "requiresAuth": false
-    },
-    {
-      "id": "special_worksheets_1_10_12",
-      "title": "Special Worksheets (Weeks 1, 10-12)",
-      "description": "Special format worksheets for intro, mock exam, peer review, and gallery walk",
-      "type": "worksheet",
-      "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/SCIE1500_Special_Worksheets_for_Weeks_1_10_11_12.docx",
-      "format": "docx",
-      "source": "custom",
-      "requiresAuth": false
-    }
-  ]
+  "ragDocumentUrls": []
 }
