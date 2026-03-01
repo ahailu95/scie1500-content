@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciQuant AI Tutor Setup Guide - Ollama for Beginners</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1e5128;
+            border-bottom: 3px solid #1e5128;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2d6a4f;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #52b788;
+        }
+        h3 {
+            color: #40916c;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .info-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .error-box {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            border-left: 3px solid #1e5128;
+        }
+        .step-number {
+            display: inline-block;
+            background: #1e5128;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d32f2f;
+        }
+        pre {
+            background: #263238;
+            color: #aed581;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        pre code {
+            background: none;
+            color: #aed581;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #1e5128;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .pros {
+            color: #2e7d32;
+        }
+        .cons {
+            color: #c62828;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .badge-free {
+            background: #4caf50;
+            color: white;
+        }
+        .badge-paid {
+            background: #ff9800;
+            color: white;
+        }
+        .badge-fast {
+            background: #2196f3;
+            color: white;
+        }
+        .badge-slow {
+            background: #9e9e9e;
+            color: white;
+        }
+        .model-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .model-name {
+            font-weight: bold;
+            color: #1e5128;
+            font-size: 1.1em;
+        }
+        .model-size {
+            color: #666;
+            font-size: 0.9em;
+        }
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .screenshot-placeholder {
+            background: #e0e0e0;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        a {
+            color: #1e5128;
+            text-decoration: none;
+            border-bottom: 1px dotted #1e5128;
+        }
+        a:hover {
+            border-bottom: 1px solid #1e5128;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 SciQuant AI Tutor Setup Guide</h1>
+        <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">
+            A beginner-friendly guide to setting up Ollama as your local AI tutor in SciQuant Assistant
+        </p>
+
+        <div class="info-box">
+            <strong>📚 What You'll Learn:</strong>
+            <ul>
+                <li>What Ollama is and why you might want to use it</li>
+                <li>Step-by-step installation on Windows, Mac, and Linux</li>
+                <li>How to download and use AI models in SciQuant</li>
+                <li>Comparing Ollama vs Claude AI vs SciQuant Cloud</li>
+                <li>Troubleshooting common issues</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2>🤔 Understanding Your AI Tutor Options</h2>
+        
+        <p>SciQuant offers three ways to get AI tutoring help. Here's what each option means:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Option</th>
+                    <th>Cost</th>
+                    <th>Speed</th>
+                    <th>Quality</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Ollama (Local)</strong></td>
+                    <td><span class="badge badge-free">FREE</span></td>
+                    <td><span class="badge badge-slow">Slower</span></td>
+                    <td>⭐⭐⭐⭐ Good</td>
+                    <td>Students wanting free, offline help</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude API</strong></td>
+                    <td><span class="badge badge-paid">Paid</span></td>
+                    <td><span class="badge badge-fast">Very Fast</span></td>
+                    <td>⭐⭐⭐⭐⭐ Excellent</td>
+                    <td>Students with API credits who want best quality</td>
+                </tr>
+                <tr>
+                    <td><strong>SciQuant Cloud</strong></td>
+                    <td><span class="badge badge-free">FREE*</span></td>
+                    <td><span class="badge badge-fast">Fast</span></td>
+                    <td>⭐⭐⭐⭐⭐ Excellent</td>
+                    <td>Most students (if available)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+            *SciQuant Cloud is free for SCIE1500 students but may have usage limits during peak times
+        </p>
+
+        <h3>Detailed Comparison</h3>
+
+        <div class="model-card">
+            <div class="model-name">🖥️ Ollama (Local AI)</div>
+            <div class="model-size">Runs on your own computer</div>
+            <ul>
+                <li class="pros">✅ <strong>Completely FREE</strong> - no API costs ever</li>
+                <li class="pros">✅ <strong>100% Private</strong> - your questions never leave your computer</li>
+                <li class="pros">✅ <strong>Works Offline</strong> - no internet needed after setup</li>
+                <li class="pros">✅ <strong>No Rate Limits</strong> - ask unlimited questions</li>
+                <li class="cons">❌ <strong>Slower</strong> - takes 5-30 seconds per response (depends on your computer)</li>
+                <li class="cons">❌ <strong>Requires Good Hardware</strong> - needs modern computer with 8GB+ RAM</li>
+                <li class="cons">❌ <strong>Quality Varies</strong> - small models aren't as smart as Claude</li>
+                <li class="cons">❌ <strong>Initial Setup Required</strong> - 10-20 minutes to install and download models</li>
+            </ul>
+        </div>
+
+        <div class="model-card">
+            <div class="model-name">☁️ Claude API</div>
+            <div class="model-size">Anthropic's cloud service (pay-per-use)</div>
+            <ul>
+                <li class="pros">✅ <strong>Best Quality</strong> - most accurate and helpful responses</li>
+                <li class="pros">✅ <strong>Very Fast</strong> - responses in 2-5 seconds</li>
+                <li class="pros">✅ <strong>Works Anywhere</strong> - no special hardware needed</li>
+                <li class="pros">✅ <strong>Latest AI Technology</strong> - uses state-of-the-art models</li>
+                <li class="cons">❌ <strong>Costs Money</strong> - approximately $0.15 per conversation (10-20 messages)</li>
+                <li class="cons">❌ <strong>Requires API Credits</strong> - must add funds to Anthropic account</li>
+                <li class="cons">❌ <strong>Needs Internet</strong> - won't work offline</li>
+                <li class="cons">❌ <strong>Rate Limits</strong> - may hit daily/hourly limits on free tier</li>
+            </ul>
+        </div>
+
+        <div class="model-card">
+            <div class="model-name">🎓 SciQuant Cloud AI</div>
+            <div class="model-size">Course-provided hosted service</div>
+            <ul>
+                <li class="pros">✅ <strong>FREE for Students</strong> - no cost for SCIE1500</li>
+                <li class="pros">✅ <strong>High Quality</strong> - similar to Claude</li>
+                <li class="pros">✅ <strong>Fast Responses</strong> - 3-8 seconds typically</li>
+                <li class="pros">✅ <strong>No Setup</strong> - works immediately in the app</li>
+                <li class="pros">✅ <strong>Course-Optimized</strong> - trained on SCIE1500 content</li>
+                <li class="cons">❌ <strong>Requires Internet</strong> - must be online</li>
+                <li class="cons">❌ <strong>May Have Queue</strong> - slower during peak times (5pm-10pm)</li>
+                <li class="cons">❌ <strong>Usage Limits</strong> - fair use policy (typically 50 messages/day)</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>💡 Recommendation:</strong> Try <strong>SciQuant Cloud</strong> first. If it's slow or unavailable, switch to <strong>Ollama</strong> (follow this guide). Only use Claude API if you already have credits or need the absolute best quality.
+        </div>
+
+        <!-- ============================================================ -->
+        <h2>🚀 Installing Ollama - Step by Step</h2>
+
+        <h3>For Mac Users</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Download Ollama</strong>
+            <p>Visit <a href="https://ollama.com/download" target="_blank">ollama.com/download</a> and click the <strong>Download for Mac</strong> button.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Install the App</strong>
+            <p>Open the downloaded <code>Ollama.dmg</code> file and drag Ollama to your Applications folder (just like any Mac app).</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Launch Ollama</strong>
+            <p>Open Ollama from your Applications folder. You'll see a small llama icon 🦙 appear in your menu bar at the top of the screen.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>Verify It's Running</strong>
+            <p>Open Terminal (search for "Terminal" in Spotlight) and type:</p>
+            <pre><code>ollama --version</code></pre>
+            <p>You should see something like <code>ollama version 0.1.23</code></p>
+        </div>
+
+        <h3>For Windows Users</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Download Ollama</strong>
+            <p>Visit <a href="https://ollama.com/download" target="_blank">ollama.com/download</a> and click the <strong>Download for Windows</strong> button.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Run the Installer</strong>
+            <p>Double-click the downloaded <code>OllamaSetup.exe</code> file. Click <strong>Yes</strong> if Windows asks for permission.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Follow the Wizard</strong>
+            <p>Click <strong>Next</strong> → <strong>Install</strong> → <strong>Finish</strong>. Ollama will start automatically and appear in your system tray (bottom-right corner).</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>Verify It's Running</strong>
+            <p>Open Command Prompt (search for "cmd" in Start menu) and type:</p>
+            <pre><code>ollama --version</code></pre>
+            <p>You should see the version number displayed.</p>
+        </div>
+
+        <h3>For Linux Users</h3>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Open Terminal</strong>
+            <p>Press <code>Ctrl+Alt+T</code> to open a terminal window.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Install Ollama</strong>
+            <p>Copy and paste this command, then press Enter:</p>
+            <pre><code>curl -fsSL https://ollama.com/install.sh | sh</code></pre>
+            <p>This will download and install Ollama automatically.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Start the Service</strong>
+            <p>Ollama should start automatically. If not, run:</p>
+            <pre><code>ollama serve</code></pre>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>Verify Installation</strong>
+            <p>Open a new terminal and type:</p>
+            <pre><code>ollama --version</code></pre>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2>📥 Downloading AI Models in SciQuant</h2>
+
+        <p>Now that Ollama is installed, you need to download an AI model. Think of models like different tutors - some are faster but simpler, others are slower but smarter.</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Open SciQuant App</strong>
+            <p>Launch the SciQuant Assistant app on your computer.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Navigate to Settings</strong>
+            <p>Click the <strong>Profile</strong> tab (bottom of screen) → <strong>Settings</strong> gear icon.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Go to AI Backend Settings</strong>
+            <p>Scroll down and tap <strong>AI & Chat</strong> → <strong>AI Backend</strong>.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>Select Ollama</strong>
+            <p>You'll see three backend options. Tap the <strong>Ollama (Local)</strong> card.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">5</span>
+            <strong>Check Connection</strong>
+            <p>The app will show "✅ Connected to Ollama" if everything is working. If you see "❌ Cannot connect," make sure Ollama is running (look for the llama icon in your menu bar/system tray).</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">6</span>
+            <strong>Browse Available Models</strong>
+            <p>You'll see a list of recommended models. Each shows:</p>
+            <ul>
+                <li><strong>Name</strong> - the model identifier</li>
+                <li><strong>Size</strong> - how much disk space it needs</li>
+                <li><strong>Speed</strong> - how fast it responds</li>
+                <li><strong>Quality</strong> - how good the answers are</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="step-number">7</span>
+            <strong>Choose and Download a Model</strong>
+            <p>Tap the <strong>Download</strong> button next to your chosen model. The download will start and show progress.</p>
+            <div class="info-box">
+                <strong>First time?</strong> Start with <code>llama3.2:3b</code> - it's a good balance of speed and quality.
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">8</span>
+            <strong>Wait for Download</strong>
+            <p>Downloading takes 5-20 minutes depending on model size and your internet speed. The app will show a progress bar.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">9</span>
+            <strong>Select the Model</strong>
+            <p>Once downloaded, tap <strong>Use This</strong> to activate the model. You'll see "✅ Selected" next to the model name.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">10</span>
+            <strong>Test It Out!</strong>
+            <p>Go back to the home screen, tap any week, and click <strong>Chat with AI Tutor</strong>. Ask a question and see your local AI respond!</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2>🎯 Which Model Should You Download?</h2>
+
+        <p>Here are the recommended models, from fastest (but less smart) to slowest (but smarter):</p>
+
+        <div class="model-card">
+            <div class="model-name">llama3.2:1b</div>
+            <div class="model-size">📦 Size: 1.3 GB | ⚡ Speed: Very Fast (2-5 seconds)</div>
+            <p><strong>Best for:</strong> Quick questions, definitions, simple calculations</p>
+            <p><strong>Quality:</strong> ⭐⭐⭐ Decent - good for basic help but may struggle with complex problems</p>
+            <p><strong>RAM needed:</strong> 4GB minimum</p>
+        </div>
+
+        <div class="model-card">
+            <div class="model-name">llama3.2:3b</div>
+            <div class="model-size">📦 Size: 2.0 GB | ⚡ Speed: Fast (5-10 seconds)</div>
+            <p><strong>Best for:</strong> Most students - general tutoring, step-by-step guidance</p>
+            <p><strong>Quality:</strong> ⭐⭐⭐⭐ Good - handles most SCIE1500 topics well</p>
+            <p><strong>RAM needed:</strong> 6GB minimum</p>
+            <p style="color: #2e7d32; font-weight: bold;">👍 RECOMMENDED FOR MOST STUDENTS</p>
+        </div>
+
+        <div class="model-card">
+            <div class="model-name">phi3:mini</div>
+            <div class="model-size">📦 Size: 2.3 GB | ⚡ Speed: Fast (5-10 seconds)</div>
+            <p><strong>Best for:</strong> Math-heavy questions, logical reasoning</p>
+            <p><strong>Quality:</strong> ⭐⭐⭐⭐ Good - especially strong at mathematics</p>
+            <p><strong>RAM needed:</strong> 6GB minimum</p>
+        </div>
+
+        <div class="model-card">
+            <div class="model-name">mistral:7b</div>
+            <div class="model-size">📦 Size: 4.1 GB | ⚡ Speed: Medium (10-20 seconds)</div>
+            <p><strong>Best for:</strong> Complex explanations, detailed answers</p>
+            <p><strong>Quality:</strong> ⭐⭐⭐⭐⭐ Excellent - close to Claude quality</p>
+            <p><strong>RAM needed:</strong> 8GB minimum</p>
+            <p style="color: #1565c0; font-weight: bold;">💎 BEST QUALITY (if you have a good computer)</p>
+        </div>
+
+        <div class="model-card">
+            <div class="model-name">llama3.1:8b</div>
+            <div class="model-size">📦 Size: 4.7 GB | ⚡ Speed: Slower (15-30 seconds)</div>
+            <p><strong>Best for:</strong> Maximum quality for difficult topics</p>
+            <p><strong>Quality:</strong> ⭐⭐⭐⭐⭐ Excellent - very detailed and accurate</p>
+            <p><strong>RAM needed:</strong> 10GB minimum</p>
+        </div>
+
+        <div class="info-box">
+            <strong>💡 Pro Tip:</strong> You can download multiple models! Switch between them in Settings depending on whether you want speed (smaller models) or quality (larger models).
+        </div>
+
+        <!-- ============================================================ -->
+        <h2>❓ Common Questions & Troubleshooting</h2>
+
+        <h3>Q: How do I know if Ollama is running?</h3>
+        <p><strong>Mac:</strong> Look for the llama 🦙 icon in your menu bar (top-right corner).</p>
+        <p><strong>Windows:</strong> Look for the Ollama icon in your system tray (bottom-right, near the clock).</p>
+        <p><strong>Linux:</strong> Run <code>ollama list</code> in terminal. If it shows output, it's running.</p>
+
+        <h3>Q: SciQuant says "Cannot connect to Ollama"</h3>
+        <p><strong>Solution:</strong></p>
+        <ol>
+            <li>Make sure Ollama is running (see above)</li>
+            <li>Try restarting Ollama (quit and reopen the app)</li>
+            <li>Check if port 11434 is available: open your browser and go to <code>http://localhost:11434</code> - you should see "Ollama is running"</li>
+            <li>On Mac/Linux, try running <code>ollama serve</code> in Terminal to start it manually</li>
+        </ol>
+
+        <h3>Q: Model download is very slow or stuck</h3>
+        <p><strong>Solution:</strong></p>
+        <ol>
+            <li>Check your internet connection</li>
+            <li>Cancel the download and try again</li>
+            <li>Download via terminal instead: <code>ollama pull llama3.2:3b</code></li>
+            <li>If it keeps failing, try a smaller model first (llama3.2:1b)</li>
+        </ol>
+
+        <h3>Q: AI responses are very slow on my computer</h3>
+        <p><strong>Solution:</strong></p>
+        <ol>
+            <li>Switch to a smaller/faster model (llama3.2:1b instead of mistral:7b)</li>
+            <li>Close other applications to free up RAM</li>
+            <li>Make sure your laptop is plugged in (not on battery power)</li>
+            <li>Consider using SciQuant Cloud instead if your computer is too slow</li>
+        </ol>
+
+        <h3>Q: Do I need GPU for Ollama?</h3>
+        <p><strong>Answer:</strong> No! Ollama works fine with just CPU (processor). If you have a GPU (graphics card), Ollama will automatically use it to go faster, but it's not required.</p>
+
+        <h3>Q: Can I use Ollama offline?</h3>
+        <p><strong>Answer:</strong> Yes! Once you've downloaded a model, you can use Ollama completely offline. No internet needed. Perfect for studying in places with poor WiFi.</p>
+
+        <h3>Q: How much disk space do I need?</h3>
+        <p><strong>Answer:</strong> Minimum 5GB free space. Ideally 10GB+ to download multiple models.</p>
+
+        <h3>Q: Will Ollama drain my laptop battery?</h3>
+        <p><strong>Answer:</strong> Yes, running AI models uses more power than normal apps. When using Ollama on battery:</p>
+        <ul>
+            <li>Expect 30-50% more battery drain</li>
+            <li>Use smaller models (llama3.2:1b or :3b)</li>
+            <li>Plug in when possible for longer study sessions</li>
+        </ul>
+
+        <!-- ============================================================ -->
+        <h2>💳 About Claude API Costs and Errors</h2>
+
+        <h3>Understanding Claude API Billing</h3>
+
+        <div class="error-box">
+            <strong>⚠️ Common Error: 400 Bad Request</strong>
+            <p>If a student gets a <strong>400 error</strong> when using Claude API, this is usually NOT about money. Here are the real causes:</p>
+        </div>
+
+        <h3>What Causes a 400 Error from Claude?</h3>
+
+        <ol>
+            <li><strong>Invalid API Key Format</strong>
+                <ul>
+                    <li>The API key must start with <code>sk-ant-</code></li>
+                    <li>Check for extra spaces before/after the key when pasting</li>
+                    <li>Make sure the entire key was copied (Claude API keys are long!)</li>
+                </ul>
+            </li>
+            
+            <li><strong>API Key Not Activated</strong>
+                <ul>
+                    <li>After creating an API key on <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>, you must add credits first</li>
+                    <li>Go to Settings → Billing → Add Credit (minimum $5 USD)</li>
+                    <li>Wait 2-3 minutes after adding credit for it to activate</li>
+                </ul>
+            </li>
+
+            <li><strong>Request Format Error</strong>
+                <ul>
+                    <li>This is usually an app bug, not a user error</li>
+                    <li>Make sure SciQuant app is updated to latest version</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>About Claude API Costs</h3>
+
+        <div class="info-box">
+            <p><strong>Claude API Pricing (approximate):</strong></p>
+            <ul>
+                <li>Input: $3 per million tokens (~750,000 words)</li>
+                <li>Output: $15 per million tokens</li>
+                <li><strong>Real-world cost:</strong> About $0.01-0.02 per conversation (10-20 messages)</li>
+                <li><strong>$5 credit</strong> = approximately 250-500 tutoring conversations</li>
+            </ul>
+        </div>
+
+        <p><strong>Minimum Balance:</strong> Anthropic requires a minimum credit purchase of <strong>$5 USD</strong>. This is a one-time payment that gets used as you send messages.</p>
+
+        <h3>When You'll Get 401 vs 400 vs 429 Errors:</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Code</th>
+                    <th>What It Means</th>
+                    <th>How to Fix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>400</strong></td>
+                    <td>Bad Request - something wrong with how the request was formatted</td>
+                    <td>Check API key format, make sure credits are added, update app</td>
+                </tr>
+                <tr>
+                    <td><strong>401</strong></td>
+                    <td>Unauthorized - API key is invalid or expired</td>
+                    <td>Generate new API key at console.anthropic.com</td>
+                </tr>
+                <tr>
+                    <td><strong>429</strong></td>
+                    <td>Rate Limit - too many requests too quickly</td>
+                    <td>Wait 1 minute and try again</td>
+                </tr>
+                <tr>
+                    <td><strong>402</strong></td>
+                    <td>Payment Required - account balance is $0</td>
+                    <td>Add more credits to your account</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How Students Can Set Up Claude API</h3>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Create Anthropic Account</strong>
+            <p>Go to <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> and sign up (free to create account).</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Add Billing Credits</strong>
+            <p>Go to Settings → Billing → Add Credit. Enter payment details and add at least $5 USD.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Create API Key</strong>
+            <p>Go to Settings → API Keys → Create Key. Give it a name like "SciQuant App" and copy the key.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>Enter Key in SciQuant</strong>
+            <p>Open SciQuant → Profile → Settings → AI & Chat → AI Backend → Claude API → paste your key.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">5</span>
+            <strong>Test Connection</strong>
+            <p>The app will show "✅ Connected" if the key is valid. Then try sending a test message!</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2>✅ Quick Decision Guide</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Your Situation</th>
+                    <th>Recommended Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>I want free AI help and have a decent computer (8GB+ RAM)</td>
+                    <td><strong>Ollama</strong> with llama3.2:3b model</td>
+                </tr>
+                <tr>
+                    <td>I want the simplest setup, no downloads</td>
+                    <td><strong>SciQuant Cloud</strong> (if available)</td>
+                </tr>
+                <tr>
+                    <td>I need help during peak times when SciQuant Cloud is slow</td>
+                    <td><strong>Ollama</strong> as backup</td>
+                </tr>
+                <tr>
+                    <td>I need the absolute best quality answers for complex topics</td>
+                    <td><strong>Claude API</strong> ($5 credit lasts months)</td>
+                </tr>
+                <tr>
+                    <td>I have an older/slower computer (4GB RAM)</td>
+                    <td><strong>SciQuant Cloud</strong> or Claude API</td>
+                </tr>
+                <tr>
+                    <td>I study in places with no internet</td>
+                    <td><strong>Ollama</strong> (works offline)</td>
+                </tr>
+                <tr>
+                    <td>I want to try everything</td>
+                    <td>Install Ollama + keep SciQuant Cloud as backup!</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box">
+            <strong>🎯 Bottom Line:</strong> Most SCIE1500 students should start with <strong>SciQuant Cloud</strong>, install <strong>Ollama with llama3.2:3b</strong> as a backup for peak times or offline studying, and only consider Claude API if they need premium quality and already have API credits.
+        </div>
+
+        <!-- ============================================================ -->
+        <h2>📞 Need More Help?</h2>
+
+        <p>If you're still stuck after following this guide:</p>
+
+        <ul>
+            <li><strong>Post in the Discussion Forum</strong> - other students might have solved the same issue</li>
+            <li><strong>Come to Lab Sessions</strong> - demonstrators can help troubleshoot in person</li>
+            <li><strong>Email the Instructor</strong> - for API/account issues</li>
+            <li><strong>Check Ollama Documentation</strong> - <a href="https://github.com/ollama/ollama" target="_blank">github.com/ollama/ollama</a></li>
+        </ul>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #e0e0e0;">
+
+        <p style="text-align: center; color: #666; font-size: 0.9em;">
+            Last updated: 1 March 2026<br>
+            SCIE1500 - Analytical Methods for Scientists<br>
+            The University of Western Australia
+        </p>
+    </div>
+</body>
+</html>

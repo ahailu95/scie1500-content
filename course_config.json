@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.4.7",
-  "lastUpdated": "2026-02-26T12:00:00+08:00",
+  "version": "2.4.8",
+  "lastUpdated": "2026-03-01T14:30:00+08:00",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -187,6 +187,15 @@
           "description": "Interactive notebook with exponential/logarithmic functions and plastic production modeling",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_2/lesson_and_code_week2.ipynb",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w2_ollama_guide",
+          "title": "🤖 AI Tutor Setup Guide: Ollama for Beginners",
+          "description": "Complete guide to installing Ollama, downloading AI models, and using local AI tutoring in SciQuant. Includes comparisons with Claude API and troubleshooting.",
+          "type": "reading",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_2/OLLAMA_SETUP_GUIDE.html",
           "source": "custom",
           "requiresAuth": false
         }
