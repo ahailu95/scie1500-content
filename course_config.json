@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.4.8",
-  "lastUpdated": "2026-03-01T14:30:00+08:00",
+  "version": "2.4.9",
+  "lastUpdated": "2026-03-03T00:00:00+08:00",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -200,7 +200,35 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w2_video_1",
+          "title": "Exponential and Logarithmic Functions: Part 1 (The Number e)",
+          "description": "Lecture recording: introduction to the number e and its role in exponential functions",
+          "type": "video",
+          "url": "https://echo360.net.au/media/ea48fb9c-4378-463b-a800-594ab295484e/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w2_video_2",
+          "title": "Exponential and Logarithmic Functions: Part 2 (Exponential Functions)",
+          "description": "Lecture recording: exponential functions, growth and decay models",
+          "type": "video",
+          "url": "https://echo360.net.au/media/ac1fe1b8-f3b0-424c-9d2a-dc4cdf5ecfdc/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w2_video_3",
+          "title": "Exponential and Logarithmic Functions: Part 3 (Logarithmic Functions)",
+          "description": "Lecture recording: logarithmic functions, log laws, and applications",
+          "type": "video",
+          "url": "https://echo360.net.au/media/e09d13be-5b96-481c-8483-c77a74cc56dc/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
