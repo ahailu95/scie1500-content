@@ -861,5 +861,11 @@
       ]
     }
   },
-  "ragDocumentUrls": []
+  "ragDocumentUrls": [],
+  "github": {
+    "org": "SCIE1500-2026-S1",
+    "repoPattern": "week{week}-worksheet-{team}",
+    "worksheetFiles": ["WORKSHEET.md", "REFLECTION.md"],
+    "totalWeeks": 12
+  }
 }
