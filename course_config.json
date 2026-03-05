@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "lastUpdated": "2026-03-05",
   "institution": {
     "id": "uwa",
@@ -889,5 +889,14 @@
       ]
     }
   },
-  "ragDocumentUrls": []
+  "ragDocumentUrls": [],
+  "referenceMaterials": [
+    {
+      "id": "lab_handbook",
+      "title": "Lab Handbook",
+      "description": "Lab structure, assessment, problem briefs with weekly tabs",
+      "url": "https://lms.uwa.edu.au/bbcswebdav/xid-70145191_1",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/SCIE1500_Student_Handbook_with_weekly_tabs.html"
+    }
+  ]
 }
