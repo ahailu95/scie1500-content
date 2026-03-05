@@ -1,6 +1,6 @@
 {
-  "version": "2.3.0",
-  "lastUpdated": "2026-03-05T09:00:00+08:00",
+  "version": "2.3.1",
+  "lastUpdated": "2026-03-05T10:00:00+08:00",
   
   "announcements": [
     {
@@ -24,14 +24,6 @@
       "relatedWeek": 2,
       "actionUrl": "https://lms.uwa.edu.au",
       "actionLabel": "Go to LMS"
-    },
-    {
-      "id": "app-update-beta6",
-      "title": "App Update Available — Download New Version from LMS",
-      "message": "A new version of SciQuant Assistant is now available on the LMS.\n\n**What's new:**\n• You can now select a **secondary discipline** alongside your primary one — perfect for double majors! The AI tutor will tailor examples to both your fields.\n• Bug fix: Notebook downloads now work correctly.\n\n**How to update:**\n1. Download the new ZIP from the LMS Downloads section\n2. Replace your existing app with the new version\n3. Your profile and settings will be preserved\n\nIf you haven't downloaded the app yet, just grab the latest version — no action needed.",
-      "publishedAt": "2026-02-22T18:00:00+08:00",
-      "priority": "important",
-      "category": "general"
     },
     {
       "id": "welcome-2026",
@@ -62,19 +54,6 @@
       "priority": "urgent",
       "category": "schedule",
       "relatedWeek": 1
-    },
-    {
-      "id": "assignment1-released",
-      "title": "Assignment 1 Now Available on LMS",
-      "message": "Assignment 1 has been released on the LMS.\n\n**Due:** Wednesday 1 April at 11:59 PM\n**Weight:** 15%\n**Covers:** Weeks 1-5 material\n\nStart early! Details and submission portal are on the LMS.\n\nReminder: Assessment submissions are due at 11:59 PM (not 3:59 PM or 5:00 PM).",
-      "publishedAt": "2026-03-04T09:00:00+08:00",
-      "expiresAt": "2026-04-02T00:00:00+08:00",
-      "priority": "important",
-      "category": "assessment",
-      "relatedWeek": 2,
-      "relatedAssessmentId": "assignment1",
-      "actionUrl": "https://lms.uwa.edu.au",
-      "actionLabel": "View Assignment"
     },
     {
       "id": "mid-sem-break",
