@@ -15,10 +15,10 @@
     },
     {
       "id": "github-survey-reminder",
-      "title": "GitHub Username Survey — Complete by Friday 7 March",
-      "message": "Thanks to those who have already completed the Survey in the LMS to provide their GitHub username.\n\nThe rest of you, please go to the LMS and complete the survey by **Friday 07/03/26**.",
+      "title": "GitHub Username Survey — Complete by Friday 6 March",
+      "message": "Thanks to those who have already completed the Survey in the LMS to provide their GitHub username.\n\nThe rest of you, please go to the LMS and complete the survey by **Friday 06/03/26**.",
       "publishedAt": "2026-03-05T09:00:00+08:00",
-      "expiresAt": "2026-03-07T23:59:00+08:00",
+      "expiresAt": "2026-03-06T23:59:00+08:00",
       "priority": "important",
       "category": "general",
       "relatedWeek": 2,
