@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.5.6",
+  "version": "2.5.7",
   "lastUpdated": "2026-03-05",
   "institution": {
     "id": "uwa",
@@ -288,6 +288,15 @@
           "description": "Lecture recording: the Schaefer model, carrying capacity, and Maximum Sustainable Yield",
           "type": "video",
           "url": "https://echo360.net.au/media/12ba1c60-293e-4a86-9924-ec4665cf0c73/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w3_video_2",
+          "title": "Logistic functions and other topics in lesson 4",
+          "description": "Lecture recording: logistic functions and additional topics covered in lesson 4",
+          "type": "video",
+          "url": "https://echo360.net.au/media/764ef4d8-e496-4534-a5bb-d41d94cad0b7/public",
           "source": "custom",
           "requiresAuth": false
         }
