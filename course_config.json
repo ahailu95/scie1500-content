@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.5.9",
-  "lastUpdated": "2026-03-10",
+  "version": "2.6.0",
+  "lastUpdated": "2026-03-11",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -908,5 +908,16 @@
       "url": "https://ahailu95.github.io/scie1500-content/SCIE1500Materials/SCIE1500_Student_Handbook_with_weekly_tabs.html",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/SCIE1500_Student_Handbook_with_weekly_tabs.html"
     }
-  ]
+  ],
+  "github": {
+    "org": "SCIE1500-2026-S1",
+    "repoPattern": "week{week}-worksheet-{team}",
+    "worksheetFiles": ["WORKSHEET.md"],
+    "privateFiles": {
+      "REFLECTION.md": [1, 9, 10, 11, 12],
+      "PEER_CONTRIBUTION.md": [2, 3, 4, 5, 6, 7, 8]
+    },
+    "privateRepoPattern": "private-{username}",
+    "totalWeeks": 12
+  }
 }
