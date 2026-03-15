@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.6.0",
-  "lastUpdated": "2026-03-11",
+  "version": "2.7.0",
+  "lastUpdated": "2026-03-15",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -26,7 +26,7 @@
         },
         {
           "id": "w0_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Mathematical Foundations",
+          "title": "📚 Lesson with Code: Mathematical Foundations",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_0/lesson_and_code_week0.ipynb",
@@ -102,7 +102,7 @@
         },
         {
           "id": "w1_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Functions & Ocean Plastics",
+          "title": "📚 Lesson with Code: Functions & Ocean Plastics",
           "description": "Interactive notebook with theory and real-world ocean plastic data analysis",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_1/lesson_and_code_week1.ipynb",
@@ -183,7 +183,7 @@
         },
         {
           "id": "w2_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Exponential Growth & Modeling",
+          "title": "📚 Lesson with Code: Exponential Growth & Modeling",
           "description": "Interactive notebook with exponential/logarithmic functions and plastic production modeling",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_2/lesson_and_code_week2.ipynb",
@@ -273,7 +273,7 @@
         },
         {
           "id": "w3_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Logistic Functions & Growth Models",
+          "title": "📚 Lesson with Code: Logistic Functions & Growth Models",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_3/lesson_and_code_week3.ipynb",
@@ -348,13 +348,13 @@
           "title": "Week 4: Limits, Continuity, and Introduction to Derivatives",
           "description": "Limits, continuity, derivatives as instantaneous rates of change, and numerical differentiation",
           "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_4/week4_lesson.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_4/week4_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
           "id": "w4_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Limits & Derivatives",
+          "title": "📚 Lesson with Code: Limits & Derivatives",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_4/lesson_and_code_week4.ipynb",
@@ -410,13 +410,13 @@
           "title": "Week 5: Differentiation Techniques and Optimization",
           "description": "Differentiation rules (product, quotient, chain), critical points, and optimization with SymPy",
           "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_5/week5_lesson.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_5/week5_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
           "id": "w5_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Differentiation & Optimization",
+          "title": "📚 Lesson with Code: Differentiation & Optimization",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_5/lesson_and_code_week5.ipynb",
@@ -472,13 +472,13 @@
           "title": "Week 6: Introduction to Integration",
           "description": "Antiderivatives, the power rule for integration, definite integrals, and area under curves",
           "type": "lectureNotes",
-          "url": "asset://SCIE1500Materials/Week_6/week6_lesson.md",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_6/week6_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
         {
           "id": "w6_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Introduction to Integration",
+          "title": "📚 Lesson with Code: Introduction to Integration",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_6/lesson_and_code_week6.ipynb",
@@ -540,7 +540,7 @@
         },
         {
           "id": "w7_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Definite Integrals & FTC",
+          "title": "📚 Lesson with Code: Definite Integrals & FTC",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_7/lesson_and_code_week7.ipynb",
@@ -602,7 +602,7 @@
         },
         {
           "id": "w8_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Predator-Prey Dynamics",
+          "title": "📚 Lesson with Code: Predator-Prey Dynamics",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_8/lesson_and_code_week8.ipynb",
@@ -664,7 +664,7 @@
         },
         {
           "id": "w9_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Probability Foundations",
+          "title": "📚 Lesson with Code: Probability Foundations",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_9/lesson_and_code_week9.ipynb",
@@ -726,7 +726,7 @@
         },
         {
           "id": "w10_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Random Variables & Hypothesis Testing",
+          "title": "📚 Lesson with Code: Random Variables & Hypothesis Testing",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_10/lesson_and_code_week10.ipynb",
@@ -788,7 +788,7 @@
         },
         {
           "id": "w11_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Trigonometry & Periodic Models",
+          "title": "📚 Lesson with Code: Trigonometry & Periodic Models",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_11/lesson_and_code_week11.ipynb",
@@ -850,7 +850,7 @@
         },
         {
           "id": "w12_integrated_lesson",
-          "title": "\ud83d\udcda Lesson with Code: Linear Programming & Optimization",
+          "title": "📚 Lesson with Code: Linear Programming & Optimization",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_12/lesson_and_code_week12.ipynb",
@@ -912,10 +912,26 @@
   "github": {
     "org": "SCIE1500-2026-S1",
     "repoPattern": "week{week}-worksheet-{team}",
-    "worksheetFiles": ["WORKSHEET.md"],
+    "worksheetFiles": [
+      "WORKSHEET.md"
+    ],
     "privateFiles": {
-      "REFLECTION.md": [1, 9, 10, 11, 12],
-      "PEER_CONTRIBUTION.md": [2, 3, 4, 5, 6, 7, 8]
+      "REFLECTION.md": [
+        1,
+        9,
+        10,
+        11,
+        12
+      ],
+      "PEER_CONTRIBUTION.md": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
     },
     "privateRepoPattern": "private-{username}",
     "totalWeeks": 12
