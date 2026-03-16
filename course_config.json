@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.7.0",
-  "lastUpdated": "2026-03-15",
+  "version": "2.8.0",
+  "lastUpdated": "2026-03-16",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -362,7 +362,17 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w4_video_1",
+          "title": "Limits, continuity and introduction to derivatives (Part 1)",
+          "description": "Lecture recording: limits, continuity and introduction to derivatives",
+          "type": "video",
+          "url": "https://echo360.net.au/media/0e069436-16b4-419d-bdf1-294d1197b9df/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
