@@ -156,11 +156,11 @@ Now let's walk through the entire process from start to finish.
 
 ---
 
-### Step 4: Commit Your Work
+### Step 4: Save Your Work
 
-1. When you want to save a checkpoint, tap the **"Commit"** button (top-right of the editor).
-2. A confirmation appears briefly at the bottom: *"Committed successfully — commit ID: a3f9c2d"*.
-3. You can continue editing after committing. Commit as many times as you like.
+1. When you want to save a checkpoint, tap the **"Save"** button (top-right of the editor, cloud-upload icon).
+2. A panel slides up confirming the save with a short commit ID (e.g. `a3f9c2d`) and a **"Submit"** shortcut button.
+3. You can continue editing after saving. Save as many times as you like.
 
 **What is happening (in detail):**
 - SciQuant checks whether the branch `assignment1-work` exists in your repo. If not, it creates it automatically.
@@ -174,11 +174,12 @@ Now let's walk through the entire process from start to finish.
 
 ---
 
-### Step 5: Create a Pull Request (Submit Your Assignment)
+### Step 5: Submit Your Assignment (Create a Pull Request)
 
-1. After committing, SciQuant shows a banner: **"Work saved — Create Pull Request?"** Tap **"Create PR"**.
-2. Alternatively, tap the three-dots menu (⋮) in the assignment editor and choose **"Create Pull Request"**.
-3. A dialog confirms: *"Pull Request created from assignment1-work → main"*. Tap **"View on GitHub"** to see it in your browser.
+1. Tap the **"Submit"** button in the top-right of the editor (next to the Save button). It is always visible — you do not need to save first.
+2. A panel slides up confirming the submission with a PR number (e.g. *"Submitted — #12"*). Tap **"View on GitHub"** to see it in your browser.
+
+> **Already submitted?** If you tap Submit and a Pull Request already exists, SciQuant shows a teal information panel: *"Already open — #12"*. This is **not an error** — it means your work is already submitted. You can tap "View on GitHub" to check its status, or simply dismiss the panel and keep editing.
 
 **What is happening:**
 - SciQuant calls GitHub's API to create a PR from your `assignment1-work` branch to `main`.
