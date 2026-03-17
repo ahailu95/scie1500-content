@@ -53,7 +53,7 @@ main ─────────────────────────
          └── work branch ─── edit ─── edit ─── edit ─── (your draft, only you see this)
 ```
 
-**In SciQuant's words:** when you open your assignment in the app, it is automatically working on a branch called something like `assignment-work`. You never have to create this yourself — SciQuant handles it.
+**In SciQuant's words:** when you open your assignment in the app, it is automatically working on a branch called something like `week01-work`. You never have to create this yourself — SciQuant handles it.
 
 **On the GitHub website:** you can see branches by clicking the branch selector dropdown near the top-left of your repo page (it usually shows "main" by default). If you have started working, you should see a second branch listed.
 
@@ -163,12 +163,12 @@ Now let's walk through the entire process from start to finish.
 3. You can continue editing after committing. Commit as many times as you like.
 
 **What is happening (in detail):**
-- SciQuant checks whether the branch `assignment-work` exists in your repo. If not, it creates it automatically.
+- SciQuant checks whether the branch `week01-work` exists in your repo. If not, it creates it automatically.
 - It retrieves the current SHA (unique ID) of the `ANSWERS.md` file from GitHub.
 - It sends your new file content to GitHub via the Contents API.
 - GitHub stores a permanent snapshot.
 
-**On the GitHub website:** Go to your repo → switch branch from `main` to `assignment-work` (using the branch dropdown). Your updated `ANSWERS.md` is now visible. Click **"commits"** (the clock icon) to see each commit.
+**On the GitHub website:** Go to your repo → switch branch from `main` to `week01-work` (using the branch dropdown). Your updated `ANSWERS.md` is now visible. Click **"commits"** (the clock icon) to see each commit.
 
 > **Tip:** Commit regularly — at least after completing each question. If you accidentally type over something important, you can always ask your instructor to recover an earlier version.
 
@@ -178,10 +178,10 @@ Now let's walk through the entire process from start to finish.
 
 1. After committing, SciQuant shows a banner: **"Work saved — Create Pull Request?"** Tap **"Create PR"**.
 2. Alternatively, tap the three-dots menu (⋮) in the assignment editor and choose **"Create Pull Request"**.
-3. A dialog confirms: *"Pull Request created from assignment-work → main"*. Tap **"View on GitHub"** to see it in your browser.
+3. A dialog confirms: *"Pull Request created from week01-work → main"*. Tap **"View on GitHub"** to see it in your browser.
 
 **What is happening:**
-- SciQuant calls GitHub's API to create a PR from your `assignment-work` branch to `main`.
+- SciQuant calls GitHub's API to create a PR from your `week01-work` branch to `main`.
 - The PR title is set automatically (e.g., *"Assignment 1 — yourusername"*).
 - This PR is the official record of your submission and the channel through which you receive feedback.
 
@@ -193,7 +193,7 @@ Now let's walk through the entire process from start to finish.
    - The **"Commits"** tab — lists every commit you made.
    - The **"Conversation"** tab — where your instructor will leave comments and your marks.
 
-> **Important:** Creating a Pull Request does NOT "lock" your submission. You can continue to push commits to `assignment-work` and they will automatically appear in the PR. The instructor marks whatever is there at the due date. So create the PR early and keep updating it.
+> **Important:** Creating a Pull Request does NOT "lock" your submission. You can continue to push commits to `week01-work` and they will automatically appear in the PR. The instructor marks whatever is there at the due date. So create the PR early and keep updating it.
 
 ---
 
@@ -219,10 +219,10 @@ When you tap "Commit" or "Create PR" in SciQuant, it is silently handling all of
 
 | What SciQuant Does Automatically | The Equivalent Manual Command |
 |----------------------------------|-------------------------------|
-| Creates the `assignment-work` branch if it doesn't exist | `git checkout -b assignment-work` |
+| Creates the `week01-work` branch if it doesn't exist | `git checkout -b week01-work` |
 | Checks the current file SHA to avoid overwriting conflicts | `git fetch origin` |
 | Uploads your file changes to GitHub | `git add ANSWERS.md && git commit -m "..."` |
-| Pushes the change to GitHub | `git push origin assignment-work` |
+| Pushes the change to GitHub | `git push origin week01-work` |
 | Creates the Pull Request | Done via GitHub website or `gh pr create` |
 | Shows inline instructor comments from the PR | Viewing PR reviews on GitHub website |
 
@@ -247,7 +247,7 @@ If you were working on two devices, choose **Reload** on the older device. If yo
 
 **Q: Do I need to create the PR before the due date, or just have commits?**
 
-You need to create the PR. Commits sitting on the `assignment-work` branch without a PR are not considered a submission — they are like a draft that was never handed in. Create the PR early; you can keep editing afterward.
+You need to create the PR. Commits sitting on the `week01-work` branch without a PR are not considered a submission — they are like a draft that was never handed in. Create the PR early; you can keep editing afterward.
 
 ---
 
@@ -271,7 +271,7 @@ Tap the team name and manually type your team name (or in the case of A1, leave 
 
 **Q: I want to see what my submission looks like right now. How?**
 
-Go to your repo on the GitHub website → click the **`assignment-work`** branch → click `ANSWERS.md`. You will see your file rendered nicely (Markdown is displayed as formatted text on GitHub).
+Go to your repo on the GitHub website → click the **`week01-work`** branch → click `ANSWERS.md`. You will see your file rendered nicely (Markdown is displayed as formatted text on GitHub).
 
 ---
 
@@ -301,7 +301,7 @@ Go to your repo on the GitHub website → click the **`assignment-work`** branch
 | **Repository (Repo)** | Your personal assignment folder on GitHub |
 | **Branch** | A parallel version of your files (draft vs official) |
 | **`main` branch** | The official version — what your instructor marks |
-| **`assignment-work` branch** | Your working draft — created automatically by SciQuant |
+| **`week01-work` branch** | Your working draft — created automatically by SciQuant |
 | **Commit** | A permanently saved, timestamped snapshot of your work |
 | **Commit message** | A short note describing what you changed (*"Answered Q1 and Q2"*) |
 | **Commit SHA** | The unique ID code for a specific commit (e.g., `a3f9c2d`) |
