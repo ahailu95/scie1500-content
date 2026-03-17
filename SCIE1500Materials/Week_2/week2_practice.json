@@ -1,0 +1,466 @@
+{
+  "week": 2,
+  "title": "Exponential and Logarithmic Functions",
+  "theme": "Modeling Unbounded Growth and Decay",
+  "exam_alignment": [
+    "Q8",
+    "Q17",
+    "Q20",
+    "Q23",
+    "Q27"
+  ],
+  "questions": [
+    {
+      "id": "W2-Q1",
+      "type": "multiple_choice",
+      "topic": "Exponential equation solving",
+      "exam_alignment": "Q8 style",
+      "difficulty": "medium",
+      "question": "A population grows according to $P(t) = 500e^{0.08t}$, where $t$ is in years. How many years will it take for the population to reach 2000?",
+      "options": {
+        "a": "12.5 years",
+        "b": "17.3 years",
+        "c": "25.0 years",
+        "d": "8.7 years",
+        "e": "None of the above"
+      },
+      "correct_answer": "b",
+      "solution": {
+        "steps": [
+          "Set up equation: $500e^{0.08t} = 2000$",
+          "Divide both sides by 500: $e^{0.08t} = 4$",
+          "Take natural log: $0.08t = \\ln(4)$",
+          "Solve: $t = \\ln(4)/0.08 = 1.386/0.08 = 17.33$ years"
+        ],
+        "final_answer": "17.3 years"
+      },
+      "key_concepts": [
+        "Exponential equations",
+        "Natural logarithm",
+        "Solving for time"
+      ]
+    },
+    {
+      "id": "W2-Q2",
+      "type": "multiple_choice",
+      "topic": "Inverse functions",
+      "exam_alignment": "Q20",
+      "difficulty": "medium",
+      "question": "What is the inverse of the function $f(x) = 3 + \\frac{1}{4}x$?",
+      "options": {
+        "a": "$f^{-1}(x) = -3 + 4x$",
+        "b": "$f^{-1}(x) = -3 - \\frac{1}{4}x$",
+        "c": "$f^{-1}(x) = \\frac{1}{4} - x$",
+        "d": "$f^{-1}(x) = -12 + 4x$",
+        "e": "None of the above"
+      },
+      "correct_answer": "d",
+      "solution": {
+        "steps": [
+          "Start with $y = 3 + \\frac{1}{4}x$",
+          "Swap $x$ and $y$: $x = 3 + \\frac{1}{4}y$",
+          "Solve for $y$: $x - 3 = \\frac{1}{4}y$",
+          "Multiply by 4: $y = 4(x - 3) = 4x - 12 = -12 + 4x$"
+        ],
+        "final_answer": "$f^{-1}(x) = -12 + 4x$"
+      },
+      "key_concepts": [
+        "Inverse functions",
+        "Swapping x and y",
+        "Solving for y"
+      ]
+    },
+    {
+      "id": "W2-Q3",
+      "type": "multiple_choice",
+      "topic": "Function composition with exponentials",
+      "exam_alignment": "Q23",
+      "difficulty": "medium",
+      "question": "If $f(x) = -e^{-2x+1}$ and $g(x) = -\\frac{1}{2}x^2$, what is $f \\circ g(x)$?",
+      "options": {
+        "a": "$(-e^{-2x+1})(-\\frac{1}{2})$",
+        "b": "$-e^{x^2+1}$",
+        "c": "$\\frac{1}{2}e^{4x^2-4x+1}$",
+        "d": "$xe^{-2x+1}$",
+        "e": "None of the above"
+      },
+      "correct_answer": "b",
+      "solution": {
+        "steps": [
+          "$f \\circ g(x)$ means $f(g(x))$",
+          "First compute $g(x) = -\\frac{1}{2}x^2$",
+          "Now substitute into $f$: $f(g(x)) = -e^{-2(-\\frac{1}{2}x^2)+1}$",
+          "Simplify exponent: $-2 \\times (-\\frac{1}{2}x^2) + 1 = x^2 + 1$",
+          "Result: $f \\circ g(x) = -e^{x^2+1}$"
+        ],
+        "final_answer": "$-e^{x^2+1}$"
+      },
+      "key_concepts": [
+        "Function composition",
+        "Exponential functions",
+        "Order of operations"
+      ]
+    },
+    {
+      "id": "W2-Q4",
+      "type": "multiple_choice",
+      "topic": "Logarithmic simplification",
+      "exam_alignment": "Q23 style",
+      "difficulty": "easy",
+      "question": "Simplify: $\\ln(e^x) + \\ln(e^{3x})$",
+      "options": {
+        "a": "$\\ln(e^{4x})$",
+        "b": "$3x^2$",
+        "c": "$4x$",
+        "d": "$e^{4x}$",
+        "e": "None of the above"
+      },
+      "correct_answer": "c",
+      "solution": {
+        "steps": [
+          "Use property $\\ln(e^a) = a$",
+          "$\\ln(e^x) = x$",
+          "$\\ln(e^{3x}) = 3x$",
+          "Sum: $x + 3x = 4x$"
+        ],
+        "final_answer": "$4x$"
+      },
+      "key_concepts": [
+        "Logarithm laws",
+        "Inverse relationship of ln and exp"
+      ]
+    },
+    {
+      "id": "W2-Q5",
+      "type": "multiple_choice",
+      "topic": "Properties of probability functions",
+      "exam_alignment": "Q27",
+      "difficulty": "medium",
+      "question": "Suppose the probability $p$ that a person contracts a disease is described as a function of risk $x$: $p = \\frac{1}{1+e^{-3x}}$. Which statement is NOT correct?",
+      "options": {
+        "a": "$p$ is $\\frac{1}{2}$ if $x = 0$",
+        "b": "$p$ is below $\\frac{1}{2}$ if $x$ is negative",
+        "c": "$p$ is an increasing function of $x$",
+        "d": "$p$ approaches zero if $x$ goes towards $-\\infty$",
+        "e": "None of the above (all statements are correct)"
+      },
+      "correct_answer": "e",
+      "solution": {
+        "steps": [
+          "(a) When $x=0$: $p = \\frac{1}{1+e^0} = \\frac{1}{1+1} = \\frac{1}{2}$ ✓",
+          "(b) When $x<0$: $e^{-3x} > 1$, so $1+e^{-3x} > 2$, so $p < \\frac{1}{2}$ ✓",
+          "(c) As $x$ increases, $e^{-3x}$ decreases, so $p$ increases ✓",
+          "(d) As $x \\to -\\infty$: $e^{-3x} \\to \\infty$, so $p \\to 0$ ✓",
+          "All statements are correct"
+        ],
+        "final_answer": "None of the above (all are correct)"
+      },
+      "key_concepts": [
+        "Logistic-type functions",
+        "Exponential behaviour",
+        "Function analysis"
+      ]
+    },
+    {
+      "id": "W2-Q6",
+      "type": "multi_part",
+      "topic": "Solving exponential equations",
+      "exam_alignment": "Q8 preparation",
+      "difficulty": "medium",
+      "question": "Consider a population $P(t) = \\frac{K}{1+Ae^{-\\alpha t}}$ with $K=10000$, $A=99$, $\\alpha=0.1$.",
+      "parts": [
+        {
+          "part": "a",
+          "question": "What is the initial population $P(0)$?",
+          "solution": {
+            "steps": [
+              "$P(0) = \\frac{10000}{1+99 \\times e^0} = \\frac{10000}{1+99} = \\frac{10000}{100} = 100$"
+            ],
+            "answer": "$P(0) = 100$"
+          }
+        },
+        {
+          "part": "b",
+          "question": "What is the carrying capacity (maximum population)?",
+          "solution": {
+            "steps": [
+              "As $t \\to \\infty$, $e^{-\\alpha t} \\to 0$",
+              "So $P(\\infty) = \\frac{K}{1+0} = K = 10000$"
+            ],
+            "answer": "$K = 10{,}000$"
+          }
+        },
+        {
+          "part": "c",
+          "question": "How long until the population reaches 5000 (50% of $K$)?",
+          "solution": {
+            "steps": [
+              "Set $P(t) = 5000$: $\\frac{10000}{1+99e^{-0.1t}} = 5000$",
+              "Simplify: $1+99e^{-0.1t} = 2$",
+              "So: $99e^{-0.1t} = 1$",
+              "Thus: $e^{-0.1t} = \\frac{1}{99}$",
+              "Take $\\ln$: $-0.1t = \\ln(1/99) = -\\ln(99)$",
+              "Solve: $t = \\frac{\\ln(99)}{0.1} = \\frac{4.595}{0.1} = 45.95$ time periods"
+            ],
+            "answer": "$t \\approx 46$ time periods"
+          }
+        }
+      ],
+      "key_concepts": [
+        "Logistic function",
+        "Initial conditions",
+        "Carrying capacity",
+        "Solving for time"
+      ]
+    },
+    {
+      "id": "W2-Q7",
+      "type": "multi_part",
+      "topic": "Logarithm rules",
+      "exam_alignment": "Foundation for Q20, Q23",
+      "difficulty": "easy",
+      "question": "Simplify each of the following expressions using logarithm laws:",
+      "parts": [
+        {
+          "part": "a",
+          "expression": "$\\ln(x^3) + \\ln(x^2)$",
+          "answer": "$5\\ln(x)$ or $\\ln(x^5)$"
+        },
+        {
+          "part": "b",
+          "expression": "$\\ln(e^5) - \\ln(e^2)$",
+          "answer": "$3$"
+        },
+        {
+          "part": "c",
+          "expression": "$e^{\\ln(x^2)}$",
+          "answer": "$x^2$"
+        },
+        {
+          "part": "d",
+          "expression": "$\\ln(8) - \\ln(2)$",
+          "answer": "$\\ln(4)$ or $2\\ln(2)$"
+        },
+        {
+          "part": "e",
+          "expression": "$2\\ln(3) + \\ln(4)$",
+          "answer": "$\\ln(36)$"
+        },
+        {
+          "part": "f",
+          "expression": "$e^{\\ln(\\sqrt{x})}$",
+          "answer": "$\\sqrt{x}$ or $x^{1/2}$"
+        }
+      ],
+      "key_concepts": [
+        "Product rule",
+        "Quotient rule",
+        "Power rule",
+        "Inverse relationship"
+      ]
+    },
+    {
+      "id": "W2-Q8",
+      "type": "multi_part",
+      "topic": "Geometric sequences",
+      "exam_alignment": "Sequences foundation",
+      "difficulty": "medium",
+      "question": "A bacterial colony doubles every 3 hours. Initially there are 500 bacteria.",
+      "parts": [
+        {
+          "part": "a",
+          "question": "Write a formula for the population after n doubling periods.",
+          "solution": {
+            "steps": [
+              "This is a geometric sequence with $a=500$ and $r=2$",
+              "After $n$ periods: $P_n = 500 \\times 2^n$"
+            ],
+            "answer": "$P_n = 500 \\times 2^n$"
+          }
+        },
+        {
+          "part": "b",
+          "question": "How many bacteria after 4 doubling periods (12 hours)?",
+          "solution": {
+            "steps": [
+              "$P_4 = 500 \\times 2^4 = 500 \\times 16 = 8000$"
+            ],
+            "answer": "8,000 bacteria"
+          }
+        },
+        {
+          "part": "c",
+          "question": "How many doubling periods until the population exceeds 1 million?",
+          "solution": {
+            "steps": [
+              "Need: $500 \\times 2^n > 1{,}000{,}000$",
+              "$2^n > 2000$",
+              "$n \\times \\ln(2) > \\ln(2000)$",
+              "$n > \\ln(2000)/\\ln(2) = 7.64/0.693 = 10.97$",
+              "So $n = 11$ periods (33 hours)"
+            ],
+            "answer": "11 doubling periods"
+          }
+        },
+        {
+          "part": "d",
+          "question": "Write this as a continuous exponential function $P(t)$ where $t$ is in hours.",
+          "solution": {
+            "steps": [
+              "Doubling time $T = 3$ hours means $e^{kT} = 2$",
+              "So $3k = \\ln(2)$, giving $k = \\ln(2)/3 \\approx 0.231$",
+              "$P(t) = 500 \\times e^{0.231t}$"
+            ],
+            "answer": "$P(t) = 500e^{0.231t}$"
+          }
+        }
+      ],
+      "key_concepts": [
+        "Geometric sequences",
+        "Exponential growth",
+        "Doubling time",
+        "Discrete to continuous"
+      ]
+    },
+    {
+      "id": "W2-Q9",
+      "type": "multiple_choice",
+      "topic": "Domain identification",
+      "exam_alignment": "Foundation skills",
+      "difficulty": "medium",
+      "question": "In which case is the Domain (D) for the function NOT identified correctly?",
+      "options": {
+        "a": "$y = -3 + 6x$, $D = \\{x : x \\in \\mathbb{R}\\}$",
+        "b": "$y = \\frac{(2x-1)^{1/2}}{2} - 2$, $D = \\{x : x \\in \\mathbb{R}\\}$",
+        "c": "$y = \\frac{2}{1-e^{-x}}$, $D = \\{x \\in \\mathbb{R} : x \\neq 0\\}$",
+        "d": "$y = e^{-0.5x+2}$, $D = \\{x : x \\in \\mathbb{R}\\}$",
+        "e": "None of the above"
+      },
+      "correct_answer": "b",
+      "solution": {
+        "steps": [
+          "(a) Linear function: domain is all reals ✓",
+          "(b) Square root requires $(2x-1) \\geq 0$, so $x \\geq 1/2$. Domain should be $\\{x : x \\geq 0.5\\}$ ✗",
+          "(c) Need $1-e^{-x} \\neq 0$, which means $e^{-x} \\neq 1$, so $x \\neq 0$ ✓",
+          "(d) Exponential is defined for all reals ✓",
+          "Answer (b) has incorrect domain"
+        ],
+        "final_answer": "Option (b) is incorrect"
+      },
+      "key_concepts": [
+        "Domain restrictions",
+        "Square root functions",
+        "Exponential domain"
+      ]
+    },
+    {
+      "id": "W2-Q10",
+      "type": "multiple_choice",
+      "topic": "Doubling time rule",
+      "exam_alignment": "Population dynamics",
+      "difficulty": "easy",
+      "question": "A population grows at 2% per year. Using the '70 over r' rule, approximately how long will it take to double?",
+      "options": {
+        "a": "14 years",
+        "b": "35 years",
+        "c": "70 years",
+        "d": "140 years",
+        "e": "None of the above"
+      },
+      "correct_answer": "b",
+      "solution": {
+        "steps": [
+          "Apply the $70/r$ rule where $r = 2$",
+          "Doubling time $\\approx 70/2 = 35$ years"
+        ],
+        "final_answer": "35 years"
+      },
+      "key_concepts": [
+        "Doubling time",
+        "Rule of 70",
+        "Population growth"
+      ]
+    },
+    {
+      "id": "W2-Q11",
+      "type": "multi_part",
+      "topic": "Compound interest",
+      "exam_alignment": "Geometric series application",
+      "difficulty": "medium",
+      "question": "An investment of $10,000 earns 6% annual interest, compounded annually.",
+      "parts": [
+        {
+          "part": "a",
+          "question": "Write the value $V(n)$ after $n$ years as a geometric sequence formula.",
+          "solution": {
+            "steps": [
+              "First term $a = 10000$",
+              "Common ratio $r = 1.06$",
+              "$V(n) = 10000 \\times (1.06)^n$"
+            ],
+            "answer": "$V(n) = 10000(1.06)^n$"
+          }
+        },
+        {
+          "part": "b",
+          "question": "What is the value after 10 years?",
+          "solution": {
+            "steps": [
+              "$V(10) = 10000 \\times (1.06)^{10}$",
+              "$= 10000 \\times 1.7908 = \\$17{,}908.48$"
+            ],
+            "answer": "\\$17,908.48"
+          }
+        },
+        {
+          "part": "c",
+          "question": "How many years until the investment triples?",
+          "solution": {
+            "steps": [
+              "Need: $10000(1.06)^n = 30000$",
+              "$(1.06)^n = 3$",
+              "$n \\times \\ln(1.06) = \\ln(3)$",
+              "$n = \\ln(3)/\\ln(1.06) = 1.099/0.0583 = 18.85$ years"
+            ],
+            "answer": "$\\approx 19$ years"
+          }
+        }
+      ],
+      "key_concepts": [
+        "Compound interest",
+        "Geometric growth",
+        "Solving exponential equations"
+      ]
+    },
+    {
+      "id": "W2-Q12",
+      "type": "multiple_choice",
+      "topic": "Graph identification",
+      "exam_alignment": "Q11 style",
+      "difficulty": "easy",
+      "question": "A population $P$ grows exponentially: $P(t) = 2e^{0.1t}$. Which property must the graph have?",
+      "options": {
+        "a": "Passes through $(0, 2)$ and is always increasing",
+        "b": "Passes through $(0, 1)$ and has horizontal asymptote at $y = 2$",
+        "c": "Passes through $(0, 2)$ and approaches zero as $t \\to \\infty$",
+        "d": "Is a straight line with slope $0.1$",
+        "e": "None of the above"
+      },
+      "correct_answer": "a",
+      "solution": {
+        "steps": [
+          "At $t=0$: $P(0) = 2e^0 = 2 \\times 1 = 2$, so passes through $(0,2)$",
+          "Since exponent $0.1t > 0$ when $t > 0$, function is increasing",
+          "As $t \\to \\infty$, $P(t) \\to \\infty$ (exponential growth)",
+          "No horizontal asymptote for large $t$"
+        ],
+        "final_answer": "Passes through (0, 2) and is always increasing"
+      },
+      "key_concepts": [
+        "Exponential graphs",
+        "Initial conditions",
+        "Growth behaviour"
+      ]
+    }
+  ]
+}

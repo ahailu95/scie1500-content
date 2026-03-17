@@ -1,0 +1,357 @@
+{
+  "metadata": {
+    "week": 12,
+    "title": "Simultaneous Equations and Linear Programming",
+    "theme": "Optimizing with Constraints",
+    "exam_alignment": [
+      "Q39",
+      "Q40"
+    ],
+    "total_questions": 20,
+    "difficulty_distribution": {
+      "foundational": 8,
+      "intermediate": 8,
+      "exam_style": 4
+    },
+    "scientific_contexts": [
+      "Diet optimization and nutrition",
+      "Market equilibrium and economic welfare",
+      "Resource allocation in agriculture",
+      "Sustainable resource management"
+    ],
+    "student_challenges_addressed": [
+      "Solving simultaneous linear equations",
+      "Finding market equilibrium from supply and demand",
+      "Computing CS/PS using integration",
+      "Formulating LP problems from word descriptions",
+      "Graphing feasible regions correctly",
+      "Applying the Corner Point Theorem"
+    ]
+  },
+  "questions": [
+    {
+      "id": "W12-001",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "simultaneous_equations_substitution",
+      "question": "Solve the system of equations using substitution:\n$$x + y = 10$$\n$$2x - y = 5$$\n\nWhat is the value of $x$?",
+      "choices": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "correct_answer": "C",
+      "solution": "**Step 1:** From the first equation, $y = 10 - x$\n\n**Step 2:** Substitute into the second equation:\n$$2x - (10 - x) = 5$$\n$$2x - 10 + x = 5$$\n$$3x = 15$$\n$$x = 5$$\n\n**Verification:** $y = 10 - 5 = 5$, and $2(5) - 5 = 5$ ✓",
+      "key_concept": "Substitution: solve one equation for one variable, substitute into the other."
+    },
+    {
+      "id": "W12-002",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "simultaneous_equations_elimination",
+      "question": "Solve using elimination:\n$$3x + 2y = 12$$\n$$x - 2y = 4$$\n\nWhat is the solution $(x, y)$?",
+      "choices": {
+        "A": "$(4, 0)$",
+        "B": "$(3, 1.5)$",
+        "C": "$(2, 3)$",
+        "D": "$(5, -0.5)$",
+        "E": "$(4, 1)$"
+      },
+      "correct_answer": "A",
+      "solution": "**Step 1:** Add the two equations (the $2y$ terms cancel):\n$$(3x + 2y) + (x - 2y) = 12 + 4$$\n$$4x = 16$$\n$$x = 4$$\n\n**Step 2:** Substitute back:\n$$3(4) + 2y = 12$$\n$$12 + 2y = 12$$\n$$y = 0$$\n\n**Solution:** $(4, 0)$",
+      "key_concept": "Elimination: add/subtract equations to eliminate one variable."
+    },
+    {
+      "id": "W12-003",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "market_equilibrium_basic",
+      "question": "Given demand $Q_d = 80 - 4P$ and supply $Q_s = -20 + 2P$, what is the equilibrium price $P^*$?",
+      "choices": {
+        "A": "$10$",
+        "B": "$\\frac{50}{3}$",
+        "C": "$20$",
+        "D": "$\\frac{100}{6}$",
+        "E": "$15$"
+      },
+      "correct_answer": "B",
+      "solution": "Set $Q_d = Q_s$:\n$$80 - 4P = -20 + 2P$$\n$$80 + 20 = 2P + 4P$$\n$$100 = 6P$$\n$$P^* = \\frac{100}{6} = \\frac{50}{3} \\approx 16.67$$",
+      "key_concept": "Equilibrium: set demand equal to supply and solve for price."
+    },
+    {
+      "id": "W12-004",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "max_willingness_to_pay",
+      "exam_reference": "Q39a",
+      "question": "Given demand $Q_d = 100 - 2P$, what is the maximum price any consumer would pay for this product?",
+      "choices": {
+        "A": "$25$",
+        "B": "$40$",
+        "C": "$50$",
+        "D": "$100$",
+        "E": "$200$"
+      },
+      "correct_answer": "C",
+      "solution": "The maximum willingness to pay is the price at which $Q_d = 0$:\n$$100 - 2P = 0$$\n$$2P = 100$$\n$$P = 50$$\n\nAt prices above $50, no consumer would buy.",
+      "key_concept": "Maximum willingness to pay: set $Q_d = 0$ and solve for $P$. This is Q39(a)."
+    },
+    {
+      "id": "W12-005",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "min_acceptable_price",
+      "exam_reference": "Q39b",
+      "question": "Given supply $Q_s = -100 + 3P$, what is the minimum price at which producers would supply the product?",
+      "choices": {
+        "A": "$\\frac{100}{3}$",
+        "B": "$33$",
+        "C": "$25$",
+        "D": "$50$",
+        "E": "$100$"
+      },
+      "correct_answer": "A",
+      "solution": "The minimum acceptable price is where $Q_s = 0$:\n$$-100 + 3P = 0$$\n$$3P = 100$$\n$$P = \\frac{100}{3} \\approx 33.33$$\n\nAt prices below $\\frac{100}{3}$, producers won't supply.",
+      "key_concept": "Minimum acceptable price: set $Q_s = 0$ and solve for $P$. This is Q39(b)."
+    },
+    {
+      "id": "W12-006",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "lp_formulation_objective",
+      "exam_reference": "Q40a",
+      "question": "A diet uses $x$ units of Food I (cost \\$2) and $y$ units of Food II (cost \\$3). What is the objective function to minimize total cost?",
+      "choices": {
+        "A": "Minimize $Z = x + y$",
+        "B": "Minimize $Z = 3x + 2y$",
+        "C": "Minimize $Z = 2x + 3y$",
+        "D": "Maximize $Z = 2x + 3y$",
+        "E": "Minimize $Z = 5(x + y)$"
+      },
+      "correct_answer": "C",
+      "solution": "Cost = (cost per unit of Food I) × (units of Food I) + (cost per unit of Food II) × (units of Food II)\n\n$$Z = 2x + 3y$$\n\nSince we want the cheapest diet, we **minimize** this function.",
+      "key_concept": "The objective function is the total cost: coefficients are unit costs."
+    },
+    {
+      "id": "W12-007",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "lp_constraint_formulation",
+      "exam_reference": "Q40a",
+      "question": "Food I provides 4 units of protein per serving, Food II provides 5 units. The diet must have at least 100 units of protein. Which constraint represents this?",
+      "choices": {
+        "A": "$4x + 5y \\leq 100$",
+        "B": "$4x + 5y = 100$",
+        "C": "$4x + 5y \\geq 100$",
+        "D": "$5x + 4y \\geq 100$",
+        "E": "$9xy \\geq 100$"
+      },
+      "correct_answer": "C",
+      "solution": "Total protein = $4x + 5y$\n\n\"At least 100 units\" means $\\geq 100$.\n\nTherefore: $4x + 5y \\geq 100$",
+      "key_concept": "'At least' means ≥. The constraint is linear in the decision variables."
+    },
+    {
+      "id": "W12-008",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "corner_point_theorem",
+      "question": "In linear programming, where does the optimal solution occur?",
+      "choices": {
+        "A": "At the center of the feasible region",
+        "B": "At a corner point (vertex) of the feasible region",
+        "C": "At the point furthest from the origin",
+        "D": "At the intersection of all constraints",
+        "E": "At any point inside the feasible region"
+      },
+      "correct_answer": "B",
+      "solution": "The **Corner Point Theorem** states:\n\n*If a linear programming problem has an optimal solution, it occurs at a corner point (vertex) of the feasible region.*\n\nThis is because the objective function is linear, so its extreme values over a convex polygon must occur at vertices.",
+      "key_concept": "Corner Point Theorem: optimal solutions are at vertices of the feasible region."
+    },
+    {
+      "id": "W12-009",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "equilibrium_quantity",
+      "exam_reference": "Q39c",
+      "question": "Given $Q_d = 100 - 2P$ and $Q_s = -100 + 3P$, what is the equilibrium quantity $Q^*$?",
+      "choices": {
+        "A": "10",
+        "B": "15",
+        "C": "20",
+        "D": "25",
+        "E": "40"
+      },
+      "correct_answer": "C",
+      "solution": "**Step 1:** Find equilibrium price:\n$$100 - 2P = -100 + 3P$$\n$$200 = 5P$$\n$$P^* = 40$$\n\n**Step 2:** Substitute into either equation:\n$$Q^* = 100 - 2(40) = 100 - 80 = 20$$\n\n**Verification:** $Q_s = -100 + 3(40) = -100 + 120 = 20$ ✓",
+      "key_concept": "After finding $P^*$, substitute back to find $Q^*$. This is Q39(c)."
+    },
+    {
+      "id": "W12-010",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "inverse_demand",
+      "question": "The demand function is $Q_d = 100 - 2P$. What is the inverse demand function $P = D(Q)$?",
+      "choices": {
+        "A": "$P = 100 - 2Q$",
+        "B": "$P = 50 - 0.5Q$",
+        "C": "$P = \\frac{100 - Q}{2}$",
+        "D": "$P = 50 - \\frac{Q}{2}$",
+        "E": "Both B and D"
+      },
+      "correct_answer": "E",
+      "solution": "Solve for $P$:\n$$Q = 100 - 2P$$\n$$2P = 100 - Q$$\n$$P = \\frac{100 - Q}{2} = 50 - \\frac{Q}{2} = 50 - 0.5Q$$\n\nOptions B, C, and D are all equivalent forms.",
+      "key_concept": "Inverse demand expresses price as a function of quantity. Needed for CS integration."
+    },
+    {
+      "id": "W12-011",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "consumer_surplus_triangle",
+      "exam_reference": "Q39d",
+      "question": "With $P^* = 40$, $Q^* = 20$, and maximum willingness to pay $P_{\\max} = 50$, what is the Consumer Surplus using the triangle formula?",
+      "choices": {
+        "A": "$50$",
+        "B": "$100$",
+        "C": "$150$",
+        "D": "$200$",
+        "E": "$400$"
+      },
+      "correct_answer": "B",
+      "solution": "For linear demand, CS is a triangle:\n$$CS = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$$\n$$CS = \\frac{1}{2} \\times Q^* \\times (P_{\\max} - P^*)$$\n$$CS = \\frac{1}{2} \\times 20 \\times (50 - 40)$$\n$$CS = \\frac{1}{2} \\times 20 \\times 10 = 100$$",
+      "key_concept": "CS = ½ × Q* × (Pmax - P*) for linear demand. This is Q39(d)."
+    },
+    {
+      "id": "W12-012",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "producer_surplus_triangle",
+      "exam_reference": "Q39e",
+      "question": "With $P^* = 40$, $Q^* = 20$, and minimum acceptable price $P_{\\min} = \\frac{100}{3}$, what is the Producer Surplus?",
+      "choices": {
+        "A": "$\\frac{100}{3}$",
+        "B": "$\\frac{200}{3}$",
+        "C": "$\\frac{400}{3}$",
+        "D": "$100$",
+        "E": "$66.67$"
+      },
+      "correct_answer": "B",
+      "solution": "For linear supply, PS is a triangle:\n$$PS = \\frac{1}{2} \\times Q^* \\times (P^* - P_{\\min})$$\n$$PS = \\frac{1}{2} \\times 20 \\times \\left(40 - \\frac{100}{3}\\right)$$\n$$PS = \\frac{1}{2} \\times 20 \\times \\frac{120 - 100}{3}$$\n$$PS = \\frac{1}{2} \\times 20 \\times \\frac{20}{3} = \\frac{200}{3} \\approx 66.67$$\n\nNote: Options B and E are equivalent.",
+      "key_concept": "PS = ½ × Q* × (P* - Pmin) for linear supply. This is Q39(e)."
+    },
+    {
+      "id": "W12-013",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "feasible_region_shading",
+      "question": "For the constraint $2x + 3y \\geq 12$, which side of the line $2x + 3y = 12$ is in the feasible region?",
+      "choices": {
+        "A": "The side containing the origin",
+        "B": "The side away from the origin",
+        "C": "Both sides",
+        "D": "Neither side",
+        "E": "Only points on the line"
+      },
+      "correct_answer": "B",
+      "solution": "**Test the origin (0, 0):**\n$$2(0) + 3(0) = 0$$\n$$0 \\geq 12?$$ **No.**\n\nThe origin does NOT satisfy the constraint, so the feasible region is on the **opposite side** from the origin.\n\nFor $\\geq$ constraints: if origin fails the test, shade away from origin.",
+      "key_concept": "Test (0,0) to determine which side satisfies the inequality."
+    },
+    {
+      "id": "W12-014",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "finding_vertices",
+      "question": "Find the intersection of the lines $4x + 5y = 100$ and $y = 5$.",
+      "choices": {
+        "A": "$(15, 5)$",
+        "B": "$(18.75, 5)$",
+        "C": "$(20, 5)$",
+        "D": "$(25, 0)$",
+        "E": "$(12.5, 5)$"
+      },
+      "correct_answer": "B",
+      "solution": "Substitute $y = 5$ into $4x + 5y = 100$:\n$$4x + 5(5) = 100$$\n$$4x + 25 = 100$$\n$$4x = 75$$\n$$x = 18.75$$\n\n**Vertex:** $(18.75, 5)$",
+      "key_concept": "Vertices are found by solving pairs of constraint equations simultaneously."
+    },
+    {
+      "id": "W12-015",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "evaluate_objective",
+      "exam_reference": "Q40c",
+      "question": "Evaluate the objective function $Z = 2x + 3y$ at the point $(10, 12)$.",
+      "choices": {
+        "A": "$22$",
+        "B": "$36$",
+        "C": "$46$",
+        "D": "$56$",
+        "E": "$66$"
+      },
+      "correct_answer": "D",
+      "solution": "$$Z = 2x + 3y = 2(10) + 3(12) = 20 + 36 = 56$$",
+      "key_concept": "Substitute vertex coordinates into the objective function."
+    },
+    {
+      "id": "W12-016",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "cs_integration",
+      "question": "Calculate $\\int_0^{20} \\left(50 - \\frac{Q}{2}\\right)dQ$",
+      "choices": {
+        "A": "$900$",
+        "B": "$1000$",
+        "C": "$800$",
+        "D": "$950$",
+        "E": "$850$"
+      },
+      "correct_answer": "A",
+      "solution": "$$\\int_0^{20} \\left(50 - \\frac{Q}{2}\\right)dQ = \\left[50Q - \\frac{Q^2}{4}\\right]_0^{20}$$\n$$= \\left(50(20) - \\frac{400}{4}\\right) - (0)$$\n$$= 1000 - 100 = 900$$\n\nNote: CS = $900 - P^* \\cdot Q^* = 900 - 40(20) = 900 - 800 = 100$",
+      "key_concept": "This integral gives the area under the demand curve from 0 to Q*."
+    },
+    {
+      "id": "W12-017",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "q39_complete",
+      "exam_reference": "Q39",
+      "question": "The demand and supply equations for a commodity are:\n- Demand: $Q_d = 100 - 2P$\n- Supply: $Q_s = -100 + 3P$\n\n(a) What is the maximum price any consumer would pay?\n(b) What is the minimum price producers would accept?\n(c) Find the equilibrium price and quantity.\n(d) Calculate Consumer Surplus.\n(e) Calculate Producer Surplus.",
+      "solution": "**(a) Maximum willingness to pay:**\nSet $Q_d = 0$: $100 - 2P = 0 \\Rightarrow P = 50$\n$$\\boxed{P_{\\max} = 50}$$\n\n**(b) Minimum acceptable price:**\nSet $Q_s = 0$: $-100 + 3P = 0 \\Rightarrow P = \\frac{100}{3} \\approx 33.33$\n$$\\boxed{P_{\\min} = \\frac{100}{3}}$$\n\n**(c) Equilibrium:**\n$100 - 2P = -100 + 3P$\n$200 = 5P$\n$P^* = 40$\n$Q^* = 100 - 80 = 20$\n$$\\boxed{P^* = 40, \\quad Q^* = 20}$$\n\n**(d) Consumer Surplus:**\n$$CS = \\frac{1}{2} \\times 20 \\times (50 - 40) = 100$$\n$$\\boxed{CS = 100}$$\n\n**(e) Producer Surplus:**\n$$PS = \\frac{1}{2} \\times 20 \\times (40 - \\frac{100}{3}) = \\frac{1}{2} \\times 20 \\times \\frac{20}{3} = \\frac{200}{3} \\approx 66.67$$\n$$\\boxed{PS = \\frac{200}{3}}$$",
+      "marks": 15,
+      "key_concept": "This is the complete Q39 from the final exam."
+    },
+    {
+      "id": "W12-018",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "q40_formulation",
+      "exam_reference": "Q40a",
+      "question": "**Diet Problem (Q40 Style):**\n\n| Nutrient | Food I | Food II | Minimum Req. |\n|----------|--------|---------|-------------|\n| Protein | 4 | 5 | 100 |\n| Energy | 10 | 25 | 400 |\n| Vitamin A | 0.8 | 0.4 | 10 |\n| Calcium | 0 | 1 | 5 |\n| **Cost** | \\$2 | \\$3 | — |\n\nFormulate the LP problem. Let $x$ = units of Food I, $y$ = units of Food II.",
+      "solution": "**Decision Variables:**\n- $x$ = number of units of Food I\n- $y$ = number of units of Food II\n\n**Objective Function (Minimize Cost):**\n$$\\text{Minimize } Z = 2x + 3y$$\n\n**Subject to Constraints:**\n$$4x + 5y \\geq 100 \\quad \\text{(Protein)}$$\n$$10x + 25y \\geq 400 \\quad \\text{(Energy)}$$\n$$0.8x + 0.4y \\geq 10 \\quad \\text{(Vitamin A)}$$\n$$y \\geq 5 \\quad \\text{(Calcium)}$$\n$$x \\geq 0, \\quad y \\geq 0 \\quad \\text{(Non-negativity)}$$",
+      "marks": 8,
+      "key_concept": "LP formulation: identify variables, objective, and constraints. This is Q40(a)."
+    },
+    {
+      "id": "W12-019",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "q40_solution",
+      "exam_reference": "Q40c",
+      "question": "For the diet problem, the corner points of the feasible region are approximately:\n- A: $(10, 5)$\n- B: $(18.75, 5)$\n- C: $(10, 12)$\n- E: $(0, 25)$\n\n(a) Evaluate $Z = 2x + 3y$ at each corner.\n(b) What is the optimal diet composition?\n(c) What is the minimum cost?",
+      "solution": "**(a) Evaluate at each corner:**\n\n| Vertex | $x$ | $y$ | $Z = 2x + 3y$ |\n|--------|-----|-----|---------------|\n| A | 10 | 5 | $2(10) + 3(5) = 35$ |\n| B | 18.75 | 5 | $2(18.75) + 3(5) = 52.50$ |\n| C | 10 | 12 | $2(10) + 3(12) = 56$ |\n| E | 0 | 25 | $2(0) + 3(25) = 75$ |\n\n**(b) Optimal composition:**\nThe minimum occurs at vertex A: **10 units of Food I and 5 units of Food II**\n\n**(c) Minimum cost:**\n$$\\boxed{Z_{\\min} = \\$35}$$",
+      "marks": 10,
+      "key_concept": "Apply Corner Point Theorem: evaluate objective at each vertex. This is Q40(c)."
+    },
+    {
+      "id": "W12-020",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "q40_sensitivity",
+      "exam_reference": "Q40d",
+      "question": "If the cost of Food I increases from \\$2 to \\$5 per unit (Food II remains \\$3):\n\n(a) Write the new objective function.\n(b) Re-evaluate at the corner points from Q19.\n(c) Does the optimal diet composition change?\n(d) What is the new minimum cost?",
+      "solution": "**(a) New objective function:**\n$$\\text{Minimize } Z = 5x + 3y$$\n\n**(b) Re-evaluate Corner Points:**\n\n| Vert | $x$ | $y$ | $Z=5x+3y$ |\n|---|---|---|---|\n| A | 10 | 5 | **$65$** |\n| B | 18.75 | 5 | $108.75$ |\n| C | 10 | 12 | $86$ |\n| E | 0 | 25 | $75$ |\n\n**Calculation Steps:**\n* Point A: $5(10) + 3(5) = 65$\n* Point E: $5(0) + 3(25) = 75$\n\n**(c) Does composition change?**\nNo! The optimal solution remains at vertex A: $(10, 5)$.\n\nThe constraints haven't changed, so the feasible region is the same. Point A still minimizes cost, just at a higher level.\n\n**(d) New minimum cost:**\n$$\\boxed{Z_{\\min} = \\$65}$$\n\n**Insight:** The diet composition is robust to this price change because A remains optimal. However, if Food I became even more expensive (say \\$8), point E might become optimal instead.",
+      "marks": 10,
+      "key_concept": "Sensitivity analysis: changing coefficients may or may not change the optimal solution. This is Q40(d)."
+    }
+  ]
+}

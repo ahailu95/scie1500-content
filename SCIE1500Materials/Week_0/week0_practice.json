@@ -1,0 +1,568 @@
+{
+  "metadata": {
+    "week": 0,
+    "title": "Mathematical Foundations & Python Basics",
+    "theme": "The Scientist's Toolkit: Preparing for Quantitative Analysis",
+    "version": "1.0",
+    "type": "diagnostic_review",
+    "purpose": "Assess and reinforce prerequisite knowledge before Week 1",
+    "learning_objectives": [
+      "Apply order of operations (BODMAS) correctly",
+      "Use exponent and radical rules",
+      "Manipulate algebraic expressions",
+      "Solve linear and quadratic equations",
+      "Solve linear inequalities",
+      "Work with scientific notation",
+      "Understand function notation f(x)",
+      "Use interval notation for domains",
+      "Perform basic calculations in Python"
+    ],
+    "notebook_connection": "Week0_Intro_Python.ipynb"
+  },
+  "questions": [
+    {
+      "id": "W0-Q1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "Order of operations (BODMAS)",
+      "question": "Evaluate: $3 + 2 \\times 4^2 - 10 \\div 2$",
+      "options": {
+        "a": "30",
+        "b": "32",
+        "c": "35",
+        "d": "25",
+        "e": "18"
+      },
+      "correct_answer": "a",
+      "solution": {
+        "steps": [
+          "Apply BODMAS: Orders (exponents) first: $4^2 = 16$",
+          "Expression becomes: $3 + 2 \\times 16 - 10 \\div 2$",
+          "Multiplication and Division (left to right): $2 \\times 16 = 32$ and $10 \\div 2 = 5$",
+          "Expression becomes: $3 + 32 - 5$",
+          "Addition and Subtraction (left to right): $3 + 32 = 35$, then $35 - 5 = 30$"
+        ],
+        "final_answer": "30"
+      },
+      "hints": [
+        "Remember BODMAS: Brackets, Orders (exponents), Division/Multiplication, Addition/Subtraction",
+        "Calculate $4^2$ first",
+        "Then do multiplication and division before addition and subtraction"
+      ],
+      "common_errors": [
+        "Adding 3+2 first before multiplication",
+        "Forgetting that exponents come before multiplication"
+      ],
+      "python_check": "print(3 + 2 * 4**2 - 10 / 2)  # Should output 30.0",
+      "latex_display": true
+    },
+    {
+      "id": "W0-Q2",
+      "type": "multi_part",
+      "difficulty": "medium",
+      "topic": "Exponent rules",
+      "question": "Simplify each expression using exponent rules.",
+      "parts": [
+        {
+          "part": "a",
+          "expression": "$\\frac{x^5 \\cdot x^3}{x^2}$",
+          "answer": "$x^6$",
+          "solution_steps": [
+            "Numerator: $x^5 \\cdot x^3 = x^{5+3} = x^8$ (product rule)",
+            "Then: $\\frac{x^8}{x^2} = x^{8-2} = x^6$ (quotient rule)"
+          ]
+        },
+        {
+          "part": "b",
+          "expression": "$(2^3)^4$",
+          "answer": "$2^{12} = 4096$",
+          "solution_steps": [
+            "Apply power rule: $(2^3)^4 = 2^{3 \\times 4} = 2^{12}$",
+            "Calculate: $2^{12} = 4096$"
+          ]
+        },
+        {
+          "part": "c",
+          "expression": "$8^{2/3}$",
+          "answer": "$4$",
+          "solution_steps": [
+            "Rewrite: $8^{2/3} = (8^{1/3})^2$",
+            "Calculate cube root: $8^{1/3} = \\sqrt[3]{8} = 2$",
+            "Square it: $2^2 = 4$"
+          ]
+        },
+        {
+          "part": "d",
+          "expression": "$5^{-2}$",
+          "answer": "$\\frac{1}{25}$ or $0.04$",
+          "solution_steps": [
+            "Apply negative exponent rule: $5^{-2} = \\frac{1}{5^2}$",
+            "Calculate: $\\frac{1}{25} = 0.04$"
+          ]
+        }
+      ],
+      "hints": [
+        "Product rule: $a^m \\cdot a^n = a^{m+n}$",
+        "Quotient rule: $a^m / a^n = a^{m-n}$",
+        "Power rule: $(a^m)^n = a^{mn}$",
+        "Fractional exponent: $a^{1/n} = \\sqrt[n]{a}$"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W0-Q3",
+      "type": "multi_part",
+      "difficulty": "medium",
+      "topic": "Algebraic manipulation",
+      "question": "Simplify or factor each expression.",
+      "parts": [
+        {
+          "part": "a",
+          "instruction": "Expand",
+          "expression": "$(3x - 2)(x + 5)$",
+          "answer": "$3x^2 + 13x - 10$",
+          "solution_steps": [
+            "Use FOIL or distribution:",
+            "$3x \\cdot x = 3x^2$",
+            "$3x \\cdot 5 = 15x$",
+            "$-2 \\cdot x = -2x$",
+            "$-2 \\cdot 5 = -10$",
+            "Combine: $3x^2 + 15x - 2x - 10 = 3x^2 + 13x - 10$"
+          ]
+        },
+        {
+          "part": "b",
+          "instruction": "Factor",
+          "expression": "$x^2 - 16$",
+          "answer": "$(x+4)(x-4)$",
+          "solution_steps": [
+            "Recognize as difference of squares: $a^2 - b^2 = (a+b)(a-b)$",
+            "Here: $x^2 - 16 = x^2 - 4^2 = (x+4)(x-4)$"
+          ]
+        },
+        {
+          "part": "c",
+          "instruction": "Simplify",
+          "expression": "$\\frac{x^2 - 9}{x - 3}$",
+          "answer": "$x + 3$ (for $x \\neq 3$)",
+          "solution_steps": [
+            "Factor numerator: $x^2 - 9 = (x+3)(x-3)$",
+            "Simplify: $\\frac{(x+3)(x-3)}{x-3} = x+3$",
+            "Note: undefined at $x = 3$"
+          ]
+        }
+      ],
+      "hints": [
+        "For expansion, multiply each term in the first bracket by each term in the second",
+        "Difference of squares: $a^2 - b^2 = (a+b)(a-b)$",
+        "For rational expressions, factor first, then cancel common factors"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W0-Q4",
+      "type": "multi_part",
+      "difficulty": "medium",
+      "topic": "Solving equations",
+      "question": "Solve each equation for $x$.",
+      "parts": [
+        {
+          "part": "a",
+          "equation": "$5x - 7 = 3x + 9$",
+          "answer": "$x = 8$",
+          "solution_steps": [
+            "Subtract $3x$ from both sides: $2x - 7 = 9$",
+            "Add 7 to both sides: $2x = 16$",
+            "Divide by 2: $x = 8$"
+          ]
+        },
+        {
+          "part": "b",
+          "equation": "$x^2 - 7x + 12 = 0$",
+          "answer": "$x = 3$ or $x = 4$",
+          "solution_steps": [
+            "Factor: Find two numbers that multiply to 12 and add to -7",
+            "Those numbers are -3 and -4",
+            "Factor: $(x-3)(x-4) = 0$",
+            "Solutions: $x = 3$ or $x = 4$"
+          ]
+        },
+        {
+          "part": "c",
+          "equation": "$2x^2 + 5x - 3 = 0$",
+          "answer": "$x = \\frac{1}{2}$ or $x = -3$",
+          "solution_steps": [
+            "Use quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$",
+            "Here: $a=2$, $b=5$, $c=-3$",
+            "Discriminant: $b^2 - 4ac = 25 + 24 = 49$",
+            "$x = \\frac{-5 \\pm 7}{4}$",
+            "$x = \\frac{-5+7}{4} = \\frac{2}{4} = \\frac{1}{2}$",
+            "$x = \\frac{-5-7}{4} = \\frac{-12}{4} = -3$"
+          ]
+        }
+      ],
+      "hints": [
+        "For linear equations, collect x terms on one side, constants on the other",
+        "For quadratics, try factoring first; if that fails, use the quadratic formula",
+        "Check your answers by substituting back into the original equation"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W0-Q5",
+      "type": "multi_part",
+      "difficulty": "medium",
+      "topic": "Inequalities",
+      "question": "Solve each inequality and express the answer in interval notation.",
+      "parts": [
+        {
+          "part": "a",
+          "inequality": "$3x + 5 > 14$",
+          "answer": "$(3, \\infty)$",
+          "solution_steps": [
+            "Subtract 5: $3x > 9$",
+            "Divide by 3: $x > 3$",
+            "Interval notation: $(3, \\infty)$"
+          ]
+        },
+        {
+          "part": "b",
+          "inequality": "$-4x + 2 \\leq 10$",
+          "answer": "$[-2, \\infty)$",
+          "solution_steps": [
+            "Subtract 2: $-4x \\leq 8$",
+            "Divide by -4 (REVERSE inequality): $x \\geq -2$",
+            "Interval notation: $[-2, \\infty)$"
+          ]
+        },
+        {
+          "part": "c",
+          "inequality": "$-1 < 2x + 3 \\leq 9$",
+          "answer": "$(-2, 3]$",
+          "solution_steps": [
+            "Subtract 3 from all parts: $-4 < 2x \\leq 6$",
+            "Divide by 2: $-2 < x \\leq 3$",
+            "Interval notation: $(-2, 3]$"
+          ]
+        }
+      ],
+      "hints": [
+        "Solve inequalities like equations, BUT flip the inequality when multiplying or dividing by a negative number",
+        "Square bracket [ means included (≤ or ≥), round bracket ( means excluded (< or >)",
+        "Infinity always uses round brackets"
+      ],
+      "common_errors": [
+        "Forgetting to reverse the inequality when dividing by a negative",
+        "Using square brackets with infinity"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W0-Q6",
+      "type": "multi_part",
+      "difficulty": "easy",
+      "topic": "Scientific notation and unit conversion",
+      "question": "Work with scientific notation and unit conversions.",
+      "parts": [
+        {
+          "part": "a",
+          "instruction": "Express in scientific notation",
+          "value": "4,820,000",
+          "answer": "$4.82 \\times 10^6$",
+          "solution_steps": [
+            "Move decimal point left until we have a number between 1 and 10",
+            "4,820,000 → 4.82 (moved 6 places)",
+            "Answer: $4.82 \\times 10^6$"
+          ]
+        },
+        {
+          "part": "b",
+          "instruction": "Express in scientific notation",
+          "value": "0.000078",
+          "answer": "$7.8 \\times 10^{-5}$",
+          "solution_steps": [
+            "Move decimal point right until we have a number between 1 and 10",
+            "0.000078 → 7.8 (moved 5 places right)",
+            "Since we moved right, exponent is negative",
+            "Answer: $7.8 \\times 10^{-5}$"
+          ]
+        },
+        {
+          "part": "c",
+          "instruction": "Calculate",
+          "expression": "$(3 \\times 10^4) \\times (2 \\times 10^5)$",
+          "answer": "$6 \\times 10^9$",
+          "solution_steps": [
+            "Multiply coefficients: $3 \\times 2 = 6$",
+            "Add exponents: $10^4 \\times 10^5 = 10^{4+5} = 10^9$",
+            "Answer: $6 \\times 10^9$"
+          ]
+        },
+        {
+          "part": "d",
+          "instruction": "Convert 12,700,000 metric tonnes to million metric tonnes (MMT)",
+          "answer": "12.7 MMT",
+          "solution_steps": [
+            "Divide by 1,000,000 (one million)",
+            "$12,700,000 \\div 1,000,000 = 12.7$",
+            "Answer: 12.7 MMT"
+          ],
+          "context": "This is the upper estimate of plastic entering oceans annually (Jambeck 2015)"
+        }
+      ],
+      "hints": [
+        "In scientific notation, the coefficient must be between 1 and 10",
+        "Moving decimal left gives positive exponent; moving right gives negative exponent",
+        "When multiplying in scientific notation, multiply coefficients and add exponents"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W0-Q7",
+      "type": "multi_part",
+      "difficulty": "medium",
+      "topic": "Function notation",
+      "context": "This is essential preparation for Week 1. Remember: $f(x)$ does NOT mean $f$ times $x$. It means 'the function $f$ evaluated at $x$'.",
+      "question": "Given $f(x) = 3x^2 - 2x + 1$ and $g(x) = 5x - 4$, evaluate:",
+      "parts": [
+        {
+          "part": "a",
+          "expression": "$f(2)$",
+          "answer": "$9$",
+          "solution_steps": [
+            "Substitute $x = 2$ into $f(x) = 3x^2 - 2x + 1$",
+            "$f(2) = 3(2)^2 - 2(2) + 1$",
+            "$f(2) = 3(4) - 4 + 1 = 12 - 4 + 1 = 9$"
+          ]
+        },
+        {
+          "part": "b",
+          "expression": "$g(-1)$",
+          "answer": "$-9$",
+          "solution_steps": [
+            "Substitute $x = -1$ into $g(x) = 5x - 4$",
+            "$g(-1) = 5(-1) - 4 = -5 - 4 = -9$"
+          ]
+        },
+        {
+          "part": "c",
+          "expression": "$f(0) + g(0)$",
+          "answer": "$-3$",
+          "solution_steps": [
+            "$f(0) = 3(0)^2 - 2(0) + 1 = 1$",
+            "$g(0) = 5(0) - 4 = -4$",
+            "$f(0) + g(0) = 1 + (-4) = -3$"
+          ]
+        },
+        {
+          "part": "d",
+          "expression": "$f(a)$ (leave in terms of $a$)",
+          "answer": "$3a^2 - 2a + 1$",
+          "solution_steps": [
+            "Replace every $x$ with $a$",
+            "$f(a) = 3a^2 - 2a + 1$"
+          ]
+        }
+      ],
+      "hints": [
+        "To evaluate $f(2)$, replace every $x$ in the formula with $2$",
+        "Be careful with negative numbers: $(-1)^2 = 1$, not $-1$",
+        "Follow BODMAS when evaluating"
+      ],
+      "common_errors": [
+        "Thinking $f(2) = f \\times 2$",
+        "Sign errors when substituting negative values"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W0-Q8",
+      "type": "matching",
+      "difficulty": "easy",
+      "topic": "Interval notation",
+      "context": "In Week 1, you'll use interval notation to describe domains and ranges of functions.",
+      "question": "Match each description with the correct interval notation.",
+      "items": [
+        {
+          "description": "All real numbers greater than or equal to 5",
+          "answer": "$[5, \\infty)$"
+        },
+        {
+          "description": "All real numbers between -3 and 7, not including -3 but including 7",
+          "answer": "$(-3, 7]$"
+        },
+        {
+          "description": "All real numbers less than 2",
+          "answer": "$(-\\infty, 2)$"
+        },
+        {
+          "description": "All real numbers from 0 to 10, including both endpoints",
+          "answer": "$[0, 10]$"
+        },
+        {
+          "description": "All positive real numbers",
+          "answer": "$(0, \\infty)$"
+        }
+      ],
+      "hints": [
+        "[ or ] means the endpoint is included (≤ or ≥)",
+        "( or ) means the endpoint is excluded (< or >)",
+        "Infinity (∞) always uses round brackets"
+      ],
+      "latex_display": true
+    },
+    {
+      "id": "W0-Q9",
+      "type": "multi_part",
+      "difficulty": "medium",
+      "topic": "Python basics",
+      "context": "These questions check your understanding of Python syntax covered in Week0_Intro_Python.ipynb.",
+      "question": "Answer the following questions about Python.",
+      "parts": [
+        {
+          "part": "a",
+          "question": "What is the output of `print(2 + 3 * 4)`?",
+          "answer": "14",
+          "explanation": "Python follows BODMAS. Multiplication first: $3 \\times 4 = 12$, then addition: $2 + 12 = 14$"
+        },
+        {
+          "part": "b",
+          "question": "What is the output of `print(2 ** 3)`?",
+          "answer": "8",
+          "explanation": "`**` is the exponentiation operator in Python. $2^3 = 8$"
+        },
+        {
+          "part": "c",
+          "question": "What is the output of `print(17 // 5)`?",
+          "answer": "3",
+          "explanation": "`//` is floor division (integer division). $17 \\div 5 = 3$ remainder $2$, so floor is $3$"
+        },
+        {
+          "part": "d",
+          "question": "What is wrong with this code: `Print('Hello')`?",
+          "answer": "Python is case-sensitive. It should be `print('Hello')` with lowercase 'p'.",
+          "explanation": "`Print` is not recognized; Python commands are lowercase"
+        },
+        {
+          "part": "e",
+          "question": "What does `np.linspace(0, 10, 5)` produce?",
+          "answer": "An array of 5 equally spaced values from 0 to 10: [0, 2.5, 5, 7.5, 10]",
+          "explanation": "linspace(start, stop, num) creates num equally spaced values including both endpoints"
+        }
+      ],
+      "hints": [
+        "Python uses ** for exponents, not ^",
+        "// is floor division, / is regular division",
+        "Python is case-sensitive"
+      ],
+      "latex_display": true
+    }
+  ],
+  "answer_key": {
+    "W0-Q1": "a (30)",
+    "W0-Q2": {
+      "a": "$x^6$",
+      "b": "$2^{12} = 4096$",
+      "c": "$4$",
+      "d": "$\\frac{1}{25}$"
+    },
+    "W0-Q3": {
+      "a": "$3x^2 + 13x - 10$",
+      "b": "$(x+4)(x-4)$",
+      "c": "$x + 3$ (for $x \\neq 3$)"
+    },
+    "W0-Q4": {
+      "a": "$x = 8$",
+      "b": "$x = 3$ or $x = 4$",
+      "c": "$x = \\frac{1}{2}$ or $x = -3$"
+    },
+    "W0-Q5": {
+      "a": "$(3, \\infty)$",
+      "b": "$[-2, \\infty)$",
+      "c": "$(-2, 3]$"
+    },
+    "W0-Q6": {
+      "a": "$4.82 \\times 10^6$",
+      "b": "$7.8 \\times 10^{-5}$",
+      "c": "$6 \\times 10^9$",
+      "d": "12.7 MMT"
+    },
+    "W0-Q7": {
+      "a": "$9$",
+      "b": "$-9$",
+      "c": "$-3$",
+      "d": "$3a^2 - 2a + 1$"
+    },
+    "W0-Q8": "Matching exercise - see individual items",
+    "W0-Q9": {
+      "a": "14",
+      "b": "8",
+      "c": "3",
+      "d": "Lowercase 'print' required",
+      "e": "[0, 2.5, 5, 7.5, 10]"
+    }
+  },
+  "diagnostic_interpretation": {
+    "scoring_guide": {
+      "Q1-Q2": "BODMAS and exponents - fundamental arithmetic",
+      "Q3-Q4": "Algebra - essential for equation manipulation",
+      "Q5": "Inequalities - needed for domain analysis",
+      "Q6": "Scientific notation - needed for real data",
+      "Q7-Q8": "Function and interval notation - essential for Week 1",
+      "Q9": "Python basics - needed for lab work",
+      "Q10": "Application - preview of course content"
+    },
+    "recommendations": {
+      "struggling_with_Q1-Q2": "Review arithmetic fundamentals; practice with Khan Academy or similar",
+      "struggling_with_Q3-Q4": "Algebra review needed; consider Math Learning Centre resources",
+      "struggling_with_Q5": "Practice inequality problems; pay attention to sign flipping",
+      "struggling_with_Q7-Q8": "Critical gap - spend extra time on function notation before Week 1",
+      "struggling_with_Q9": "Complete all Python notebook exercises; seek lab help"
+    }
+  },
+  "lab_connection": {
+    "notebook": "Week0_Intro_Python.ipynb",
+    "exercises": [
+      {
+        "id": "A",
+        "topic": "Plotting leaf data",
+        "practice_link": "Q9"
+      },
+      {
+        "id": "B",
+        "topic": "Calculations with operators",
+        "practice_link": "Q1, Q9"
+      },
+      {
+        "id": "C",
+        "topic": "Fixing syntax errors",
+        "practice_link": "Q9d"
+      },
+      {
+        "id": "D",
+        "topic": "Logical operators",
+        "practice_link": "Q9"
+      },
+      {
+        "id": "E",
+        "topic": "Operator precedence",
+        "practice_link": "Q1, Q9a"
+      },
+      {
+        "id": "F",
+        "topic": "Creating arrays with linspace",
+        "practice_link": "Q9e"
+      },
+      {
+        "id": "G",
+        "topic": "2D arrays",
+        "practice_link": "General Python"
+      },
+      {
+        "id": "H-I",
+        "topic": "Plotting a parabola",
+        "practice_link": "Q10 (quadratic)"
+      }
+    ]
+  }
+}

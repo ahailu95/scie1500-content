@@ -1,0 +1,402 @@
+{
+  "document": {
+    "title": "Getting Started with Python and Jupyter Notebook",
+    "unit": "SCIE1500 — Analytical Methods for Scientists",
+    "author": "Atakelty Hailu",
+    "institution": "University of Western Australia",
+    "version": "1.0",
+    "date": "2026"
+  },
+
+  "sections": [
+    {
+      "id": 1,
+      "title": "Introduction",
+      "content": "This unit uses Python, a general-purpose programming language widely adopted in science, engineering, and data analysis. Python combines readability with powerful libraries for numerical computation (numpy), data manipulation (pandas), symbolic mathematics (sympy), and visualisation (matplotlib).",
+      "subsections": [
+        {
+          "id": "1.1",
+          "title": "Two Ways to Run Jupyter Notebook",
+          "options": [
+            {
+              "name": "Miniconda (Local, Recommended)",
+              "description": "A lightweight Python installer (~200 MB) that includes Python, conda, and pip. Install only the packages you need.",
+              "pros": ["Lightweight (~200 MB)", "Works offline", "Full control over packages", "Faster for large files"],
+              "cons": ["Requires installing packages separately (easy via conda)", "Installation needed"],
+              "best_for": "Regular use on your own laptop (recommended)"
+            },
+            {
+              "name": "Anaconda (Local, Full)",
+              "description": "The full Python distribution (~3 GB) with hundreds of pre-installed packages. Most students won't need the extras.",
+              "pros": ["Works offline", "Everything pre-installed", "Includes Anaconda Navigator GUI"],
+              "cons": ["Requires ~3 GB disk space", "Many unneeded packages"],
+              "best_for": "Users who prefer a GUI launcher or want all packages pre-installed"
+            },
+            {
+              "name": "Google Colab (Cloud)",
+              "description": "A free, browser-based Jupyter environment hosted by Google.",
+              "pros": ["Zero installation", "Works on any device with a browser", "Easy sharing via Google Drive"],
+              "cons": ["Needs internet", "Sessions timeout after inactivity"],
+              "best_for": "Quick access, Chromebooks, or when you cannot install software"
+            }
+          ],
+          "recommendation": "We recommend Miniconda — it is lightweight, fast to install, and includes everything you need. Use Google Colab as a backup. Full Anaconda also works but is much larger."
+        },
+        {
+          "id": "1.2",
+          "title": "Installing Miniconda (Recommended)",
+          "steps": [
+            "Go to https://docs.conda.io/projects/miniconda/en/latest/",
+            "Download the installer for your operating system (Windows, macOS, or Linux)",
+            "Run the installer, accepting the default options",
+            "Open a terminal (or Anaconda Prompt on Windows) and run: conda install jupyter numpy matplotlib pandas",
+            "Launch Jupyter Notebook by typing: jupyter notebook"
+          ],
+          "note": "Already have Anaconda? That works too — it already includes Jupyter and all the packages above. With either Miniconda or Anaconda, you get conda — a package manager that makes installing additional packages easy (e.g. conda install sympy)."
+        },
+        {
+          "id": "1.3",
+          "title": "Using Google Colab",
+          "steps": [
+            "Go to https://colab.research.google.com",
+            "Sign in with your Google account",
+            "Click New Notebook or upload a .ipynb file",
+            "Colab comes with numpy, matplotlib, pandas, and sympy pre-installed"
+          ]
+        },
+        {
+          "id": "1.4",
+          "title": "The Learning Curve",
+          "advice": "Start early, build knowledge gradually. The investment pays off beyond this course. Students who feel lost in Week 0 become confident users by mid-semester."
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "title": "The Jupyter Notebook Environment",
+      "content": "Jupyter Notebooks contain cells of two main types.",
+      "cell_types": [
+        {
+          "type": "Code cells",
+          "purpose": "Write and run Python instructions",
+          "run_with": "Shift+Enter or click Run",
+          "output": "Appears directly below the cell"
+        },
+        {
+          "type": "Markdown cells",
+          "purpose": "Write text, equations (LaTeX), and insert images",
+          "run_with": "Shift+Enter to render"
+        }
+      ],
+      "subsections": [
+        {
+          "id": "2.1",
+          "title": "Recommended Directory Structure",
+          "structure": {
+            "Documents/SCIE1500/": {
+              "Week_0/": ["Week0_Intro_Python.ipynb"],
+              "Week_1/": ["Week1_Functions_Complete.ipynb"],
+              "Week_2/": ["Week2_Exponential_Logarithmic.ipynb"]
+            }
+          }
+        },
+        {
+          "id": "2.2",
+          "title": "Quick Test",
+          "code": "2 + 2",
+          "expected_output": "4"
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "title": "Python Basics",
+      "subsections": [
+        {
+          "id": "3.1",
+          "title": "Python as a Calculator",
+          "examples": [
+            {"code": "2 + 2", "result": "4", "operation": "addition"},
+            {"code": "2 * 3", "result": "6", "operation": "multiplication"},
+            {"code": "9 ** 2", "result": "81", "operation": "exponentiation"},
+            {"code": "2 ** 0.5", "result": "1.4142...", "operation": "square root"}
+          ]
+        },
+        {
+          "id": "3.2",
+          "title": "Variables and Assignment",
+          "example": {
+            "code": "product = 2 * 3\nprint(product)",
+            "output": "6"
+          }
+        },
+        {
+          "id": "3.3",
+          "title": "Comments",
+          "syntax": "# precedes a comment; everything after # on a line is ignored"
+        },
+        {
+          "id": "3.4",
+          "title": "Functions Use Parentheses",
+          "correct": "print(3 ** 2)",
+          "incorrect": "print 3**2",
+          "explanation": "Python functions work like f(x) in algebra — arguments go inside parentheses."
+        },
+        {
+          "id": "3.5",
+          "title": "Case Sensitivity",
+          "note": "Python is case-sensitive: print works, Print does not. Jupyter highlights recognised commands."
+        },
+        {
+          "id": "3.6",
+          "title": "Data Types",
+          "types": [
+            {"type": "int", "example": "x = 5"},
+            {"type": "float", "example": "x = 5.0"},
+            {"type": "str", "example": "x = \"hello\""},
+            {"type": "bool", "example": "x = True"},
+            {"type": "list", "example": "x = [1, 2, 3]"}
+          ],
+          "check_type": "type(x)"
+        },
+        {
+          "id": "3.7",
+          "title": "Operators",
+          "categories": [
+            {
+              "category": "Arithmetic",
+              "operators": ["+", "-", "*", "/", "**", "//", "%"],
+              "examples": ["7 // 2 → 3 (floor division)", "7 % 2 → 1 (remainder)"]
+            },
+            {
+              "category": "Comparison",
+              "operators": ["==", "!=", ">", "<", ">=", "<="],
+              "example": "5 > 3 → True"
+            },
+            {
+              "category": "Logical",
+              "operators": ["and", "or", "not"],
+              "example": "(5 > 3) and (2 < 1) → False"
+            },
+            {
+              "category": "Assignment",
+              "operators": ["=", "+=", "-=", "*="],
+              "example": "x += 1 is shorthand for x = x + 1"
+            }
+          ],
+          "precedence": "Follows BODMAS/PEMDAS. Use parentheses when in doubt."
+        },
+        {
+          "id": "3.8",
+          "title": "Indentation Defines Code Blocks",
+          "note": "Unlike R (which uses {}), Python uses indentation for if, for, while, and function definitions.",
+          "example": "if x > 0:\n    print(\"positive\")\nelse:\n    print(\"non-positive\")"
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "title": "Importing Modules and Key Packages",
+      "import_statements": [
+        {"statement": "import math", "purpose": "standard math library"},
+        {"statement": "import numpy as np", "purpose": "numerical arrays"},
+        {"statement": "import matplotlib.pyplot as plt", "purpose": "plotting"},
+        {"statement": "import sympy as sp", "purpose": "symbolic maths"}
+      ],
+      "subsections": [
+        {
+          "id": "4.1",
+          "title": "The math Module",
+          "constants": [
+            {"name": "math.pi", "value": "3.141592653589793"},
+            {"name": "math.e", "value": "2.718281828459045"}
+          ],
+          "functions": [
+            {"name": "math.sqrt(x)", "description": "square root"},
+            {"name": "math.log(x)", "description": "natural logarithm (base e)"},
+            {"name": "math.log10(x)", "description": "base-10 logarithm"}
+          ]
+        },
+        {
+          "id": "4.2",
+          "title": "NumPy — Arrays and Vectorised Operations",
+          "key_functions": [
+            {"name": "np.array([...])", "description": "create array from list"},
+            {"name": "np.linspace(start, stop, n)", "description": "n equally spaced values from start to stop"},
+            {"name": "np.arange(start, stop, step)", "description": "values with given step size"},
+            {"name": "np.round(arr, decimals)", "description": "round array values"}
+          ],
+          "vectorised_example": {
+            "code": "temps_F = np.array([0, 68, 97, 112, 134])\ntemps_C = (temps_F - 32) * (5/9)\nprint(np.round(temps_C, 2))",
+            "output": "[-17.78  20.  36.11  44.44  56.67]",
+            "note": "The formula applies to all elements simultaneously."
+          }
+        },
+        {
+          "id": "4.3",
+          "title": "Matplotlib — Plotting",
+          "basic_workflow": [
+            "plt.plot(x, y, 'format_string', label='...')",
+            "plt.title('...')",
+            "plt.xlabel('...')",
+            "plt.ylabel('...')",
+            "plt.legend()",
+            "plt.grid(True)",
+            "plt.show()"
+          ]
+        },
+        {
+          "id": "4.4",
+          "title": "Finding Help",
+          "methods": [
+            {"command": "help(function)", "description": "detailed documentation"},
+            {"command": "function?", "description": "quick help (Jupyter only)"},
+            {"command": "dir(module)", "description": "list everything in a module"}
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": 5,
+      "title": "Defining Your Own Functions",
+      "syntax": "def function_name(arguments):\n    # instructions\n    return result",
+      "example": {
+        "code": "def fahrenheit_to_celsius(F):\n    C = (F - 32) * (5/9)\n    return C\n\nfahrenheit_to_celsius(68)",
+        "output": "20.0"
+      },
+      "note": "Starting from Week 0, you will define Python functions to represent scientific models."
+    },
+
+    {
+      "id": 6,
+      "title": "Working with Data — A Quick Preview",
+      "subsections": [
+        {
+          "id": "6.1",
+          "title": "Lists vs Arrays",
+          "list_example": "names = [\"Tom\", \"Tim\", \"Tiger\"]",
+          "array_example": "values = np.array([15, 22, 18, 26])\nvalues.mean()  # → 20.25"
+        },
+        {
+          "id": "6.2",
+          "title": "Reading Data from Files (Pandas)",
+          "code": "import pandas as pd\ndf = pd.read_csv(\"data.csv\")\ndf.head()\ndf.describe()"
+        }
+      ]
+    },
+
+    {
+      "id": 7,
+      "title": "Common Mistakes and How to Avoid Them",
+      "mistakes": [
+        {"mistake": "Missing parentheses", "wrong": "print \"hello\"", "correct": "print(\"hello\")"},
+        {"mistake": "Wrong case", "wrong": "Print(\"hello\")", "correct": "print(\"hello\")"},
+        {"mistake": "Wrong exponent operator", "wrong": "2^3", "correct": "2**3 (caret is XOR in Python)"},
+        {"mistake": "Indentation error", "wrong": "Mixing tabs and spaces", "correct": "Use 4 spaces consistently"},
+        {"mistake": "Forgetting to import", "wrong": "np.array([1,2]) without import", "correct": "Add import numpy as np at the top"}
+      ]
+    },
+
+    {
+      "id": 8,
+      "title": "Python–R Quick Reference",
+      "comparisons": [
+        {"task": "Print a value", "python": "print(x)", "r": "print(x)"},
+        {"task": "Square root", "python": "math.sqrt(x) or np.sqrt(x)", "r": "sqrt(x)"},
+        {"task": "Natural log", "python": "math.log(x) or np.log(x)", "r": "log(x)"},
+        {"task": "Create array/vector", "python": "np.array([1,2,3])", "r": "c(1,2,3)"},
+        {"task": "Sequence of values", "python": "np.linspace(0,10,50)", "r": "seq(0,10,length=50)"},
+        {"task": "Read CSV", "python": "pd.read_csv(\"file.csv\")", "r": "read.csv(\"file.csv\")"},
+        {"task": "Plot", "python": "plt.plot(x, y)", "r": "plot(x, y)"},
+        {"task": "Define a function", "python": "def f(x): return x**2", "r": "f = function(x) x^2"},
+        {"task": "Get help", "python": "help(func)", "r": "?func or help(func)"},
+        {"task": "List module contents", "python": "dir(module)", "r": "ls(\"package:pkg\")"}
+      ]
+    }
+  ],
+
+  "resources": [
+    {
+      "id": "A",
+      "title": "W3Schools Python Tutorial",
+      "url": "https://www.w3schools.com/python/",
+      "description": "Comprehensive, beginner-friendly tutorial. Cover variables, data types, operators, lists, and functions."
+    },
+    {
+      "id": "B",
+      "title": "NumPy for Beginners",
+      "url": "https://numpy.org/doc/stable/user/absolute_beginners.html",
+      "description": "Official getting-started guide covering arrays, indexing, and basic operations."
+    },
+    {
+      "id": "C",
+      "title": "Matplotlib Tutorials",
+      "url": "https://matplotlib.org/stable/tutorials/index.html",
+      "description": "Official tutorials. Start with 'Pyplot tutorial' for the plotting style used in this unit."
+    },
+    {
+      "id": "D",
+      "title": "SymPy Introduction",
+      "url": "https://docs.sympy.org/latest/tutorials/intro-tutorial/index.html",
+      "description": "Symbolic mathematics (derivatives, integrals, solving equations) from Week 4 onward."
+    },
+    {
+      "id": "E",
+      "title": "Pandas Getting Started",
+      "url": "https://pandas.pydata.org/docs/getting_started/index.html",
+      "description": "Data manipulation with DataFrames."
+    },
+    {
+      "id": "F",
+      "title": "Google Colab Introduction",
+      "url": "https://colab.research.google.com/notebooks/intro.ipynb",
+      "description": "Interactive introduction to using Colab notebooks."
+    },
+    {
+      "id": "G",
+      "title": "Miniconda / Anaconda Documentation",
+      "url": "https://docs.conda.io/projects/miniconda/",
+      "description": "Miniconda download and setup (recommended). For full Anaconda: docs.anaconda.com"
+    },
+    {
+      "id": "H",
+      "title": "Real Python",
+      "url": "https://realpython.com/",
+      "description": "High-quality tutorials on a wide range of Python topics."
+    },
+    {
+      "id": "I",
+      "title": "YouTube Tutorials",
+      "url": "https://www.youtube.com/",
+      "description": "Search for 'Python for beginners Jupyter Notebook'. Corey Schafer's tutorials are widely recommended."
+    },
+    {
+      "id": "J",
+      "title": "Stack Overflow",
+      "url": "https://stackoverflow.com/",
+      "description": "Search for error messages. Someone has almost certainly had the same problem."
+    }
+  ],
+
+  "lab_notebook_connections": {
+    "week0": {
+      "notebook": "Week0_Intro_Python.ipynb",
+      "topics": ["Python syntax", "data types", "operators", "importing modules", "arrays", "plotting"],
+      "prerequisites_from_this_guide": ["Sections 2-4"]
+    },
+    "week1": {
+      "notebook": "Week1_Functions_Complete.ipynb",
+      "topics": ["Defining functions", "linear functions", "quadratic functions", "plotting models"],
+      "prerequisites_from_this_guide": ["Section 5 (defining functions)", "Section 4.3 (plotting)"]
+    },
+    "week2": {
+      "notebook": "Week2_Exponential_Logarithmic.ipynb",
+      "topics": ["Euler's number e", "exponential growth/decay", "logarithms", "np.exp(), np.log()"],
+      "prerequisites_from_this_guide": ["Section 4.1 (math.e, math.log)", "Section 4.2 (NumPy functions)"]
+    }
+  }
+}

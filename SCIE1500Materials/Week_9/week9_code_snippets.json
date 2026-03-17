@@ -1,0 +1,380 @@
+{
+  "week": 9,
+  "title": "Probability, Combinatorics, and Binomial Distribution",
+  "description": "Python code snippets for probability concepts aligned with lab exercises on factorials, permutations, combinations, enumeration, and binomial distributions for infection modeling.",
+  "lab_alignment": {
+    "notebook": "Probability.ipynb",
+    "exercises": [
+      "Exercise A: Specific sequence probability",
+      "Exercise B: Infection analysis",
+      "Exercise C: Practice quiz"
+    ]
+  },
+  "required_libraries": [
+    "numpy",
+    "matplotlib.pyplot",
+    "math",
+    "itertools (permutations, combinations)",
+    "scipy.stats (binom)"
+  ],
+  "snippets": [
+    {
+      "id": "W9-CS01",
+      "title": "Library Imports",
+      "section": "Setup",
+      "description": "Standard imports for probability and combinatorics work",
+      "code": "%matplotlib inline\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom itertools import permutations\nfrom itertools import combinations\nfrom scipy.stats import binom\nimport math",
+      "concepts": [
+        "library imports",
+        "setup"
+      ],
+      "lab_reference": "Cell 1"
+    },
+    {
+      "id": "W9-CS02",
+      "title": "Multiplication Principle",
+      "section": "1. Factorials",
+      "description": "Apply the multiplication principle for counting arrangements",
+      "code": "# Example: Routes from Town A to C via B\nroutes_A_to_B = 4\nroutes_B_to_C = 2\ntotal_routes = routes_A_to_B * routes_B_to_C\nprint(f\"Total routes: {total_routes}\")\n\n# Arranging 5 letters: 5 × 4 × 3 × 2 × 1 = 5!\narrangements = 5 * 4 * 3 * 2 * 1\nprint(f\"Ways to arrange 5 letters: {arrangements}\")",
+      "expected_output": "Total routes: 8\nWays to arrange 5 letters: 120",
+      "concepts": [
+        "multiplication principle",
+        "counting"
+      ],
+      "lab_reference": "Cell 2"
+    },
+    {
+      "id": "W9-CS03",
+      "title": "Factorial Calculations",
+      "section": "1. Factorials",
+      "description": "Use math.factorial() for factorial computations",
+      "code": "import math\n\n# Basic factorials\nprint(f\"5! = {math.factorial(5)}\")\nprint(f\"6! = {math.factorial(6)}\")\nprint(f\"0! = {math.factorial(0)}\")\n\n# Simplifying expressions\n# 12!/10! = 12 × 11 = 132\nresult1 = math.factorial(12) / math.factorial(10)\nprint(f\"12!/10! = {result1}\")\n\n# 6!/(2!4!) = 15\nresult2 = math.factorial(6) / (math.factorial(2) * math.factorial(4))\nprint(f\"6!/(2!4!) = {result2}\")",
+      "expected_output": "5! = 120\n6! = 720\n0! = 1\n12!/10! = 132.0\n6!/(2!4!) = 15.0",
+      "concepts": [
+        "factorial",
+        "math.factorial"
+      ],
+      "lab_reference": "Cells 6-8"
+    },
+    {
+      "id": "W9-CS04",
+      "title": "Permutation Formula",
+      "section": "2. Permutations",
+      "description": "Calculate permutations using the formula P(n,p) = n!/(n-p)!",
+      "code": "import math\n\n# P(n,p) = n!/(n-p)!\nn = 3\np = 2\npermutations_count = math.factorial(n) / math.factorial(n - p)\nprint(f\"P({n},{p}) = {permutations_count}\")\n\n# P(5,3)\nn, p = 5, 3\nresult = math.factorial(n) / math.factorial(n - p)\nprint(f\"P({n},{p}) = {result}\")",
+      "expected_output": "P(3,2) = 6.0\nP(5,3) = 60.0",
+      "concepts": [
+        "permutations",
+        "ordered arrangements"
+      ],
+      "lab_reference": "Cell 11"
+    },
+    {
+      "id": "W9-CS05",
+      "title": "Listing Permutations with itertools",
+      "section": "2. Permutations",
+      "description": "Use itertools.permutations to enumerate all ordered arrangements",
+      "code": "from itertools import permutations\n\n# Permutations of 3 things taken 3 at a time\nP33 = permutations(['A', 'B', 'C'], 3)\nprint(\"Permutations of A,B,C taken 3 at a time:\")\nfor i in list(P33):\n    print(i)\n\nprint()\n\n# Permutations of 3 things taken 2 at a time\nP32 = permutations(['A', 'B', 'C'], 2)\nprint(\"Permutations of A,B,C taken 2 at a time:\")\nfor i in list(P32):\n    print(i)",
+      "expected_output": "Permutations of A,B,C taken 3 at a time:\n('A', 'B', 'C')\n('A', 'C', 'B')\n('B', 'A', 'C')\n('B', 'C', 'A')\n('C', 'A', 'B')\n('C', 'B', 'A')\n\nPermutations of A,B,C taken 2 at a time:\n('A', 'B')\n('A', 'C')\n('B', 'A')\n('B', 'C')\n('C', 'A')\n('C', 'B')",
+      "concepts": [
+        "itertools.permutations",
+        "enumeration"
+      ],
+      "lab_reference": "Cells 12-13"
+    },
+    {
+      "id": "W9-CS06",
+      "title": "Listing Combinations with itertools",
+      "section": "2. Combinations",
+      "description": "Use itertools.combinations for unordered selections",
+      "code": "from itertools import combinations\n\n# Combinations of 3 things taken 2 at a time\nC32 = combinations(['A', 'B', 'C'], 2)\nprint(\"Combinations of A,B,C taken 2 at a time:\")\nfor i in list(C32):\n    print(i)",
+      "expected_output": "Combinations of A,B,C taken 2 at a time:\n('A', 'B')\n('A', 'C')\n('B', 'C')",
+      "concepts": [
+        "itertools.combinations",
+        "unordered selections"
+      ],
+      "lab_reference": "Cell 15"
+    },
+    {
+      "id": "W9-CS07",
+      "title": "Committee Assignment Problem",
+      "section": "2. Combinations",
+      "description": "Apply combinations to solve committee assignment problem",
+      "code": "import math\n\n# Assign 9 colleagues into 3 committees of 3 each\n\n# First committee: select 3 out of 9\nn1 = math.factorial(9) / (math.factorial(6) * math.factorial(3))\n\n# Second committee: select 3 out of 6\nn2 = math.factorial(6) / (math.factorial(3) * math.factorial(3))\n\n# Third committee: select 3 out of 3\nn3 = math.factorial(3) / (math.factorial(0) * math.factorial(3))\n\nanswer = n1 * n2 * n3\nprint(f\"Answer: {n1:.0f} × {n2:.0f} × {n3:.0f} = {answer:.0f}\")",
+      "expected_output": "Answer: 84 × 20 × 1 = 1680",
+      "concepts": [
+        "combinations",
+        "sequential selection",
+        "multiplication principle"
+      ],
+      "lab_reference": "Cell 17"
+    },
+    {
+      "id": "W9-CS08",
+      "title": "Basic Probability Calculation",
+      "section": "3. Probability",
+      "description": "Calculate probability as favorable outcomes / total outcomes",
+      "code": "# Probability of 2 girls in 3 children\n\n# Total possible cases (2^3 = 8)\nNs = 2**3\n\n# Favorable outcomes: GGB, GBG, BGG\nNa = 3\n\nprob = Na / Ns\nprint(f\"P(2 girls in 3 children) = {Na}/{Ns} = {prob}\")",
+      "expected_output": "P(2 girls in 3 children) = 3/8 = 0.375",
+      "concepts": [
+        "probability",
+        "sample space",
+        "favorable outcomes"
+      ],
+      "lab_reference": "Cell 19"
+    },
+    {
+      "id": "W9-CS09",
+      "title": "Enumeration Using Nested Loops",
+      "section": "3. Probability",
+      "description": "Use nested for-loops to enumerate all possible outcomes",
+      "code": "# Enumerate all sequences for 3 children\nS = ['G', 'B']\ncountg = 0\n\nfor frst in S:\n    for scnd in S:\n        for thrd in S:\n            countg = (frst == 'G') + (scnd == 'G') + (thrd == 'G')\n            print(f\"{frst} {scnd} {thrd} | {countg} girls\")\n            countg = 0",
+      "expected_output": "G G G | 3 girls\nG G B | 2 girls\nG B G | 2 girls\nG B B | 1 girls\nB G G | 2 girls\nB G B | 1 girls\nB B G | 1 girls\nB B B | 0 girls",
+      "concepts": [
+        "enumeration",
+        "for-loops",
+        "counting"
+      ],
+      "lab_reference": "Cell 25"
+    },
+    {
+      "id": "W9-CS10",
+      "title": "Conditional Check in Enumeration",
+      "section": "3. Probability",
+      "description": "Check specific conditions while enumerating outcomes",
+      "code": "# Check if middle child is a boy\nS = ['G', 'B']\n\nprint(\"Sequence | Middle is Boy?\")\nprint(\"-\" * 25)\n\nfor first in S:\n    for second in S:\n        for third in S:\n            middle_is_boy = (second == 'B')\n            print(f\"  {first} {second} {third}  |    {middle_is_boy}\")",
+      "expected_output": "Sequence | Middle is Boy?\n-------------------------\n  G G G  |    False\n  G G B  |    False\n  G B G  |    True\n  G B B  |    True\n  B G G  |    False\n  B G B  |    False\n  B B G  |    True\n  B B B  |    True",
+      "concepts": [
+        "conditional logic",
+        "Boolean expressions"
+      ],
+      "lab_reference": "Cells 26-27"
+    },
+    {
+      "id": "W9-CS11",
+      "title": "Probability Using Combination Formula",
+      "section": "3. Probability",
+      "description": "Calculate probability using combinatorics",
+      "code": "import math\n\n# P(2 girls in 5 children)\n# C(5,2): ways two girls can occur\nNa = math.factorial(5) / (math.factorial(2) * math.factorial(3))\n\n# Total outcomes\nNs = 2**5\n\nprob = Na / Ns\nprint(f\"Na = {Na:.0f}\")\nprint(f\"Ns = {Ns}\")\nprint(f\"Probability = {prob}\")",
+      "expected_output": "Na = 10\nNs = 32\nProbability = 0.3125",
+      "concepts": [
+        "combinations",
+        "probability formula"
+      ],
+      "lab_reference": "Cell 34"
+    },
+    {
+      "id": "W9-CS12",
+      "title": "Exercise A: Specific Sequence Probability",
+      "section": "3. Probability",
+      "description": "Calculate probability of specific sequence GGBBB using mathematics and enumeration",
+      "code": "# Mathematical approach\n# Only ONE way to get GGBBB out of 2^5 = 32 outcomes\nprob_ggbbb = 1 / (2**5)\nprint(f\"P(GGBBB) = 1/32 = {prob_ggbbb}\")\n\n# Verification by enumeration\nS = ['G', 'B']\ncount_ggbbb = 0\ntotal = 0\n\nfor c1 in S:\n    for c2 in S:\n        for c3 in S:\n            for c4 in S:\n                for c5 in S:\n                    total += 1\n                    sequence = c1 + c2 + c3 + c4 + c5\n                    if sequence == 'GGBBB':\n                        count_ggbbb += 1\n                        print(f\"Found: {sequence}\")\n\nprint(f\"Verification: {count_ggbbb}/{total} = {count_ggbbb/total}\")",
+      "expected_output": "P(GGBBB) = 1/32 = 0.03125\nFound: GGBBB\nVerification: 1/32 = 0.03125",
+      "concepts": [
+        "specific sequence",
+        "enumeration verification"
+      ],
+      "lab_reference": "Cell 37-38 (Exercise A)",
+      "exercise": "A"
+    },
+    {
+      "id": "W9-CS13",
+      "title": "Manual Binomial Probability",
+      "section": "4. Binomial Distribution",
+      "description": "Calculate binomial probabilities using the formula",
+      "code": "import math\n\n# P(X=k) = C(n,k) * p^k * (1-p)^(n-k)\nn = 2\np = 0.5\n\nfor k in [0, 1, 2]:\n    coef = math.factorial(n) / (math.factorial(n-k) * math.factorial(k))\n    prob = coef * (p**k) * ((1-p)**(n-k))\n    print(f\"P(k={k}) = {prob}\")",
+      "expected_output": "P(k=0) = 0.25\nP(k=1) = 0.5\nP(k=2) = 0.25",
+      "concepts": [
+        "binomial formula",
+        "manual calculation"
+      ],
+      "lab_reference": "Cells 40-42"
+    },
+    {
+      "id": "W9-CS14",
+      "title": "Using scipy.stats.binom.pmf",
+      "section": "4. Binomial Distribution",
+      "description": "Calculate binomial probabilities using scipy",
+      "code": "from scipy.stats import binom\n\n# Parameters\np = 0.5\nn = 2\nsuccess = [0, 1, 2]\n\n# Create arrays for results\nkarray = []\nprobarray = []\n\nfor ki in success:\n    karray.append(ki)\n    probk = binom.pmf(k=ki, n=n, p=p)\n    probarray.append(probk)\n    print(f\"k={ki}: P = {probk}\")",
+      "expected_output": "k=0: P = 0.25\nk=1: P = 0.5\nk=2: P = 0.25",
+      "concepts": [
+        "scipy.stats.binom",
+        "pmf"
+      ],
+      "lab_reference": "Cell 44"
+    },
+    {
+      "id": "W9-CS15",
+      "title": "Binomial Distribution Bar Plot",
+      "section": "4. Binomial Distribution",
+      "description": "Visualize binomial distribution with bar chart",
+      "code": "import matplotlib.pyplot as plt\n\n# Binomial distribution for 3 children (girls)\ngirls = [0, 1, 2, 3]\nprobs = [0.125, 0.375, 0.375, 0.125]\n\nplt.bar(x=girls, height=probs, color=\"orange\")\nplt.xlabel('Number of Girls')\nplt.ylabel('Probability')\nplt.title('Probability of Girls in Family of 3 Children')\nplt.show()",
+      "expected_output": "[Bar chart displayed]",
+      "concepts": [
+        "visualization",
+        "bar plot",
+        "matplotlib"
+      ],
+      "lab_reference": "Cell 32"
+    },
+    {
+      "id": "W9-CS16",
+      "title": "Complete Binomial Distribution Loop",
+      "section": "4. Binomial Distribution",
+      "description": "Calculate full binomial distribution for n children",
+      "code": "import numpy as np\nfrom scipy.stats import binom\n\n# Parameters\nn = 8\np = 0.5\n\n# All possible success values\nsuccess = np.arange(0, n + 1)\nprobarray = [0] * (n + 1)\n\nfor ki in success:\n    probk = binom.pmf(k=ki, n=n, p=p)\n    probarray[ki] = probk\n    print(f\"k={ki}: P = {probk:.6f}\")",
+      "expected_output": "k=0: P = 0.003906\nk=1: P = 0.031250\nk=2: P = 0.109375\nk=3: P = 0.218750\nk=4: P = 0.273438\nk=5: P = 0.218750\nk=6: P = 0.109375\nk=7: P = 0.031250\nk=8: P = 0.003906",
+      "concepts": [
+        "complete distribution",
+        "numpy arrays"
+      ],
+      "lab_reference": "Cell 51"
+    },
+    {
+      "id": "W9-CS17",
+      "title": "Exercise B: Infection Analysis (p=0.45)",
+      "section": "5. Infection Modeling",
+      "description": "Calculate binomial probabilities for infection scenario with 25 contacts",
+      "code": "import numpy as np\nfrom scipy.stats import binom\n\n# Infection scenario parameters\np = 0.45\nn = 25\n\nsuccess = np.arange(0, n + 1)\nprobarray = [0] * (n + 1)\n\nprint(f\"Infection probabilities (n={n}, p={p}):\")\nfor ki in success:\n    probk = binom.pmf(k=ki, n=n, p=p)\n    probarray[ki] = probk\n    print(f\"k={ki:2d}: P = {probk:.6f}\")\n\nparray1 = probarray  # Store for comparison",
+      "expected_output": "Infection probabilities (n=25, p=0.45):\nk= 0: P = 0.000000\nk= 1: P = 0.000001\n...\nk=11: P = 0.160203\nk=12: P = 0.132089\n...\nk=25: P = 0.000000",
+      "concepts": [
+        "infection modeling",
+        "binomial application"
+      ],
+      "lab_reference": "Cell 54 (Exercise B)",
+      "exercise": "B"
+    },
+    {
+      "id": "W9-CS18",
+      "title": "Exercise B: Infection Bar Plot (p=0.45)",
+      "section": "5. Infection Modeling",
+      "description": "Visualize infection distribution",
+      "code": "import matplotlib.pyplot as plt\n\n# Bar plot of infection probabilities\nplt.bar(x=success, height=probarray, color=\"blue\")\nplt.xlabel('Number of Infections (k)')\nplt.ylabel('Probability')\nplt.title(f'Binomial Distribution (n={n}, p={p})')\nplt.show()",
+      "expected_output": "[Bar chart displayed]",
+      "concepts": [
+        "visualization",
+        "infection distribution"
+      ],
+      "lab_reference": "Cell 55 (Exercise B)",
+      "exercise": "B"
+    },
+    {
+      "id": "W9-CS19",
+      "title": "Exercise B: Infection Analysis (p=0.60)",
+      "section": "5. Infection Modeling",
+      "description": "Repeat infection analysis with higher transmission probability",
+      "code": "import numpy as np\nfrom scipy.stats import binom\nimport matplotlib.pyplot as plt\n\n# Higher infection probability\np = 0.60\nn = 25\n\nsuccess = np.arange(0, n + 1)\nprobarray = [binom.pmf(k=ki, n=n, p=p) for ki in success]\n\nprint(f\"Infection probabilities (n={n}, p={p}):\")\nfor ki in success:\n    print(f\"k={ki:2d}: P = {probarray[ki]:.6f}\")\n\n# Bar plot\nplt.bar(x=success, height=probarray, color=\"red\")\nplt.xlabel('Number of Infections (k)')\nplt.ylabel('Probability')\nplt.title(f'Binomial Distribution (n={n}, p={p})')\nplt.show()",
+      "expected_output": "Infection probabilities (n=25, p=0.60):\nk= 0: P = 0.000000\n...\nk=15: P = 0.161248\n...\nk=25: P = 0.000003",
+      "concepts": [
+        "parameter comparison",
+        "distribution shift"
+      ],
+      "lab_reference": "Cells 57-58 (Exercise B)",
+      "exercise": "B"
+    },
+    {
+      "id": "W9-CS20",
+      "title": "Comparing Distributions Side-by-Side",
+      "section": "5. Infection Modeling",
+      "description": "Visual comparison of infection distributions with different p values",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import binom\n\nn = 25\np_values = [0.45, 0.60]\n\nfig, axes = plt.subplots(1, 2, figsize=(14, 5))\n\nfor idx, p in enumerate(p_values):\n    success = np.arange(0, n + 1)\n    probarray = [binom.pmf(k=ki, n=n, p=p) for ki in success]\n    \n    axes[idx].bar(success, probarray, color=['blue', 'red'][idx])\n    axes[idx].set_xlabel('Number of Infections (k)')\n    axes[idx].set_ylabel('Probability')\n    axes[idx].set_title(f'Binomial (n={n}, p={p})')\n    \n    # Mark expected value\n    expected = n * p\n    axes[idx].axvline(x=expected, color='black', linestyle='--', label=f'E[X]={expected:.1f}')\n    axes[idx].legend()\n\nplt.tight_layout()\nplt.show()",
+      "expected_output": "[Side-by-side bar charts displayed]",
+      "concepts": [
+        "subplot",
+        "distribution comparison",
+        "expected value"
+      ],
+      "lab_reference": "Exercise B comparison",
+      "exercise": "B"
+    },
+    {
+      "id": "W9-CS21",
+      "title": "Distribution Observations Summary",
+      "section": "5. Infection Modeling",
+      "description": "Calculate summary statistics for distribution comparison",
+      "code": "import numpy as np\nfrom scipy.stats import binom\n\nn = 25\n\nfor p in [0.45, 0.60]:\n    expected = n * p\n    variance = n * p * (1 - p)\n    std_dev = np.sqrt(variance)\n    \n    # Find mode\n    probs = [binom.pmf(k=ki, n=n, p=p) for ki in range(n + 1)]\n    mode = np.argmax(probs)\n    \n    print(f\"\\np = {p}:\")\n    print(f\"  Expected: E[X] = {expected:.1f}\")\n    print(f\"  Std Dev: σ = {std_dev:.2f}\")\n    print(f\"  Mode: k = {mode}\")\n    print(f\"  P(k={mode}) = {probs[mode]:.4f}\")",
+      "expected_output": "\np = 0.45:\n  Expected: E[X] = 11.2\n  Std Dev: σ = 2.49\n  Mode: k = 11\n  P(k=11) = 0.1602\n\np = 0.60:\n  Expected: E[X] = 15.0\n  Std Dev: σ = 2.45\n  Mode: k = 15\n  P(k=15) = 0.1612",
+      "concepts": [
+        "expected value",
+        "standard deviation",
+        "mode"
+      ],
+      "lab_reference": "Exercise B observations",
+      "exercise": "B"
+    },
+    {
+      "id": "W9-CS22",
+      "title": "Q32 Connection: Sample Space",
+      "section": "6. Practice Questions",
+      "description": "Verify sample space size for coin toss experiment",
+      "code": "from scipy.stats import binom\n\n# Q32: Fair coin tossed 5 times\nn_tosses = 5\nsample_space_size = 2**n_tosses\nprint(f\"Sample space size: |S| = {sample_space_size}\")\n\n# P(exactly 3 heads)\nprob_3_heads = binom.pmf(k=3, n=5, p=0.5)\nprint(f\"P(exactly 3 heads) = {prob_3_heads:.4f}\")\nprint(f\"Is this 0.60? {abs(prob_3_heads - 0.60) < 0.001}\")",
+      "expected_output": "Sample space size: |S| = 32\nP(exactly 3 heads) = 0.3125\nIs this 0.60? False",
+      "concepts": [
+        "sample space",
+        "probability verification"
+      ],
+      "practice_question": "Q32"
+    },
+    {
+      "id": "W9-CS23",
+      "title": "Q35 Connection: Hypothesis Testing",
+      "section": "6. Practice Questions",
+      "description": "Calculate p-value for testing infection rate hypothesis",
+      "code": "from scipy.stats import binom\n\n# Q35: 9 of 11 contacts infected\n# H0: p = 0.5, H1: p > 0.5\nn = 11\nobserved_k = 9\np_null = 0.5\n\n# P-value = P(X >= 9 | p = 0.5)\np_value = sum(binom.pmf(k=ki, n=n, p=p_null) for ki in range(9, n + 1))\n\nprint(f\"P-value = P(X >= {observed_k} | n={n}, p={p_null})\")\nprint(f\"P-value = {p_value:.6f}\")\nprint(f\"Reject H0 at α=0.05? {p_value < 0.05}\")",
+      "expected_output": "P-value = P(X >= 9 | n=11, p=0.5)\nP-value = 0.032715\nReject H0 at α=0.05? True",
+      "concepts": [
+        "p-value",
+        "hypothesis testing",
+        "cumulative probability"
+      ],
+      "practice_question": "Q35"
+    },
+    {
+      "id": "W9-CS24",
+      "title": "Complete Lab Template",
+      "section": "7. Lab Template",
+      "description": "Complete template for lab submission",
+      "code": "\"\"\"\nWeek 9 Lab: Probability and Binomial Distribution\n\"\"\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport math\nfrom itertools import permutations, combinations\nfrom scipy.stats import binom\n\n# PART 1: Factorials\nprint(f\"12!/10! = {math.factorial(12) / math.factorial(10)}\")\nprint(f\"6!/(2!4!) = {math.factorial(6) / (math.factorial(2) * math.factorial(4))}\")\n\n# EXERCISE A: P(GGBBB)\nprint(f\"\\nExercise A: P(GGBBB) = {1 / (2**5)}\")\n\n# EXERCISE B: Infection Analysis\ndef infection_analysis(n, p):\n    success = np.arange(0, n + 1)\n    probarray = [binom.pmf(k=ki, n=n, p=p) for ki in success]\n    return success, probarray\n\nsuccess, probs1 = infection_analysis(25, 0.45)\nsuccess, probs2 = infection_analysis(25, 0.60)\n\nfig, axes = plt.subplots(1, 2, figsize=(12, 4))\naxes[0].bar(success, probs1, color='blue')\naxes[0].set_title('p=0.45')\naxes[1].bar(success, probs2, color='red')\naxes[1].set_title('p=0.60')\nplt.show()\n\n# EXERCISE C: Quiz answers\n# Q1: ___\n# Q2: ___\n# Q3: ___\n# Q4: ___\n# Q5: ___",
+      "expected_output": "12!/10! = 132.0\n6!/(2!4!) = 15.0\n\nExercise A: P(GGBBB) = 0.03125\n[Plots displayed]",
+      "concepts": [
+        "lab submission",
+        "complete workflow"
+      ],
+      "lab_reference": "Complete template"
+    }
+  ],
+  "key_formulas": {
+    "factorial": "n! = n × (n-1) × ... × 2 × 1",
+    "permutations": "P(n,p) = n! / (n-p)!",
+    "combinations": "C(n,p) = n! / [(n-p)! × p!]",
+    "binomial_probability": "P(X=k) = C(n,k) × p^k × (1-p)^(n-k)",
+    "expected_value": "E[X] = n × p",
+    "variance": "Var(X) = n × p × (1-p)"
+  },
+  "exercise_summary": {
+    "Exercise_A": {
+      "topic": "Specific sequence probability",
+      "problem": "P(GGBBB) in family of 5 children",
+      "answer": 0.03125,
+      "method": "Mathematics and enumeration"
+    },
+    "Exercise_B": {
+      "topic": "Infection modeling",
+      "parameters": {
+        "n": 25,
+        "p1": 0.45,
+        "p2": 0.6
+      },
+      "tasks": [
+        "Calculate probabilities",
+        "Generate bar plots",
+        "Compare distributions",
+        "Write observations"
+      ]
+    },
+    "Exercise_C": {
+      "topic": "Practice quiz",
+      "questions": 5
+    }
+  }
+}

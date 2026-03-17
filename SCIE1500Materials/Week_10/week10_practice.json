@@ -1,0 +1,372 @@
+{
+  "metadata": {
+    "week": 10,
+    "title": "Random Variables and Hypothesis Testing",
+    "theme": "Making Decisions Under Uncertainty",
+    "exam_alignment": ["Q33", "Q35"],
+    "total_questions": 20,
+    "difficulty_distribution": {
+      "foundational": 8,
+      "intermediate": 8,
+      "exam_style": 4
+    },
+    "scientific_contexts": [
+      "Disease transmission and new variants",
+      "Clinical trials and treatment efficacy",
+      "Epidemiological surveillance",
+      "Public health decision making"
+    ],
+    "student_challenges_addressed": [
+      "Expected value calculation from probability tables",
+      "One-tailed vs two-tailed test distinction (CRITICAL)",
+      "p-value interpretation and decision making",
+      "Formulating null and alternative hypotheses"
+    ]
+  },
+  "questions": [
+    {
+      "id": "W10-001",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "random_variable_definition",
+      "question": "A random variable $X$ represents the number of infected individuals in a sample of 5 contacts. Which of the following is a valid set of values that $X$ can take?",
+      "choices": {
+        "A": "$\\{-1, 0, 1, 2, 3, 4, 5\\}$",
+        "B": "$\\{0, 1, 2, 3, 4, 5\\}$",
+        "C": "$\\{0.5, 1.5, 2.5, 3.5, 4.5\\}$",
+        "D": "$\\{1, 2, 3, 4, 5\\}$",
+        "E": "Any real number between 0 and 5"
+      },
+      "correct_answer": "B",
+      "solution": "The random variable $X$ counts the number of infected individuals, which must be:\n\n- A **non-negative integer** (you can't have -1 or 0.5 infections)\n- Between **0 and 5** inclusive (you can't have more infections than contacts)\n\nTherefore $X \\in \\{0, 1, 2, 3, 4, 5\\}$.\n\nOption (A) is wrong because it includes -1.\nOption (C) is wrong because infections are whole numbers.\nOption (D) is wrong because it excludes 0 (no infections is possible).\nOption (E) is wrong because $X$ must be discrete, not continuous.",
+      "key_concept": "A count-based random variable takes non-negative integer values within the possible range"
+    },
+    {
+      "id": "W10-002",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "expected_value_concept",
+      "question": "If the expected value of a random variable $X$ is $E[X] = 2.7$, which statement is correct?",
+      "choices": {
+        "A": "$X$ will always equal 2.7",
+        "B": "$X = 2.7$ is the most likely outcome",
+        "C": "The long-run average of $X$ values will approach 2.7",
+        "D": "$X$ must be able to take the value 2.7",
+        "E": "The probability $P(X = 2.7) = 1$"
+      },
+      "correct_answer": "C",
+      "solution": "The expected value $E[X]$ is the **long-run average**—if we repeated the random experiment many times, the average of all observed values would approach $E[X]$.\n\n**Key points:**\n- $E[X]$ need not be a possible value of $X$ (e.g., for die rolls, $E[X] = 3.5$)\n- $E[X]$ is not necessarily the most likely value\n- Random variables can take different values each trial\n\nThis is the **Law of Large Numbers** in action.",
+      "key_concept": "Expected value is the long-run average, not a guaranteed outcome"
+    },
+    {
+      "id": "W10-003",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "expected_value_calculation",
+      "exam_reference": "Q33",
+      "question": "A random variable $X$ has the following probability distribution:\n\n| $x$ | 0 | 3 | 4 | 6 |\n|-----|---|---|---|---|\n| $P(X=x)$ | 0.2 | 0.4 | 0.3 | 0.1 |\n\nWhat is $E[X]$?",
+      "choices": {
+        "A": "1.0",
+        "B": "2.0",
+        "C": "3.0",
+        "D": "4.0",
+        "E": "3.25"
+      },
+      "correct_answer": "C",
+      "solution": "Using the formula $E[X] = \\sum_x x \\cdot P(X = x)$:\n\n$$E[X] = 0 \\cdot (0.2) + 3 \\cdot (0.4) + 4 \\cdot (0.3) + 6 \\cdot (0.1)$$\n\n$$= 0 + 1.2 + 1.2 + 0.6 = 3.0$$\n\n**Exam tip:** Note that $X$ only takes values $\\{0, 3, 4, 6\\}$—not consecutive integers! Don't accidentally include 1, 2, or 5 in your calculation.",
+      "key_concept": "This is Q33 from the exam. Apply $E[X] = \\sum x \\cdot P(X=x)$ carefully"
+    },
+    {
+      "id": "W10-004",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "expected_value_calculation",
+      "question": "A diagnostic test returns $X = 1$ (positive) with probability 0.15 and $X = 0$ (negative) with probability 0.85. What is $E[X]$?",
+      "choices": {
+        "A": "0",
+        "B": "0.15",
+        "C": "0.50",
+        "D": "0.85",
+        "E": "1"
+      },
+      "correct_answer": "B",
+      "solution": "Using $E[X] = \\sum_x x \\cdot P(X = x)$:\n\n$$E[X] = 0 \\cdot (0.85) + 1 \\cdot (0.15) = 0 + 0.15 = 0.15$$\n\nAlternatively, this is a **Bernoulli distribution** with $p = 0.15$, so $E[X] = p = 0.15$.",
+      "key_concept": "For a Bernoulli random variable, $E[X] = p$"
+    },
+    {
+      "id": "W10-005",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "variance_concept",
+      "question": "The variance of a random variable measures:",
+      "choices": {
+        "A": "The most likely value",
+        "B": "The average value",
+        "C": "How spread out the values are around the mean",
+        "D": "The maximum possible value",
+        "E": "The probability of the most common outcome"
+      },
+      "correct_answer": "C",
+      "solution": "Variance $\\text{Var}(X) = E[(X - \\mu)^2]$ measures how far values tend to deviate from the mean $\\mu = E[X]$.\n\n- **High variance:** values are spread out, far from the mean on average\n- **Low variance:** values cluster tightly around the mean\n- **Zero variance:** $X$ always equals $\\mu$ (no randomness)\n\nThe expected value (B) measures the center, not the spread.",
+      "key_concept": "Variance measures dispersion around the mean"
+    },
+    {
+      "id": "W10-006",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "bernoulli_distribution",
+      "question": "If $X \\sim \\text{Bernoulli}(0.3)$, what is $\\text{Var}(X)$?",
+      "choices": {
+        "A": "0.09",
+        "B": "0.21",
+        "C": "0.30",
+        "D": "0.49",
+        "E": "0.70"
+      },
+      "correct_answer": "B",
+      "solution": "For a Bernoulli distribution with parameter $p$:\n\n$$\\text{Var}(X) = p(1-p)$$\n\nWith $p = 0.3$:\n\n$$\\text{Var}(X) = 0.3 \\times (1 - 0.3) = 0.3 \\times 0.7 = 0.21$$",
+      "key_concept": "Bernoulli variance: $\\text{Var}(X) = p(1-p)$"
+    },
+    {
+      "id": "W10-007",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "binomial_distribution",
+      "question": "If 10 independent contacts each have a 0.4 probability of resulting in disease transmission, and $X$ = number of transmissions, then $X$ follows which distribution?",
+      "choices": {
+        "A": "$\\text{Bernoulli}(0.4)$",
+        "B": "$\\text{Binomial}(10, 0.4)$",
+        "C": "$\\text{Normal}(4, 2.4)$",
+        "D": "$\\text{Poisson}(4)$",
+        "E": "$\\text{Binomial}(0.4, 10)$"
+      },
+      "correct_answer": "B",
+      "solution": "The binomial distribution applies when:\n\n1. ✓ Fixed number of trials: $n = 10$\n2. ✓ Each trial has two outcomes: transmission or not\n3. ✓ Trials are independent\n4. ✓ Same probability $p = 0.4$ for each trial\n\nTherefore $X \\sim \\text{Binomial}(n, p) = \\text{Binomial}(10, 0.4)$.\n\n**Note:** The notation is $\\text{Binomial}(n, p)$, not $\\text{Binomial}(p, n)$.",
+      "key_concept": "Binomial distribution: $n$ independent trials, each with success probability $p$"
+    },
+    {
+      "id": "W10-008",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "binomial_mean",
+      "question": "For $X \\sim \\text{Binomial}(20, 0.6)$, what is $E[X]$?",
+      "choices": {
+        "A": "6",
+        "B": "8",
+        "C": "10",
+        "D": "12",
+        "E": "20"
+      },
+      "correct_answer": "D",
+      "solution": "For a binomial distribution:\n\n$$E[X] = np$$\n\nWith $n = 20$ and $p = 0.6$:\n\n$$E[X] = 20 \\times 0.6 = 12$$\n\n**Interpretation:** If we have 20 contacts with 60% transmission probability each, we expect 12 infections on average.",
+      "key_concept": "Binomial expected value: $E[X] = np$"
+    },
+    {
+      "id": "W10-009",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "hypothesis_formulation",
+      "question": "Researchers claim a new vaccine reduces infection rates below the baseline of 30%. To test this claim, the correct hypotheses are:",
+      "choices": {
+        "A": "$H_0: p = 0.30$, $H_a: p \\neq 0.30$",
+        "B": "$H_0: p \\geq 0.30$, $H_a: p < 0.30$",
+        "C": "$H_0: p \\leq 0.30$, $H_a: p > 0.30$",
+        "D": "$H_0: p < 0.30$, $H_a: p \\geq 0.30$",
+        "E": "$H_0: p = 0.30$, $H_a: p > 0.30$"
+      },
+      "correct_answer": "B",
+      "solution": "The research question asks: \"Does the vaccine **reduce** infection rates **below** 30%?\"\n\n**Setting up hypotheses:**\n- The null hypothesis ($H_0$) represents the status quo: vaccine doesn't help, rate stays at or above 30%\n- The alternative ($H_a$) represents the claim we're testing: rate is below 30%\n\n$$H_0: p \\geq 0.30 \\quad \\text{vs} \\quad H_a: p < 0.30$$\n\nThis is a **one-tailed (lower)** test because we specifically care about whether the rate is *lower*.",
+      "key_concept": "The alternative hypothesis should match the research question's direction"
+    },
+    {
+      "id": "W10-010",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "one_vs_two_tailed",
+      "exam_reference": "Q35",
+      "question": "Health experts suspect that a new virus variant is **more infectious** than the old one (which had $p = 0.50$). What type of hypothesis test is appropriate?",
+      "choices": {
+        "A": "Two-tailed test with $H_0: p = 0.50$ vs $H_a: p \\neq 0.50$",
+        "B": "One-tailed test with $H_0: p \\leq 0.50$ vs $H_a: p > 0.50$",
+        "C": "One-tailed test with $H_0: p \\geq 0.50$ vs $H_a: p < 0.50$",
+        "D": "Two-tailed test with $H_0: p \\leq 0.50$ vs $H_a: p > 0.50$",
+        "E": "No test is needed—the data will show the answer directly"
+      },
+      "correct_answer": "B",
+      "solution": "The research question is: \"Is the new variant **more** infectious?\"\n\nThis is directional—we specifically want to test if $p$ is **greater than** 0.50, not just different.\n\n**Correct setup:**\n- $H_0: p \\leq 0.50$ (new variant is not more infectious)\n- $H_a: p > 0.50$ (new variant IS more infectious)\n\nA **two-tailed test** would be appropriate if we asked \"Is the new variant *different*?\" but that's not the question here.\n\n**This distinction is CRITICAL for Q35!**",
+      "key_concept": "One-tailed test when testing a specific direction; two-tailed when testing for any difference"
+    },
+    {
+      "id": "W10-011",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "pvalue_interpretation",
+      "question": "A p-value of 0.03 means:",
+      "choices": {
+        "A": "There is a 3% chance the null hypothesis is true",
+        "B": "There is a 3% chance the alternative hypothesis is true",
+        "C": "If the null hypothesis is true, there is a 3% chance of observing data this extreme or more extreme",
+        "D": "The treatment is 97% effective",
+        "E": "3% of the population is affected"
+      },
+      "correct_answer": "C",
+      "solution": "The p-value is:\n\n$$\\text{p-value} = P(\\text{data this extreme or more extreme} \\;|\\; H_0 \\text{ is true})$$\n\n**Common misconceptions:**\n- The p-value is NOT $P(H_0 \\text{ is true})$ — we can't compute this without prior probabilities\n- The p-value is NOT about the probability of $H_a$ being true\n\n**Correct interpretation:** If the null hypothesis were true, observing data this extreme would happen only 3% of the time by chance. This is fairly unlikely, suggesting evidence against $H_0$.",
+      "key_concept": "p-value = probability of data given $H_0$ is true, NOT probability that $H_0$ is true"
+    },
+    {
+      "id": "W10-012",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "decision_rule",
+      "question": "At the 5% significance level, a hypothesis test with p-value = 0.07 leads to which conclusion?",
+      "choices": {
+        "A": "Reject $H_0$ because 0.07 is small",
+        "B": "Reject $H_0$ because 0.07 > 0.05",
+        "C": "Fail to reject $H_0$ because 0.07 > 0.05",
+        "D": "Accept $H_0$ with 93% confidence",
+        "E": "The test is inconclusive and must be repeated"
+      },
+      "correct_answer": "C",
+      "solution": "The decision rule at significance level $\\alpha = 0.05$:\n\n- If p-value $< 0.05$: Reject $H_0$\n- If p-value $\\geq 0.05$: Fail to reject $H_0$\n\nSince $0.07 > 0.05$, we **fail to reject $H_0$**.\n\n**Important distinction:** \"Fail to reject\" is NOT the same as \"accept.\" We simply don't have enough evidence to conclude $H_0$ is false.\n\n**Interpretation:** The data are consistent with $H_0$, but this doesn't prove $H_0$ is true—we may simply need more data.",
+      "key_concept": "Fail to reject when p-value $\\geq \\alpha$; 'fail to reject' $\\neq$ 'accept'"
+    },
+    {
+      "id": "W10-013",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "type_i_error",
+      "question": "A Type I error occurs when:",
+      "choices": {
+        "A": "We fail to reject a false null hypothesis",
+        "B": "We reject a true null hypothesis",
+        "C": "We accept the alternative hypothesis",
+        "D": "The p-value is very small",
+        "E": "The sample size is too large"
+      },
+      "correct_answer": "B",
+      "solution": "**Type I Error (False Positive):** Rejecting $H_0$ when it is actually true.\n\n| Decision | $H_0$ True | $H_0$ False |\n|----------|------------|-------------|\n| Reject $H_0$ | **Type I** | Correct |\n| Fail to reject | Correct | Type II |\n\nThe probability of Type I error is the significance level $\\alpha$.\n\n**Example:** Concluding a vaccine works when it actually doesn't (false positive for efficacy).",
+      "key_concept": "Type I error = false positive = rejecting a true $H_0$"
+    },
+    {
+      "id": "W10-014",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "type_ii_error",
+      "question": "A Type II error occurs when:",
+      "choices": {
+        "A": "We reject a true null hypothesis",
+        "B": "We fail to reject a false null hypothesis",
+        "C": "The alternative hypothesis is not specified",
+        "D": "We use a two-tailed test instead of one-tailed",
+        "E": "The sample is biased"
+      },
+      "correct_answer": "B",
+      "solution": "**Type II Error (False Negative):** Failing to reject $H_0$ when it is actually false.\n\nThe probability of Type II error is denoted $\\beta$, and **Power = $1 - \\beta$** is the probability of correctly rejecting a false $H_0$.\n\n**Example:** Concluding a vaccine doesn't work when it actually does (missing a real effect).\n\n**Trade-off:** Decreasing $\\alpha$ (being more conservative) increases $\\beta$. The only way to reduce both is to increase sample size.",
+      "key_concept": "Type II error = false negative = failing to reject a false $H_0$"
+    },
+    {
+      "id": "W10-015",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "binomial_probability",
+      "question": "If $X \\sim \\text{Binomial}(11, 0.5)$, what is $P(X = 9)$?",
+      "choices": {
+        "A": "$\\binom{11}{9}(0.5)^9(0.5)^2$",
+        "B": "$\\binom{11}{9}(0.5)^{11}$",
+        "C": "$\\binom{9}{11}(0.5)^9(0.5)^2$",
+        "D": "$(0.5)^9(0.5)^2$",
+        "E": "$\\frac{9}{11}$"
+      },
+      "correct_answer": "B",
+      "solution": "The binomial probability formula is:\n\n$$P(X = k) = \\binom{n}{k}p^k(1-p)^{n-k}$$\n\nWith $n = 11$, $p = 0.5$, $k = 9$:\n\n$$P(X = 9) = \\binom{11}{9}(0.5)^9(0.5)^{11-9} = \\binom{11}{9}(0.5)^9(0.5)^2$$\n\nSince $(0.5)^9 \\times (0.5)^2 = (0.5)^{11}$:\n\n$$P(X = 9) = \\binom{11}{9}(0.5)^{11}$$\n\nOptions (A) and (B) are both correct mathematically, but (B) is simplified.",
+      "key_concept": "Binomial PMF: $P(X=k) = \\binom{n}{k}p^k(1-p)^{n-k}$"
+    },
+    {
+      "id": "W10-016",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "pvalue_calculation",
+      "question": "For testing $H_0: p \\leq 0.5$ vs $H_a: p > 0.5$ with observed data $X = 9$ out of $n = 11$ and $p_0 = 0.5$, the p-value is:",
+      "choices": {
+        "A": "$P(X = 9 \\;|\\; p = 0.5)$",
+        "B": "$P(X \\geq 9 \\;|\\; p = 0.5)$",
+        "C": "$P(X \\leq 9 \\;|\\; p = 0.5)$",
+        "D": "$P(X = 9 \\;|\\; p > 0.5)$",
+        "E": "$P(X < 9 \\;|\\; p = 0.5)$"
+      },
+      "correct_answer": "B",
+      "solution": "For a **one-tailed test** with $H_a: p > p_0$, the p-value is the probability of observing a value **as extreme or more extreme** in the direction of $H_a$:\n\n$$\\text{p-value} = P(X \\geq k \\;|\\; H_0) = P(X \\geq 9 \\;|\\; p = 0.5)$$\n\nThis includes $P(X = 9) + P(X = 10) + P(X = 11)$.\n\n**Why not just $P(X = 9)$?** We need all values that provide at least as much evidence against $H_0$, which means 9, 10, or 11 successes.",
+      "key_concept": "p-value for one-tailed upper test: $P(X \\geq k \\;|\\; H_0)$"
+    },
+    {
+      "id": "W10-017",
+      "type": "multiple_choice",
+      "difficulty": "exam_style",
+      "topic": "expected_value_advanced",
+      "exam_reference": "Q33 variant",
+      "question": "A random variable $X$ has probability distribution:\n\n| $x$ | 1 | 2 | 5 | 8 |\n|-----|---|---|---|---|\n| $P(X=x)$ | 0.1 | 0.3 | 0.4 | 0.2 |\n\nWhat is $E[X]$?",
+      "choices": {
+        "A": "3.0",
+        "B": "4.0",
+        "C": "4.3",
+        "D": "5.0",
+        "E": "5.5"
+      },
+      "correct_answer": "C",
+      "solution": "$$E[X] = \\sum_x x \\cdot P(X = x)$$\n\n$$= 1(0.1) + 2(0.3) + 5(0.4) + 8(0.2)$$\n\n$$= 0.1 + 0.6 + 2.0 + 1.6 = 4.3$$\n\n**Verification:** $\\sum P(X = x) = 0.1 + 0.3 + 0.4 + 0.2 = 1.0$ ✓",
+      "key_concept": "Expected value calculation with non-consecutive values"
+    },
+    {
+      "id": "W10-018",
+      "type": "multiple_choice",
+      "difficulty": "exam_style",
+      "topic": "hypothesis_testing_complete",
+      "exam_reference": "Q35",
+      "question": "Health experts suspect that a new variant of a virus is more infectious than an older one, which had an infection rate of 50%. Out of 11 recent contacts, 9 resulted in infections. The probability of observing 9 or more infections out of 11 if $p = 0.50$ is $\\frac{67}{2048} \\approx 0.033$. If you test at the 5% significance level, which conclusion is correct?",
+      "choices": {
+        "A": "Using $H_0: p \\leq 0.50$, $H_a: p > 0.50$: reject $H_0$ at 5% significance",
+        "B": "Using $H_0: p = 0.50$, $H_a: p \\neq 0.50$: reject $H_0$ at 5% significance",
+        "C": "Using $H_0: p \\leq 0.50$, $H_a: p > 0.50$: fail to reject $H_0$ at 5% significance",
+        "D": "Using $H_0: p = 0.50$, $H_a: p \\neq 0.50$: fail to reject $H_0$ at 5% significance",
+        "E": "Using $H_0: p \\geq 0.50$, $H_a: p < 0.50$: reject $H_0$ at 5% significance"
+      },
+      "correct_answer": "A",
+      "solution": "**Step 1: Identify the correct hypotheses**\n\nThe question asks if the variant is **more** infectious, so:\n- $H_0: p \\leq 0.50$ (not more infectious)\n- $H_a: p > 0.50$ (more infectious)\n\nThis is a **one-tailed (upper)** test.\n\n**Step 2: Compute p-value**\n\nGiven: p-value $= P(X \\geq 9 \\;|\\; p = 0.5) = \\frac{67}{2048} \\approx 0.033$\n\n**Step 3: Compare to $\\alpha$**\n\nSince $0.033 < 0.05$, we **reject $H_0$**.\n\n**Conclusion:** There is statistically significant evidence that the new variant is more infectious.\n\n**Why not (B)?** A two-tailed test would double the p-value to approximately 0.066, which exceeds 0.05, leading to failure to reject. But this is the WRONG test for the question asked!",
+      "key_concept": "This is Q35. Match hypotheses to the research question; one-tailed when testing a direction"
+    },
+    {
+      "id": "W10-019",
+      "type": "multiple_choice",
+      "difficulty": "exam_style",
+      "topic": "two_tailed_test",
+      "question": "A coin is tested for fairness. In 100 flips, 62 heads are observed. For a two-tailed test of $H_0: p = 0.5$ vs $H_a: p \\neq 0.5$, which values would be included in the p-value calculation?",
+      "choices": {
+        "A": "Only $P(X = 62)$",
+        "B": "$P(X \\geq 62)$",
+        "C": "$P(X \\leq 38)$",
+        "D": "$P(X \\leq 38) + P(X \\geq 62)$",
+        "E": "$P(38 \\leq X \\leq 62)$"
+      },
+      "correct_answer": "D",
+      "solution": "For a **two-tailed test**, we consider values as extreme as observed **in both directions**.\n\n62 heads deviates from the expected 50 by 12. Values equally extreme in the other direction would be $50 - 12 = 38$ or fewer.\n\n**p-value (two-tailed):**\n$$= P(X \\leq 38 \\;|\\; p=0.5) + P(X \\geq 62 \\;|\\; p=0.5)$$\n\nThis counts both tails of the distribution.\n\n**Comparison to one-tailed:** If we only tested $H_a: p > 0.5$, the p-value would be just $P(X \\geq 62)$, which would be smaller.",
+      "key_concept": "Two-tailed p-value includes extreme values in both directions"
+    },
+    {
+      "id": "W10-020",
+      "type": "multiple_choice",
+      "difficulty": "exam_style",
+      "topic": "critical_value",
+      "question": "For a one-tailed test of $H_0: p \\leq 0.40$ vs $H_a: p > 0.40$ with $n = 20$ and $\\alpha = 0.05$, the critical value $k^*$ is the smallest integer such that $P(X \\geq k^*) < 0.05$. Given the calculations below, what is $k^*$?\n\n- $P(X \\geq 10) \\approx 0.245$\n- $P(X \\geq 11) \\approx 0.128$\n- $P(X \\geq 12) \\approx 0.057$\n- $P(X \\geq 13) \\approx 0.021$",
+      "choices": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "13",
+        "E": "14"
+      },
+      "correct_answer": "D",
+      "solution": "The critical value $k^*$ is the smallest value such that observing $X \\geq k^*$ would lead us to reject $H_0$.\n\nWe need $P(X \\geq k^*) < \\alpha = 0.05$:\n\n- $P(X \\geq 10) = 0.245 > 0.05$ ✗\n- $P(X \\geq 11) = 0.128 > 0.05$ ✗\n- $P(X \\geq 12) = 0.057 > 0.05$ ✗\n- $P(X \\geq 13) = 0.021 < 0.05$ ✓\n\nSo $k^* = 13$ is the critical value.\n\n**Decision rule:** Reject $H_0$ if observed successes $\\geq 13$.\n\nWith 10 successes observed: $10 < 13$, so we **fail to reject $H_0$**.",
+      "key_concept": "Critical value is the boundary between rejection and non-rejection regions"
+    }
+  ]
+}

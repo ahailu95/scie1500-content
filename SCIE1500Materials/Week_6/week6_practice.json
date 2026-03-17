@@ -1,0 +1,336 @@
+{
+  "metadata": {
+    "week": 6,
+    "title": "Introduction to Integration",
+    "theme": "From Rates to Totals",
+    "exam_alignment": ["Q14", "Q37"],
+    "total_questions": 20,
+    "difficulty_distribution": {
+      "foundational": 8,
+      "intermediate": 8,
+      "exam_style": 4
+    },
+    "scientific_contexts": [
+      "Land degradation and rehabilitation",
+      "Carbon sequestration",
+      "Agricultural yield response",
+      "Medical applications (lymphocyte count)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "W6-001",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "power_rule_integration",
+      "question": "What is $\\int x^3\\,dx$?",
+      "choices": {
+        "A": "$3x^2 + C$",
+        "B": "$\\frac{x^4}{4} + C$",
+        "C": "$\\frac{x^4}{3} + C$",
+        "D": "$4x^4 + C$",
+        "E": "$x^4 + C$"
+      },
+      "correct_answer": "B",
+      "solution": "Using the power rule: $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$\n\nFor $n = 3$: $\\int x^3\\,dx = \\frac{x^{3+1}}{3+1} + C = \\frac{x^4}{4} + C$\n\n*Verification:* $\\frac{d}{dx}\\left[\\frac{x^4}{4}\\right] = \\frac{4x^3}{4} = x^3$ ✓",
+      "key_concept": "Power rule for integration: add 1 to exponent, divide by new exponent"
+    },
+    {
+      "id": "W6-002",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "constant_integration",
+      "question": "What is $\\int 7\\,dx$?",
+      "choices": {
+        "A": "$7$",
+        "B": "$0$",
+        "C": "$7x$",
+        "D": "$7x + C$",
+        "E": "$\\frac{7x^2}{2} + C$"
+      },
+      "correct_answer": "D",
+      "solution": "The integral of a constant $k$ is $kx + C$.\n\n$\\int 7\\,dx = 7x + C$\n\n*Verification:* $\\frac{d}{dx}[7x] = 7$ ✓\n\nNote: Option C is missing the constant of integration.",
+      "key_concept": "Integral of a constant: $\\int k\\,dx = kx + C$"
+    },
+    {
+      "id": "W6-003",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "power_rule_negative_exponent",
+      "question": "What is $\\int \\frac{1}{x^2}\\,dx$?",
+      "choices": {
+        "A": "$\\ln(x^2) + C$",
+        "B": "$-\\frac{1}{x} + C$",
+        "C": "$\\frac{1}{x} + C$",
+        "D": "$-\\frac{2}{x^3} + C$",
+        "E": "$\\frac{x^{-1}}{-1} + C$"
+      },
+      "correct_answer": "B",
+      "solution": "First rewrite: $\\frac{1}{x^2} = x^{-2}$\n\nThen apply power rule:\n$\\int x^{-2}\\,dx = \\frac{x^{-2+1}}{-2+1} + C = \\frac{x^{-1}}{-1} + C = -x^{-1} + C = -\\frac{1}{x} + C$\n\nNote: Option E is correct but not simplified.",
+      "key_concept": "Power rule works for negative exponents too"
+    },
+    {
+      "id": "W6-004",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "exponential_integration",
+      "question": "What is $\\int e^x\\,dx$?",
+      "choices": {
+        "A": "$xe^{x-1} + C$",
+        "B": "$e^{x+1} + C$",
+        "C": "$e^x + C$",
+        "D": "$\\frac{e^{x+1}}{x+1} + C$",
+        "E": "$xe^x + C$"
+      },
+      "correct_answer": "C",
+      "solution": "$e^x$ is its own antiderivative:\n\n$\\int e^x\\,dx = e^x + C$\n\n*Verification:* $\\frac{d}{dx}[e^x] = e^x$ ✓",
+      "key_concept": "The exponential function $e^x$ is special: it equals its own derivative and antiderivative"
+    },
+    {
+      "id": "W6-005",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "ln_integration",
+      "question": "What is $\\int \\frac{1}{x}\\,dx$?",
+      "choices": {
+        "A": "$x^0 + C$",
+        "B": "$\\ln x + C$",
+        "C": "$\\ln|x| + C$",
+        "D": "$-\\frac{1}{x^2} + C$",
+        "E": "$\\frac{x^0}{0}$ (undefined)"
+      },
+      "correct_answer": "C",
+      "solution": "The power rule doesn't work when $n = -1$ (division by zero).\n\nInstead: $\\int \\frac{1}{x}\\,dx = \\ln|x| + C$\n\nThe absolute value is needed because $\\ln$ is only defined for positive numbers, but $1/x$ exists for all $x \\neq 0$.\n\n*Verification:* $\\frac{d}{dx}[\\ln|x|] = \\frac{1}{x}$ ✓",
+      "key_concept": "Special case: when $n = -1$, use $\\ln|x|$ instead of power rule"
+    },
+    {
+      "id": "W6-006",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "sum_rule",
+      "question": "What is $\\int (3x^2 + 2x)\\,dx$?",
+      "choices": {
+        "A": "$6x + 2 + C$",
+        "B": "$x^3 + x^2$",
+        "C": "$x^3 + x^2 + C$",
+        "D": "$\\frac{3x^3}{3} + \\frac{2x^2}{2} + C$",
+        "E": "Both C and D"
+      },
+      "correct_answer": "E",
+      "solution": "Using sum rule and power rule:\n\n$\\int (3x^2 + 2x)\\,dx = 3 \\cdot \\frac{x^3}{3} + 2 \\cdot \\frac{x^2}{2} + C = x^3 + x^2 + C$\n\nOption D shows the unsimplified form, which equals option C after simplification.",
+      "key_concept": "Sum rule: integrate term by term"
+    },
+    {
+      "id": "W6-007",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "fractional_exponent",
+      "question": "What is $\\int \\sqrt{x}\\,dx$?",
+      "choices": {
+        "A": "$\\frac{1}{2\\sqrt{x}} + C$",
+        "B": "$\\frac{2x^{3/2}}{3} + C$",
+        "C": "$\\frac{x^{3/2}}{3/2} + C$",
+        "D": "$\\frac{\\sqrt{x^3}}{3} + C$",
+        "E": "B, C, and D are all correct"
+      },
+      "correct_answer": "E",
+      "solution": "Rewrite: $\\sqrt{x} = x^{1/2}$\n\nApply power rule:\n$\\int x^{1/2}\\,dx = \\frac{x^{1/2+1}}{1/2+1} + C = \\frac{x^{3/2}}{3/2} + C = \\frac{2x^{3/2}}{3} + C$\n\nNote: $\\frac{2x^{3/2}}{3} = \\frac{2\\sqrt{x^3}}{3} = \\frac{2\\sqrt{x}\\cdot x}{3}$, so all forms are equivalent.",
+      "key_concept": "Convert roots to fractional exponents before integrating"
+    },
+    {
+      "id": "W6-008",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "exponential_with_coefficient",
+      "question": "What is $\\int e^{3x}\\,dx$?",
+      "choices": {
+        "A": "$3e^{3x} + C$",
+        "B": "$\\frac{e^{3x}}{3} + C$",
+        "C": "$e^{3x+1} + C$",
+        "D": "$\\frac{e^{3x+1}}{3x+1} + C$",
+        "E": "$e^{3x} + C$"
+      },
+      "correct_answer": "B",
+      "solution": "For $\\int e^{kx}\\,dx$, we use: $\\int e^{kx}\\,dx = \\frac{1}{k}e^{kx} + C$\n\nWith $k = 3$:\n$\\int e^{3x}\\,dx = \\frac{1}{3}e^{3x} + C$\n\n*Verification:* $\\frac{d}{dx}\\left[\\frac{e^{3x}}{3}\\right] = \\frac{1}{3} \\cdot 3e^{3x} = e^{3x}$ ✓",
+      "key_concept": "When integrating $e^{kx}$, divide by the coefficient of $x$"
+    },
+    {
+      "id": "W6-009",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "polynomial_integration",
+      "question": "Find $\\int (4x^3 + \\sqrt{x} + \\frac{1}{x^2} + 1)\\,dx$",
+      "choices": {
+        "A": "$x^4 + \\frac{2x^{3/2}}{3} - \\frac{1}{x} + x + C$",
+        "B": "$12x^2 + \\frac{1}{2\\sqrt{x}} - \\frac{2}{x^3} + C$",
+        "C": "$x^4 + \\frac{2\\sqrt{x^3}}{3} - x^{-1} + x + C$",
+        "D": "Both A and C",
+        "E": "$4x^4 + x^{3/2} - x^{-1} + x + C$"
+      },
+      "correct_answer": "D",
+      "solution": "Rewrite: $4x^3 + x^{1/2} + x^{-2} + 1$\n\nIntegrate term by term:\n- $\\int 4x^3\\,dx = x^4$\n- $\\int x^{1/2}\\,dx = \\frac{x^{3/2}}{3/2} = \\frac{2x^{3/2}}{3}$\n- $\\int x^{-2}\\,dx = \\frac{x^{-1}}{-1} = -\\frac{1}{x}$\n- $\\int 1\\,dx = x$\n\nResult: $x^4 + \\frac{2x^{3/2}}{3} - \\frac{1}{x} + x + C$\n\nSince $x^{3/2} = \\sqrt{x^3}$ and $\\frac{1}{x} = x^{-1}$, options A and C are equivalent.",
+      "key_concept": "Combine multiple integration rules for complex expressions"
+    },
+    {
+      "id": "W6-010",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "initial_value_problem",
+      "question": "Given $f'(x) = 2x$ and $f(1) = 5$, find $f(x)$.",
+      "choices": {
+        "A": "$x^2 + C$",
+        "B": "$x^2 + 4$",
+        "C": "$x^2 + 5$",
+        "D": "$x^2$",
+        "E": "$2x^2 + 3$"
+      },
+      "correct_answer": "B",
+      "solution": "Step 1: Find general antiderivative:\n$f(x) = \\int 2x\\,dx = x^2 + C$\n\nStep 2: Apply initial condition $f(1) = 5$:\n$5 = (1)^2 + C = 1 + C$\n$C = 4$\n\nStep 3: Write specific solution:\n$f(x) = x^2 + 4$",
+      "key_concept": "Use initial conditions to find the specific constant of integration"
+    },
+    {
+      "id": "W6-011",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "integration_rules_not_applicable",
+      "question": "Which of the following is TRUE about integration?",
+      "choices": {
+        "A": "$\\int f(x)g(x)\\,dx = \\left(\\int f(x)\\,dx\\right)\\left(\\int g(x)\\,dx\\right)$",
+        "B": "$\\int [f(x) + g(x)]\\,dx = \\int f(x)\\,dx + \\int g(x)\\,dx$",
+        "C": "$\\int \\frac{f(x)}{g(x)}\\,dx = \\frac{\\int f(x)\\,dx}{\\int g(x)\\,dx}$",
+        "D": "$\\int [f(x)]^2\\,dx = \\left[\\int f(x)\\,dx\\right]^2$",
+        "E": "All of the above are true"
+      },
+      "correct_answer": "B",
+      "solution": "Only the **sum rule** (option B) holds for integration.\n\nCounterexamples:\n- A: $\\int x \\cdot x\\,dx = \\frac{x^3}{3}$, but $(\\frac{x^2}{2})(\\frac{x^2}{2}) = \\frac{x^4}{4}$\n- C: Similar reasoning shows this fails\n- D: $\\int x^2\\,dx = \\frac{x^3}{3}$, but $(\\frac{x^2}{2})^2 = \\frac{x^4}{4}$",
+      "key_concept": "Integration distributes over sums but NOT over products, quotients, or powers"
+    },
+    {
+      "id": "W6-012",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "mixed_functions",
+      "question": "Find $\\int \\left(e^{-x} + \\frac{2}{x}\\right)\\,dx$",
+      "choices": {
+        "A": "$-e^{-x} + 2\\ln|x| + C$",
+        "B": "$e^{-x} + 2\\ln|x| + C$",
+        "C": "$-e^{-x} + \\ln|x^2| + C$",
+        "D": "Both A and C",
+        "E": "$\\frac{e^{-x}}{-x} + 2\\ln|x| + C$"
+      },
+      "correct_answer": "D",
+      "solution": "Integrate term by term:\n\n$\\int e^{-x}\\,dx = \\frac{e^{-x}}{-1} = -e^{-x}$\n\n$\\int \\frac{2}{x}\\,dx = 2\\ln|x|$\n\nResult: $-e^{-x} + 2\\ln|x| + C$\n\nNote: $2\\ln|x| = \\ln|x|^2 = \\ln|x^2|$, so options A and C are equivalent.",
+      "key_concept": "Apply exponential and logarithmic integration rules"
+    },
+    {
+      "id": "W6-013",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "initial_value_exponential",
+      "question": "Given $N'(t) = 100e^{-0.5t}$ and $N(0) = 300$, find $N(t)$.",
+      "choices": {
+        "A": "$-200e^{-0.5t} + 500$",
+        "B": "$200e^{-0.5t} + 100$",
+        "C": "$-200e^{-0.5t} + 300$",
+        "D": "$500 - 200e^{-0.5t}$",
+        "E": "Both A and D"
+      },
+      "correct_answer": "E",
+      "solution": "Step 1: Integrate:\n$N(t) = \\int 100e^{-0.5t}\\,dt = 100 \\cdot \\frac{e^{-0.5t}}{-0.5} + C = -200e^{-0.5t} + C$\n\nStep 2: Apply $N(0) = 300$:\n$300 = -200e^0 + C = -200 + C$\n$C = 500$\n\nStep 3: $N(t) = -200e^{-0.5t} + 500 = 500 - 200e^{-0.5t}$\n\nOptions A and D are algebraically equivalent.",
+      "key_concept": "Initial value problems with exponential rates"
+    },
+    {
+      "id": "W6-014",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "antiderivative_verification",
+      "question": "Which function is an antiderivative of $f(x) = 6x^2 - 4x + 1$?",
+      "choices": {
+        "A": "$12x - 4$",
+        "B": "$2x^3 - 2x^2 + x + 7$",
+        "C": "$2x^3 - 2x^2 + x$",
+        "D": "Both B and C",
+        "E": "$18x^3 - 8x^2 + x$"
+      },
+      "correct_answer": "D",
+      "solution": "To verify, differentiate each candidate:\n\n- A: $\\frac{d}{dx}[12x - 4] = 12$ ✗\n- B: $\\frac{d}{dx}[2x^3 - 2x^2 + x + 7] = 6x^2 - 4x + 1$ ✓\n- C: $\\frac{d}{dx}[2x^3 - 2x^2 + x] = 6x^2 - 4x + 1$ ✓\n- E: $\\frac{d}{dx}[18x^3 - 8x^2 + x] = 54x^2 - 16x + 1$ ✗\n\nBoth B and C are antiderivatives (they differ by constant 7).",
+      "key_concept": "Any two antiderivatives of the same function differ only by a constant"
+    },
+    {
+      "id": "W6-015",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "physical_application",
+      "question": "The rate of carbon sequestration by a forest is $C'(t) = 50e^{-0.02t}$ tonnes/year. If initially no carbon has been sequestered, what is the total carbon sequestered as $t \\to \\infty$?",
+      "choices": {
+        "A": "50 tonnes",
+        "B": "100 tonnes",
+        "C": "2500 tonnes",
+        "D": "5000 tonnes",
+        "E": "Infinite"
+      },
+      "correct_answer": "C",
+      "solution": "Step 1: Find $C(t)$:\n$C(t) = \\int 50e^{-0.02t}\\,dt = \\frac{50}{-0.02}e^{-0.02t} + K = -2500e^{-0.02t} + K$\n\nStep 2: Apply $C(0) = 0$:\n$0 = -2500e^0 + K = -2500 + K \\implies K = 2500$\n\n$C(t) = 2500 - 2500e^{-0.02t} = 2500(1 - e^{-0.02t})$\n\nStep 3: As $t \\to \\infty$: $e^{-0.02t} \\to 0$\n\n$\\lim_{t \\to \\infty} C(t) = 2500(1 - 0) = 2500$ tonnes",
+      "key_concept": "Exponential decay integration gives finite total accumulation"
+    },
+    {
+      "id": "W6-016",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "agricultural_application",
+      "question": "Yield response to nitrogen fertilizer is $y'(x) = 0.02 - 0.0002x$ (t/ha per kg/ha). If baseline yield is 1.5 t/ha, what nitrogen rate maximizes yield?",
+      "choices": {
+        "A": "50 kg/ha",
+        "B": "100 kg/ha",
+        "C": "150 kg/ha",
+        "D": "200 kg/ha",
+        "E": "Cannot be determined without more information"
+      },
+      "correct_answer": "B",
+      "solution": "Maximum yield occurs when $y'(x) = 0$:\n\n$0.02 - 0.0002x = 0$\n$0.0002x = 0.02$\n$x = \\frac{0.02}{0.0002} = 100$ kg/ha\n\nNote: The initial condition (baseline yield) affects the total yield value but not the optimal nitrogen rate.",
+      "key_concept": "Maximum occurs where rate of change equals zero"
+    },
+    {
+      "id": "W6-017",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "lymphocyte_count",
+      "exam_reference": "Q37",
+      "question": "The rate of change of white blood cell count is modeled by:\n$$L'(t) = 150e^{-0.2t} \\text{ (cells/hour)}$$\nInitially, there are 4000 cells.\n\n(a) Find $L(t)$.\n(b) What is the cell count after 5 hours?\n(c) What is the limiting cell count as $t \\to \\infty$?",
+      "solution": "**(a) Find $L(t)$:**\n\n$L(t) = \\int 150e^{-0.2t}\\,dt = \\frac{150}{-0.2}e^{-0.2t} + C = -750e^{-0.2t} + C$\n\nApply $L(0) = 4000$:\n$4000 = -750e^0 + C = -750 + C$\n$C = 4750$\n\n$$\\boxed{L(t) = 4750 - 750e^{-0.2t}}$$\n\n**(b) Cell count after 5 hours:**\n$L(5) = 4750 - 750e^{-0.2(5)} = 4750 - 750e^{-1}$\n$= 4750 - 750(0.3679) = 4750 - 275.9$\n$$\\boxed{L(5) \\approx 4474 \\text{ cells}}$$\n\n**(c) Limiting cell count:**\nAs $t \\to \\infty$: $e^{-0.2t} \\to 0$\n$$\\boxed{\\lim_{t \\to \\infty} L(t) = 4750 \\text{ cells}}$$",
+      "marks": 8,
+      "key_concept": "Initial value problem with exponential decay rate"
+    },
+    {
+      "id": "W6-018",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "soap_bubble",
+      "question": "The rate of change of a soap bubble's radius is:\n$$r'(t) = -3t^2 + 6t \\text{ (cm/s)}$$\nThe initial radius is 2 cm.\n\n(a) Find $r(t)$.\n(b) What is the maximum radius reached?\n(c) At what time does the maximum occur?",
+      "solution": "**(a) Find $r(t)$:**\n\n$r(t) = \\int (-3t^2 + 6t)\\,dt = -t^3 + 3t^2 + C$\n\nApply $r(0) = 2$:\n$2 = 0 + 0 + C \\implies C = 2$\n\n$$\\boxed{r(t) = -t^3 + 3t^2 + 2}$$\n\n**(b) & (c) Maximum radius:**\n\nSet $r'(t) = 0$:\n$-3t^2 + 6t = 0$\n$-3t(t - 2) = 0$\n$t = 0$ or $t = 2$\n\nSince $t = 0$ is the initial time, maximum occurs at **$t = 2$ seconds**.\n\n$r(2) = -(8) + 3(4) + 2 = -8 + 12 + 2 = 6$\n\n$$\\boxed{\\text{Maximum radius} = 6 \\text{ cm at } t = 2 \\text{ s}}$$",
+      "marks": 8,
+      "key_concept": "Integration followed by optimization"
+    },
+    {
+      "id": "W6-019",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "antiderivative_comprehensive",
+      "exam_reference": "Q14",
+      "question": "Find the following antiderivatives:\n\n(a) $\\int \\left(5x^4 - \\frac{3}{x^2} + \\frac{2}{\\sqrt{x}}\\right)\\,dx$\n\n(b) $\\int \\left(e^{-2x} + \\frac{4}{x}\\right)\\,dx$\n\n(c) $\\int (x+2)^2\\,dx$",
+      "solution": "**(a)** Rewrite: $5x^4 - 3x^{-2} + 2x^{-1/2}$\n\n$\\int (5x^4 - 3x^{-2} + 2x^{-1/2})\\,dx$\n$= x^5 - 3 \\cdot \\frac{x^{-1}}{-1} + 2 \\cdot \\frac{x^{1/2}}{1/2} + C$\n$= x^5 + \\frac{3}{x} + 4\\sqrt{x} + C$\n\n$$\\boxed{x^5 + \\frac{3}{x} + 4\\sqrt{x} + C}$$\n\n**(b)** \n$\\int (e^{-2x} + \\frac{4}{x})\\,dx = \\frac{e^{-2x}}{-2} + 4\\ln|x| + C$\n\n$$\\boxed{-\\frac{1}{2}e^{-2x} + 4\\ln|x| + C}$$\n\n**(c)** Expand first: $(x+2)^2 = x^2 + 4x + 4$\n\n$\\int (x^2 + 4x + 4)\\,dx = \\frac{x^3}{3} + 2x^2 + 4x + C$\n\n$$\\boxed{\\frac{x^3}{3} + 2x^2 + 4x + C}$$",
+      "marks": 9,
+      "key_concept": "Combine power rule, exponential, and logarithmic integration"
+    },
+    {
+      "id": "W6-020",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "land_rehabilitation",
+      "question": "A degraded land site is being rehabilitated. The rate of vegetation recovery is:\n$$V'(t) = 8e^{-0.2t} \\text{ (% cover per year)}$$\nInitial vegetation cover is 5%.\n\n(a) Find the vegetation cover function $V(t)$.\n(b) Calculate the total vegetation increase from $t=0$ to $t=10$ years.\n(c) What is the long-term vegetation cover as $t \\to \\infty$?",
+      "solution": "**(a) Find $V(t)$:**\n\n$V(t) = \\int 8e^{-0.2t}\\,dt = \\frac{8}{-0.2}e^{-0.2t} + C = -40e^{-0.2t} + C$\n\nApply $V(0) = 5$:\n$5 = -40e^0 + C = -40 + C$\n$C = 45$\n\n$$\\boxed{V(t) = 45 - 40e^{-0.2t}}$$\n\n**(b) Vegetation increase from $t=0$ to $t=10$:**\n\n$V(10) - V(0) = [45 - 40e^{-2}] - 5$\n$= 45 - 40(0.1353) - 5$\n$= 45 - 5.41 - 5$\n$$\\boxed{\\approx 34.6 \\text{ percentage points}}$$\n\n**(c) Long-term vegetation cover:**\n\nAs $t \\to \\infty$: $e^{-0.2t} \\to 0$\n\n$\\lim_{t \\to \\infty} V(t) = 45 - 40(0) = 45$\n\n$$\\boxed{45\\% \\text{ vegetation cover}}$$\n\n**Interpretation:** The site approaches a maximum of 45% vegetation cover as it reaches ecological equilibrium.",
+      "marks": 10,
+      "key_concept": "Initial value problem with scientific interpretation"
+    }
+  ]
+}

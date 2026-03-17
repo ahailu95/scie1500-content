@@ -1,0 +1,377 @@
+{
+  "metadata": {
+    "week": 11,
+    "title": "Trigonometric Functions and Periodic Models",
+    "theme": "Modeling Cycles and Rhythms",
+    "exam_alignment": [
+      "Q31",
+      "Q36"
+    ],
+    "total_questions": 20,
+    "difficulty_distribution": {
+      "foundational": 8,
+      "intermediate": 8,
+      "exam_style": 4
+    },
+    "scientific_contexts": [
+      "Circadian rhythms and body temperature",
+      "Seasonal temperature patterns",
+      "Motor behavior and repetitive movements",
+      "Physiological oscillations"
+    ],
+    "student_challenges_addressed": [
+      "Degree-radian conversion",
+      "Computing amplitude, period, and frequency",
+      "Determining phase shift from boundary conditions",
+      "Applying Pythagorean identity"
+    ]
+  },
+  "questions": [
+    {
+      "id": "W11-001",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "radian_conversion",
+      "exam_reference": "Q31",
+      "question": "Convert $90°$ to radians.",
+      "choices": {
+        "A": "$\\frac{\\pi}{4}$",
+        "B": "$\\frac{\\pi}{3}$",
+        "C": "$\\frac{\\pi}{2}$",
+        "D": "$\\pi$",
+        "E": "$2\\pi$"
+      },
+      "correct_answer": "C",
+      "solution": "Using the conversion formula:\n\n$$\\theta_{\\text{rad}} = \\theta_{\\text{deg}} \\times \\frac{\\pi}{180}$$\n\n$$90° \\times \\frac{\\pi}{180} = \\frac{90\\pi}{180} = \\frac{\\pi}{2}$$\n\n**Key relationship:** $90° = \\frac{\\pi}{2}$ radians (a quarter circle).",
+      "key_concept": "This is directly from Q31. Memorize: 90° = π/2 radians."
+    },
+    {
+      "id": "W11-002",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "radian_conversion",
+      "question": "Convert $\\frac{2\\pi}{3}$ radians to degrees.",
+      "choices": {
+        "A": "60°",
+        "B": "90°",
+        "C": "120°",
+        "D": "150°",
+        "E": "180°"
+      },
+      "correct_answer": "C",
+      "solution": "Using the conversion formula:\n\n$$\\theta_{\\text{deg}} = \\theta_{\\text{rad}} \\times \\frac{180}{\\pi}$$\n\n$$\\frac{2\\pi}{3} \\times \\frac{180}{\\pi} = \\frac{2 \\times 180}{3} = \\frac{360}{3} = 120°$$",
+      "key_concept": "The π cancels when converting radians to degrees."
+    },
+    {
+      "id": "W11-003",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "exact_trig_values",
+      "question": "What is $\\sin\\left(\\frac{\\pi}{6}\\right)$?",
+      "choices": {
+        "A": "0",
+        "B": "$\\frac{1}{2}$",
+        "C": "$\\frac{\\sqrt{2}}{2}$",
+        "D": "$\\frac{\\sqrt{3}}{2}$",
+        "E": "1"
+      },
+      "correct_answer": "B",
+      "solution": "The angle $\\frac{\\pi}{6}$ radians equals $30°$.\n\nFrom the standard values: $\\sin(30°) = \\sin\\left(\\frac{\\pi}{6}\\right) = \\frac{1}{2}$\n\n**Memory aid:** For sine at 0°, 30°, 45°, 60°, 90°, the values are $\\frac{\\sqrt{0}}{2}, \\frac{\\sqrt{1}}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{4}}{2}$.",
+      "key_concept": "sin(π/6) = sin(30°) = 1/2 is a must-know value."
+    },
+    {
+      "id": "W11-004",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "exact_trig_values",
+      "question": "What is $\\cos\\left(\\frac{\\pi}{3}\\right)$?",
+      "choices": {
+        "A": "0",
+        "B": "$\\frac{1}{2}$",
+        "C": "$\\frac{\\sqrt{2}}{2}$",
+        "D": "$\\frac{\\sqrt{3}}{2}$",
+        "E": "1"
+      },
+      "correct_answer": "B",
+      "solution": "The angle $\\frac{\\pi}{3}$ radians equals $60°$.\n\nFrom the standard values: $\\cos(60°) = \\cos\\left(\\frac{\\pi}{3}\\right) = \\frac{1}{2}$\n\n**Note:** $\\cos(60°) = \\sin(30°)$ because $60° + 30° = 90°$ (complementary angles).",
+      "key_concept": "cos(π/3) = cos(60°) = 1/2. Notice the pattern: cos(60°) = sin(30°)."
+    },
+    {
+      "id": "W11-005",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "amplitude",
+      "exam_reference": "Q31",
+      "question": "What is the amplitude of the function $f(x) = \\frac{5}{2}\\sin(2x)$?",
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "2.5",
+        "D": "5",
+        "E": "$\\pi$"
+      },
+      "correct_answer": "C",
+      "solution": "For a function $y = A\\sin(Bx + C) + D$, the amplitude is $|A|$.\n\nHere, $A = \\frac{5}{2} = 2.5$.\n\nThe amplitude is the maximum displacement from the midline, which is $\\frac{5}{2} = 2.5$.\n\n**Note:** The coefficient 2 inside affects the period, not the amplitude.",
+      "key_concept": "This is directly from Q31. Amplitude = |coefficient in front of sin/cos|."
+    },
+    {
+      "id": "W11-006",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "period",
+      "exam_reference": "Q31",
+      "question": "What is the period of the function $x(t) = \\frac{7}{2}\\cos(\\pi t)$?",
+      "choices": {
+        "A": "$\\frac{1}{2}$ seconds",
+        "B": "1 second",
+        "C": "2 seconds",
+        "D": "$\\pi$ seconds",
+        "E": "$2\\pi$ seconds"
+      },
+      "correct_answer": "C",
+      "solution": "For $y = A\\cos(Bt)$, the period is:\n\n$$T = \\frac{2\\pi}{|B|}$$\n\nHere $B = \\pi$, so:\n\n$$T = \\frac{2\\pi}{\\pi} = 2 \\text{ seconds}$$",
+      "key_concept": "This is directly from Q31. Period = 2π / |B|."
+    },
+    {
+      "id": "W11-007",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "frequency",
+      "exam_reference": "Q31",
+      "question": "What is the frequency of the function $x(t) = \\frac{7}{2}\\cos(\\pi t)$?",
+      "choices": {
+        "A": "0.25 Hz",
+        "B": "0.5 Hz",
+        "C": "1 Hz",
+        "D": "2 Hz",
+        "E": "$\\pi$ Hz"
+      },
+      "correct_answer": "B",
+      "solution": "Frequency is the reciprocal of period:\n\n$$f = \\frac{1}{T}$$\n\nFrom the previous question, $T = 2$ seconds, so:\n\n$$f = \\frac{1}{2} = 0.5 \\text{ Hz}$$\n\nAlternatively: $f = \\frac{|B|}{2\\pi} = \\frac{\\pi}{2\\pi} = 0.5$ Hz.",
+      "key_concept": "This is directly from Q31. Frequency = 1/Period = |B|/(2π)."
+    },
+    {
+      "id": "W11-008",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "quadrant_signs",
+      "question": "In which quadrant is $\\sin\\theta > 0$ and $\\cos\\theta < 0$?",
+      "choices": {
+        "A": "Quadrant I",
+        "B": "Quadrant II",
+        "C": "Quadrant III",
+        "D": "Quadrant IV",
+        "E": "No such quadrant exists"
+      },
+      "correct_answer": "B",
+      "solution": "Using the ASTC rule (All, Sin, Tan, Cos):\n\n- Quadrant I: All positive\n- Quadrant II: Only Sin positive\n- Quadrant III: Only Tan positive\n- Quadrant IV: Only Cos positive\n\nWe need $\\sin\\theta > 0$ and $\\cos\\theta < 0$.\n\nIn Quadrant II, sine is positive and cosine is negative. ✓",
+      "key_concept": "ASTC: All Students Take Calculus. Q2 = Sin positive only."
+    },
+    {
+      "id": "W11-009",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "pythagorean_identity",
+      "question": "If $\\cos\\theta = \\frac{3}{5}$ and $\\theta$ is in Quadrant I, what is $\\sin\\theta$?",
+      "choices": {
+        "A": "$\\frac{2}{5}$",
+        "B": "$\\frac{4}{5}$",
+        "C": "$\\frac{3}{5}$",
+        "D": "$-\\frac{4}{5}$",
+        "E": "$\\frac{\\sqrt{5}}{5}$"
+      },
+      "correct_answer": "B",
+      "solution": "Using the Pythagorean identity $\\sin^2\\theta + \\cos^2\\theta = 1$:\n\n$$\\sin^2\\theta = 1 - \\cos^2\\theta = 1 - \\left(\\frac{3}{5}\\right)^2 = 1 - \\frac{9}{25} = \\frac{16}{25}$$\n\n$$\\sin\\theta = \\pm\\frac{4}{5}$$\n\nSince $\\theta$ is in Quadrant I, $\\sin\\theta > 0$, so $\\sin\\theta = \\frac{4}{5}$.",
+      "key_concept": "Use sin²θ + cos²θ = 1, then apply ASTC to determine the sign."
+    },
+    {
+      "id": "W11-010",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "amplitude_from_graph",
+      "question": "A circadian body temperature oscillates between 36.5°C and 37.5°C. What is the amplitude of this oscillation?",
+      "choices": {
+        "A": "0.5°C",
+        "B": "1.0°C",
+        "C": "36.5°C",
+        "D": "37.0°C",
+        "E": "37.5°C"
+      },
+      "correct_answer": "A",
+      "solution": "Amplitude is half the range:\n\n$$A = \\frac{\\text{max} - \\text{min}}{2} = \\frac{37.5 - 36.5}{2} = \\frac{1.0}{2} = 0.5°C$$\n\n**Note:** The amplitude is the displacement from the midline, not the range itself.",
+      "key_concept": "Amplitude = (max - min)/2. Don't confuse with the range or midline."
+    },
+    {
+      "id": "W11-011",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "vertical_shift",
+      "question": "If a periodic function oscillates between -3 and 7, what is the vertical shift $D$?",
+      "choices": {
+        "A": "-3",
+        "B": "2",
+        "C": "3.5",
+        "D": "5",
+        "E": "7"
+      },
+      "correct_answer": "B",
+      "solution": "The vertical shift $D$ is the midline:\n\n$$D = \\frac{\\text{max} + \\text{min}}{2} = \\frac{7 + (-3)}{2} = \\frac{4}{2} = 2$$\n\nAlternatively: $D = \\text{min} + A = -3 + 5 = 2$, where $A = \\frac{7-(-3)}{2} = 5$.",
+      "key_concept": "Vertical shift = (max + min)/2 = midline of oscillation."
+    },
+    {
+      "id": "W11-012",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "angular_frequency",
+      "question": "What is the angular frequency $B$ for a temperature cycle that repeats every 12 months?",
+      "choices": {
+        "A": "$\\frac{\\pi}{12}$",
+        "B": "$\\frac{\\pi}{6}$",
+        "C": "$\\frac{\\pi}{3}$",
+        "D": "$\\frac{2\\pi}{3}$",
+        "E": "$2\\pi$"
+      },
+      "correct_answer": "B",
+      "solution": "Angular frequency is related to period by:\n\n$$B = \\frac{2\\pi}{\\text{Period}}$$\n\nFor a 12-month period:\n\n$$B = \\frac{2\\pi}{12} = \\frac{\\pi}{6} \\text{ per month}$$",
+      "key_concept": "B = 2π/Period. For annual cycles, B = π/6 per month."
+    },
+    {
+      "id": "W11-013",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "phase_shift",
+      "question": "For a cosine function, the minimum value occurs when the argument equals $\\pi$. If the coldest month in the Southern Hemisphere is July (month 7), what should $C$ be in $T(m) = A\\cos\\left(\\frac{\\pi}{6}(m + C)\\right) + D$?",
+      "choices": {
+        "A": "-7",
+        "B": "-1",
+        "C": "0",
+        "D": "1",
+        "E": "7"
+      },
+      "correct_answer": "B",
+      "solution": "For the minimum of cosine, we need the argument to equal $\\pi$:\n\n$$\\frac{\\pi}{6}(7 + C) = \\pi$$\n\nDivide both sides by $\\frac{\\pi}{6}$:\n\n$$7 + C = 6$$\n\n$$C = -1$$\n\nThis shifts the cosine function to the right by 1 month, placing the minimum at July.",
+      "key_concept": "Set argument = π at the minimum location, then solve for C."
+    },
+    {
+      "id": "W11-014",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "symmetry",
+      "question": "Which of the following is true about $\\cos(-\\theta)$?",
+      "choices": {
+        "A": "$\\cos(-\\theta) = -\\cos\\theta$",
+        "B": "$\\cos(-\\theta) = \\cos\\theta$",
+        "C": "$\\cos(-\\theta) = \\sin\\theta$",
+        "D": "$\\cos(-\\theta) = -\\sin\\theta$",
+        "E": "$\\cos(-\\theta) = \\tan\\theta$"
+      },
+      "correct_answer": "B",
+      "solution": "Cosine is an **even function**, meaning:\n\n$$\\cos(-\\theta) = \\cos\\theta$$\n\nThis can be verified from the unit circle: reflecting across the x-axis doesn't change the x-coordinate.\n\n**Contrast:** Sine is an **odd function**: $\\sin(-\\theta) = -\\sin\\theta$.",
+      "key_concept": "Cosine is even: cos(-θ) = cos(θ). Sine is odd: sin(-θ) = -sin(θ)."
+    },
+    {
+      "id": "W11-015",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "tangent_calculation",
+      "question": "If $\\sin\\theta = \\frac{5}{13}$ and $\\cos\\theta = \\frac{12}{13}$, what is $\\tan\\theta$?",
+      "choices": {
+        "A": "$\\frac{5}{13}$",
+        "B": "$\\frac{12}{13}$",
+        "C": "$\\frac{5}{12}$",
+        "D": "$\\frac{12}{5}$",
+        "E": "$\\frac{13}{5}$"
+      },
+      "correct_answer": "C",
+      "solution": "Using the quotient identity:\n\n$$\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta} = \\frac{\\frac{5}{13}}{\\frac{12}{13}} = \\frac{5}{13} \\times \\frac{13}{12} = \\frac{5}{12}$$",
+      "key_concept": "tan θ = sin θ / cos θ. This is a fundamental identity."
+    },
+    {
+      "id": "W11-016",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "period_identification",
+      "question": "A circadian rhythm has a period of 24 hours. Which function models this rhythm if time $t$ is in hours?",
+      "choices": {
+        "A": "$y = A\\sin(24t)$",
+        "B": "$y = A\\sin\\left(\\frac{\\pi}{24}t\\right)$",
+        "C": "$y = A\\sin\\left(\\frac{\\pi}{12}t\\right)$",
+        "D": "$y = A\\sin\\left(\\frac{2\\pi}{24}t\\right)$",
+        "E": "$y = A\\sin(2\\pi t)$"
+      },
+      "correct_answer": "C",
+      "solution": "For period $T = 24$ hours:\n\n$$B = \\frac{2\\pi}{T} = \\frac{2\\pi}{24} = \\frac{\\pi}{12}$$\n\nSo the function is $y = A\\sin\\left(\\frac{\\pi}{12}t\\right)$.\n\n**Note:** Option D gives $B = \\frac{2\\pi}{24} = \\frac{\\pi}{12}$, which is equivalent to C. However, C is the simplified form.",
+      "key_concept": "B = 2π/T. Simplify: 2π/24 = π/12."
+    },
+    {
+      "id": "W11-017",
+      "type": "multiple_choice",
+      "difficulty": "exam_style",
+      "topic": "q31_comprehensive",
+      "exam_reference": "Q31",
+      "question": "Which of the following statements is TRUE?\n\n(i) 90° converted to radians is equal to $\\frac{1}{2}\\pi$\n(ii) The function $\\frac{5}{2}\\sin(2x)$ has an amplitude of 2.5\n(iii) The period of $x(t) = \\frac{7}{2}\\cos(\\pi t)$ is 2 seconds\n(iv) The frequency of $x(t) = \\frac{7}{2}\\cos(\\pi t)$ is 0.5 Hz",
+      "choices": {
+        "A": "Only (i) and (ii) are true",
+        "B": "Only (iii) and (iv) are true",
+        "C": "Only (i), (ii), and (iii) are true",
+        "D": "Only (ii), (iii), and (iv) are true",
+        "E": "All of the above are true"
+      },
+      "correct_answer": "E",
+      "solution": "Let's verify each statement:\n\n**(i) 90° = $\\frac{\\pi}{2}$ radians:**\n$$90° \\times \\frac{\\pi}{180} = \\frac{\\pi}{2}$$ ✓\n\n**(ii) Amplitude of $\\frac{5}{2}\\sin(2x)$ is 2.5:**\nAmplitude $= |A| = \\frac{5}{2} = 2.5$ ✓\n\n**(iii) Period of $\\frac{7}{2}\\cos(\\pi t)$ is 2 seconds:**\n$$T = \\frac{2\\pi}{|B|} = \\frac{2\\pi}{\\pi} = 2$$ ✓\n\n**(iv) Frequency is 0.5 Hz:**\n$$f = \\frac{1}{T} = \\frac{1}{2} = 0.5$$ Hz ✓\n\n**All statements are true.**",
+      "key_concept": "This mirrors Q31 exactly. Master each concept individually."
+    },
+    {
+      "id": "W11-018",
+      "type": "multiple_choice",
+      "difficulty": "exam_style",
+      "topic": "q36_pencil_movement",
+      "exam_reference": "Q36",
+      "question": "In a motor behavior experiment, a person moves a pencil periodically between 2 cm and 12 cm, completing a round every 2 seconds. The pencil is at position $x = 2$ cm at $t = 0$. If the model is $x(t) = A\\cos(B(t + C)) + D$, what are the values of $A$, $B$, $C$, and $D$?",
+      "choices": {
+        "A": "$A = 6, B = \\pi, C = 1, D = 7$",
+        "B": "$A = 6, B = \\pi, C = 1.5, D = 8$",
+        "C": "$A = 5, B = 2\\pi, C = 1.5, D = 7$",
+        "D": "$A = 5, B = \\pi, C = 1, D = 7$",
+        "E": "$A = 12, B = 2\\pi, C = -1.5, D = 8$"
+      },
+      "correct_answer": "D",
+      "solution": "**Step 1: Amplitude**\n$$A = \\frac{\\max - \\min}{2} = \\frac{12 - 2}{2} = 5$$\n\n**Step 2: Vertical shift**\n$$D = \\frac{\\max + \\min}{2} = \\frac{12 + 2}{2} = 7$$\n\n**Step 3: Angular frequency (Period = 2 seconds)**\n$$B = \\frac{2\\pi}{T} = \\frac{2\\pi}{2} = \\pi$$\n\n**Step 4: Phase shift (minimum at $t = 0$)**\nCosine has minimum when argument $= \\pi$:\n$$B(0 + C) = \\pi$$\n$$\\pi \\cdot C = \\pi$$\n$$C = 1$$\n\n**Verification:** $x(0) = 5\\cos(\\pi \\cdot 1) + 7 = 5(-1) + 7 = 2$ ✓",
+      "key_concept": "This is Q36. Systematic approach: A, D from range; B from period; C from boundary condition."
+    },
+    {
+      "id": "W11-019",
+      "type": "multiple_choice",
+      "difficulty": "exam_style",
+      "topic": "temperature_modeling",
+      "question": "Wellington Airport has a maximum monthly average temperature of 17.9°C in February and a minimum of 9.5°C in July. For the cosine model $T(m) = A\\cos\\left(\\frac{\\pi}{6}(m + C)\\right) + D$, what is the vertical shift $D$?",
+      "choices": {
+        "A": "4.2°C",
+        "B": "9.5°C",
+        "C": "13.7°C",
+        "D": "17.9°C",
+        "E": "27.4°C"
+      },
+      "correct_answer": "C",
+      "solution": "The vertical shift $D$ is the midline:\n\n$$D = \\frac{\\max + \\min}{2} = \\frac{17.9 + 9.5}{2} = \\frac{27.4}{2} = 13.7°C$$\n\nAlternatively, $D = \\min + A = 9.5 + 4.2 = 13.7°C$, where:\n$$A = \\frac{17.9 - 9.5}{2} = 4.2°C$$",
+      "key_concept": "D = (max + min)/2 represents the average temperature level."
+    },
+    {
+      "id": "W11-020",
+      "type": "multiple_choice",
+      "difficulty": "exam_style",
+      "topic": "complete_model_fitting",
+      "question": "A patient's heart rate varies sinusoidally between 60 and 100 beats per minute over a 4-minute exercise cycle. At $t = 0$ (start of exercise), heart rate is at its minimum of 60 bpm. Which function models the heart rate $H(t)$?",
+      "choices": {
+        "A": "$H(t) = 20\\cos\\left(\\frac{\\pi}{2}t\\right) + 80$",
+        "B": "$H(t) = 20\\cos\\left(\\frac{\\pi}{2}(t+1)\\right) + 80$",
+        "C": "$H(t) = 40\\cos\\left(\\frac{\\pi}{2}t\\right) + 60$",
+        "D": "$H(t) = 20\\sin\\left(\\frac{\\pi}{2}t\\right) + 80$",
+        "E": "$H(t) = 20\\cos\\left(\\frac{\\pi}{2}(t+2)\\right) + 80$"
+      },
+      "correct_answer": "E",
+      "solution": "**Step 1: Amplitude**\n$$A = \\frac{100 - 60}{2} = 20$$\n\n**Step 2: Vertical shift**\n$$D = \\frac{100 + 60}{2} = 80$$\n\n**Step 3: Angular frequency (Period = 4 minutes)**\n$$B = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$$\n\n**Step 4: Phase shift (minimum at $t = 0$)**\nCosine has minimum when argument $= \\pi$:\n$$\\frac{\\pi}{2}(0 + C) = \\pi$$\n$$C = 2$$\n\n**Model:** $H(t) = 20\\cos\\left(\\frac{\\pi}{2}(t+2)\\right) + 80$\n\n**Verification:** $H(0) = 20\\cos(\\pi) + 80 = 20(-1) + 80 = 60$ ✓",
+      "key_concept": "Complete model fitting: boundary condition determines phase shift."
+    }
+  ]
+}

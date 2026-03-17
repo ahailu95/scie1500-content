@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "week": 4,
+    "title": "Limits, Continuity, and Introduction to Derivatives",
+    "theme": "Measuring Instantaneous Change",
+    "exam_alignment": ["Q13", "Q21", "Q25", "Q28"],
+    "total_questions": 18,
+    "difficulty_distribution": {
+      "foundational": 8,
+      "intermediate": 6,
+      "exam_style": 4
+    },
+    "scientific_contexts": [
+      "Bacterial growth rates",
+      "Radioactive decay rates",
+      "Schaefer fish growth model",
+      "Plastic production acceleration"
+    ]
+  },
+  "questions": [
+    {
+      "id": "W4-001",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "limit_evaluation_factoring",
+      "question": "Evaluate $\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}$.",
+      "choices": {
+        "A": "0",
+        "B": "3",
+        "C": "6",
+        "D": "9",
+        "E": "Does not exist"
+      },
+      "correct_answer": "C",
+      "solution": "Factor the numerator: $x^2 - 9 = (x+3)(x-3)$.\n\n$\\lim_{x \\to 3} \\frac{(x+3)(x-3)}{x-3} = \\lim_{x \\to 3} (x+3) = 6$",
+      "key_concept": "For 0/0 indeterminate forms, factor to cancel the problematic term before substituting"
+    },
+    {
+      "id": "W4-002",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "limit_evaluation_factoring",
+      "question": "Evaluate $\\lim_{x \\to 4} \\frac{x^2 - 2x - 8}{x - 4}$.",
+      "choices": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "8",
+        "E": "Does not exist"
+      },
+      "correct_answer": "C",
+      "solution": "Factor the numerator: $x^2 - 2x - 8 = (x-4)(x+2)$.\n\n$\\lim_{x \\to 4} \\frac{(x-4)(x+2)}{x-4} = \\lim_{x \\to 4} (x+2) = 6$",
+      "key_concept": "Factoring removes the zero in the denominator, allowing direct substitution"
+    },
+    {
+      "id": "W4-003",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "limit_at_infinity",
+      "question": "Evaluate $\\lim_{x \\to \\infty} \\frac{3x^2 + 4x - 1}{2x^2 + x - 4}$.",
+      "choices": {
+        "A": "0",
+        "B": "$\\frac{1}{2}$",
+        "C": "1",
+        "D": "$\\frac{3}{2}$",
+        "E": "$\\infty$"
+      },
+      "correct_answer": "D",
+      "solution": "Divide every term by $x^2$ (the highest power):\n\n$\\lim_{x \\to \\infty} \\frac{3 + \\frac{4}{x} - \\frac{1}{x^2}}{2 + \\frac{1}{x} - \\frac{4}{x^2}}$\n\nAs $x \\to \\infty$, terms with $x$ in the denominator approach 0:\n\n$= \\frac{3 + 0 - 0}{2 + 0 - 0} = \\frac{3}{2}$",
+      "key_concept": "For limits at infinity with polynomials, divide by the highest power of x"
+    },
+    {
+      "id": "W4-004",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "continuity_definition",
+      "question": "A function $f(x)$ is continuous at $x = a$ if and only if which condition holds?",
+      "choices": {
+        "A": "$f(a)$ is defined",
+        "B": "$\\lim_{x \\to a} f(x)$ exists",
+        "C": "$f'(a)$ exists",
+        "D": "$\\lim_{x \\to a} f(x) = f(a)$",
+        "E": "$f(x)$ is differentiable at $x = a$"
+      },
+      "correct_answer": "D",
+      "solution": "Continuity at $x = a$ requires three conditions:\n1. $f(a)$ is defined\n2. $\\lim_{x \\to a} f(x)$ exists\n3. $\\lim_{x \\to a} f(x) = f(a)$\n\nOption D encapsulates all three conditions in one statement.",
+      "key_concept": "Continuity means no gaps, jumps, or holes—the limit equals the function value"
+    },
+    {
+      "id": "W4-005",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "power_rule",
+      "question": "What is the derivative of $f(x) = x^5$?",
+      "choices": {
+        "A": "$5x^4$",
+        "B": "$5x^5$",
+        "C": "$x^4$",
+        "D": "$4x^5$",
+        "E": "$\\frac{x^6}{6}$"
+      },
+      "correct_answer": "A",
+      "solution": "Using the power rule: $\\frac{d}{dx}[x^n] = nx^{n-1}$\n\n$\\frac{d}{dx}[x^5] = 5x^{5-1} = 5x^4$",
+      "key_concept": "Power rule: bring down the exponent, reduce the power by 1"
+    },
+    {
+      "id": "W4-006",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "power_rule_negative",
+      "question": "What is the derivative of $g(x) = \\frac{1}{x^2}$?",
+      "choices": {
+        "A": "$\\frac{2}{x^3}$",
+        "B": "$-\\frac{2}{x^3}$",
+        "C": "$\\frac{1}{2x}$",
+        "D": "$-\\frac{1}{x^3}$",
+        "E": "$\\frac{2}{x}$"
+      },
+      "correct_answer": "B",
+      "solution": "First rewrite: $g(x) = \\frac{1}{x^2} = x^{-2}$\n\nApply the power rule:\n$g'(x) = -2x^{-2-1} = -2x^{-3} = -\\frac{2}{x^3}$",
+      "key_concept": "The power rule works for negative exponents too—rewrite fractions as negative powers first"
+    },
+    {
+      "id": "W4-007",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "sum_rule",
+      "question": "What is the derivative of $y = 4x^3 - 2x^2 + 7x - 5$?",
+      "choices": {
+        "A": "$12x^2 - 4x + 7$",
+        "B": "$12x^2 - 4x + 7 - 5$",
+        "C": "$4x^2 - 2x + 7$",
+        "D": "$12x^3 - 4x^2 + 7x$",
+        "E": "$x^4 - x^3 + \\frac{7x^2}{2} - 5x$"
+      },
+      "correct_answer": "A",
+      "solution": "Apply the power rule term by term:\n\n$y' = 4(3x^2) - 2(2x) + 7(1) - 0$\n$= 12x^2 - 4x + 7$\n\nNote: The derivative of the constant $-5$ is $0$.",
+      "key_concept": "Differentiate polynomials term by term; constants vanish"
+    },
+    {
+      "id": "W4-008",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "derivative_definition",
+      "question": "The derivative of $f(x)$ is defined as:",
+      "choices": {
+        "A": "$\\frac{f(x+h) - f(x)}{h}$",
+        "B": "$\\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$",
+        "C": "$\\lim_{x \\to 0} \\frac{f(x+h) - f(x)}{h}$",
+        "D": "$\\frac{f(x) - f(a)}{x - a}$",
+        "E": "$\\lim_{h \\to \\infty} \\frac{f(x+h) - f(x)}{h}$"
+      },
+      "correct_answer": "B",
+      "solution": "The derivative is defined as:\n$$f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$$\n\nThis represents the instantaneous rate of change—the limit of the average rate of change as the interval shrinks to zero.",
+      "key_concept": "The derivative is the limit of the difference quotient as the interval approaches zero"
+    },
+    {
+      "id": "W4-009",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "derivative_with_roots",
+      "question": "Differentiate $f(x) = 3x^4 - \\frac{2}{x} + 4\\sqrt{x} - 1$.",
+      "correct_answer": "$f'(x) = 12x^3 + \\frac{2}{x^2} + \\frac{2}{\\sqrt{x}}$",
+      "solution": "First rewrite using powers:\n$f(x) = 3x^4 - 2x^{-1} + 4x^{1/2} - 1$\n\nDifferentiate term by term:\n$f'(x) = 3(4)x^3 - 2(-1)x^{-2} + 4(\\frac{1}{2})x^{-1/2} - 0$\n$= 12x^3 + 2x^{-2} + 2x^{-1/2}$\n$= 12x^3 + \\frac{2}{x^2} + \\frac{2}{\\sqrt{x}}$",
+      "key_concept": "Convert roots and fractions to powers before differentiating"
+    },
+    {
+      "id": "W4-010",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "tangent_line",
+      "question": "Find the equation of the tangent line to $y = x^2 - 4x + 3$ at the point where $x = 3$.",
+      "correct_answer": "$y = 2x - 6$",
+      "solution": "Step 1: Find the point.\n$y(3) = 9 - 12 + 3 = 0$\nPoint: $(3, 0)$\n\nStep 2: Find the derivative.\n$y' = 2x - 4$\n\nStep 3: Find the slope at $x = 3$.\n$y'(3) = 2(3) - 4 = 2$\n\nStep 4: Write the tangent line equation.\n$y - 0 = 2(x - 3)$\n$y = 2x - 6$",
+      "key_concept": "The tangent line uses the derivative as its slope: $y = f(a) + f'(a)(x-a)$"
+    },
+    {
+      "id": "W4-011",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "limit_factoring_advanced",
+      "question": "Evaluate $\\lim_{x \\to 2} \\frac{x^3 - 8}{x - 2}$.",
+      "correct_answer": "12",
+      "solution": "Recognize that $x^3 - 8 = x^3 - 2^3$ is a difference of cubes.\n\nFactor: $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$\n\n$x^3 - 8 = (x-2)(x^2 + 2x + 4)$\n\n$\\lim_{x \\to 2} \\frac{(x-2)(x^2 + 2x + 4)}{x-2} = \\lim_{x \\to 2} (x^2 + 2x + 4)$\n$= 4 + 4 + 4 = 12$",
+      "key_concept": "Difference of cubes: $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$"
+    },
+    {
+      "id": "W4-012",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "average_vs_instantaneous",
+      "question": "A bacterial colony has population $N(t) = 500 + 20t + t^2$ cells at time $t$ (hours). Calculate (a) the average growth rate from $t = 2$ to $t = 5$, and (b) the instantaneous growth rate at $t = 2$.",
+      "correct_answer": "(a) 27 cells/hour, (b) 24 cells/hour",
+      "solution": "(a) Average rate from $t=2$ to $t=5$:\n\n$N(5) = 500 + 100 + 25 = 625$\n$N(2) = 500 + 40 + 4 = 544$\n\nAverage rate $= \\frac{N(5) - N(2)}{5 - 2} = \\frac{625 - 544}{3} = \\frac{81}{3} = 27$ cells/hour\n\n(b) Instantaneous rate at $t=2$:\n\n$N'(t) = 20 + 2t$\n$N'(2) = 20 + 4 = 24$ cells/hour\n\nNote: The instantaneous rate is less than the average because the growth rate is increasing.",
+      "key_concept": "Average rate uses the difference quotient; instantaneous rate uses the derivative"
+    },
+    {
+      "id": "W4-013",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "schaefer_derivative",
+      "question": "The Schaefer growth model is $G(S) = gS(1 - S/K)$. What is $\\frac{dG}{dS}$?",
+      "choices": {
+        "A": "$g - gS/K$",
+        "B": "$g - 2gS/K$",
+        "C": "$gS - gS^2/K$",
+        "D": "$g(1 - S/K)$",
+        "E": "$g - gS^2/K$"
+      },
+      "correct_answer": "B",
+      "solution": "Expand the model: $G(S) = gS - \\frac{g}{K}S^2$\n\nDifferentiate with respect to $S$:\n$\\frac{dG}{dS} = g - \\frac{2g}{K}S = g - \\frac{2gS}{K}$\n\nAlternatively written as: $G'(S) = g(1 - \\frac{2S}{K})$",
+      "key_concept": "The Schaefer model is a quadratic; its derivative is linear in S",
+      "exam_reference": "Q13"
+    },
+    {
+      "id": "W4-014",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "schaefer_msy",
+      "question": "For the Schaefer model $G(S) = gS(1 - S/K)$ with $g = 0.12$ and $K = 8000$, find the stock level that maximizes growth by setting $G'(S) = 0$.",
+      "correct_answer": "$S^* = 4000$ (i.e., $K/2$)",
+      "solution": "We found that $G'(S) = g - \\frac{2gS}{K}$\n\nSetting $G'(S^*) = 0$:\n$g - \\frac{2gS^*}{K} = 0$\n$g = \\frac{2gS^*}{K}$\n$S^* = \\frac{K}{2}$\n\nWith $K = 8000$: $S^* = 4000$ tonnes\n\nThis confirms the MSY stock level is always half the carrying capacity.",
+      "key_concept": "Maximum Sustainable Yield occurs at S = K/2, verified by setting derivative to zero",
+      "exam_reference": "Q13"
+    },
+    {
+      "id": "W4-015",
+      "type": "exam_style",
+      "difficulty": "exam_style",
+      "topic": "tangent_line_exponential",
+      "exam_reference": "Q21",
+      "question": "What is the equation of the line that is tangent to the function $y = e^{x-2} + 3$ at $x = 2$?",
+      "choices": {
+        "A": "$y = -e^{x-2}$",
+        "B": "$y = x - 2$",
+        "C": "$y = x + e$",
+        "D": "$y = x + 2$",
+        "E": "None of the above"
+      },
+      "correct_answer": "D",
+      "solution": "Step 1: Find the point at $x = 2$.\n$y(2) = e^{2-2} + 3 = e^0 + 3 = 1 + 3 = 4$\nPoint: $(2, 4)$\n\nStep 2: Find the derivative.\n$y' = e^{x-2}$ (derivative of $e^{x-2}$ is $e^{x-2}$ by chain rule, constant +3 vanishes)\n\nStep 3: Find the slope at $x = 2$.\n$y'(2) = e^{2-2} = e^0 = 1$\n\nStep 4: Write the tangent line.\n$y - 4 = 1(x - 2)$\n$y = x - 2 + 4$\n$y = x + 2$",
+      "key_concept": "Even though we formally learn exp derivatives in Week 5, the exam expects tangent line application",
+      "note": "This question requires knowing that the derivative of $e^{x-2}$ equals itself, which will be covered in Week 5. Students should note this for exam preparation."
+    },
+    {
+      "id": "W4-016",
+      "type": "exam_style",
+      "difficulty": "exam_style",
+      "topic": "function_properties",
+      "exam_reference": "Q25",
+      "question": "Which of the following is NOT true about the function $y = (x + 2)(x - 3)$?",
+      "choices": {
+        "A": "Its range is $\\{y \\in \\mathbb{R} : y \\geq -6.25\\}$.",
+        "B": "It is a concave up function, i.e., it opens up.",
+        "C": "The slope of its tangent at the point where $x$ is 2 is 3.",
+        "D": "Its second derivative is $y'' = 2$.",
+        "E": "None of the above."
+      },
+      "correct_answer": "E",
+      "solution": "Expand: $y = x^2 - x - 6$\n\n(A) Vertex at $x = -\\frac{-1}{2(1)} = 0.5$\n$y(0.5) = 0.25 - 0.5 - 6 = -6.25$\nRange: $\\{y : y \\geq -6.25\\}$ ✓\n\n(B) Since $a = 1 > 0$, parabola opens upward ✓\n\n(C) $y' = 2x - 1$\n$y'(2) = 4 - 1 = 3$ ✓\n\n(D) $y'' = 2$ ✓\n\nAll statements are true, so (E) is correct.",
+      "key_concept": "Verify each statement systematically using derivative calculations"
+    },
+    {
+      "id": "W4-017",
+      "type": "exam_style",
+      "difficulty": "exam_style",
+      "topic": "derivative_calculation",
+      "exam_reference": "Q28",
+      "question": "What is the derivative of the function $y = \\frac{3}{4}x^4 + \\frac{1}{4}x^2 - 3x + \\ln x$?",
+      "choices": {
+        "A": "$y' = 12x^3 + \\frac{3}{x^2} - \\frac{1}{2x^{3/2}}$",
+        "B": "$y' = x^3 - 3 + \\frac{1}{2}x$",
+        "C": "$y' = \\frac{3}{5}x^5 - \\frac{3}{2}x^2 - \\frac{3}{2}x$",
+        "D": "$y' = 3x^3 + \\frac{1}{2}x - 3 + \\frac{1}{x}$",
+        "E": "None of the above."
+      },
+      "correct_answer": "D",
+      "solution": "Differentiate term by term:\n\n$\\frac{d}{dx}\\left[\\frac{3}{4}x^4\\right] = \\frac{3}{4}(4)x^3 = 3x^3$\n\n$\\frac{d}{dx}\\left[\\frac{1}{4}x^2\\right] = \\frac{1}{4}(2)x = \\frac{1}{2}x$\n\n$\\frac{d}{dx}[-3x] = -3$\n\n$\\frac{d}{dx}[\\ln x] = \\frac{1}{x}$\n\nCombine: $y' = 3x^3 + \\frac{1}{2}x - 3 + \\frac{1}{x}$",
+      "key_concept": "Apply power rule to each term; remember $\\frac{d}{dx}[\\ln x] = \\frac{1}{x}$",
+      "note": "The logarithm derivative will be formally covered in Week 5, but appears on the exam"
+    },
+    {
+      "id": "W4-018",
+      "type": "exam_style",
+      "difficulty": "exam_style",
+      "topic": "schaefer_model_analysis",
+      "exam_reference": "Q13",
+      "question": "Consider the Schaefer (1957) model of growth:\n$$G(S) = g \\cdot S \\cdot \\left(1 - \\frac{S}{K}\\right)$$\nwhere $G(S)$ is fish growth, $g$ is the intrinsic growth rate, $S$ is the stock level and $K$ is the carrying capacity. Which of the following statements is true?",
+      "choices": {
+        "A": "The actual fish growth rate, defined as the ratio of $G(S)$ to $S$, declines as stock increases.",
+        "B": "Fish growth (or $G(S)$) is highest when the stock ($S$) is half the maximum carrying capacity ($K$).",
+        "C": "Fish growth (or $G(S)$) is always non-negative.",
+        "D": "All of the above.",
+        "E": "Only (A) and (B) are correct."
+      },
+      "correct_answer": "E",
+      "solution": "(A) TRUE: Actual growth rate = $\\frac{G(S)}{S} = g(1 - S/K)$\nThis decreases linearly from $g$ (at $S=0$) to $0$ (at $S=K$).\n\n(B) TRUE: We showed $G'(S) = g - 2gS/K = 0$ gives $S^* = K/2$.\nThe parabola opens downward, so this is a maximum.\n\n(C) FALSE: If $S > K$, then $(1 - S/K) < 0$, so $G(S) < 0$.\nGrowth becomes negative when stock exceeds carrying capacity.\n\nAnswer: (A) and (B) are correct, but not (C).",
+      "key_concept": "Differentiation confirms MSY at K/2; growth can be negative if S > K"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "week": 2,
+  "title": "Exponential and Logarithmic Functions - Python Lab",
+  "description": "Code snippets for exploring exponential growth, logarithms, and geometric sequences",
+  "snippets": [
+    {
+      "id": "W2-CS01",
+      "title": "Setup: Import Libraries",
+      "section": "",
+      "description": "Load required libraries for numerical computing and plotting",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Set plotting style\nplt.style.use('seaborn-v0_8-whitegrid')\nplt.rcParams['figure.figsize'] = [10, 6]\nplt.rcParams['font.size'] = 12",
+      "purpose": "Load required libraries for numerical computing and plotting"
+    },
+    {
+      "id": "W2-CS02",
+      "title": "The Number e: Limit Definition",
+      "section": "",
+      "description": "Demonstrate how e arises from the limit (1 + 1/n)^n",
+      "code": "# Compute (1 + 1/n)^n for increasing n\nn_values = [1, 10, 100, 1000, 10000, 100000, 1000000]\n\nprint(\"n\\t\\t(1 + 1/n)^n\")\nprint(\"-\" * 30)\nfor n in n_values:\n    result = (1 + 1/n)**n\n    print(f\"{n:>10}\\t{result:.10f}\")\n\nprint(f\"\\nActual e = {np.e:.10f}\")",
+      "purpose": "Demonstrate how e arises from the limit (1 + 1/n)^n"
+    },
+    {
+      "id": "W2-CS03",
+      "title": "Why e? Derivative Investigation",
+      "section": "",
+      "description": "Show that d/dx[a^x] = a^x * lim(h->0)[(a^h-1)/h] and find base where limit = 1",
+      "code": "# Investigate lim(h->0) (a^h - 1)/h for different bases\nh_values = [0.1, 0.01, 0.001, 0.0001, 0.00001]\nbases = [2, np.e, 3]\n\nprint(\"h\\t\\t(2^h-1)/h\\t(e^h-1)/h\\t(3^h-1)/h\")\nprint(\"-\" * 60)\nfor h in h_values:\n    results = [(a**h - 1)/h for a in bases]\n    print(f\"{h}\\t\\t{results[0]:.6f}\\t{results[1]:.6f}\\t{results[2]:.6f}\")\n\nprint(\"\\nNote: Only for base e does the limit equal 1!\")\nprint(f\"ln(2) = {np.log(2):.6f}, ln(3) = {np.log(3):.6f}\")",
+      "purpose": "Show that d/dx[a^x] = a^x * lim(h->0)[(a^h-1)/h] and find base where limit = 1"
+    },
+    {
+      "id": "W2-CS04",
+      "title": "Exponential Growth vs Decay",
+      "section": "",
+      "description": "Visualize difference between growth (k>0) and decay (k<0)",
+      "code": "t = np.linspace(0, 10, 100)\n\n# Different growth/decay rates\nP0 = 100\nk_growth = 0.3   # Growth\nk_decay = -0.3   # Decay\n\nP_growth = P0 * np.exp(k_growth * t)\nP_decay = P0 * np.exp(k_decay * t)\n\nplt.figure(figsize=(10, 6))\nplt.plot(t, P_growth, 'b-', linewidth=2, label=f'Growth: k = {k_growth}')\nplt.plot(t, P_decay, 'r-', linewidth=2, label=f'Decay: k = {k_decay}')\nplt.axhline(y=P0, color='gray', linestyle='--', label=f'Initial: P₀ = {P0}')\n\nplt.xlabel('Time (t)')\nplt.ylabel('Population P(t)')\nplt.title('Exponential Growth vs Decay: P(t) = P₀e^{kt}')\nplt.legend()\nplt.grid(True)\nplt.show()",
+      "purpose": "Visualize difference between growth (k>0) and decay (k<0)"
+    },
+    {
+      "id": "W2-CS05",
+      "title": "Bacteria Growth Example",
+      "section": "",
+      "description": "Model bacteria population from lecture: b(t) = 400e^{1.12567t}",
+      "code": "# Bacteria growth model from lecture\ndef bacteria_pop(t):\n    return 400 * np.exp(1.12567 * t)\n\nt = np.linspace(0, 5, 100)\n\nplt.figure(figsize=(10, 6))\nplt.plot(t, bacteria_pop(t), 'g-', linewidth=2)\n\n# Mark key points\nt_points = [0, 1, 2, 3]\nfor tp in t_points:\n    plt.plot(tp, bacteria_pop(tp), 'ro', markersize=8)\n    plt.annotate(f'  t={tp}: {bacteria_pop(tp):.0f}', \n                 (tp, bacteria_pop(tp)), fontsize=10)\n\nplt.xlabel('Time (hours)')\nplt.ylabel('Bacteria count')\nplt.title('Bacteria Growth: b(t) = 400e^{1.12567t}')\nplt.grid(True)\nplt.show()\n\n# Calculate doubling time\ndoubling_time = np.log(2) / 1.12567\nprint(f\"\\nDoubling time: {doubling_time:.3f} hours ({doubling_time*60:.1f} minutes)\")",
+      "purpose": "Model bacteria population from lecture: b(t) = 400e^{1.12567t}"
+    },
+    {
+      "id": "W2-CS06",
+      "title": "Logarithm as Inverse of Exponential",
+      "section": "",
+      "description": "Visualize the inverse relationship between exp and ln",
+      "code": "x = np.linspace(-3, 3, 200)\nx_pos = np.linspace(0.01, 8, 200)  # For ln (needs positive x)\n\nfig, ax = plt.subplots(figsize=(10, 10))\n\n# Plot y = e^x\nax.plot(x, np.exp(x), 'b-', linewidth=2, label='y = e^x')\n\n# Plot y = ln(x)\nax.plot(x_pos, np.log(x_pos), 'r-', linewidth=2, label='y = ln(x)')\n\n# Plot y = x (reflection line)\nax.plot([-2, 8], [-2, 8], 'k--', linewidth=1, label='y = x')\n\nax.set_xlim(-3, 8)\nax.set_ylim(-3, 8)\nax.set_aspect('equal')\nax.axhline(y=0, color='gray', linewidth=0.5)\nax.axvline(x=0, color='gray', linewidth=0.5)\n\nax.set_xlabel('x')\nax.set_ylabel('y')\nax.set_title('Exponential and Logarithm are Inverse Functions')\nax.legend()\nax.grid(True)\nplt.show()",
+      "purpose": "Visualize the inverse relationship between exp and ln"
+    },
+    {
+      "id": "W2-CS07",
+      "title": "Solving Exponential Equations",
+      "section": "",
+      "description": "Demonstrate solving P(t) = P₀e^{kt} for t using logarithms",
+      "code": "def solve_for_time(P0, P_target, k):\n    \"\"\"Solve P0 * e^(kt) = P_target for t\"\"\"\n    t = np.log(P_target / P0) / k\n    return t\n\n# Example: When does population reach 2000?\nP0 = 500\nk = 0.08\nP_target = 2000\n\nt_solution = solve_for_time(P0, P_target, k)\n\nprint(f\"Given: P(t) = {P0}e^{{{k}t}}\")\nprint(f\"Find t when P(t) = {P_target}\")\nprint(f\"\\nSolution steps:\")\nprint(f\"  {P0}e^{{{k}t}} = {P_target}\")\nprint(f\"  e^{{{k}t}} = {P_target/P0}\")\nprint(f\"  {k}t = ln({P_target/P0}) = {np.log(P_target/P0):.4f}\")\nprint(f\"  t = {t_solution:.2f} years\")\n\n# Verify\nP_check = P0 * np.exp(k * t_solution)\nprint(f\"\\nVerification: P({t_solution:.2f}) = {P_check:.0f}\")",
+      "purpose": "Demonstrate solving P(t) = P₀e^{kt} for t using logarithms"
+    },
+    {
+      "id": "W2-CS08",
+      "title": "The 70/r Rule for Doubling Time",
+      "section": "",
+      "description": "Compare exact doubling time with the 70/r approximation",
+      "code": "# Compare exact vs approximate doubling time\nrates = np.array([1, 2, 3, 5, 7, 10, 15, 20])  # percent per year\n\nprint(\"Growth Rate (%)\\tExact T₂\\t70/r Approx\\tError (%)\")\nprint(\"-\" * 60)\n\nfor r in rates:\n    r_decimal = r / 100\n    exact = np.log(2) / r_decimal\n    approx = 70 / r\n    error = 100 * (approx - exact) / exact\n    print(f\"{r}%\\t\\t{exact:.2f}\\t\\t{approx:.2f}\\t\\t{error:+.1f}%\")\n\nprint(\"\\nThe 70/r rule works best for rates around 5-10%\")",
+      "purpose": "Compare exact doubling time with the 70/r approximation"
+    },
+    {
+      "id": "W2-CS09",
+      "title": "Geometric Sequence Visualization",
+      "section": "",
+      "description": "Show geometric sequence as discrete samples of exponential function",
+      "code": "# Geometric sequence: a_n = a * r^(n-1)\na = 100  # first term\nr = 1.5  # common ratio\nn_terms = 10\n\n# Generate sequence\nn = np.arange(1, n_terms + 1)\nsequence = a * r**(n - 1)\n\n# Continuous exponential for comparison\nt_cont = np.linspace(1, n_terms, 200)\ny_cont = a * r**(t_cont - 1)\n\nplt.figure(figsize=(10, 6))\nplt.plot(t_cont, y_cont, 'b-', alpha=0.5, label='Continuous: f(x) = 100·1.5^(x-1)')\nplt.stem(n, sequence, 'r', markerfmt='ro', basefmt=' ', label='Geometric sequence')\n\nfor i, val in enumerate(sequence[:5]):\n    plt.annotate(f'  a_{i+1}={val:.0f}', (i+1, val))\n\nplt.xlabel('n (term number)')\nplt.ylabel('Value')\nplt.title('Geometric Sequence as Discrete Exponential Sampling')\nplt.legend()\nplt.grid(True)\nplt.show()\n\nprint(\"Sequence terms:\", [f\"{v:.1f}\" for v in sequence])",
+      "purpose": "Show geometric sequence as discrete samples of exponential function"
+    },
+    {
+      "id": "W2-CS10",
+      "title": "Geometric Series Sum",
+      "section": "",
+      "description": "Calculate and visualize partial sums of geometric series",
+      "code": "def geometric_sum(a, r, n):\n    \"\"\"Sum of first n terms: S_n = a(1-r^n)/(1-r)\"\"\"\n    if r == 1:\n        return a * n\n    return a * (1 - r**n) / (1 - r)\n\n# Example: a=1, r=0.5 (converging series)\na, r = 1, 0.5\n\nn_values = np.arange(1, 21)\npartial_sums = [geometric_sum(a, r, n) for n in n_values]\n\n# Theoretical sum to infinity for |r| < 1\nsum_infinity = a / (1 - r)\n\nplt.figure(figsize=(10, 6))\nplt.plot(n_values, partial_sums, 'bo-', label='Partial sums S_n')\nplt.axhline(y=sum_infinity, color='r', linestyle='--', \n            label=f'Sum to ∞ = {sum_infinity:.2f}')\n\nplt.xlabel('Number of terms (n)')\nplt.ylabel('Partial sum S_n')\nplt.title(f'Convergence of Geometric Series (a={a}, r={r})')\nplt.legend()\nplt.grid(True)\nplt.show()\n\nprint(f\"S_∞ = a/(1-r) = {a}/(1-{r}) = {sum_infinity}\")",
+      "purpose": "Calculate and visualize partial sums of geometric series"
+    },
+    {
+      "id": "W2-CS11",
+      "title": "Compound Interest Calculator",
+      "section": "",
+      "description": "Calculate investment growth with compound interest",
+      "code": "def compound_interest(principal, rate, years, compounds_per_year=1):\n    \"\"\"Calculate compound interest\n    \n    For continuous compounding, use compounds_per_year = 'continuous'\n    \"\"\"\n    if compounds_per_year == 'continuous':\n        return principal * np.exp(rate * years)\n    else:\n        return principal * (1 + rate/compounds_per_year)**(compounds_per_year * years)\n\n# Example: $10,000 at 6% annual interest\nP = 10000\nr = 0.06\n\nprint(f\"Initial: ${P:,.2f}, Rate: {r*100}%\\n\")\nprint(\"Years\\tAnnually\\tMonthly\\t\\tContinuous\")\nprint(\"-\" * 55)\n\nfor years in [1, 5, 10, 20, 30]:\n    annual = compound_interest(P, r, years, 1)\n    monthly = compound_interest(P, r, years, 12)\n    continuous = compound_interest(P, r, years, 'continuous')\n    print(f\"{years}\\t${annual:,.2f}\\t${monthly:,.2f}\\t${continuous:,.2f}\")",
+      "purpose": "Calculate investment growth with compound interest"
+    },
+    {
+      "id": "W2-CS12",
+      "title": "Probability Function (Logistic-type)",
+      "section": "",
+      "description": "Explore the function p = 1/(1+e^{-kx}) from Q27",
+      "code": "def prob_function(x, k=3):\n    \"\"\"Probability function: p = 1/(1 + e^(-kx))\"\"\"\n    return 1 / (1 + np.exp(-k * x))\n\nx = np.linspace(-3, 3, 200)\n\nplt.figure(figsize=(10, 6))\n\n# Plot for different k values\nfor k in [1, 2, 3, 5]:\n    plt.plot(x, prob_function(x, k), linewidth=2, label=f'k = {k}')\n\nplt.axhline(y=0.5, color='gray', linestyle='--', alpha=0.7)\nplt.axvline(x=0, color='gray', linestyle='--', alpha=0.7)\n\nplt.xlabel('Risk factor (x)')\nplt.ylabel('Probability p(x)')\nplt.title('Disease Risk Function: p = 1/(1 + e^{-kx})')\nplt.legend()\nplt.grid(True)\nplt.ylim(-0.05, 1.05)\nplt.show()\n\n# Key values\nprint(\"Key observations for k=3:\")\nprint(f\"  p(0) = {prob_function(0, 3):.4f}\")\nprint(f\"  p(-1) = {prob_function(-1, 3):.4f}\")\nprint(f\"  p(1) = {prob_function(1, 3):.4f}\")\nprint(f\"  p(-∞) → 0, p(+∞) → 1\")",
+      "purpose": "Explore the function p = 1/(1+e^{-kx}) from Q27"
+    },
+    {
+      "id": "W2-CS13",
+      "title": "Acacia Tree Growth Model",
+      "section": "",
+      "description": "Plot the tree height model from the lecture",
+      "code": "def acacia_height(t):\n    \"\"\"Height model for Acacia catechu (Devaranavadgi et al., 2013)\n    h(t) = 5.966 * exp(-3.0001/(t + 0.3501))\n    \"\"\"\n    return 5.966 * np.exp(-3.0001 / (t + 0.3501))\n\nt = np.linspace(0, 30, 200)\nh = acacia_height(t)\n\nplt.figure(figsize=(10, 6))\nplt.plot(t, h, 'g-', linewidth=2)\n\n# Mark maximum height\nh_max = 5.966\nplt.axhline(y=h_max, color='r', linestyle='--', \n            label=f'Maximum height: {h_max} m')\n\n# Mark half-max point\nh_half = h_max / 2\nt_half = 3.978  # From lecture solution\nplt.plot(t_half, h_half, 'bo', markersize=10)\nplt.annotate(f'  Half-max at t = {t_half:.1f} years', (t_half, h_half))\n\nplt.xlabel('Time (years)')\nplt.ylabel('Height (metres)')\nplt.title('Acacia catechu Height Growth Model')\nplt.legend()\nplt.grid(True)\nplt.show()\n\nprint(f\"Initial height h(0) = {acacia_height(0):.4f} m\")\nprint(f\"Final height h(∞) = {h_max} m\")",
+      "purpose": "Plot the tree height model from the lecture"
+    },
+    {
+      "id": "W2-CS14",
+      "title": "Function Composition Demo",
+      "section": "",
+      "description": "Demonstrate f∘g(x) for exponential functions (Q23 preparation)",
+      "code": "# From exam Q23: f(x) = -e^(-2x+1), g(x) = -(1/2)x^2\n\ndef f(x):\n    return -np.exp(-2*x + 1)\n\ndef g(x):\n    return -0.5 * x**2\n\ndef f_compose_g(x):\n    \"\"\"f(g(x)) = -e^(-2*g(x)+1) = -e^(-2*(-(1/2)x^2)+1) = -e^(x^2+1)\"\"\"\n    return -np.exp(x**2 + 1)\n\nx = np.linspace(-2, 2, 100)\n\nfig, axes = plt.subplots(1, 3, figsize=(15, 5))\n\n# Plot f(x)\naxes[0].plot(x, f(x), 'b-', linewidth=2)\naxes[0].set_title('f(x) = -e^{-2x+1}')\naxes[0].set_xlabel('x')\naxes[0].grid(True)\n\n# Plot g(x)\naxes[1].plot(x, g(x), 'r-', linewidth=2)\naxes[1].set_title('g(x) = -(1/2)x²')\naxes[1].set_xlabel('x')\naxes[1].grid(True)\n\n# Plot f∘g(x)\naxes[2].plot(x, f_compose_g(x), 'g-', linewidth=2)\naxes[2].set_title('f∘g(x) = -e^{x²+1}')\naxes[2].set_xlabel('x')\naxes[2].grid(True)\n\nplt.tight_layout()\nplt.show()\n\n# Verify computation\ntest_x = 1\nprint(f\"\\nVerification at x = {test_x}:\")\nprint(f\"  g({test_x}) = {g(test_x)}\")\nprint(f\"  f(g({test_x})) = f({g(test_x)}) = {f(g(test_x)):.4f}\")\nprint(f\"  Direct: -e^({test_x}²+1) = {f_compose_g(test_x):.4f}\")",
+      "purpose": "Demonstrate f∘g(x) for exponential functions (Q23 preparation)"
+    },
+    {
+      "id": "W2-CS15",
+      "title": "Population Growth Rates Comparison",
+      "section": "",
+      "description": "Compare discrete (geometric) vs continuous (exponential) growth",
+      "code": "# Compare geometric sequence with continuous exponential\nP0 = 1000\nr_discrete = 1.1  # 10% growth per period\nk_continuous = np.log(r_discrete)  # Equivalent continuous rate\n\nperiods = np.arange(0, 20)\nt_continuous = np.linspace(0, 19, 200)\n\n# Discrete (geometric): P_n = P0 * r^n\nP_discrete = P0 * r_discrete**periods\n\n# Continuous: P(t) = P0 * e^(kt)\nP_continuous = P0 * np.exp(k_continuous * t_continuous)\n\nplt.figure(figsize=(10, 6))\nplt.plot(t_continuous, P_continuous, 'b-', linewidth=2, alpha=0.7,\n         label=f'Continuous: P(t) = {P0}e^{{{k_continuous:.4f}t}}')\nplt.stem(periods, P_discrete, 'r', markerfmt='ro', basefmt=' ',\n         label=f'Discrete: Pₙ = {P0}×{r_discrete}ⁿ')\n\nplt.xlabel('Time period')\nplt.ylabel('Population')\nplt.title('Discrete vs Continuous Exponential Growth')\nplt.legend()\nplt.grid(True)\nplt.show()\n\nprint(f\"Discrete rate: {(r_discrete-1)*100}% per period\")\nprint(f\"Continuous rate: k = ln({r_discrete}) = {k_continuous:.4f}\")\nprint(f\"\\nNote: Both give same values at integer time points!\")",
+      "purpose": "Compare discrete (geometric) vs continuous (exponential) growth"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "week": 5,
+    "title": "SymPy for Differentiation and Optimization",
+    "description": "Code snippets demonstrating symbolic differentiation and optimization using SymPy",
+    "prerequisites": [
+      "sympy installed (pip install sympy)",
+      "Basic Python knowledge from Week 0"
+    ],
+    "notebook_connection": "SymbolicComputationDifferentiation.ipynb"
+  },
+  "snippets": [
+    {
+      "id": "W5-CS01",
+      "title": "Setting Up SymPy for Calculus",
+      "section": "",
+      "description": "Import SymPy and define symbols for symbolic computation",
+      "code": "import sympy as sp\n\n# Define symbols for variables\nx, t, S = sp.symbols('x t S')\n\n# Define symbols for parameters (positive=True helps simplify)\ng, K, e, c, p = sp.symbols('g K e c p', positive=True)\n\n# Enable pretty printing\nsp.init_printing()\n\n# Example: create a simple expression\nf = x**2 + 3*x - 5\nprint(f\"f(x) = {f}\")",
+      "expected_output": "f(x) = x**2 + 3*x - 5",
+      "notes": "Always define symbols before using them in expressions. The positive=True parameter helps SymPy make simplifications.",
+      "topic": "sympy_basics"
+    },
+    {
+      "id": "W5-CS02",
+      "title": "Basic Differentiation",
+      "section": "",
+      "description": "Compute first and higher-order derivatives using .diff()",
+      "code": "import sympy as sp\nx = sp.symbols('x')\n\n# Define a function\nf = x**3 - 6*x**2 + 9*x + 1\n\n# First derivative\nf_prime = f.diff(x)\nprint(f\"f(x) = {f}\")\nprint(f\"f'(x) = {f_prime}\")\n\n# Second derivative\nf_double_prime = f.diff(x, 2)\nprint(f\"f''(x) = {f_double_prime}\")\n\n# Third derivative (using alternative syntax)\nf_triple = sp.diff(f, x, 3)\nprint(f\"f'''(x) = {f_triple}\")",
+      "expected_output": "f(x) = x**3 - 6*x**2 + 9*x + 1\nf'(x) = 3*x**2 - 12*x + 9\nf''(x) = 6*x - 12\nf'''(x) = 6",
+      "notes": "Use .diff(x) for first derivative, .diff(x, n) for nth derivative.",
+      "topic": "differentiation"
+    },
+    {
+      "id": "W5-CS03",
+      "title": "Product Rule Verification",
+      "section": "",
+      "description": "Verify the product rule using SymPy",
+      "code": "import sympy as sp\nx = sp.symbols('x')\n\n# Define two functions\nf = x**2\ng = sp.exp(x)  # e^x\n\n# Product\nproduct = f * g\n\n# SymPy automatically applies product rule\nproduct_derivative = product.diff(x)\nprint(f\"d/dx[x² · eˣ] = {product_derivative}\")\n\n# Simplify and factor\nsimplified = sp.simplify(product_derivative)\nfactored = sp.factor(product_derivative)\nprint(f\"Simplified: {simplified}\")\nprint(f\"Factored: {factored}\")",
+      "expected_output": "d/dx[x² · eˣ] = x**2*exp(x) + 2*x*exp(x)\nSimplified: (x**2 + 2*x)*exp(x)\nFactored: x*(x + 2)*exp(x)",
+      "notes": "SymPy automatically handles product rule; use simplify() or factor() to clean up results.",
+      "topic": "differentiation"
+    },
+    {
+      "id": "W5-CS04",
+      "title": "Chain Rule with Composite Functions",
+      "section": "",
+      "description": "Differentiate composite functions using SymPy",
+      "code": "import sympy as sp\nx = sp.symbols('x')\n\n# Example 1: (3x + 2)^4\nf1 = (3*x + 2)**4\nf1_prime = f1.diff(x)\nprint(f\"d/dx[(3x+2)⁴] = {f1_prime}\")\n\n# Example 2: e^(x²)\nf2 = sp.exp(x**2)\nf2_prime = f2.diff(x)\nprint(f\"d/dx[e^(x²)] = {f2_prime}\")\n\n# Example 3: ln(x² + 1)\nf3 = sp.ln(x**2 + 1)\nf3_prime = f3.diff(x)\nprint(f\"d/dx[ln(x²+1)] = {f3_prime}\")",
+      "expected_output": "d/dx[(3x+2)⁴] = 12*(3*x + 2)**3\nd/dx[e^(x²)] = 2*x*exp(x**2)\nd/dx[ln(x²+1)] = 2*x/(x**2 + 1)",
+      "notes": "SymPy handles chain rule automatically for nested functions.",
+      "topic": "differentiation"
+    },
+    {
+      "id": "W5-CS05",
+      "title": "Solving f'(x) = 0 for Critical Points",
+      "section": "",
+      "description": "Find critical points by solving the derivative equation",
+      "code": "import sympy as sp\nx = sp.symbols('x')\n\n# Define function\nf = x**3 - 12*x + 5\n\n# Find derivative\nf_prime = f.diff(x)\nprint(f\"f(x) = {f}\")\nprint(f\"f'(x) = {f_prime}\")\n\n# Solve f'(x) = 0\ncritical_points = sp.solve(f_prime, x)\nprint(f\"Critical points: {critical_points}\")\n\n# Evaluate f at critical points\nfor cp in critical_points:\n    value = f.subs(x, cp)\n    print(f\"f({cp}) = {value}\")",
+      "expected_output": "f(x) = x**3 - 12*x + 5\nf'(x) = 3*x**2 - 12\nCritical points: [-2, 2]\nf(-2) = 21\nf(2) = -11",
+      "notes": "sp.solve() returns a list of solutions. Use .subs() to evaluate at specific points.",
+      "topic": "optimization"
+    },
+    {
+      "id": "W5-CS06",
+      "title": "Second Derivative Test",
+      "section": "",
+      "description": "Classify critical points as maxima or minima",
+      "code": "import sympy as sp\nx = sp.symbols('x')\n\n# Define function\nf = x**3 - 12*x + 5\n\n# First and second derivatives\nf_prime = f.diff(x)\nf_double_prime = f.diff(x, 2)\n\nprint(f\"f''(x) = {f_double_prime}\")\n\n# Find critical points\ncritical_points = sp.solve(f_prime, x)\n\n# Classify each critical point\nfor cp in critical_points:\n    second_deriv_value = f_double_prime.subs(x, cp)\n    func_value = f.subs(x, cp)\n    \n    if second_deriv_value > 0:\n        nature = \"LOCAL MINIMUM\"\n    elif second_deriv_value < 0:\n        nature = \"LOCAL MAXIMUM\"\n    else:\n        nature = \"INCONCLUSIVE (possible inflection point)\"\n    \n    print(f\"At x = {cp}: f''({cp}) = {second_deriv_value}, f({cp}) = {func_value} → {nature}\")",
+      "expected_output": "f''(x) = 6*x\nAt x = -2: f''(-2) = -12, f(-2) = 21 → LOCAL MAXIMUM\nAt x = 2: f''(2) = 12, f(2) = -11 → LOCAL MINIMUM",
+      "notes": "f'' > 0 means concave up (minimum); f'' < 0 means concave down (maximum).",
+      "topic": "optimization"
+    },
+    {
+      "id": "W5-CS07",
+      "title": "Schaefer Model: Finding MSY",
+      "section": "",
+      "description": "Use SymPy to find the stock level that maximizes fish growth (MSY)",
+      "code": "import sympy as sp\n\n# Define symbols\nS = sp.symbols('S')\ng, K = sp.symbols('g K', positive=True)\n\n# Schaefer growth model\nG = g * S * (1 - S/K)\nprint(f\"Growth function: G(S) = {G}\")\n\n# Expand\nG_expanded = sp.expand(G)\nprint(f\"Expanded: G(S) = {G_expanded}\")\n\n# Differentiate\nG_prime = G.diff(S)\nprint(f\"G'(S) = {G_prime}\")\n\n# Solve for MSY stock level\nS_msy = sp.solve(G_prime, S)\nprint(f\"MSY stock level: S* = {S_msy}\")\n\n# Maximum growth (substitute back)\nG_max = G.subs(S, S_msy[0])\nG_max_simplified = sp.simplify(G_max)\nprint(f\"Maximum growth: G_max = {G_max_simplified}\")",
+      "expected_output": "Growth function: G(S) = S*g*(1 - S/K)\nExpanded: G(S) = S*g - S**2*g/K\nG'(S) = g - 2*S*g/K\nMSY stock level: S* = [K/2]\nMaximum growth: G_max = K*g/4",
+      "notes": "This confirms MSY occurs at S = K/2 with maximum growth of gK/4.",
+      "topic": "optimization"
+    },
+    {
+      "id": "W5-CS08",
+      "title": "Bioeconomic Model: Finding MEY",
+      "section": "",
+      "description": "Complete MEY calculation for the bioeconomic fishery model",
+      "code": "import sympy as sp\n\n# Define symbol\nS = sp.symbols('S')\n\n# Parameters\nK = 12000\ng = 0.10\ne = 0.001\nc = 4500\np = 3000\n\n# Build the model\nGrowth = g * S * (1 - S/K)  # Schaefer growth\nHarvest = Growth  # At steady state, H = G(S)\nEffort = Harvest / (e * S)  # E = H/(eS)\nRevenue = p * Harvest\nCost = c * Effort\nProfit = Revenue - Cost\n\nprint(f\"Profit(S) = {sp.expand(Profit)}\")\n\n# Differentiate profit\nProfit_prime = Profit.diff(S)\nprint(f\"Profit'(S) = {sp.expand(Profit_prime)}\")\n\n# Solve for optimal stock (MEY)\nS_opt = sp.solve(Profit_prime, S)\nprint(f\"MEY stock level: S* = {S_opt}\")\n\n# Calculate maximum profit\nmax_profit = Profit.subs(S, S_opt[0])\nprint(f\"Maximum profit: ${float(max_profit):,.2f}\")\n\n# Compare with MSY\nS_msy = K/2\nprofit_at_msy = float(Profit.subs(S, S_msy))\nprint(f\"\\nComparison:\")\nprint(f\"MSY stock: {S_msy} tonnes, Profit: ${profit_at_msy:,.2f}\")\nprint(f\"MEY stock: {S_opt[0]} tonnes, Profit: ${float(max_profit):,.2f}\")",
+      "expected_output": "Profit(S) = -0.025*S**2 + 337.5*S - 450000.0\nProfit'(S) = 337.5 - 0.05*S\nMEY stock level: S* = [6750.00000000000]\nMaximum profit: $689,062.50\n\nComparison:\nMSY stock: 6000.0 tonnes, Profit: $639,000.00\nMEY stock: 6750.00000000000 tonnes, Profit: $689,062.50",
+      "notes": "MEY (6750 tonnes) is higher than MSY (6000 tonnes), with $50,000+ more profit.",
+      "topic": "optimization"
+    },
+    {
+      "id": "W5-CS09",
+      "title": "Constrained Optimization: Fencing Problem",
+      "section": "",
+      "description": "Solve the classic fencing problem using SymPy",
+      "code": "import sympy as sp\n\nx = sp.symbols('x', positive=True)\n\n# Problem: Fence 3 sides of rectangle along river with 1000m of fencing\n# Let x = width, y = length along river\n# Constraint: 2x + y = 1000\n\n# From constraint: y = 1000 - 2x\ny_expr = 1000 - 2*x\n\n# Area as function of x only\nArea = x * y_expr\nprint(f\"Area(x) = {sp.expand(Area)}\")\n\n# Differentiate\nArea_prime = Area.diff(x)\nprint(f\"Area'(x) = {Area_prime}\")\n\n# Solve for optimal x\nx_opt = sp.solve(Area_prime, x)[0]\nprint(f\"Optimal width: x* = {x_opt} m\")\n\n# Find optimal y\ny_opt = y_expr.subs(x, x_opt)\nprint(f\"Optimal length: y* = {y_opt} m\")\n\n# Maximum area\nmax_area = Area.subs(x, x_opt)\nprint(f\"Maximum area: {max_area} m²\")\n\n# Verify it's a maximum\nArea_double_prime = Area.diff(x, 2)\nprint(f\"Area''(x) = {Area_double_prime} (negative → maximum confirmed)\")",
+      "expected_output": "Area(x) = -2*x**2 + 1000*x\nArea'(x) = 1000 - 4*x\nOptimal width: x* = 250 m\nOptimal length: y* = 500 m\nMaximum area: 125000 m²\nArea''(x) = -4 (negative → maximum confirmed)",
+      "notes": "Constrained optimization: substitute constraint to get single-variable function.",
+      "topic": "optimization"
+    },
+    {
+      "id": "W5-CS10",
+      "title": "Profit Maximization: Livestock Problem",
+      "section": "",
+      "description": "Solve the deer fattening problem (Exam Q38 style)",
+      "code": "import sympy as sp\n\nt = sp.symbols('t', positive=True)  # days from now\n\n# Problem parameters\nnum_deer = 100\ninitial_weight = 50  # kg per deer\ninitial_gain_rate = 2  # kg/day\ngain_decline = 0.1  # kg/day per day\nfeed_cost = 0.50  # $/animal/day\nprice = 5.00  # $/kg\n\n# Weight gain rate at time t: 2 - 0.1t\n# Total weight gained by time t: integral of (2 - 0.1*tau) from 0 to t\n# = 2t - 0.05t²\n\nweight_per_deer = initial_weight + 2*t - 0.05*t**2\nprint(f\"Weight per deer at time t: W(t) = {weight_per_deer} kg\")\n\n# Revenue and Cost\nrevenue = num_deer * price * weight_per_deer\ncost = feed_cost * num_deer * t\nprofit = revenue - cost\n\nprofit_expanded = sp.expand(profit)\nprint(f\"Profit(t) = {profit_expanded}\")\n\n# Optimize\nprofit_prime = profit.diff(t)\nprint(f\"Profit'(t) = {sp.expand(profit_prime)}\")\n\nt_opt = sp.solve(profit_prime, t)[0]\nprint(f\"\\nOptimal selling time: t* = {t_opt} days\")\n\n# Calculate results\nweight_opt = weight_per_deer.subs(t, t_opt)\nrevenue_opt = revenue.subs(t, t_opt)\ncost_opt = cost.subs(t, t_opt)\nprofit_opt = profit.subs(t, t_opt)\n\nprint(f\"Weight per deer: {float(weight_opt):.2f} kg\")\nprint(f\"Total revenue: ${float(revenue_opt):,.2f}\")\nprint(f\"Total cost: ${float(cost_opt):,.2f}\")\nprint(f\"Maximum profit: ${float(profit_opt):,.2f}\")",
+      "expected_output": "Weight per deer at time t: W(t) = -0.05*t**2 + 2*t + 50 kg\nProfit(t) = -25.0*t**2 + 950.0*t + 25000.0\nProfit'(t) = 950.0 - 50.0*t\n\nOptimal selling time: t* = 19 days\nWeight per deer: 69.95 kg\nTotal revenue: $34,975.00\nTotal cost: $950.00\nMaximum profit: $34,025.00",
+      "notes": "This mirrors exam Q38. Build the model step by step, then optimize.",
+      "topic": "optimization"
+    },
+    {
+      "id": "W5-CS11",
+      "title": "Plotting Functions and Derivatives",
+      "section": "",
+      "description": "Visualize a function with its first and second derivatives",
+      "code": "import sympy as sp\nfrom sympy.plotting import plot\n\nx = sp.symbols('x')\n\n# Define function\nf = x**3 - 6*x**2 + 9*x + 1\nf_prime = f.diff(x)\nf_double_prime = f.diff(x, 2)\n\nprint(f\"f(x) = {f}\")\nprint(f\"f'(x) = {f_prime}\")\nprint(f\"f''(x) = {f_double_prime}\")\n\n# Create plot with all three functions\np = plot(f, f_prime, f_double_prime, \n         (x, -1, 5),\n         legend=True,\n         title='Function and Derivatives',\n         xlabel='x',\n         ylabel='y',\n         show=False)\n\n# Customize colors (optional)\np[0].line_color = 'blue'   # f(x)\np[1].line_color = 'red'    # f'(x)\np[2].line_color = 'green'  # f''(x)\n\np.show()",
+      "expected_output": "f(x) = x**3 - 6*x**2 + 9*x + 1\nf'(x) = 3*x**2 - 12*x + 9\nf''(x) = 6*x - 12\n[Plot displayed]",
+      "notes": "Use sympy.plotting.plot() for quick visualizations. Note where f'(x)=0 corresponds to extrema of f(x).",
+      "topic": "visualization"
+    },
+    {
+      "id": "W5-CS12",
+      "title": "Parametric Optimization",
+      "section": "",
+      "description": "Keep parameters symbolic to derive general formulas",
+      "code": "import sympy as sp\n\nS = sp.symbols('S')\ng, K, e, c, p = sp.symbols('g K e c p', positive=True)\n\n# Bioeconomic model with symbolic parameters\nG = g * S * (1 - S/K)\nE = G / (e * S)  # Simplifies to g(1-S/K)/e\nTR = p * G\nTC = c * E\nProfit = TR - TC\n\n# Simplify profit expression\nProfit_simplified = sp.simplify(sp.expand(Profit))\nprint(f\"Profit(S) = {Profit_simplified}\")\n\n# Differentiate\nProfit_prime = sp.simplify(Profit.diff(S))\nprint(f\"Profit'(S) = {Profit_prime}\")\n\n# Solve for S* (MEY)\nS_mey = sp.solve(Profit_prime, S)\nprint(f\"MEY stock level: S* = {S_mey}\")\n\n# The general formula shows MEY depends on c/(ep)\nprint(f\"\\nSimplified: S_MEY = K/2 + c/(2ep)\")\nprint(\"This shows MEY > MSY = K/2 when costs exist (c > 0)\")",
+      "expected_output": "Profit(S) = S*g*p - S**2*g*p/K - c*g/e + S*c*g/(K*e)\nProfit'(S) = g*p - 2*S*g*p/K + c*g/(K*e)\nMEY stock level: S* = [K/2 + c/(2*e*p)]\n\nSimplified: S_MEY = K/2 + c/(ep)/(2)\nThis shows MEY > MSY = K/2 when costs exist (c > 0)",
+      "notes": "General formula: S_MEY = K/2 + c/(2ep). MEY exceeds MSY by c/(2ep), which captures the cost-stock tradeoff.",
+      "topic": "advanced"
+    }
+  ],
+  "lab_exercises": [
+    {
+      "id": "W5-Lab-A",
+      "title": "Drug Dosage Optimization",
+      "description": "A patient's heart rate response to a drug injection is R(x) = 9(x² - x³/3) beats/min above normal, where x is the dosage in cc. Find the optimal dosage.",
+      "starter_code": "import sympy as sp\n\nx = sp.symbols('x', positive=True)\n\n# Define the response function\nR = 9 * (x**2 - x**3/3)\n\n# TODO: Find R'(x)\n# TODO: Solve R'(x) = 0\n# TODO: Verify maximum using second derivative\n# TODO: Calculate maximum response",
+      "expected_output": "Optimal dosage: x = 2 cc\nMaximum response: R(2) = 12 beats/min above normal"
+    },
+    {
+      "id": "W5-Lab-B",
+      "title": "Agricultural Net Revenue",
+      "description": "Wheat yield Y = 1000 + 20N - 0.05N² (kg/ha) depends on nitrogen N (kg/ha). If wheat price is $0.40/kg and nitrogen costs $1.00/kg, find optimal nitrogen application.",
+      "starter_code": "import sympy as sp\n\nN = sp.symbols('N', positive=True)\n\n# Parameters\nwheat_price = 0.40  # $/kg\nnitrogen_cost = 1.00  # $/kg\n\n# Yield function\nY = 1000 + 20*N - 0.05*N**2\n\n# TODO: Define revenue, cost, and profit\n# TODO: Find optimal N\n# TODO: Calculate max profit",
+      "expected_output": "Optimal nitrogen: N = 190 kg/ha\nYield at optimum: 2805 kg/ha\nMaximum net revenue: $932.00/ha"
+    },
+    {
+      "id": "W5-Lab-C",
+      "title": "Compare MSY and MEY",
+      "description": "Using the bioeconomic model parameters from class, verify that MEY stock is higher than MSY and calculate the difference in profits.",
+      "starter_code": "import sympy as sp\n\nS = sp.symbols('S')\n\n# Parameters\nK, g, e, c, p = 12000, 0.10, 0.001, 4500, 3000\n\n# TODO: Build Growth, Revenue, Cost, Profit functions\n# TODO: Find S_MSY = K/2 and calculate profit\n# TODO: Find S_MEY by optimization\n# TODO: Compare the two strategies",
+      "expected_output": "MSY: S=6000, Harvest=300, Profit=$639,000\nMEY: S=6750, Harvest=296.7, Profit=$689,062\nMEY profit advantage: $50,062.50"
+    }
+  ]
+}

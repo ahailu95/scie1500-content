@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Getting Started with Python and Jupyter Notebook</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">body {
+font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+line-height: 1.7;
+max-width: 900px;
+margin: 0 auto;
+padding: 2rem 1.5rem;
+color: #1a1a2e;
+background: #fdfdfe;
+}
+h1 { color: #1e3a5f; border-bottom: 3px solid #2563eb; padding-bottom: 0.4rem; margin-top: 2rem; }
+h2 { color: #1e3a5f; border-bottom: 1px solid #cbd5e1; padding-bottom: 0.3rem; margin-top: 2rem; }
+h3 { color: #334155; margin-top: 1.5rem; }
+h4 { color: #475569; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+th { background: #1e3a5f; color: #fff; padding: 0.6rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border: 1px solid #e2e8f0; }
+tr:nth-child(even) { background: #f8fafc; }
+code { background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; color: #b91c1c; }
+pre { background: #1e293b; color: #e2e8f0; padding: 1rem 1.2rem; border-radius: 8px; overflow-x: auto; line-height: 1.5; }
+pre code { background: none; color: inherit; padding: 0; font-size: 0.88em; }
+blockquote { border-left: 4px solid #2563eb; margin: 1rem 0; padding: 0.5rem 1rem; background: #eff6ff; color: #1e3a5f; }
+hr { border: none; border-top: 2px solid #e2e8f0; margin: 1.5rem 0; }
+strong { color: #1e293b; }
+em { color: #475569; }
+ol, ul { padding-left: 1.8rem; }
+li { margin-bottom: 0.3rem; }
+img { max-width: 100%; height: auto; border-radius: 6px; }
+@media print {
+body { max-width: 100%; padding: 0; font-size: 11pt; }
+pre { background: #f5f5f5 !important; color: #000 !important; border: 1px solid #ccc; }
+a { color: #000; text-decoration: underline; }
+}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Getting Started with Python and Jupyter Notebook</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#getting-started-with-python-and-jupyter-notebook" id="toc-getting-started-with-python-and-jupyter-notebook">Getting
+Started with Python and Jupyter Notebook</a>
+<ul>
+<li><a href="#introduction" id="toc-introduction">1. Introduction</a>
+<ul>
+<li><a href="#two-ways-to-run-jupyter-notebook" id="toc-two-ways-to-run-jupyter-notebook">1.1 Two Ways to Run Jupyter
+Notebook</a></li>
+<li><a href="#installing-miniconda-recommended" id="toc-installing-miniconda-recommended">1.2 Installing Miniconda
+(Recommended)</a></li>
+<li><a href="#using-google-colab" id="toc-using-google-colab">1.3 Using
+Google Colab</a></li>
+<li><a href="#the-learning-curve" id="toc-the-learning-curve">1.4 The
+Learning Curve</a></li>
+</ul></li>
+<li><a href="#the-jupyter-notebook-environment" id="toc-the-jupyter-notebook-environment">2. The Jupyter Notebook
+Environment</a>
+<ul>
+<li><a href="#setting-up-a-working-directory" id="toc-setting-up-a-working-directory">2.1 Setting Up a Working
+Directory</a></li>
+<li><a href="#quick-test" id="toc-quick-test">2.2 Quick Test</a></li>
+</ul></li>
+<li><a href="#python-basics" id="toc-python-basics">3. Python Basics</a>
+<ul>
+<li><a href="#python-as-a-calculator" id="toc-python-as-a-calculator">3.1 Python as a Calculator</a></li>
+<li><a href="#variables-and-assignment" id="toc-variables-and-assignment">3.2 Variables and Assignment</a></li>
+<li><a href="#comments" id="toc-comments">3.3 Comments</a></li>
+<li><a href="#functions-use-parentheses" id="toc-functions-use-parentheses">3.4 Functions Use
+Parentheses</a></li>
+<li><a href="#case-sensitivity" id="toc-case-sensitivity">3.5 Case
+Sensitivity</a></li>
+<li><a href="#data-types" id="toc-data-types">3.6 Data Types</a></li>
+<li><a href="#operators" id="toc-operators">3.7 Operators</a></li>
+<li><a href="#indentation-defines-code-blocks" id="toc-indentation-defines-code-blocks">3.8 Indentation Defines Code
+Blocks</a></li>
+</ul></li>
+<li><a href="#importing-modules-and-key-packages" id="toc-importing-modules-and-key-packages">4. Importing Modules and Key
+Packages</a>
+<ul>
+<li><a href="#the-math-module-constants-and-functions" id="toc-the-math-module-constants-and-functions">4.1 The
+<code>math</code> Module — Constants and Functions</a></li>
+<li><a href="#numpy-arrays-and-vectorised-operations" id="toc-numpy-arrays-and-vectorised-operations">4.2 NumPy — Arrays and
+Vectorised Operations</a></li>
+<li><a href="#matplotlib-plotting" id="toc-matplotlib-plotting">4.3
+Matplotlib — Plotting</a></li>
+<li><a href="#finding-help" id="toc-finding-help">4.4 Finding
+Help</a></li>
+</ul></li>
+<li><a href="#defining-your-own-functions" id="toc-defining-your-own-functions">5. Defining Your Own
+Functions</a></li>
+<li><a href="#working-with-data-a-quick-preview" id="toc-working-with-data-a-quick-preview">6. Working with Data — A
+Quick Preview</a>
+<ul>
+<li><a href="#lists-vs-arrays" id="toc-lists-vs-arrays">6.1 Lists vs
+Arrays</a></li>
+<li><a href="#reading-data-from-files-using-pandas" id="toc-reading-data-from-files-using-pandas">6.2 Reading Data from
+Files (using Pandas)</a></li>
+</ul></li>
+<li><a href="#common-mistakes-and-how-to-avoid-them" id="toc-common-mistakes-and-how-to-avoid-them">7. Common Mistakes and
+How to Avoid Them</a></li>
+<li><a href="#summary-of-key-commands" id="toc-summary-of-key-commands">8. Summary of Key Commands</a></li>
+<li><a href="#resources-for-further-learning" id="toc-resources-for-further-learning">9. Resources for Further
+Learning</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="getting-started-with-python-and-jupyter-notebook">Getting
+Started with Python and Jupyter Notebook</h1>
+<p><strong>SCIE1500 — Analytical Methods for Scientists</strong></p>
+<p><em>Atakelty Hailu, University of Western Australia</em></p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>This unit uses <strong>Python</strong>, a general-purpose programming
+language widely adopted in science, engineering, and data analysis.
+Unlike specialised statistical software, Python combines readability
+with powerful libraries for numerical computation (<code>numpy</code>),
+data manipulation (<code>pandas</code>), symbolic mathematics
+(<code>sympy</code>), and visualisation (<code>matplotlib</code>). These
+libraries extend Python’s base capabilities much the way add-on packages
+extend R.</p>
+<p>You will write and run Python code inside <strong>Jupyter
+Notebook</strong>, an interactive environment that lets you weave
+documentation (text, equations, images), code, and results into a single
+document — a <code>.ipynb</code> file. Jupyter Notebook is to Python
+roughly what RStudio is to R: a user-friendly front end that reduces
+frustration and increases productivity.</p>
+<h3 id="two-ways-to-run-jupyter-notebook">1.1 Two Ways to Run Jupyter
+Notebook</h3>
+<p>You have two options, and both work identically for this unit:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th><strong>Miniconda / Anaconda (Local)</strong></th>
+<th><strong>Google Colab (Cloud)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it is</strong></td>
+<td>A Python distribution installed on your computer.
+<strong>Miniconda</strong> is a lightweight version (~200 MB) that
+includes Python, conda, and pip. <strong>Anaconda</strong> is the full
+distribution (~3 GB) with hundreds of extra packages you probably won’t
+need.</td>
+<td>A free, browser-based Jupyter environment hosted by Google</td>
+</tr>
+<tr>
+<td><strong>Pros</strong></td>
+<td>Works offline; full control over packages; faster for large
+files</td>
+<td>Zero installation; works on any device with a browser; easy sharing
+via Google Drive</td>
+</tr>
+<tr>
+<td><strong>Cons</strong></td>
+<td>Miniconda: ~200 MB + packages you install; Anaconda: ~3 GB disk
+space</td>
+<td>Needs internet; sessions timeout after inactivity</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Regular use on your own laptop</td>
+<td>Quick access, Chromebooks, or when you cannot install software</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation:</strong> We recommend
+<strong>Miniconda</strong> — it is lightweight, fast to install, and
+includes everything you need to run Jupyter and install the packages
+used in this unit. Use Google Colab as a backup or for working on shared
+devices. Full Anaconda also works but is much larger and includes many
+packages you will not use.</p>
+<h3 id="installing-miniconda-recommended">1.2 Installing Miniconda
+(Recommended)</h3>
+<ol type="1">
+<li><p>Go to <a href="https://docs.conda.io/projects/miniconda/en/latest/">https://docs.conda.io/projects/miniconda/en/latest/</a></p></li>
+<li><p>Download the installer for your operating system (Windows, macOS,
+or Linux)</p></li>
+<li><p>Run the installer, accepting the default options</p></li>
+<li><p>Open a terminal (or <strong>Anaconda Prompt</strong> on Windows)
+and install Jupyter:</p>
+<pre><code>conda install jupyter numpy matplotlib pandas</code></pre></li>
+<li><p>Launch Jupyter Notebook by typing:</p>
+<pre><code>jupyter notebook</code></pre></li>
+</ol>
+<blockquote>
+<p><strong>Already have Anaconda?</strong> That works too — Anaconda
+already includes Jupyter and all the packages above. Launch it from
+Anaconda Navigator or the terminal.</p>
+</blockquote>
+<p>With either Miniconda or Anaconda, you get <code>conda</code> — a
+package manager that makes installing additional packages easy
+(e.g. <code>conda install sympy</code>).</p>
+<h3 id="using-google-colab">1.3 Using Google Colab</h3>
+<ol type="1">
+<li>Go to <a href="https://colab.research.google.com">https://colab.research.google.com</a></li>
+<li>Sign in with your Google account</li>
+<li>Click <strong>New Notebook</strong> or upload a <code>.ipynb</code>
+file from your computer</li>
+<li>Colab comes with <code>numpy</code>, <code>matplotlib</code>,
+<code>pandas</code>, and <code>sympy</code> pre-installed</li>
+</ol>
+<h3 id="the-learning-curve">1.4 The Learning Curve</h3>
+<p>With sustained effort, Python is straightforward to learn —
+especially if you focus on the subset of the language we use in this
+unit. Start early in the semester, build your knowledge gradually, and
+remember: the investment pays off well beyond this course. Previous
+experience shows that students who feel lost in the first week become
+confident users by mid-semester.</p>
+<hr />
+<h2 id="the-jupyter-notebook-environment">2. The Jupyter Notebook
+Environment</h2>
+<p>When you open a Jupyter Notebook, you see an interface with
+<strong>cells</strong>. There are two main cell types:</p>
+<ul>
+<li><strong>Code cells:</strong> Where you write and run Python
+instructions. Press <code>Shift+Enter</code> (or click
+<strong>Run</strong>) to execute. Output appears directly below the
+cell.</li>
+<li><strong>Markdown cells:</strong> Where you write text, equations
+(using LaTeX: <code>$f(x) = x^2$</code>), and insert images. Press
+<code>Shift+Enter</code> to render.</li>
+</ul>
+<p>A new cell is a Code cell by default. Change it to Markdown using the
+dropdown menu in the toolbar.</p>
+<h3 id="setting-up-a-working-directory">2.1 Setting Up a Working
+Directory</h3>
+<p>Organise your files sensibly. A recommended structure:</p>
+<pre><code>Documents/
+  └── SCIE1500/
+        ├── Week_0/
+        │     └── Week0_Intro_Python.ipynb
+        ├── Week_1/
+        │     └── Week1_Functions_Complete.ipynb
+        └── Week_2/
+              └── Week2_Exponential_Logarithmic.ipynb</code></pre>
+<p>In Jupyter Notebook (Miniconda or Anaconda), navigate to your folder
+using the file browser that opens in your web browser when you launch
+the application. In Colab, upload notebooks or connect to Google
+Drive.</p>
+<h3 id="quick-test">2.2 Quick Test</h3>
+<p>Open a notebook and type the following in a code cell, then press
+<code>Shift+Enter</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span></span></code></pre></div>
+<p>You should see <code>4</code> as the output. Congratulations — you
+have just run your first Python instruction.</p>
+<hr />
+<h2 id="python-basics">3. Python Basics</h2>
+<h3 id="python-as-a-calculator">3.1 Python as a Calculator</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>          <span class="co"># addition → 4</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span>          <span class="co"># multiplication → 6</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">**</span> <span class="dv">2</span>         <span class="co"># exponentiation (9²) → 81</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">**</span> <span class="fl">0.5</span>       <span class="co"># square root of 2 → 1.4142...</span></span></code></pre></div>
+<h3 id="variables-and-assignment">3.2 Variables and Assignment</h3>
+<p>Store values in variables using <code>=</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>product <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(product)          <span class="co"># → 6</span></span></code></pre></div>
+<h3 id="comments">3.3 Comments</h3>
+<p>Everything after <code>#</code> on a line is a comment — ignored by
+Python but essential for documenting your code:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span>    <span class="co"># This is an inline comment</span></span></code></pre></div>
+<h3 id="functions-use-parentheses">3.4 Functions Use Parentheses</h3>
+<p>Python functions work like <span class="math inline"><em>f</em>(<em>x</em>)</span> in algebra — arguments
+go inside parentheses:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">**</span> <span class="dv">2</span>)           <span class="co"># Correct ✓</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> <span class="dv">3</span><span class="op">**</span><span class="dv">2</span>              <span class="co"># Wrong ✗ — SyntaxError</span></span></code></pre></div>
+<h3 id="case-sensitivity">3.5 Case Sensitivity</h3>
+<p>Python is case-sensitive: <code>print</code> works,
+<code>Print</code> does not. Jupyter highlights recognised commands in
+colour — if a word you typed is not highlighted, check for typos or case
+errors.</p>
+<h3 id="data-types">3.6 Data Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example</th>
+<th>Check with <code>type()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integer</td>
+<td><code>x = 5</code></td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td>Float</td>
+<td><code>x = 5.0</code></td>
+<td><code>float</code></td>
+</tr>
+<tr>
+<td>String</td>
+<td><code>x = &quot;hello&quot;</code></td>
+<td><code>str</code></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td><code>x = True</code></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>List</td>
+<td><code>x = [1, 2, 3]</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">3.14</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(x)       <span class="co"># → float</span></span></code></pre></div>
+<h3 id="operators">3.7 Operators</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 36%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Category</th>
+<th>Operators</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arithmetic</td>
+<td><code>+  -  *  /  **  //  %</code></td>
+<td><code>7 // 2 → 3</code> (floor division), <code>7 % 2 → 1</code>
+(remainder)</td>
+</tr>
+<tr>
+<td>Comparison</td>
+<td><code>==  !=  &gt;  &lt;  &gt;=  &lt;=</code></td>
+<td><code>5 &gt; 3 → True</code></td>
+</tr>
+<tr>
+<td>Logical</td>
+<td><code>and  or  not</code></td>
+<td><code>(5 &gt; 3) and (2 &lt; 1) → False</code></td>
+</tr>
+<tr>
+<td>Assignment</td>
+<td><code>=  +=  -=  *=</code></td>
+<td><code>x += 1</code> is shorthand for <code>x = x + 1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Precedence</strong> follows standard mathematical rules
+(BODMAS/PEMDAS). When in doubt, use parentheses.</p>
+<h3 id="indentation-defines-code-blocks">3.8 Indentation Defines Code
+Blocks</h3>
+<p>Unlike R (which uses <code>{}</code>), Python uses
+<strong>indentation</strong> to define blocks of code inside
+<code>if</code>, <code>for</code>, <code>while</code>, and function
+definitions:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;positive&quot;</span>)    <span class="co"># indented = inside the if block</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;non-positive&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="importing-modules-and-key-packages">4. Importing Modules and Key
+Packages</h2>
+<p>Python’s strength lies in its ecosystem. Import packages using
+<code>import</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math                       <span class="co"># standard math library</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np                <span class="co"># numerical arrays — alias &#39;np&#39;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt   <span class="co"># plotting — alias &#39;plt&#39;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline                <span class="co"># display plots inline in Jupyter</span></span></code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> From Week 4 onward, you will also use
+<code>import sympy as sp</code> for symbolic mathematics (derivatives,
+integrals, equation solving). You do not need it for the first few
+weeks.</p>
+</blockquote>
+<h3 id="the-math-module-constants-and-functions">4.1 The
+<code>math</code> Module — Constants and Functions</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>math.pi          <span class="co"># → 3.141592653589793</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>math.e           <span class="co"># → 2.718281828459045 (Euler&#39;s number)</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>math.sqrt(<span class="dv">2</span>)     <span class="co"># → 1.4142135623730951</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>math.log(<span class="dv">10</span>)     <span class="co"># → 2.302585... (natural log, base e)</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>math.log10(<span class="dv">10</span>)   <span class="co"># → 1.0 (base-10 log)</span></span></code></pre></div>
+<h3 id="numpy-arrays-and-vectorised-operations">4.2 NumPy — Arrays and
+Vectorised Operations</h3>
+<p>NumPy lets you work with entire arrays at once, just as you would in
+R:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an array</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>temps_F <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">68</span>, <span class="dv">97</span>, <span class="dv">112</span>, <span class="dv">134</span>])</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Vectorised conversion (applies to all elements simultaneously)</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>temps_C <span class="op">=</span> (temps_F <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">round</span>(temps_C, <span class="dv">2</span>))    <span class="co"># → [-17.78  20.  36.11  44.44  56.67]</span></span></code></pre></div>
+<p><strong>Creating sequences of values:</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 50 equally spaced values from 0 to 10</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">50</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Integers from 0 to 9</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Integers with step size</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">2</span>)    <span class="co"># → [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span></span></code></pre></div>
+<h3 id="matplotlib-plotting">4.3 Matplotlib — Plotting</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, <span class="st">&#39;r-&#39;</span>, label<span class="op">=</span><span class="st">&#39;$y = x^2$&#39;</span>)    <span class="co"># red solid line</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;A Simple Parabola&quot;</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;x&quot;</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;y&quot;</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<h3 id="finding-help">4.4 Finding Help</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.linspace)     <span class="co"># detailed documentation</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>np.linspace?          <span class="co"># quick help (Jupyter only)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(math)             <span class="co"># list everything in a module</span></span></code></pre></div>
+<hr />
+<h2 id="defining-your-own-functions">5. Defining Your Own Functions</h2>
+<p>Starting from Week 0, you will define Python functions to represent
+scientific models. The syntax uses <code>def</code>:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(F):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Convert Fahrenheit to Celsius.&quot;&quot;&quot;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> (F <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> C</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Use it</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>fahrenheit_to_celsius(<span class="dv">68</span>)    <span class="co"># → 20.0</span></span></code></pre></div>
+<p>Functions can take multiple arguments and be combined with NumPy:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quadratic(x, a, b, c):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b <span class="op">*</span> x <span class="op">+</span> c</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> quadratic(x, <span class="op">-</span><span class="fl">0.4</span>, <span class="fl">0.5</span>, <span class="dv">12</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+<h2 id="working-with-data-a-quick-preview">6. Working with Data — A
+Quick Preview</h2>
+<h3 id="lists-vs-arrays">6.1 Lists vs Arrays</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python list (general-purpose)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Tim&quot;</span>, <span class="st">&quot;Tiger&quot;</span>]</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># NumPy array (numerical operations)</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> np.array([<span class="dv">15</span>, <span class="dv">22</span>, <span class="dv">18</span>, <span class="dv">26</span>])</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values.mean())    <span class="co"># → 20.25</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values.std())     <span class="co"># → 3.9370...</span></span></code></pre></div>
+<h3 id="reading-data-from-files-using-pandas">6.2 Reading Data from
+Files (using Pandas)</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read a CSV file</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data.csv&quot;</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>df.head()            <span class="co"># show first 5 rows</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>df.describe()        <span class="co"># summary statistics</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>df.columns           <span class="co"># list column names</span></span></code></pre></div>
+<hr />
+<h2 id="common-mistakes-and-how-to-avoid-them">7. Common Mistakes and
+How to Avoid Them</h2>
+<table>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 39%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>Example</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missing parentheses</td>
+<td><code>print &quot;hello&quot;</code></td>
+<td><code>print(&quot;hello&quot;)</code></td>
+</tr>
+<tr>
+<td>Wrong case</td>
+<td><code>Print(&quot;hello&quot;)</code></td>
+<td><code>print(&quot;hello&quot;)</code></td>
+</tr>
+<tr>
+<td>Wrong exponent operator</td>
+<td><code>2^3</code></td>
+<td><code>2**3</code> (caret is XOR in Python)</td>
+</tr>
+<tr>
+<td>Integer division surprise</td>
+<td><code>7/2 → 3.5</code> is fine in Python 3</td>
+<td>Use <code>7//2</code> if you want <code>3</code></td>
+</tr>
+<tr>
+<td>Indentation error</td>
+<td>Mixing tabs and spaces</td>
+<td>Use 4 spaces consistently</td>
+</tr>
+<tr>
+<td>Forgetting to import</td>
+<td><code>np.array([1,2])</code> without
+<code>import numpy as np</code></td>
+<td>Add the import at the top</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary-of-key-commands">8. Summary of Key Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Python</th>
+<th>R Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Print a value</td>
+<td><code>print(x)</code></td>
+<td><code>print(x)</code></td>
+</tr>
+<tr>
+<td>Square root</td>
+<td><code>math.sqrt(x)</code> or <code>np.sqrt(x)</code></td>
+<td><code>sqrt(x)</code></td>
+</tr>
+<tr>
+<td>Natural log</td>
+<td><code>math.log(x)</code> or <code>np.log(x)</code></td>
+<td><code>log(x)</code></td>
+</tr>
+<tr>
+<td>Create a vector/array</td>
+<td><code>np.array([1,2,3])</code></td>
+<td><code>c(1,2,3)</code></td>
+</tr>
+<tr>
+<td>Sequence of values</td>
+<td><code>np.linspace(0,10,50)</code></td>
+<td><code>seq(0,10,length=50)</code></td>
+</tr>
+<tr>
+<td>Read CSV</td>
+<td><code>pd.read_csv(&quot;file.csv&quot;)</code></td>
+<td><code>read.csv(&quot;file.csv&quot;)</code></td>
+</tr>
+<tr>
+<td>Plot</td>
+<td><code>plt.plot(x, y)</code></td>
+<td><code>plot(x, y)</code></td>
+</tr>
+<tr>
+<td>Define a function</td>
+<td><code>def f(x): return x**2</code></td>
+<td><code>f = function(x) x^2</code></td>
+</tr>
+<tr>
+<td>Get help</td>
+<td><code>help(func)</code></td>
+<td><code>?func</code> or <code>help(func)</code></td>
+</tr>
+<tr>
+<td>List module contents</td>
+<td><code>dir(module)</code></td>
+<td><code>ls(&quot;package:pkg&quot;)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="resources-for-further-learning">9. Resources for Further
+Learning</h2>
+<p><strong>(A) W3Schools Python Tutorial:</strong> A comprehensive,
+beginner-friendly tutorial covering all the basics and more. Work
+through the sections on variables, data types, operators, lists, and
+functions at <a href="https://www.w3schools.com/python/">https://www.w3schools.com/python/</a>.</p>
+<p><strong>(B) NumPy for Beginners:</strong> Official getting-started
+guide at <a href="https://numpy.org/doc/stable/user/absolute_beginners.html">https://numpy.org/doc/stable/user/absolute_beginners.html</a>.
+Covers arrays, indexing, and basic operations.</p>
+<p><strong>(C) Matplotlib Tutorials:</strong> Official tutorials at <a href="https://matplotlib.org/stable/tutorials/index.html">https://matplotlib.org/stable/tutorials/index.html</a>.
+Start with “Pyplot tutorial” for the plotting style used in this
+unit.</p>
+<p><strong>(D) SymPy Documentation:</strong> For symbolic mathematics
+(derivatives, integrals, solving equations) from Week 4 onward: <a href="https://docs.sympy.org/latest/tutorials/intro-tutorial/index.html">https://docs.sympy.org/latest/tutorials/intro-tutorial/index.html</a>.</p>
+<p><strong>(E) Pandas Getting Started:</strong> For data manipulation:
+<a href="https://pandas.pydata.org/docs/getting_started/index.html">https://pandas.pydata.org/docs/getting_started/index.html</a>.</p>
+<p><strong>(F) Google Colab Guide:</strong> Introduction to using Colab
+notebooks: <a href="https://colab.research.google.com/notebooks/intro.ipynb">https://colab.research.google.com/notebooks/intro.ipynb</a>.</p>
+<p><strong>(G) Miniconda Download &amp; Documentation:</strong>
+Lightweight Python installer (recommended): <a href="https://docs.conda.io/projects/miniconda/">https://docs.conda.io/projects/miniconda/</a>.
+For full Anaconda: <a href="https://docs.anaconda.com/">https://docs.anaconda.com/</a>.</p>
+<p><strong>(H) Real Python:</strong> High-quality tutorials on a wide
+range of topics: <a href="https://realpython.com/">https://realpython.com/</a>. Search for
+specific topics as you need them.</p>
+<p><strong>(I) YouTube:</strong> Search for “Python for beginners
+Jupyter Notebook” for video walkthroughs. Corey Schafer’s Python
+tutorials are widely recommended.</p>
+<p><strong>(J) Stack Overflow:</strong> When you encounter an error,
+search for the error message at <a href="https://stackoverflow.com/">https://stackoverflow.com/</a>.
+Chances are someone has had the same problem.</p>
+<p>The key is to <strong>learn how to look for answers</strong> — that
+skill will serve you well beyond this semester.</p>
+</body>
+</html>

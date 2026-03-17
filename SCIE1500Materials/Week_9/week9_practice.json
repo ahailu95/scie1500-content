@@ -1,0 +1,440 @@
+{
+  "metadata": {
+    "week": 9,
+    "title": "Probability Foundations",
+    "theme": "Quantifying Uncertainty",
+    "exam_alignment": [
+      "Q32",
+      "Q35 (setup)"
+    ],
+    "total_questions": 20,
+    "difficulty_distribution": {
+      "foundational": 8,
+      "intermediate": 8,
+      "exam_style": 4
+    },
+    "scientific_contexts": [
+      "Disease testing and diagnostics",
+      "HIV biology and viral load",
+      "Epidemiology and transmission",
+      "Medical screening protocols"
+    ],
+    "student_challenges_addressed": [
+      "Sample space size calculation (2^n not n×2)",
+      "Distinguishing P(A|B) from P(B|A)",
+      "Independent vs disjoint events",
+      "Applying Bayes' theorem correctly"
+    ]
+  },
+  "questions": [
+    {
+      "id": "W9-001",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "sample_space",
+      "question": "If a fair coin is tossed 4 times, what is the size of the sample space?",
+      "choices": {
+        "A": "$4$",
+        "B": "$8$",
+        "C": "$12$",
+        "D": "$16$",
+        "E": "$24$"
+      },
+      "correct_answer": "D",
+      "solution": "Each coin toss has 2 outcomes (H or T). For 4 independent tosses, the total number of outcomes is:\n\n$$|S| = 2 \\times 2 \\times 2 \\times 2 = 2^4 = 16$$\n\n**Common error:** Students sometimes compute $4 \\times 2 = 8$, but this undercounts. The correct approach is $2^n$ where $n$ is the number of tosses.",
+      "key_concept": "Sample space size for $n$ coin tosses is $2^n$, not $n \\times 2$"
+    },
+    {
+      "id": "W9-002",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "sample_space",
+      "exam_reference": "Q32",
+      "question": "If five coins are tossed, the size of the sample space is:",
+      "choices": {
+        "A": "$10$, i.e., $5 \\times 2$",
+        "B": "$32$, i.e., $2^5$",
+        "C": "$25$, i.e., $5^2$",
+        "D": "$120$, i.e., $5!$",
+        "E": "None of the above"
+      },
+      "correct_answer": "B",
+      "solution": "For $n$ coin tosses, each toss has 2 possible outcomes, and the tosses are independent. By the multiplication principle:\n\n$$|S| = 2^n = 2^5 = 32$$\n\n**Why not $5 \\times 2$?** This would only count sequences like \"HXXXX\" and \"TXXXX\" — it doesn't account for all positions having 2 choices.\n\n**Why not $5!$?** Factorials count arrangements/permutations, not sample spaces from repeated experiments.\n\nThe sample space includes all 32 sequences: HHHHH, HHHHT, HHHTH, ..., TTTTT.",
+      "key_concept": "This is Q32 from the exam. The sample space has $2^5 = 32$ elements."
+    },
+    {
+      "id": "W9-003",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "basic_probability",
+      "question": "Two fair coins are tossed. What is the probability of getting exactly one head?",
+      "choices": {
+        "A": "$\\frac{1}{4}$",
+        "B": "$\\frac{1}{3}$",
+        "C": "$\\frac{1}{2}$",
+        "D": "$\\frac{2}{3}$",
+        "E": "$\\frac{3}{4}$"
+      },
+      "correct_answer": "C",
+      "solution": "The sample space is $S = \\{HH, HT, TH, TT\\}$ with 4 equally likely outcomes.\n\nThe event \"exactly one head\" is $A = \\{HT, TH\\}$ with 2 outcomes.\n\n$$P(\\text{exactly one head}) = \\frac{|A|}{|S|} = \\frac{2}{4} = \\frac{1}{2}$$",
+      "key_concept": "Basic probability: count favorable outcomes divided by total outcomes"
+    },
+    {
+      "id": "W9-004",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "complement_rule",
+      "question": "If the probability that a diagnostic test returns positive is 0.15, what is the probability that it returns negative?",
+      "choices": {
+        "A": "$0.15$",
+        "B": "$0.30$",
+        "C": "$0.50$",
+        "D": "$0.85$",
+        "E": "$1.15$"
+      },
+      "correct_answer": "D",
+      "solution": "The complement rule states: $P(A^c) = 1 - P(A)$\n\n\"Positive\" and \"Negative\" are complementary events (one must occur).\n\n$$P(\\text{negative}) = 1 - P(\\text{positive}) = 1 - 0.15 = 0.85$$\n\nNote: Option (E) is impossible since probabilities cannot exceed 1.",
+      "key_concept": "Complement rule: $P(A^c) = 1 - P(A)$"
+    },
+    {
+      "id": "W9-005",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "addition_rule",
+      "question": "Events A and B have probabilities $P(A) = 0.3$, $P(B) = 0.4$, and $P(A \\cap B) = 0.1$. What is $P(A \\cup B)$?",
+      "choices": {
+        "A": "$0.5$",
+        "B": "$0.6$",
+        "C": "$0.7$",
+        "D": "$0.8$",
+        "E": "$0.12$"
+      },
+      "correct_answer": "B",
+      "solution": "The general addition rule is:\n\n$$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$$\n\nSubstituting:\n$$P(A \\cup B) = 0.3 + 0.4 - 0.1 = 0.6$$\n\nWe subtract $P(A \\cap B)$ because outcomes in both events are counted twice when we add $P(A)$ and $P(B)$.",
+      "key_concept": "Addition rule: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$"
+    },
+    {
+      "id": "W9-006",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "disjoint_events",
+      "question": "Events A and B are mutually exclusive (disjoint). If $P(A) = 0.25$ and $P(B) = 0.35$, what is $P(A \\cup B)$?",
+      "choices": {
+        "A": "$0.0875$",
+        "B": "$0.35$",
+        "C": "$0.50$",
+        "D": "$0.60$",
+        "E": "$1.00$"
+      },
+      "correct_answer": "D",
+      "solution": "For mutually exclusive (disjoint) events, $A \\cap B = \\emptyset$, so $P(A \\cap B) = 0$.\n\nThe addition rule simplifies to:\n$$P(A \\cup B) = P(A) + P(B) = 0.25 + 0.35 = 0.60$$\n\n**Note:** Option (A) would be $P(A) \\cdot P(B)$, which is the multiplication rule for independent events—a different concept entirely.",
+      "key_concept": "For disjoint events: $P(A \\cup B) = P(A) + P(B)$"
+    },
+    {
+      "id": "W9-007",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "conditional_probability",
+      "question": "If $P(A) = 0.4$, $P(B) = 0.5$, and $P(A \\cap B) = 0.2$, what is $P(A|B)$?",
+      "choices": {
+        "A": "$0.2$",
+        "B": "$0.4$",
+        "C": "$0.5$",
+        "D": "$0.8$",
+        "E": "$1.0$"
+      },
+      "correct_answer": "B",
+      "solution": "The conditional probability formula is:\n\n$$P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{0.2}{0.5} = 0.4$$\n\n**Interpretation:** Given that B has occurred, 40% of those outcomes also have A occurring.",
+      "key_concept": "Conditional probability: $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$"
+    },
+    {
+      "id": "W9-008",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "independence",
+      "question": "Events A and B are independent with $P(A) = 0.3$ and $P(B) = 0.4$. What is $P(A \\cap B)$?",
+      "choices": {
+        "A": "$0.10$",
+        "B": "$0.12$",
+        "C": "$0.35$",
+        "D": "$0.58$",
+        "E": "$0.70$"
+      },
+      "correct_answer": "B",
+      "solution": "For independent events, the multiplication rule is:\n\n$$P(A \\cap B) = P(A) \\cdot P(B) = 0.3 \\times 0.4 = 0.12$$\n\n**Interpretation:** Independence means knowing one event occurred doesn't change the probability of the other. This allows simple multiplication.",
+      "key_concept": "Independence: $P(A \\cap B) = P(A) \\cdot P(B)$"
+    },
+    {
+      "id": "W9-009",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "binomial_coefficient",
+      "question": "How many ways can you choose 3 items from 5? That is, what is $\\binom{5}{3}$?",
+      "choices": {
+        "A": "$6$",
+        "B": "$10$",
+        "C": "$15$",
+        "D": "$20$",
+        "E": "$60$"
+      },
+      "correct_answer": "B",
+      "solution": "The binomial coefficient formula is:\n\n$$\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$$\n\n$$\\binom{5}{3} = \\frac{5!}{3! \\cdot 2!} = \\frac{5 \\times 4 \\times 3!}{3! \\times 2 \\times 1} = \\frac{5 \\times 4}{2} = \\frac{20}{2} = 10$$\n\n**Symmetry check:** $\\binom{5}{3} = \\binom{5}{2}$ because choosing 3 to include is the same as choosing 2 to exclude.",
+      "key_concept": "Binomial coefficient: $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$"
+    },
+    {
+      "id": "W9-010",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "binomial_probability",
+      "exam_reference": "Q32",
+      "question": "If five fair coins are tossed, what is the probability of getting exactly three heads?",
+      "choices": {
+        "A": "$\\frac{3}{5} = 0.60$",
+        "B": "$\\frac{10}{32} = 0.3125$",
+        "C": "$\\frac{5}{32} = 0.15625$",
+        "D": "$\\frac{1}{32} = 0.03125$",
+        "E": "None of the above"
+      },
+      "correct_answer": "B",
+      "solution": "This uses the binomial probability formula:\n\n$$P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}$$\n\nFor fair coins, $p = 0.5$, and we want $k = 3$ heads in $n = 5$ tosses:\n\n$$P(X = 3) = \\binom{5}{3} \\left(\\frac{1}{2}\\right)^3 \\left(\\frac{1}{2}\\right)^2 = 10 \\times \\frac{1}{32} = \\frac{10}{32} = 0.3125$$\n\n**Common error:** Option (A) $= 3/5 = 0.60$ is a distractor. The probability is NOT simply $k/n$.\n\n**This relates to Q32:** The probability of exactly 3 heads is 0.3125, NOT 0.60.",
+      "key_concept": "Binomial probability with combinations; watch for distractor 0.60"
+    },
+    {
+      "id": "W9-011",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "binomial_probability",
+      "exam_reference": "Q32",
+      "question": "If five fair coins are tossed, what is the probability of getting zero heads?",
+      "choices": {
+        "A": "$0$",
+        "B": "$\\frac{1}{32} \\approx 0.03125$",
+        "C": "$\\frac{5}{32} \\approx 0.15625$",
+        "D": "$\\frac{12}{32} = 0.375$",
+        "E": "$\\frac{1}{5} = 0.20$"
+      },
+      "correct_answer": "B",
+      "solution": "Zero heads means all tails: TTTTT.\n\n$$P(X = 0) = \\binom{5}{0} \\left(\\frac{1}{2}\\right)^0 \\left(\\frac{1}{2}\\right)^5 = 1 \\times 1 \\times \\frac{1}{32} = \\frac{1}{32} \\approx 0.03125$$\n\nAlternatively: There's exactly one sequence with no heads out of 32 total sequences.\n\n**Q32 connection:** The probability of zero heads is $\\frac{1}{32} \\approx 0.03125$, NOT 0.375.",
+      "key_concept": "$P(X=0) = (1-p)^n$; in Q32, this equals $1/32$, not 0.375"
+    },
+    {
+      "id": "W9-012",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "conditional_vs_reverse",
+      "question": "A disease affects 5% of a population. A test has 90% sensitivity (true positive rate). If someone tests positive, we want $P(\\text{Disease}|\\text{Positive})$. Which statement is correct?",
+      "choices": {
+        "A": "$P(D|+) = P(+|D) = 0.90$",
+        "B": "$P(D|+) = P(D) = 0.05$",
+        "C": "$P(D|+)$ requires Bayes' theorem and is generally not equal to $P(+|D)$",
+        "D": "$P(D|+) = P(+|D) \\times P(D) = 0.045$",
+        "E": "$P(D|+)$ cannot be calculated from the given information"
+      },
+      "correct_answer": "C",
+      "solution": "This is a crucial distinction:\n\n- $P(+|D) = 0.90$ is the **sensitivity** (given disease, probability of positive test)\n- $P(D|+)$ is the **positive predictive value** (given positive test, probability of disease)\n\nThese are NOT the same! By Bayes' theorem:\n\n$$P(D|+) = \\frac{P(+|D) \\cdot P(D)}{P(+)}$$\n\nWe need $P(+)$ (which requires specificity) to compute this.\n\n**Option (D)** gives $P(+ \\cap D)$, not $P(D|+)$.",
+      "key_concept": "$P(A|B) \\neq P(B|A)$ in general; Bayes' theorem relates them"
+    },
+    {
+      "id": "W9-013",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "bayes_theorem",
+      "question": "A disease has 1% prevalence. A test has 99% sensitivity and 95% specificity. What is the probability that someone with a positive test actually has the disease?",
+      "choices": {
+        "A": "$0.99$",
+        "B": "$0.95$",
+        "C": "$0.50$",
+        "D": "$0.17$",
+        "E": "$0.01$"
+      },
+      "correct_answer": "D",
+      "solution": "**Given:**\n- $P(D) = 0.01$ (prevalence)\n- $P(+|D) = 0.99$ (sensitivity)\n- $P(-|D^c) = 0.95$, so $P(+|D^c) = 0.05$ (false positive rate)\n\n**Using Bayes' theorem:**\n\n$$P(D|+) = \\frac{P(+|D) \\cdot P(D)}{P(+|D) \\cdot P(D) + P(+|D^c) \\cdot P(D^c)}$$\n\n$$= \\frac{0.99 \\times 0.01}{0.99 \\times 0.01 + 0.05 \\times 0.99}$$\n\n$$= \\frac{0.0099}{0.0099 + 0.0495} = \\frac{0.0099}{0.0594} \\approx 0.167$$\n\n**Interpretation:** Even with a 99% sensitive test, only about 17% of positive results are true positives when the disease is rare!",
+      "key_concept": "When disease is rare, PPV can be low even with accurate tests"
+    },
+    {
+      "id": "W9-014",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "independent_vs_disjoint",
+      "question": "If events A and B are disjoint (mutually exclusive) with $P(A) = 0.3$ and $P(B) = 0.4$, are they independent?",
+      "choices": {
+        "A": "Yes, because $P(A \\cup B) = P(A) + P(B)$",
+        "B": "Yes, because knowing one occurred tells us about the other",
+        "C": "No, because $P(A \\cap B) = 0 \\neq P(A) \\cdot P(B) = 0.12$",
+        "D": "No, because $P(A) \\neq P(B)$",
+        "E": "Cannot determine without more information"
+      },
+      "correct_answer": "C",
+      "solution": "**Key distinction:**\n\n- **Disjoint** means $A \\cap B = \\emptyset$, so $P(A \\cap B) = 0$\n- **Independent** means $P(A \\cap B) = P(A) \\cdot P(B)$\n\nFor these events:\n- $P(A \\cap B) = 0$ (disjoint)\n- $P(A) \\cdot P(B) = 0.3 \\times 0.4 = 0.12$\n\nSince $0 \\neq 0.12$, they are **NOT independent**.\n\n**Intuition:** If A occurs, we know B didn't occur (they're disjoint). This means knowing A affects the probability of B — the opposite of independence!",
+      "key_concept": "Disjoint events with positive probability are NEVER independent"
+    },
+    {
+      "id": "W9-015",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "complement_with_independence",
+      "question": "The probability of disease transmission per contact is 0.2. What is the probability of at least one transmission in 3 independent contacts?",
+      "choices": {
+        "A": "$0.008$",
+        "B": "$0.488$",
+        "C": "$0.512$",
+        "D": "$0.60$",
+        "E": "$0.80$"
+      },
+      "correct_answer": "B",
+      "solution": "**Strategy:** Use complement rule.\n\n$$P(\\text{at least one}) = 1 - P(\\text{none})$$\n\nFor independent contacts with transmission probability $p = 0.2$:\n\n$$P(\\text{no transmission in 3 contacts}) = (1 - 0.2)^3 = 0.8^3 = 0.512$$\n\n$$P(\\text{at least one transmission}) = 1 - 0.512 = 0.488$$\n\n**Note:** Option (A) = $0.2^3$ is the probability of ALL three transmitting.\nOption (D) = $3 \\times 0.2$ is incorrect (can exceed 1 for larger n).",
+      "key_concept": "$P(\\text{at least one}) = 1 - P(\\text{none}) = 1 - (1-p)^n$"
+    },
+    {
+      "id": "W9-016",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "herd_immunity",
+      "question": "A disease has $R_0 = 4$. What proportion of the population must be immune to achieve herd immunity?",
+      "choices": {
+        "A": "$25\\%$",
+        "B": "$50\\%$",
+        "C": "$75\\%$",
+        "D": "$80\\%$",
+        "E": "$96\\%$"
+      },
+      "correct_answer": "C",
+      "solution": "The herd immunity threshold is:\n\n$$\\pi > 1 - \\frac{1}{R_0}$$\n\nFor $R_0 = 4$:\n\n$$\\pi > 1 - \\frac{1}{4} = 1 - 0.25 = 0.75 = 75\\%$$\n\n**Interpretation:** At least 75% of the population must be immune (through vaccination or recovery) for the effective reproduction number $R_e = s \\cdot R_0 < 1$.",
+      "key_concept": "Herd immunity threshold: $\\pi > 1 - 1/R_0$"
+    },
+    {
+      "id": "W9-017",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "exam_Q32_style",
+      "exam_reference": "Q32",
+      "question": "If five coins are tossed, which of the following is TRUE?\n\n(a) The size of the sample space is 10, i.e., $5 \\times 2$.\n(b) The size of the sample space is 32, i.e., $2^5$.\n(c) The probability of getting exactly three heads is 0.60.\n(d) The probability of getting zero heads is 0.375.\n(e) None of the above.",
+      "solution": "**Analysis of each statement:**\n\n**(a) FALSE:** The sample space is $2^5 = 32$, not $5 \\times 2 = 10$. Each of the 5 tosses has 2 outcomes, so we multiply: $2 \\times 2 \\times 2 \\times 2 \\times 2 = 32$.\n\n**(b) TRUE:** ✓ The sample space has $2^5 = 32$ elements.\n\n**(c) FALSE:** \n$$P(X=3) = \\binom{5}{3} \\left(\\frac{1}{2}\\right)^5 = 10 \\times \\frac{1}{32} = \\frac{10}{32} = 0.3125$$\nNot 0.60.\n\n**(d) FALSE:**\n$$P(X=0) = \\binom{5}{0} \\left(\\frac{1}{2}\\right)^5 = 1 \\times \\frac{1}{32} = 0.03125$$\nNot 0.375.\n\n$$\\boxed{\\text{Statement (b) is TRUE}}$$",
+      "marks": 8,
+      "key_concept": "Sample space = $2^n$; binomial probability formula"
+    },
+    {
+      "id": "W9-018",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "bayes_application",
+      "question": "A medical test for a disease has the following characteristics:\n- Sensitivity: 95% (the test correctly identifies 95% of people who have the disease)\n- Specificity: 90% (the test correctly identifies 90% of people who do not have the disease)\n- Prevalence: 2% of the population has the disease\n\n(a) If a person tests positive, what is the probability they actually have the disease?\n(b) Why is this result perhaps surprising given the high sensitivity?",
+      "solution": "**(a) Computing PPV using Bayes' theorem:**\n\n**Given:**\n- $P(D) = 0.02$ (prevalence)\n- $P(+|D) = 0.95$ (sensitivity)\n- $P(-|D^c) = 0.90$, so $P(+|D^c) = 0.10$ (false positive rate)\n\n**Step 1:** Compute $P(+)$ using total probability:\n$$P(+) = P(+|D) \\cdot P(D) + P(+|D^c) \\cdot P(D^c)$$\n$$= 0.95 \\times 0.02 + 0.10 \\times 0.98$$\n$$= 0.019 + 0.098 = 0.117$$\n\n**Step 2:** Apply Bayes' theorem:\n$$P(D|+) = \\frac{P(+|D) \\cdot P(D)}{P(+)} = \\frac{0.019}{0.117} \\approx 0.162$$\n\n$$\\boxed{P(D|+) \\approx 16.2\\%}$$\n\n**(b) Why surprising?**\n\nEven with 95% sensitivity, only about 16% of positive tests are true positives because:\n\n1. **The disease is rare** (2% prevalence)\n2. **False positives dominate:** In 1000 people:\n   - 20 have disease → 19 test positive (true positives)\n   - 980 healthy → 98 test positive (false positives)\n   - Total positives: 117, but only 19 are true\n\n**Key insight:** When prevalence is low, even small false positive rates generate many false positives.",
+      "marks": 12,
+      "key_concept": "Bayes' theorem; PPV depends heavily on prevalence"
+    },
+    {
+      "id": "W9-019",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "conditional_probability_application",
+      "exam_reference": "Q35 setup",
+      "question": "A new virus variant is suspected to be more infectious than an older variant, which had a transmission probability of $p = 0.50$. In 11 contact tracing cases, 9 resulted in infections.\n\n(a) If the true transmission probability were still $p = 0.50$, what is the probability of observing 9 or more infections out of 11 contacts? (You may use the fact that $P(X \\geq 9) = \\binom{11}{9}(0.5)^{11} + \\binom{11}{10}(0.5)^{11} + \\binom{11}{11}(0.5)^{11}$)\n\n(b) How would this probability help scientists evaluate whether the new variant is more infectious?",
+      "solution": "**(a) Computing $P(X \\geq 9)$ when $p = 0.50$:**\n\nFirst, compute the binomial coefficients:\n- $\\binom{11}{9} = \\frac{11!}{9! \\cdot 2!} = \\frac{11 \\times 10}{2} = 55$\n- $\\binom{11}{10} = \\frac{11!}{10! \\cdot 1!} = 11$\n- $\\binom{11}{11} = 1$\n\nNow compute the probability:\n$$P(X \\geq 9) = (55 + 11 + 1) \\times (0.5)^{11}$$\n$$= 67 \\times \\frac{1}{2048}$$\n$$= \\frac{67}{2048} \\approx 0.0327$$\n\n$$\\boxed{P(X \\geq 9) \\approx 3.27\\% \\text{ or } 0.033}$$\n\n**(b) Scientific interpretation:**\n\nThis probability (≈ 3.3%) represents how likely we would observe such extreme results **if the null hypothesis ($p = 0.50$) were true**.\n\nSince this probability is less than 5% (a common significance threshold):\n- The observed data would be considered **statistically significant**\n- Scientists would have evidence to **reject the null hypothesis**\n- This supports the claim that the new variant is more infectious\n\n**This is the foundation for hypothesis testing (Week 10):** comparing observed data to what we'd expect under a null hypothesis.",
+      "marks": 10,
+      "key_concept": "Setup for hypothesis testing; p-value interpretation"
+    },
+    {
+      "id": "W9-020",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "comprehensive_probability",
+      "question": "Consider a two-stage screening protocol for HIV:\n- Stage 1: ELISA test with 99.5% sensitivity and 99.9% specificity\n- Stage 2 (if Stage 1 positive): Western Blot with 99.9% sensitivity and 99.9% specificity\n- Population prevalence: 0.1%\n\n(a) What is the positive predictive value (PPV) after just the first test?\n(b) What is the PPV after both tests are positive?\n(c) Why is two-stage testing used despite the first test being very accurate?",
+      "solution": "**(a) PPV after Stage 1 only:**\n\n**Given:** $P(D) = 0.001$, $P(T_1^+|D) = 0.995$, $P(T_1^+|D^c) = 0.001$\n\n$$P(T_1^+) = 0.995 \\times 0.001 + 0.001 \\times 0.999 = 0.000995 + 0.000999 = 0.001994$$\n\n$$PPV_1 = P(D|T_1^+) = \\frac{0.000995}{0.001994} \\approx 0.499$$\n\n$$\\boxed{PPV_1 \\approx 49.9\\%}$$\n\n**(b) PPV after both stages positive:**\n\nAmong those who test positive in Stage 1:\n- $P(D|T_1^+) = 0.499$ (from part a)\n- $P(D^c|T_1^+) = 0.501$\n\nStage 2 probabilities:\n- $P(T_2^+|D) = 0.999$\n- $P(T_2^+|D^c) = 0.001$\n\n$$P(D \\cap T_2^+|T_1^+) = 0.499 \\times 0.999 = 0.4985$$\n$$P(D^c \\cap T_2^+|T_1^+) = 0.501 \\times 0.001 = 0.000501$$\n\n$$PPV_2 = \\frac{0.4985}{0.4985 + 0.000501} \\approx \\frac{0.4985}{0.499} \\approx 0.999$$\n\n$$\\boxed{PPV_2 \\approx 99.9\\%}$$\n\n**(c) Why two-stage testing?**\n\nEven with a 99.5% sensitive and 99.9% specific first test:\n- **Single-stage PPV ≈ 50%** — half of positives are false positives\n- **Two-stage PPV ≈ 99.9%** — nearly all positives are true positives\n\n**Reasons for two-stage:**\n1. Dramatically reduces false positives\n2. More cost-effective than running expensive confirmatory tests on everyone\n3. Reduces psychological harm from false positive diagnoses\n4. Ethical imperative for life-altering diagnoses",
+      "marks": 15,
+      "key_concept": "Multi-stage testing dramatically improves PPV for rare conditions"
+    }
+  ],
+  "answers_summary": {
+    "W9-001": "D",
+    "W9-002": "B",
+    "W9-003": "C",
+    "W9-004": "D",
+    "W9-005": "B",
+    "W9-006": "D",
+    "W9-007": "B",
+    "W9-008": "B",
+    "W9-009": "B",
+    "W9-010": "B",
+    "W9-011": "B",
+    "W9-012": "C",
+    "W9-013": "D",
+    "W9-014": "C",
+    "W9-015": "B",
+    "W9-016": "C",
+    "W9-017": "Statement (b) is TRUE",
+    "W9-018": "See detailed solution",
+    "W9-019": "See detailed solution",
+    "W9-020": "See detailed solution"
+  },
+  "topic_coverage": {
+    "sample_space": [
+      "W9-001",
+      "W9-002"
+    ],
+    "basic_probability": [
+      "W9-003"
+    ],
+    "complement_rule": [
+      "W9-004",
+      "W9-015"
+    ],
+    "addition_rule": [
+      "W9-005",
+      "W9-006"
+    ],
+    "conditional_probability": [
+      "W9-007",
+      "W9-012",
+      "W9-019"
+    ],
+    "independence": [
+      "W9-008",
+      "W9-014"
+    ],
+    "binomial": [
+      "W9-009",
+      "W9-010",
+      "W9-011",
+      "W9-017"
+    ],
+    "bayes_theorem": [
+      "W9-013",
+      "W9-018",
+      "W9-020"
+    ],
+    "epidemiology": [
+      "W9-016"
+    ]
+  },
+  "lab_connection": {
+    "notebook": "Probability_Simulation.ipynb",
+    "exercises": [
+      {
+        "id": "A",
+        "topic": "Coin toss simulation",
+        "practice_link": "W9-001, W9-002, W9-010"
+      },
+      {
+        "id": "B",
+        "topic": "Binomial probability computation",
+        "practice_link": "W9-009, W9-011"
+      },
+      {
+        "id": "C",
+        "topic": "Bayes' theorem calculator",
+        "practice_link": "W9-013, W9-018"
+      },
+      {
+        "id": "D",
+        "topic": "Disease screening simulation",
+        "practice_link": "W9-020"
+      },
+      {
+        "id": "E",
+        "topic": "Herd immunity threshold visualization",
+        "practice_link": "W9-016"
+      }
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "metadata": {
+    "week": 10,
+    "title": "Random Variables and Hypothesis Testing",
+    "theme": "Making Decisions Under Uncertainty",
+    "python_version": "3.9+",
+    "required_packages": [
+      "numpy",
+      "scipy",
+      "matplotlib",
+      "pandas"
+    ],
+    "learning_objectives": [
+      "Calculate expected values and variances",
+      "Work with Bernoulli and binomial distributions",
+      "Compute p-values for hypothesis tests",
+      "Visualize probability distributions and rejection regions",
+      "Perform one-tailed and two-tailed hypothesis tests"
+    ]
+  },
+  "snippets": [
+    {
+      "id": "W10-CS01",
+      "title": "Setup and Imports",
+      "section": "",
+      "description": "Import necessary libraries for probability and statistics calculations",
+      "code": "# Week 10: Hypothesis Testing - Setup\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import binom, binomtest\nimport pandas as pd\n\n# Set display options\npd.set_option('display.max_rows', None)\nnp.set_printoptions(precision=5)\n\nprint(\"Libraries loaded successfully!\")",
+      "expected_output": "Confirmation message that libraries are loaded",
+      "key_functions": [
+        "numpy",
+        "scipy.stats.binom",
+        "scipy.stats.binomtest",
+        "matplotlib.pyplot"
+      ]
+    },
+    {
+      "id": "W10-CS02",
+      "title": "Expected Value Calculation",
+      "section": "",
+      "description": "Calculate expected value from a probability distribution table (Q33 style)",
+      "code": "# Expected Value Calculation (Q33 Style)\n# Given probability distribution:\n# X:    0    3    4    6\n# P(X): 0.2  0.4  0.3  0.1\n\nx_values = np.array([0, 3, 4, 6])\nprobabilities = np.array([0.2, 0.4, 0.3, 0.1])\n\n# Verify probabilities sum to 1\nprint(f\"Sum of probabilities: {probabilities.sum()}\")\n\n# Calculate E[X]\nexpected_value = np.sum(x_values * probabilities)\nprint(f\"\\nE[X] = {x_values[0]}×{probabilities[0]} + {x_values[1]}×{probabilities[1]} + {x_values[2]}×{probabilities[2]} + {x_values[3]}×{probabilities[3]}\")\nprint(f\"E[X] = {x_values[0]*probabilities[0]} + {x_values[1]*probabilities[1]} + {x_values[2]*probabilities[2]} + {x_values[3]*probabilities[3]}\")\nprint(f\"E[X] = {expected_value}\")\n\n# Calculate E[X²] and Variance\nexpected_x_squared = np.sum(x_values**2 * probabilities)\nvariance = expected_x_squared - expected_value**2\nstd_dev = np.sqrt(variance)\n\nprint(f\"\\nE[X²] = {expected_x_squared}\")\nprint(f\"Var(X) = E[X²] - (E[X])² = {expected_x_squared} - {expected_value}² = {variance}\")\nprint(f\"Standard deviation = {std_dev:.4f}\")",
+      "expected_output": "Step-by-step calculation showing E[X] = 3.0",
+      "key_functions": [
+        "np.sum",
+        "np.sqrt"
+      ]
+    },
+    {
+      "id": "W10-CS03",
+      "title": "Bernoulli Distribution",
+      "section": "",
+      "description": "Work with Bernoulli distribution for single trial experiments",
+      "code": "# Bernoulli Distribution: Single trial with two outcomes\n# Example: Single contact transmission probability\n\np = 0.6  # Probability of transmission\n\n# Bernoulli is a special case of Binomial with n=1\n# P(X=0) = 1-p, P(X=1) = p\n\nprint(\"Bernoulli Distribution (p = 0.6)\")\nprint(\"=\"*40)\nprint(f\"P(X = 0) = 1 - p = {1-p}\")\nprint(f\"P(X = 1) = p = {p}\")\n\n# Mean and Variance\nmean_bernoulli = p\nvar_bernoulli = p * (1 - p)\n\nprint(f\"\\nE[X] = p = {mean_bernoulli}\")\nprint(f\"Var(X) = p(1-p) = {p}×{1-p} = {var_bernoulli}\")\nprint(f\"Standard deviation = {np.sqrt(var_bernoulli):.4f}\")\n\n# Visualize\nfig, ax = plt.subplots(figsize=(6, 4))\nax.bar([0, 1], [1-p, p], color=['steelblue', 'coral'], edgecolor='black')\nax.set_xlabel('X (0 = No transmission, 1 = Transmission)')\nax.set_ylabel('Probability')\nax.set_title(f'Bernoulli Distribution (p = {p})')\nax.set_xticks([0, 1])\nax.set_ylim(0, 1)\nfor i, v in enumerate([1-p, p]):\n    ax.text(i, v + 0.02, f'{v:.2f}', ha='center', fontweight='bold')\nplt.tight_layout()\nplt.show()",
+      "expected_output": "Bernoulli distribution parameters and bar chart visualization",
+      "key_functions": [
+        "plt.bar",
+        "ax.set_xlabel",
+        "ax.set_ylabel"
+      ]
+    },
+    {
+      "id": "W10-CS04",
+      "title": "Binomial Distribution - PMF Calculation",
+      "section": "",
+      "description": "Calculate binomial probabilities using scipy",
+      "code": "# Binomial Distribution: Number of successes in n trials\n# Example: Number of infections out of 12 contacts\n\nn = 12  # number of trials\np = 0.5  # probability of success per trial\n\nprint(f\"Binomial Distribution: X ~ Binomial({n}, {p})\")\nprint(\"=\"*50)\n\n# Calculate probabilities for all possible outcomes\nk_values = np.arange(0, n + 1)\nprobabilities = binom.pmf(k_values, n, p)\n\n# Create a nice table\ndf = pd.DataFrame({\n    'k (successes)': k_values,\n    'P(X = k)': probabilities,\n    'P(X = k) rounded': np.round(probabilities, 5)\n})\nprint(df.to_string(index=False))\n\n# Mean and Variance\nmean_binom = n * p\nvar_binom = n * p * (1 - p)\n\nprint(f\"\\nE[X] = np = {n}×{p} = {mean_binom}\")\nprint(f\"Var(X) = np(1-p) = {n}×{p}×{1-p} = {var_binom}\")\nprint(f\"Standard deviation = {np.sqrt(var_binom):.4f}\")",
+      "expected_output": "Table of binomial probabilities for all k values",
+      "key_functions": [
+        "binom.pmf",
+        "pd.DataFrame"
+      ]
+    },
+    {
+      "id": "W10-CS05",
+      "title": "Visualizing Binomial Distribution",
+      "section": "",
+      "description": "Create bar chart of binomial distribution with mean marked",
+      "code": "# Visualize Binomial Distribution\nn = 12\np = 0.5\n\nk_values = np.arange(0, n + 1)\nprobabilities = binom.pmf(k_values, n, p)\n\nfig, ax = plt.subplots(figsize=(10, 6))\nbars = ax.bar(k_values, probabilities, color='steelblue', edgecolor='black', alpha=0.7)\n\n# Mark the mean\nmean = n * p\nax.axvline(x=mean, color='red', linestyle='--', linewidth=2, label=f'Mean = {mean}')\n\n# Add labels for probabilities\nfor k, prob in zip(k_values, probabilities):\n    if prob > 0.01:  # Only label visible bars\n        ax.text(k, prob + 0.005, f'{prob:.3f}', ha='center', fontsize=8)\n\nax.set_xlabel('k (Number of Successes)', fontsize=12)\nax.set_ylabel('P(X = k)', fontsize=12)\nax.set_title(f'Binomial Distribution: X ~ Binomial({n}, {p})', fontsize=14)\nax.set_xticks(k_values)\nax.legend()\nax.grid(axis='y', alpha=0.3)\nplt.tight_layout()\nplt.show()",
+      "expected_output": "Bar chart showing binomial probabilities with mean marked",
+      "key_functions": [
+        "plt.bar",
+        "ax.axvline",
+        "binom.pmf"
+      ]
+    },
+    {
+      "id": "W10-CS06",
+      "title": "p-Value Calculation Using binom.pmf",
+      "section": "",
+      "description": "Calculate p-value manually by summing probabilities (understanding the concept)",
+      "code": "# p-Value Calculation: Manual method using binom.pmf\n# Scenario: Testing if coin is fair after observing 10 heads in 12 tosses\n\nn = 12\np_null = 0.5  # Null hypothesis: fair coin\nobserved_k = 10  # Observed successes\n\nprint(\"Calculating p-value for One-Tailed Test (Upper)\")\nprint(\"H₀: p ≤ 0.5 vs Hₐ: p > 0.5\")\nprint(f\"Observed: {observed_k} successes out of {n} trials\")\nprint(\"=\"*50)\n\n# Calculate probabilities for k = 10, 11, 12\nprint(\"\\nProbabilities for extreme values (k ≥ 10):\")\nfor k in range(observed_k, n + 1):\n    prob = binom.pmf(k, n, p_null)\n    print(f\"P(X = {k}) = {prob:.5f}\")\n\n# p-value = P(X ≥ observed_k | H₀)\np_value_upper = sum(binom.pmf(k, n, p_null) for k in range(observed_k, n + 1))\nprint(f\"\\np-value (one-tailed, upper) = P(X ≥ {observed_k}) = {p_value_upper:.5f}\")\n\n# For two-tailed test, include equally extreme values from lower tail\n# Under H₀: p=0.5, the distribution is symmetric\n# k=10 deviates by 4 from mean=6, so include k=2, 1, 0 as well\nprint(\"\\nFor Two-Tailed Test:\")\nlower_extreme = n - observed_k  # Symmetric point: 12 - 10 = 2\np_value_lower = sum(binom.pmf(k, n, p_null) for k in range(0, lower_extreme + 1))\np_value_two_tailed = p_value_upper + p_value_lower\n\nprint(f\"P(X ≤ {lower_extreme}) = {p_value_lower:.5f}\")\nprint(f\"p-value (two-tailed) = {p_value_two_tailed:.5f}\")",
+      "expected_output": "Step-by-step p-value calculation for both one-tailed and two-tailed tests",
+      "key_functions": [
+        "binom.pmf",
+        "sum"
+      ]
+    },
+    {
+      "id": "W10-CS07",
+      "title": "p-Value Using binomtest Function",
+      "section": "",
+      "description": "Use scipy's binomtest for quick hypothesis testing",
+      "code": "# p-Value Calculation Using binomtest (Recommended Method)\nfrom scipy.stats import binomtest\n\nn = 12\nobserved_k = 10\np_null = 0.5\n\nprint(\"Using scipy.stats.binomtest()\")\nprint(\"=\"*50)\n\n# One-tailed test (upper): Hₐ: p > p₀\nresult_greater = binomtest(k=observed_k, n=n, p=p_null, alternative='greater')\nprint(f\"\\nOne-tailed test (Hₐ: p > 0.5):\")\nprint(f\"  Observed proportion: {result_greater.proportion_estimate:.4f}\")\nprint(f\"  p-value = {result_greater.pvalue:.5f}\")\n\n# One-tailed test (lower): Hₐ: p < p₀\nresult_less = binomtest(k=observed_k, n=n, p=p_null, alternative='less')\nprint(f\"\\nOne-tailed test (Hₐ: p < 0.5):\")\nprint(f\"  p-value = {result_less.pvalue:.5f}\")\n\n# Two-tailed test: Hₐ: p ≠ p₀\nresult_two_sided = binomtest(k=observed_k, n=n, p=p_null, alternative='two-sided')\nprint(f\"\\nTwo-tailed test (Hₐ: p ≠ 0.5):\")\nprint(f\"  p-value = {result_two_sided.pvalue:.5f}\")\n\n# Decision at α = 0.05\nalpha = 0.05\nprint(f\"\\nDecision at α = {alpha}:\")\nprint(f\"  One-tailed (upper): {'Reject H₀' if result_greater.pvalue < alpha else 'Fail to reject H₀'}\")\nprint(f\"  Two-tailed: {'Reject H₀' if result_two_sided.pvalue < alpha else 'Fail to reject H₀'}\")",
+      "expected_output": "Results from binomtest for different alternative hypotheses",
+      "key_functions": [
+        "binomtest",
+        "result.pvalue",
+        "result.proportion_estimate"
+      ]
+    },
+    {
+      "id": "W10-CS08",
+      "title": "Q35 Exam Question - Complete Solution",
+      "section": "",
+      "description": "Solve the exact exam question about virus variant transmissibility",
+      "code": "# Q35 Exam Question: New Virus Variant Transmissibility\nprint(\"Q35: Is the new variant more infectious?\")\nprint(\"=\"*60)\n\n# Given data\nn = 11  # Number of contacts\nobserved_infections = 9  # Observed infections\np_old = 0.50  # Old variant infection rate\n\nprint(f\"\\nData: {observed_infections} infections out of {n} contacts\")\nprint(f\"Old variant rate: p = {p_old}\")\nprint(f\"Question: Is the new variant MORE infectious?\")\n\n# CORRECT approach: One-tailed test\nprint(\"\\n\" + \"-\"*60)\nprint(\"CORRECT APPROACH: One-tailed test\")\nprint(\"-\"*60)\nprint(\"H₀: p ≤ 0.50 (new variant is NOT more infectious)\")\nprint(\"Hₐ: p > 0.50 (new variant IS more infectious)\")\n\nresult_one_tailed = binomtest(k=observed_infections, n=n, p=p_old, alternative='greater')\nprint(f\"\\np-value = P(X ≥ {observed_infections} | p = 0.5) = {result_one_tailed.pvalue:.5f}\")\nprint(f\"         = 67/2048 ≈ 0.033\")\nprint(f\"\\nSince {result_one_tailed.pvalue:.3f} < 0.05, REJECT H₀\")\nprint(\"Conclusion: Evidence supports that new variant is more infectious\")\n\n# INCORRECT approach: Two-tailed test\nprint(\"\\n\" + \"-\"*60)\nprint(\"INCORRECT APPROACH: Two-tailed test\")\nprint(\"-\"*60)\nprint(\"H₀: p = 0.50\")\nprint(\"Hₐ: p ≠ 0.50\")\n\nresult_two_tailed = binomtest(k=observed_infections, n=n, p=p_old, alternative='two-sided')\nprint(f\"\\np-value = {result_two_tailed.pvalue:.5f}\")\nprint(f\"\\nSince {result_two_tailed.pvalue:.3f} > 0.05, FAIL TO REJECT H₀\")\nprint(\"This would lead to the WRONG conclusion for this question!\")\n\nprint(\"\\n\" + \"=\"*60)\nprint(\"KEY INSIGHT: Match the test type to the research question!\")\nprint(\"'More infectious' → One-tailed (upper) test\")\nprint(\"=\"*60)",
+      "expected_output": "Complete solution showing why one-tailed test is correct for Q35",
+      "key_functions": [
+        "binomtest",
+        "alternative='greater'"
+      ]
+    },
+    {
+      "id": "W10-CS09",
+      "title": "Visualizing p-Values and Rejection Regions",
+      "section": "",
+      "description": "Create visualization showing the rejection region and p-value",
+      "code": "# Visualize p-Value and Rejection Region\nn = 11\np_null = 0.5\nobserved_k = 9\nalpha = 0.05\n\nk_values = np.arange(0, n + 1)\nprobabilities = binom.pmf(k_values, n, p_null)\n\n# Determine colors: rejection region (p-value region) in red\ncolors = ['coral' if k >= observed_k else 'steelblue' for k in k_values]\n\nfig, ax = plt.subplots(figsize=(12, 6))\nbars = ax.bar(k_values, probabilities, color=colors, edgecolor='black', alpha=0.7)\n\n# Add horizontal line at the probability level of observed value\nprob_observed = binom.pmf(observed_k, n, p_null)\nax.axhline(y=prob_observed, color='red', linestyle='--', alpha=0.5)\n\n# Calculate and display p-value\np_value = sum(probabilities[k_values >= observed_k])\n\n# Add annotations\nax.annotate(f'Observed: k = {observed_k}', xy=(observed_k, prob_observed),\n            xytext=(observed_k + 1.5, prob_observed + 0.05),\n            arrowprops=dict(arrowstyle='->', color='red'),\n            fontsize=11, color='red', fontweight='bold')\n\nax.text(0.02, 0.95, f'p-value = P(X ≥ {observed_k}) = {p_value:.4f}',\n        transform=ax.transAxes, fontsize=12, verticalalignment='top',\n        bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))\n\nax.text(0.02, 0.85, f'α = {alpha}',\n        transform=ax.transAxes, fontsize=12, verticalalignment='top',\n        bbox=dict(boxstyle='round', facecolor='lightgreen', alpha=0.8))\n\ndecision = 'Reject H₀' if p_value < alpha else 'Fail to reject H₀'\nax.text(0.02, 0.75, f'Decision: {decision}',\n        transform=ax.transAxes, fontsize=12, verticalalignment='top',\n        bbox=dict(boxstyle='round', facecolor='lightcoral' if p_value < alpha else 'lightgray', alpha=0.8))\n\nax.set_xlabel('k (Number of Infections)', fontsize=12)\nax.set_ylabel('P(X = k) under H₀: p = 0.5', fontsize=12)\nax.set_title(f'One-Tailed Test: P(X ≥ {observed_k}) under H₀\\n(Red bars = p-value region)', fontsize=14)\nax.set_xticks(k_values)\nax.legend(['P(observed)'], loc='upper left')\nax.grid(axis='y', alpha=0.3)\n\n# Add legend for bar colors\nfrom matplotlib.patches import Patch\nlegend_elements = [Patch(facecolor='coral', label='p-value region'),\n                   Patch(facecolor='steelblue', label='Not in p-value')]\nax.legend(handles=legend_elements, loc='upper right')\n\nplt.tight_layout()\nplt.show()",
+      "expected_output": "Bar chart with p-value region highlighted in red",
+      "key_functions": [
+        "plt.bar",
+        "ax.annotate",
+        "binom.pmf"
+      ]
+    },
+    {
+      "id": "W10-CS10",
+      "title": "Finding Critical Values",
+      "section": "",
+      "description": "Determine the rejection region boundary (critical value)",
+      "code": "# Finding Critical Values for Hypothesis Testing\nn = 20\np_null = 0.40\nalpha = 0.05\n\nprint(f\"Finding Critical Value for One-Tailed Test (Upper)\")\nprint(f\"H₀: p ≤ {p_null} vs Hₐ: p > {p_null}\")\nprint(f\"n = {n}, α = {alpha}\")\nprint(\"=\"*50)\n\n# Calculate P(X ≥ k) for each k\nprint(\"\\nk\\tP(X ≥ k)\\tReject H₀?\")\nprint(\"-\"*40)\n\ncritical_value = None\nfor k in range(0, n + 1):\n    tail_prob = 1 - binom.cdf(k - 1, n, p_null)  # P(X >= k) = 1 - P(X <= k-1)\n    reject = \"YES\" if tail_prob < alpha else \"NO\"\n    if tail_prob < alpha and critical_value is None:\n        critical_value = k\n        print(f\"{k}\\t{tail_prob:.5f}\\t\\t{reject} ← Critical value\")\n    elif k >= 8 and k <= 15:  # Show relevant range\n        print(f\"{k}\\t{tail_prob:.5f}\\t\\t{reject}\")\n\nprint(f\"\\nCritical value k* = {critical_value}\")\nprint(f\"Decision rule: Reject H₀ if observed successes ≥ {critical_value}\")\n\n# Verify with binomtest\nprint(f\"\\nVerification:\")\nresult_at_critical = binomtest(k=critical_value, n=n, p=p_null, alternative='greater')\nresult_below_critical = binomtest(k=critical_value - 1, n=n, p=p_null, alternative='greater')\nprint(f\"P(X ≥ {critical_value}) = {result_at_critical.pvalue:.5f} < {alpha} ✓\")\nprint(f\"P(X ≥ {critical_value - 1}) = {result_below_critical.pvalue:.5f} > {alpha} ✓\")",
+      "expected_output": "Table showing critical value determination process",
+      "key_functions": [
+        "binom.cdf",
+        "binomtest"
+      ]
+    },
+    {
+      "id": "W10-CS11",
+      "title": "Comparing One-Tailed vs Two-Tailed Tests",
+      "section": "",
+      "description": "Visualize the difference between test types",
+      "code": "# Compare One-Tailed vs Two-Tailed Tests\nn = 20\np_null = 0.5\nobserved = 14\n\nk_values = np.arange(0, n + 1)\nprobabilities = binom.pmf(k_values, n, p_null)\n\nfig, axes = plt.subplots(1, 2, figsize=(14, 5))\n\n# One-tailed test (upper)\nax1 = axes[0]\ncolors_one = ['coral' if k >= observed else 'steelblue' for k in k_values]\nax1.bar(k_values, probabilities, color=colors_one, edgecolor='black', alpha=0.7)\np_value_one = binomtest(k=observed, n=n, p=p_null, alternative='greater').pvalue\nax1.set_title(f'One-Tailed Test (Hₐ: p > 0.5)\\np-value = {p_value_one:.4f}', fontsize=12)\nax1.set_xlabel('k')\nax1.set_ylabel('P(X = k)')\nax1.axvline(x=n*p_null, color='green', linestyle='--', label=f'Mean = {n*p_null}')\nax1.legend()\n\n# Two-tailed test\nax2 = axes[1]\n# For symmetric distribution, values as extreme as 14 are 14, 15, ..., 20 and 0, 1, ..., 6\ndeviation = abs(observed - n*p_null)  # 14 - 10 = 4\nlower_extreme = int(n*p_null - deviation)  # 10 - 4 = 6\ncolors_two = ['coral' if (k >= observed or k <= lower_extreme) else 'steelblue' for k in k_values]\nax2.bar(k_values, probabilities, color=colors_two, edgecolor='black', alpha=0.7)\np_value_two = binomtest(k=observed, n=n, p=p_null, alternative='two-sided').pvalue\nax2.set_title(f'Two-Tailed Test (Hₐ: p ≠ 0.5)\\np-value = {p_value_two:.4f}', fontsize=12)\nax2.set_xlabel('k')\nax2.set_ylabel('P(X = k)')\nax2.axvline(x=n*p_null, color='green', linestyle='--', label=f'Mean = {n*p_null}')\nax2.legend()\n\nfig.suptitle(f'Observed: {observed} successes out of {n}', fontsize=14, fontweight='bold')\nplt.tight_layout()\nplt.show()\n\nprint(f\"Summary for observed = {observed}, n = {n}, p₀ = {p_null}:\")\nprint(f\"  One-tailed p-value: {p_value_one:.4f} → {'Reject' if p_value_one < 0.05 else 'Fail to reject'} at α = 0.05\")\nprint(f\"  Two-tailed p-value: {p_value_two:.4f} → {'Reject' if p_value_two < 0.05 else 'Fail to reject'} at α = 0.05\")",
+      "expected_output": "Side-by-side comparison of one-tailed and two-tailed test rejection regions",
+      "key_functions": [
+        "plt.subplots",
+        "binomtest"
+      ]
+    },
+    {
+      "id": "W10-CS12",
+      "title": "Disease Transmission Example - Complete Analysis",
+      "section": "",
+      "description": "Full hypothesis test for virus transmissibility claim",
+      "code": "# Complete Analysis: Is the New Variant More Transmissible?\nprint(\"=\"*70)\nprint(\"HYPOTHESIS TEST: New Virus Variant Transmissibility\")\nprint(\"=\"*70)\n\n# Parameters\nn = 300  # Contact cases examined\nobserved_infections = 190\np_old = 0.60  # Old variant transmission rate\n\nprint(f\"\\nData:\")\nprint(f\"  - Contact cases examined: n = {n}\")\nprint(f\"  - Infections observed: {observed_infections}\")\nprint(f\"  - Observed transmission rate: {observed_infections/n:.4f}\")\nprint(f\"  - Old variant rate: p = {p_old}\")\n\n# Step 1: State hypotheses\nprint(f\"\\n--- Step 1: State Hypotheses ---\")\nprint(f\"H₀: p ≤ {p_old} (new variant is NOT more transmissible)\")\nprint(f\"Hₐ: p > {p_old} (new variant IS more transmissible)\")\n\n# Step 2: Calculate test statistic\nprint(f\"\\n--- Step 2: Test Statistic ---\")\np_hat = observed_infections / n\nprint(f\"Sample proportion: p̂ = {observed_infections}/{n} = {p_hat:.4f}\")\n\n# Step 3: Calculate p-value\nprint(f\"\\n--- Step 3: Calculate p-value ---\")\nresult = binomtest(k=observed_infections, n=n, p=p_old, alternative='greater')\nprint(f\"p-value = P(X ≥ {observed_infections} | p = {p_old}) = {result.pvalue:.6f}\")\n\n# Step 4: Decision\nprint(f\"\\n--- Step 4: Decision (α = 0.05) ---\")\nalpha = 0.05\nif result.pvalue < alpha:\n    print(f\"Since p-value = {result.pvalue:.6f} < α = {alpha}\")\n    print(f\"Decision: REJECT H₀\")\n    print(f\"\\nConclusion: There is statistically significant evidence\")\n    print(f\"that the new variant has higher transmissibility than {p_old*100}%.\")\nelse:\n    print(f\"Since p-value = {result.pvalue:.6f} ≥ α = {alpha}\")\n    print(f\"Decision: FAIL TO REJECT H₀\")\n    print(f\"\\nConclusion: Insufficient evidence to conclude\")\n    print(f\"that the new variant is more transmissible.\")\n\n# Visualization\nprint(f\"\\n--- Visualization ---\")\nk_values = np.arange(150, 220)\nprobabilities = binom.pmf(k_values, n, p_old)\n\nfig, ax = plt.subplots(figsize=(12, 5))\ncolors = ['coral' if k >= observed_infections else 'steelblue' for k in k_values]\nax.bar(k_values, probabilities, color=colors, edgecolor='none', alpha=0.7)\nax.axvline(x=observed_infections, color='red', linestyle='--', linewidth=2, label=f'Observed = {observed_infections}')\nax.axvline(x=n*p_old, color='green', linestyle='-', linewidth=2, label=f'Expected = {n*p_old}')\nax.set_xlabel('Number of Infections (k)', fontsize=12)\nax.set_ylabel('P(X = k) under H₀', fontsize=12)\nax.set_title(f'Binomial Distribution under H₀: p = {p_old}\\np-value = P(X ≥ {observed_infections}) = {result.pvalue:.4f}', fontsize=14)\nax.legend()\nplt.tight_layout()\nplt.show()",
+      "expected_output": "Complete hypothesis test with visualization for disease transmission",
+      "key_functions": [
+        "binomtest",
+        "binom.pmf",
+        "plt.bar",
+        "ax.axvline"
+      ]
+    }
+  ]
+}

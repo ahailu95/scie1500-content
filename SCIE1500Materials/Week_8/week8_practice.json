@@ -1,0 +1,385 @@
+{
+  "metadata": {
+    "week": 8,
+    "title": "Predator-Prey Dynamics and Systems",
+    "theme": "When Populations Interact",
+    "exam_alignment": ["Q34"],
+    "total_questions": 20,
+    "difficulty_distribution": {
+      "foundational": 8,
+      "intermediate": 8,
+      "exam_style": 4
+    },
+    "scientific_contexts": [
+      "Canadian lynx and snowshoe hare",
+      "Ecosystem equilibrium analysis",
+      "Predation efficiency in food webs",
+      "Phase diagram interpretation"
+    ],
+    "student_challenges_addressed": [
+      "Direction of arrows on phase diagrams",
+      "Computing predator efficiency",
+      "Verifying equilibrium points",
+      "Understanding oscillatory behavior"
+    ]
+  },
+  "questions": [
+    {
+      "id": "W8-001",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "model_interpretation",
+      "question": "In the Lotka-Volterra model $\\frac{dH}{dt} = \\alpha H - \\beta HP$, what does the term $\\beta HP$ represent?",
+      "choices": {
+        "A": "The birth rate of prey",
+        "B": "The death rate of predators",
+        "C": "The rate at which prey are killed by predators",
+        "D": "The natural death rate of prey",
+        "E": "The carrying capacity effect"
+      },
+      "correct_answer": "C",
+      "solution": "The term $\\beta HP$ represents the **mass action** effect of predation:\n\n- $\\beta$ is the predation rate coefficient\n- $H$ is the prey population\n- $P$ is the predator population\n\nThe product $HP$ captures the idea that more encounters (and thus more predation events) occur when both populations are larger. This term reduces the prey population, hence it appears with a negative sign in the prey equation.",
+      "key_concept": "The interaction term $\\beta HP$ models predation as proportional to both populations"
+    },
+    {
+      "id": "W8-002",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "special_case",
+      "question": "In the Lotka-Volterra model, if there are no predators ($P = 0$), what happens to the prey population?",
+      "choices": {
+        "A": "It decreases exponentially",
+        "B": "It grows exponentially",
+        "C": "It remains constant",
+        "D": "It grows logistically to a carrying capacity",
+        "E": "It oscillates"
+      },
+      "correct_answer": "B",
+      "solution": "When $P = 0$, the prey equation becomes:\n\n$$\\frac{dH}{dt} = \\alpha H - \\beta H(0) = \\alpha H$$\n\nThis is the equation for **exponential growth** with solution $H(t) = H_0 e^{\\alpha t}$.\n\nNote: This is a limitation of the basic Lotka-Volterra model—it assumes unlimited prey growth without predators.",
+      "key_concept": "Without predation, prey grow exponentially at rate $\\alpha$"
+    },
+    {
+      "id": "W8-003",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "special_case",
+      "question": "In the Lotka-Volterra model, if there is no prey ($H = 0$), what happens to the predator population?",
+      "choices": {
+        "A": "It grows exponentially",
+        "B": "It remains constant",
+        "C": "It decays exponentially",
+        "D": "It grows logistically",
+        "E": "It oscillates periodically"
+      },
+      "correct_answer": "C",
+      "solution": "When $H = 0$, the predator equation becomes:\n\n$$\\frac{dP}{dt} = \\lambda (0) P - \\gamma P = -\\gamma P$$\n\nThis is exponential decay with solution $P(t) = P_0 e^{-\\gamma t}$.\n\n**Biological interpretation:** Without food, predators starve and die off.",
+      "key_concept": "Without prey (food), predators decay exponentially at rate $\\gamma$"
+    },
+    {
+      "id": "W8-004",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "equilibrium_concept",
+      "question": "What condition defines an equilibrium point in a dynamical system?",
+      "choices": {
+        "A": "The populations are at their maximum values",
+        "B": "Both rates of change equal zero",
+        "C": "The prey equals the predator population",
+        "D": "The system is oscillating",
+        "E": "The efficiency equals 100%"
+      },
+      "correct_answer": "B",
+      "solution": "An **equilibrium** (or **fixed point** or **steady state**) is defined as a state where the system does not change over time.\n\nMathematically, this requires:\n$$\\frac{dH}{dt} = 0 \\quad \\text{AND} \\quad \\frac{dP}{dt} = 0$$\n\nAt such a point, if the system starts there, it will remain there forever (unless perturbed).",
+      "key_concept": "Equilibrium = state where all derivatives are zero"
+    },
+    {
+      "id": "W8-005",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "equilibrium_calculation",
+      "question": "For the Lotka-Volterra model with $\\alpha = 0.2$, $\\beta = 0.005$, $\\gamma = 0.6$, $\\lambda = 0.001$, what is the prey population at the non-trivial (coexistence) equilibrium?",
+      "choices": {
+        "A": "$H^* = 40$",
+        "B": "$H^* = 200$",
+        "C": "$H^* = 400$",
+        "D": "$H^* = 600$",
+        "E": "$H^* = 1000$"
+      },
+      "correct_answer": "D",
+      "solution": "At the coexistence equilibrium, from the predator equation:\n$$\\frac{dP}{dt} = P(\\lambda H - \\gamma) = 0$$\n\nFor $P \\neq 0$: $\\lambda H = \\gamma \\Rightarrow H^* = \\frac{\\gamma}{\\lambda}$\n\n$$H^* = \\frac{0.6}{0.001} = 600$$",
+      "key_concept": "Coexistence equilibrium: $H^* = \\gamma/\\lambda$"
+    },
+    {
+      "id": "W8-006",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "equilibrium_calculation",
+      "question": "For the Lotka-Volterra model with $\\alpha = 0.2$, $\\beta = 0.005$, $\\gamma = 0.6$, $\\lambda = 0.001$, what is the predator population at the coexistence equilibrium?",
+      "choices": {
+        "A": "$P^* = 20$",
+        "B": "$P^* = 30$",
+        "C": "$P^* = 40$",
+        "D": "$P^* = 50$",
+        "E": "$P^* = 60$"
+      },
+      "correct_answer": "C",
+      "solution": "At the coexistence equilibrium, from the prey equation:\n$$\\frac{dH}{dt} = H(\\alpha - \\beta P) = 0$$\n\nFor $H \\neq 0$: $\\alpha = \\beta P \\Rightarrow P^* = \\frac{\\alpha}{\\beta}$\n\n$$P^* = \\frac{0.2}{0.005} = 40$$",
+      "key_concept": "Coexistence equilibrium: $P^* = \\alpha/\\beta$"
+    },
+    {
+      "id": "W8-007",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "efficiency_definition",
+      "question": "The predator efficiency in the Lotka-Volterra model is defined as:",
+      "choices": {
+        "A": "$\\frac{\\alpha}{\\gamma}$",
+        "B": "$\\frac{\\beta}{\\lambda}$",
+        "C": "$\\frac{\\lambda}{\\beta}$",
+        "D": "$\\frac{\\gamma}{\\alpha}$",
+        "E": "$\\frac{\\alpha \\lambda}{\\beta \\gamma}$"
+      },
+      "correct_answer": "C",
+      "solution": "**Predator efficiency** measures how many predators are born per prey killed:\n\n- Prey killed per unit time = $\\beta HP$\n- Predators born per unit time = $\\lambda HP$\n\n$$\\text{Efficiency} = \\epsilon = \\frac{\\text{Predators born}}{\\text{Prey killed}} = \\frac{\\lambda HP}{\\beta HP} = \\frac{\\lambda}{\\beta}$$",
+      "key_concept": "Efficiency $\\epsilon = \\lambda/\\beta$ = predators born per prey consumed"
+    },
+    {
+      "id": "W8-008",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "efficiency_calculation",
+      "question": "If $\\lambda = 0.0005$ and $\\beta = 0.005$, what is the predator efficiency?",
+      "choices": {
+        "A": "1%",
+        "B": "5%",
+        "C": "10%",
+        "D": "50%",
+        "E": "100%"
+      },
+      "correct_answer": "C",
+      "solution": "$$\\epsilon = \\frac{\\lambda}{\\beta} = \\frac{0.0005}{0.005} = \\frac{0.0005}{0.005} = 0.1 = 10\\%$$\n\n**Interpretation:** For every 10 prey consumed, 1 new predator is born.",
+      "key_concept": "Convert efficiency to percentage by multiplying by 100"
+    },
+    {
+      "id": "W8-009",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "equilibrium_verification",
+      "question": "Consider the Lotka-Volterra model with $\\alpha = 0.15$, $\\beta = 0.005$, $\\lambda = 0.0005$, $\\gamma = 0.10$. Is $(H, P) = (200, 30)$ an equilibrium point?",
+      "choices": {
+        "A": "Yes, both derivatives equal zero at this point",
+        "B": "No, $\\frac{dH}{dt} \\neq 0$ at this point",
+        "C": "No, $\\frac{dP}{dt} \\neq 0$ at this point",
+        "D": "No, neither derivative equals zero",
+        "E": "Cannot determine without solving the ODEs"
+      },
+      "correct_answer": "A",
+      "solution": "**Check prey equation:**\n$$\\frac{dH}{dt} = \\alpha H - \\beta HP = 0.15(200) - 0.005(200)(30)$$\n$$= 30 - 30 = 0 \\checkmark$$\n\n**Check predator equation:**\n$$\\frac{dP}{dt} = \\lambda HP - \\gamma P = 0.0005(200)(30) - 0.10(30)$$\n$$= 3 - 3 = 0 \\checkmark$$\n\nBoth derivatives are zero, so $(200, 30)$ **is** an equilibrium.",
+      "key_concept": "Verify equilibrium by substituting into both equations"
+    },
+    {
+      "id": "W8-010",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "direction_field",
+      "question": "At a point where $H > \\frac{\\gamma}{\\lambda}$ and $P < \\frac{\\alpha}{\\beta}$, which direction does the system move?",
+      "choices": {
+        "A": "Northeast (H increasing, P increasing)",
+        "B": "Northwest (H decreasing, P increasing)",
+        "C": "Southwest (H decreasing, P decreasing)",
+        "D": "Southeast (H increasing, P decreasing)",
+        "E": "The system stays stationary"
+      },
+      "correct_answer": "A",
+      "solution": "**Analyze each derivative:**\n\n**Prey:** $\\frac{dH}{dt} = H(\\alpha - \\beta P)$\n- Since $P < \\frac{\\alpha}{\\beta}$, we have $\\alpha - \\beta P > 0$\n- Therefore $\\frac{dH}{dt} > 0$ → **H is increasing** (moving right)\n\n**Predator:** $\\frac{dP}{dt} = P(\\lambda H - \\gamma)$\n- Since $H > \\frac{\\gamma}{\\lambda}$, we have $\\lambda H - \\gamma > 0$\n- Therefore $\\frac{dP}{dt} > 0$ → **P is increasing** (moving up)\n\n**Combined:** System moves **Northeast** (↗)",
+      "key_concept": "Direction of flow determined by signs of both derivatives"
+    },
+    {
+      "id": "W8-011",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "direction_field",
+      "question": "At a point where $H < \\frac{\\gamma}{\\lambda}$ and $P > \\frac{\\alpha}{\\beta}$, which direction does the system move?",
+      "choices": {
+        "A": "Northeast (H increasing, P increasing)",
+        "B": "Northwest (H decreasing, P increasing)",
+        "C": "Southwest (H decreasing, P decreasing)",
+        "D": "Southeast (H increasing, P decreasing)",
+        "E": "The system oscillates in place"
+      },
+      "correct_answer": "C",
+      "solution": "**Prey:** $P > \\frac{\\alpha}{\\beta} \\Rightarrow \\alpha - \\beta P < 0 \\Rightarrow \\frac{dH}{dt} < 0$ (H decreasing)\n\n**Predator:** $H < \\frac{\\gamma}{\\lambda} \\Rightarrow \\lambda H - \\gamma < 0 \\Rightarrow \\frac{dP}{dt} < 0$ (P decreasing)\n\n**Combined:** System moves **Southwest** (↙)\n\nThis is the \"crash\" phase where too many predators have depleted prey, and now both are declining.",
+      "key_concept": "High predators + low prey = both populations declining"
+    },
+    {
+      "id": "W8-012",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "phase_portrait",
+      "question": "In the basic Lotka-Volterra model (without carrying capacity), trajectories around the coexistence equilibrium are:",
+      "choices": {
+        "A": "Straight lines approaching the equilibrium",
+        "B": "Spirals converging to the equilibrium",
+        "C": "Spirals diverging from the equilibrium",
+        "D": "Closed orbits (cycles) around the equilibrium",
+        "E": "Random paths with no pattern"
+      },
+      "correct_answer": "D",
+      "solution": "In the basic Lotka-Volterra model, trajectories form **closed orbits** around the coexistence equilibrium.\n\n**Key properties:**\n- The system exhibits **perpetual periodic oscillations**\n- Different initial conditions lead to different orbit sizes\n- The equilibrium is a **center** (neutrally stable)\n- Neither attracting nor repelling—orbits neither converge nor diverge\n\nThis is why answer (e) in Q34 states populations \"oscillate with constant amplitudes forever.\"",
+      "key_concept": "Basic L-V model produces closed orbits = sustained oscillations"
+    },
+    {
+      "id": "W8-013",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "carrying_capacity_effect",
+      "question": "When carrying capacity $K$ is added to the Lotka-Volterra model (prey equation becomes $\\frac{dH}{dt} = \\alpha H(1 - H/K) - \\beta HP$), what changes about the system behavior?",
+      "choices": {
+        "A": "Oscillations become larger over time",
+        "B": "Oscillations dampen and the system approaches equilibrium",
+        "C": "The system no longer has an equilibrium",
+        "D": "The predator always goes extinct",
+        "E": "The behavior is unchanged"
+      },
+      "correct_answer": "B",
+      "solution": "Adding carrying capacity transforms the coexistence equilibrium from a **center** to an **attractor** (stable spiral).\n\n**Result:**\n- Trajectories spiral **inward** toward the equilibrium\n- Oscillations are **damped** (decreasing amplitude over time)\n- The system eventually settles at steady state\n\nThis is more realistic than perpetual oscillations.",
+      "key_concept": "Carrying capacity creates damped oscillations → stable equilibrium"
+    },
+    {
+      "id": "W8-014",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "carrying_capacity_equilibrium",
+      "question": "With carrying capacity $K$, the modified Lotka-Volterra model has how many equilibrium points (in the biologically meaningful region $H \\geq 0$, $P \\geq 0$)?",
+      "choices": {
+        "A": "One",
+        "B": "Two",
+        "C": "Three",
+        "D": "Four",
+        "E": "Infinitely many"
+      },
+      "correct_answer": "C",
+      "solution": "The modified model has **three** equilibrium points:\n\n1. **Both extinct:** $(H, P) = (0, 0)$\n\n2. **Predator extinct, prey at capacity:** $(H, P) = (K, 0)$\n\n3. **Coexistence:** $(H, P) = \\left(\\frac{\\gamma}{\\lambda}, \\frac{\\alpha}{\\beta}\\left(1 - \\frac{\\gamma}{\\lambda K}\\right)\\right)$\n\nThe basic model (without K) has only 2 equilibria: $(0,0)$ and the coexistence point.",
+      "key_concept": "Carrying capacity adds a predator-free equilibrium at $(K, 0)$"
+    },
+    {
+      "id": "W8-015",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "arrow_placement",
+      "question": "On a phase diagram, an arrow at point $(H, P)$ should point in a direction with slope equal to:",
+      "choices": {
+        "A": "$\\frac{dH}{dt}$",
+        "B": "$\\frac{dP}{dt}$",
+        "C": "$\\frac{dH}{dt} \\cdot \\frac{dP}{dt}$",
+        "D": "$\\frac{dP/dt}{dH/dt}$",
+        "E": "$\\frac{dH/dt}{dP/dt}$"
+      },
+      "correct_answer": "D",
+      "solution": "In the phase plane, the horizontal axis is $H$ and vertical axis is $P$.\n\nThe **slope** of the trajectory at any point is:\n$$\\text{slope} = \\frac{dP}{dH} = \\frac{dP/dt}{dH/dt}$$\n\nThis comes from the chain rule: $\\frac{dP}{dH} = \\frac{dP}{dt} \\cdot \\frac{dt}{dH} = \\frac{dP/dt}{dH/dt}$\n\nThe arrow direction should follow this slope.",
+      "key_concept": "Phase plane slope = $\\frac{dP/dt}{dH/dt}$"
+    },
+    {
+      "id": "W8-016",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "ecological_interpretation",
+      "question": "In the predator-prey cycle, why do predator population peaks typically lag behind prey population peaks?",
+      "choices": {
+        "A": "Predators migrate more slowly than prey",
+        "B": "Predator birth rate depends on current prey abundance",
+        "C": "Prey have a longer gestation period",
+        "D": "Predators are more resistant to environmental changes",
+        "E": "Both populations are controlled by the same external factor"
+      },
+      "correct_answer": "B",
+      "solution": "The lag occurs because **predator reproduction depends on food availability**:\n\n1. Prey increase → abundant food for predators\n2. Predators reproduce more → predator population increases (lag)\n3. More predators → prey consumption increases\n4. Prey decrease → food becomes scarce\n5. Predators starve → predator population decreases (lag)\n\nThis temporal delay creates the characteristic out-of-phase oscillations seen in the Hudson Bay data.",
+      "key_concept": "Predator response to prey changes is delayed due to reproduction timing"
+    },
+    {
+      "id": "W8-017",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "exam_Q34_style",
+      "exam_reference": "Q34",
+      "question": "Consider the Lotka-Volterra model:\n\n$$\\frac{dH}{dt} = \\alpha H - \\beta HP$$\n$$\\frac{dP}{dt} = \\lambda HP - \\gamma P$$\n\nwith parameters $\\alpha = 0.15$, $\\beta = 0.005$, $\\lambda = 0.0005$, $\\gamma = 0.10$.\n\n(a) Show that $(H, P) = (0, 0)$ is an equilibrium point.\n(b) Find the coexistence equilibrium $(H^*, P^*)$.\n(c) Calculate the predator efficiency.\n(d) Describe the behavior of the system when starting from a non-equilibrium point.",
+      "solution": "**(a) Verify $(0, 0)$:**\n\n$$\\frac{dH}{dt}\\bigg|_{(0,0)} = 0.15(0) - 0.005(0)(0) = 0 \\checkmark$$\n$$\\frac{dP}{dt}\\bigg|_{(0,0)} = 0.0005(0)(0) - 0.10(0) = 0 \\checkmark$$\n\n**(b) Coexistence equilibrium:**\n\nFrom $\\frac{dP}{dt} = P(\\lambda H - \\gamma) = 0$ with $P \\neq 0$:\n$$H^* = \\frac{\\gamma}{\\lambda} = \\frac{0.10}{0.0005} = 200$$\n\nFrom $\\frac{dH}{dt} = H(\\alpha - \\beta P) = 0$ with $H \\neq 0$:\n$$P^* = \\frac{\\alpha}{\\beta} = \\frac{0.15}{0.005} = 30$$\n\n$$\\boxed{(H^*, P^*) = (200, 30)}$$\n\n**(c) Predator efficiency:**\n\n$$\\epsilon = \\frac{\\lambda}{\\beta} = \\frac{0.0005}{0.005} = 0.1 = \\boxed{10\\%}$$\n\n**(d) Behavior from non-equilibrium:**\n\nIn the basic Lotka-Volterra model, starting from any point that is not an equilibrium, the populations will **oscillate periodically with constant amplitude**. The trajectory forms a closed orbit around the coexistence equilibrium $(200, 30)$.\n\nThe system never settles down—it continues cycling forever. Prey peaks are followed by predator peaks (with a phase lag), then prey troughs followed by predator troughs.",
+      "marks": 12,
+      "key_concept": "Complete analysis includes equilibria, efficiency, and qualitative behavior"
+    },
+    {
+      "id": "W8-018",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "true_false_analysis",
+      "exam_reference": "Q34",
+      "question": "For the model in W8-017, determine which of the following statements is NOT true:\n\n(a) $H = 0$, $P = 0$ is a fixed point for this system.\n(b) $H = 200$, $P = 30$ is a fixed point for this system.\n(c) The efficiency of predation is 10%.\n(d) The efficiency of predation is 0.05%.\n(e) If the initial point is not a fixed point, the populations oscillate with constant amplitudes forever.",
+      "solution": "**Analysis of each statement:**\n\n**(a) TRUE:** Verified in W8-017(a). Both derivatives are zero at $(0,0)$.\n\n**(b) TRUE:** Verified in W8-017(b). $(200, 30) = (\\gamma/\\lambda, \\alpha/\\beta)$ is the coexistence equilibrium.\n\n**(c) TRUE:** $\\epsilon = \\lambda/\\beta = 0.0005/0.005 = 0.10 = 10\\%$\n\n**(d) FALSE:** ❌ The efficiency is $\\frac{\\lambda}{\\beta} = \\frac{0.0005}{0.005} = 0.10 = 10\\%$, NOT $0.05\\% = 0.0005$.\n\nNote: $0.05\\%$ would be $0.0005$ as a decimal, which equals the value of $\\lambda$ alone, not $\\lambda/\\beta$.\n\n**(e) TRUE:** The basic Lotka-Volterra model has closed orbits, meaning perpetual oscillations with constant amplitude.\n\n$$\\boxed{\\text{Statement (d) is NOT true}}$$",
+      "marks": 8,
+      "key_concept": "Efficiency = λ/β, not just λ"
+    },
+    {
+      "id": "W8-019",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "carrying_capacity_modification",
+      "question": "Consider the modified Lotka-Volterra model with carrying capacity:\n\n$$\\frac{dH}{dt} = \\alpha H\\left(1 - \\frac{H}{K}\\right) - \\beta HP$$\n$$\\frac{dP}{dt} = \\lambda HP - \\gamma P$$\n\nwith $\\alpha = 0.2$, $\\beta = 0.005$, $\\gamma = 0.6$, $\\lambda = 0.001$, and $K = 1500$.\n\n(a) Find all equilibrium points.\n(b) Calculate the predator population at the coexistence equilibrium.\n(c) Compare this to the basic model (without K). How does carrying capacity affect the equilibrium predator population?",
+      "solution": "**(a) Finding all equilibrium points:**\n\nSet both derivatives to zero:\n\n**From predator equation:** $P(\\lambda H - \\gamma) = 0$\n- Either $P = 0$ or $H = \\gamma/\\lambda = 600$\n\n**From prey equation with $P = 0$:**\n$$\\alpha H(1 - H/K) = 0$$\n- Either $H = 0$ or $H = K = 1500$\n\n**From prey equation with $H = 600$:**\n$$\\alpha \\cdot 600 \\cdot (1 - 600/1500) - \\beta \\cdot 600 \\cdot P = 0$$\n$$0.2 \\cdot 600 \\cdot 0.6 = 0.005 \\cdot 600 \\cdot P$$\n$$72 = 3P \\Rightarrow P = 24$$\n\n**Three equilibria:**\n$$\\boxed{(0, 0), \\quad (1500, 0), \\quad (600, 24)}$$\n\n**(b) Coexistence equilibrium predator population:**\n$$\\boxed{P^* = 24}$$\n\nAlternatively, using the formula:\n$$P^* = \\frac{\\alpha}{\\beta}\\left(1 - \\frac{\\gamma}{\\lambda K}\\right) = \\frac{0.2}{0.005}\\left(1 - \\frac{0.6}{0.001 \\cdot 1500}\\right) = 40(1 - 0.4) = 40 \\cdot 0.6 = 24$$\n\n**(c) Comparison:**\n\nWithout carrying capacity: $P^* = \\alpha/\\beta = 0.2/0.005 = 40$\n\nWith carrying capacity: $P^* = 24$\n\n**Effect:** Carrying capacity **reduces** the equilibrium predator population by the factor $(1 - \\gamma/(\\lambda K)) = 0.6$.\n\n**Interpretation:** When prey growth is limited, fewer predators can be sustained at equilibrium.",
+      "marks": 12,
+      "key_concept": "Carrying capacity reduces sustainable predator population"
+    },
+    {
+      "id": "W8-020",
+      "type": "short_answer",
+      "difficulty": "exam_style",
+      "topic": "direction_field_analysis",
+      "question": "For the basic Lotka-Volterra model with coexistence equilibrium at $(H^*, P^*) = (600, 40)$:\n\n(a) Divide the phase plane into four regions using the nullclines. What are the equations of these nullclines?\n(b) In which region(s) is the prey population increasing?\n(c) In which region(s) is the predator population decreasing?\n(d) Describe the overall flow pattern and explain why closed orbits form.",
+      "solution": "**(a) Nullclines:**\n\nA **nullcline** is where one derivative equals zero.\n\n**H-nullcline** (where $dH/dt = 0$):\n$$H(\\alpha - \\beta P) = 0 \\Rightarrow H = 0 \\text{ (vertical axis) or } P = \\frac{\\alpha}{\\beta} = 40 \\text{ (horizontal line)}$$\n\n**P-nullcline** (where $dP/dt = 0$):\n$$P(\\lambda H - \\gamma) = 0 \\Rightarrow P = 0 \\text{ (horizontal axis) or } H = \\frac{\\gamma}{\\lambda} = 600 \\text{ (vertical line)}$$\n\n**(b) Prey increasing:**\n\n$\\frac{dH}{dt} > 0$ when $\\alpha - \\beta P > 0$, i.e., $P < 40$.\n\n$$\\boxed{\\text{Prey increases below the line } P = 40}$$\n\n(Regions IV and I in the standard numbering)\n\n**(c) Predator decreasing:**\n\n$\\frac{dP}{dt} < 0$ when $\\lambda H - \\gamma < 0$, i.e., $H < 600$.\n\n$$\\boxed{\\text{Predator decreases left of the line } H = 600}$$\n\n(Regions III and IV)\n\n**(d) Flow pattern:**\n\nThe four regions have flow directions:\n- **I** ($H > 600$, $P < 40$): ↗ (Northeast) — both increasing\n- **II** ($H > 600$, $P > 40$): ↖ (Northwest) — H decreasing, P increasing\n- **III** ($H < 600$, $P > 40$): ↙ (Southwest) — both decreasing\n- **IV** ($H < 600$, $P < 40$): ↘ (Southeast) — H increasing, P decreasing\n\n**Why closed orbits form:** The flow circulates counterclockwise around the equilibrium. The system has a conserved quantity (like energy in a frictionless pendulum), preventing trajectories from spiraling in or out. This creates **neutral stability** with closed periodic orbits.",
+      "marks": 12,
+      "key_concept": "Nullclines divide phase plane; counterclockwise flow creates closed orbits"
+    }
+  ],
+  "answers_summary": {
+    "W8-001": "C",
+    "W8-002": "B",
+    "W8-003": "C",
+    "W8-004": "B",
+    "W8-005": "D",
+    "W8-006": "C",
+    "W8-007": "C",
+    "W8-008": "C",
+    "W8-009": "A",
+    "W8-010": "A",
+    "W8-011": "C",
+    "W8-012": "D",
+    "W8-013": "B",
+    "W8-014": "C",
+    "W8-015": "D",
+    "W8-016": "B",
+    "W8-017": "See detailed solution",
+    "W8-018": "Statement (d) is NOT true",
+    "W8-019": "See detailed solution",
+    "W8-020": "See detailed solution"
+  },
+  "topic_coverage": {
+    "model_interpretation": ["W8-001", "W8-002", "W8-003"],
+    "equilibrium_calculation": ["W8-004", "W8-005", "W8-006", "W8-009"],
+    "efficiency": ["W8-007", "W8-008", "W8-017c", "W8-018d"],
+    "direction_field": ["W8-010", "W8-011", "W8-015", "W8-020"],
+    "phase_portrait": ["W8-012", "W8-020"],
+    "carrying_capacity": ["W8-013", "W8-014", "W8-019"],
+    "ecological_interpretation": ["W8-016"]
+  },
+  "lab_connection": {
+    "notebook": "LoktaVolterraModel.ipynb",
+    "exercises": [
+      {"id": "A", "topic": "Predator decay without prey", "practice_link": "W8-003"},
+      {"id": "B", "topic": "Symbolic model setup", "practice_link": "W8-001"},
+      {"id": "C", "topic": "Slope calculation", "practice_link": "W8-015"},
+      {"id": "D", "topic": "Vector field refinement", "practice_link": "W8-010, W8-011"},
+      {"id": "E", "topic": "Equilibrium finding", "practice_link": "W8-005, W8-006, W8-009"},
+      {"id": "F", "topic": "Phase portrait with multiple trajectories", "practice_link": "W8-012, W8-020"},
+      {"id": "G", "topic": "Practice quiz completion", "practice_link": "W8-017, W8-018"}
+    ]
+  }
+}

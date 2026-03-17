@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "week": 1,
+    "title": "Python Code Snippets - Functions",
+    "description": "Copy-ready Python code examples for Week 1",
+    "usage": "Each snippet can be copied directly into Jupyter Notebook"
+  },
+  "snippets": [
+    {
+      "id": "W1-CS01",
+      "title": "Standard Imports for Week 1",
+      "section": "Lab Setup",
+      "description": "Import statements for Functions.ipynb and PlasticPollution.ipynb",
+      "code": "%matplotlib inline\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport math"
+    },
+    {
+      "id": "W1-CS02",
+      "title": "Defining a Linear Function",
+      "section": "Functions.ipynb §2",
+      "description": "General linear function y = ax + b",
+      "code": "def linear_fun(a, b, x):\n    y = a * x + b\n    return y\n\n# Example: y = 2x + 5\nxvals = np.linspace(-4, 4, 9)\ny1vals = linear_fun(a=2, b=5, x=xvals)\nprint(y1vals)"
+    },
+    {
+      "id": "W1-CS03",
+      "title": "Defining a Quadratic Function",
+      "section": "Functions.ipynb §3",
+      "description": "General quadratic function y = ax² + bx + c",
+      "code": "def quad_fun(x, a, b, c):\n    y = a * (x**2) + b * x + c\n    return y\n\n# Example: y = x² - 4x + 3\nxvals = np.linspace(-2, 6, 17)\nyvals = quad_fun(x=xvals, a=1, b=-4, c=3)\nprint(yvals)"
+    },
+    {
+      "id": "W1-CS04",
+      "title": "Piecewise Function with if-else",
+      "section": "Functions.ipynb §1.2",
+      "description": "Function with different rules for different domains",
+      "code": "def h(x):\n    if (x >= 0) and (x < 4):\n        result = 9\n    elif (x >= 4) and (x < 10):\n        result = 1 + 2*x\n    else:\n        result = 21\n    return result\n\n# Test values\nfor val in [0, 2, 4, 5, 7, 10, 12]:\n    print(f\"h({val}) = {h(val)}\")"
+    },
+    {
+      "id": "W1-CS05",
+      "title": "Reisser Depth-Integration Model",
+      "section": "Functions.ipynb §3.3",
+      "description": "Calculates the correction ratio for ocean plastic sampling",
+      "code": "def CiCsRatio_fun(d, alpha=0.4):\n    \"\"\"Calculate depth-integration correction ratio.\n    \n    Args:\n        d: immersion depth in metres (must be > 0)\n        alpha: parameter (default 0.4 m^-1)\n    \n    Returns:\n        Correction ratio Ci/Cs\n    \"\"\"\n    ratio = 1 / (1 - np.exp(-alpha * d))\n    return ratio\n\n# Calculate for different depths\nd_values = np.array([0.1, 0.17, 0.3, 1.0])\nfor d in d_values:\n    print(f\"R({d}) = {CiCsRatio_fun(d):.2f}\")"
+    },
+    {
+      "id": "W1-CS06",
+      "title": "Plotting the Reisser Model",
+      "section": "Functions.ipynb §3.3",
+      "description": "Visualize how correction ratio changes with depth",
+      "code": "# Create depth values (avoid d=0 where function is undefined)\nd = np.linspace(0.05, 2.0, 40)\n\n# Calculate correction ratios\ncdf = pd.DataFrame()\ncdf['d'] = d\ncdf['CiCsRatio'] = CiCsRatio_fun(d)\n\n# Plot\ncdf.plot(x='d', y='CiCsRatio', \n         title='Correction Ratio vs Sampling Depth',\n         xlabel='Depth (m)',\n         ylabel='Ci/Cs Ratio',\n         legend=False,\n         grid=True)\nplt.show()"
+    },
+    {
+      "id": "W1-CS07",
+      "title": "Loading Global Plastics Data",
+      "section": "PlasticPollution.ipynb §3",
+      "description": "Read and explore the production dataset",
+      "code": "# Read the CSV file from GitHub (works on Google Colab too)\nurl = \"https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_1/LabFiles/global-plastics-production.csv\"\ngpp = pd.read_csv(url)\n\n# Explore the data\nprint(gpp.info())\nprint(gpp.head())\nprint(gpp.tail())"
+    },
+    {
+      "id": "W1-CS08",
+      "title": "Creating Derived Variables",
+      "section": "PlasticPollution.ipynb §3",
+      "description": "Add time trend and convert units",
+      "code": "# Create time trend (t = 1 for 1950)\ngpp['t'] = gpp['Year'] - 1949\n\n# Convert to million metric tonnes\ngpp['GPP (MMT)'] = gpp['GPP (MT)'] / 1_000_000\n\n# Check results\nprint(gpp[['Year', 't', 'GPP (MT)', 'GPP (MMT)']].head())"
+    },
+    {
+      "id": "W1-CS09",
+      "title": "Plotting Global Plastic Production",
+      "section": "PlasticPollution.ipynb §3",
+      "description": "Time series plot of production data",
+      "code": "gpp.plot(x='Year', \n         y='GPP (MMT)',\n         title='Global Plastic Production (1950-2015)',\n         xlabel='Year',\n         ylabel='Production (Million Metric Tonnes)',\n         kind='line',\n         grid=True,\n         color='red',\n         legend=False)\n\nplt.tight_layout()\nplt.show()"
+    },
+    {
+      "id": "W1-CS10",
+      "title": "Plotting Multiple Linear Functions",
+      "section": "Functions.ipynb §2.3",
+      "description": "Compare different linear equations on one chart",
+      "code": "# Create x values\nxvals = np.linspace(-4, 4, 9)\n\n# Calculate y values for different equations\ny1vals = linear_fun(a=2, b=5, x=xvals)   # y = 2x + 5\ny2vals = linear_fun(a=2, b=0, x=xvals)   # y = 2x\ny3vals = linear_fun(a=-3, b=4, x=xvals)  # y = -3x + 4\n\n# Create DataFrame\ndf = pd.DataFrame()\ndf['x'] = xvals\ndf['y = 2x + 5'] = y1vals\ndf['y = 2x'] = y2vals\ndf['y = -3x + 4'] = y3vals\n\n# Plot all three\ndf.plot(x='x', \n        y=['y = 2x + 5', 'y = 2x', 'y = -3x + 4'],\n        title='Plot of Three Linear Equations',\n        xlabel='x',\n        ylabel='y',\n        kind='line',\n        grid=True,\n        legend=True)\nplt.show()"
+    },
+    {
+      "id": "W1-CS11",
+      "title": "Plotting Quadratic Functions",
+      "section": "Functions.ipynb §3.2",
+      "description": "Compare different quadratic equations",
+      "code": "# Create x values\nxvals = np.linspace(-10, 10, 25)\n\n# Create DataFrame\ndf = pd.DataFrame()\ndf['x'] = xvals\n\n# Calculate y values for different quadratics\ndf['y1'] = quad_fun(x=xvals, a=1, b=-1, c=-2)    # Opens up\ndf['y2'] = quad_fun(x=xvals, a=-2, b=0, c=150)   # Opens down\ndf['y3'] = quad_fun(x=xvals, a=3, b=2, c=-50)    # Opens up\n\n# Plot\ndf.plot(x='x', \n        y=['y1', 'y2', 'y3'],\n        title='Comparison of Quadratic Functions',\n        xlabel='x',\n        ylabel='y',\n        kind='line',\n        grid=True,\n        legend=True)\nplt.show()"
+    },
+    {
+      "id": "W1-CS12",
+      "title": "Finding Quadratic Vertex",
+      "section": "Practice Q3",
+      "description": "Calculate vertex of a parabola",
+      "code": "def find_vertex(a, b, c):\n    \"\"\"Find vertex of quadratic y = ax² + bx + c\n    \n    Returns:\n        (x_vertex, y_vertex)\n    \"\"\"\n    x_v = -b / (2 * a)\n    y_v = a * x_v**2 + b * x_v + c\n    return (x_v, y_v)\n\n# Example: E(t) = -0.5t² + 4t + 2\na, b, c = -0.5, 4, 2\nvertex = find_vertex(a, b, c)\nprint(f\"Vertex: ({vertex[0]}, {vertex[1]})\")"
+    },
+    {
+      "id": "W1-CS13",
+      "title": "Quadratic Formula",
+      "section": "Practice Q3",
+      "description": "Find roots of a quadratic equation",
+      "code": "def quadratic_formula(a, b, c):\n    \"\"\"Solve ax² + bx + c = 0\n    \n    Returns:\n        Tuple of roots, or message if no real roots\n    \"\"\"\n    discriminant = b**2 - 4*a*c\n    \n    if discriminant < 0:\n        return \"No real roots\"\n    elif discriminant == 0:\n        x = -b / (2*a)\n        return (x, x)\n    else:\n        x1 = (-b + math.sqrt(discriminant)) / (2*a)\n        x2 = (-b - math.sqrt(discriminant)) / (2*a)\n        return (x1, x2)\n\n# Example: -0.5t² + 4t + 2 = 0\na, b, c = -0.5, 4, 2\nroots = quadratic_formula(a, b, c)\nprint(f\"Roots: {roots}\")"
+    },
+    {
+      "id": "W1-CS14",
+      "title": "Evaluating a Function at Multiple Points",
+      "section": "Practice Q2",
+      "description": "Function evaluation with numpy arrays",
+      "code": "def f(x):\n    \"\"\"f(x) = sqrt(x - 1)\"\"\"\n    return np.sqrt(x - 1)\n\n# Evaluate at specific points\ntest_points = np.array([1, 2, 5, 10, 17])\nresults = f(test_points)\n\n# Display results\nfor x, y in zip(test_points, results):\n    print(f\"f({x}) = {y}\")"
+    }
+  ]
+}

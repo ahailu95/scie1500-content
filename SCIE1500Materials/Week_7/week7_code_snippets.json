@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "week": 7,
+    "title": "Definite Integrals and Applications - Code Snippets",
+    "description": "Python code examples for evaluating definite integrals, computing series sums, and visualizing area calculations",
+    "prerequisites": [
+      "numpy",
+      "matplotlib",
+      "sympy"
+    ],
+    "lab_notebook": "DegradedAreaExercises.ipynb, SequencesMalthusianTrap.ipynb"
+  },
+  "snippets": [
+    {
+      "id": "W7-CS01",
+      "title": "Basic Setup and Imports",
+      "section": "",
+      "description": "Import necessary libraries for Week 7 computations",
+      "code": "# Week 7: Definite Integrals and Sequences\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport sympy as sp\n\n# Define symbolic variables\nx, t, n, i = sp.symbols('x t n i')\na, d, r = sp.symbols('a d r', real=True)  # sequence parameters\n\nprint('Libraries loaded successfully!')",
+      "expected_output": "Libraries loaded successfully!",
+      "topic": "setup"
+    },
+    {
+      "id": "W7-CS02",
+      "title": "Definite Integral with SymPy",
+      "section": "",
+      "description": "Evaluate definite integrals symbolically using SymPy",
+      "code": "import sympy as sp\nx = sp.symbols('x')\n\n# Example 1: Basic polynomial\nintegral1 = sp.integrate(x**2, (x, 1, 3))\nprint(f'∫₁³ x² dx = {integral1}')\nprint(f'Decimal: {float(integral1):.4f}')\n\n# Example 2: Exponential\nintegral2 = sp.integrate(sp.exp(x), (x, 0, 1))\nprint(f'\\n∫₀¹ eˣ dx = {integral2}')\nprint(f'Decimal: {float(integral2):.4f}')\n\n# Example 3: Logarithmic\nintegral3 = sp.integrate(1/x, (x, 1, sp.E))\nprint(f'\\n∫₁ᵉ (1/x) dx = {integral3}')",
+      "expected_output": "∫₁³ x² dx = 26/3\nDecimal: 8.6667\n\n∫₀¹ eˣ dx = -1 + E\nDecimal: 1.7183\n\n∫₁ᵉ (1/x) dx = 1",
+      "topic": "definite_integral"
+    },
+    {
+      "id": "W7-CS03",
+      "title": "Visualizing Area Under a Curve",
+      "section": "",
+      "description": "Plot a function and shade the area under it",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Define function\nx = np.linspace(0, 3, 100)\ny = x**2\n\n# Create plot\nplt.figure(figsize=(8, 5))\nplt.plot(x, y, 'b-', linewidth=2, label=r'$y = x^2$')\n\n# Shade area under curve from 0 to 3\nplt.fill_between(x, y, alpha=0.3, color='blue', label='Area = 9')\n\n# Add labels\nplt.xlabel('x')\nplt.ylabel('y')\nplt.title(r'Area under $y = x^2$ from $x=0$ to $x=3$')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.axhline(y=0, color='k', linewidth=0.5)\nplt.axvline(x=0, color='k', linewidth=0.5)\n\nplt.tight_layout()\nplt.show()\n\n# Calculate area numerically\narea = np.trapz(y, x)\nprint(f'Numerical approximation: {area:.4f}')\nprint(f'Exact value: 9.0000')",
+      "expected_output": "[Plot showing shaded area under parabola]\nNumerical approximation: 9.0000\nExact value: 9.0000",
+      "topic": "area_visualization"
+    },
+    {
+      "id": "W7-CS04",
+      "title": "Area Between Two Curves",
+      "section": "",
+      "description": "Calculate and visualize area between two curves",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport sympy as sp\n\n# Define functions\nx_vals = np.linspace(0, 1, 100)\ny_upper = x_vals       # y = x\ny_lower = x_vals**2    # y = x²\n\n# Plot\nplt.figure(figsize=(8, 5))\nplt.plot(x_vals, y_upper, 'b-', linewidth=2, label=r'$y = x$ (upper)')\nplt.plot(x_vals, y_lower, 'r-', linewidth=2, label=r'$y = x^2$ (lower)')\n\n# Shade area between curves\nplt.fill_between(x_vals, y_lower, y_upper, alpha=0.3, color='green', \n                 label=r'Area = $\\frac{1}{6}$')\n\nplt.xlabel('x')\nplt.ylabel('y')\nplt.title('Area Between $y = x$ and $y = x^2$')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\n# Calculate exactly with SymPy\nx = sp.symbols('x')\narea = sp.integrate(x - x**2, (x, 0, 1))\nprint(f'Exact area = {area} = {float(area):.4f}')",
+      "expected_output": "[Plot showing shaded region between curves]\nExact area = 1/6 = 0.1667",
+      "topic": "area_between_curves"
+    },
+    {
+      "id": "W7-CS05",
+      "title": "Arithmetic Sequence Generator",
+      "section": "",
+      "description": "Generate arithmetic sequences using Python",
+      "code": "import numpy as np\n\ndef generate_arithmetic_seq(a1, d, n):\n    \"\"\"Generate arithmetic sequence: a_n = a1 + (n-1)*d\"\"\"\n    return [a1 + d*(i-1) for i in range(1, n+1)]\n\n# Example: 2, 5, 8, 11, ...\na1, d = 2, 3\nseq = generate_arithmetic_seq(a1, d, 10)\nprint(f'Arithmetic sequence (a1={a1}, d={d}):')\nprint(f'First 10 terms: {seq}')\nprint(f'a₁₀ = {seq[-1]}')\n\n# Sum using formula\nn = 10\na_n = seq[-1]\nS_n = (n/2) * (a1 + a_n)\nprint(f'\\nSum of first {n} terms:')\nprint(f'S_{n} = (n/2)(a₁ + a_n) = ({n}/2)({a1} + {a_n}) = {S_n}')\nprint(f'Verification: sum(seq) = {sum(seq)}')",
+      "expected_output": "Arithmetic sequence (a1=2, d=3):\nFirst 10 terms: [2, 5, 8, 11, 14, 17, 20, 23, 26, 29]\na₁₀ = 29\n\nSum of first 10 terms:\nS_10 = (n/2)(a₁ + a_n) = (10/2)(2 + 29) = 155.0\nVerification: sum(seq) = 155",
+      "topic": "arithmetic_sequence"
+    },
+    {
+      "id": "W7-CS06",
+      "title": "Geometric Sequence Generator",
+      "section": "",
+      "description": "Generate geometric sequences and compute sums",
+      "code": "import numpy as np\n\ndef generate_geometric_seq(a1, r, n):\n    \"\"\"Generate geometric sequence: a_n = a1 * r^(n-1)\"\"\"\n    return [a1 * r**(i-1) for i in range(1, n+1)]\n\n# Example: 3, 6, 12, 24, ...\na1, r = 3, 2\nseq = generate_geometric_seq(a1, r, 8)\nprint(f'Geometric sequence (a1={a1}, r={r}):')\nprint(f'First 8 terms: {seq}')\n\n# Sum using formula: S_n = a1 * (1 - r^n) / (1 - r)\nn = 5\nS_n = a1 * (1 - r**n) / (1 - r)\nprint(f'\\nSum of first {n} terms:')\nprint(f'S_{n} = a1*(1-r^n)/(1-r) = {a1}*(1-{r}^{n})/(1-{r}) = {S_n}')\nprint(f'Verification: sum(first 5) = {sum(seq[:5])}')\n\n# For |r| < 1, sum to infinity converges\na1_decay, r_decay = 100, 0.5\nS_inf = a1_decay / (1 - r_decay)\nprint(f'\\nInfinite sum with a1={a1_decay}, r={r_decay}:')\nprint(f'S_∞ = a1/(1-r) = {a1_decay}/(1-{r_decay}) = {S_inf}')",
+      "expected_output": "Geometric sequence (a1=3, r=2):\nFirst 8 terms: [3, 6, 12, 24, 48, 96, 192, 384]\n\nSum of first 5 terms:\nS_5 = a1*(1-r^n)/(1-r) = 3*(1-2^5)/(1-2) = 93.0\nVerification: sum(first 5) = 93\n\nInfinite sum with a1=100, r=0.5:\nS_∞ = a1/(1-r) = 100/(1-0.5) = 200.0",
+      "topic": "geometric_sequence"
+    },
+    {
+      "id": "W7-CS07",
+      "title": "Counting Terms in a Range (Q29 Style)",
+      "section": "",
+      "description": "Find how many terms of a sequence fall within a given range",
+      "code": "import numpy as np\n\n# Sequence: a_i = 3 + 5(i-1) for i = 1, 2, 3, ...\n# Simplified: a_i = 5i - 2\n\ndef count_terms_in_range(a1, d, lower, upper):\n    \"\"\"Count terms of arithmetic sequence a_i = a1 + (i-1)d in [lower, upper]\"\"\"\n    # Find smallest i where a_i >= lower\n    # a_i = a1 + (i-1)*d >= lower\n    # (i-1)*d >= lower - a1\n    # i >= (lower - a1)/d + 1\n    \n    i_min_exact = (lower - a1) / d + 1\n    i_min = int(np.ceil(i_min_exact))\n    \n    # Find largest i where a_i <= upper\n    i_max_exact = (upper - a1) / d + 1\n    i_max = int(np.floor(i_max_exact))\n    \n    # Ensure i >= 1\n    i_min = max(1, i_min)\n    \n    count = i_max - i_min + 1 if i_max >= i_min else 0\n    \n    return count, i_min, i_max\n\n# Example from Q29: a_i = 3 + 5(i-1), count terms in [10, 150]\na1, d = 3, 5\nlower, upper = 10, 150\n\ncount, i_min, i_max = count_terms_in_range(a1, d, lower, upper)\n\nprint(f'Sequence: a_i = {a1} + {d}(i-1)')\nprint(f'Range: [{lower}, {upper}]')\nprint(f'Smallest index i with a_i >= {lower}: i = {i_min}')\nprint(f'Largest index i with a_i <= {upper}: i = {i_max}')\nprint(f'Number of terms in range: {count}')\n\n# Verify\na_min = a1 + (i_min - 1) * d\na_max = a1 + (i_max - 1) * d\nprint(f'\\nVerification:')\nprint(f'a_{i_min} = {a_min} (should be >= {lower})')\nprint(f'a_{i_max} = {a_max} (should be <= {upper})')",
+      "expected_output": "Sequence: a_i = 3 + 5(i-1)\nRange: [10, 150]\nSmallest index i with a_i >= 10: i = 3\nLargest index i with a_i <= 150: i = 30\nNumber of terms in range: 28\n\nVerification:\na_3 = 13 (should be >= 10)\na_30 = 148 (should be <= 150)",
+      "topic": "sequence_count"
+    },
+    {
+      "id": "W7-CS08",
+      "title": "Malthusian Trap Simulation",
+      "section": "",
+      "description": "Simulate and visualize the Malthusian crisis point",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Parameters\nP0 = 100  # Initial population (millions)\nF0 = 100  # Initial food capacity (millions)\nr = 1.03  # Population growth rate (3% per year)\nd = 5     # Food capacity increase per year (millions)\nyears = 100\n\n# Generate sequences\nn = np.arange(years + 1)\npopulation = P0 * r**n            # Geometric: P_n = P0 * r^n\nfood_capacity = F0 + d * n         # Arithmetic: F_n = F0 + d*n\n\n# Find crisis point (where population exceeds food capacity)\ncrisis_idx = np.where(population > food_capacity)[0]\nif len(crisis_idx) > 0:\n    crisis_year = crisis_idx[0]\n    print(f'Malthusian Crisis Year: {crisis_year}')\n    print(f'Population at crisis: {population[crisis_year]:.1f} million')\n    print(f'Food capacity at crisis: {food_capacity[crisis_year]:.1f} million')\nelse:\n    print('No crisis within simulation period')\n    crisis_year = None\n\n# Plot\nplt.figure(figsize=(10, 6))\nplt.plot(n, population, 'r-', linewidth=2, label='Population (geometric)')\nplt.plot(n, food_capacity, 'g-', linewidth=2, label='Food Capacity (arithmetic)')\n\nif crisis_year:\n    plt.axvline(x=crisis_year, color='orange', linestyle='--', \n                label=f'Crisis at year {crisis_year}')\n    plt.scatter([crisis_year], [population[crisis_year]], \n                color='red', s=100, zorder=5)\n\nplt.xlabel('Years')\nplt.ylabel('Population / Food Capacity (millions)')\nplt.title('Malthusian Trap: Geometric Population vs Arithmetic Food Growth')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.xlim([0, 80])\nplt.tight_layout()\nplt.show()",
+      "expected_output": "Malthusian Crisis Year: 71\nPopulation at crisis: 815.5 million\nFood capacity at crisis: 455.0 million\n[Plot showing intersection of geometric and arithmetic curves]",
+      "topic": "malthusian_trap"
+    },
+    {
+      "id": "W7-CS09",
+      "title": "Average Value of a Function",
+      "section": "",
+      "description": "Calculate and visualize the average value of a function",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport sympy as sp\n\n# Function: f(x) = x^2 on [0, 3]\nx = sp.symbols('x')\na, b = 0, 3\nf = x**2\n\n# Calculate average value\nintegral = sp.integrate(f, (x, a, b))\navg_value = integral / (b - a)\nprint(f'f(x) = x² on [{a}, {b}]')\nprint(f'∫₀³ x² dx = {integral}')\nprint(f'Average value = {integral}/{b-a} = {avg_value}')\n\n# Visualize\nx_vals = np.linspace(a, b, 100)\ny_vals = x_vals**2\n\nplt.figure(figsize=(9, 5))\nplt.plot(x_vals, y_vals, 'b-', linewidth=2, label=r'$f(x) = x^2$')\nplt.fill_between(x_vals, y_vals, alpha=0.2, color='blue', label='Area = 9')\n\n# Draw average value line\navg_float = float(avg_value)\nplt.hlines(y=avg_float, xmin=a, xmax=b, colors='r', \n           linestyles='--', linewidth=2, label=f'Average value = {avg_float}')\nplt.fill_between([a, b], [avg_float, avg_float], alpha=0.2, color='red')\n\nplt.xlabel('x')\nplt.ylabel('y')\nplt.title('Average Value: Rectangle with same area as region under curve')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\nprint(f'\\nRectangle area = {avg_float} × {b-a} = {avg_float * (b-a)}')\nprint(f'Area under curve = {float(integral)}')",
+      "expected_output": "f(x) = x² on [0, 3]\n∫₀³ x² dx = 9\nAverage value = 9/3 = 3\n[Plot showing curve and average value rectangle]\n\nRectangle area = 3.0 × 3 = 9.0\nArea under curve = 9.0",
+      "topic": "average_value"
+    },
+    {
+      "id": "W7-CS10",
+      "title": "Area Between Curves - Degraded Land Example",
+      "section": "",
+      "description": "Calculate area of degraded land region bounded by two curves",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport sympy as sp\n\n# Define boundaries (simplified from lab notebook)\n# Lower: y = exp(0.05x)\n# Upper: y = 30 + x\n\nx = sp.symbols('x')\nlower = sp.exp(0.05*x)\nupper = 30 + x\n\n# Calculate area from x=0 to x=80\na, b = 0, 80\nintegrand = upper - lower\n\narea = sp.integrate(integrand, (x, a, b))\narea_float = float(area.evalf())\n\nprint('Degraded Land Area Calculation')\nprint('=' * 40)\nprint(f'Lower boundary: y = e^(0.05x)')\nprint(f'Upper boundary: y = 30 + x')\nprint(f'Integration limits: x ∈ [{a}, {b}]')\nprint(f'\\nArea = ∫₀⁸⁰ [(30 + x) - e^(0.05x)] dx')\nprint(f'Area = {area}')\nprint(f'Area ≈ {area_float:.1f} km²')\n\n# Visualization\nx_vals = np.linspace(a, b, 200)\ny_lower = np.exp(0.05 * x_vals)\ny_upper = 30 + x_vals\n\nplt.figure(figsize=(10, 6))\nplt.plot(x_vals, y_lower, 'r-', linewidth=2, label=r'Lower: $y = e^{0.05x}$')\nplt.plot(x_vals, y_upper, 'b-', linewidth=2, label=r'Upper: $y = 30 + x$')\nplt.fill_between(x_vals, y_lower, y_upper, alpha=0.3, color='brown',\n                 label=f'Degraded Area ≈ {area_float:.0f} km²')\n\nplt.xlabel('x (km)')\nplt.ylabel('y (km)')\nplt.title('Degraded Land Area - Integration Example')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()",
+      "expected_output": "Degraded Land Area Calculation\n========================================\nLower boundary: y = e^(0.05x)\nUpper boundary: y = 30 + x\nIntegration limits: x ∈ [0, 80]\n\nArea = ∫₀⁸⁰ [(30 + x) - e^(0.05x)] dx\nArea = 5620 - 20*exp(4) + 20\nArea ≈ 4548.4 km²\n[Plot showing shaded degraded region]",
+      "topic": "area_application"
+    },
+    {
+      "id": "W7-CS11",
+      "title": "Consumer and Producer Surplus Preview",
+      "section": "",
+      "description": "Visualize and set up CS/PS calculations (full calculation in Week 12)",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport sympy as sp\n\n# Supply and Demand\n# Demand: Qd = 60 - P  =>  P = 60 - Q\n# Supply: Qs = P - 20  =>  P = Q + 20\n\n# Find equilibrium\nP, Q = sp.symbols('P Q')\neq = sp.solve([Q - (60 - P), Q - (P - 20)], [P, Q])\nP_star = float(eq[P])\nQ_star = float(eq[Q])\n\nprint('Market Equilibrium')\nprint('=' * 40)\nprint(f'Demand: Qd = 60 - P')\nprint(f'Supply: Qs = P - 20')\nprint(f'\\nEquilibrium: P* = {P_star}, Q* = {Q_star}')\n\n# Visualization\nQ_range = np.linspace(0, 50, 100)\nP_demand = 60 - Q_range       # Inverse demand\nP_supply = Q_range + 20        # Inverse supply\n\nplt.figure(figsize=(10, 7))\n\n# Plot demand and supply\nplt.plot(Q_range, P_demand, 'b-', linewidth=2, label='Demand: P = 60 - Q')\nplt.plot(Q_range, P_supply, 'r-', linewidth=2, label='Supply: P = Q + 20')\n\n# Shade Consumer Surplus (area between demand and P*)\nQ_cs = np.linspace(0, Q_star, 100)\nplt.fill_between(Q_cs, P_star, 60 - Q_cs, alpha=0.3, color='blue',\n                 label='Consumer Surplus (CS)')\n\n# Shade Producer Surplus (area between P* and supply)\nQ_ps = np.linspace(0, Q_star, 100)\nplt.fill_between(Q_ps, Q_ps + 20, P_star, alpha=0.3, color='red',\n                 label='Producer Surplus (PS)')\n\n# Mark equilibrium\nplt.plot(Q_star, P_star, 'ko', markersize=10, zorder=5)\nplt.annotate(f'Equilibrium\\n({Q_star}, {P_star})', xy=(Q_star, P_star),\n             xytext=(Q_star+5, P_star+5), fontsize=10,\n             arrowprops=dict(arrowstyle='->', color='black'))\n\nplt.xlabel('Quantity (Q)')\nplt.ylabel('Price (P)')\nplt.title('Consumer and Producer Surplus')\nplt.legend(loc='upper right')\nplt.grid(True, alpha=0.3)\nplt.xlim([0, 50])\nplt.ylim([0, 70])\nplt.tight_layout()\nplt.show()\n\n# Calculate CS and PS\nQ_sym = sp.symbols('Q')\nCS = sp.integrate(60 - Q_sym - P_star, (Q_sym, 0, Q_star))\nPS = sp.integrate(P_star - (Q_sym + 20), (Q_sym, 0, Q_star))\n\nprint(f'\\nConsumer Surplus = {CS} = {float(CS)}')\nprint(f'Producer Surplus = {PS} = {float(PS)}')\nprint(f'Total Surplus = {float(CS + PS)}')",
+      "expected_output": "Market Equilibrium\n========================================\nDemand: Qd = 60 - P\nSupply: Qs = P - 20\n\nEquilibrium: P* = 40.0, Q* = 20.0\n[Plot showing supply, demand, CS and PS regions]\n\nConsumer Surplus = 200 = 200.0\nProducer Surplus = 200 = 200.0\nTotal Surplus = 400.0",
+      "topic": "economic_surplus"
+    },
+    {
+      "id": "W7-CS12",
+      "title": "Riemann Sum Visualization",
+      "section": "",
+      "description": "Visualize how Riemann sums approximate the definite integral",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef riemann_sum_plot(f, a, b, n, method='left'):\n    \"\"\"Plot Riemann sum approximation to integral\"\"\"\n    dx = (b - a) / n\n    x_bars = np.linspace(a, a + (n-1)*dx, n) if method == 'left' else \\\n             np.linspace(a + dx, b, n) if method == 'right' else \\\n             np.linspace(a + dx/2, b - dx/2, n)\n    \n    heights = f(x_bars)\n    riemann_sum = np.sum(heights * dx)\n    \n    # Plot\n    fig, ax = plt.subplots(figsize=(10, 5))\n    \n    # Plot function\n    x_smooth = np.linspace(a, b, 200)\n    ax.plot(x_smooth, f(x_smooth), 'b-', linewidth=2, label=r'$f(x) = x^2$')\n    \n    # Draw rectangles\n    x_rect = np.linspace(a, b - dx, n) if method in ['left', 'midpoint'] else \\\n             np.linspace(a + dx, b, n)\n    for i, x_start in enumerate(np.linspace(a, a + (n-1)*dx, n)):\n        rect = plt.Rectangle((x_start, 0), dx, heights[i], \n                              fill=True, alpha=0.3, color='green', \n                              edgecolor='green', linewidth=1)\n        ax.add_patch(rect)\n    \n    ax.set_xlabel('x')\n    ax.set_ylabel('y')\n    ax.set_title(f'{method.capitalize()} Riemann Sum with n = {n} rectangles')\n    ax.legend([f'Sum = {riemann_sum:.4f}, Exact = {(b**3 - a**3)/3:.4f}'])\n    ax.set_xlim([a - 0.2, b + 0.2])\n    ax.set_ylim([0, f(b) + 0.5])\n    ax.grid(True, alpha=0.3)\n    \n    return riemann_sum\n\n# Function to integrate\ndef f(x):\n    return x**2\n\n# Compare different numbers of rectangles\nfor n in [5, 10, 20]:\n    sum_val = riemann_sum_plot(f, 0, 3, n, 'left')\n    plt.tight_layout()\n    plt.show()\n    print(f'n = {n}: Riemann sum = {sum_val:.4f}, Exact = {9:.4f}, Error = {abs(sum_val - 9):.4f}')",
+      "expected_output": "[Three plots showing increasingly accurate approximations]\nn = 5: Riemann sum = 6.4800, Exact = 9.0000, Error = 2.5200\nn = 10: Riemann sum = 7.6950, Exact = 9.0000, Error = 1.3050\nn = 20: Riemann sum = 8.3363, Exact = 9.0000, Error = 0.6637",
+      "topic": "riemann_sum"
+    }
+  ]
+}

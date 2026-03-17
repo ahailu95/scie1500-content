@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "week": 8,
+    "title": "Lotka-Volterra Simulation Code Snippets",
+    "purpose": "Address common student challenges with ODE simulation and phase diagram visualization",
+    "prerequisites": [
+      "numpy",
+      "matplotlib",
+      "scipy.integrate.odeint",
+      "sympy"
+    ],
+    "student_challenges_targeted": [
+      "Understanding how odeint solves ODEs numerically",
+      "Correctly placing and sizing arrows on phase diagrams",
+      "Building vector/direction fields",
+      "Connecting time series to phase portraits"
+    ]
+  },
+  "snippets": [
+    {
+      "id": "W8-CS01",
+      "title": "Setting Up Lotka-Volterra Parameters and Symbols",
+      "section": "",
+      "description": "Establish the model parameters and symbolic expressions",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import odeint\nimport sympy as sp\n\n# Define parameters (exam-style values)\nalpha = 0.15   # prey birth rate\nbeta = 0.005   # predation rate on prey\nlambda_ = 0.0005  # predator birth rate from feeding\ngamma = 0.10   # predator death rate\n\n# Store as tuple for passing to functions\nparams = (alpha, beta, lambda_, gamma)\n\n# Calculate equilibrium points\nH_star = gamma / lambda_\nP_star = alpha / beta\nprint(f\"Coexistence equilibrium: (H*, P*) = ({H_star}, {P_star})\")\n\n# Calculate predator efficiency\nefficiency = lambda_ / beta\nprint(f\"Predator efficiency: {efficiency} = {efficiency*100}%\")",
+      "expected_output": "Coexistence equilibrium: (H*, P*) = (200.0, 30.0)\nPredator efficiency: 0.1 = 10.0%",
+      "difficulty": "foundational",
+      "common_errors": [
+        "Using `lambda` instead of `lambda_` (syntax error)",
+        "Confusing efficiency formula (it's λ/β, not β/λ)",
+        "Forgetting to multiply by 100 when expressing as percentage"
+      ],
+      "explanation": "This sets up the standard exam parameters. Note that `lambda` is a reserved word in Python, so we use `lambda_`. The efficiency formula $\\epsilon = \\lambda/\\beta$ gives the predators born per prey consumed.",
+      "purpose": "Establish the model parameters and symbolic expressions"
+    },
+    {
+      "id": "W8-CS02",
+      "title": "Defining the ODE System for odeint",
+      "section": "",
+      "description": "Write the function that odeint uses to solve the Lotka-Volterra equations",
+      "code": "def lotka_volterra(populations, t, params):\n    \"\"\"\n    Defines the Lotka-Volterra ODEs for odeint.\n    \n    Parameters:\n    -----------\n    populations : array-like\n        Current state [H, P] (prey, predator)\n    t : float\n        Current time (not used, but required by odeint)\n    params : tuple\n        (alpha, beta, lambda_, gamma)\n    \n    Returns:\n    --------\n    list : [dH/dt, dP/dt]\n    \"\"\"\n    H, P = populations\n    alpha, beta, lambda_, gamma = params\n    \n    # Prey equation: dH/dt = αH - βHP\n    dHdt = alpha * H - beta * H * P\n    \n    # Predator equation: dP/dt = λHP - γP\n    dPdt = lambda_ * H * P - gamma * P\n    \n    return [dHdt, dPdt]\n\n# Test at equilibrium (should return [0, 0])\ntest_result = lotka_volterra([200, 30], 0, params)\nprint(f\"Derivatives at equilibrium: {test_result}\")\n\n# Test away from equilibrium\ntest_result2 = lotka_volterra([500, 10], 0, params)\nprint(f\"Derivatives at (500, 10): dH/dt={test_result2[0]:.2f}, dP/dt={test_result2[1]:.2f}\")",
+      "expected_output": "Derivatives at equilibrium: [0.0, 0.0]\nDerivatives at (500, 10): dH/dt=50.00, dP/dt=-0.75",
+      "difficulty": "foundational",
+      "common_errors": [
+        "Returning (dHdt, dPdt) tuple instead of [dHdt, dPdt] list",
+        "Wrong order of H, P unpacking",
+        "Forgetting the negative sign relationships",
+        "Not including t parameter"
+      ],
+      "explanation": "The function must return [dH/dt, dP/dt] in the same order as the input [H, P]. The `t` parameter is required by odeint even though L-V equations don't explicitly depend on time. At equilibrium, both derivatives are zero. Away from equilibrium (500, 10): prey is abundant and predators are few, so prey grows (dH/dt > 0) while predators still decline slightly.",
+      "purpose": "Write the function that odeint uses to solve the Lotka-Volterra equations"
+    },
+    {
+      "id": "W8-CS03",
+      "title": "Solving the ODEs with odeint",
+      "section": "",
+      "description": "Understand how odeint numerically integrates the ODEs",
+      "code": "# Time array: 0 to 100 with 500 points\nt = np.linspace(0, 100, 500)\n\n# Initial conditions: start away from equilibrium\nH0, P0 = 700, 10  # More prey, fewer predators than equilibrium\ninitial_state = [H0, P0]\n\n# Solve the ODEs\n# odeint returns array of shape (len(t), 2) = (500, 2)\nsolution = odeint(lotka_volterra, initial_state, t, args=(params,))\n\n# Extract H(t) and P(t)\nH_t = solution[:, 0]  # First column = prey\nP_t = solution[:, 1]  # Second column = predator\n\n# Check dimensions\nprint(f\"Solution shape: {solution.shape}\")\nprint(f\"Time points: {len(t)}\")\nprint(f\"Initial: H={H_t[0]:.1f}, P={P_t[0]:.1f}\")\nprint(f\"Final: H={H_t[-1]:.1f}, P={P_t[-1]:.1f}\")",
+      "expected_output": "Solution shape: (500, 2)\nTime points: 500\nInitial: H=700.0, P=10.0\nFinal: H=700.0, P=10.0",
+      "difficulty": "intermediate",
+      "common_errors": [
+        "Forgetting the comma in args=(params,) - must be a tuple!",
+        "Wrong order of arguments to odeint",
+        "Confusing column indices (0=H, 1=P)"
+      ],
+      "explanation": "odeint works by: (1) Starting at initial_state, (2) Using the ODE function to compute derivatives, (3) Taking small time steps and updating populations, (4) Returning the full trajectory. The `args=(params,)` syntax passes extra arguments to the ODE function. Note: with L-V, if you wait long enough (~one period), you return near the start!",
+      "purpose": "Understand how odeint numerically integrates the ODEs"
+    },
+    {
+      "id": "W8-CS04",
+      "title": "Plotting Time Series",
+      "section": "",
+      "description": "Visualize how populations change over time",
+      "code": "fig, ax = plt.subplots(figsize=(10, 5))\n\n# Plot both populations\nax.plot(t, H_t, 'b-', label='Prey (H)', linewidth=2)\nax.plot(t, P_t, 'r-', label='Predator (P)', linewidth=2)\n\n# Add equilibrium reference lines\nax.axhline(y=H_star, color='b', linestyle='--', alpha=0.5, label=f'H* = {H_star}')\nax.axhline(y=P_star, color='r', linestyle='--', alpha=0.5, label=f'P* = {P_star}')\n\nax.set_xlabel('Time', fontsize=12)\nax.set_ylabel('Population', fontsize=12)\nax.set_title('Lotka-Volterra Time Series', fontsize=14)\nax.legend()\nax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()",
+      "expected_output": "[Graph showing oscillating prey and predator populations over time, with predator peaks lagging behind prey peaks]",
+      "difficulty": "intermediate",
+      "explanation": "The time series reveals the characteristic predator-prey dynamics: prey increases first (blue), then predators follow (red) with a phase lag. Dashed lines show equilibrium values. Notice how both populations oscillate around but never settle at the equilibrium.",
+      "purpose": "Visualize how populations change over time",
+      "visualization_note": "Students should observe the phase lag between peaks"
+    },
+    {
+      "id": "W8-CS05",
+      "title": "Creating a Phase Portrait (Basic)",
+      "section": "",
+      "description": "Plot trajectory in H-P space",
+      "code": "fig, ax = plt.subplots(figsize=(8, 6))\n\n# Plot trajectory in phase space\nax.plot(H_t, P_t, 'b-', linewidth=1.5, label='Trajectory')\n\n# Mark initial point\nax.plot(H0, P0, 'go', markersize=12, label=f'Start ({H0}, {P0})')\n\n# Mark equilibrium\nax.plot(H_star, P_star, 'r*', markersize=15, label=f'Equilibrium ({H_star}, {P_star})')\nax.plot(0, 0, 'k*', markersize=10, label='Origin (0, 0)')\n\n# Add nullclines\nax.axhline(y=P_star, color='orange', linestyle=':', alpha=0.7, label=f'H-nullcline: P = {P_star}')\nax.axvline(x=H_star, color='purple', linestyle=':', alpha=0.7, label=f'P-nullcline: H = {H_star}')\n\nax.set_xlabel('Prey (H)', fontsize=12)\nax.set_ylabel('Predator (P)', fontsize=12)\nax.set_title('Phase Portrait: Lotka-Volterra Model', fontsize=14)\nax.legend(loc='upper right')\nax.set_xlim(0, None)\nax.set_ylim(0, None)\nax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()",
+      "expected_output": "[Graph showing closed orbit trajectory around equilibrium point with nullclines marked]",
+      "difficulty": "intermediate",
+      "explanation": "The phase portrait shows the trajectory as a closed orbit around the coexistence equilibrium. The nullclines (where dH/dt=0 or dP/dt=0) intersect at the equilibrium. The system moves counterclockwise around this point.",
+      "purpose": "Plot trajectory in H-P space",
+      "visualization_note": "The closed orbit confirms sustained oscillations"
+    },
+    {
+      "id": "W8-CS06",
+      "title": "Adding Arrows to Phase Portrait (Key Skill!)",
+      "section": "",
+      "description": "Show direction of flow with properly placed arrows",
+      "code": "fig, ax = plt.subplots(figsize=(8, 6))\n\n# Plot trajectory\nax.plot(H_t, P_t, 'b-', linewidth=1.5)\n\n# Add arrow to show direction\n# Key: Choose a time index where the trajectory is visible\narrow_index = 50  # Adjust this to place arrow where desired\n\n# Get position and direction at that time\nH_arrow = H_t[arrow_index]\nP_arrow = P_t[arrow_index]\ndH = H_t[arrow_index + 1] - H_t[arrow_index]  # Change in H\ndP = P_t[arrow_index + 1] - P_t[arrow_index]  # Change in P\n\n# Scale factor for arrow visibility (adjust based on axis scales)\nscale = 15  # Increase to make arrow more visible\n\nax.annotate('', \n            xy=(H_arrow + scale*dH, P_arrow + scale*dP),  # Arrow tip\n            xytext=(H_arrow, P_arrow),  # Arrow base\n            arrowprops=dict(arrowstyle='->', color='red', lw=2))\n\n# Alternative: plt.arrow (more control but trickier)\n# plt.arrow(H_arrow, P_arrow, scale*dH, scale*dP,\n#           head_width=5, head_length=20, fc='red', ec='red')\n\nax.plot(H_star, P_star, 'k*', markersize=15)\nax.set_xlabel('Prey (H)')\nax.set_ylabel('Predator (P)')\nax.set_title('Phase Portrait with Direction Arrow')\nax.set_xlim(0, 1500)\nax.set_ylim(0, 150)\nax.grid(True, alpha=0.3)\nplt.show()\n\nprint(f\"Arrow placed at t={t[arrow_index]:.2f}, position ({H_arrow:.1f}, {P_arrow:.1f})\")\nprint(f\"Direction: dH={dH:.3f}, dP={dP:.3f}\")",
+      "expected_output": "[Graph with trajectory and red arrow showing counterclockwise flow]\nArrow placed at t=10.02, position (1118.5, 22.4)\nDirection: dH=5.761, dP=1.019",
+      "difficulty": "intermediate",
+      "common_errors": [
+        "Arrow too small to see (increase scale factor)",
+        "Arrow pointing wrong direction (check sign of dH, dP)",
+        "head_width and head_length not scaled to axis range",
+        "Arrow placed at index 0 where trajectory just starts"
+      ],
+      "explanation": "Arrows indicate the direction of time evolution. Key points: (1) Choose arrow_index where trajectory is clearly visible, (2) The direction (dH, dP) comes from the difference between consecutive solution points, (3) Scale the arrow for visibility (axis scales differ!), (4) Use annotate() for cleaner arrows than plt.arrow(). The flow should be counterclockwise around equilibrium.",
+      "purpose": "Show direction of flow with properly placed arrows"
+    },
+    {
+      "id": "W8-CS07",
+      "title": "Building a Vector Field",
+      "section": "",
+      "description": "Show direction of flow at many points across the phase plane",
+      "code": "fig, ax = plt.subplots(figsize=(10, 8))\n\n# Create grid of points\nH_range = np.arange(50, 1501, 100)   # Prey values\nP_range = np.arange(5, 151, 10)      # Predator values\n\n# Draw vector field\nfor H in H_range:\n    for P in P_range:\n        # Compute derivatives at this point\n        dHdt = alpha * H - beta * H * P\n        dPdt = lambda_ * H * P - gamma * P\n        \n        # Skip if derivatives are both near zero (equilibrium)\n        if abs(dHdt) < 0.1 and abs(dPdt) < 0.1:\n            continue\n        \n        # Normalize for consistent arrow length\n        magnitude = np.sqrt(dHdt**2 + dPdt**2)\n        dH_norm = dHdt / magnitude\n        dP_norm = dPdt / magnitude\n        \n        # Scale for visibility\n        scale = 30\n        \n        # Draw slope line (not arrow, for cleaner look)\n        ax.plot([H - scale*dH_norm, H + scale*dH_norm],\n                [P - scale*dP_norm, P + scale*dP_norm],\n                'gray', linewidth=0.5, alpha=0.7)\n\n# Mark equilibrium\nax.plot(H_star, P_star, 'r*', markersize=15, zorder=5, label='Equilibrium')\n\n# Add nullclines\nax.axhline(y=P_star, color='blue', linestyle='--', alpha=0.5, label='H-nullcline')\nax.axvline(x=H_star, color='green', linestyle='--', alpha=0.5, label='P-nullcline')\n\nax.set_xlabel('Prey (H)', fontsize=12)\nax.set_ylabel('Predator (P)', fontsize=12)\nax.set_title('Direction Field for Lotka-Volterra Model', fontsize=14)\nax.legend()\nax.set_xlim(0, 1600)\nax.set_ylim(0, 160)\nax.grid(True, alpha=0.2)\nplt.tight_layout()\nplt.show()",
+      "expected_output": "[Graph showing grid of small line segments indicating flow direction throughout phase plane]",
+      "difficulty": "advanced",
+      "common_errors": [
+        "Forgetting normalization (segments vary wildly in length)",
+        "Grid too fine (cluttered) or too coarse (misses features)",
+        "Not accounting for different axis scales"
+      ],
+      "explanation": "The vector field shows flow direction everywhere. Key elements: (1) Normalization makes all segments equal length, (2) The nullclines divide the plane into 4 regions with different flow directions, (3) Above P* and left of H*, flow goes Southwest; below P* and right of H*, flow goes Northeast, etc. This creates the counterclockwise circulation pattern.",
+      "purpose": "Show direction of flow at many points across the phase plane"
+    },
+    {
+      "id": "W8-CS08",
+      "title": "Complete Phase Portrait with Vector Field and Multiple Trajectories",
+      "section": "",
+      "description": "Combine all elements for comprehensive visualization",
+      "code": "fig, ax = plt.subplots(figsize=(12, 9))\n\n# 1. Draw vector field (light gray background)\nH_range = np.arange(50, 1501, 75)\nP_range = np.arange(5, 121, 8)\nscale = 25\n\nfor H in H_range:\n    for P in P_range:\n        dHdt = alpha * H - beta * H * P\n        dPdt = lambda_ * H * P - gamma * P\n        magnitude = np.sqrt(dHdt**2 + dPdt**2)\n        if magnitude > 0.01:\n            dH_norm = dHdt / magnitude * scale\n            dP_norm = dPdt / magnitude * scale\n            ax.plot([H - dH_norm, H + dH_norm],\n                    [P - dP_norm, P + dP_norm],\n                    'lightgray', linewidth=0.5)\n\n# 2. Solve for multiple initial conditions\ninitial_conditions = [\n    (700, 10, 'blue'),\n    (250, 50, 'green'),\n    (800, 50, 'purple'),\n    (1200, 80, 'orange'),\n    (300, 100, 'brown')\n]\n\nt = np.linspace(0, 100, 500)\n\nfor H0, P0, color in initial_conditions:\n    sol = odeint(lotka_volterra, [H0, P0], t, args=(params,))\n    ax.plot(sol[:, 0], sol[:, 1], color=color, linewidth=1.5)\n    ax.plot(H0, P0, 'o', color=color, markersize=8)  # Start point\n    \n    # Add arrow at time index 40\n    idx = 40\n    dH = sol[idx+1, 0] - sol[idx, 0]\n    dP = sol[idx+1, 1] - sol[idx, 1]\n    ax.annotate('', xy=(sol[idx, 0] + 10*dH, sol[idx, 1] + 10*dP),\n                xytext=(sol[idx, 0], sol[idx, 1]),\n                arrowprops=dict(arrowstyle='->', color=color, lw=1.5))\n\n# 3. Mark equilibria\nax.plot(H_star, P_star, 'r*', markersize=20, zorder=10, label=f'Equilibrium ({H_star}, {P_star})')\nax.plot(0, 0, 'k*', markersize=12, label='Origin')\n\n# 4. Add nullclines\nax.axhline(y=P_star, color='red', linestyle='--', alpha=0.6, label=f'P = {P_star} (dH/dt = 0)')\nax.axvline(x=H_star, color='red', linestyle='--', alpha=0.6, label=f'H = {H_star} (dP/dt = 0)')\n\nax.set_xlabel('Prey (H)', fontsize=14)\nax.set_ylabel('Predator (P)', fontsize=14)\nax.set_title('Lotka-Volterra Phase Portrait\\nα=0.15, β=0.005, λ=0.0005, γ=0.10', fontsize=16)\nax.legend(loc='upper right', fontsize=10)\nax.set_xlim(0, 1500)\nax.set_ylim(0, 130)\nax.grid(True, alpha=0.2)\nplt.tight_layout()\nplt.show()",
+      "expected_output": "[Comprehensive phase portrait showing multiple closed orbits of different sizes around equilibrium, with direction arrows, nullclines, and vector field]",
+      "difficulty": "advanced",
+      "explanation": "This combines all elements: vector field (background flow), multiple trajectories (showing different orbit sizes depend on initial conditions), arrows (showing counterclockwise flow), nullclines (dividing the plane), and equilibria. This is the type of complete visualization expected in lab Exercise F.",
+      "key_observations": [
+        "All trajectories form closed loops",
+        "Larger initial deviations create larger orbits",
+        "All orbits circulate counterclockwise",
+        "Nullclines intersect at equilibrium"
+      ],
+      "purpose": "Combine all elements for comprehensive visualization"
+    },
+    {
+      "id": "W8-CS09",
+      "title": "Verifying Equilibrium Points Algebraically and Numerically",
+      "section": "",
+      "description": "Confirm equilibrium calculations match simulation",
+      "code": "# Algebraic equilibrium calculation\nH_eq = gamma / lambda_\nP_eq = alpha / beta\nprint(f\"Algebraic equilibrium: ({H_eq}, {P_eq})\")\n\n# Verify by substituting into ODEs\ndH_at_eq = alpha * H_eq - beta * H_eq * P_eq\ndP_at_eq = lambda_ * H_eq * P_eq - gamma * P_eq\nprint(f\"dH/dt at equilibrium: {dH_at_eq}\")\nprint(f\"dP/dt at equilibrium: {dP_at_eq}\")\n\n# Numerical verification: start exactly at equilibrium\nt_test = np.linspace(0, 50, 100)\nsol_eq = odeint(lotka_volterra, [H_eq, P_eq], t_test, args=(params,))\n\nprint(f\"\\nNumerical test (should stay constant):\")\nprint(f\"  t=0:  H={sol_eq[0,0]:.6f}, P={sol_eq[0,1]:.6f}\")\nprint(f\"  t=50: H={sol_eq[-1,0]:.6f}, P={sol_eq[-1,1]:.6f}\")\nprint(f\"  Maximum deviation: H={np.max(np.abs(sol_eq[:,0]-H_eq)):.2e}, P={np.max(np.abs(sol_eq[:,1]-P_eq)):.2e}\")",
+      "expected_output": "Algebraic equilibrium: (200.0, 30.0)\ndH/dt at equilibrium: 0.0\ndP/dt at equilibrium: 0.0\n\nNumerical test (should stay constant):\n  t=0:  H=200.000000, P=30.000000\n  t=50: H=200.000000, P=30.000000\n  Maximum deviation: H=0.00e+00, P=0.00e+00",
+      "difficulty": "intermediate",
+      "exam_tip": "On exams, verification by substitution is the quickest way to check if a point is an equilibrium",
+      "explanation": "This snippet demonstrates three ways to verify equilibrium: (1) Algebraic formulas H* = γ/λ and P* = α/β, (2) Substituting into ODEs confirms both derivatives are zero, (3) Numerical simulation from equilibrium stays at equilibrium. The tiny deviations (if any) are due to numerical precision.",
+      "purpose": "Confirm equilibrium calculations match simulation"
+    },
+    {
+      "id": "W8-CS10",
+      "title": "Modified Model with Carrying Capacity",
+      "section": "",
+      "description": "Compare basic L-V with logistic prey growth",
+      "code": "# Modified parameters (from lecture)\nalpha_m = 0.2\nbeta_m = 0.005\ngamma_m = 0.6\nlambda_m = 0.001\nK = 1500  # Carrying capacity\n\nparams_mod = (alpha_m, beta_m, lambda_m, gamma_m, K)\n\ndef lotka_volterra_K(populations, t, params):\n    \"\"\"L-V model with carrying capacity for prey.\"\"\"\n    H, P = populations\n    alpha, beta, lambda_, gamma, K = params\n    \n    # Modified prey equation with logistic growth\n    dHdt = alpha * H * (1 - H/K) - beta * H * P\n    dPdt = lambda_ * H * P - gamma * P\n    \n    return [dHdt, dPdt]\n\n# New equilibrium\nH_star_K = gamma_m / lambda_m\nP_star_K = (alpha_m / beta_m) * (1 - H_star_K / K)\nprint(f\"Modified equilibrium: ({H_star_K}, {P_star_K})\")\n\n# Compare trajectories\nt = np.linspace(0, 150, 1000)\ninitial = [150, 50]\n\n# Basic model (uses earlier params)\nsol_basic = odeint(lotka_volterra, initial, t, args=((alpha_m, beta_m, lambda_m, gamma_m),))\n# Modified model\nsol_mod = odeint(lotka_volterra_K, initial, t, args=(params_mod,))\n\nfig, axes = plt.subplots(1, 2, figsize=(14, 5))\n\naxes[0].plot(sol_basic[:,0], sol_basic[:,1], 'b-', label='Basic (no K)')\naxes[0].plot(600, 40, 'b*', markersize=15)  # Basic equilibrium\naxes[0].set_title('Basic Lotka-Volterra\\n(Closed Orbits)')\naxes[0].set_xlabel('Prey (H)')\naxes[0].set_ylabel('Predator (P)')\naxes[0].legend()\naxes[0].grid(True, alpha=0.3)\n\naxes[1].plot(sol_mod[:,0], sol_mod[:,1], 'r-', label=f'With K={K}')\naxes[1].plot(H_star_K, P_star_K, 'r*', markersize=15, label=f'Eq ({H_star_K}, {P_star_K})')\naxes[1].set_title('Modified with Carrying Capacity\\n(Spiral to Equilibrium)')\naxes[1].set_xlabel('Prey (H)')\naxes[1].set_ylabel('Predator (P)')\naxes[1].legend()\naxes[1].grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()",
+      "expected_output": "Modified equilibrium: (600.0, 24.0)\n[Two plots: left showing closed orbit, right showing inward spiral to equilibrium]",
+      "difficulty": "advanced",
+      "explanation": "Adding carrying capacity changes the dynamics dramatically: (1) Equilibrium predator population decreases from 40 to 24 (factor of 1 - H*/K = 0.6), (2) Orbits are no longer closed but spiral inward, (3) System converges to stable equilibrium. This is more realistic—real populations don't oscillate forever.",
+      "key_insight": "K creates damped oscillations and a stable attractor",
+      "purpose": "Compare basic L-V with logistic prey growth"
+    }
+  ],
+  "troubleshooting_guide": {
+    "odeint_errors": [
+      {
+        "error": "TypeError: lotka_volterra() takes 3 positional arguments but 4 were given",
+        "cause": "Forgot comma in args=(params,) — it needs to be a tuple",
+        "fix": "Change args=(params) to args=(params,)"
+      },
+      {
+        "error": "Solution explodes to infinity",
+        "cause": "Initial conditions or parameters lead to unbounded growth",
+        "fix": "Check parameter values; ensure predation term is present"
+      }
+    ],
+    "arrow_issues": [
+      {
+        "problem": "Arrow not visible",
+        "causes": [
+          "Scale factor too small",
+          "Arrow index at edge of trajectory"
+        ],
+        "fix": "Increase scale factor; choose index in middle of trajectory"
+      },
+      {
+        "problem": "Arrow points wrong direction",
+        "causes": [
+          "Sign error in dH or dP calculation",
+          "Index+1 vs Index-1 confusion"
+        ],
+        "fix": "Use index+1 for forward direction; verify flow is counterclockwise"
+      }
+    ],
+    "vector_field_issues": [
+      {
+        "problem": "Segments vary wildly in length",
+        "cause": "Not normalizing by magnitude",
+        "fix": "Divide dH and dP by sqrt(dH² + dP²)"
+      },
+      {
+        "problem": "Field looks cluttered or sparse",
+        "fix": "Adjust grid spacing (arange step size)"
+      }
+    ]
+  },
+  "exam_preparation_tips": [
+    {
+      "topic": "Equilibrium calculation",
+      "tip": "Remember: H* = γ/λ (from predator equation), P* = α/β (from prey equation). The 'cross' pattern helps: prey equilibrium comes from predator parameters and vice versa."
+    },
+    {
+      "topic": "Efficiency formula",
+      "tip": "Efficiency ε = λ/β. Think of it as 'birth per kill': λ controls predator births, β controls prey kills. Don't confuse with β/λ!"
+    },
+    {
+      "topic": "Direction of flow",
+      "tip": "Draw nullclines first. In each of the 4 regions, determine signs of dH/dt and dP/dt separately, then combine. Flow is always counterclockwise in basic L-V."
+    },
+    {
+      "topic": "Verification",
+      "tip": "To verify (H,P) is an equilibrium, substitute into BOTH equations and check both give zero."
+    }
+  ]
+}

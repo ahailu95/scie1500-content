@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "week": 0,
+    "title": "Python Code Snippets - Mathematical Foundations",
+    "description": "Copy-ready Python code examples for Week 0",
+    "usage": "Each snippet can be copied directly into Jupyter Notebook"
+  },
+  "snippets": [
+    {
+      "id": "W0-CS01",
+      "title": "BODMAS - Order of Operations",
+      "section": "Section 2",
+      "description": "Python follows the same order of operations as mathematics",
+      "code": "# Python follows BODMAS\nprint(3 + 4 * 2)      # Output: 11\nprint((3 + 4) * 2)    # Output: 14\nprint(2**3 + 4*5 - 10/2)  # Output: 23.0"
+    },
+    {
+      "id": "W0-CS02",
+      "title": "Exponentiation",
+      "section": "Section 3",
+      "description": "Using ** for powers and math.sqrt() for roots",
+      "code": "import math\n\n# Exponentiation\nprint(2 ** 3)           # 8 (2 to the power 3)\nprint(math.pow(2, 3))   # 8.0 (returns float)\n\n# Square root\nprint(math.sqrt(16))    # 4.0\nprint(16 ** 0.5)        # 4.0 (alternative)\n\n# Cube root\nprint(27 ** (1/3))      # 3.0\n\n# Negative exponent\nprint(2 ** -3)          # 0.125 (= 1/8)"
+    },
+    {
+      "id": "W0-CS03",
+      "title": "Scientific Notation",
+      "section": "Section 7",
+      "description": "Working with large and small numbers",
+      "code": "# Scientific notation in Python\nlarge = 3.81e8    # 3.81 × 10^8\nsmall = 3.2e-4    # 3.2 × 10^-4\n\nprint(large)      # 381000000.0\nprint(small)      # 0.00032\n\n# Unit conversion\ntonnes = 381000000\nmmt = tonnes / 1_000_000  # Using underscore for readability\nprint(f\"{mmt} MMT\")       # 381.0 MMT"
+    },
+    {
+      "id": "W0-CS04",
+      "title": "Defining and Evaluating Functions",
+      "section": "Section 8",
+      "description": "Python functions mirror mathematical functions",
+      "code": "# Define a function\ndef f(x):\n    return 2*x + 3\n\n# Evaluate it\nprint(f(5))     # 13\nprint(f(-2))    # -1\nprint(f(0))     # 3"
+    },
+    {
+      "id": "W0-CS05",
+      "title": "Quadratic Function",
+      "section": "Section 8",
+      "description": "Defining and evaluating a quadratic",
+      "code": "# Quadratic function: f(x) = 3x² - 2x + 1\ndef f(x):\n    return 3*x**2 - 2*x + 1\n\n# Evaluate at different points\nprint(f\"f(2) = {f(2)}\")    # f(2) = 9\nprint(f\"f(-1) = {f(-1)}\")  # f(-1) = 6\nprint(f\"f(0) = {f(0)}\")    # f(0) = 1"
+    },
+    {
+      "id": "W0-CS06",
+      "title": "Import Statements",
+      "section": "Lab Setup",
+      "description": "Standard imports for SCIE1500 notebooks",
+      "code": "%matplotlib inline\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport math"
+    },
+    {
+      "id": "W0-CS07",
+      "title": "Creating Arrays with NumPy",
+      "section": "Lab Section 6",
+      "description": "Creating arrays manually and with linspace",
+      "code": "import numpy as np\n\n# Create array manually\nFtemps = np.array([0, 68, 97, 112, 134])\nprint(Ftemps)\n\n# Create equally spaced values\nx = np.linspace(0, 10, 5)  # 5 values from 0 to 10\nprint(x)  # [0, 2.5, 5, 7.5, 10]\n\n# Exclude endpoint\nx2 = np.linspace(0, 10, 5, endpoint=False)\nprint(x2)  # [0, 2, 4, 6, 8]"
+    },
+    {
+      "id": "W0-CS08",
+      "title": "Array Operations",
+      "section": "Lab Section 0",
+      "description": "Applying formulas to entire arrays",
+      "code": "import numpy as np\n\n# Temperature conversion (applies to all elements)\nFtemps = np.array([0, 68, 97, 112, 134])\nCtemps = (Ftemps - 32) * (5/9)\n\nprint(np.round(Ctemps, 2))  # [-17.78, 20.0, 36.11, 44.44, 56.67]"
+    },
+    {
+      "id": "W0-CS09",
+      "title": "Basic Plotting",
+      "section": "Lab Section 7",
+      "description": "Creating a simple line plot",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Create data\nx = np.linspace(-8, 8, 33)\ny = -0.4 * x**2 + 0.5 * x + 12\n\n# Create plot\nplt.plot(x, y, '-b')\nplt.title(\"Parabola: $y = -0.4x^2 + 0.5x + 12$\")\nplt.xlabel(\"x\")\nplt.ylabel(\"y\")\nplt.grid()\nplt.axhline(y=0, color='k', linewidth=0.5)\nplt.axvline(x=0, color='k', linewidth=0.5)\nplt.show()"
+    },
+    {
+      "id": "W0-CS10",
+      "title": "Scatter Plot with Formatting",
+      "section": "Lab Section 0",
+      "description": "Plotting data points with markers",
+      "code": "import matplotlib.pyplot as plt\n\n# Data\nFtemps = [0, 68, 97, 112, 134]\nCtemps = [-17.78, 20.0, 36.11, 44.44, 56.67]\n\n# Plot with red dashed line and circle markers\nplt.plot(Ftemps, Ctemps, '--ro')\nplt.title(\"Temperature Conversion\")\nplt.xlabel(\"Fahrenheit\")\nplt.ylabel(\"Celsius\")\nplt.grid()\nplt.show()"
+    },
+    {
+      "id": "W0-CS11",
+      "title": "Math Module Constants and Functions",
+      "section": "Lab Section 6.1",
+      "description": "Using mathematical constants and functions",
+      "code": "import math\n\n# Constants\nprint(f\"π = {math.pi}\")\nprint(f\"e = {math.e}\")\n\n# Functions\nprint(f\"sqrt(16) = {math.sqrt(16)}\")\nprint(f\"e^1 = {math.exp(1)}\")\nprint(f\"ln(10) = {math.log(10)}\")\nprint(f\"log10(100) = {math.log10(100)}\")\nprint(f\"sin(π/2) = {math.sin(math.pi/2)}\")"
+    },
+    {
+      "id": "W0-CS12",
+      "title": "Comparison and Logical Operators",
+      "section": "Lab Section 4",
+      "description": "Boolean operations in Python",
+      "code": "x = 5\ny = 3\n\n# Comparison operators\nprint(x > y)    # True\nprint(x == y)   # False\nprint(x != y)   # True\nprint(x >= 5)   # True\n\n# Logical operators\nprint((x > 3) and (y < 5))  # True\nprint((x > 10) or (y < 5))  # True\nprint(not(x == y))          # True"
+    },
+    {
+      "id": "W0-CS13",
+      "title": "Floor Division and Modulus",
+      "section": "Lab Section 4",
+      "description": "Integer division and remainders",
+      "code": "# Regular division\nprint(17 / 5)   # 3.4\n\n# Floor division (integer part)\nprint(17 // 5)  # 3\n\n# Modulus (remainder)\nprint(17 % 5)   # 2\n\n# Verification: 17 = 5 * 3 + 2\nprint(5 * (17 // 5) + (17 % 5))  # 17"
+    },
+    {
+      "id": "W0-CS14",
+      "title": "2D Arrays and Transpose",
+      "section": "Lab Section 6.2",
+      "description": "Working with tables of data",
+      "code": "import numpy as np\n\n# Create 2D array (rows: quantity, price, expenditure)\nquantity = np.array([3, 2, 5])\nprice = np.array([4, 6, 9])\nexpenditure = quantity * price\n\njack_data = np.array([quantity, price, expenditure])\nprint(\"Before transpose:\")\nprint(jack_data)\n\n# Transpose (items in rows, values in columns)\njack_data = jack_data.transpose()\nprint(\"\\nAfter transpose:\")\nprint(jack_data)"
+    }
+  ]
+}

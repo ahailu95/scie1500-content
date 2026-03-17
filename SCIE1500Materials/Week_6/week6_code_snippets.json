@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "week": 6,
+    "title": "SymPy for Integration",
+    "theme": "From Rates to Totals",
+    "notebook_reference": "SoilQualityAndIntegration.ipynb",
+    "prerequisites": [
+      "sympy",
+      "numpy",
+      "matplotlib"
+    ],
+    "total_snippets": 12
+  },
+  "snippets": [
+    {
+      "id": "W6-CS01",
+      "title": "Setup and Imports",
+      "section": "",
+      "description": "Import required libraries for symbolic integration and plotting",
+      "code": "import sympy as sp\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Enable pretty printing for mathematical expressions\nsp.init_printing(use_unicode=True)\n\n# Import plotting from sympy\nfrom sympy.plotting import plot\n\n# Define common symbols\nx, t, C = sp.symbols('x t C')",
+      "expected_output": null,
+      "notes": "Always run this cell first. The `init_printing()` makes SymPy output look like proper math notation.",
+      "topic": "Setup and Imports"
+    },
+    {
+      "id": "W6-CS02",
+      "title": "Basic Indefinite Integration",
+      "section": "",
+      "description": "Find antiderivatives using sp.integrate()",
+      "code": "x = sp.symbols('x')\n\n# Example 1: Integrate a constant\nexpr1 = 2\nresult1 = sp.integrate(expr1, x)\nprint(f\"∫2 dx = {result1}\")\n\n# Example 2: Integrate 5x\nexpr2 = 5*x\nresult2 = sp.integrate(expr2, x)\nprint(f\"∫5x dx = {result2}\")\n\n# Example 3: Polynomial\nexpr3 = 3*x**2 - 7*x + 4\nresult3 = sp.integrate(expr3, x)\nprint(f\"∫(3x² - 7x + 4) dx = {result3}\")",
+      "expected_output": "∫2 dx = 2*x\n∫5x dx = 5*x**2/2\n∫(3x² - 7x + 4) dx = x**3 - 7*x**2/2 + 4*x",
+      "notes": "SymPy omits the constant of integration (+C). Add it manually when needed.",
+      "topic": "Basic Indefinite Integration"
+    },
+    {
+      "id": "W6-CS03",
+      "title": "Exponential and Logarithmic Integration",
+      "section": "",
+      "description": "Integrate exponential and 1/x functions",
+      "code": "x = sp.symbols('x')\n\n# Exponential\nprint(f\"∫e^x dx = {sp.integrate(sp.exp(x), x)}\")\nprint(f\"∫e^(3x) dx = {sp.integrate(sp.exp(3*x), x)}\")\nprint(f\"∫e^(-0.5x) dx = {sp.integrate(sp.exp(-0.5*x), x)}\")\n\n# Logarithmic (1/x)\nprint(f\"∫1/x dx = {sp.integrate(1/x, x)}\")\nprint(f\"∫2/x dx = {sp.integrate(2/x, x)}\")",
+      "expected_output": "∫e^x dx = exp(x)\n∫e^(3x) dx = exp(3*x)/3\n∫e^(-0.5x) dx = -2.0*exp(-0.5*x)\n∫1/x dx = log(x)\n∫2/x dx = 2*log(x)",
+      "notes": "SymPy uses 'log(x)' for natural logarithm (ln). The '|x|' is implied.",
+      "topic": "Exponential and Logarithmic Integration"
+    },
+    {
+      "id": "W6-CS04",
+      "title": "Definite Integrals",
+      "section": "",
+      "description": "Calculate definite integrals with limits",
+      "code": "x = sp.symbols('x')\n\n# Definite integral syntax: sp.integrate(expr, (x, lower, upper))\n\n# Area under y = 3 from x = 4 to x = 8.5\narea1 = sp.integrate(3, (x, 4, 8.5))\nprint(f\"∫₄^8.5 3 dx = {area1}\")\n\n# Area under y = x² from x = 0 to x = 1\narea2 = sp.integrate(x**2, (x, 0, 1))\nprint(f\"∫₀^1 x² dx = {area2}\")\n\n# This confirms: parabola sweeps 1/3 of encompassing rectangle",
+      "expected_output": "∫₄^8.5 3 dx = 13.5\n∫₀^1 x² dx = 1/3",
+      "notes": "Definite integrals return a number (no +C needed). The format is (variable, lower_limit, upper_limit).",
+      "topic": "Definite Integrals"
+    },
+    {
+      "id": "W6-CS05",
+      "title": "Initial Value Problems",
+      "section": "",
+      "description": "Find specific antiderivative using initial conditions",
+      "code": "t, C = sp.symbols('t C')\n\n# Problem: r'(t) = -3t\u00b2 + 6t, r(0) = 2  (soap bubble radius)\n# Step 1: Find indefinite integral\nrate = -3*t**2 + 6*t\nindefinite = sp.integrate(rate, t) + C\nprint(f\"General solution: r(t) = {indefinite}\")\n\n# Step 2: Solve for C using initial condition r(0) = 2\nC_value = sp.solve(2 - indefinite.subs(t, 0), C)[0]\nprint(f\"Constant of integration: C = {C_value}\")\n\n# Step 3: Write specific solution\nspecific = indefinite.subs(C, C_value)\nprint(f\"Specific solution: r(t) = {specific}\")",
+      "expected_output": "General solution: r(t) = C - t**3 + 3*t**2\nConstant of integration: C = 2\nSpecific solution: r(t) = -t**3 + 3*t**2 + 2",
+      "notes": "This three-step process works for any initial value problem.",
+      "topic": "Initial Value Problems"
+    },
+    {
+      "id": "W6-CS06",
+      "title": "Finding Maximum After Integration",
+      "section": "",
+      "description": "Find when the integrated function reaches its maximum",
+      "code": "t = sp.symbols('t')\n\n# From previous: r(t) = -t\u00b3 + 3t\u00b2 + 2\nr = -t**3 + 3*t**2 + 2\nr_prime = -3*t**2 + 6*t  # The original rate\n\n# Maximum occurs when r'(t) = 0\ncritical_points = sp.solve(r_prime, t)\nprint(f\"Critical points: t = {critical_points}\")\n\n# Evaluate r at critical points\nfor pt in critical_points:\n    value = r.subs(t, pt)\n    print(f\"r({pt}) = {value}\")\n\nprint(f\"\\nMaximum radius = {r.subs(t, 2)} cm at t = 2 seconds\")",
+      "expected_output": "Critical points: t = [0, 2]\nr(0) = 2\nr(2) = 6\n\nMaximum radius = 6 cm at t = 2 seconds",
+      "notes": "After finding the function by integration, use derivative = 0 to find extrema.",
+      "topic": "Finding Maximum After Integration"
+    },
+    {
+      "id": "W6-CS07",
+      "title": "Plotting Areas Under Curves",
+      "section": "",
+      "description": "Visualize definite integrals as shaded areas",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Plot area under y = 3 from x = 4 to x = 8.5\nplt.figure(figsize=(8, 4))\n\n# Draw the curve (horizontal line y = 3)\nplt.plot([0, 10], [3, 3], 'r-', linewidth=2, label='y = 3')\n\n# Shade the area\nxfill = [4, 8.5]\nyfill_lower = [0, 0]\nyfill_upper = [3, 3]\nplt.fill_between(xfill, yfill_lower, yfill_upper, \n                  color='lightblue', alpha=0.7, label='Area = 13.5')\n\n# Formatting\nplt.xlabel('x')\nplt.ylabel('y')\nplt.title('Area Under y = 3 from x = 4 to x = 8.5')\nplt.xlim(0, 10)\nplt.ylim(-0.5, 4)\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.axhline(y=0, color='k', linewidth=0.5)\nplt.show()",
+      "expected_output": "[Displays plot with shaded rectangular area]",
+      "notes": "plt.fill_between() requires x coordinates and y values for lower and upper boundaries.",
+      "topic": "Plotting Areas Under Curves"
+    },
+    {
+      "id": "W6-CS08",
+      "title": "Plotting Curved Areas",
+      "section": "",
+      "description": "Shade area under polynomial curves",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Area under y = x² - 4x from x = 4 to x = 8.5\nx_curve = np.linspace(0, 10, 200)\ny_curve = x_curve**2 - 4*x_curve\n\nplt.figure(figsize=(8, 5))\n\n# Plot the curve\nplt.plot(x_curve, y_curve, 'b-', linewidth=2, label=r'$y = x^2 - 4x$')\n\n# Shade the area (need many points for smooth curve)\nxfill = np.linspace(4, 8.5, 50)\nyfill = xfill**2 - 4*xfill\nplt.fill_between(xfill, 0, yfill, color='lightgreen', alpha=0.7)\n\n# Calculate area for annotation\nimport sympy as sp\nx = sp.symbols('x')\narea = sp.integrate(x**2 - 4*x, (x, 4, 8.5))\nplt.text(5.5, 20, f'Area = {float(area):.2f}', fontsize=12)\n\nplt.xlabel('x')\nplt.ylabel('y')\nplt.title(r'Area Under $y = x^2 - 4x$ from $x = 4$ to $x = 8.5$')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.axhline(y=0, color='k', linewidth=0.5)\nplt.show()",
+      "expected_output": "[Displays plot with shaded area under parabola]",
+      "notes": "For curved areas, use np.linspace to generate smooth boundaries.",
+      "topic": "Plotting Curved Areas"
+    },
+    {
+      "id": "W6-CS09",
+      "title": "Area Between Two Curves",
+      "section": "",
+      "description": "Calculate and visualize area between two functions",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport sympy as sp\n\nx = sp.symbols('x')\n\n# Two curves: y = 8x (upper) and y = x² - 4x (lower)\nupper = 8*x\nlower = x**2 - 4*x\n\n# Area = ∫(upper - lower) dx from x = 4 to x = 8.5\narea = sp.integrate(upper - lower, (x, 4, 8.5))\nprint(f\"Area between curves = {float(area):.2f}\")\n\n# Plotting\nx_vals = np.linspace(0, 10, 200)\ny_upper = 8 * x_vals\ny_lower = x_vals**2 - 4*x_vals\n\nplt.figure(figsize=(8, 6))\nplt.plot(x_vals, y_upper, 'r-', linewidth=2, label=r'$y = 8x$')\nplt.plot(x_vals, y_lower, 'b-', linewidth=2, label=r'$y = x^2 - 4x$')\n\n# Shade area between curves\nxfill = np.linspace(4, 8.5, 50)\nplt.fill_between(xfill, xfill**2 - 4*xfill, 8*xfill, \n                  color='lightblue', alpha=0.7)\nplt.text(5.5, 30, f'Area = {float(area):.1f}', fontsize=12)\n\nplt.xlabel('x')\nplt.ylabel('y')\nplt.title('Area Between Two Curves')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.xlim(0, 10)\nplt.ylim(-10, 80)\nplt.show()",
+      "expected_output": "Area between curves = 154.10\n[Displays plot with shaded region between curves]",
+      "notes": "Area between curves = ∫(upper - lower) dx. Always subtract lower from upper.",
+      "topic": "Area Between Two Curves"
+    },
+    {
+      "id": "W6-CS10",
+      "title": "Nitrogen Fertilizer Response",
+      "section": "",
+      "description": "Agricultural application: optimal fertilizer rate",
+      "code": "import sympy as sp\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx, C = sp.symbols('x C')\n\n# y'(x) = 0.015 - 0.0001x (yield response to nitrogen)\nrate = 0.015 - 0.0001*x\n\n# Step 1: Integrate to get yield function\nyield_general = sp.integrate(rate, x) + C\nprint(f\"General yield function: y(x) = {yield_general}\")\n\n# Step 2: Apply y(0) = 1.2 (baseline yield)\nC_val = sp.solve(1.2 - yield_general.subs(x, 0), C)[0]\nyield_func = yield_general.subs(C, C_val)\nprint(f\"Specific yield function: y(x) = {yield_func}\")\n\n# Step 3: Find optimal nitrogen rate (where y'(x) = 0)\nopt_nitrogen = sp.solve(rate, x)[0]\nmax_yield = yield_func.subs(x, opt_nitrogen)\nprint(f\"\\nOptimal nitrogen: {opt_nitrogen} kg/ha\")\nprint(f\"Maximum yield: {max_yield} tonnes/ha\")\n\n# Plot\nx_vals = np.linspace(0, 200, 100)\ny_vals = 1.2 + 0.015*x_vals - 0.00005*x_vals**2\n\nplt.figure(figsize=(8, 5))\nplt.plot(x_vals, y_vals, 'g-', linewidth=2)\nplt.axvline(x=150, color='r', linestyle='--', label=f'Optimal N = 150 kg/ha')\nplt.scatter([150], [2.325], color='r', s=100, zorder=5)\nplt.xlabel('Nitrogen Application (kg/ha)')\nplt.ylabel('Yield (tonnes/ha)')\nplt.title('Crop Yield Response to Nitrogen Fertilizer')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.show()",
+      "expected_output": "General yield function: y(x) = C + 0.015*x - 5.0e-5*x**2\nSpecific yield function: y(x) = 0.015*x - 5.0e-5*x**2 + 1.2\n\nOptimal nitrogen: 150 kg/ha\nMaximum yield: 2.325 tonnes/ha",
+      "notes": "This mirrors the bioeconomic models from Week 5—integration followed by optimization.",
+      "topic": "Nitrogen Fertilizer Response"
+    },
+    {
+      "id": "W6-CS11",
+      "title": "Exponential Decay Integration",
+      "section": "",
+      "description": "Land rehabilitation: vegetation recovery model",
+      "code": "import sympy as sp\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = sp.symbols('t')\n\n# V'(t) = 8e^(-0.2t) (vegetation recovery rate, % cover/year)\nrate = 8 * sp.exp(-0.2*t)\n\n# Integrate with V(0) = 5 (initial 5% cover)\nV_general = sp.integrate(rate, t)\nC_val = 5 - V_general.subs(t, 0)  # Solve for constant\nV_func = V_general + C_val\nprint(f\"Vegetation function: V(t) = {V_func}\")\nprint(f\"Simplified: V(t) = {sp.simplify(V_func)}\")\n\n# Long-term limit\nlimit = sp.limit(V_func, t, sp.oo)\nprint(f\"\\nLong-term vegetation cover: {limit}%\")\n\n# Plot trajectory\nt_vals = np.linspace(0, 30, 100)\nV_vals = 45 - 40*np.exp(-0.2*t_vals)\n\nplt.figure(figsize=(8, 5))\nplt.plot(t_vals, V_vals, 'g-', linewidth=2)\nplt.axhline(y=45, color='r', linestyle='--', label='Equilibrium (45%)')\nplt.xlabel('Time (years)')\nplt.ylabel('Vegetation Cover (%)')\nplt.title('Land Rehabilitation: Vegetation Recovery')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.ylim(0, 50)\nplt.show()",
+      "expected_output": "Vegetation function: V(t) = -40.0*exp(-0.2*t) + 45.0\nSimplified: V(t) = 45.0 - 40.0*exp(-0.2*t)\n\nLong-term vegetation cover: 45%",
+      "notes": "This connects to Dr. Santini's land degradation lecture. Exponential decay leads to finite equilibrium.",
+      "topic": "Exponential Decay Integration"
+    },
+    {
+      "id": "W6-CS12",
+      "title": "SymPy Plotting of Trajectories",
+      "section": "",
+      "description": "Use SymPy's built-in plot function for quick visualization",
+      "code": "import sympy as sp\nfrom sympy.plotting import plot\n\nt = sp.symbols('t')\n\n# Soap bubble radius: r(t) = -t\u00b3 + 3t\u00b2 + 2\nr = -t**3 + 3*t**2 + 2\n\n# SymPy's plot function\np = plot(r, (t, 0, 4), \n         title=r'Soap Bubble Radius: $r(t) = -t^3 + 3t^2 + 2$',\n         xlabel='Time (seconds)',\n         ylabel='Radius (cm)',\n         show=False)\n\n# Customize and show\np[0].line_color = 'blue'\np.show()",
+      "expected_output": "[Displays SymPy plot of cubic function]",
+      "notes": "SymPy's plot() is quick for symbolic expressions. Use matplotlib for more customization.",
+      "topic": "SymPy Plotting of Trajectories"
+    }
+  ]
+}

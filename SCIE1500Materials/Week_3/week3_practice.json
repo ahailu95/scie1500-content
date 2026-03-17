@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "week": 3,
+    "title": "Logistic Functions and Bounded Growth",
+    "theme": "When Growth Has Limits",
+    "exam_alignment": ["Q8", "Q13", "Q17"],
+    "total_questions": 20,
+    "difficulty_distribution": {
+      "foundational": 8,
+      "intermediate": 8,
+      "exam_style": 4
+    }
+  },
+  "questions": [
+    {
+      "id": "W3-001",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "logistic_function_basics",
+      "question": "A population follows the logistic equation $P(t) = \\frac{K}{1 + Ae^{-\\alpha t}}$. What happens to $P(t)$ as $t \\to \\infty$?",
+      "choices": {
+        "A": "$P(t) \\to 0$",
+        "B": "$P(t) \\to K$",
+        "C": "$P(t) \\to A$",
+        "D": "$P(t) \\to \\infty$",
+        "E": "$P(t) \\to \\alpha$"
+      },
+      "correct_answer": "B",
+      "solution": "As $t \\to \\infty$, $e^{-\\alpha t} \\to 0$ (assuming $\\alpha > 0$). Therefore, $1 + Ae^{-\\alpha t} \\to 1$, and $P(t) \\to \\frac{K}{1} = K$. The population approaches the carrying capacity $K$.",
+      "key_concept": "The carrying capacity K is the horizontal asymptote as t → ∞"
+    },
+    {
+      "id": "W3-002",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "logistic_initial_value",
+      "question": "For the logistic function $P(t) = \\frac{8000}{1 + 39e^{-0.2t}}$, what is the initial population $P(0)$?",
+      "choices": {
+        "A": "200",
+        "B": "400",
+        "C": "4000",
+        "D": "8000",
+        "E": "39"
+      },
+      "correct_answer": "A",
+      "solution": "$P(0) = \\frac{8000}{1 + 39e^{0}} = \\frac{8000}{1 + 39} = \\frac{8000}{40} = 200$",
+      "key_concept": "To find initial value, substitute t = 0 and note that e^0 = 1"
+    },
+    {
+      "id": "W3-003",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "schaefer_model_basics",
+      "question": "In the Schaefer model $G(S) = gS(1 - S/K)$, what does the term $(1 - S/K)$ represent?",
+      "choices": {
+        "A": "The intrinsic growth rate",
+        "B": "The carrying capacity",
+        "C": "The compensating factor that reduces growth as population increases",
+        "D": "The fishing effort",
+        "E": "The sustainable yield"
+      },
+      "correct_answer": "C",
+      "solution": "The term $(1 - S/K)$ is the compensating factor. When $S$ is small relative to $K$, this factor is close to 1 and has little effect. As $S$ approaches $K$, this factor approaches 0, causing growth to slow and eventually stop at the carrying capacity.",
+      "key_concept": "The compensating factor models resource competition and environmental constraints"
+    },
+    {
+      "id": "W3-004",
+      "type": "calculation",
+      "difficulty": "foundational",
+      "topic": "msy_calculation",
+      "question": "A fish population has intrinsic growth rate $g = 0.08$ per year and carrying capacity $K = 20000$ tonnes. Calculate the Maximum Sustainable Yield (MSY).",
+      "correct_answer": "400 tonnes/year",
+      "solution": "MSY = $\\frac{gK}{4} = \\frac{0.08 \\times 20000}{4} = \\frac{1600}{4} = 400$ tonnes per year.\n\nAlternatively, at $S_{MSY} = K/2 = 10000$ tonnes:\n$G_{MSY} = 0.08 \\times 10000 \\times (1 - 10000/20000) = 800 \\times 0.5 = 400$ tonnes/year",
+      "key_concept": "MSY = gK/4 and occurs when stock is at K/2"
+    },
+    {
+      "id": "W3-005",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "arithmetic_sequence",
+      "question": "Find the 15th term of the arithmetic sequence: 7, 12, 17, 22, ...",
+      "choices": {
+        "A": "72",
+        "B": "77",
+        "C": "82",
+        "D": "87",
+        "E": "67"
+      },
+      "correct_answer": "B",
+      "solution": "First term $a_1 = 7$, common difference $d = 12 - 7 = 5$.\n\n$a_n = a_1 + (n-1)d$\n$a_{15} = 7 + (15-1)(5) = 7 + 14 \\times 5 = 7 + 70 = 77$",
+      "key_concept": "Arithmetic sequence formula: a_n = a_1 + (n-1)d"
+    },
+    {
+      "id": "W3-006",
+      "type": "calculation",
+      "difficulty": "foundational",
+      "topic": "function_composition",
+      "question": "Given $f(x) = x^2 + 1$ and $g(x) = 3x$, find $(f \\circ g)(2)$.",
+      "correct_answer": "37",
+      "solution": "$(f \\circ g)(2) = f(g(2))$\n\nFirst: $g(2) = 3(2) = 6$\n\nThen: $f(6) = 6^2 + 1 = 36 + 1 = 37$",
+      "key_concept": "Function composition: first apply the inner function, then the outer"
+    },
+    {
+      "id": "W3-007",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "inverse_function",
+      "question": "What is the inverse of $f(x) = 2x - 6$?",
+      "choices": {
+        "A": "$f^{-1}(x) = \\frac{x + 6}{2}$",
+        "B": "$f^{-1}(x) = \\frac{x - 6}{2}$",
+        "C": "$f^{-1}(x) = 2x + 6$",
+        "D": "$f^{-1}(x) = \\frac{1}{2x - 6}$",
+        "E": "$f^{-1}(x) = -2x + 6$"
+      },
+      "correct_answer": "A",
+      "solution": "Let $y = 2x - 6$. Solve for $x$:\n$y + 6 = 2x$\n$x = \\frac{y + 6}{2}$\n\nSwap $x$ and $y$: $f^{-1}(x) = \\frac{x + 6}{2}$\n\nVerification: $f(f^{-1}(x)) = 2 \\cdot \\frac{x+6}{2} - 6 = x + 6 - 6 = x \\checkmark$",
+      "key_concept": "To find inverse: solve y = f(x) for x, then swap x and y"
+    },
+    {
+      "id": "W3-008",
+      "type": "multiple_choice",
+      "difficulty": "foundational",
+      "topic": "schaefer_growth_rate",
+      "question": "In the Schaefer model with $g = 0.1$ and $K = 10000$, what is the actual growth rate (as a proportion) when $S = 2500$?",
+      "choices": {
+        "A": "2.5%",
+        "B": "5.0%",
+        "C": "7.5%",
+        "D": "10.0%",
+        "E": "12.5%"
+      },
+      "correct_answer": "C",
+      "solution": "Actual growth rate = $g(1 - S/K) = 0.1(1 - 2500/10000) = 0.1(1 - 0.25) = 0.1 \\times 0.75 = 0.075 = 7.5\\%$",
+      "key_concept": "Actual growth rate = g(1 - S/K), which declines linearly with stock"
+    },
+    {
+      "id": "W3-009",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "logistic_time_calculation",
+      "question": "A population follows $P(t) = \\frac{15000}{1 + 120e^{-0.15t}}$. How many time periods does it take to reach 50% of carrying capacity? Round to a whole number.",
+      "correct_answer": "32",
+      "solution": "50% of carrying capacity = $15000/2 = 7500$\n\n$7500 = \\frac{15000}{1 + 120e^{-0.15t}}$\n\n$1 + 120e^{-0.15t} = 2$\n\n$120e^{-0.15t} = 1$\n\n$e^{-0.15t} = \\frac{1}{120}$\n\n$-0.15t = \\ln(1/120) = -\\ln(120) \\approx -4.787$\n\n$t = \\frac{4.787}{0.15} \\approx 31.9 \\approx 32$ time periods",
+      "key_concept": "This is Q8 from the exam. Use logarithms to solve for time in logistic equations.",
+      "exam_reference": "Q8"
+    },
+    {
+      "id": "W3-010",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "schaefer_growth_calculation",
+      "question": "A fishery has $g = 0.12$ and $K = 8000$ tonnes. Calculate the growth $G(S)$ when the stock is at 2000 tonnes.",
+      "correct_answer": "180 tonnes/year",
+      "solution": "$G(S) = gS(1 - S/K)$\n\n$G(2000) = 0.12 \\times 2000 \\times (1 - 2000/8000)$\n\n$= 240 \\times (1 - 0.25)$\n\n$= 240 \\times 0.75$\n\n$= 180$ tonnes/year",
+      "key_concept": "Direct application of the Schaefer growth formula"
+    },
+    {
+      "id": "W3-011",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "composition_order",
+      "question": "If $f(x) = e^x$ and $g(x) = \\ln(x)$, which statement is TRUE?",
+      "choices": {
+        "A": "$(f \\circ g)(x) = (g \\circ f)(x) = x$ for all $x > 0$",
+        "B": "$(f \\circ g)(x) = x$ for $x > 0$, but $(g \\circ f)(x) = x$ for all real $x$",
+        "C": "$(f \\circ g)(x) \\neq (g \\circ f)(x)$ for any $x$",
+        "D": "$(f \\circ g)(x) = e^{\\ln(x)} = x^e$",
+        "E": "Neither composition equals $x$"
+      },
+      "correct_answer": "B",
+      "solution": "$(f \\circ g)(x) = f(g(x)) = f(\\ln(x)) = e^{\\ln(x)} = x$ (valid for $x > 0$)\n\n$(g \\circ f)(x) = g(f(x)) = g(e^x) = \\ln(e^x) = x$ (valid for all real $x$)\n\nBoth equal $x$, but with different domains. Since $\\ln(x)$ requires $x > 0$, $(f \\circ g)(x) = x$ only for $x > 0$.",
+      "key_concept": "exp and ln are inverse functions, but domain restrictions matter"
+    },
+    {
+      "id": "W3-012",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "arithmetic_series",
+      "question": "Find the sum of the first 20 terms of the arithmetic sequence: 3, 8, 13, 18, ...",
+      "correct_answer": "1010",
+      "solution": "First term $a_1 = 3$, common difference $d = 5$\n\nLast term: $a_{20} = 3 + (20-1)(5) = 3 + 95 = 98$\n\nSum: $S_{20} = \\frac{20}{2}(a_1 + a_{20}) = 10(3 + 98) = 10 \\times 101 = 1010$\n\nAlternatively: $S_n = \\frac{n}{2}[2a_1 + (n-1)d] = \\frac{20}{2}[6 + 19(5)] = 10[6 + 95] = 1010$",
+      "key_concept": "Arithmetic series formula: S_n = n/2(a_1 + a_n)"
+    },
+    {
+      "id": "W3-013",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "logistic_parameter_A",
+      "question": "A logistic function has carrying capacity $K = 5000$ and initial value $P(0) = 100$. What is the value of parameter $A$?",
+      "choices": {
+        "A": "49",
+        "B": "50",
+        "C": "99",
+        "D": "4900",
+        "E": "5000"
+      },
+      "correct_answer": "A",
+      "solution": "From $P(0) = \\frac{K}{1 + A}$, we have $A = \\frac{K}{P(0)} - 1$\n\n$A = \\frac{5000}{100} - 1 = 50 - 1 = 49$",
+      "key_concept": "A = K/P(0) - 1 relates initial value to carrying capacity"
+    },
+    {
+      "id": "W3-014",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "inverse_verification",
+      "question": "Given $f(x) = \\frac{2x + 3}{5}$, find $f^{-1}(x)$ and verify that $f(f^{-1}(3)) = 3$.",
+      "correct_answer": "$f^{-1}(x) = \\frac{5x - 3}{2}$; verification shows $f(f^{-1}(3)) = 3$",
+      "solution": "Finding inverse:\nLet $y = \\frac{2x + 3}{5}$\n$5y = 2x + 3$\n$2x = 5y - 3$\n$x = \\frac{5y - 3}{2}$\n\nSo $f^{-1}(x) = \\frac{5x - 3}{2}$\n\nVerification:\n$f^{-1}(3) = \\frac{5(3) - 3}{2} = \\frac{12}{2} = 6$\n\n$f(6) = \\frac{2(6) + 3}{5} = \\frac{15}{5} = 3 \\checkmark$",
+      "key_concept": "Always verify inverse by checking f(f^{-1}(x)) = x"
+    },
+    {
+      "id": "W3-015",
+      "type": "multiple_choice",
+      "difficulty": "intermediate",
+      "topic": "schaefer_properties",
+      "question": "Which of the following statements about the Schaefer model $G(S) = gS(1 - S/K)$ is TRUE?",
+      "choices": {
+        "A": "Growth is always positive for any stock level",
+        "B": "The actual growth rate $G(S)/S$ increases linearly with stock",
+        "C": "Maximum growth occurs at $S = K$",
+        "D": "Growth $G(S)$ is highest when stock is at half the carrying capacity",
+        "E": "Growth is independent of stock level"
+      },
+      "correct_answer": "D",
+      "solution": "The Schaefer model is a quadratic in $S$ that opens downward. Its vertex (maximum) occurs at $S = K/2$.\n\nOption A is false: $G(S) < 0$ when $S > K$\nOption B is false: actual growth rate $g(1-S/K)$ decreases linearly\nOption C is false: $G(K) = 0$\nOption E is false: $G(S)$ clearly depends on $S$",
+      "key_concept": "MSY occurs at S = K/2 where the parabola reaches its vertex",
+      "exam_reference": "Q13"
+    },
+    {
+      "id": "W3-016",
+      "type": "calculation",
+      "difficulty": "intermediate",
+      "topic": "nested_composition",
+      "question": "If $f(x) = x + 2$, $g(x) = 3x$, and $h(x) = x^2$, find $(f \\circ g \\circ h)(2)$.",
+      "correct_answer": "14",
+      "solution": "Work from inside out:\n\n$h(2) = 2^2 = 4$\n\n$g(h(2)) = g(4) = 3(4) = 12$\n\n$f(g(h(2))) = f(12) = 12 + 2 = 14$\n\nSo $(f \\circ g \\circ h)(2) = 14$",
+      "key_concept": "For multiple compositions, work from innermost function outward"
+    },
+    {
+      "id": "W3-017",
+      "type": "exam_style",
+      "difficulty": "exam_style",
+      "topic": "logistic_comprehensive",
+      "question": "Consider a population trajectory described by the logistic equation: $P(t) = \\frac{K}{1+Ae^{-\\alpha t}}$ where $K$, $A$, and $\\alpha$ are positive values. Which of the following statements is TRUE?\n\n(a) The equation can be used to describe biological growth constrained by space and competition for resources.\n(b) The value $K$ represents the carrying capacity beyond which the population cannot grow.\n(c) The growth in population is always non-negative, increases at first and then declines.\n(d) The value of parameter $A$ equals $(K/P(0)) - 1$.\n(e) All of the above.",
+      "choices": {
+        "A": "Only (a) and (b)",
+        "B": "Only (b) and (c)",
+        "C": "Only (a), (b), and (d)",
+        "D": "Only (c) and (d)",
+        "E": "All of the above"
+      },
+      "correct_answer": "E",
+      "solution": "All statements are true:\n\n(a) TRUE: The logistic model captures resource constraints through the carrying capacity.\n\n(b) TRUE: As $t \\to \\infty$, $P(t) \\to K$, which is the maximum sustainable population.\n\n(c) TRUE: The rate of change $dP/dt > 0$ initially (population increases), reaches maximum at $P = K/2$, then declines toward zero.\n\n(d) TRUE: From $P(0) = K/(1+A)$, solving gives $A = K/P(0) - 1$.",
+      "key_concept": "Comprehensive understanding of logistic function properties",
+      "exam_reference": "Q17"
+    },
+    {
+      "id": "W3-018",
+      "type": "exam_style",
+      "difficulty": "exam_style",
+      "topic": "schaefer_analysis",
+      "question": "Consider the Schaefer (1957) model of growth: $G(S) = gS(1 - S/K)$ where $G(S)$ is fish growth, $g$ is the intrinsic growth rate, $S$ is the stock level and $K$ is the carrying capacity. Which of the following statements is TRUE?\n\n(a) The actual fish growth rate, defined as the ratio of $G(S)$ to $S$, declines as stock increases.\n(b) Fish growth (or $G(S)$) is highest when the stock ($S$) is half the maximum carrying capacity ($K$).\n(c) Fish growth (or $G(S)$) is always non-negative.",
+      "choices": {
+        "A": "Only (a)",
+        "B": "Only (b)",
+        "C": "Only (a) and (b)",
+        "D": "All of the above",
+        "E": "Only (b) and (c)"
+      },
+      "correct_answer": "C",
+      "solution": "(a) TRUE: Actual growth rate = $g(1 - S/K)$ decreases linearly from $g$ (at $S=0$) to $0$ (at $S=K$).\n\n(b) TRUE: $G(S)$ is a downward parabola with vertex at $S = K/2$, where growth is maximum.\n\n(c) FALSE: If $S > K$, then $(1 - S/K) < 0$, so $G(S) < 0$ (population declines when exceeding carrying capacity).\n\nAnswer: (a) and (b) are correct, but not (c).",
+      "key_concept": "Growth can be negative if stock exceeds carrying capacity",
+      "exam_reference": "Q13"
+    },
+    {
+      "id": "W3-019",
+      "type": "exam_style",
+      "difficulty": "exam_style",
+      "topic": "composition_exam",
+      "question": "If $f(x) = -e^{-2x+1}$ and $g(x) = -\\frac{1}{2}x^2$, what is $(f \\circ g)(x)$?",
+      "choices": {
+        "A": "$(-e^{-2x+1})(-\\frac{1}{2})$",
+        "B": "$-e^{x^2+1}$",
+        "C": "$\\frac{1}{2}e^{4x^2-4x+1}$",
+        "D": "$xe^{-2x+1}$",
+        "E": "None of the above"
+      },
+      "correct_answer": "B",
+      "solution": "$(f \\circ g)(x) = f(g(x)) = f\\left(-\\frac{1}{2}x^2\\right)$\n\n$= -e^{-2(-\\frac{1}{2}x^2)+1}$\n\n$= -e^{x^2+1}$",
+      "key_concept": "Substitute the entire inner function into the outer function",
+      "exam_reference": "Q23"
+    },
+    {
+      "id": "W3-020",
+      "type": "exam_style",
+      "difficulty": "exam_style",
+      "topic": "inverse_exam",
+      "question": "What is the inverse of the function $f(x) = 3 + \\frac{1}{4}x$?",
+      "choices": {
+        "A": "$f^{-1}(x) = -3 + 4x$",
+        "B": "$f^{-1}(x) = -3 - \\frac{1}{4}x$",
+        "C": "$f^{-1}(x) = \\frac{1}{4} - x$",
+        "D": "$f^{-1}(x) = -12 + 4x$",
+        "E": "None of the above"
+      },
+      "correct_answer": "D",
+      "solution": "Let $y = 3 + \\frac{1}{4}x$\n\n$y - 3 = \\frac{1}{4}x$\n\n$x = 4(y - 3) = 4y - 12$\n\nSwap: $f^{-1}(x) = 4x - 12 = -12 + 4x$\n\nVerification: $f(f^{-1}(x)) = 3 + \\frac{1}{4}(4x - 12) = 3 + x - 3 = x \\checkmark$",
+      "key_concept": "Inverse of a linear function is also linear with reciprocal slope",
+      "exam_reference": "Q20"
+    }
+  ]
+}
