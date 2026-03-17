@@ -12,15 +12,15 @@
 
 **Learning Outcomes:** At the end of this week you should be able to:
 
-1. Apply the product rule and quotient rule to differentiate products and quotients
-2. Apply the chain rule to differentiate composite functions
-3. Differentiate exponential and logarithmic functions
-4. Find critical points by setting the derivative equal to zero
-5. Classify critical points as local maxima or minima using the second derivative test
-6. Solve optimisation problems in scientific and economic contexts
-7. Interpret Maximum Economic Yield (MEY) as an optimisation of a profit function
+1. Differentiate **exponential** and **logarithmic** functions
+2. Apply the **product rule**, **quotient rule**, and **chain rule**
+3. Find **critical points** and classify them using the **second derivative test**
+4. Distinguish **local** and **global** optima; identify **inflection points**
+5. Solve **unconstrained** and **constrained** optimisation problems
+6. Apply **gradient descent** intuition and **Newton's method** in simple cases
+7. Interpret **Maximum Economic Yield (MEY)** and derive a supply curve
 
-**Exam Alignment:** Q28, Q38
+**Exam Alignment:** Q13, Q28, Q38
 
 ---
 
@@ -41,6 +41,22 @@ Consider these scientific and economic decisions:
 | Livestock | When should animals be sold to maximize profit? | Optimal timing |
 
 These problems share a common structure: find the input value $x^*$ that maximizes (or minimizes) an objective function $f(x)$. The derivative is our key tool—**at a maximum or minimum, the derivative equals zero**.
+
+### Opening Application: Optimal Drug Dosage
+
+A patient receives an anti-inflammatory drug. The plasma concentration after $t$ hours follows:
+
+$$C(t) = 5t \, e^{-0.4t} \quad \text{mg/L}$$
+
+**Question:** When does the concentration peak?
+
+This is a product of $5t$ (rising) and $e^{-0.4t}$ (decaying). The concentration rises initially as the drug absorbs, then falls as the body metabolises it. Using the **product rule** and **chain rule** (which we develop below):
+
+$$C'(t) = 5e^{-0.4t}(1 - 0.4t) = 0 \implies t^* = 2.5 \text{ hours}$$
+
+Peak concentration: $C(2.5) = 5(2.5)e^{-1} \approx 4.60$ mg/L.
+
+**Why this matters:** Too little drug is ineffective; too much is toxic. Optimisation finds the sweet spot within the **therapeutic window**. By the end of this week, you'll have the tools to solve problems exactly like this one.
 
 ### From MSY to MEY: The Economic Lens
 
@@ -351,13 +367,29 @@ $$y' = \frac{3}{4}(4x^3) + \frac{1}{4}(2x) - 3 + \frac{1}{x} = 3x^3 + \frac{1}{2
 
 ---
 
+### 3.8 Historical Context: The Quest for Extrema
+
+The question "where does a function reach its highest or lowest value?" has fascinated mathematicians for centuries.
+
+| Mathematician | Era | Contribution |
+|---------------|-----|--------------|
+| **Pierre de Fermat** | 1640s | French lawyer and amateur mathematician. Discovered that maxima and minima occur where the "difference vanishes"—essentially $f'(x) = 0$ before calculus was even formalised. |
+| **Leonhard Euler** | 1740s | Swiss polymath who systematised the use of $e$, $\pi$, $i$, and modern function notation. Developed the **calculus of variations**—optimising entire curves, not just points. |
+| **Joseph-Louis Lagrange** | 1788 | Italian-French mathematician who invented **Lagrange multipliers** for constrained optimisation and reformulated mechanics using pure analysis. |
+
+**Timeline:** Fermat (intuition, 1640s) → Newton & Leibniz (calculus, 1680s) → Euler (systematisation, 1740s) → Lagrange (constraints, 1788)
+
+The tools we develop in Section 4 follow this same intellectual arc: from finding critical points (Fermat's insight) to classifying them (second derivative test) to handling constraints (Lagrange's contribution).
+
+---
+
 ## 4. Optimization: Finding Maxima and Minima
 
-### 4.1 The Core Principle
+### 4.1 The Core Principle (Unconstrained Optimisation)
 
 **At a local maximum or minimum, the derivative equals zero.** These points are called **critical points** or **stationary points**.
 
-**Algorithm for Optimization:**
+When there are no constraints on the variable $x$, we call this **unconstrained** (or **free**) optimisation. The method is straightforward:
 1. Find the derivative $f'(x)$
 2. Solve $f'(x) = 0$ for critical points $x^*$
 3. Use the second derivative test to classify each critical point
@@ -396,7 +428,49 @@ $$y'' = 6x - 12$$
 
 ---
 
-### 4.3 Constrained Optimization
+### 4.3 Global vs Local Optima: A Crucial Distinction
+
+When we solve $f'(x) = 0$, we find **all** critical points. But not all critical points are equally important.
+
+**Definitions:**
+- **Local maximum:** $f(x^*) \geq f(x)$ for all $x$ *near* $x^*$
+- **Global maximum:** $f(x^*) \geq f(x)$ for *all* $x$ in the domain
+
+Every global optimum is local, but not every local optimum is global.
+
+**Example:** Consider $f(x) = x^3 - 6x^2 + 9x + 1$ on the closed interval $[0, 5]$ (our Example 5.11 from above):
+- Local maximum at $x = 1$: $f(1) = 5$
+- Local minimum at $x = 3$: $f(3) = 1$
+- Endpoints: $f(0) = 1$, $f(5) = 21$
+
+The **global maximum** is actually at the endpoint $x = 5$ with $f(5) = 21$—not at the critical point!
+
+> **Practical Rule (Closed Interval Method):** On a closed interval $[a, b]$, evaluate $f$ at every critical point **and** at the endpoints $a$ and $b$. The largest value is the global maximum; the smallest is the global minimum.
+
+---
+
+### 4.4 Inflection Points: Where Curvature Changes
+
+An **inflection point** is where a curve changes from concave up ($\cup$) to concave down ($\cap$), or vice versa.
+
+$$\text{At an inflection point: } f''(x) = 0 \text{ and the sign of } f'' \text{ changes.}$$
+
+**Why this matters:**
+- If $f'(x) = 0$ **and** $f''(x) = 0$, we do **not** necessarily have a maximum or minimum.
+- The second derivative test is **inconclusive** in this case.
+
+**Example:** $f(x) = x^3$ at $x = 0$:
+- $f'(x) = 3x^2$, so $f'(0) = 0$ (critical point)
+- $f''(x) = 6x$, so $f''(0) = 0$ (inconclusive!)
+- For $x < 0$: $f''(x) < 0$ (concave down)
+- For $x > 0$: $f''(x) > 0$ (concave up)
+- The sign of $f''$ changes → $x = 0$ is an **inflection point**, not an extremum.
+
+**Connection to science:** In population growth models (Week 3), the inflection point of the logistic curve marks the point of **fastest growth**—the steepest rate of change. This is where growth transitions from accelerating to decelerating.
+
+---
+
+### 4.5 Constrained Optimization
 
 Many real problems involve **constraints**. The method is:
 1. Write the **objective function** (what to optimize)
@@ -426,6 +500,61 @@ $$A''(x) = -4 < 0 \implies \text{maximum}$$
 **Solution:** $x = 250$ m, $y = 1000 - 500 = 500$ m
 
 **Maximum area:** $A = 250 \times 500 = 125,000$ m²
+
+---
+
+### 4.6 Gradient Descent: Finding Optima Numerically
+
+When we **cannot** solve $f'(x) = 0$ algebraically, we use an iterative numerical approach.
+
+**The idea:** Imagine standing on a hilly landscape in fog. You can't see the bottom, but you can feel the slope under your feet. **Strategy:** take a small step *downhill* (opposite to the slope). Repeat.
+
+**The algorithm:**
+
+$$x_{n+1} = x_n - \alpha \cdot f'(x_n)$$
+
+where $\alpha$ is the **step size** (also called the **learning rate**).
+
+**How it works:**
+1. Start at an initial guess $x_0$
+2. Compute the derivative $f'(x_n)$ (which direction is "downhill"?)
+3. Take a step: $x_{n+1} = x_n - \alpha \cdot f'(x_n)$
+4. Repeat until $|f'(x_n)|$ is small enough (close to zero)
+
+**Example:** Find the minimum of $f(x) = (x - 2)^2 + 1$ starting from $x_0 = 5$, with $\alpha = 0.3$.
+
+- $f'(x) = 2(x - 2)$
+- $x_0 = 5$: $f'(5) = 6$, so $x_1 = 5 - 0.3(6) = 3.2$
+- $x_1 = 3.2$: $f'(3.2) = 2.4$, so $x_2 = 3.2 - 0.3(2.4) = 2.48$
+- $x_2 = 2.48$: $f'(2.48) = 0.96$, so $x_3 = 2.48 - 0.3(0.96) = 2.19$
+- Converging toward $x^* = 2$ ✓
+
+> **Connection to AI and machine learning:** This is exactly how neural networks are trained. The "learning" in machine learning is gradient descent applied to millions of parameters simultaneously—the same calculus you're learning in this course!
+
+---
+
+### 4.7 Newton's Method: Using Curvature for Faster Convergence
+
+**Problem:** Gradient descent can be slow, requiring many small steps. Newton's method uses the **second derivative** (curvature information) for smarter, larger steps.
+
+**The formula:** To find where $f'(x) = 0$:
+
+$$x_{n+1} = x_n - \frac{f'(x_n)}{f''(x_n)}$$
+
+**Simple example:** Find the minimum of $f(x) = x^2 - 4x + 5$.
+- $f'(x) = 2x - 4$, $f''(x) = 2$
+- Starting from $x_0 = 0$: $x_1 = 0 - \frac{-4}{2} = 2$ — exact in **one step**!
+
+**Comparison with gradient descent:**
+
+| Feature | Gradient Descent | Newton's Method |
+|---------|-----------------|-----------------|
+| Uses | $f'$ only | $f'$ and $f''$ |
+| Convergence speed | Linear (slow) | Quadratic (fast) |
+| Steps needed | Many | Few |
+| Cost per step | Low | Higher (need $f''$) |
+
+In Week 4 we mentioned gradient descent briefly. Newton's method is the "turbo" version—fewer iterations, but each one requires computing the second derivative. For simple functions (like our exam problems), Newton's method often gives the exact answer in just one or two steps.
 
 ---
 
@@ -495,6 +624,33 @@ $$\pi''(S) = -0.05 < 0 \checkmark$$
 | MEY | 6750 tonnes | 296.7 tonnes | $\$689,062$ |
 
 **Key insight:** MEY maintains a **higher stock** than MSY, which reduces fishing cost and increases profit despite slightly lower harvest.
+
+### 5.4 From MEY to the Supply Curve
+
+At MEY, we found the optimal stock $S^*$ that maximises profit. But how does the optimal harvest respond to changes in market price? This gives us the industry **supply curve**.
+
+**Derivation:** At MEY, $\pi'(S) = 0$ determines $S^*(p)$ as a function of price. The optimal harvest at each price is:
+
+$$H^*(p) = G(S^*(p)) = g \, S^*(p) \left(1 - \frac{S^*(p)}{K}\right)$$
+
+**Key result:** As market price $p$ rises:
+1. The optimal stock $S^*$ falls (it becomes profitable to fish more intensively)
+2. Optimal harvest $H^*$ rises (up to a point)
+3. This traces out an **upward-sloping supply curve**—the familiar relationship from economics
+
+> **The remarkable insight:** The supply curve for a renewable resource is not arbitrary. It is *derived* from biology (growth function) + economics (profit maximisation) + calculus (setting $\pi' = 0$). The same mathematics connects ecology and market behaviour.
+
+### 5.5 Student Challenge: How Does Technology Shift the Supply Curve?
+
+Modern fishing vessels use **sonar technology** to locate fish schools. This increases the catchability coefficient $e$ in the harvest production function $H = e \cdot E \cdot S$.
+
+**Think about these questions:**
+1. If $e$ increases, what happens to the cost of catching a given harvest?
+2. Does the supply curve shift **left** or **right**?
+3. What happens to the MEY stock level $S^*$?
+4. Is this good or bad for the fish population?
+
+*Hint:* Higher $e$ means each boat catches more fish per trip, so the cost per tonne of fish decreases. This is equivalent to a reduction in the effective cost parameter $c/e$ in the profit function.
 
 ---
 
@@ -667,7 +823,11 @@ print(f"Maximum profit: ${float(max_profit):,.2f}")  # Output: $689,062.50
 |---------|--------|
 | Find critical points | Solve $f'(x) = 0$ |
 | Classify critical points | $f''(x) > 0$ → min, $f''(x) < 0$ → max |
+| Global optima (closed interval) | Compare all critical points + endpoints |
+| Inflection points | $f''(x) = 0$ with sign change in $f''$ |
 | Constrained optimization | Use constraint to eliminate variable, then optimize |
+| Gradient descent | $x_{n+1} = x_n - \alpha \cdot f'(x_n)$ |
+| Newton's method | $x_{n+1} = x_n - f'(x_n) / f''(x_n)$ |
 
 ### Bioeconomic Model
 
@@ -679,6 +839,7 @@ print(f"Maximum profit: ${float(max_profit):,.2f}")  # Output: $689,062.50
 | Cost | $TC = c \cdot E$ |
 | Profit | $\pi = TR - TC$ |
 | MEY condition | $\frac{d\pi}{dS} = 0$ |
+| Supply curve | $H^*(p) = G(S^*(p))$ where $\pi'(S) = 0$ determines $S^*(p)$ |
 
 ---
 
