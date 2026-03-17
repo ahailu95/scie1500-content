@@ -4,6 +4,38 @@
 
 This directory contains the course materials for SCIE1500, used by the SciQuant Assistant app.
 
+---
+
+## ⛔ CRITICAL — ALWAYS PULL BEFORE EDITING `course_config.json`
+
+> **Why this matters:** Multiple people and automated tools can update this file. Editing a stale local copy and pushing will silently overwrite live changes (e.g. videos, announcements, schedule updates added since your last pull).
+
+### THE ONLY SAFE WORKFLOW — NO EXCEPTIONS:
+
+```bash
+# ✅ STEP 0 — ALWAYS DO THIS FIRST, EVERY SINGLE TIME:
+cd ~/scie1500-content
+git pull origin main          # ← NEVER SKIP THIS LINE
+
+# ✅ STEP 1 — Edit the file IN PLACE (never copy from another location without pulling first)
+
+# ✅ STEP 2 — Bump the version field
+
+# ✅ STEP 3 — Review the diff, commit, push
+git diff course_config.json   # ← Check nothing was accidentally removed
+git add -A && git commit -m "Describe your change" && git push origin main
+```
+
+### ❌ WHAT WILL CAUSE A DISASTER:
+
+```bash
+# ❌ NEVER copy course_config.json from another folder (e.g. app assets, Dropbox)
+# over this file WITHOUT doing git pull first.
+# Those copies are frequently stale and WILL overwrite live changes.
+```
+
+---
+
 ## Directory Structure
 
 ```
