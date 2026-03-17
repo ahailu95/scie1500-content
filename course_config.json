@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "lastUpdated": "2026-03-16",
   "institution": {
     "id": "uwa",
@@ -951,7 +951,7 @@
         "title": "Assignment 1: Data Analysis",
         "repoPattern": "SCIE1500-A1-S1-2026-{username}",
         "files": ["ANSWERS.md"],
-        "dueDate": "2026-03-25"
+        "dueDate": "2026-04-01"
       }
     ]
   }
