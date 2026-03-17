@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "lastUpdated": "2026-03-16",
   "institution": {
     "id": "uwa",
@@ -407,6 +407,15 @@
           "description": "Copyable code examples for Week 4 - Differentiation and rates of change",
           "type": "reading",
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w4_github_guide",
+          "title": "GitHub & Assignment Submission Guide",
+          "description": "How to submit your assignment using SciQuant and GitHub",
+          "type": "reading",
+          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/STUDENT_GUIDE_GitHub_and_SciQuant.md",
           "source": "custom",
           "requiresAuth": false
         }
