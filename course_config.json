@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "lastUpdated": "2026-03-16",
   "institution": {
     "id": "uwa",
@@ -348,7 +348,7 @@
           "title": "Week 4: Limits, Continuity, and Introduction to Derivatives",
           "description": "Limits, continuity, derivatives as instantaneous rates of change, and numerical differentiation",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_4/week4_lesson.md",
+          "url": "asset://SCIE1500Materials/Week_4/week4_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
@@ -420,7 +420,7 @@
           "title": "Week 5: Differentiation Techniques and Optimization",
           "description": "Differentiation rules (product, quotient, chain), critical points, and optimization with SymPy",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_5/week5_lesson.md",
+          "url": "asset://SCIE1500Materials/Week_5/week5_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
@@ -482,7 +482,7 @@
           "title": "Week 6: Introduction to Integration",
           "description": "Antiderivatives, the power rule for integration, definite integrals, and area under curves",
           "type": "lectureNotes",
-          "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/Week_6/week6_lesson.md",
+          "url": "asset://SCIE1500Materials/Week_6/week6_lesson.md",
           "source": "custom",
           "requiresAuth": false
         },
