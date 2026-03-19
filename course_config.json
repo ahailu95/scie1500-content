@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.9.2",
+  "version": "2.9.3",
   "lastUpdated": "2026-03-16",
   "institution": {
     "id": "uwa",
@@ -369,6 +369,33 @@
           "description": "Lecture recording: limits, continuity and introduction to derivatives",
           "type": "video",
           "url": "https://echo360.net.au/media/0e069436-16b4-419d-bdf1-294d1197b9df/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w4_video_2",
+          "title": "Limits (Part 2, Dr. Hailu)",
+          "description": "Lecture recording: limits",
+          "type": "video",
+          "url": "https://echo360.net.au/media/113cee34-bc45-4fc6-bbb3-bd6cc1d6139d/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w4_video_3",
+          "title": "Continuity (Part 3, Dr. Hailu)",
+          "description": "Lecture recording: continuity",
+          "type": "video",
+          "url": "https://echo360.net.au/media/3cb6d115-d7ff-4d0f-b997-38058d812677/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w4_video_4",
+          "title": "Derivatives (Part 4, Dr. Hailu)",
+          "description": "Lecture recording: introduction to derivatives",
+          "type": "video",
+          "url": "https://echo360.net.au/media/f8b90f3b-8ef8-4a1b-ba20-ad35af583714/public",
           "source": "custom",
           "requiresAuth": false
         }
