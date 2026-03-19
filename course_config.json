@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.9.3",
-  "lastUpdated": "2026-03-16",
+  "version": "2.9.4",
+  "lastUpdated": "2026-03-20",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -377,7 +377,7 @@
           "title": "Limits (Part 2, Dr. Hailu)",
           "description": "Lecture recording: limits",
           "type": "video",
-          "url": "https://echo360.net.au/media/113cee34-bc45-4fc6-bbb3-bd6cc1d6139d/public",
+          "url": "https://echo360.net.au/media/8ca9ae0b-badd-47b8-9ec3-8173738a55ea/public",
           "source": "custom",
           "requiresAuth": false
         },
