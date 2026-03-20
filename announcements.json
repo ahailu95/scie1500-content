@@ -1,8 +1,17 @@
 {
-  "version": "2.3.1",
+  "version": "2.3.2",
   "lastUpdated": "2026-03-05T10:00:00+08:00",
-  
   "announcements": [
+    {
+      "id": "github-privacy-reminder",
+      "title": "GitHub Privacy Reminder — No Action Required",
+      "message": "Your assignment and worksheet repositories are **private** — only you, your group members, and teaching staff can see them. You cannot accidentally make them public.\n\nAs good practice (and consistent with UWA's data handling guidelines), please avoid putting your **student ID number** or **full name** in repository files. Your GitHub username is sufficient to identify your submission.\n\nWe have updated the assignment template to reflect this — the Student ID field has been removed. If you have already entered your details, no immediate action is needed, but you are welcome to remove them.",
+      "publishedAt": "2026-03-20T09:00:00+08:00",
+      "expiresAt": "2026-04-05T00:00:00+08:00",
+      "priority": "normal",
+      "category": "general",
+      "relatedWeek": null
+    },
     {
       "id": "worksheet2-due-date-correction",
       "title": "Worksheet 2 Due Date: Tuesday 10 March",
