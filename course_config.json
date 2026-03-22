@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.9.4",
+  "version": "2.9.5",
   "lastUpdated": "2026-03-20",
   "institution": {
     "id": "uwa",
@@ -470,7 +470,26 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w5_video_1",
+          "title": "Differentiation techniques and optimisation (Overview, Dr. Hailu)",
+          "description": "Lecture recording: overview of differentiation techniques and optimisation",
+          "type": "video",
+          "url": "https://echo360.net.au/media/a68473c7-6e9d-4e0f-86cc-5b8e495c775d/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w5_video_2",
+          "title": "Differentiation techniques and optimisation (Full video)",
+          "description": "Lecture recording: differentiation techniques and optimisation",
+          "type": "video",
+          "url": "https://echo360.net.au/media/e0c24978-15ee-4b54-8fd9-7879e22c56c6/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
