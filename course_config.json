@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.9.5",
-  "lastUpdated": "2026-03-20",
+  "version": "2.9.6",
+  "lastUpdated": "2026-03-29",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -551,7 +551,17 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w6_video_1",
+          "title": "Introduction to Integration",
+          "description": "Lecture recording: introduction to integration",
+          "type": "video",
+          "url": "https://echo360.net.au/media/3a9e9aac-e078-411f-8c91-8f612ea1fc2c/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
