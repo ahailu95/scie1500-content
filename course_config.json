@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.9.6",
-  "lastUpdated": "2026-03-29",
+  "version": "2.9.7",
+  "lastUpdated": "2026-04-01",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -1013,7 +1013,7 @@
     "assignments": [
       {
         "id": "assignment1",
-        "title": "Assignment 1: Data Analysis",
+        "title": "Assignment 1: Coverage weeks 1 to 4",
         "repoPattern": "SCIE1500-A1-S1-2026-{username}",
         "files": ["ANSWERS.md"],
         "dueDate": "2026-04-01"
