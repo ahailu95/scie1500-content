@@ -2466,7 +2466,7 @@ P_demand = (500 - Q) / 4
 P_supply = (Q + 100) / 2
 
 # Equilibrium
-Q_star = 200  # From Qd = Qs
+Q_star = 100  # From Qd = Qs
 P_star = 100
 
 plt.figure(figsize=(10, 8))

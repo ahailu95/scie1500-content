@@ -1015,7 +1015,9 @@
         "id": "assignment1",
         "title": "Assignment 1: Coverage weeks 1 to 4",
         "repoPattern": "SCIE1500-A1-S1-2026-{username}",
-        "files": ["ANSWERS.md"],
+        "files": [
+          "ANSWERS.md"
+        ],
         "dueDate": "2026-04-01"
       }
     ]
