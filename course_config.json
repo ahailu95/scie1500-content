@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "2.9.7",
+  "version": "2.9.8",
   "lastUpdated": "2026-04-01",
   "institution": {
     "id": "uwa",
@@ -26,7 +26,7 @@
         },
         {
           "id": "w0_integrated_lesson",
-          "title": "📚 Lesson with Code: Mathematical Foundations",
+          "title": "\ud83d\udcda Lesson with Code: Mathematical Foundations",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_0/lesson_and_code_week0.ipynb",
@@ -102,7 +102,7 @@
         },
         {
           "id": "w1_integrated_lesson",
-          "title": "📚 Lesson with Code: Functions & Ocean Plastics",
+          "title": "\ud83d\udcda Lesson with Code: Functions & Ocean Plastics",
           "description": "Interactive notebook with theory and real-world ocean plastic data analysis",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_1/lesson_and_code_week1.ipynb",
@@ -183,7 +183,7 @@
         },
         {
           "id": "w2_integrated_lesson",
-          "title": "📚 Lesson with Code: Exponential Growth & Modeling",
+          "title": "\ud83d\udcda Lesson with Code: Exponential Growth & Modeling",
           "description": "Interactive notebook with exponential/logarithmic functions and plastic production modeling",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_2/lesson_and_code_week2.ipynb",
@@ -273,7 +273,7 @@
         },
         {
           "id": "w3_integrated_lesson",
-          "title": "📚 Lesson with Code: Logistic Functions & Growth Models",
+          "title": "\ud83d\udcda Lesson with Code: Logistic Functions & Growth Models",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_3/lesson_and_code_week3.ipynb",
@@ -354,7 +354,7 @@
         },
         {
           "id": "w4_integrated_lesson",
-          "title": "📚 Lesson with Code: Limits & Derivatives",
+          "title": "\ud83d\udcda Lesson with Code: Limits & Derivatives",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_4/lesson_and_code_week4.ipynb",
@@ -462,7 +462,7 @@
         },
         {
           "id": "w5_integrated_lesson",
-          "title": "📚 Lesson with Code: Differentiation & Optimization",
+          "title": "\ud83d\udcda Lesson with Code: Differentiation & Optimization",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_5/lesson_and_code_week5.ipynb",
@@ -543,7 +543,7 @@
         },
         {
           "id": "w6_integrated_lesson",
-          "title": "📚 Lesson with Code: Introduction to Integration",
+          "title": "\ud83d\udcda Lesson with Code: Introduction to Integration",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_6/lesson_and_code_week6.ipynb",
@@ -615,7 +615,7 @@
         },
         {
           "id": "w7_integrated_lesson",
-          "title": "📚 Lesson with Code: Definite Integrals & FTC",
+          "title": "\ud83d\udcda Lesson with Code: Definite Integrals & FTC",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_7/lesson_and_code_week7.ipynb",
@@ -623,7 +623,26 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w7_echo360_part_a",
+          "title": "Definite Integrals and Applications (Part A)",
+          "description": "Lecture covering definite integrals and applications - Part A",
+          "type": "video",
+          "url": "https://echo360.net.au/media/b603a6c9-d8af-4319-9bca-c028de3edd36/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w7_echo360_part_b",
+          "title": "Definite Integrals and Applications (Part B)",
+          "description": "Lecture covering definite integrals and applications - Part B",
+          "type": "video",
+          "url": "https://echo360.net.au/media/2bc4e78f-4785-4e9b-9788-21137eb4149e/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
@@ -677,7 +696,7 @@
         },
         {
           "id": "w8_integrated_lesson",
-          "title": "📚 Lesson with Code: Predator-Prey Dynamics",
+          "title": "\ud83d\udcda Lesson with Code: Predator-Prey Dynamics",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_8/lesson_and_code_week8.ipynb",
@@ -739,7 +758,7 @@
         },
         {
           "id": "w9_integrated_lesson",
-          "title": "📚 Lesson with Code: Probability Foundations",
+          "title": "\ud83d\udcda Lesson with Code: Probability Foundations",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_9/lesson_and_code_week9.ipynb",
@@ -801,7 +820,7 @@
         },
         {
           "id": "w10_integrated_lesson",
-          "title": "📚 Lesson with Code: Random Variables & Hypothesis Testing",
+          "title": "\ud83d\udcda Lesson with Code: Random Variables & Hypothesis Testing",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_10/lesson_and_code_week10.ipynb",
@@ -863,7 +882,7 @@
         },
         {
           "id": "w11_integrated_lesson",
-          "title": "📚 Lesson with Code: Trigonometry & Periodic Models",
+          "title": "\ud83d\udcda Lesson with Code: Trigonometry & Periodic Models",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_11/lesson_and_code_week11.ipynb",
@@ -925,7 +944,7 @@
         },
         {
           "id": "w12_integrated_lesson",
-          "title": "📚 Lesson with Code: Linear Programming & Optimization",
+          "title": "\ud83d\udcda Lesson with Code: Linear Programming & Optimization",
           "description": "Interactive notebook combining theory and executable code examples",
           "type": "notebook",
           "url": "asset://SCIE1500Materials/Week_12/lesson_and_code_week12.ipynb",
