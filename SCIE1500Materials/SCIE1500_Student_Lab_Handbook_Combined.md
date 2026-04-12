@@ -37,13 +37,13 @@ This handbook contains everything you need for your weekly lab sessions. Labs ar
 
 ## 1.1 Weekly Timeline (2 Hours)
 
-| Time | Activity | What You'll Do |
-|------|----------|----------------|
-| 0:00–0:15 | **Briefing** | Demonstrator introduces this week's problem |
-| 0:15–0:35 | **Presentations** | 2 groups present last week's work (Weeks 3–9) |
-| 0:35–0:45 | **Q&A** | Class discusses presentations; demonstrator feedback |
-| 0:45–1:40 | **Group Work** | Your team tackles the current week's Problem Brief |
-| 1:40–2:00 | **Wrap-up** | Share progress; preview next week |
+| Time      | Activity          | What You'll Do                                       |
+| --------- | ----------------- | ---------------------------------------------------- |
+| 0:00–0:15 | **Briefing**      | Demonstrator introduces this week's problem          |
+| 0:15–0:35 | **Presentations** | 2 groups present last week's work (Weeks 3–9)        |
+| 0:35–0:45 | **Q&A**           | Class discusses presentations; demonstrator feedback |
+| 0:45–1:40 | **Group Work**    | Your team tackles the current week's Problem Brief   |
+| 1:40–2:00 | **Wrap-up**       | Share progress; preview next week                    |
 
 ## 1.2 What to Bring
 
@@ -85,12 +85,12 @@ This handbook contains everything you need for your weekly lab sessions. Labs ar
 
 ## 2.1 Lab Component Breakdown (20% of Unit)
 
-| Component | Weight | Details |
-|-----------|--------|---------|
-| **Lab Engagement** | 5% | Attendance + active participation |
-| **Group Presentations** | 8% | 2 presentations × 4% each |
-| **Weekly Worksheets** | 7% | Best 10 of 12 counted |
-| **Total** | **20%** | |
+| Component               | Weight  | Details                           |
+| ----------------------- | ------- | --------------------------------- |
+| **Lab Engagement**      | 5%      | Attendance + active participation |
+| **Group Presentations** | 8%      | 2 presentations × 4% each         |
+| **Weekly Worksheets**   | 7%      | Best 10 of 12 counted             |
+| **Total**               | **20%** |                                   |
 
 ## 2.2 Engagement Marks
 
@@ -175,15 +175,15 @@ If your contribution score falls below **70%**:
 
 Each group presents **exactly twice** during Weeks 3–9 on a presentation topic from the previous week.
 
-| Week | Presenting Groups | Presentation Topic |
-|------|-------------------|-------------------|
-| 3 | 1, 2 | Week 2: Exponential models |
-| 4 | 3, 4 | Week 3: Logistic/Schaefer |
-| 5 | 5, 6 | Week 4: Derivatives |
-| 6 | 7, 1 | Week 5: Optimization |
-| 7 | 2, 3 | Week 6: Integration |
-| 8 | 4, 5 | Week 7: Definite integrals & surplus |
-| 9 | 6, 7 | Week 8: Lotka-Volterra |
+| Week | Presenting Groups | Presentation Topic                   |
+| ---- | ----------------- | ------------------------------------ |
+| 3    | 1, 2              | Week 2: Exponential models           |
+| 4    | 3, 4              | Week 3: Logistic/Schaefer            |
+| 5    | 5, 6              | Week 4: Derivatives                  |
+| 6    | 7, 1              | Week 5: Optimization                 |
+| 7    | 2, 3              | Week 6: Integration                  |
+| 8    | 4, 5              | Week 7: Definite integrals & surplus |
+| 9    | 6, 7              | Week 8: Lotka-Volterra               |
 
 **Weeks 10–12** use alternative formats (Mock Exam, Peer Review, Gallery Walk) where all groups participate equally.
 
@@ -200,12 +200,12 @@ Each group presents **exactly twice** during Weeks 3–9 on a presentation topic
 
 ## 3.2 Recommended Structure
 
-| Section | Time | Content |
-|---------|------|---------|
-| **The Problem** | 2 min | What real-world question were you answering? Why does it matter? |
+| Section          | Time  | Content                                                             |
+| ---------------- | ----- | ------------------------------------------------------------------- |
+| **The Problem**  | 2 min | What real-world question were you answering? Why does it matter?    |
 | **The Approach** | 3 min | What mathematical model/method did you use? Why was it appropriate? |
-| **Key Results** | 3 min | What did you find? Show at least one visualization. |
-| **Implications** | 2 min | What should decision-makers take away? |
+| **Key Results**  | 3 min | What did you find? Show at least one visualization.                 |
+| **Implications** | 2 min | What should decision-makers take away?                              |
 
 ## 3.3 Presentation Tips
 
@@ -226,12 +226,12 @@ Each group presents **exactly twice** during Weeks 3–9 on a presentation topic
 
 ## 3.4 Common Mistakes to Avoid
 
-| Mistake | Why It's Bad | Better Approach |
-|---------|--------------|-----------------|
-| Showing code instead of results | Audience can't follow; wastes time | Show the graph/output, explain what it means |
-| No clear "so what?" | Problem seems pointless | Always connect to real-world decision |
-| Uneven participation | Some members don't demonstrate learning | Divide roles explicitly; everyone speaks |
-| Mathematical errors unchecked | Loses credibility | Double-check calculations; verify with Python |
+| Mistake                         | Why It's Bad                            | Better Approach                               |
+| ------------------------------- | --------------------------------------- | --------------------------------------------- |
+| Showing code instead of results | Audience can't follow; wastes time      | Show the graph/output, explain what it means  |
+| No clear "so what?"             | Problem seems pointless                 | Always connect to real-world decision         |
+| Uneven participation            | Some members don't demonstrate learning | Divide roles explicitly; everyone speaks      |
+| Mathematical errors unchecked   | Loses credibility                       | Double-check calculations; verify with Python |
 
 ---
 
@@ -258,9 +258,9 @@ The United Nations Environment Programme (UNEP) is preparing a report on plastic
 
 **Data: Global plastic production (million tonnes)**
 
-| Year | 1950 | 1970 | 1990 | 2010 | 2015 |
-|------|------|------|------|------|------|
-| Production | 2 | 35 | 120 | 270 | 380 |
+| Year       | 1950 | 1970 | 1990 | 2010 | 2015 |
+| ---------- | ---- | ---- | ---- | ---- | ---- |
+| Production | 2    | 35   | 120  | 270  | 380  |
 
 The relationship between year and production can be modeled as a function $P(t)$ where $t$ is years since 1950.
 
@@ -2850,12 +2850,12 @@ where:
 
 5. The phase plane is divided into four regions:
 
-   | Region | Condition | $\frac{dN}{dt}$ | $\frac{dC}{dt}$ | Movement |
-   |--------|-----------|-----------------|-----------------|----------|
-   | I | $N < N^*, C < C^*$ | ? | ? | ? |
-   | II | $N > N^*, C < C^*$ | ? | ? | ? |
-   | III | $N > N^*, C > C^*$ | ? | ? | ? |
-   | IV | $N < N^*, C > C^*$ | ? | ? | ? |
+   | Region | Condition          | $\frac{dN}{dt}$ | $\frac{dC}{dt}$ | Movement |
+   | ------ | ------------------ | --------------- | --------------- | -------- |
+   | I      | $N < N^*, C < C^*$ | ?               | ?               | ?        |
+   | II     | $N > N^*, C < C^*$ | ?               | ?               | ?        |
+   | III    | $N > N^*, C > C^*$ | ?               | ?               | ?        |
+   | IV     | $N < N^*, C > C^*$ | ?               | ?               | ?        |
 
    Fill in the table.
 
@@ -3011,12 +3011,12 @@ where:
 
 5. Divide the phase plane into four regions based on nullclines:
 
-   | Region | $N$ vs. 300 | $C$ vs. 200 | $\frac{dN}{dt}$ | $\frac{dC}{dt}$ | Movement |
-   |--------|-------------|-------------|-----------------|-----------------|----------|
-   | I | $N < 300$ | $C < 200$ | + | − | $N$ increases, $C$ decreases |
-   | II | $N > 300$ | $C < 200$ | + | + | Both increase |
-   | III | $N > 300$ | $C > 200$ | − | + | $N$ decreases, $C$ increases |
-   | IV | $N < 300$ | $C > 200$ | − | − | Both decrease |
+   | Region | $N$ vs. 300 | $C$ vs. 200 | $\frac{dN}{dt}$ | $\frac{dC}{dt}$ | Movement                     |
+   | ------ | ----------- | ----------- | --------------- | --------------- | ---------------------------- |
+   | I      | $N < 300$   | $C < 200$   | +               | −               | $N$ increases, $C$ decreases |
+   | II     | $N > 300$   | $C < 200$   | +               | +               | Both increase                |
+   | III    | $N > 300$   | $C > 200$   | −               | +               | $N$ decreases, $C$ increases |
+   | IV     | $N < 300$   | $C > 200$   | −               | −               | Both decrease                |
 
 6. Sketch arrows showing population movement in each region
 
@@ -3151,12 +3151,12 @@ where:
 
 5. Create a phase plane table:
 
-   | Region | $K$ vs. 313 | $D$ vs. 333 | $\frac{dK}{dt}$ | $\frac{dD}{dt}$ | Trajectory |
-   |--------|-------------|-------------|-----------------|-----------------|------------|
-   | I | $K < 313$ | $D < 333$ | + | − | K increases, D decreases |
-   | II | $K > 313$ | $D < 333$ | + | + | Both increase |
-   | III | $K > 313$ | $D > 333$ | − | + | K decreases, D increases |
-   | IV | $K < 313$ | $D > 333$ | − | − | Both decrease |
+   | Region | $K$ vs. 313 | $D$ vs. 333 | $\frac{dK}{dt}$ | $\frac{dD}{dt}$ | Trajectory               |
+   | ------ | ----------- | ----------- | --------------- | --------------- | ------------------------ |
+   | I      | $K < 313$   | $D < 333$   | +               | −               | K increases, D decreases |
+   | II     | $K > 313$   | $D < 333$   | +               | +               | Both increase            |
+   | III    | $K > 313$   | $D > 333$   | −               | +               | K decreases, D increases |
+   | IV     | $K < 313$   | $D > 333$   | −               | −               | Both decrease            |
 
 6. Sketch the cyclic behavior:
    - Trajectories spiral around the equilibrium
@@ -3249,22 +3249,22 @@ plt.show()
 
 ## SUMMARY TABLE: PRESENTATION SCHEDULE WITH VARIATIONS
 
-| Week Presenting | Group(s) | Variation | Topic | Mathematical Focus |
-|----------------|----------|-----------|-------|-------------------|
-| 3 | 1 | A | Bacterial growth (MRSA) | Exponential growth, doubling time |
-| 3 | 2 | B | Radioactive decay (Fukushima) | Exponential decay, half-life |
-| 4 | 3 | A | Abalone fishery | Logistic growth, Schaefer model |
-| 4 | 4 | B | Rock lobster fishery | Logistic growth, climate impact |
-| 5 | 5 | A | Pesticide degradation | Derivatives, exponential decay |
-| 5 | 6 | B | Drug pharmacokinetics | Derivatives, double exponential |
-| 6 | 7 | A | Solar farm optimization | Derivatives, constrained optimization |
-| 6 | 1 (2nd) | B | Aquaculture stocking density | Derivatives, quadratic optimization |
-| 7 | 2 (2nd) | A | Soil carbon sequestration | Antiderivatives, exponential integrals |
-| 7 | 3 (2nd) | B | Groundwater recharge | Antiderivatives, volume accumulation |
-| 8 | 4 (2nd) | A | Wine market surplus | Definite integrals, consumer/producer surplus |
-| 8 | 5 (2nd) | B | Avocado export policy | Definite integrals, welfare analysis |
-| 9 | 6 (2nd) | A | Numbat-feral cat dynamics | Lotka-Volterra, phase plane |
-| 9 | 7 (2nd) | B | Kangaroo-dingo dynamics | Lotka-Volterra, equilibrium analysis |
+| Week Presenting | Group(s) | Variation | Topic                         | Mathematical Focus                            |
+| --------------- | -------- | --------- | ----------------------------- | --------------------------------------------- |
+| 3               | 1        | A         | Bacterial growth (MRSA)       | Exponential growth, doubling time             |
+| 3               | 2        | B         | Radioactive decay (Fukushima) | Exponential decay, half-life                  |
+| 4               | 3        | A         | Abalone fishery               | Logistic growth, Schaefer model               |
+| 4               | 4        | B         | Rock lobster fishery          | Logistic growth, climate impact               |
+| 5               | 5        | A         | Pesticide degradation         | Derivatives, exponential decay                |
+| 5               | 6        | B         | Drug pharmacokinetics         | Derivatives, double exponential               |
+| 6               | 7        | A         | Solar farm optimization       | Derivatives, constrained optimization         |
+| 6               | 1 (2nd)  | B         | Aquaculture stocking density  | Derivatives, quadratic optimization           |
+| 7               | 2 (2nd)  | A         | Soil carbon sequestration     | Antiderivatives, exponential integrals        |
+| 7               | 3 (2nd)  | B         | Groundwater recharge          | Antiderivatives, volume accumulation          |
+| 8               | 4 (2nd)  | A         | Wine market surplus           | Definite integrals, consumer/producer surplus |
+| 8               | 5 (2nd)  | B         | Avocado export policy         | Definite integrals, welfare analysis          |
+| 9               | 6 (2nd)  | A         | Numbat-feral cat dynamics     | Lotka-Volterra, phase plane                   |
+| 9               | 7 (2nd)  | B         | Kangaroo-dingo dynamics       | Lotka-Volterra, equilibrium analysis          |
 
 ---
 
@@ -3361,12 +3361,12 @@ A person tests **positive**. What's the probability they actually have COVID?
 9. Create a table:
 
    | Prevalence $P(D)$ | $P(D \| T^+)$ |
-   |-------------------|---------------|
-   | 0.5% | ? |
-   | 2% | ? |
-   | 5% | ? |
-   | 10% | ? |
-   | 20% | ? |
+   | ----------------- | ------------- |
+   | 0.5%              | ?             |
+   | 2%                | ?             |
+   | 5%                | ?             |
+   | 10%               | ?             |
+   | 20%               | ?             |
 
 **Part D: Policy Implications (5 minutes)**
 
@@ -3611,12 +3611,12 @@ This week counts as a **double worksheet**:
 
 **Problem creation rubric:**
 
-| Criterion | Excellent (5) | Good (3-4) | Developing (1-2) |
-|-----------|--------------|------------|------------------|
-| Context | Engaging, realistic | Reasonable | Weak/implausible |
-| Mathematical soundness | All parameters determinable; no ambiguity | Minor issues | Unsolvable as written |
-| Difficulty | Comparable to examples | Slightly off | Way too easy/hard |
-| Questions | Clear, test understanding | Formulaic | Vague or only computational |
+| Criterion              | Excellent (5)                             | Good (3-4)   | Developing (1-2)            |
+| ---------------------- | ----------------------------------------- | ------------ | --------------------------- |
+| Context                | Engaging, realistic                       | Reasonable   | Weak/implausible            |
+| Mathematical soundness | All parameters determinable; no ambiguity | Minor issues | Unsolvable as written       |
+| Difficulty             | Comparable to examples                    | Slightly off | Way too easy/hard           |
+| Questions              | Clear, test understanding                 | Formulaic    | Vague or only computational |
 
 ---
 
@@ -3648,12 +3648,12 @@ The UWA Student Guild is redesigning its food court menu to meet sustainability 
 
 **Nutritional and environmental data per serving:**
 
-| Nutrient/Impact | Plant-based | Chicken | Weekly Target |
-|----------------|-------------|---------|---------------|
-| Protein (g) | 18 | 30 | ≥ 350 g |
-| Calories (kcal) | 220 | 280 | ≥ 3500 kcal |
-| Iron (mg) | 3 | 1 | ≥ 25 mg |
-| Carbon footprint (kg CO₂) | 0.5 | 2.5 | ≤ 20 kg |
+| Nutrient/Impact           | Plant-based | Chicken | Weekly Target |
+| ------------------------- | ----------- | ------- | ------------- |
+| Protein (g)               | 18          | 30      | ≥ 350 g       |
+| Calories (kcal)           | 220         | 280     | ≥ 3500 kcal   |
+| Iron (mg)                 | 3           | 1       | ≥ 25 mg       |
+| Carbon footprint (kg CO₂) | 0.5         | 2.5     | ≤ 20 kg       |
 
 **Costs:**
 - Plant-based: \$2.50 per serving
@@ -3696,10 +3696,10 @@ The UWA Student Guild is redesigning its food court menu to meet sustainability 
 7. **Corner Point Theorem:** The optimal solution occurs at a vertex. Evaluate $Z$ at each corner point:
 
    | Corner Point $(x, y)$ | Cost $Z = 2.5x + 4y$ |
-   |-----------------------|----------------------|
-   | | |
-   | | |
-   | | |
+   | --------------------- | -------------------- |
+   |                       |                      |
+   |                       |                      |
+   |                       |                      |
 
 8. Which corner point gives the minimum cost? This is your optimal solution.
 
@@ -3729,13 +3729,13 @@ The UWA Student Guild is redesigning its food court menu to meet sustainability 
 
 #### GALLERY WALK FORMAT
 
-| Time | Activity |
-|------|----------|
-| 0:00–0:15 | Demonstrator reviews LP formulation |
-| 0:15–1:00 | Groups work on Problem Brief |
-| 1:00–1:10 | Groups set up "stations" (poster/whiteboard with solution) |
+| Time      | Activity                                                          |
+| --------- | ----------------------------------------------------------------- |
+| 0:00–0:15 | Demonstrator reviews LP formulation                               |
+| 0:15–1:00 | Groups work on Problem Brief                                      |
+| 1:00–1:10 | Groups set up "stations" (poster/whiteboard with solution)        |
 | 1:10–1:50 | Gallery Walk: groups rotate every 8 minutes, explaining solutions |
-| 1:50–2:00 | Debrief: Compare approaches |
+| 1:50–2:00 | Debrief: Compare approaches                                       |
 
 **Gallery Walk rules:**
 - 2 group members stay at station to present
@@ -3903,13 +3903,13 @@ Your group presentation will be graded out of 20 marks (scaled to 4% of your uni
 
 *Example: If your group receives 16/20 (80%) and your contribution score is 90%, your individual mark is 80 × 0.90 = 72%.*
 
-| Criterion | Excellent (5) | Good (3-4) | Developing (1-2) | Poor (0) |
-|-----------|--------------|------------|------------------|----------|
-| **Problem Context (5 marks)** | Clear explanation of real-world problem; audience understands why it matters | Problem explained but lacks context or motivation | Problem stated but unclear why it's important | No clear problem statement |
-| **Mathematical Approach (5 marks)** | Correct model/method selected; clear justification for choice; formula presented clearly | Correct approach with minor errors; justification present but weak | Approach has errors or is poorly justified | Wrong method or no mathematical content |
-| **Results & Visualization (5 marks)** | Results clearly presented with effective graphs/equations; calculations correct | Results mostly correct; visualization adequate | Results unclear or visualization ineffective | Major errors or no results shown |
-| **Interpretation & Implications (3 marks)** | Clear connection to real-world decision; discusses limitations and trade-offs | Some interpretation but lacks depth | Minimal interpretation; just states numbers | No interpretation of results |
-| **Delivery & Timing (2 marks)** | All members participate; well-practiced; within 10-minute limit | Most members participate; slightly over/under time | Uneven participation; timing issues | One person dominates; major timing problems |
+| Criterion                                   | Excellent (5)                                                                            | Good (3-4)                                                         | Developing (1-2)                              | Poor (0)                                    |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | --------------------------------------------- | ------------------------------------------- |
+| **Problem Context (5 marks)**               | Clear explanation of real-world problem; audience understands why it matters             | Problem explained but lacks context or motivation                  | Problem stated but unclear why it's important | No clear problem statement                  |
+| **Mathematical Approach (5 marks)**         | Correct model/method selected; clear justification for choice; formula presented clearly | Correct approach with minor errors; justification present but weak | Approach has errors or is poorly justified    | Wrong method or no mathematical content     |
+| **Results & Visualization (5 marks)**       | Results clearly presented with effective graphs/equations; calculations correct          | Results mostly correct; visualization adequate                     | Results unclear or visualization ineffective  | Major errors or no results shown            |
+| **Interpretation & Implications (3 marks)** | Clear connection to real-world decision; discusses limitations and trade-offs            | Some interpretation but lacks depth                                | Minimal interpretation; just states numbers   | No interpretation of results                |
+| **Delivery & Timing (2 marks)**             | All members participate; well-practiced; within 10-minute limit                          | Most members participate; slightly over/under time                 | Uneven participation; timing issues           | One person dominates; major timing problems |
 
 **Total: ____ / 20 marks**
 
@@ -3961,13 +3961,13 @@ Your group presentation will be graded out of 20 marks (scaled to 4% of your uni
 
 ## 7.4 Common Pitfalls
 
-| Pitfall | How to Avoid |
-|---------|-------------|
-| Starting with code before understanding the problem | Always formulate mathematically first |
-| Not checking units | Track units through every calculation |
-| Ignoring domain/range restrictions | Ask: "What values make sense here?" |
-| Over-relying on AI | Use AI to check/debug, not to think for you |
-| Skipping the "so what?" | Always connect math back to the scenario |
+| Pitfall                                             | How to Avoid                                |
+| --------------------------------------------------- | ------------------------------------------- |
+| Starting with code before understanding the problem | Always formulate mathematically first       |
+| Not checking units                                  | Track units through every calculation       |
+| Ignoring domain/range restrictions                  | Ask: "What values make sense here?"         |
+| Over-relying on AI                                  | Use AI to check/debug, not to think for you |
+| Skipping the "so what?"                             | Always connect math back to the scenario    |
 
 ## 7.5 Using AI Responsibly
 
@@ -4012,21 +4012,21 @@ Your group presentation will be graded out of 20 marks (scaled to 4% of your uni
 
 # Quick Reference: Semester Schedule
 
-| Week | Topic | Lab Activity | Presenting Groups |
-|------|-------|--------------|-------------------|
-| 0 | Mathematical Foundations | Python basics, Schaefer model | – |
-| 1 | Functions | Plastic production analysis | – |
-| 2 | Exponential & Logarithmic | Growth and decay models | – |
-| 3 | Logistic & Schaefer | Fishery management | 1, 2 |
-| 4 | Limits & Derivatives | Chemical optimization | 3, 4 |
-| 5 | Optimization | Wildlife corridor design | 5, 6 |
-| 6 | Integration | Carbon sequestration | 7, 1 |
-| 7 | Definite Integrals & Surplus | Market welfare analysis | 2, 3 |
-| 8 | Lotka-Volterra | Predator-prey dynamics | 4, 5 |
-| 9 | Probability & Bayes | COVID testing | 6, 7 |
-| 10 | Hypothesis Testing | Mock Exam Workshop | All (no presentations) |
-| 11 | Trigonometry | Peer Review Exchange | All (no presentations) |
-| 12 | Linear Programming | Gallery Walk | All (no presentations) |
+| Week | Topic                        | Lab Activity                  | Presenting Groups      |
+| ---- | ---------------------------- | ----------------------------- | ---------------------- |
+| 0    | Mathematical Foundations     | Python basics, Schaefer model | –                      |
+| 1    | Functions                    | Plastic production analysis   | –                      |
+| 2    | Exponential & Logarithmic    | Growth and decay models       | –                      |
+| 3    | Logistic & Schaefer          | Fishery management            | 1, 2                   |
+| 4    | Limits & Derivatives         | Chemical optimization         | 3, 4                   |
+| 5    | Optimization                 | Wildlife corridor design      | 5, 6                   |
+| 6    | Integration                  | Carbon sequestration          | 7, 1                   |
+| 7    | Definite Integrals & Surplus | Market welfare analysis       | 2, 3                   |
+| 8    | Lotka-Volterra               | Predator-prey dynamics        | 4, 5                   |
+| 9    | Probability & Bayes          | COVID testing                 | 6, 7                   |
+| 10   | Hypothesis Testing           | Mock Exam Workshop            | All (no presentations) |
+| 11   | Trigonometry                 | Peer Review Exchange          | All (no presentations) |
+| 12   | Linear Programming           | Gallery Walk                  | All (no presentations) |
 
 ---
 
