@@ -2753,8 +2753,8 @@ P_demand = (800 - Q) / 5
 P_supply = (Q + 200) / 3
 
 # Equilibrium
-Q_star = 500  # Solve Qd = Qs
-P_star = 60   # Substitute back
+Q_star = 175  # Solve Qd = Qs: 800-5P = -200+3P → P*=125, Q*=175
+P_star = 125  # Substitute back: Q_d(125) = 800-5(125) = 175
 
 # Plot
 plt.figure(figsize=(10, 8))
