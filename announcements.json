@@ -1,7 +1,17 @@
 {
-  "version": "2.3.2",
-  "lastUpdated": "2026-03-05T10:00:00+08:00",
+  "version": "2.3.3",
+  "lastUpdated": "2026-04-16T09:00:00+08:00",
   "announcements": [
+    {
+      "id": "final-exam-info-released",
+      "title": "Final Examination Information Released",
+      "message": "Information about the final examination has been released. Check the **Announcements** in the LMS or the new **Final Exam discussion board**. Copies of the announcement were also sent to your emails.",
+      "publishedAt": "2026-04-16T09:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "actionUrl": "https://lms.uwa.edu.au",
+      "actionLabel": "Go to LMS"
+    },
     {
       "id": "github-privacy-reminder",
       "title": "GitHub Privacy Reminder — No Action Required",
@@ -39,6 +49,7 @@
       "title": "Welcome to SCIE1500 Semester 1 2026!",
       "message": "Welcome to Analytical Methods for Scientists! We're excited to have you join us this semester.\n\nBefore your first week:\n• Download Miniconda (Python) for lab exercises — see Software section in Course Overview\n• Review the course outline in the app\n• Check your lab schedule — labs run on different days at different campuses\n• Explore the SciQuant app features: AI tutor, weekly lessons, practice questions\n\nTeaching starts Monday 23 February. See you soon!",
       "publishedAt": "2026-02-16T09:00:00+08:00",
+      "expiresAt": "2026-03-15T00:00:00+08:00",
       "priority": "important",
       "category": "general",
       "isPinned": true
@@ -51,6 +62,7 @@
       "priority": "important",
       "category": "schedule",
       "relatedWeek": 1,
+      "expiresAt": "2026-03-15T00:00:00+08:00",
       "actionUrl": "https://lms.uwa.edu.au",
       "actionLabel": "View LMS"
     },
