@@ -247,7 +247,7 @@ These five problems are written in the **style, scope and difficulty** of Part I
 
 > **set up → solve → verify → interpret**
 
-Work each one from scratch on paper under timed conditions (**15 minutes per problem**), then check your solution. If you stall, look at the *hint* before looking at the solution. Do not read ahead.
+For each problem, sit down with blank paper, set a **15-minute timer**, and work from setup to interpretation without notes or peeking — this mirrors the pace you will need on the day (12 min per Part II question, plus a small buffer for practice). If you genuinely stall before the timer ends, glance at the *hint* only; save the full solution for the post-attempt review. Do not read ahead.
 
 ---
 
