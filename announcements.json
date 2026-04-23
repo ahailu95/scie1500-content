@@ -1,7 +1,18 @@
 {
-  "version": "2.3.3",
-  "lastUpdated": "2026-04-16T09:00:00+08:00",
+  "version": "2.3.4",
+  "lastUpdated": "2026-04-23T18:30:00+08:00",
   "announcements": [
+    {
+      "id": "final-exam-study-guide-released",
+      "title": "Final Exam Study Guide Released",
+      "message": "A **Final Exam Study Guide** is now available. It contains:\n\n• An **exam blueprint** — the structure, mark distribution, and timing strategy\n• **Learning outcomes** for each of the 12 weeks — a self-audit checklist\n• **Common traps** markers see (easy marks to secure)\n• A recommended **3-pass study protocol**\n• **Four fully-worked exemplar Part II problems** (with solutions) in the style and difficulty of the actual paper\n\nThe guide is designed to help you study **effectively**, not to memorise. If you can tick every learning outcome, you are ready.\n\nTap the link below to open. (Also accessible from the Course Overview tab.)",
+      "publishedAt": "2026-04-23T18:30:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "isPinned": true,
+      "actionUrl": "https://ahailu95.github.io/scie1500-content/SCIE1500Materials/SCIE1500_Study_Guide_S1_2026.html",
+      "actionLabel": "Open Study Guide"
+    },
     {
       "id": "final-exam-info-released",
       "title": "Final Examination Information Released",
