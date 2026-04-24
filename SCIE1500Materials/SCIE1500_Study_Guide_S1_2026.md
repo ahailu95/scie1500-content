@@ -463,6 +463,8 @@ A measurement at $t = 2$ hours gives $c(2) = 7.80$ mg/L.
 
 **(e)** [2 marks] Sketch $c(t)$ on $0 \le t \le 20$ hours, indicating the measurement at $t = 2$ and any interior minimum.
 
+*Hint: integrate $dc/dt$ term-by-term to get $c(t) = -0.5\,t + 0.03\,t^2 - 0.001\,t^3 + C$, then use the measurement at $t = 2$ to pin down $C$.*
+
 ### Solution
 
 **Part (a) — General antiderivative.**
@@ -519,7 +521,7 @@ $$\frac{dC}{dt} = 0.0025 - 0.05\,C.$$
 
 **(d)** [3 marks] Compute the time $t_{90}$ at which the concentration reaches $90\%$ of the long-run value.
 
-*Practice note: this problem shares its mathematical structure (linear first-order ODE, separation of variables, exponential approach to a steady state) with the draining-water-tank question on the **Week 10 Mock Exam**. If you work this one cleanly, revisit the mock paper — you should find the same pattern and very similar algebra.*
+*Hint: for part (a), apply a mass balance on the nutrient ($\text{rate in} - \text{rate out}$) and divide by $V$. For part (b), set $dC/dt = 0$. For part (c), factor the right-hand side as $0.05\,(C_{\mathrm{eq}} - C)$ before separating variables — this makes the integral a single clean logarithm.*
 
 ### Solution
 

@@ -1217,6 +1217,11 @@ class="math inline">t = 0</span> and at <span class="math inline">t =
 class="math inline">c(t)</span> on <span class="math inline">0 \le t \le
 20</span> hours, indicating the measurement at <span
 class="math inline">t = 2</span> and any interior minimum.</p>
+<p><em>Hint: integrate <span class="math inline">dc/dt</span>
+term-by-term to get <span class="math inline">c(t) = -0.5\,t + 0.03\,t^2
+- 0.001\,t^3 + C</span>, then use the measurement at <span
+class="math inline">t = 2</span> to pin down <span
+class="math inline">C</span>.</em></p>
 <h3 id="solution-3">Solution</h3>
 <p><strong>Part (a) — General antiderivative.</strong></p>
 <p><span class="math display">c(t) = \int \left(-0.5 + 0.06\,t -
@@ -1343,12 +1348,13 @@ remaining).</p>
 <p><strong>(d)</strong> [3 marks] Compute the time <span
 class="math inline">t_{90}</span> at which the concentration reaches
 <span class="math inline">90\%</span> of the long-run value.</p>
-<p><em>Practice note: this problem shares its mathematical structure
-(linear first-order ODE, separation of variables, exponential approach
-to a steady state) with the draining-water-tank question on the
-<strong>Week 10 Mock Exam</strong>. If you work this one cleanly,
-revisit the mock paper — you should find the same pattern and very
-similar algebra.</em></p>
+<p><em>Hint: for part (a), apply a mass balance on the nutrient (<span
+class="math inline">\text{rate in} - \text{rate out}</span>) and divide
+by <span class="math inline">V</span>. For part (b), set <span
+class="math inline">dC/dt = 0</span>. For part (c), factor the
+right-hand side as <span class="math inline">0.05\,(C_{\mathrm{eq}} -
+C)</span> before separating variables — this makes the integral a single
+clean logarithm.</em></p>
 <h3 id="solution-4">Solution</h3>
 <p><strong>Part (a) — Mass balance.</strong></p>
 <p>Let <span class="math inline">M(t)</span> (mg) be the total mass of
