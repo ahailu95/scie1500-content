@@ -3,7 +3,6 @@
 .katex .boxed, .katex .fbox, .katex .colorbox { border-color: #d97706 !important; }
 </style>
 
-# SCIE1500 — Final Exam Study Guide
 **Analytical Methods for Scientists · Semester 1, 2026**
 
 This guide is designed to help you study **effectively**, not to memorise. It does not include practice questions from the paper, because the exam rewards *understanding*, not recall. If you can confidently tick every Learning Outcome below, you are ready.
