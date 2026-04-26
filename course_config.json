@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.0.1",
-  "lastUpdated": "2026-04-16",
+  "version": "3.0.2",
+  "lastUpdated": "2026-04-26",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -785,7 +785,35 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w9a_echo360",
+          "title": "Probability Foundations: Rules and Counting (Part A)",
+          "description": "Lecture video covering sample spaces, probability axioms, complement and addition rules, and coin-toss counting",
+          "type": "video",
+          "url": "https://echo360.net.au/media/f3701fbd-5594-4ed3-bfe6-d9c77c2ca58c/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w9b_echo360",
+          "title": "Conditional Probability, Bayes' Theorem & The Binomial Distribution (Part B)",
+          "description": "Lecture video covering conditional probability, Bayes' theorem, medical test interpretation, and tree diagrams",
+          "type": "video",
+          "url": "https://echo360.net.au/media/cb47e14c-3e2f-4785-8a4f-2931755edc26/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w9c_echo360",
+          "title": "Disease, Distributions & Decisions (Part C)",
+          "description": "Lecture video covering at-least-one transmission models, R0 and herd immunity, and the Binomial distribution",
+          "type": "video",
+          "url": "https://echo360.net.au/media/b2eaa45c-9777-4e85-b6ba-9f1447449273/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
