@@ -3608,7 +3608,7 @@ plt.show()
 
 ---
 
-## Week 10: Hypothesis Testing
+## Week 10: Mock Exam Workshop
 
 ### ACTIVITY: W10
 
@@ -4143,7 +4143,7 @@ Your group presentation will be graded out of 20 marks (scaled to 4% of your uni
 | 7    | Definite Integrals & Surplus | Market welfare analysis       | 2, 3                   |
 | 8    | Lotka-Volterra               | Predator-prey dynamics        | 4, 5                   |
 | 9    | Probability & Bayes          | COVID testing                 | 6, 7                   |
-| 10   | Hypothesis Testing           | Guided Workshop               | All (no presentations) |
+| 10   | Hypothesis Testing           | Mock Exam Workshop            | All (no presentations) |
 | 11   | Trigonometry                 | Peer Review Exchange          | All (no presentations) |
 | 12   | Linear Programming           | Gallery Walk                  | All (no presentations) |
 
