@@ -192,7 +192,7 @@ Presentations are assessed on four criteria: problem formulation, mathematical a
 
 The final three labs replace the standard Problem Brief format with activities designed to prepare you directly for the exam:
 
-- **Week 10 — Mock Exam Workshop:** Groups work through timed Part II exam-style questions (hypothesis testing, optimisation, integration, differential equations), then present solutions on the whiteboard for class discussion.
+- **Week 10 — Guided Workshop:** Groups work through hypothesis testing, optimisation, and integration questions with the instructor, followed by an interactive debrief.
 - **Week 11 — Peer Review Exchange:** Each group *creates* a trigonometry problem for another group (involving sinusoidal modelling with real-world data), then solves the problem they receive. This counts as a double worksheet.
 - **Week 12 — Gallery Walk Capstone:** Groups solve a linear programming problem, set up poster stations, and rotate through each other's stations to explain and compare solutions.
 

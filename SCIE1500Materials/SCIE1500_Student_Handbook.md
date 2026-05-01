@@ -3608,17 +3608,17 @@ plt.show()
 
 ---
 
-## Week 10: Hypothesis Testing (Mock Exam Workshop)
+## Week 10: Hypothesis Testing
 
 ### ACTIVITY: W10
 
-**Mock Exam: Part II Practice**
+
 
 ---
 
 #### FORMAT
 
-This week replaces the standard Problem Brief with a**Mock Exam Workshop**. You'll practice Part II exam-style questions under timed conditions.
+This week replaces the standard Problem Brief with a **Guided Workshop**. The instructor works through Q1 as a class example; groups then tackle Q2 and Q3 before an interactive debrief.
 
 **Structure:**
 - 0:00–0:15: Demonstrator reviews exam format and expectations
@@ -4143,7 +4143,7 @@ Your group presentation will be graded out of 20 marks (scaled to 4% of your uni
 | 7    | Definite Integrals & Surplus | Market welfare analysis       | 2, 3                   |
 | 8    | Lotka-Volterra               | Predator-prey dynamics        | 4, 5                   |
 | 9    | Probability & Bayes          | COVID testing                 | 6, 7                   |
-| 10   | Hypothesis Testing           | Mock Exam Workshop            | All (no presentations) |
+| 10   | Hypothesis Testing           | Guided Workshop               | All (no presentations) |
 | 11   | Trigonometry                 | Peer Review Exchange          | All (no presentations) |
 | 12   | Linear Programming           | Gallery Walk                  | All (no presentations) |
 
