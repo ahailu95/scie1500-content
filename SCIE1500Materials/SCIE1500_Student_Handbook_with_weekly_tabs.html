@@ -19802,26 +19802,31 @@ plt.show()
           <p><strong>Mock Exam: Part II Practice</strong></p>
           <hr>
           <h4 id="format">FORMAT</h4>
-          <p>This week replaces the standard Problem Brief with a <strong>Mock Exam Workshop</strong>. You'll practice
-            Part II exam-style questions under timed conditions.</p>
-          <p><strong>Structure:</strong></p>
-          <ul>
-            <li>0:00–0:15: Demonstrator reviews exam format and expectations</li>
-            <li>0:15–1:30: Groups work on mock exam questions (75 minutes)</li>
-            <li>1:30–2:00: Groups whiteboard solutions; class discussion</li>
-          </ul>
+          <p>This week replaces the standard Problem Brief with a <strong>Guided Workshop</strong>. The instructor leads using slides — Q1 is fully worked as a class example, then groups tackle Q2 and Q3 before an interactive debrief.</p>
+          <table>
+            <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+            <tbody>
+              <tr><td>0:00–0:20</td><td><strong>Instructor walkthrough:</strong> hypothesis testing framework + Q1 fully worked as example on slides</td></tr>
+              <tr><td>0:20–1:00</td><td><strong>Group work</strong> on Q2 (optimisation) and Q3 (integration — antiderivative scaffold provided)</td></tr>
+              <tr><td>1:00–1:45</td><td><strong>Interactive debrief:</strong> instructor reveals answers step by step, asking each group for sub-steps</td></tr>
+              <tr><td>1:45–2:00</td><td><strong>Exam strategy:</strong> what's on the exam and what to practise using the study guide</td></tr>
+            </tbody>
+          </table>
           <hr>
           <h4 id="mock-exam-questions">MOCK EXAM QUESTIONS</h4>
           <p>Work through these four questions. They represent the style and difficulty of the actual exam Part II.</p>
-          <p><strong>Question 1: Hypothesis Testing (12 marks)</strong></p>
-          <p>A pharmaceutical company claims their new painkiller reduces headache duration by at least 30% compared to
-            standard treatment. A clinical trial with 50 patients shows:</p>
+          <p><strong>Question 1: Hypothesis Testing (12 marks)</strong> &nbsp;<em>&#8212; Instructor walkthrough on slides. Follow along and take notes.</em></p>
+          <p>A pharmaceutical company claims that their antibiotic is effective in at least 80% of cases. A hospital audit of <strong>10</strong> randomly selected patients who received the antibiotic found it was effective in only <strong>5</strong> cases.</p>
+          <p>Test whether this audit provides sufficient evidence to doubt the company's claim.</p>
+          <p>a) State the null hypothesis H<sub>0</sub> and alternative hypothesis H<sub>1</sub>. Identify whether this is a left-tailed, right-tailed, or two-tailed test. (2 marks)</p>
+          <p>b) Let <em>X</em> be the number of patients for whom the antibiotic is effective. State the distribution of <em>X</em> under H<sub>0</sub>. Then calculate P(<em>X</em> &le; 5), given the following individual probabilities:</p>
           <ul>
-            <li>Mean reduction: 28%</li>
-            <li>Standard deviation: 8%</li>
+            <li>P(<em>X</em> = 5) &asymp; 0.0264</li>
+            <li>P(<em>X</em> = 4) &asymp; 0.0055</li>
+            <li>P(<em>X</em> = 3) &asymp; 0.0008</li>
+            <li>P(<em>X</em> &le; 2) &asymp; 0.0001 (negligible)</li>
           </ul>
-          <p>a) State the null and alternative hypotheses (2 marks)</p>
-          <p>b) Calculate the test statistic (4 marks)</p>
+          <p>(4 marks)</p>
           <p>c) At significance level <span class="katex"><span class="katex-mathml"><math
                   xmlns="http://www.w3.org/1998/Math/MathML">
                   <semantics>
@@ -19837,9 +19842,8 @@ plt.show()
                     style="margin-right:0.0037em;">α</span><span class="mspace"
                     style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace"
                     style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                    style="height:0.6444em;"></span><span class="mord">0.05</span></span></span></span>, should the
-            company's claim be rejected? (4 marks)</p>
-          <p>d) What does your conclusion mean for patients? (2 marks)</p>
+                    style="height:0.6444em;"></span><span class="mord">0.05</span></span></span></span>, state whether you reject H<sub>0</sub>. Compare your p-value from part (b) to &alpha; and state your conclusion clearly. (4 marks)</p>
+          <p>d) Write a one-sentence conclusion in plain language that a hospital administrator could understand. What does the result mean for the company's claim? (2 marks)</p>
           <hr>
           <p><strong>Question 2: Optimization in Context (12 marks)</strong></p>
           <p>A dairy farm produces milk at a cost of <span class="katex"><span class="katex-mathml"><math
@@ -20064,11 +20068,17 @@ plt.show()
                       class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace"
                       style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span
                       class="mord mathnormal">t</span></span></span></span></span></p>
-          <p>(6 marks)</p>
+          <p><strong>Scaffold</strong> — antiderivative provided:</p>
+          <blockquote>
+            <p>∫ sin(πt/12) dt = −(12/π) cos(πt/12) + K</p>
+            <p>Your task: apply limits t = 0 and t = 12, evaluate cos(π) and cos(0), then simplify to find E in watt-hours.</p>
+          </blockquote>
+          <p>(5 marks)</p>
           <p>c) Express your answer in kilowatt-hours (kWh) (1 kWh = 1000 watt-hours) (2 marks)</p>
           <p>d) At $0.30 per kWh, what is the daily revenue from this panel? (1 mark)</p>
           <hr>
-          <p><strong>Question 4: Differential Equations (12 marks)</strong></p>
+          <p><strong>Question 4 — Extension / Optional: Differential Equations</strong></p>
+          <p><em>Attempt in lab if time allows; otherwise complete before Tuesday upload. The full worked solution is on Slide 10 of the course slides.</em></p>
           <p>A water tank drains according to the differential equation:</p>
           <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math
                     xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -20220,24 +20230,16 @@ M834 80h400000v40h-400000z" />
           <hr>
           <h4 id="deliverables-23">DELIVERABLES</h4>
           <ul class="contains-task-list">
-            <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Group solutions
-              to all four questions</li>
-            <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Whiteboard
-              presentation of one assigned question</li>
+            <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Completed worksheet (Q1–Q3 in lab; Q4 optional extension)</li>
+            <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Each group member uploads the completed worksheet to LMS by <strong>Tuesday 11:59 pm</strong></li>
           </ul>
           <hr>
           <h4 id="demonstrator-notes">DEMONSTRATOR NOTES</h4>
           <ul>
-            <li>Assign each group one question to present on the whiteboard</li>
-            <li>Circulate during work time; provide hints but don't solve</li>
-            <li>During presentations, focus on:
-              <ul>
-                <li>Problem formulation (did they set it up correctly?)</li>
-                <li>Method selection (right technique for the question?)</li>
-                <li>Calculation accuracy</li>
-                <li>Interpretation of results</li>
-              </ul>
-            </li>
+            <li><strong>0:00–0:20:</strong> Deliver the slide walkthrough; work Q1 step by step on slides, pausing to take questions. Do not rush this section.</li>
+            <li><strong>0:20–1:00:</strong> Circulate while groups work on Q2 and Q3. Prompt with guiding questions rather than giving answers. For Q3(b), direct students to the scaffold if they are stuck on the antiderivative.</li>
+            <li><strong>1:00–1:45:</strong> Interactive debrief — reveal answers slide by slide, cold-calling groups for each sub-step. Emphasise exam-writing conventions (state hypotheses explicitly, show all working).</li>
+            <li><strong>1:45–2:00:</strong> Exam strategy discussion. Cover what topics are on the exam and how to use the study guide. Q4 is not discussed in class — direct students to Slide 10 for the full solution.</li>
           </ul>
           <hr>
         </div>
