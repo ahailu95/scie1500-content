@@ -19814,6 +19814,24 @@ plt.show()
           <p><strong>Question 1: Hypothesis Testing (12 marks)</strong> &nbsp;<em>&#8212; Instructor walkthrough on slides. Follow along and take notes.</em></p>
           <p>A pharmaceutical company claims that their antibiotic is effective in at least 80% of cases. A hospital audit of <strong>10</strong> randomly selected patients who received the antibiotic found it was effective in only <strong>5</strong> cases.</p>
           <p>Test whether this audit provides sufficient evidence to doubt the company's claim.</p>
+          <blockquote style="background:#fffbeb;border-left:4px solid #f59e0b;padding:0.75rem 1rem;border-radius:6px;margin:1rem 0;">
+            <p><strong>&#128161; Setting up the hypotheses — think about this before part (a)</strong></p>
+            <p><strong>Why is H<sub>0</sub> the claim that p &ge; 0.80, not p &le; 0.80?</strong><br>
+            Ask yourself: <em>whose claim are we putting on trial?</em> The <strong>company</strong> is making
+            the bold assertion: <em>"our antibiotic works at least 80% of the time."</em> In hypothesis
+            testing, the null hypothesis (H<sub>0</sub>) always represents the claim we are trying to find
+            evidence <em>against</em> — it gets the benefit of the doubt, like <em>innocent until proven
+            guilty</em>. So H<sub>0</sub> carries the company's claim (p &ge; 0.80), and the alternative
+            H<sub>1</sub> is what we would conclude if the data are convincing enough to doubt it
+            (p &lt; 0.80).</p>
+            <p><strong>Why a one-tailed test, not two-tailed?</strong><br>
+            A two-tailed test would ask: <em>"is the effectiveness significantly different from 80% —
+            whether higher or lower?"</em> But we have no reason to be alarmed if the drug turns out to be
+            <em>more</em> effective than claimed — that is good news for patients. We are only concerned
+            if it performs <em>worse</em> than promised. So all of our suspicion points in one direction:
+            the left tail. We are asking, <em>"is the observed number of successes suspiciously low?"</em>
+            — not <em>"suspiciously extreme in either direction?"</em></p>
+          </blockquote>
           <p>a) State the null hypothesis H<sub>0</sub> and alternative hypothesis H<sub>1</sub>. Identify whether this is a left-tailed, right-tailed, or two-tailed test. (2 marks)</p>
           <p>b) Let <em>X</em> be the number of patients for whom the antibiotic is effective. State the distribution of <em>X</em> under H<sub>0</sub>. Then calculate P(<em>X</em> &le; 5), given the following individual probabilities:</p>
           <ul>
