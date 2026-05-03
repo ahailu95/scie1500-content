@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "lastUpdated": "2026-04-26",
   "institution": {
     "id": "uwa",
@@ -776,7 +776,17 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w10_echo360",
+          "title": "Random Variables & Hypothesis Testing",
+          "description": "Lecture video for Week 10: Random Variables and Hypothesis Testing",
+          "type": "video",
+          "url": "https://echo360.net.au/media/fc2f674b-063a-4e26-8567-c1c2cf2b79ac/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
