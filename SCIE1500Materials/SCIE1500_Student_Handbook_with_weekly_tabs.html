@@ -939,7 +939,8 @@
               </tr>
             </tbody>
           </table>
-          <p><strong>Weeks 10–12</strong> use alternative formats (Mock Exam Workshop, Peer Review, Gallery Walk) where
+          <p><strong>Weeks 10–12</strong> use alternative formats (Mock Exam Workshop, Peer Review, Group Workthrough)
+            where
             all
             groups participate equally.</p>
           <hr>
@@ -20519,10 +20520,10 @@ M834 80h400000v40h-400000z" />
           <h4 id="part-b-w11">PART B &mdash; DIGITAL CIRCULAR EXCHANGE (0:45 &ndash; 1:30)</h4>
           <p><strong>Exchange logistics:</strong></p>
           <ul>
-            <li>At <strong>0:45</strong>, each group uploads their completed Part A work to the LMS
-              (Week 11 &rarr; <em>Part A Submission</em>).</li>
-            <li>The demonstrator then releases the <strong>previous group's</strong> scenario card and Part A
-              solution to you via LMS. The routing is circular:</li>
+            <li>At <strong>0:45</strong>, each group emails their <strong>scenario card</strong> (raw data only &mdash;
+              not their Part A working) to the group listed in the routing table below. The demonstrator facilitates
+              this circular exchange.</li>
+            <li>You will receive the previous group's scenario card by email. The routing is circular:</li>
           </ul>
           <table>
             <thead>
@@ -20562,6 +20563,13 @@ M834 80h400000v40h-400000z" />
               </tr>
             </tbody>
           </table>
+          <div
+            style="border:2px solid #e67e22; border-left:6px solid #e67e22; border-radius:8px; padding:0.8em 1.2em; margin-bottom:1.1em; background:#fef9f0;">
+            <p style="margin:0;"><strong>&#9888; Independent working required:</strong> Complete step&nbsp;2 (your own
+              full derivation) <em>before</em> opening the reviewed group&rsquo;s Part&nbsp;A solution. Your
+              demonstrator will be circulating to check this. Working seen in advance invalidates the peer-review task.
+            </p>
+          </div>
           <p><strong>What to do in Part B:</strong></p>
           <ol>
             <li><strong>Read the scenario.</strong> Make sure you understand the context and what each variable
@@ -20597,15 +20605,15 @@ M834 80h400000v40h-400000z" />
             <tbody>
               <tr>
                 <td><strong>Part A</strong> &mdash; Your scenario solution</td>
-                <td>60%</td>
-                <td>15</td>
+                <td>50%</td>
+                <td>12.5</td>
                 <td>Correct parameter identification with working; accurate model equation; correct answers to
                   (b) and (c); model verification</td>
               </tr>
               <tr>
                 <td><strong>Part B</strong> &mdash; Peer review quality</td>
-                <td>40%</td>
-                <td>10</td>
+                <td>50%</td>
+                <td>12.5</td>
                 <td>Accurate independent verification of each parameter; clear identification of any errors (or
                   confirmation of correctness with justification); extension question answered with full
                   working</td>
@@ -20624,8 +20632,8 @@ M834 80h400000v40h-400000z" />
           <h4 id="deliverables-w11">DELIVERABLES</h4>
           <ul class="task-list">
             <li class="task-list-item task-list-item-enabled"><input class="task-list-item-checkbox" type="checkbox">
-              <strong>Part A Worksheet</strong> &mdash; Uploaded to LMS by <strong>0:45
-                during the lab</strong> (Week 11 &rarr; <em>Part A Submission</em>)
+              <strong>Part A Worksheet</strong> &mdash; Uploaded to LMS by <strong>Tuesday 11:59 pm</strong> (Week 11
+              &rarr; <em>Part A Submission</em>)
             </li>
             <li class="task-list-item task-list-item-enabled"><input class="task-list-item-checkbox" type="checkbox">
               <strong>Part B Peer Review Sheet</strong> &mdash; Submitted to LMS by
@@ -20645,473 +20653,16 @@ M834 80h400000v40h-400000z" />
         <div class="week-banner" style="border-top:4px solid #06d6a0">
           <div class="week-num-badge">12</div>
           <h1 class="banner-h1">Week 12: Linear Programming</h1>
-          <p class="banner-meta">Gallery walk capstone · Feasible regions · Simplex method</p>
+          <p class="banner-meta">4 LP problems &middot; Graphical method &middot; Corner-point theorem &middot; Group Workthrough</p>
         </div>
         <div class="panel-body">
-          <h2 id="week-12-linear-programming-gallery-walk-capstone">Week 12: Linear Programming (Gallery Walk Capstone)
-          </h2>
-          <h3 id="problem-brief-w12">PROBLEM BRIEF: W12</h3>
-          <p><strong>&quot;Sustainable Campus Dining: Optimizing the Guild Menu&quot;</strong></p>
+          <h2 id="week-12-linear-programming-group-workthrough">Week 12: Linear Programming &mdash; Group Workthrough</h2>
+
+          <p>This week each pair of groups solves a different real-world linear programming problem using the graphical method.
+            At the end of the session the demonstrator leads a whole-class workthrough comparing all four solutions.</p>
+
           <hr>
-          <h4 id="scenario-23">SCENARIO</h4>
-          <p></p>
-          <p>The UWA Student Guild is redesigning its food court menu to meet sustainability and nutrition goals. They
-            want to offer a weekly meal plan that balances cost, nutrition, and environmental impact.</p>
-          <p><strong>Two main meal types:</strong></p>
-          <ul>
-            <li><strong>Plant-based meals</strong> (e.g., lentil curry, veggie stir-fry)</li>
-            <li><strong>Chicken-based meals</strong> (e.g., grilled chicken, chicken sandwich)</li>
-          </ul>
-          <p><strong>Nutritional and environmental data per serving:</strong></p>
-          <table>
-            <thead>
-              <tr>
-                <th>Nutrient/Impact</th>
-                <th>Plant-based</th>
-                <th>Chicken</th>
-                <th>Weekly Target</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Protein (g)</td>
-                <td>18</td>
-                <td>30</td>
-                <td>≥ 350 g</td>
-              </tr>
-              <tr>
-                <td>Calories (kcal)</td>
-                <td>220</td>
-                <td>280</td>
-                <td>≥ 3500 kcal</td>
-              </tr>
-              <tr>
-                <td>Iron (mg)</td>
-                <td>3</td>
-                <td>1</td>
-                <td>≥ 25 mg</td>
-              </tr>
-              <tr>
-                <td>Carbon footprint (kg CO₂)</td>
-                <td>0.5</td>
-                <td>2.5</td>
-                <td>≤ 20 kg</td>
-              </tr>
-            </tbody>
-          </table>
-          <p><strong>Costs:</strong></p>
-          <ul>
-            <li>Plant-based: $2.50 per serving</li>
-            <li>Chicken: $4.00 per serving</li>
-          </ul>
-          <p><strong>Goal:</strong> Minimize cost while meeting all nutritional targets and staying within the carbon
-            budget.</p>
-          <hr>
-          <h4 id="your-task-23">YOUR TASK</h4>
-          <p><strong>Part A: Problem Formulation (15 minutes)</strong></p>
-          <ol>
-            <li>
-              <p>Define decision variables:</p>
-              <ul>
-                <li>Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                        <semantics>
-                          <mrow>
-                            <mi>x</mi>
-                          </mrow>
-                          <annotation encoding="application/x-tex">x</annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> =
-                  number of plant-based serves per week</li>
-                <li>Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                        <semantics>
-                          <mrow>
-                            <mi>y</mi>
-                          </mrow>
-                          <annotation encoding="application/x-tex">y</annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal"
-                          style="margin-right:0.03588em;">y</span></span></span></span> = number of chicken serves per
-                  week</li>
-              </ul>
-            </li>
-            <li>
-              <p>Write the <strong>objective function</strong> (what are we minimizing?):</p>
-              <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math
-                        xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                        <semantics>
-                          <mrow>
-                            <mtext>Minimize </mtext>
-                            <mi>Z</mi>
-                            <mo>=</mo>
-                            <mn>2.5</mn>
-                            <mi>x</mi>
-                            <mo>+</mo>
-                            <mn>4</mn>
-                            <mi>y</mi>
-                          </mrow>
-                          <annotation encoding="application/x-tex">\text{Minimize } Z = 2.5x + 4y
-                          </annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.6833em;"></span><span class="mord text"><span
-                            class="mord">Minimize </span></span><span class="mord mathnormal"
-                          style="margin-right:0.07153em;">Z</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2.5</span><span
-                          class="mord mathnormal">x</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4</span><span
-                          class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></span>
-              </p>
-            </li>
-            <li>
-              <p>Write the <strong>constraint inequalities:</strong></p>
-              <ul>
-                <li>Protein constraint: <span class="katex"><span class="katex-mathml"><math
-                        xmlns="http://www.w3.org/1998/Math/MathML">
-                        <semantics>
-                          <mrow>
-                            <mn>18</mn>
-                            <mi>x</mi>
-                            <mo>+</mo>
-                            <mn>30</mn>
-                            <mi>y</mi>
-                            <mo>≥</mo>
-                            <mn>350</mn>
-                          </mrow>
-                          <annotation encoding="application/x-tex">18x + 30y \geq 350</annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">18</span><span
-                          class="mord mathnormal">x</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">30</span><span
-                          class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.6444em;"></span><span class="mord">350</span></span></span></span></li>
-                <li>Calories constraint: <span class="katex"><span class="katex-mathml"><math
-                        xmlns="http://www.w3.org/1998/Math/MathML">
-                        <semantics>
-                          <mrow>
-                            <mn>220</mn>
-                            <mi>x</mi>
-                            <mo>+</mo>
-                            <mn>280</mn>
-                            <mi>y</mi>
-                            <mo>≥</mo>
-                            <mn>3500</mn>
-                          </mrow>
-                          <annotation encoding="application/x-tex">220x + 280y \geq 3500</annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">220</span><span
-                          class="mord mathnormal">x</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">280</span><span
-                          class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.6444em;"></span><span class="mord">3500</span></span></span></span></li>
-                <li>Iron constraint: <span class="katex"><span class="katex-mathml"><math
-                        xmlns="http://www.w3.org/1998/Math/MathML">
-                        <semantics>
-                          <mrow>
-                            <mn>3</mn>
-                            <mi>x</mi>
-                            <mo>+</mo>
-                            <mi>y</mi>
-                            <mo>≥</mo>
-                            <mn>25</mn>
-                          </mrow>
-                          <annotation encoding="application/x-tex">3x + y \geq 25</annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span
-                          class="mord mathnormal">x</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal"
-                          style="margin-right:0.03588em;">y</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.6444em;"></span><span class="mord">25</span></span></span></span></li>
-                <li>Carbon constraint: <span class="katex"><span class="katex-mathml"><math
-                        xmlns="http://www.w3.org/1998/Math/MathML">
-                        <semantics>
-                          <mrow>
-                            <mn>0.5</mn>
-                            <mi>x</mi>
-                            <mo>+</mo>
-                            <mn>2.5</mn>
-                            <mi>y</mi>
-                            <mo>≤</mo>
-                            <mn>20</mn>
-                          </mrow>
-                          <annotation encoding="application/x-tex">0.5x + 2.5y \leq 20</annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.5</span><span
-                          class="mord mathnormal">x</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2.5</span><span
-                          class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.6444em;"></span><span class="mord">20</span></span></span></span></li>
-                <li>Non-negativity: <span class="katex"><span class="katex-mathml"><math
-                        xmlns="http://www.w3.org/1998/Math/MathML">
-                        <semantics>
-                          <mrow>
-                            <mi>x</mi>
-                            <mo>≥</mo>
-                            <mn>0</mn>
-                            <mo separator="true">,</mo>
-                            <mi>y</mi>
-                            <mo>≥</mo>
-                            <mn>0</mn>
-                          </mrow>
-                          <annotation encoding="application/x-tex">x \geq 0, y \geq 0</annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.7719em;vertical-align:-0.136em;"></span><span
-                          class="mord mathnormal">x</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span
-                          class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span
-                          class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></li>
-              </ul>
-            </li>
-          </ol>
-          <p><strong>Part B: Graphical Solution (25 minutes)</strong></p>
-          <ol start="4">
-            <li>
-              <p>Convert each constraint to an equation and find the boundary line:</p>
-              <ul>
-                <li>Protein: <span class="katex"><span class="katex-mathml"><math
-                        xmlns="http://www.w3.org/1998/Math/MathML">
-                        <semantics>
-                          <mrow>
-                            <mn>18</mn>
-                            <mi>x</mi>
-                            <mo>+</mo>
-                            <mn>30</mn>
-                            <mi>y</mi>
-                            <mo>=</mo>
-                            <mn>350</mn>
-                          </mrow>
-                          <annotation encoding="application/x-tex">18x + 30y = 350</annotation>
-                        </semantics>
-                      </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                          style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">18</span><span
-                          class="mord mathnormal">x</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"
-                          style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">30</span><span
-                          class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace"
-                          style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                          style="height:0.6444em;"></span><span class="mord">350</span></span></span></span>
-                  <ul>
-                    <li>When <span class="katex"><span class="katex-mathml"><math
-                            xmlns="http://www.w3.org/1998/Math/MathML">
-                            <semantics>
-                              <mrow>
-                                <mi>x</mi>
-                                <mo>=</mo>
-                                <mn>0</mn>
-                              </mrow>
-                              <annotation encoding="application/x-tex">x = 0</annotation>
-                            </semantics>
-                          </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span
-                              class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span
-                              class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span
-                              class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span
-                              class="strut" style="height:0.6444em;"></span><span
-                              class="mord">0</span></span></span></span>: <span class="katex"><span
-                          class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                            <semantics>
-                              <mrow>
-                                <mi>y</mi>
-                                <mo>=</mo>
-                                <mo stretchy="false">?</mo>
-                              </mrow>
-                              <annotation encoding="application/x-tex">y = ?</annotation>
-                            </semantics>
-                          </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span
-                              class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span
-                              class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"
-                              style="margin-right:0.2778em;"></span><span class="mrel">=</span></span><span
-                            class="base"><span class="strut" style="height:0.6944em;"></span><span
-                              class="mclose">?</span></span></span></span></li>
-                    <li>When <span class="katex"><span class="katex-mathml"><math
-                            xmlns="http://www.w3.org/1998/Math/MathML">
-                            <semantics>
-                              <mrow>
-                                <mi>y</mi>
-                                <mo>=</mo>
-                                <mn>0</mn>
-                              </mrow>
-                              <annotation encoding="application/x-tex">y = 0</annotation>
-                            </semantics>
-                          </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span
-                              class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span
-                              class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"
-                              style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace"
-                              style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                              style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>: <span
-                        class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                            <semantics>
-                              <mrow>
-                                <mi>x</mi>
-                                <mo>=</mo>
-                                <mo stretchy="false">?</mo>
-                              </mrow>
-                              <annotation encoding="application/x-tex">x = ?</annotation>
-                            </semantics>
-                          </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span
-                              class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span
-                              class="mspace" style="margin-right:0.2778em;"></span><span
-                              class="mrel">=</span></span><span class="base"><span class="strut"
-                              style="height:0.6944em;"></span><span class="mclose">?</span></span></span></span></li>
-                  </ul>
-                </li>
-                <li>Repeat for other constraints</li>
-              </ul>
-            </li>
-            <li>
-              <p>Graph all constraints on the same axes. Shade the <strong>feasible region</strong> (the set of points
-                satisfying ALL constraints).</p>
-            </li>
-            <li>
-              <p>Identify all <strong>corner points</strong> (vertices) of the feasible region by solving pairs of
-                boundary equations simultaneously.</p>
-            </li>
-            <li>
-              <p><strong>Corner Point Theorem:</strong> The optimal solution occurs at a vertex. Evaluate <span
-                  class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                      <semantics>
-                        <mrow>
-                          <mi>Z</mi>
-                        </mrow>
-                        <annotation encoding="application/x-tex">Z</annotation>
-                      </semantics>
-                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                        style="height:0.6833em;"></span><span class="mord mathnormal"
-                        style="margin-right:0.07153em;">Z</span></span></span></span> at each corner point:</p>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Corner Point <span class="katex"><span class="katex-mathml"><math
-                            xmlns="http://www.w3.org/1998/Math/MathML">
-                            <semantics>
-                              <mrow>
-                                <mo stretchy="false">(</mo>
-                                <mi>x</mi>
-                                <mo separator="true">,</mo>
-                                <mi>y</mi>
-                                <mo stretchy="false">)</mo>
-                              </mrow>
-                              <annotation encoding="application/x-tex">(x, y)</annotation>
-                            </semantics>
-                          </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span
-                              class="strut" style="height:1em;vertical-align:-0.25em;"></span><span
-                              class="mopen">(</span><span class="mord mathnormal">x</span><span
-                              class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span
-                              class="mord mathnormal" style="margin-right:0.03588em;">y</span><span
-                              class="mclose">)</span></span></span></span></th>
-                    <th>Cost <span class="katex"><span class="katex-mathml"><math
-                            xmlns="http://www.w3.org/1998/Math/MathML">
-                            <semantics>
-                              <mrow>
-                                <mi>Z</mi>
-                                <mo>=</mo>
-                                <mn>2.5</mn>
-                                <mi>x</mi>
-                                <mo>+</mo>
-                                <mn>4</mn>
-                                <mi>y</mi>
-                              </mrow>
-                              <annotation encoding="application/x-tex">Z = 2.5x + 4y</annotation>
-                            </semantics>
-                          </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span
-                              class="strut" style="height:0.6833em;"></span><span class="mord mathnormal"
-                              style="margin-right:0.07153em;">Z</span><span class="mspace"
-                              style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace"
-                              style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                              style="height:0.7278em;vertical-align:-0.0833em;"></span><span
-                              class="mord">2.5</span><span class="mord mathnormal">x</span><span class="mspace"
-                              style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace"
-                              style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut"
-                              style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4</span><span
-                              class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </li>
-            <li>
-              <p>Which corner point gives the minimum cost? This is your optimal solution.</p>
-            </li>
-          </ol>
-          <p><strong>Part C: Interpretation and Sensitivity (15 minutes)</strong></p>
-          <ol start="9">
-            <li>
-              <p>State the optimal menu:</p>
-              <ul>
-                <li>Number of plant-based serves: ...</li>
-                <li>Number of chicken serves: ...</li>
-                <li>Weekly cost per student: ...</li>
-                <li>Check: Does this satisfy all constraints?</li>
-              </ul>
-            </li>
-            <li>
-              <p><strong>Sensitivity analysis:</strong> The sustainability committee wants to tighten the carbon
-                constraint to 15 kg CO₂.</p>
-              <ul>
-                <li>How does this change the feasible region?</li>
-                <li>Find the new optimal solution.</li>
-                <li>How much does cost increase?</li>
-              </ul>
-            </li>
-            <li>
-              <p>Write a brief recommendation for the Guild (3–4 sentences).</p>
-            </li>
-          </ol>
-          <hr>
-          <h4 id="deliverables-25">DELIVERABLES</h4>
-          <ul class="contains-task-list">
-            <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Completed Group
-              Worksheet with graph</li>
-            <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Prepared
-              &quot;station&quot; explanation for Gallery Walk</li>
-          </ul>
-          <hr>
-          <h4 id="gallery-walk-format">GALLERY WALK FORMAT</h4>
+          <h4 id="format-w12">FORMAT</h4>
           <table>
             <thead>
               <tr>
@@ -21121,135 +20672,255 @@ M834 80h400000v40h-400000z" />
             </thead>
             <tbody>
               <tr>
-                <td>0:00–0:15</td>
-                <td>Demonstrator reviews LP formulation</td>
+                <td>0:00 &ndash; 0:15</td>
+                <td><strong>LP Review</strong> &mdash; Demonstrator recaps LP formulation and the graphical solution method</td>
               </tr>
               <tr>
-                <td>0:15–1:00</td>
-                <td>Groups work on Problem Brief</td>
+                <td>0:15 &ndash; 1:00</td>
+                <td><strong>Group Work (45 min)</strong> &mdash; Each group solves their assigned LP problem (Parts A, B, and C)</td>
               </tr>
               <tr>
-                <td>1:00–1:10</td>
-                <td>Groups set up &quot;stations&quot; (poster/whiteboard with solution)</td>
+                <td>1:00 &ndash; 1:40</td>
+                <td><strong>Group Workthrough (40 min)</strong> &mdash; Demonstrator leads whole-class walkthrough; all four solutions compared</td>
               </tr>
               <tr>
-                <td>1:10–1:50</td>
-                <td>Gallery Walk: groups rotate every 8 minutes, explaining solutions</td>
-              </tr>
-              <tr>
-                <td>1:50–2:00</td>
-                <td>Debrief: Compare approaches</td>
+                <td>1:40 &ndash; 2:00</td>
+                <td><strong>Debrief (20 min)</strong> &mdash; Discussion: how do different problem contexts affect the feasible region and optimal solution?</td>
               </tr>
             </tbody>
           </table>
-          <p><strong>Gallery Walk rules:</strong></p>
-          <ul>
-            <li>2 group members stay at station to present</li>
-            <li>Other members visit other stations</li>
-            <li>Visitors ask questions, compare approaches</li>
-            <li>After each rotation, presenters and visitors swap</li>
-          </ul>
+
           <hr>
-          <h4 id="hints--scaffolding-9">HINTS &amp; GUIDED STEPS</h4>
-          <p><strong>Graphing tips:</strong></p>
-          <ul>
-            <li>For <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <semantics>
-                      <mrow>
-                        <mo>≥</mo>
-                      </mrow>
-                      <annotation encoding="application/x-tex">\geq</annotation>
-                    </semantics>
-                  </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                      style="height:0.7719em;vertical-align:-0.136em;"></span><span
-                      class="mrel">≥</span></span></span></span> constraints, shade AWAY from origin</li>
-            <li>For <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <semantics>
-                      <mrow>
-                        <mo>≤</mo>
-                      </mrow>
-                      <annotation encoding="application/x-tex">\leq</annotation>
-                    </semantics>
-                  </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                      style="height:0.7719em;vertical-align:-0.136em;"></span><span
-                      class="mrel">≤</span></span></span></span> constraints, shade TOWARD origin</li>
-            <li>Feasible region = intersection of all shaded regions</li>
-          </ul>
-          <p><strong>Finding intersections:</strong>
-            To find where protein and carbon constraints intersect:</p>
-          <ul>
-            <li>Protein: <span class="katex"><span class="katex-mathml"><math
-                    xmlns="http://www.w3.org/1998/Math/MathML">
-                    <semantics>
-                      <mrow>
-                        <mn>18</mn>
-                        <mi>x</mi>
-                        <mo>+</mo>
-                        <mn>30</mn>
-                        <mi>y</mi>
-                        <mo>=</mo>
-                        <mn>350</mn>
-                      </mrow>
-                      <annotation encoding="application/x-tex">18x + 30y = 350</annotation>
-                    </semantics>
-                  </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                      style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">18</span><span
-                      class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span
-                      class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span
-                    class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span
-                      class="mord">30</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span
-                      class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span
-                      class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                      style="height:0.6444em;"></span><span class="mord">350</span></span></span></span></li>
-            <li>Carbon: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <semantics>
-                      <mrow>
-                        <mn>0.5</mn>
-                        <mi>x</mi>
-                        <mo>+</mo>
-                        <mn>2.5</mn>
-                        <mi>y</mi>
-                        <mo>=</mo>
-                        <mn>20</mn>
-                      </mrow>
-                      <annotation encoding="application/x-tex">0.5x + 2.5y = 20</annotation>
-                    </semantics>
-                  </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                      style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.5</span><span
-                      class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span
-                      class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span
-                    class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span
-                      class="mord">2.5</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span
-                      class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span
-                      class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
-                      style="height:0.6444em;"></span><span class="mord">20</span></span></span></span></li>
-          </ul>
-          <p>Solve simultaneously (substitution or elimination).</p>
-          <p><strong>Quick check:</strong> A feasible solution must satisfy ALL constraints. Always verify your corner
-            points.</p>
-          <p><strong>Python for graphing (optional):</strong></p>
-          <pre><code class="language-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
-<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+          <h4 id="lp-concepts-w12">KEY LP CONCEPTS</h4>
+          <p>Every linear program has three components:</p>
+          <ol>
+            <li><strong>Decision variables</strong> &mdash; the quantities you control (<em>x</em>, <em>y</em>)</li>
+            <li><strong>Objective function</strong> &mdash; what you maximise or minimise: <em>Z = c&#8321;x + c&#8322;y</em></li>
+            <li><strong>Constraints</strong> &mdash; linear inequalities bounding the decisions, plus non-negativity: <em>x &ge; 0, y &ge; 0</em></li>
+          </ol>
+          <blockquote>
+            <strong>Corner-Point Theorem:</strong> If an optimal solution exists, it occurs at a corner point (vertex) of the
+            feasible region. Evaluate <em>Z</em> at every corner point &mdash; pick the best one.
+          </blockquote>
+          <p><strong>8-step graphical solution method:</strong></p>
+          <ol>
+            <li>Define decision variables.</li>
+            <li>Write the objective function (max or min).</li>
+            <li>Write each constraint as a linear inequality.</li>
+            <li>Add non-negativity: <em>x &ge; 0, y &ge; 0</em>.</li>
+            <li>Graph each boundary line; shade the feasible region.</li>
+            <li>Find all corner points (solve pairs of boundary equations simultaneously).</li>
+            <li>Build a corner-point table: evaluate <em>Z</em> at each corner.</li>
+            <li>Report the optimal solution and interpret in context.</li>
+          </ol>
 
-x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">50</span>, <span class="hljs-number">100</span>)
+          <hr>
+          <h4 id="problem-assignments-w12">PROBLEM ASSIGNMENTS</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Problem</th>
+                <th>Groups</th>
+                <th>Title</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>W12A</strong></td>
+                <td>1 &ndash; 2</td>
+                <td>Sustainable Campus Dining: Guild Menu</td>
+                <td>Minimise cost</td>
+              </tr>
+              <tr>
+                <td><strong>W12B</strong></td>
+                <td>3 &ndash; 4</td>
+                <td>Crop Allocation: Wheat vs Barley</td>
+                <td>Maximise profit</td>
+              </tr>
+              <tr>
+                <td><strong>W12C</strong></td>
+                <td>5 &ndash; 6</td>
+                <td>Hospital Staffing: Nurses vs Technicians</td>
+                <td>Minimise cost index</td>
+              </tr>
+              <tr>
+                <td><strong>W12D</strong></td>
+                <td>7 &ndash; 8</td>
+                <td>Conservation Land: Wetland vs Forest Restoration</td>
+                <td>Maximise habitat</td>
+              </tr>
+            </tbody>
+          </table>
 
-<span class="hljs-comment"># Constraint boundaries (solve for y)</span>
-y_protein = (<span class="hljs-number">350</span> - <span class="hljs-number">18</span>*x) / <span class="hljs-number">30</span>
-y_calories = (<span class="hljs-number">3500</span> - <span class="hljs-number">220</span>*x) / <span class="hljs-number">280</span>
-y_iron = (<span class="hljs-number">25</span> - <span class="hljs-number">3</span>*x) / <span class="hljs-number">1</span>
-y_carbon = (<span class="hljs-number">20</span> - <span class="hljs-number">0.5</span>*x) / <span class="hljs-number">2.5</span>
+          <hr>
+          <h4 id="problem-briefs-w12">LP PROBLEM BRIEFS</h4>
+          <p>Your demonstrator will assign one of the following problems to your group at the start of the session.
+            Each card is self-contained; all data needed to formulate and solve the LP is provided.</p>
 
-plt.plot(x, y_protein, label=<span class="hljs-string">&#x27;Protein&#x27;</span>)
-plt.plot(x, y_calories, label=<span class="hljs-string">&#x27;Calories&#x27;</span>)
-plt.plot(x, y_iron, label=<span class="hljs-string">&#x27;Iron&#x27;</span>)
-plt.plot(x, y_carbon, label=<span class="hljs-string">&#x27;Carbon&#x27;</span>)
-plt.xlim(<span class="hljs-number">0</span>, <span class="hljs-number">50</span>)
-plt.ylim(<span class="hljs-number">0</span>, <span class="hljs-number">25</span>)
-plt.xlabel(<span class="hljs-string">&#x27;Plant-based serves (x)&#x27;</span>)
-plt.ylabel(<span class="hljs-string">&#x27;Chicken serves (y)&#x27;</span>)
-plt.legend()
-plt.show()
-</code></pre>
+          <!-- W12A -->
+          <div style="border:2px solid #06d6a0; border-left:6px solid #06d6a0; border-radius:8px; padding:1em 1.2em; margin-bottom:1.3em; background:#f0fdf9;">
+            <p><strong>W12A &mdash; Sustainable Campus Dining: Optimising the Guild Menu</strong></p>
+            <p><em>Groups 1&ndash;2 &nbsp;&middot;&nbsp; Minimise cost</em></p>
+            <p>The UWA Student Guild is redesigning its food court menu to meet sustainability and nutrition goals.
+              Two meal types are on offer:</p>
+            <ul>
+              <li><strong><em>x</em></strong> = plant-based serves per week (cost: $2.50/serve)</li>
+              <li><strong><em>y</em></strong> = chicken serves per week (cost: $4.00/serve)</li>
+            </ul>
+            <p><strong>Objective:</strong> Minimise <em>Z</em> = 2.5<em>x</em> + 4<em>y</em> &nbsp;($)</p>
+            <p><strong>Constraints:</strong></p>
+            <ul>
+              <li>Protein: 18<em>x</em> + 30<em>y</em> &ge; 350 g</li>
+              <li>Calories: 220<em>x</em> + 280<em>y</em> &ge; 3500 kcal</li>
+              <li>Iron: 3<em>x</em> + <em>y</em> &ge; 25 mg</li>
+              <li>Carbon footprint: 0.5<em>x</em> + 2.5<em>y</em> &le; 20 kg CO&#8322;</li>
+              <li>Non-negativity: <em>x</em> &ge; 0, <em>y</em> &ge; 0</li>
+            </ul>
+            <p><strong>Worksheet tasks:</strong></p>
+            <ol type="A">
+              <li>Formulate the LP: define decision variables; write the objective function and all constraint inequalities.</li>
+              <li>Graph all constraint boundaries on the same axes; shade the feasible region; identify and calculate all corner points.</li>
+              <li>Evaluate <em>Z</em> at each corner point; state the optimal solution and minimum cost.
+                <em>Sensitivity: how does the solution change if the carbon limit tightens to &le; 15 kg CO&#8322;?</em></li>
+            </ol>
+          </div>
+
+          <!-- W12B -->
+          <div style="border:2px solid #06d6a0; border-left:6px solid #06d6a0; border-radius:8px; padding:1em 1.2em; margin-bottom:1.3em; background:#f0fdf9;">
+            <p><strong>W12B &mdash; Crop Allocation: Maximising Profit from Wheat and Barley</strong></p>
+            <p><em>Groups 3&ndash;4 &nbsp;&middot;&nbsp; Maximise profit</em></p>
+            <p>A farmer has 100&nbsp;ha to allocate between wheat and barley, subject to water and labour constraints:</p>
+            <ul>
+              <li><strong><em>x</em></strong> = hectares of wheat (profit: $400/ha)</li>
+              <li><strong><em>y</em></strong> = hectares of barley (profit: $300/ha)</li>
+            </ul>
+            <p><strong>Objective:</strong> Maximise <em>Z</em> = 400<em>x</em> + 300<em>y</em> &nbsp;($)</p>
+            <p><strong>Constraints:</strong></p>
+            <ul>
+              <li>Land: <em>x</em> + <em>y</em> &le; 100 ha</li>
+              <li>Water: 3<em>x</em> + 2<em>y</em> &le; 240 ML</li>
+              <li>Labour: 2<em>x</em> + 4<em>y</em> &le; 320 hrs</li>
+              <li>Non-negativity: <em>x</em> &ge; 0, <em>y</em> &ge; 0</li>
+            </ul>
+            <p><strong>Worksheet tasks:</strong></p>
+            <ol type="A">
+              <li>Formulate the LP: define decision variables; write the objective function and all constraint inequalities.</li>
+              <li>Graph all constraint boundaries on the same axes; shade the feasible region; identify and calculate all corner points.</li>
+              <li>Evaluate <em>Z</em> at each corner point; state the optimal allocation and maximum profit.
+                <em>Sensitivity: how does the solution change if water availability is reduced to 200 ML?</em></li>
+            </ol>
+          </div>
+
+          <!-- W12C -->
+          <div style="border:2px solid #06d6a0; border-left:6px solid #06d6a0; border-radius:8px; padding:1em 1.2em; margin-bottom:1.3em; background:#f0fdf9;">
+            <p><strong>W12C &mdash; Hospital Staffing: Minimising Cost for Nurses and Technicians</strong></p>
+            <p><em>Groups 5&ndash;6 &nbsp;&middot;&nbsp; Minimise cost index</em></p>
+            <p>A hospital ward must schedule nurse and technician shifts each week to meet coverage, patient care, and
+              technical task requirements at minimum staffing cost:</p>
+            <ul>
+              <li><strong><em>x</em></strong> = nurse shifts per week (cost index: 8 per shift)</li>
+              <li><strong><em>y</em></strong> = technician shifts per week (cost index: 6 per shift)</li>
+            </ul>
+            <p><strong>Objective:</strong> Minimise <em>Z</em> = 8<em>x</em> + 6<em>y</em> &nbsp;(cost index)</p>
+            <p><strong>Constraints:</strong></p>
+            <ul>
+              <li>Minimum coverage: <em>x</em> + <em>y</em> &ge; 20 shifts</li>
+              <li>Patient care hours: 2<em>x</em> + <em>y</em> &ge; 30 hrs</li>
+              <li>Technical tasks: <em>x</em> + 3<em>y</em> &ge; 24 hrs</li>
+              <li>Non-negativity: <em>x</em> &ge; 0, <em>y</em> &ge; 0</li>
+            </ul>
+            <p><strong>Worksheet tasks:</strong></p>
+            <ol type="A">
+              <li>Formulate the LP: define decision variables; write the objective function and all constraint inequalities.</li>
+              <li>Graph all constraint boundaries on the same axes; shade the feasible region; identify and calculate all corner points.</li>
+              <li>Evaluate <em>Z</em> at each corner point; state the optimal staffing mix and minimum cost index.
+                <em>Sensitivity: how does the solution change if the patient care requirement increases to 36 hrs?</em></li>
+            </ol>
+          </div>
+
+          <!-- W12D -->
+          <div style="border:2px solid #06d6a0; border-left:6px solid #06d6a0; border-radius:8px; padding:1em 1.2em; margin-bottom:1.3em; background:#f0fdf9;">
+            <p><strong>W12D &mdash; Conservation Land: Maximising Habitat from Wetland and Forest Restoration</strong></p>
+            <p><em>Groups 7&ndash;8 &nbsp;&middot;&nbsp; Maximise habitat score</em></p>
+            <p>A conservation agency has 80&nbsp;ha of degraded land to restore, subject to budget and water allocation limits:</p>
+            <ul>
+              <li><strong><em>x</em></strong> = ha of wetland restored (habitat score: 5 per ha)</li>
+              <li><strong><em>y</em></strong> = ha of forest restored (habitat score: 3 per ha)</li>
+            </ul>
+            <p><strong>Objective:</strong> Maximise <em>Z</em> = 5<em>x</em> + 3<em>y</em> &nbsp;(habitat score)</p>
+            <p><strong>Constraints:</strong></p>
+            <ul>
+              <li>Land: <em>x</em> + <em>y</em> &le; 80 ha</li>
+              <li>Budget: 4<em>x</em> + 2<em>y</em> &le; 240 ($k)</li>
+              <li>Water: <em>x</em> + 3<em>y</em> &le; 180 ML/yr</li>
+              <li>Non-negativity: <em>x</em> &ge; 0, <em>y</em> &ge; 0</li>
+            </ul>
+            <p><strong>Worksheet tasks:</strong></p>
+            <ol type="A">
+              <li>Formulate the LP: define decision variables; write the objective function and all constraint inequalities.</li>
+              <li>Graph all constraint boundaries on the same axes; shade the feasible region; identify and calculate all corner points.</li>
+              <li>Evaluate <em>Z</em> at each corner point; state the optimal restoration plan and maximum habitat score.
+                <em>Sensitivity: how does the solution change if the budget is reduced to $160k (4<em>x</em> + 2<em>y</em> &le; 160)?</em></li>
+            </ol>
+          </div>
+
+          <hr>
+          <h4 id="notebook-w12">JUPYTER NOTEBOOK (INDEPENDENT STUDY)</h4>
+          <p><strong>Notebook:</strong> <code>Week12_SES_LP_Complete.ipynb</code> &mdash; formative, not graded.
+            Complete before or after the lab session to build LP skills.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Part</th>
+                <th>Title</th>
+                <th>What you do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>Market Equilibrium &amp; Surplus</td>
+                <td>Solve simultaneous supply/demand equations; compute consumer and producer surplus</td>
+              </tr>
+              <tr>
+                <td>B</td>
+                <td>Diet LP Problem</td>
+                <td>Formulate a two-variable LP; graph constraints; find corner points</td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>Land Allocation</td>
+                <td>Multi-constraint LP with sensitivity analysis</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Part B is the core skill for the worksheet &mdash; make sure you can graph constraint boundaries,
+            shade the feasible region, and evaluate <em>Z</em> at each corner point before the lab.</p>
+
+          <hr>
+          <h4 id="submission-w12">SUBMISSION &amp; WORKTHROUGH</h4>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Submit</strong></td>
+                <td>Group Worksheet + graph + corner-point table<br>
+                  <strong>Due: Tuesday 2 June, 11:59 pm</strong> (post-SWOTVAC non-standard deadline)</td>
+              </tr>
+              <tr>
+                <td><strong>Workthrough</strong></td>
+                <td>No formal presentations this week. The demonstrator leads a whole-class walkthrough
+                  comparing corner points and solutions across all four problems (W12A&ndash;D).</td>
+              </tr>
+            </tbody>
+          </table>
+
           <hr>
         </div>
       </div>
@@ -21691,7 +21362,7 @@ plt.show()
               <tr>
                 <td>12</td>
                 <td>Linear Programming</td>
-                <td>Gallery Walk</td>
+                <td>Group Workthrough</td>
                 <td>All (no presentations)</td>
               </tr>
             </tbody>
