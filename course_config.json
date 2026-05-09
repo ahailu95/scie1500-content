@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "lastUpdated": "2026-05-07",
   "institution": {
     "id": "uwa",
@@ -839,7 +839,17 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w11_echo360",
+          "title": "Trigonometric Functions and Periodic Models",
+          "description": "Lecture video for Week 11 \u2014 radian measure, the unit circle, sinusoidal models, and parameter fitting",
+          "type": "video",
+          "url": "https://echo360.net.au/media/4a71567f-7433-435c-9a65-ea8ee0a28eea/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
