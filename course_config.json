@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "lastUpdated": "2026-05-07",
   "institution": {
     "id": "uwa",
@@ -908,7 +908,7 @@
           "title": "Simultaneous Equations and Linear Programming",
           "description": "Lecture on simultaneous equations and linear programming for Week 12",
           "type": "video",
-          "url": "https://echo360.net.au/media/94af25bb-7f2b-4e24-b7af-674439dae5e2/public",
+          "url": "https://echo360.net.au/media/1faf08de-95ac-4643-86f0-6c078cf4d48d/public",
           "source": "custom",
           "requiresAuth": false
         }
