@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "lastUpdated": "2026-05-07",
   "institution": {
     "id": "uwa",
@@ -961,6 +961,13 @@
       "description": "Lab structure, assessment, problem briefs with weekly tabs",
       "url": "https://ahailu95.github.io/scie1500-content/SCIE1500Materials/SCIE1500_Student_Handbook_with_weekly_tabs.html",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500Materials/SCIE1500_Student_Handbook_with_weekly_tabs.html"
+    },
+    {
+      "id": "answer_keys",
+      "title": "Answer Keys to Lab Worksheet Exercises",
+      "description": "Final answers for all weekly lab worksheet exercises (Weeks 1\u201312, including A/B variations)",
+      "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500_Lab_Answer_Keys_Only.md",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/SCIE1500_Lab_Answer_Keys_Only.md"
     }
   ],
   "github": {
