@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.0.11",
+  "version": "3.1.3",
   "lastUpdated": "2026-05-07",
   "institution": {
     "id": "uwa",
@@ -29,12 +29,25 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w0_lesson_code",
+          "title": "Week 0: Intro to Python & Jupyter \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_0/lesson_and_code_week0.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w0_lab_notebook",
           "title": "Notebook Intro Python",
           "description": "Week 0 lab exercises - Introduction to Python",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_0/LabFiles/Week0_Intro_Python.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_0/LabFiles/Week00_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -47,7 +60,7 @@
           "description": "Setup guide covering installation, Python basics, key packages, and first functions",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_0/LabFiles/Getting_Started_with_Python_and_JupyterNotebook.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_0/LabFiles/Week00_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib",
@@ -115,12 +128,25 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w1_lesson_code",
+          "title": "Week 1: Functions \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_1/lesson_and_code_week1.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w1_lab_notebook",
           "title": "Week1 Functions Complete",
           "description": "Week 1 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_1/LabFiles/Week1_Functions_Complete.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_1/LabFiles/Week01_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -196,12 +222,25 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w2_lesson_code",
+          "title": "Week 2: Exponential & Logarithmic Models \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_2/lesson_and_code_week2.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w2_lab_notebook",
           "title": "Week2 Exponential Logarithmic",
           "description": "Week 2 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_2/LabFiles/Week2_Exponential_Logarithmic.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_2/LabFiles/Week02_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -268,12 +307,26 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w3_lesson_code",
+          "title": "Week 3: Logistic & Bounded Growth \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_3/lesson_and_code_week3.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w3_lab_notebook",
           "title": "Week3 Logistic Bounded Growth",
           "description": "Week 3 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_3/LabFiles/Week3_Logistic_Bounded_Growth.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_3/LabFiles/Week03_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -358,12 +411,26 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w4_lesson_code",
+          "title": "Week 4: Limits, Continuity & Derivatives \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_4/lesson_and_code_week4.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w4_lab_notebook",
           "title": "Week4 Limits Continuity Derivatives",
           "description": "Week 4 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_4/LabFiles/Week4_Limits_Continuity_Derivatives.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_4/LabFiles/Week04_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -439,12 +506,26 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w5_lesson_code",
+          "title": "Week 5: Differentiation & Optimisation \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_5/lesson_and_code_week5.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w5_lab_notebook",
           "title": "Week5 Differentiation Optimization",
           "description": "Week 5 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_5/LabFiles/Week5_Differentiation_Optimization.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_5/LabFiles/Week05_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -502,12 +583,26 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w6_lesson_code",
+          "title": "Week 6: Introduction to Integration \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_6/lesson_and_code_week6.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w6_lab_notebook",
           "title": "Week6 Introduction to Integration",
           "description": "Week 6 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_6/LabFiles/Week6_Introduction_to_Integration.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_6/LabFiles/Week06_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -574,12 +669,26 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w7_lesson_code",
+          "title": "Week 7: Definite Integrals & Sequences \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_7/lesson_and_code_week7.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w7_lab_notebook",
           "title": "Week7 Definite Integrals Sequences",
           "description": "Week 7 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_7/LabFiles/Week7_Definite_Integrals_Sequences.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_7/LabFiles/Week07_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -646,12 +755,26 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w8_lesson_code",
+          "title": "Week 8: Predator-Prey Dynamics \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_8/lesson_and_code_week8.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w8_lab_notebook",
           "title": "Week8 Predator Prey Dynamics",
           "description": "Week 8 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_8/LabFiles/Week8_Predator_Prey_Dynamics.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_8/LabFiles/Week08_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -727,12 +850,26 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w9_lesson_code",
+          "title": "Week 9: Probability & Combinatorics \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_9/lesson_and_code_week9.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w9_lab_notebook",
           "title": "Week9 Probability Combinatorics",
           "description": "Week 9 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_9/LabFiles/Week9_Probability_Combinatorics.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_9/LabFiles/Week09_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -790,12 +927,27 @@
       "audios": [],
       "notebooks": [
         {
+          "id": "w10_lesson_code",
+          "title": "Week 10: Hypothesis Testing \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_10/lesson_and_code_week10.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy",
+            "pandas"
+          ],
+          "estimatedTimeMinutes": 45
+        },
+        {
           "id": "w10_lab_notebook",
           "title": "Week10 Hypothesis Testing",
           "description": "Week 10 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_10/LabFiles/Week10_Hypothesis_Testing.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_10/LabFiles/Week10_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -839,26 +991,29 @@
           "requiresAuth": false
         }
       ],
-      "videos": [
-        {
-          "id": "w11_echo360",
-          "title": "Trigonometric Functions and Periodic Models",
-          "description": "Lecture video for Week 11 \u2014 radian measure, the unit circle, sinusoidal models, and parameter fitting",
-          "type": "video",
-          "url": "https://echo360.net.au/media/4a71567f-7433-435c-9a65-ea8ee0a28eea/public",
-          "source": "custom",
-          "requiresAuth": false
-        }
-      ],
+      "videos": [],
       "audios": [],
       "notebooks": [
+        {
+          "id": "w11_lesson_code",
+          "title": "Week 11: Trigonometry \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_11/lesson_and_code_week11.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 45
+        },
         {
           "id": "w11_lab_notebook",
           "title": "Week11 Trigonometry Complete",
           "description": "Week 11 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_11/LabFiles/Week11_Trigonometry_Complete.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_11/LabFiles/Week11_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
@@ -902,26 +1057,30 @@
           "requiresAuth": false
         }
       ],
-      "videos": [
-        {
-          "id": "w12_echo360",
-          "title": "Simultaneous Equations and Linear Programming",
-          "description": "Lecture on simultaneous equations and linear programming for Week 12",
-          "type": "video",
-          "url": "https://echo360.net.au/media/1faf08de-95ac-4643-86f0-6c078cf4d48d/public",
-          "source": "custom",
-          "requiresAuth": false
-        }
-      ],
+      "videos": [],
       "audios": [],
       "notebooks": [
+        {
+          "id": "w12_lesson_code",
+          "title": "Week 12: Linear Programming & Systems \u2014 Lesson & Code",
+          "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_12/lesson_and_code_week12.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib",
+            "scipy"
+          ],
+          "estimatedTimeMinutes": 45
+        },
         {
           "id": "w12_lab_notebook",
           "title": "Week12 SES LP Complete",
           "description": "Week 12 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
-          "notebookPath": "SCIE1500Materials/Week_12/LabFiles/Week12_SES_LP_Complete.ipynb",
+          "notebookPath": "SCIE1500Materials/Week_12/LabFiles/Week12_Lab_STUDENT.ipynb",
           "requiredPackages": [
             "numpy",
             "matplotlib"
