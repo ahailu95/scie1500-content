@@ -37,7 +37,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 from scipy.stats import binom, binomtest
-from scipy.optimize import minimize, fsolve
+import sympy as sp
 import pandas as pd
 ```
 
@@ -435,31 +435,56 @@ plt.tight_layout()
 plt.show()
 ```
 
+## SymPy: Symbolic Calculus
+
+SymPy computes exact derivatives and integrals. Use it whenever you need algebraic answers.
+
+```python
+import sympy as sp
+
+x = sp.Symbol('x')        # Declare symbolic variable
+
+# Differentiate
+f = x**3 - 6*x**2 + 9*x + 1
+f_prime = sp.diff(f, x)           # First derivative
+f_double_prime = sp.diff(f, x, 2) # Second derivative
+
+# Solve f'(x) = 0
+critical_pts = sp.solve(f_prime, x)
+
+# Integrate
+area = sp.integrate(x**2, (x, 0, 3))   # Definite: returns 9
+indef = sp.integrate(x**2, x)          # Indefinite: returns x³/3
+
+# Substitute a value
+val = f.subs(x, 2)                     # f(2)
+
+# Convert to float when needed
+print(float(area))
+```
+
 ## Finding Critical Points
 
 ```python
-from scipy.optimize import fsolve
+import sympy as sp
 
-def f(x):
-    return x**3 - 6*x**2 + 9*x + 1
-
-def f_prime(x):
-    return 3*x**2 - 12*x + 9
+x = sp.Symbol('x')
+f = x**3 - 6*x**2 + 9*x + 1
 
 # Find critical points (where f'(x) = 0)
-critical_points = fsolve(f_prime, [0, 4])  # Initial guesses
+f_prime = sp.diff(f, x)
+critical_points = sp.solve(f_prime, x)
 print(f"Critical points: x = {critical_points}")
 
 # Second derivative test
-def f_double_prime(x):
-    return 6*x - 12
-
+f_double_prime = sp.diff(f, x, 2)
+print("\nSecond Derivative Test:")
 for cp in critical_points:
-    second_deriv = f_double_prime(cp)
-    if second_deriv > 0:
-        print(f"x = {cp:.2f}: Local minimum")
-    elif second_deriv < 0:
-        print(f"x = {cp:.2f}: Local maximum")
+    fpp = f_double_prime.subs(x, cp)
+    if fpp > 0:
+        print(f"x = {cp}: f''(x) = {fpp} → Local minimum, f(x) = {f.subs(x, cp)}")
+    elif fpp < 0:
+        print(f"x = {cp}: f''(x) = {fpp} → Local maximum, f(x) = {f.subs(x, cp)}")
 ```
 
 ---
@@ -469,83 +494,96 @@ for cp in critical_points:
 ## Finding Maximum/Minimum
 
 ```python
-from scipy.optimize import minimize_scalar
+import sympy as sp
+
+x = sp.Symbol('x')
 
 # Find minimum of f(x) = x² - 4x + 5
-f = lambda x: x**2 - 4*x + 5
-result = minimize_scalar(f)
-print(f"Minimum at x = {result.x:.4f}")
-print(f"Minimum value = {result.fun:.4f}")
+f = x**2 - 4*x + 5
+f_prime = sp.diff(f, x)
+print(f"f'(x) = {f_prime}")
 
-# For maximum, minimize the negative
-g = lambda x: -(x**2 - 4*x + 5)
-result_max = minimize_scalar(g)
-print(f"Maximum at x = {result_max.x:.4f}")
+critical_pts = sp.solve(f_prime, x)
+x_min = critical_pts[0]
+print(f"Minimum at x = {x_min}")
+print(f"Minimum value = {f.subs(x, x_min)}")
+
+# Verify via second derivative
+f_double_prime = sp.diff(f, x, 2)
+print(f"f''({x_min}) = {f_double_prime.subs(x, x_min)} > 0 → minimum ✓")
 ```
 
 ## Optimization with Constraints
 
 ```python
-from scipy.optimize import minimize
+import sympy as sp
 
-# Maximize profit: P = 50x - x² - 10
-# Subject to: 0 ≤ x ≤ 30
+x = sp.Symbol('x')
 
-def neg_profit(x):
-    return -(50*x[0] - x[0]**2 - 10)
+# Maximise profit P = 50x - x² - 10, for 0 ≤ x ≤ 30
+profit = 50*x - x**2 - 10
+dp = sp.diff(profit, x)
+print(f"dP/dx = {dp}")
 
-result = minimize(neg_profit, x0=[10], bounds=[(0, 30)])
-print(f"Optimal quantity: x = {result.x[0]:.2f}")
-print(f"Maximum profit: {-result.fun:.2f}")
+x_star = sp.solve(dp, x)[0]
+P_star = profit.subs(x, x_star)
+print(f"Optimal quantity: x = {x_star}")
+print(f"Maximum profit: P = {P_star}")
+
+# Confirm it's a maximum
+d2p = sp.diff(profit, x, 2)
+print(f"d²P/dx² = {d2p} < 0 → maximum ✓")
 ```
 
 ## Second Derivative Test
 
 ```python
-def f(x):
-    return x**4 - 8*x**2 + 16
+import sympy as sp
 
-def f_prime(x):
-    return 4*x**3 - 16*x
+x = sp.Symbol('x')
+f = x**4 - 8*x**2 + 16
+f_prime = sp.diff(f, x)
+f_double_prime = sp.diff(f, x, 2)
 
-def f_double_prime(x):
-    return 12*x**2 - 16
+# Find all critical points
+critical_pts = sp.solve(f_prime, x)
+print(f"f'(x) = {f_prime}")
+print(f"Critical points: x = {critical_pts}")
 
-# Critical points
-critical_pts = fsolve(f_prime, [-3, 0, 3])
-
-print("Critical Point Analysis:")
-for x in critical_pts:
-    fpp = f_double_prime(x)
-    if abs(fpp) < 1e-10:
-        classification = "Inconclusive"
-    elif fpp > 0:
+print("\nSecond Derivative Test:")
+for cp in critical_pts:
+    fpp = f_double_prime.subs(x, cp)
+    if fpp > 0:
         classification = "Local minimum"
-    else:
+    elif fpp < 0:
         classification = "Local maximum"
-    print(f"  x = {x:.2f}: f''(x) = {fpp:.2f} → {classification}")
+    else:
+        classification = "Inconclusive"
+    print(f"  x = {cp}: f''(x) = {fpp} → {classification}, f(x) = {f.subs(x, cp)}")
 ```
 
 ---
 
 # Weeks 6-7: Integration
 
-## Numerical Integration
+## Symbolic Integration
 
 ```python
-from scipy.integrate import quad
+import sympy as sp
+
+x = sp.Symbol('x')
 
 # Definite integral of x² from 0 to 3
-f = lambda x: x**2
-result, error = quad(f, 0, 3)
-print(f"∫₀³ x² dx = {result:.4f}")  # Should be 9
+result = sp.integrate(x**2, (x, 0, 3))
+print(f"∫₀³ x² dx = {result}")          # 9
 
-# Area under curve
-def area_under_curve(f, a, b):
-    result, _ = quad(f, a, b)
-    return result
+# Indefinite integral
+indef = sp.integrate(x**2, x)
+print(f"∫ x² dx = {indef} + C")         # x³/3
 
-print(f"Area = {area_under_curve(lambda x: np.sin(x), 0, np.pi):.4f}")  # Should be 2
+# Area under sin(x) from 0 to π
+result2 = sp.integrate(sp.sin(x), (x, 0, sp.pi))
+print(f"∫₀^π sin(x) dx = {result2}")    # 2
 ```
 
 ## Riemann Sums
@@ -581,11 +619,18 @@ for n in [10, 100, 1000]:
 ## Visualizing Area Under Curve
 
 ```python
-f = lambda x: x**2
+import sympy as sp
+
+x_sym = sp.Symbol('x')
 a, b = 0, 2
 
+# Exact area with SymPy
+area = sp.integrate(x_sym**2, (x_sym, a, b))
+print(f"Exact area = {area}")            # 8/3
+
+# Plot using numpy
 x = np.linspace(a, b, 100)
-y = f(x)
+y = x**2
 
 plt.figure(figsize=(10, 6))
 plt.plot(x, y, 'b-', linewidth=2, label='f(x) = x²')
@@ -595,64 +640,67 @@ plt.ylabel('y')
 plt.title(f'Area under curve from {a} to {b}')
 plt.legend()
 plt.grid(True, alpha=0.3)
-
-# Calculate and display area
-area, _ = quad(f, a, b)
-plt.text(1, 2, f'Area = {area:.3f}', fontsize=14, ha='center')
+plt.text(1, 2, f'Area = {area}', fontsize=14, ha='center')
 plt.show()
 ```
 
 ## Average Value of a Function
 
 ```python
+import sympy as sp
+
+x = sp.Symbol('x')
+
+# Average value of f over [a, b] = (1/(b-a)) * ∫_a^b f(x) dx
 def average_value(f, a, b):
-    """Calculate average value of f over [a,b]"""
-    integral, _ = quad(f, a, b)
+    integral = sp.integrate(f, (x, a, b))
     return integral / (b - a)
 
-# Example: average value of sin(x) from 0 to π
-f = lambda x: np.sin(x)
-avg = average_value(f, 0, np.pi)
-print(f"Average value of sin(x) from 0 to π: {avg:.4f}")  # Should be 2/π ≈ 0.6366
+# Average value of sin(x) from 0 to π
+avg = average_value(sp.sin(x), 0, sp.pi)
+print(f"Average value of sin(x) from 0 to π = {avg} ≈ {float(avg):.4f}")  # 2/π ≈ 0.6366
 ```
 
 ## Economic Surplus
 
 ```python
-from scipy.integrate import quad
+import sympy as sp
 
-def demand(Q):
-    return 100 - 2*Q
+Q = sp.Symbol('Q')
 
-def supply(Q):
-    return 20 + Q
+def demand(q):
+    return 100 - 2*q
 
-# Find equilibrium
-from scipy.optimize import fsolve
-eq_Q = fsolve(lambda Q: demand(Q) - supply(Q), 20)[0]
+def supply(q):
+    return 20 + q
+
+# Find equilibrium: demand = supply
+eq_Q = sp.solve(demand(Q) - supply(Q), Q)[0]
 eq_P = demand(eq_Q)
-print(f"Equilibrium: Q* = {eq_Q:.2f}, P* = {eq_P:.2f}")
+print(f"Equilibrium: Q* = {eq_Q}, P* = {eq_P}")
 
-# Consumer surplus
-CS, _ = quad(lambda Q: demand(Q) - eq_P, 0, eq_Q)
-print(f"Consumer Surplus: ${CS:.2f}")
+# Consumer surplus: ∫₀^Q* (demand(Q) - P*) dQ
+CS = sp.integrate(demand(Q) - eq_P, (Q, 0, eq_Q))
+print(f"Consumer Surplus: ${CS}")
 
-# Producer surplus
-PS, _ = quad(lambda Q: eq_P - supply(Q), 0, eq_Q)
-print(f"Producer Surplus: ${PS:.2f}")
+# Producer surplus: ∫₀^Q* (P* - supply(Q)) dQ
+PS = sp.integrate(eq_P - supply(Q), (Q, 0, eq_Q))
+print(f"Producer Surplus: ${PS}")
 
-# Visualization
-Q = np.linspace(0, 50, 100)
+# Visualization (convert to floats for numpy)
+Q_np = np.linspace(0, 50, 100)
+eq_Q_num = float(eq_Q)
+eq_P_num = float(eq_P)
+
 plt.figure(figsize=(10, 6))
-plt.plot(Q, demand(Q), 'b-', label='Demand')
-plt.plot(Q, supply(Q), 'r-', label='Supply')
-plt.fill_between(np.linspace(0, eq_Q, 50), 
-                 demand(np.linspace(0, eq_Q, 50)), eq_P, 
-                 alpha=0.3, color='blue', label='Consumer Surplus')
-plt.fill_between(np.linspace(0, eq_Q, 50), 
-                 eq_P, supply(np.linspace(0, eq_Q, 50)), 
-                 alpha=0.3, color='red', label='Producer Surplus')
-plt.scatter([eq_Q], [eq_P], color='green', s=100, zorder=5)
+plt.plot(Q_np, 100 - 2*Q_np, 'b-', label='Demand')
+plt.plot(Q_np, 20 + Q_np, 'r-', label='Supply')
+Q_fill = np.linspace(0, eq_Q_num, 50)
+plt.fill_between(Q_fill, 100 - 2*Q_fill, eq_P_num,
+                 alpha=0.3, color='blue', label=f'Consumer Surplus = ${CS}')
+plt.fill_between(Q_fill, eq_P_num, 20 + Q_fill,
+                 alpha=0.3, color='red', label=f'Producer Surplus = ${PS}')
+plt.scatter([eq_Q_num], [eq_P_num], color='green', s=100, zorder=5)
 plt.xlabel('Quantity')
 plt.ylabel('Price')
 plt.title('Market Equilibrium and Economic Surplus')
