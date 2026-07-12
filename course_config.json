@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.1.8",
-  "lastUpdated": "2026-07-12",
+  "version": "3.1.9",
+  "lastUpdated": "2026-07-13",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -267,6 +267,32 @@
           ],
           "estimatedTimeMinutes": 45,
           "viewInApp": false
+        },
+        {
+          "id": "w2_lab_a",
+          "title": "Week 2 Lab \u2014 Presentation Brief A",
+          "description": "Week 2 presentation variant A: Exponential and Logarithmic Functions",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_2/LabFiles/Week02_Lab_A.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
+        },
+        {
+          "id": "w2_lab_b",
+          "title": "Week 2 Lab \u2014 Presentation Brief B",
+          "description": "Week 2 presentation variant B: Exponential and Logarithmic Functions",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_2/LabFiles/Week02_Lab_B.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -363,6 +389,32 @@
           ],
           "estimatedTimeMinutes": 45,
           "viewInApp": false
+        },
+        {
+          "id": "w3_lab_a",
+          "title": "Week 3 Lab \u2014 Presentation Brief A",
+          "description": "Week 3 presentation variant A: Logistic Growth",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_3/LabFiles/Week03_Lab_A.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
+        },
+        {
+          "id": "w3_lab_b",
+          "title": "Week 3 Lab \u2014 Presentation Brief B",
+          "description": "Week 3 presentation variant B: Logistic Growth",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_3/LabFiles/Week03_Lab_B.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -477,6 +529,32 @@
           ],
           "estimatedTimeMinutes": 45,
           "viewInApp": false
+        },
+        {
+          "id": "w4_lab_a",
+          "title": "Week 4 Lab \u2014 Presentation Brief A",
+          "description": "Week 4 presentation variant A: Limits and Derivatives",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_4/LabFiles/Week04_Lab_A.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
+        },
+        {
+          "id": "w4_lab_b",
+          "title": "Week 4 Lab \u2014 Presentation Brief B",
+          "description": "Week 4 presentation variant B: Limits and Derivatives",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_4/LabFiles/Week04_Lab_B.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -582,6 +660,32 @@
           ],
           "estimatedTimeMinutes": 45,
           "viewInApp": false
+        },
+        {
+          "id": "w5_lab_a",
+          "title": "Week 5 Lab \u2014 Presentation Brief A",
+          "description": "Week 5 presentation variant A: Differentiation and Optimisation",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_5/LabFiles/Week05_Lab_A.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
+        },
+        {
+          "id": "w5_lab_b",
+          "title": "Week 5 Lab \u2014 Presentation Brief B",
+          "description": "Week 5 presentation variant B: Differentiation and Optimisation",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_5/LabFiles/Week05_Lab_B.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -669,6 +773,32 @@
           ],
           "estimatedTimeMinutes": 45,
           "viewInApp": false
+        },
+        {
+          "id": "w6_lab_a",
+          "title": "Week 6 Lab \u2014 Presentation Brief A",
+          "description": "Week 6 presentation variant A: Integration",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_6/LabFiles/Week06_Lab_A.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
+        },
+        {
+          "id": "w6_lab_b",
+          "title": "Week 6 Lab \u2014 Presentation Brief B",
+          "description": "Week 6 presentation variant B: Integration",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_6/LabFiles/Week06_Lab_B.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -765,6 +895,32 @@
           ],
           "estimatedTimeMinutes": 45,
           "viewInApp": false
+        },
+        {
+          "id": "w7_lab_a",
+          "title": "Week 7 Lab \u2014 Presentation Brief A",
+          "description": "Week 7 presentation variant A: Consumer and Producer Surplus",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_7/LabFiles/Week07_Lab_A.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
+        },
+        {
+          "id": "w7_lab_b",
+          "title": "Week 7 Lab \u2014 Presentation Brief B",
+          "description": "Week 7 presentation variant B: Consumer and Producer Surplus",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_7/LabFiles/Week07_Lab_B.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
@@ -861,6 +1017,32 @@
           ],
           "estimatedTimeMinutes": 45,
           "viewInApp": false
+        },
+        {
+          "id": "w8_lab_a",
+          "title": "Week 8 Lab \u2014 Presentation Brief A",
+          "description": "Week 8 presentation variant A: Predator-Prey Dynamics",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_8/LabFiles/Week08_Lab_A.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
+        },
+        {
+          "id": "w8_lab_b",
+          "title": "Week 8 Lab \u2014 Presentation Brief B",
+          "description": "Week 8 presentation variant B: Predator-Prey Dynamics",
+          "runtime": "googleColab",
+          "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
+          "notebookPath": "SCIE1500Materials/Week_8/LabFiles/Week08_Lab_B.ipynb",
+          "requiredPackages": [
+            "numpy",
+            "matplotlib"
+          ],
+          "estimatedTimeMinutes": 60
         }
       ],
       "exercises": [
