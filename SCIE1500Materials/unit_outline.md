@@ -1,12 +1,12 @@
 # Analytical Methods for Scientists (SCIE1500)
-## Semester 1, 2026
+## Semester 2, 2026
 
 **Unit Coordinator:** Dr. Atakelty Hailu  
 **Schools:** SAgE & PMC  
 **Level:** 1  
 **Credit Units:** 6 points
 
-**Version 1.0** (15 February 2026)
+**Version 1.0** (11 July 2026)
 
 ---
 
@@ -21,25 +21,19 @@
 
 ### Lab Instructors
 
-**Dr. Luke Morgan**  
-- **Email:** luke.morgan@uwa.edu.au  
-- **Consultation:** by appointment (see LMS for office location)  
-- **Labs:** Monday 10am–12pm, Monday 2–4pm  
-- **Venue:** ENCM: [207A], Crawley Campus
-
-**Yadav Padhyoti**  
+**Yadav Padhyoti** (Monday & Friday, Crawley Campus)  
 - **Email:** yadav.padhyoti@research.uwa.edu.au  
-- **Lab:** Wednesday 1–3pm  
-- **Venue:** ENCM: [207A], Crawley Campus
+- **Labs:** Mon 11:00am–1:00pm, Mon 1:00–3:00pm, Fri 9:00–11:00am, Fri 11:00am–1:00pm  
+- **Venues:** Reid Library, Seminar Room 139.106 (Mon 11am); Civ. & Mech. Eng., Room G11, 224.G11 (Mon 1pm); Civ. & Mech. Eng., Room G13, 224.G13 (Fri)
 
-**Gaia Scomazzon**  
-- **Email:** gaia.scomazzon@uwa.edu.au  
-- **Lab:** Thursday 2–4pm  
-- **Venue:** ENCM: [207A], Crawley Campus
+**Ariel Nguyen / Dr. Atakelty Hailu** (Tuesday & Wednesday, Crawley Campus)  
+- **Email:** atakelty.hailu@uwa.edu.au  
+- **Labs:** Tue 11:00am–1:00pm, Wed 1:00–3:00pm  
+- **Venues:** Business School, Rick Crabb Tutorial Room 441.262 (Tue); EZone Central, Giumelli Learning Studio 1, 275.206 (Wed)
 
-**Peter Speldewinde** (Albany Campus)  
+**Dr. Peter Speldewinde** (Albany Campus)  
 - **Email:** peter.speldewinde@uwa.edu.au  
-- **Lab:** Wednesday 9–11am  
+- **Lab:** Tue 9:30–11:30am  
 - **Venue:** ALBSCI: [302] Seminar A (10), ALBSCI: [303] Seminar B (10)
 
 ### Previous Contributors
@@ -68,17 +62,18 @@ The overall unit focus is on using modern computational methods to specify and s
 
 ### Assessment Items
 
-| # | Assessment | Weighting | Failed Component |
-|---|------------|-----------|------------------|
-| 1 | Participation (attendance) & Lab work | 20% | NA |
-| 2 | Assignments (2) | 30% | NA |
-| 3 | Final Exam | 50% | NA |
+| # | Assessment | Weighting | Key Deadlines |
+|---|------------|-----------|---------------|
+| 1 | Participation (attendance) & Lab work | 30% | Batches due 11 Aug, 8 Sep, 29 Sep, 27 Oct (11:59pm) |
+| 2 | Assignment 1 | 10% | 11:59pm Wednesday 26 August |
+| 2 | Assignment 2 | 10% | 11:59pm Wednesday 7 October |
+| 3 | Final Exam | 50% | 24 October – 7 November (see UWA exam schedule) |
 
 ### Unit Structure
 
 This unit is taught using recorded lectures and lab sessions. Each week, students need to attend only one 2-hour lab session. Before coming to the labs, they should work through the recorded video lectures (both science and math) for the week. Recorded lectures for each week will appear mostly as a series of short video recordings. Lecture content is also available through the **SciQuant Assistant app**, which delivers lessons, practice exercises and lab notebooks.
 
-Labs will be held during all teaching weeks of the semester, except during UWA holidays. Students missing labs because of UWA holidays will be accommodated in make-up lab sessions organised online or face-to-face.
+Labs will be held during all teaching weeks of the semester, except during study breaks and UWA public holidays. Students missing labs because of a public holiday will be accommodated in make-up lab sessions organised online or face-to-face.
 
 ---
 
@@ -126,53 +121,62 @@ The SciQuant app supports three AI tutor backends. You can switch between them a
 
 **Recommendation**: For the best learning experience, use **Claude AI** or the **Hosted Cloud Service** whenever possible. Both provide rich, discipline-specific explanations that are aware of exactly where you are in the course. The local Ollama option is a useful fallback for offline study but offers a more basic tutoring experience.
 
+> **⚠️ Important: Using the AI Tutor Responsibly**
+>
+> The SciQuant AI tutor is designed as a *course-aware learning aid*, not a general-purpose calculator or answer tool. Please keep the following in mind:
+>
+> - **Do not use any AI tool as a calculator, equation solver, or look-up table.** AI models—including ChatGPT, Gemini, Copilot, and others—regularly produce **incorrect numerical results**, particularly for logarithmic, exponential, and calculus computations. Students in previous semesters obtained conflicting or wrong values by querying multiple AI tools for the same calculation. Use Python, your scientific calculator, or the SciQuant calculator tool for all numerical work.
+>
+> - **Use the SciQuant AI tutor for its intended purpose.** Unlike general-purpose AI chatbots, the SciQuant tutor is aware of your current lesson, your scientific discipline, and the learning objectives for each week. It is designed to support your *understanding* through guided explanation and Socratic questioning, not to supply numerical answers or complete solutions. This course context is what makes it a reliable learning aid—using other AI tools instead means losing that context and risking unreliable guidance.
+>
+> - **Do not use any AI tool to solve assignment problems**, even indirectly by rephrasing or modifying a question. Submitting AI-generated solutions—whether from the SciQuant tutor or from any other tool—constitutes academic misconduct. All submitted work must be your own.
+
 ### Getting Started with SciQuant
 
 1. **Download** the SciQuant Assistant app from the link provided in the LMS.
 2. **Install** the app on your computer (macOS, Windows, or Linux are supported).
 3. **Open the app** and complete the onboarding process—set your name, choose your scientific discipline, and indicate your current maths comfort level. **Privacy note:** The app does not collect or store any private student data externally. The "name" and "student number" you enter during onboarding are stored only on your own device and are used solely within the app (e.g. for the AI tutor to address you by name). You do not need to use your real name or UWA student number—you may choose any name you would like the AI tutor to use.
-4. **Activate your licence**: On the licence activation screen, enter your **UWA email address** (e.g. `12345678@student.uwa.edu.au`) and tap **"Request Licence"**. Your licence will be activated instantly—no waiting or emails required.
-5. **Start learning**: Navigate to the weekly content from the home screen and begin working through the lessons, practice questions, and lab exercises for each week.
+4. **Start learning**: Navigate to the weekly content from the home screen and begin working through the lessons, practice questions, and lab exercises for each week.
 
-**Important**: The SciQuant app is the central hub for your learning in this unit. All weekly lessons, practice materials, and lab activities are accessed through the app. Make sure to install and activate it in the first week of semester.
+**Important**: The SciQuant app is the central hub for your learning in this unit. All weekly lessons, practice materials, and lab activities are accessed through the app. Make sure to install it in the first week of semester.
 
 **Note on assessments and the LMS**: While all learning content is delivered through the SciQuant app, all **assignment submissions, grading, and official record keeping** will take place through UWA's Learning Management System (LMS). You must submit your assignments and lab work via the LMS, and your grades will be recorded there. The SciQuant app is your learning tool; the LMS remains the official platform for all assessment-related activities.
 
 ---
 
-## Important Dates — Semester 1, 2026
+## Important Dates — Semester 2, 2026
 
 | Event | Date |
 |-------|------|
-| Orientation | 16–20 February |
-| Teaching Period Begins | 23 February |
-| Last Date to Add a Unit | 28 February |
-| Labour Day (public holiday) | 2 March (Monday) |
-| Census Date (last day to withdraw without financial penalty) | 31 March |
-| Good Friday & Easter Monday | 3 April & 6 April |
-| Mid-Semester Break | 6–10 April |
-| Academic Withdrawal Date (last day to withdraw without academic penalty) | 10 April |
-| Anzac Day (observed, public holiday) | 27 April (Monday) |
-| Teaching Period Ends | 22 May |
-| Western Australia Day (public holiday) | 1 June |
-| Examination Period | 30 May – 13 June |
-| Results Released | 3 July |
+| Orientation | 13–17 July |
+| Teaching Period Begins | 20 July |
+| Last Date to Add a Unit | 25 July |
+| Census Date (last day to withdraw without financial penalty) | 31 August |
+| Mid-Semester Study Break | 31 August – 4 September |
+| Academic Withdrawal Date (last day to withdraw without academic penalty) | 4 September |
+| King's Birthday (public holiday, UWA closed) | 28 September (Monday) |
+| Teaching Period Ends | 16 October |
+| Pre-Exam Study Break | 19–23 October |
+| Examination Period | 24 October – 7 November |
+| Results Released | TBC |
 
-**Note:** Monday lab sessions will be affected by Labour Day (2 March, Week 2) and Anzac Day (27 April, Week 9). Dr. Luke Morgan will organise make-up sessions for students enrolled in the Monday labs during those weeks. Details of the make-up sessions (dates, times, and venues) will be announced through the LMS.
+**Note:** Monday lab sessions will be affected by King's Birthday (28 September, Week 10). Yadav Padhyoti will organise make-up sessions for students enrolled in the Monday labs during that week. Details of the make-up sessions (dates, times, and venues) will be announced through the LMS.
 
 ---
 
-## Lab Sessions — Semester 1, 2026
+## Lab Sessions — Semester 2, 2026
 
-Labs run during teaching weeks 1–6 and 7–12 (i.e. calendar weeks 9–14 and 16–21), with no labs during the mid-semester break (6–10 April). Each student attends **one** 2-hour lab session per week.
+Labs run during teaching weeks 1–6 and 7–12, with no labs during the mid-semester study break (31 August – 4 September). Each student attends **one** 2-hour lab session per week.
 
 | Day & Time | Venue | Campus | Lab Instructor |
 |------------|-------|---------|----------------|
-| Monday 10:00am–12:00pm | ENCM: [207A] | Crawley | Dr. Luke Morgan |
-| Monday 2:00–4:00pm | ENCM: [207A] | Crawley | Dr. Luke Morgan |
-| Wednesday 1:00–3:00pm | ENCM: [207A] | Crawley | Yadav Padhyoti |
-| Thursday 2:00–4:00pm | ENCM: [207A] | Crawley | Gaia Scomazzon |
-| Wednesday 9:00–11:00am | ALBSCI: [302/303] | Albany | Peter Speldewinde |
+| Monday 11:00am–1:00pm | Reid Library, Seminar Room 139.106 | Crawley | Yadav Padhyoti |
+| Monday 1:00–3:00pm | Civ. & Mech. Eng., Room G11, 224.G11 | Crawley | Yadav Padhyoti |
+| Tuesday 11:00am–1:00pm | Business School, Rick Crabb Tutorial Room 441.262 | Crawley | Ariel Nguyen / A. Hailu |
+| Wednesday 1:00–3:00pm | EZone Central, Giumelli Learning Studio 1, 275.206 | Crawley | Ariel Nguyen / A. Hailu |
+| Friday 9:00–11:00am | Civ. & Mech. Eng., Room G13, 224.G13 | Crawley | Yadav Padhyoti |
+| Friday 11:00am–1:00pm | Civ. & Mech. Eng., Room G13, 224.G13 | Crawley | Yadav Padhyoti |
+| Tuesday 9:30–11:30am | ALBSCI: [302] Seminar A (10), [303] Seminar B (10) | Albany | Dr. Peter Speldewinde |
 
 ### Lab Focus and Philosophy
 
@@ -192,7 +196,7 @@ Presentations are assessed on four criteria: problem formulation, mathematical a
 
 The final three labs replace the standard Problem Brief format with activities designed to prepare you directly for the exam:
 
-- **Week 10 — Mock Exam Workshop:** Groups work through hypothesis testing, optimisation, and integration questions with the instructor, followed by an interactive debrief.
+- **Week 10 — Mock Exam Workshop:** Groups work through timed Part II exam-style questions (hypothesis testing, optimisation, integration, differential equations), then present solutions on the whiteboard for class discussion.
 - **Week 11 — Peer Review Exchange:** Each group *creates* a trigonometry problem for another group (involving sinusoidal modelling with real-world data), then solves the problem they receive. This counts as a double worksheet.
 - **Week 12 — Gallery Walk Capstone:** Groups solve a linear programming problem, set up poster stations, and rotate through each other's stations to explain and compare solutions.
 
@@ -200,112 +204,114 @@ No group presentations occur in Weeks 10–12; instead, all groups participate e
 
 ### Lab Assessment Breakdown
 
-The lab component is worth **20% of the unit** and is divided as follows:
+The lab component is worth **30% of the unit** and is divided as follows:
 
 | Component | Weight |
 |-----------|--------|
-| Lab Engagement (attendance + active participation) | 5% |
+| Lab Engagement (attendance + active participation) | 10% |
 | Group Presentations (2 × 4% each) | 8% |
-| Weekly Worksheets (best 10 of 12 counted) | 7% |
-| **Total** | **20%** |
+| Triweekly Worksheet Submissions (4 batches × 3% each) | 12% |
+| **Total** | **30%** |
+
+> **Lab Engagement note:** Attendance alone (name recorded by instructor) accounts for **5%**. The remaining **5%** requires active participation — engaging with the exercises, contributing to group work, and demonstrating effort during the session.
 
 ### Lab Handbook
 
-A comprehensive **Lab Handbook** containing all Problem Briefs, the presentation rubric, worksheet templates, and tips for success is available inside the **SciQuant Assistant** app. Refer to it each week for full task details, Python starter code, and scaffolding hints.
+Each week's **Problem Brief**—including the generic lab activity, the A/B presentation variations (Weeks 2–8), Python starter code, and scaffolding hints—is available directly in the app under that week's content. Tap **"Week N Lab Problem Brief"** in the weekly resources to open it. The brief also contains the presentation rubric and worksheet template.
 
 ---
 
 ## Unit Schedule
 
-### 📅 Orientation Week (Feb 16–22)
+### 📅 Orientation Week (Jul 13–19)
 **Week 0: Mathematical Foundations & Python Basics**
 
 Review of essential mathematical concepts (number systems, BODMAS, basic algebra); introduction to Python and Jupyter Notebooks
 
 ---
 
-### 📅 Week 1 (Feb 23–Mar 1)
+### 📅 Week 1 (Jul 20–26)
 **Functions and the Language of Scientific Analysis**
 
 Defining and representing functions; domain and range; linear, quadratic, and power functions; the vertical line test; function composition and inverse functions; scientific applications
 
 ---
 
-### 📅 Week 2 (Mar 2–8)
+### 📅 Week 2 (Jul 27–Aug 2)
 **Exponential and Logarithmic Functions**
 
 Exponential growth and decay; Euler's number $e$; logarithmic functions and their properties; log rules; applications to population growth, radioactive decay, and chemical kinetics
 
 ---
 
-### 📅 Week 3 (Mar 9–15)
+### 📅 Week 3 (Aug 3–9)
 **Logistic Functions and Bounded Growth**
 
 The logistic function; carrying capacity; bounded growth models; S-shaped curves; applications to population biology, disease spread, and resource-limited systems
 
 ---
 
-### 📅 Week 4 (Mar 16–22)
+### 📅 Week 4 (Aug 10–16)
 **Limits, Continuity, and Introduction to Derivatives**
 
 The concept of a limit; evaluating limits; continuity; the derivative as a rate of change; the difference quotient; basic differentiation rules (power rule)
 
 ---
 
-### 📅 Week 5 (Mar 23–29)
+### 📅 Week 5 (Aug 17–23)
 **Differentiation Techniques and Optimisation**
 
 Product rule, quotient rule, chain rule; higher-order derivatives; differentiation of exponential and logarithmic functions; finding maxima and minima; optimisation in scientific contexts
 
 ---
 
-### 📅 Week 6 (Mar 30–Apr 5)
+### 📅 Week 6 (Aug 24–30)
 **Introduction to Integration**
 
 The anti-derivative; indefinite integrals; basic integration rules; the definite integral and the Fundamental Theorem of Calculus; area under a curve
 
 ---
 
-> **🏖️ Mid-Semester Break** (6–10 April)
+> **🏖️ Mid-Semester Study Break** (31 August – 4 September)
 
 ---
 
-### 📅 Week 7 (Apr 13–19)
+### 📅 Week 7 (Sep 7–13)
 **Definite Integrals and Applications**
 
 Integration techniques; applications of definite integrals; sequences and series (arithmetic and geometric); convergence; applications to population dynamics and the Malthusian Trap
 
 ---
 
-### 📅 Week 8 (Apr 20–26)
+### 📅 Week 8 (Sep 14–20)
 **Predator–Prey Dynamics and Systems**
 
 The Lotka–Volterra model; representing predator–prey interactions; phase diagrams; steady-state analysis; oscillatory dynamics in ecology
 
 ---
 
-### 📅 Week 9 (Apr 27–May 3)
+### 📅 Week 9 (Sep 21–27)
 **Probability Foundations**
 
 Sample spaces and events; properties and rules of probability; conditional probability; Bayes' theorem; tree diagrams; independent and disjoint events; applications to medical testing and diagnostics
 
 ---
 
-### 📅 Week 10 (May 4–10)
+### 📅 Week 10 (Sep 28–Oct 4)
 **Random Variables and Hypothesis Testing**
 
-Random variables; expected value and variance; combinatorics; the binomial distribution; the normal distribution; introduction to hypothesis testing
+Random variables; expected value and variance; combinatorics; the binomial distribution; the normal distribution; introduction to hypothesis testing. *Note: King's Birthday public holiday falls on Monday 28 September; make-up sessions will be arranged for Monday lab students.*
 
 ---
 
-### 📅 Week 11 (May 11–17)
+### 📅 Week 11 (Oct 5–11)
 **Trigonometric Functions and Periodic Models**
 
 Trigonometric ratios; the unit circle and radian measure; graphs of sine, cosine, and tangent; amplitude, period, and phase shift; applications to seasonal and periodic phenomena
 
 ---
 
-### 📅 Week 12 (May 18–22)
+### 📅 Week 12 (Oct 12–16)
 **Simultaneous Equations and Linear Programming**
 
 Systems of linear equations; matrix methods; objective functions; inequality constraints; formulating and solving linear programming (LP) problems; sensitivity analysis
@@ -318,7 +324,12 @@ The assessment for the unit includes **ongoing assessments** in the form of **la
 
 ### Final Exam
 
-The final exam is a paper-based or face-to-face exam scheduled and administered by the university during the examination period (30 May – 13 June 2026). The focus of the final exam is on the mathematical methods and science topics covered in the unit. It does not include questions about Python and does not require you to use Python. You will find a sample set of questions in the LMS.
+The final exam is a paper-based or face-to-face exam scheduled and administered by the university during the examination period (24 October – 7 November 2026). The exam covers the mathematical methods and science topics addressed in the unit. It consists of two parts:
+
+- **Part I — Mathematical Methods and Science Applications** (approximately 42 questions): short-answer and multiple-choice questions on the mathematical concepts and scientific applications covered across all weeks.
+- **Part II — Python as a Mathematical Tool** (approximately 6–8 multiple-choice questions): questions that test your ability to use Python to perform mathematical tasks — such as numerical integration, differentiation, solving equations, and plotting — at a conceptual level. You will not need a computer; questions are designed to be answerable from your understanding of how Python tools work (e.g., identifying the right function, reading a short code snippet, or interpreting a plot).
+
+A sample exam is available through the **SciQuant app** (under Course Overview → Sample Exam) so you have a clear picture of the question style and difficulty. Additional practice materials are available on the LMS.
 
 ### Assignments
 
@@ -358,10 +369,10 @@ Put the following dates into your calendar.
 
 | # | Assessment | Weight | Deadline | Submission | Learning Outcome |
 |---|------------|--------|----------|------------|------------------|
-| 1 | Assignment 1 | 15% | 11:59pm, Wed 1 Apr | LMS/Online | all |
-| 2 | Assignment 2 | 15% | 11:59pm, Wed 13 May | LMS/Online | all |
-| 3 | Final Exam | 50% | See UWA Exam Schedule (30 May – 13 Jun) | face-to-face | 1,2,4,5 |
-| 4 | Weekly participation and lab work | 20% | Tue after lab week at 11:59pm, i.e. due dates are TUE Mar 3 (LAB1), Mar 10 (LAB2), Mar 17 (LAB3), Mar 24 (LAB4), Mar 31 (LAB5), Apr 14 (LAB6), Apr 21 (LAB7), Apr 28 (LAB8), May 5 (LAB9), May 12 (LAB10), May 19 (LAB11), and Jun 2 (LAB12) | LMS/Online | 3,4,5 |
+| 1 | Assignment 1 | 10% | 11:59pm, Wed 26 Aug | LMS/Online | all |
+| 2 | Assignment 2 | 10% | 11:59pm, Wed 7 Oct | LMS/Online | all |
+| 3 | Final Exam | 50% | See UWA Exam Schedule (24 Oct – 7 Nov) | face-to-face | 1,2,4,5 |
+| 4 | Participation and lab work | 30% | Every 3 labs, at 11:59pm on the Tuesday after the third lab in each batch: **Aug 11** (LABs 1–3), **Sep 8** (LABs 4–6), **Sep 29** (LABs 7–9), **Oct 27** (LABs 10–12) | LMS/Online | 3,4,5 |
 
 ---
 
@@ -369,9 +380,9 @@ Put the following dates into your calendar.
 
 **Lab attendance:** Each week you are required to attend labs unless you have a UAAP that exempts you from participating in lab type activities. Come prepared to the lab sessions by working through the weekly lesson content and practice questions in the SciQuant app. Use the AI tutor to seek clarification on concepts you find challenging. In the lab, you need to get your name ticked off by your lab instructor after you have completed the exercises you are required to complete inside the lab.
 
-**Computer lab exercises:** Each week there are a set of computer exercises for you to complete. To save time and effort, you should do your best to complete the exercises during your scheduled computer lab session, or in the hours following the session. Once you complete the exercises, you need to upload the requested parts of your lab work to the LMS to prove that you have completed the work. The lab instructions will be clear on what parts of the lab work you need to upload.
+**Computer lab exercises:** Each week there are a set of computer exercises for you to complete. To save time and effort, you should do your best to complete the exercises during your scheduled computer lab session, or in the hours following the session. Lab work is collected and uploaded to the LMS every 3 weeks. The lab instructions will be clear on what parts of the lab work you need to upload.
 
-Lab work is due at 11:59pm on the Tuesday after the lab week. For example, the due date for lab work from the first teaching week (24–28 February) is on Tuesday 3 March at 11:59pm, etc. **Exception:** Lab 12 is due on Tuesday 2 June (first Tuesday after SWOTVAC) as assessment deadlines are not permitted during SWOTVAC. See the list of lab work due dates above.
+Lab work is submitted in batches of three labs, due at 11:59pm on the Tuesday after the third lab in each batch: **11 August** (LABs 1–3), **8 September** (LABs 4–6), **29 September** (LABs 7–9), and **27 October** (LABs 10–12). The September 8 and October 27 dates account for the mid-semester and pre-exam study breaks respectively, as assessment deadlines are not permitted during study breaks. See the due dates table above.
 
 Students should make sure that they are uploading the right file and that their submission has gone through. Do not upload Pages (Mac software) files. Upload Pages files converted into PDF. If you are using Word, convert the Word file into PDF and upload the latter. View your uploaded file in the LMS to be sure it is all as it should be.
 
