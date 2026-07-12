@@ -33,11 +33,12 @@ MCQs cover **all 12 weeks**, with a mix of single-topic and integrative question
 Part II has 7 multiple-choice questions that test your ability to **read and reason about Python code** — not write it. You will see short code snippets using `numpy`, `scipy`, and `matplotlib` and be asked what the code computes, which function performs a given mathematical task, or how to interpret the output. No computer is needed.
 
 Useful things to be familiar with:
-- `np.gradient(y, x)` — numerical derivative
-- `scipy.integrate.quad(f, a, b)` — definite integral $\int_a^b f(x)\,dx$
+- `sp.Symbol('x')` — declares a symbolic variable
+- `sp.diff(f, x)` — exact symbolic derivative
+- `sp.integrate(f, (x, a, b))` — exact definite integral
+- `sp.solve(expr, x)` — finds values of `x` where `expr = 0`
+- `expr.subs(x, val)` — evaluates a symbolic expression at a specific value
 - `plt.fill_between(x, y1, y2)` — shaded area between two curves
-- `scipy.optimize.fsolve` — solves $f(x) = 0$; used here for equilibrium problems
-- `scipy.optimize.minimize_scalar` — minimises a function on an interval
 - `scipy.stats.binom.cdf(k, n, p)` — $P(X \le k)$ for $X \sim \text{Bin}(n,p)$; tail $P(X \ge k) = 1 - \text{cdf}(k-1, n, p)$
 
 ### What Part III looks like
@@ -90,17 +91,31 @@ You have four sides of A4 — use them well. This is your highest-leverage prepa
 
 **Python quick-reference (Part II — no computer needed, but useful to have)**
 
-The Part II questions ask you to read short code snippets and reason about what they do. The table below is worth writing on your notes sheet, particularly the function names and what each computes.
+The Part II questions ask you to read short code snippets and reason about what they do. The table below covers the SymPy and matplotlib patterns used in the course.
 
 | Python call | What it computes |
 | :---------- | :--------------- |
-| `np.gradient(y, x)` | Numerical $dy/dx$ at each point |
-| `scipy.integrate.quad(f, a, b)` | Definite integral $\int_a^b f(x)\,dx$ |
-| `plt.fill_between(x, y1, y2)` | Shaded area between two curves |
-| `scipy.optimize.fsolve(f, x0)` | Root of $f(x) = 0$ near $x_0$ |
-| `scipy.optimize.minimize_scalar(f, bounds=(a,b))` | Minimum of $f$ on $[a, b]$ |
+| `x = sp.Symbol('x')` | Declare a symbolic variable |
+| `sp.diff(f, x)` | Exact derivative $df/dx$ (symbolic) |
+| `sp.diff(f, x, 2)` | Second derivative $d^2f/dx^2$ |
+| `sp.integrate(f, x)` | Indefinite integral $\int f\,dx$ (symbolic, $+C$ omitted) |
+| `sp.integrate(f, (x, a, b))` | Definite integral $\int_a^b f\,dx$ (exact value) |
+| `sp.solve(expr, x)` | Solve $\text{expr} = 0$ for $x$; returns list of solutions |
+| `expr.subs(x, val)` | Substitute $x = \text{val}$ into a symbolic expression |
+| `plt.fill_between(x, y1, y2)` | Shaded region between two curves on a plot |
 | `binom.cdf(k, n, p)` | $P(X \le k)$ for $X \sim \text{Bin}(n,p)$ |
-| `1 - binom.cdf(k-1, n, p)` | $P(X \ge k)$ (upper tail) |
+| `1 - binom.cdf(k-1, n, p)` | $P(X \ge k)$ (upper tail probability) |
+
+**Typical SymPy workflow for optimisation:**
+```python
+import sympy as sp
+x = sp.Symbol('x')
+f = ...                        # define the function
+fp = sp.diff(f, x)             # first derivative
+x_star = sp.solve(fp, x)[0]   # stationary point (solve f'=0)
+fpp = sp.diff(f, x, 2)        # second derivative for SOC check
+opt_val = f.subs(x, x_star)   # function value at optimum
+```
 
 
 **What is usually *not* worth writing**
