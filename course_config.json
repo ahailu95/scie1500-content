@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.1.7",
+  "version": "3.1.8",
   "lastUpdated": "2026-07-12",
   "institution": {
     "id": "uwa",
@@ -1262,7 +1262,7 @@
       "id": "sample_exam",
       "title": "Sample Final Exam",
       "description": "Sample final exam based on the previous semester\u2019s paper: Part I (36 MCQ \u2014 mathematical methods), Part II (7 MCQ \u2014 Python as a mathematical tool), Part III (answer 2 of 4 long-answer questions). No computer needed.",
-      "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/FinalexamSAMPLE_S2Y26.pdf",
+      "url": "https://ahailu95.github.io/scie1500-content/sample_exam/FinalexamSAMPLE_S2Y26.pdf",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/FinalexamSAMPLE_S2Y26.pdf"
     },
     {
