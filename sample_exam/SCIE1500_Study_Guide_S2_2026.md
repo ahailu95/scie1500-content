@@ -30,16 +30,9 @@ MCQs cover **all 12 weeks**, with a mix of single-topic and integrative question
 
 ### What Part II looks like
 
-Part II has 7 multiple-choice questions that test your ability to **read and reason about Python code** — not write it. You will see short code snippets using `numpy`, `scipy`, and `matplotlib` and be asked what the code computes, which function performs a given mathematical task, or how to interpret the output. No computer is needed.
+Part II has 7 multiple-choice questions that test your ability to **read and reason about Python code** — not write it. You will see short code snippets drawn from the course, and be asked what the code computes, which call performs a given mathematical task, or how to interpret the output. No computer is needed.
 
-Useful things to be familiar with:
-- `sp.Symbol('x')` — declares a symbolic variable
-- `sp.diff(f, x)` — exact symbolic derivative
-- `sp.integrate(f, (x, a, b))` — exact definite integral
-- `sp.solve(expr, x)` — finds values of `x` where `expr = 0`
-- `expr.subs(x, val)` — evaluates a symbolic expression at a specific value
-- `plt.fill_between(x, y1, y2)` — shaded area between two curves
-- `scipy.stats.binom.cdf(k, n, p)` — $P(X \le k)$ for $X \sim \text{Bin}(n,p)$; tail $P(X \ge k) = 1 - \text{cdf}(k-1, n, p)$
+The snippets use the same libraries and patterns as the course labs: SymPy for symbolic calculus (`sp.diff`, `sp.integrate`, `sp.solve`), NumPy and Matplotlib for numerical work and plotting, and SciPy for probability (`binom.cdf`, `binomtest`). The best preparation is simply to understand the code you wrote in the lab notebooks, not to memorise function signatures from a list.
 
 ### What Part III looks like
 
@@ -62,7 +55,11 @@ As announced, you may bring:
 
 ### What to put on your two A4 sheets
 
-You have four sides of A4 — use them well. This is your highest-leverage preparation task. Here is a prioritised list of what most students find useful to write down. You do **not** need all of it; pick what you are least confident recalling under pressure.
+You have four sides of A4 — use them well. Preparing these sheets is itself a valuable revision exercise: every time you look up a formula while working practice problems, copy it down. By the time you sit the exam, your sheet is effectively your study log.
+
+Before drafting your sheets, open the **Formula Sheet** and **Python Code Reference** in the Course Overview of the SciQuant app. They give you a structured view of what the course covers and will help you spot gaps in your notes.
+
+Here is a prioritised list of what most students find useful to record. You do **not** need all of it — focus on what you are least confident recalling under pressure.
 
 **Sheet 1 — Calculus (Weeks 4–7)**
 
@@ -89,34 +86,13 @@ You have four sides of A4 — use them well. This is your highest-leverage prepa
 - Consumer surplus $= \int_0^{Q^*}(P^d(Q) - P^*)\,dQ$; Producer surplus $= \int_0^{Q^*}(P^* - P^s(Q))\,dQ$
 - Quadratic formula (you *will* need it)
 
-**Python quick-reference (Part II — no computer needed, but useful to have)**
+**Python (Part II — no computer needed)**
 
-The Part II questions ask you to read short code snippets and reason about what they do. The table below covers the SymPy and matplotlib patterns used in the course.
+Part II asks you to read short code snippets and reason about what they compute. The most useful preparation is to understand the patterns from the lab notebooks rather than to copy a function-name list. If you do want a memory aid, a one-line sketch of the SymPy calculus workflow is more useful than a full table — something like:
 
-| Python call | What it computes |
-| :---------- | :--------------- |
-| `x = sp.Symbol('x')` | Declare a symbolic variable |
-| `sp.diff(f, x)` | Exact derivative $df/dx$ (symbolic) |
-| `sp.diff(f, x, 2)` | Second derivative $d^2f/dx^2$ |
-| `sp.integrate(f, x)` | Indefinite integral $\int f\,dx$ (symbolic, $+C$ omitted) |
-| `sp.integrate(f, (x, a, b))` | Definite integral $\int_a^b f\,dx$ (exact value) |
-| `sp.solve(expr, x)` | Solve $\text{expr} = 0$ for $x$; returns list of solutions |
-| `expr.subs(x, val)` | Substitute $x = \text{val}$ into a symbolic expression |
-| `plt.fill_between(x, y1, y2)` | Shaded region between two curves on a plot |
-| `binom.cdf(k, n, p)` | $P(X \le k)$ for $X \sim \text{Bin}(n,p)$ |
-| `1 - binom.cdf(k-1, n, p)` | $P(X \ge k)$ (upper tail probability) |
-
-**Typical SymPy workflow for optimisation:**
-```python
-import sympy as sp
-x = sp.Symbol('x')
-f = ...                        # define the function
-fp = sp.diff(f, x)             # first derivative
-x_star = sp.solve(fp, x)[0]   # stationary point (solve f'=0)
-fpp = sp.diff(f, x, 2)        # second derivative for SOC check
-opt_val = f.subs(x, x_star)   # function value at optimum
 ```
-
+sp.diff(f,x) → f'   sp.integrate(f,(x,a,b)) → ∫   sp.solve(fp,x) → critical pts   f.subs(x,v) → value
+```
 
 **What is usually *not* worth writing**
 

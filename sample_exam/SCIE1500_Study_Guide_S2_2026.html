@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>SCIE1500 Final Exam Study Guide — Semester 2, 2026</title>
+  <title>SCIE1500_Study_Guide_S2_2026</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -168,81 +168,12 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { color: #008000; } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { color: #008000; font-weight: bold; } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">SCIE1500 Final Exam Study Guide — Semester 2,
-2026</h1>
-</header>
 <style>
 .katex, .katex-display, .katex-display * { color: #1d4ed8 !important; }
 .katex .boxed, .katex .fbox, .katex .colorbox { border-color: #1d4ed8 !important; }
@@ -329,22 +260,16 @@ Do not get stuck on any single MCQ — flag it and move on.</p>
 <h3 id="what-part-ii-looks-like">What Part II looks like</h3>
 <p>Part II has 7 multiple-choice questions that test your ability to
 <strong>read and reason about Python code</strong> — not write it. You
-will see short code snippets using <code>numpy</code>,
-<code>scipy</code>, and <code>matplotlib</code> and be asked what the
-code computes, which function performs a given mathematical task, or how
+will see short code snippets drawn from the course, and be asked what
+the code computes, which call performs a given mathematical task, or how
 to interpret the output. No computer is needed.</p>
-<p>Useful things to be familiar with: - <code>sp.Symbol('x')</code> —
-declares a symbolic variable - <code>sp.diff(f, x)</code> — exact
-symbolic derivative - <code>sp.integrate(f, (x, a, b))</code> — exact
-definite integral - <code>sp.solve(expr, x)</code> — finds values of
-<code>x</code> where <code>expr = 0</code> -
-<code>expr.subs(x, val)</code> — evaluates a symbolic expression at a
-specific value - <code>plt.fill_between(x, y1, y2)</code> — shaded area
-between two curves - <code>scipy.stats.binom.cdf(k, n, p)</code> — <span
-class="math inline">\(P(X \le k)\)</span> for <span
-class="math inline">\(X \sim \text{Bin}(n,p)\)</span>; tail <span
-class="math inline">\(P(X \ge k) = 1 - \text{cdf}(k-1, n,
-p)\)</span></p>
+<p>The snippets use the same libraries and patterns as the course labs:
+SymPy for symbolic calculus (<code>sp.diff</code>,
+<code>sp.integrate</code>, <code>sp.solve</code>), NumPy and Matplotlib
+for numerical work and plotting, and SciPy for probability
+(<code>binom.cdf</code>, <code>binomtest</code>). The best preparation
+is simply to understand the code you wrote in the lab notebooks, not to
+memorise function signatures from a list.</p>
 <h3 id="what-part-iii-looks-like">What Part III looks like</h3>
 <p>Four extended problems are provided — you answer <strong>any
 two</strong>. Each is broken into 3–5 lettered parts and is
@@ -375,11 +300,17 @@ or typed — your choice)</li>
 </ul>
 <h3 id="what-to-put-on-your-two-a4-sheets">What to put on your two A4
 sheets</h3>
-<p>You have four sides of A4 — use them well. This is your
-highest-leverage preparation task. Here is a prioritised list of what
-most students find useful to write down. You do <strong>not</strong>
-need all of it; pick what you are least confident recalling under
-pressure.</p>
+<p>You have four sides of A4 — use them well. Preparing these sheets is
+itself a valuable revision exercise: every time you look up a formula
+while working practice problems, copy it down. By the time you sit the
+exam, your sheet is effectively your study log.</p>
+<p>Before drafting your sheets, open the <strong>Formula Sheet</strong>
+and <strong>Python Code Reference</strong> in the Course Overview of the
+SciQuant app. They give you a structured view of what the course covers
+and will help you spot gaps in your notes.</p>
+<p>Here is a prioritised list of what most students find useful to
+record. You do <strong>not</strong> need all of it — focus on what you
+are least confident recalling under pressure.</p>
 <p><strong>Sheet 1 — Calculus (Weeks 4–7)</strong></p>
 <ul>
 <li>Standard derivatives: <span
@@ -442,88 +373,13 @@ P^*)\,dQ\)</span>; Producer surplus <span class="math inline">\(=
 \int_0^{Q^*}(P^* - P^s(Q))\,dQ\)</span></li>
 <li>Quadratic formula (you <em>will</em> need it)</li>
 </ul>
-<p><strong>Python quick-reference (Part II — no computer needed, but
-useful to have)</strong></p>
-<p>The Part II questions ask you to read short code snippets and reason
-about what they do. The table below covers the SymPy and matplotlib
-patterns used in the course.</p>
-<table>
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 59%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Python call</th>
-<th style="text-align: left;">What it computes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>x = sp.Symbol('x')</code></td>
-<td style="text-align: left;">Declare a symbolic variable</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>sp.diff(f, x)</code></td>
-<td style="text-align: left;">Exact derivative <span
-class="math inline">\(df/dx\)</span> (symbolic)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>sp.diff(f, x, 2)</code></td>
-<td style="text-align: left;">Second derivative <span
-class="math inline">\(d^2f/dx^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>sp.integrate(f, x)</code></td>
-<td style="text-align: left;">Indefinite integral <span
-class="math inline">\(\int f\,dx\)</span> (symbolic, <span
-class="math inline">\(+C\)</span> omitted)</td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>sp.integrate(f, (x, a, b))</code></td>
-<td style="text-align: left;">Definite integral <span
-class="math inline">\(\int_a^b f\,dx\)</span> (exact value)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>sp.solve(expr, x)</code></td>
-<td style="text-align: left;">Solve <span
-class="math inline">\(\text{expr} = 0\)</span> for <span
-class="math inline">\(x\)</span>; returns list of solutions</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>expr.subs(x, val)</code></td>
-<td style="text-align: left;">Substitute <span class="math inline">\(x =
-\text{val}\)</span> into a symbolic expression</td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>plt.fill_between(x, y1, y2)</code></td>
-<td style="text-align: left;">Shaded region between two curves on a
-plot</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>binom.cdf(k, n, p)</code></td>
-<td style="text-align: left;"><span class="math inline">\(P(X \le
-k)\)</span> for <span class="math inline">\(X \sim
-\text{Bin}(n,p)\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1 - binom.cdf(k-1, n, p)</code></td>
-<td style="text-align: left;"><span class="math inline">\(P(X \ge
-k)\)</span> (upper tail probability)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Typical SymPy workflow for optimisation:</strong></p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.Symbol(<span class="st">&#39;x&#39;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> ...                        <span class="co"># define the function</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>fp <span class="op">=</span> sp.diff(f, x)             <span class="co"># first derivative</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x_star <span class="op">=</span> sp.solve(fp, x)[<span class="dv">0</span>]   <span class="co"># stationary point (solve f&#39;=0)</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fpp <span class="op">=</span> sp.diff(f, x, <span class="dv">2</span>)        <span class="co"># second derivative for SOC check</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>opt_val <span class="op">=</span> f.subs(x, x_star)   <span class="co"># function value at optimum</span></span></code></pre></div>
+<p><strong>Python (Part II — no computer needed)</strong></p>
+<p>Part II asks you to read short code snippets and reason about what
+they compute. The most useful preparation is to understand the patterns
+from the lab notebooks rather than to copy a function-name list. If you
+do want a memory aid, a one-line sketch of the SymPy calculus workflow
+is more useful than a full table — something like:</p>
+<pre><code>sp.diff(f,x) → f&#39;   sp.integrate(f,(x,a,b)) → ∫   sp.solve(fp,x) → critical pts   f.subs(x,v) → value</code></pre>
 <p><strong>What is usually <em>not</em> worth writing</strong></p>
 <ul>
 <li>Fully worked examples — you won’t have time to copy them during the
