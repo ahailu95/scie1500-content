@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Week 5 Lab Handbook — SCIE1500</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Week 5 Lab Handbook — SCIE1500</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#week-5-optimization-with-constraints"
+id="toc-week-5-optimization-with-constraints">Week 5: Optimization with
+Constraints</a></li>
+<li><a href="#presentation-problems-for-groups-presenting-next-week"
+id="toc-presentation-problems-for-groups-presenting-next-week">🎤
+<strong>PRESENTATION PROBLEMS: For Groups Presenting Next
+Week</strong></a></li>
+<li><a
+href="#problem-brief-w5a-for-group-7-presentation-in-week-6-group-1-second-presentation"
+id="toc-problem-brief-w5a-for-group-7-presentation-in-week-6-group-1-second-presentation">PROBLEM
+BRIEF: W5A (for Group 7 presentation in Week 6 &amp; Group 1 second
+presentation)</a></li>
+<li><a
+href="#problem-brief-w5b-for-group-1-second-presentation-in-week-6"
+id="toc-problem-brief-w5b-for-group-1-second-presentation-in-week-6">PROBLEM
+BRIEF: W5B (for Group 1 second presentation in Week 6)</a></li>
+</ul>
+</nav>
+<h2 id="week-5-optimization-with-constraints">Week 5: Optimization with
+Constraints</h2>
+<h3 id="problem-brief-w5">PROBLEM BRIEF: W5</h3>
+<p><strong>“Designing an Optimal Wildlife Corridor”</strong></p>
+<hr />
+<h4 id="scenario">SCENARIO</h4>
+<p>The Department of Biodiversity is designing a rectangular wildlife
+corridor to connect two nature reserves, with 2000 meters of fencing
+available.</p>
+<p>Ecologists want a large corridor, but not a very narrow one because
+edge effects reduce habitat quality.</p>
+<p><strong>The Challenge:</strong> Design a corridor that: - Uses
+exactly 2000 m of fencing (perimeter constraint) - Maximizes usable area
+- Meets minimum width requirement of 200 m (prevents edge effects)</p>
+<hr />
+<h4 id="your-task">YOUR TASK</h4>
+<p><strong>Part A: Setting Up the Optimization (15 minutes)</strong></p>
+<ol type="1">
+<li><p>Let <span class="math inline">\(x\)</span> = width of corridor
+(meters) and <span class="math inline">\(y\)</span> = length
+(meters).</p></li>
+<li><p>Write the <strong>constraint equation</strong> for perimeter:
+<span class="math display">\[2x + 2y = 2000\]</span></p></li>
+<li><p>Solve the constraint for <span class="math inline">\(y\)</span>
+in terms of <span class="math inline">\(x\)</span>: <span
+class="math display">\[y = ?\]</span></p></li>
+<li><p>Write the <strong>objective function</strong> for area: <span
+class="math display">\[A(x) = x \cdot y\]</span></p>
+<p>Substitute your expression for <span class="math inline">\(y\)</span>
+to get <span class="math inline">\(A\)</span> as a function of <span
+class="math inline">\(x\)</span> only.</p></li>
+<li><p>What is the domain of <span class="math inline">\(x\)</span>?</p>
+<ul>
+<li>Mathematical: <span class="math inline">\(x &gt; 0\)</span> (width
+must be positive)</li>
+<li>Physical: <span class="math inline">\(x \geq 200\)</span> (minimum
+width) and <span class="math inline">\(x \leq ?\)</span> (ensure <span
+class="math inline">\(y &gt; 0\)</span>)</li>
+</ul></li>
+</ol>
+<p><strong>Part B: Finding the Optimal Dimensions (25
+minutes)</strong></p>
+<ol start="6" type="1">
+<li><p>Take the derivative: <span class="math inline">\(A&#39;(x) =
+?\)</span></p></li>
+<li><p>Find the critical point by solving <span
+class="math inline">\(A&#39;(x) = 0\)</span></p></li>
+<li><p>Verify this is a maximum:</p>
+<ul>
+<li>Calculate <span class="math inline">\(A&#39;&#39;(x)\)</span></li>
+<li>Evaluate <span
+class="math inline">\(A&#39;&#39;(x_{critical})\)</span></li>
+<li>Since <span class="math inline">\(A&#39;&#39; &lt; 0\)</span>, this
+is a maximum ✓</li>
+</ul></li>
+<li><p>Is the critical point within the feasible range <span
+class="math inline">\([200, ?]\)</span>?</p>
+<ul>
+<li>If YES: this is the optimal width</li>
+<li>If NO: the optimum is at a boundary</li>
+</ul></li>
+<li><p>Compare the area at:</p>
+<ul>
+<li>The critical point (if feasible)</li>
+<li>The minimum width boundary (<span class="math inline">\(x =
+200\)</span>)</li>
+<li>The maximum width boundary (where <span class="math inline">\(y =
+200\)</span>, by symmetry)</li>
+</ul>
+<p>Which gives the largest area?</p></li>
+</ol>
+<p><strong>Part C: Sensitivity Analysis (15 minutes)</strong></p>
+<ol start="11" type="1">
+<li>Budget constraints may reduce available fencing to 1800 m.
+<ul>
+<li>Repeat the optimization with perimeter = 1800 m</li>
+<li>How much area is lost compared to the 2000 m scenario?</li>
+</ul></li>
+<li>If the minimum width increases to 250 m (stricter ecological
+requirements):
+<ul>
+<li>Does this change the optimal design for 2000 m of fencing?</li>
+<li>Calculate the new optimal area</li>
+</ul></li>
+</ol>
+<p><strong>Part D: Recommendation (5 minutes)</strong></p>
+<ol start="13" type="1">
+<li>Write a brief 3-4 sentence recommendation for the Department:
+<ul>
+<li>Optimal corridor dimensions</li>
+<li>Expected habitat area</li>
+<li>Trade-offs between budget (fencing length) and ecological
+requirements (minimum width)</li>
+</ul></li>
+</ol>
+<hr />
+<h4 id="deliverables">DELIVERABLES</h4>
+<p><strong>All groups:</strong> - [ ] Completed Group Worksheet with
+optimization work - [ ] Graph of <span
+class="math inline">\(A(x)\)</span> showing the critical point and
+constraints</p>
+<p><strong>Presenting groups only (Groups 7 &amp; 1):</strong> - [ ]
+Prepare a 10-minute presentation for Week 6</p>
+<hr />
+<h4 id="presentation-guidance-groups-7-1">PRESENTATION GUIDANCE (Groups
+7 &amp; 1)</h4>
+<p>Focus on: 1. How to handle constraints in optimization problems 2.
+The method: constraint substitution → single-variable optimization 3.
+Checking whether the mathematical solution is physically feasible 4.
+Real-world trade-offs in your recommendation</p>
+<hr />
+<h4 id="concept-reminders">CONCEPT REMINDERS</h4>
+<p>Use the notes below if your group needs a quick reminder of how
+constrained optimisation works while solving the task.</p>
+<ul>
+<li>Use the constraint to rewrite the objective in one variable.</li>
+<li>A critical point comes from setting the derivative equal to
+zero.</li>
+<li>The mathematical optimum must still lie inside the feasible physical
+range.</li>
+<li>When a constraint creates boundaries, compare boundary values as
+well as the critical point.</li>
+<li>If <span class="math inline">\(A&#39;&#39;(x) &lt; 0\)</span>, the
+curve is concave down and the critical point is a local maximum.</li>
+</ul>
+<hr />
+<h4 id="hints-scaffolding">HINTS / SCAFFOLDING</h4>
+<p><strong>General strategy for constrained optimization:</strong> 1.
+Write constraint equation 2. Solve for one variable in terms of the
+other 3. Substitute into objective function → single-variable function
+4. Take derivative and find critical points 5. Check feasibility and
+boundary values</p>
+<p><strong>For this problem:</strong> - Constraint: <span
+class="math inline">\(2x + 2y = 2000\)</span> → <span
+class="math inline">\(y = 1000 - x\)</span> - Objective: <span
+class="math inline">\(A(x) = x(1000 - x) = 1000x - x^2\)</span> -
+Derivative: <span class="math inline">\(A&#39;(x) = 1000 - 2x\)</span> -
+Critical point: <span class="math inline">\(1000 - 2x = 0\)</span> →
+<span class="math inline">\(x = 500\)</span></p>
+<p><strong>Python template:</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">200</span>, <span class="dv">800</span>, <span class="dv">500</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> x <span class="op">*</span> (<span class="dv">1000</span> <span class="op">-</span> x)  <span class="co"># Area function</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Critical point</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>x_crit <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>A_crit <span class="op">=</span> x_crit <span class="op">*</span> (<span class="dv">1000</span> <span class="op">-</span> x_crit)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.plot(x, A, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Area A(x)&#39;</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.plot(x_crit, A_crit, <span class="st">&#39;ro&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="ss">f&#39;Optimum: x=</span><span class="sc">{</span>x_crit<span class="sc">}</span><span class="ss">m, A=</span><span class="sc">{</span>A_crit<span class="sc">:,}</span><span class="ss">m²&#39;</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">200</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">&#39;Min width = 200m&#39;</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Width x (meters)&#39;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Area (m²)&#39;</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Wildlife Corridor: Area vs Width&#39;</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+<h2 id="presentation-problems-for-groups-presenting-next-week">🎤
+<strong>PRESENTATION PROBLEMS: For Groups Presenting Next
+Week</strong></h2>
+<p><strong>The following problems are for the two groups presenting next
+week. Work on your assigned variation during this week’s lab to prepare
+your presentation.</strong></p>
+<h2
+id="problem-brief-w5a-for-group-7-presentation-in-week-6-group-1-second-presentation">PROBLEM
+BRIEF: W5A (for Group 7 presentation in Week 6 &amp; Group 1 second
+presentation)</h2>
+<p><strong>“Solar Farm Economics: Optimal Panel
+Configuration”</strong></p>
+<hr />
+<h3 id="scenario-1">SCENARIO</h3>
+<p>A renewable energy company is designing a 50-hectare solar farm near
+Geraldton. The farm will use rectangular arrays of solar panels. Due to
+shading effects and maintenance access requirements, there are
+engineering constraints on the configuration.</p>
+<p><strong>Economic model:</strong> Annual revenue (in thousands of
+dollars) is modeled as:</p>
+<p><span class="katex-display"> $R(x) = -2x^2 + 180x - 1600$ </span></p>
+<p>where $x$ is the average spacing between panel rows (in meters). This
+accounts for:</p>
+<ul>
+<li>More spacing → less shading → higher efficiency per panel</li>
+<li>More spacing → fewer total panels → lower total output</li>
+<li>Optimal balance exists between these competing factors</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>Minimum spacing: $x $m (maintenance access)</li>
+<li>Maximum spacing: $x $m (land area limit)</li>
+<li>Panels must generate positive revenue</li>
+</ul>
+<hr />
+<h3 id="your-task-1">YOUR TASK</h3>
+<p><strong>Part A: Critical Point Analysis (25 minutes)</strong></p>
+<ol type="1">
+<li><p>Find the derivative $R’(x)$ :</p>
+<ul>
+<li>Use power rule on each term</li>
+<li>Interpret: $R’(x)$ represents the <strong>rate of change</strong> of
+revenue with respect to spacing</li>
+</ul></li>
+<li><p>Find the critical point by solving $R’(x) = 0$ :</p>
+<ul>
+<li>Set your derivative equal to zero</li>
+<li>Solve for $x$</li>
+<li>This gives the <strong>candidate</strong> for optimal spacing</li>
+</ul></li>
+<li><p>Verify this is a maximum using the <strong>second derivative
+test</strong>:</p>
+<ul>
+<li>Calculate $R’’(x)$</li>
+<li>Evaluate $R’’(x_{critical})$</li>
+<li>If $R’’ &lt; 0$ → local maximum ✓</li>
+<li>If $R’’ &gt; 0$ → local minimum ✗</li>
+</ul></li>
+<li><p>Calculate the maximum revenue:</p>
+<ul>
+<li>Substitute $x_{optimal}$ into $R(x)$</li>
+<li>Express in dollars per year</li>
+</ul></li>
+</ol>
+<p><strong>Part B: Constraint Boundaries (20 minutes)</strong></p>
+<ol start="5" type="1">
+<li><p>The critical point must lie within the feasible region $[8, 60]$
+. Check:</p>
+<ul>
+<li>Is $8 x_{optimal} $ ?</li>
+<li>If YES: proceed to step 6</li>
+<li>If NO: the optimum is at a boundary</li>
+</ul></li>
+<li><p>Compare revenue at three points:</p>
+<ul>
+<li>$R(x_{optimal})$ [if within constraints]</li>
+<li>$R(8)$ [minimum spacing boundary]</li>
+<li>$R(60)$ [maximum spacing boundary]</li>
+<li>Which configuration yields highest revenue?</li>
+</ul></li>
+<li><p>Find the <strong>break-even points</strong> where revenue =
+0:</p>
+<ul>
+<li>Solve: $-2x^2 + 180x - 1600 = 0$</li>
+<li>Use quadratic formula: $x = $</li>
+<li>Interpret: below the lower break-even point, the farm loses
+money</li>
+</ul></li>
+</ol>
+<p><strong>Part C: Sensitivity Analysis (15 minutes)</strong></p>
+<ol start="8" type="1">
+<li><p>Climate change projections suggest reduced solar irradiance will
+decrease revenue by 15%.</p>
+<ul>
+<li>New model: $R_{climate}(x) = 0.85 R(x) = -1.7x^2 + 153x - 1360$</li>
+<li>Find the new optimal spacing</li>
+<li>How much does optimal revenue decrease?</li>
+</ul></li>
+<li><p>To compensate for revenue loss, the company can install
+higher-efficiency panels (20% boost):</p>
+<ul>
+<li>New model: $R_{upgrade}(x) = 1.20 R(x) = -2.4x^2 + 216x - 1920$</li>
+<li>Find the new optimal spacing and revenue</li>
+<li>Compare to the baseline scenario</li>
+</ul></li>
+</ol>
+<p><strong>Part D: Economic Interpretation (5 minutes)</strong></p>
+<ol start="10" type="1">
+<li>Write a brief (4-5 sentence) recommendation to the company’s CEO
+covering:
+<ul>
+<li>Optimal panel spacing</li>
+<li>Expected annual revenue</li>
+<li>Sensitivity to climate change</li>
+<li>Whether high-efficiency panel upgrade is justified</li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="deliverables-1">DELIVERABLES</h3>
+<ul>
+<li>Completed Group Worksheet showing all derivative work</li>
+<li>Graph of $R(x)$ with critical point and boundaries marked</li>
+<li><strong>Group 7 in Week 6 OR Group 1 (second presentation) in Week
+6:</strong> Prepare 10-minute presentation</li>
+</ul>
+<hr />
+<h3 id="python-template">PYTHON TEMPLATE</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">5</span>, <span class="dv">65</span>, <span class="dv">500</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">180</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">1600</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Derivative</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>dR_dx <span class="op">=</span> <span class="op">-</span><span class="dv">4</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">180</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Critical point</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>x_crit <span class="op">=</span> <span class="op">-</span><span class="dv">180</span> <span class="op">/</span> (<span class="op">-</span><span class="dv">4</span>)  <span class="co"># From dR/dx = 0</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>R_crit <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>x_crit<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">180</span><span class="op">*</span>x_crit <span class="op">-</span> <span class="dv">1600</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Boundaries</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>R_min <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span><span class="dv">8</span><span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">180</span><span class="op">*</span><span class="dv">8</span> <span class="op">-</span> <span class="dv">1600</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>R_max <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span><span class="dv">60</span><span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">180</span><span class="op">*</span><span class="dv">60</span> <span class="op">-</span> <span class="dv">1600</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.plot(x, R, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Revenue R(x)&#39;</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.plot(x_crit, R_crit, <span class="st">&#39;ro&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="ss">f&#39;Optimal: x=</span><span class="sc">{</span>x_crit<span class="sc">:.1f}</span><span class="ss">m, R=$</span><span class="sc">{</span>R_crit<span class="sc">:.0f}</span><span class="ss">k&#39;</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">&#39;Min spacing (8m)&#39;</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">60</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">&#39;Max spacing (60m)&#39;</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;-&#39;</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Panel Spacing x (meters)&#39;</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Annual Revenue (thousands $)&#39;</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Solar Farm Revenue Optimization&#39;</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">500</span>, <span class="dv">2500</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+<h2
+id="problem-brief-w5b-for-group-1-second-presentation-in-week-6">PROBLEM
+BRIEF: W5B (for Group 1 second presentation in Week 6)</h2>
+<p><strong>“Aquaculture Profit: Optimal Stocking Density for
+Barramundi”</strong></p>
+<hr />
+<h3 id="scenario-2">SCENARIO</h3>
+<p>A barramundi aquaculture farm in Exmouth is optimizing its fish
+stocking density. The profit model accounts for:</p>
+<ul>
+<li>Higher density → more fish → higher total yield</li>
+<li>Higher density → competition for oxygen/food → higher mortality →
+lower individual fish weight</li>
+</ul>
+<p><strong>Profit function:</strong></p>
+<p><span class="katex-display"> $P(d) = -0.5d^2 + 55d - 800$ </span></p>
+<p>where:</p>
+<ul>
+<li>$P(d)$ = annual profit (thousands of dollars)</li>
+<li>$d$ = stocking density (fish per 100 m³)</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>Minimum density: $d $ (economic viability)</li>
+<li>Maximum density: $d $ (animal welfare regulations)</li>
+</ul>
+<hr />
+<h3 id="your-task-2">YOUR TASK</h3>
+<p><strong>Part A: Optimization Using Calculus (25 minutes)</strong></p>
+<ol type="1">
+<li><p>Find the profit-maximizing stocking density:</p>
+<ul>
+<li>Calculate $P’(d) = $</li>
+<li>Solve $P’(d) = 0$ for $d$</li>
+<li>This gives the critical point</li>
+</ul></li>
+<li><p>Confirm this is a maximum:</p>
+<ul>
+<li>Calculate second derivative $P’’(d)$</li>
+<li>Since $P’’(d) = -1 &lt; 0$ everywhere, the function is concave
+down</li>
+<li>Therefore the critical point is a global maximum ✓</li>
+</ul></li>
+<li><p>Calculate maximum profit:</p>
+<ul>
+<li>Substitute $d_{optimal}$ into $P(d)$</li>
+<li>Express in dollars per year</li>
+</ul></li>
+<li><p>Check feasibility:</p>
+<ul>
+<li>Is $10 d_{optimal} $ ?</li>
+<li>If NO: the constrained optimum is at a boundary</li>
+</ul></li>
+</ol>
+<p><strong>Part B: Constrained Optimization (20 minutes)</strong></p>
+<ol start="5" type="1">
+<li><p>Compare profit at critical point vs. boundaries:</p>
+<ul>
+<li>$P(d_{optimal})$ [if within $[10, 80]$ ]</li>
+<li>$P(10)$ [minimum density]</li>
+<li>$P(80)$ [maximum density]</li>
+<li>Which is the true optimum given constraints?</li>
+</ul></li>
+<li><p>Find the break-even density levels:</p>
+<ul>
+<li>Solve: $-0.5d^2 + 55d - 800 = 0$</li>
+<li>Multiply by -2: $d^2 - 110d + 1600 = 0$</li>
+<li>Use quadratic formula</li>
+<li>Interpret: farm loses money outside this range</li>
+</ul></li>
+<li><p>Calculate the <strong>marginal profit</strong> at current
+operating density $d = 40$ :</p>
+<ul>
+<li>$P’(40) = ?$ dollars per fish (per 100 m³)</li>
+<li>If $P’(40) &gt; 0$ : increasing density increases profit</li>
+<li>If $P’(40) &lt; 0$ : decreasing density increases profit</li>
+<li>What does this suggest?</li>
+</ul></li>
+</ol>
+<p><strong>Part C: Comparative Scenarios (15 minutes)</strong></p>
+<ol start="8" type="1">
+<li><p>A disease outbreak reduces survival rates, decreasing the profit
+function to:</p>
+<p><span class="katex-display"> $P_{disease}(d) = -0.5d^2 + 55d - 1200$
+</span></p>
+<ul>
+<li>Find the new optimal density</li>
+<li>How much does profit decrease at the optimum?</li>
+<li>Does the farm still break even?</li>
+</ul></li>
+<li><p>Installing aeration systems improves oxygen levels, changing the
+model to:</p>
+<p><span class="katex-display"> $P_{aeration}(d) = -0.4d^2 + 60d - 900$
+</span></p>
+<ul>
+<li>Find the new optimal density (note: less steep quadratic → flatter
+profit curve)</li>
+<li>Calculate maximum profit</li>
+<li>Is the aeration investment worthwhile?</li>
+</ul></li>
+</ol>
+<p><strong>Part D: Management Recommendation (5 minutes)</strong></p>
+<ol start="10" type="1">
+<li>Write a brief (4-5 sentence) advisory memo to the farm manager:
+<ul>
+<li>Recommended stocking density</li>
+<li>Expected annual profit</li>
+<li>Risk mitigation strategies (disease, aeration)</li>
+<li>Monitoring parameters</li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="deliverables-2">DELIVERABLES</h3>
+<ul>
+<li>Completed Group Worksheet with optimization calculations</li>
+<li>Graph showing profit function and critical point</li>
+<li><strong>Group 1 (second presentation) in Week 6:</strong> Prepare
+10-minute presentation</li>
+</ul>
+<hr />
+<h3 id="python-template-1">PYTHON TEMPLATE</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> np.linspace(<span class="dv">5</span>, <span class="dv">90</span>, <span class="dv">500</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>d<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">55</span><span class="op">*</span>d <span class="op">-</span> <span class="dv">800</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Derivative</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>dP_dd <span class="op">=</span> <span class="op">-</span>d <span class="op">+</span> <span class="dv">55</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Critical point</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>d_crit <span class="op">=</span> <span class="dv">55</span> <span class="op">/</span> <span class="dv">1</span>  <span class="co"># From dP/dd = 0</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>P_crit <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>d_crit<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">55</span><span class="op">*</span>d_crit <span class="op">-</span> <span class="dv">800</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Disease scenario</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>P_disease <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>d<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">55</span><span class="op">*</span>d <span class="op">-</span> <span class="dv">1200</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Aeration scenario</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>P_aeration <span class="op">=</span> <span class="op">-</span><span class="fl">0.4</span><span class="op">*</span>d<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">60</span><span class="op">*</span>d <span class="op">-</span> <span class="dv">900</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>d_aer_crit <span class="op">=</span> <span class="dv">60</span> <span class="op">/</span> <span class="fl">0.8</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>P_aer_crit <span class="op">=</span> <span class="op">-</span><span class="fl">0.4</span><span class="op">*</span>d_aer_crit<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">60</span><span class="op">*</span>d_aer_crit <span class="op">-</span> <span class="dv">900</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.plot(d, P, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Baseline P(d)&#39;</span>, color<span class="op">=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>plt.plot(d, P_disease, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Disease scenario&#39;</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.plot(d, P_aeration, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>, label<span class="op">=</span><span class="st">&#39;Aeration upgrade&#39;</span>, color<span class="op">=</span><span class="st">&#39;green&#39;</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.plot(d_crit, P_crit, <span class="st">&#39;bo&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="ss">f&#39;Baseline opt: d=</span><span class="sc">{</span>d_crit<span class="sc">:.0f}</span><span class="ss">, P=$</span><span class="sc">{</span>P_crit<span class="sc">:.0f}</span><span class="ss">k&#39;</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.plot(d_aer_crit, P_aer_crit, <span class="st">&#39;go&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="ss">f&#39;Aeration opt: d=</span><span class="sc">{</span>d_aer_crit<span class="sc">:.0f}</span><span class="ss">&#39;</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">80</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;-&#39;</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Stocking Density d (fish per 100 m³)&#39;</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Annual Profit (thousands $)&#39;</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Barramundi Aquaculture: Stocking Density Optimization&#39;</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+</body>
+</html>

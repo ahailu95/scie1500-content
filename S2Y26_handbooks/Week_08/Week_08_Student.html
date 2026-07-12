@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Week 8 Lab Handbook — SCIE1500</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Week 8 Lab Handbook — SCIE1500</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#week-8-lotka-volterra-and-predator-prey-dynamics"
+id="toc-week-8-lotka-volterra-and-predator-prey-dynamics">Week 8:
+Lotka-Volterra and Predator-Prey Dynamics</a></li>
+<li><a href="#presentation-problems-for-groups-presenting-next-week"
+id="toc-presentation-problems-for-groups-presenting-next-week">🎤
+<strong>PRESENTATION PROBLEMS: For Groups Presenting Next
+Week</strong></a></li>
+<li><a
+href="#problem-brief-w8a-for-group-6-second-presentation-in-week-9"
+id="toc-problem-brief-w8a-for-group-6-second-presentation-in-week-9">PROBLEM
+BRIEF: W8A (for Group 6 second presentation in Week 9)</a></li>
+<li><a
+href="#problem-brief-w8b-for-group-7-second-presentation-in-week-9"
+id="toc-problem-brief-w8b-for-group-7-second-presentation-in-week-9">PROBLEM
+BRIEF: W8B (for Group 7 second presentation in Week 9)</a></li>
+</ul>
+</nav>
+<h2 id="week-8-lotka-volterra-and-predator-prey-dynamics">Week 8:
+Lotka-Volterra and Predator-Prey Dynamics</h2>
+<h3 id="problem-brief-w8">PROBLEM BRIEF: W8</h3>
+<p><strong>“Feral Cat Management: Protecting Native
+Wildlife”</strong></p>
+<hr />
+<h4 id="scenario">SCENARIO</h4>
+<p>The Western Shield program aims to protect endangered numbats from
+feral cats. Ecologists have developed a predator-prey model:</p>
+<p><span class="math display">\[\begin{aligned}
+\frac{dN}{dt} &amp;= 0.4N - 0.002NC \\
+\frac{dC}{dt} &amp;= -0.3C + 0.001NC
+\end{aligned}\]</span></p>
+<p>where: - <span class="math inline">\(N\)</span> = numbat population -
+<span class="math inline">\(C\)</span> = feral cat population - <span
+class="math inline">\(t\)</span> = time (years)</p>
+<p><strong>Model interpretation:</strong> - Numbats grow at 40% per year
+without cats - Each cat-numbat interaction reduces numbat growth - Cats
+decline at 30% per year without prey - Predation increases cat
+population</p>
+<hr />
+<h4 id="your-task">YOUR TASK</h4>
+<p><strong>Part A: Equilibrium Analysis (25 minutes)</strong></p>
+<ol type="1">
+<li>Find the <strong>trivial equilibrium</strong> (both species
+extinct):
+<ul>
+<li>Set <span class="math inline">\(N = 0, C = 0\)</span></li>
+</ul></li>
+<li>Find the <strong>coexistence equilibrium</strong>:
+<ul>
+<li>Set <span class="math inline">\(\frac{dN}{dt} = 0\)</span>: <span
+class="math inline">\(N(0.4 - 0.002C) = 0\)</span>
+<ul>
+<li>Either <span class="math inline">\(N = 0\)</span> or <span
+class="math inline">\(C = ?\)</span></li>
+</ul></li>
+<li>Set <span class="math inline">\(\frac{dC}{dt} = 0\)</span>: <span
+class="math inline">\(C(-0.3 + 0.001N) = 0\)</span>
+<ul>
+<li>Either <span class="math inline">\(C = 0\)</span> or <span
+class="math inline">\(N = ?\)</span></li>
+</ul></li>
+<li><strong>Coexistence:</strong> <span class="math inline">\((N^*, C^*)
+= (?, ?)\)</span></li>
+</ul></li>
+<li>Interpret: What does this equilibrium mean for wildlife
+management?</li>
+</ol>
+<p><strong>Part B: Phase Plane Analysis (20 minutes)</strong></p>
+<ol start="4" type="1">
+<li><p><strong>Nullclines</strong> (curves where population growth =
+0):</p>
+<ul>
+<li>Numbat nullcline: <span class="math inline">\(\frac{dN}{dt} =
+0\)</span> → <span class="math inline">\(N = 0\)</span> or <span
+class="math inline">\(C = ?\)</span></li>
+<li>Cat nullcline: <span class="math inline">\(\frac{dC}{dt} =
+0\)</span> → <span class="math inline">\(C = 0\)</span> or <span
+class="math inline">\(N = ?\)</span></li>
+</ul></li>
+<li><p>The phase plane is divided into four regions:</p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Condition</th>
+<th><span class="math inline">\(\frac{dN}{dt}\)</span></th>
+<th><span class="math inline">\(\frac{dC}{dt}\)</span></th>
+<th>Movement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td><span class="math inline">\(N &lt; N^*, C &lt; C^*\)</span></td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>II</td>
+<td><span class="math inline">\(N &gt; N^*, C &lt; C^*\)</span></td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>III</td>
+<td><span class="math inline">\(N &gt; N^*, C &gt; C^*\)</span></td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>IV</td>
+<td><span class="math inline">\(N &lt; N^*, C &gt; C^*\)</span></td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p>Fill in the table.</p></li>
+<li><p>Sketch the phase portrait showing how populations move in each
+region.</p></li>
+</ol>
+<p><strong>Part C: Management Interventions (15 minutes)</strong></p>
+<ol start="7" type="1">
+<li><strong>Cat culling:</strong> Remove 50 cats per year
+<ul>
+<li>Modified equation: <span class="math inline">\(\frac{dC}{dt} = -0.3C
++ 0.001NC - 50\)</span></li>
+<li>Find the new equilibrium</li>
+<li>How does numbat population change?</li>
+</ul></li>
+<li><strong>Numbat translocation:</strong> Add 20 numbats per year
+<ul>
+<li>Modified equation: <span class="math inline">\(\frac{dN}{dt} = 0.4N
+- 0.002NC + 20\)</span></li>
+<li>Find the new equilibrium</li>
+<li>Compare effectiveness to cat culling</li>
+</ul></li>
+<li>Which intervention better supports numbat conservation? Why?</li>
+</ol>
+<hr />
+<h4 id="deliverables">DELIVERABLES</h4>
+<ul class="task-list">
+<li><label><input type="checkbox" />Completed Group Worksheet with
+equilibrium analysis</label></li>
+<li><label><input type="checkbox" />Phase plane diagram with nullclines
+and direction arrows</label></li>
+<li><label><input type="checkbox" /><strong>Groups 6 &amp; 7:</strong>
+Prepare 10-minute presentation for Week 9</label></li>
+</ul>
+<hr />
+<h4 id="presentation-guidance-groups-6-7">PRESENTATION GUIDANCE (Groups
+6 &amp; 7)</h4>
+<p>Focus on: 1. The Lotka-Volterra model structure 2. Equilibrium
+concepts (trivial vs. coexistence) 3. Phase plane analysis and
+population dynamics 4. Management implications</p>
+<hr />
+<h4 id="hints-scaffolding">HINTS / SCAFFOLDING</h4>
+<p><strong>To find equilibria, factor equations:</strong> - <span
+class="math inline">\(N(0.4 - 0.002C) = 0\)</span> means <span
+class="math inline">\(N = 0\)</span> OR <span class="math inline">\(0.4
+- 0.002C = 0\)</span> - Solve the second equation for <span
+class="math inline">\(C\)</span></p>
+<p><strong>Python template:</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Equilibrium</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>N_star <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>C_star <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Nullclines</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>N_range <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">600</span>, <span class="dv">100</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>C_range <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">400</span>, <span class="dv">100</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span>C_star, color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="ss">f&#39;Numbat nullcline (C=</span><span class="sc">{</span>C_star<span class="sc">}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>N_star, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="ss">f&#39;Cat nullcline (N=</span><span class="sc">{</span>N_star<span class="sc">}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.plot(N_star, C_star, <span class="st">&#39;go&#39;</span>, markersize<span class="op">=</span><span class="dv">15</span>, label<span class="op">=</span><span class="ss">f&#39;Equilibrium (</span><span class="sc">{</span>N_star<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>C_star<span class="sc">}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Direction field</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>N_grid <span class="op">=</span> np.linspace(<span class="dv">50</span>, <span class="dv">550</span>, <span class="dv">15</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>C_grid <span class="op">=</span> np.linspace(<span class="dv">50</span>, <span class="dv">350</span>, <span class="dv">12</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>N_mesh, C_mesh <span class="op">=</span> np.meshgrid(N_grid, C_grid)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>dN_dt <span class="op">=</span> <span class="fl">0.4</span> <span class="op">*</span> N_mesh <span class="op">-</span> <span class="fl">0.002</span> <span class="op">*</span> N_mesh <span class="op">*</span> C_mesh</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>dC_dt <span class="op">=</span> <span class="op">-</span><span class="fl">0.3</span> <span class="op">*</span> C_mesh <span class="op">+</span> <span class="fl">0.001</span> <span class="op">*</span> N_mesh <span class="op">*</span> C_mesh</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize arrows</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dN_dt<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dC_dt<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>dN_norm <span class="op">=</span> dN_dt <span class="op">/</span> (magnitude <span class="op">+</span> <span class="fl">1e-10</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>dC_norm <span class="op">=</span> dC_dt <span class="op">/</span> (magnitude <span class="op">+</span> <span class="fl">1e-10</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.quiver(N_mesh, C_mesh, dN_norm, dC_norm, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Numbat Population (N)&#39;</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Feral Cat Population (C)&#39;</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Predator-Prey Phase Plane&#39;</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">600</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">400</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+<h2 id="presentation-problems-for-groups-presenting-next-week">🎤
+<strong>PRESENTATION PROBLEMS: For Groups Presenting Next
+Week</strong></h2>
+<p><strong>The following problems are for the two groups presenting next
+week. Work on your assigned variation during this week’s lab to prepare
+your presentation.</strong></p>
+<h2
+id="problem-brief-w8a-for-group-6-second-presentation-in-week-9">PROBLEM
+BRIEF: W8A (for Group 6 second presentation in Week 9)</h2>
+<p><strong>“Fox Control on the Mainland: Protecting Quokka
+Colonies”</strong></p>
+<hr />
+<h3 id="scenario-1">SCENARIO</h3>
+<p>On the Australian mainland, quokka (<em>Setonix brachyurus</em>)
+populations face severe predation pressure from the European red fox
+(<em>Vulpes vulpes</em>). While quokkas thrive on Rottnest Island (which
+has no foxes), mainland colonies are critically endangered. Ecologists
+model this predator-prey system:</p>
+<span class="katex-display"> $
+<span class="math display">\[\begin{aligned} \frac{dQ}{dt} &amp;= 0.3Q -
+0.003QF \\ \frac{dF}{dt} &amp;= -0.2F + 0.0005QF \end{aligned}\]</span>
+<p>$ </span></p>
+<p>where:</p>
+<ul>
+<li>$Q$ = quokka population (number of individuals)</li>
+<li>$F$ = fox population (number of individuals)</li>
+<li>$t$ = time in years</li>
+</ul>
+<p><strong>Model features:</strong></p>
+<ul>
+<li>Quokkas grow at 30% per year without predation (moderate
+reproductive rate)</li>
+<li>Foxes decline at 20% per year without prey</li>
+<li>Predation interactions affect both populations</li>
+</ul>
+<hr />
+<h3 id="your-task-1">YOUR TASK</h3>
+<p><strong>Part A: Finding Equilibria (25 minutes)</strong></p>
+<ol type="1">
+<li><p>Trivial equilibrium:</p>
+<ul>
+<li>$(Q, F) = (0, 0)$ — both species absent from the mainland</li>
+<li>Is this realistic given the current state of mainland
+populations?</li>
+</ul></li>
+<li><p>Coexistence equilibrium:</p>
+<ul>
+<li>Set $ = 0$ : $Q(0.3 - 0.003F) = 0$
+<ul>
+<li>Either $Q = 0$ or $F = 100$</li>
+</ul></li>
+<li>Set $ = 0$ : $F(-0.2 + 0.0005Q) = 0$
+<ul>
+<li>Either $F = 0$ or $Q = 400$</li>
+</ul></li>
+<li><strong>Equilibrium:</strong> $(Q^*, F^*) = (400, 100)$</li>
+</ul></li>
+<li><p>Stability consideration:</p>
+<ul>
+<li>Are populations close to equilibrium stable?</li>
+<li>Or do they cycle (oscillate)?</li>
+<li>In this model, small perturbations cause oscillations</li>
+</ul></li>
+</ol>
+<p><strong>Part B: Nullclines and Phase Portrait (20
+minutes)</strong></p>
+<ol start="4" type="1">
+<li><p>Nullclines:</p>
+<ul>
+<li>Quokka nullcline: $Q = 0$ or $F = 100$</li>
+<li>Fox nullcline: $F = 0$ or $Q = 400$</li>
+</ul></li>
+<li><p>Create a phase plane table:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Region</th>
+<th>$Q$ vs. 400</th>
+<th>$F$ vs. 100</th>
+<th>$$</th>
+<th>$$</th>
+<th>Trajectory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>$Q &lt; 400$</td>
+<td>$F &lt; 100$</td>
+<td>+</td>
+<td>−</td>
+<td>Q increases, F decreases</td>
+</tr>
+<tr>
+<td>II</td>
+<td>$Q &gt; 400$</td>
+<td>$F &lt; 100$</td>
+<td>+</td>
+<td>+</td>
+<td>Both increase</td>
+</tr>
+<tr>
+<td>III</td>
+<td>$Q &gt; 400$</td>
+<td>$F &gt; 100$</td>
+<td>−</td>
+<td>+</td>
+<td>Q decreases, F increases</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>$Q &lt; 400$</td>
+<td>$F &gt; 100$</td>
+<td>−</td>
+<td>−</td>
+<td>Both decrease</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Sketch the cyclic behavior:</p>
+<ul>
+<li>Trajectories spiral around the equilibrium</li>
+<li>High quokkas → foxes increase → quokkas decline → foxes decline →
+cycle repeats</li>
+</ul></li>
+</ol>
+<p><strong>Part C: Management Scenarios (15 minutes)</strong></p>
+<ol start="7" type="1">
+<li><p><strong>Fox baiting program:</strong> 1080 poison baiting removes
+10 foxes/year</p>
+<ul>
+<li>New equation: $ = -0.2F + 0.0005QF - 10$</li>
+<li>Find new equilibrium: $-0.2F + 0.0005QF - 10 = 0$</li>
+<li>From prey nullcline: $F = 100$ still. Substitute: $-0.2(100) +
+0.0005Q(100) - 10 = 0$</li>
+<li>Solve: $-20 + 0.05Q - 10 = 0 Q = 600$</li>
+<li><strong>New equilibrium:</strong> $(Q^*, F^*) = (600, 100)$</li>
+</ul></li>
+<li><p><strong>Quokka translocation:</strong> Reintroduce 15
+quokkas/year from Rottnest Island</p>
+<ul>
+<li>New equation: $ = 0.3Q - 0.003QF + 15$</li>
+<li>From predator nullcline: $Q = 400$ still. Substitute: $0.3(400) -
+0.003(400)F + 15 = 0$</li>
+<li>Solve: $120 - 1.2F + 15 = 0 F = 112.5$</li>
+<li><strong>New equilibrium:</strong> $(Q^*, F^*) = (400, 112.5)$</li>
+</ul></li>
+<li><p><strong>Compare the two strategies:</strong></p>
+<ul>
+<li>Fox baiting: Quokkas increase 50% (400 → 600), foxes unchanged at
+100</li>
+<li>Quokka translocation: Quokkas stay at 400, foxes <em>increase</em>
+to 112.5 — the extra quokkas just feed more foxes!</li>
+<li>Write a brief (3-4 sentence) recommendation explaining why predator
+control is more effective than prey supplementation for this system</li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="deliverables-1">DELIVERABLES</h3>
+<ul>
+<li>Completed worksheet with equilibria and nullclines</li>
+<li>Phase portrait showing cyclic trajectories</li>
+<li><strong>Group 6 (second presentation) in Week 9</strong></li>
+</ul>
+<hr />
+<h3 id="python-template">PYTHON TEMPLATE</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the system</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predator_prey(state, t):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    Q, F <span class="op">=</span> state</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    dQ_dt <span class="op">=</span> <span class="fl">0.3</span> <span class="op">*</span> Q <span class="op">-</span> <span class="fl">0.003</span> <span class="op">*</span> Q <span class="op">*</span> F</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    dF_dt <span class="op">=</span> <span class="op">-</span><span class="fl">0.2</span> <span class="op">*</span> F <span class="op">+</span> <span class="fl">0.0005</span> <span class="op">*</span> Q <span class="op">*</span> F</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [dQ_dt, dF_dt]</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Equilibrium</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Q_star, F_star <span class="op">=</span> <span class="dv">400</span>, <span class="dv">100</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Phase plane</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Q_range <span class="op">=</span> np.linspace(<span class="dv">50</span>, <span class="dv">800</span>, <span class="dv">15</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>F_range <span class="op">=</span> np.linspace(<span class="dv">10</span>, <span class="dv">250</span>, <span class="dv">15</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>Q_mesh, F_mesh <span class="op">=</span> np.meshgrid(Q_range, F_range)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>dQ_dt <span class="op">=</span> <span class="fl">0.3</span> <span class="op">*</span> Q_mesh <span class="op">-</span> <span class="fl">0.003</span> <span class="op">*</span> Q_mesh <span class="op">*</span> F_mesh</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>dF_dt <span class="op">=</span> <span class="op">-</span><span class="fl">0.2</span> <span class="op">*</span> F_mesh <span class="op">+</span> <span class="fl">0.0005</span> <span class="op">*</span> Q_mesh <span class="op">*</span> F_mesh</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dQ_dt<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dF_dt<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>dQ_norm <span class="op">=</span> dQ_dt <span class="op">/</span> (magnitude <span class="op">+</span> <span class="fl">1e-10</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>dF_norm <span class="op">=</span> dF_dt <span class="op">/</span> (magnitude <span class="op">+</span> <span class="fl">1e-10</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Nullclines</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">100</span>, color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Quokka nullcline (F=100)&#39;</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">400</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Fox nullcline (Q=400)&#39;</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.plot(Q_star, F_star, <span class="st">&#39;go&#39;</span>, markersize<span class="op">=</span><span class="dv">15</span>, label<span class="op">=</span><span class="ss">f&#39;Equilibrium (</span><span class="sc">{</span>Q_star<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>F_star<span class="sc">}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector field</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>plt.quiver(Q_mesh, F_mesh, dQ_norm, dF_norm, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a trajectory</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>initial_state <span class="op">=</span> [<span class="dv">500</span>, <span class="dv">60</span>]</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> odeint(predator_prey, initial_state, t)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectory[:, <span class="dv">0</span>], trajectory[:, <span class="dv">1</span>], <span class="st">&#39;purple&#39;</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">&#39;Sample trajectory&#39;</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Quokka Population (Q)&#39;</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Fox Population (F)&#39;</span>)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Predator-Prey Phase Plane: Quokkas vs. Foxes&#39;</span>)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">900</span>)</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">300</span>)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+<h2
+id="problem-brief-w8b-for-group-7-second-presentation-in-week-9">PROBLEM
+BRIEF: W8B (for Group 7 second presentation in Week 9)</h2>
+<p><strong>“Dingo Conservation: Managing Kangaroo
+Populations”</strong></p>
+<hr />
+<h3 id="scenario-2">SCENARIO</h3>
+<p>In arid Australia, dingoes (<em>Canis dingo</em>) are apex predators
+that regulate kangaroo populations. Removal of dingoes often leads to
+kangaroo overabundance and rangeland degradation. Ecologists model this
+system:</p>
+<span class="katex-display"> $
+<span class="math display">\[\begin{aligned} \frac{dK}{dt} &amp;= 0.5K -
+0.0015KD \\ \frac{dD}{dt} &amp;= -0.25D + 0.0008KD
+\end{aligned}\]</span>
+<p>$ </span></p>
+<p>where:</p>
+<ul>
+<li>$K$ = kangaroo population (number of individuals)</li>
+<li>$D$ = dingo population (number of individuals)</li>
+<li>$t$ = time in years</li>
+</ul>
+<p><strong>Model features:</strong></p>
+<ul>
+<li>Kangaroos grow at 50% per year without predation (high reproductive
+rate)</li>
+<li>Dingoes decline at 25% per year without prey</li>
+<li>Predation interactions affect both populations</li>
+</ul>
+<hr />
+<h3 id="your-task-2">YOUR TASK</h3>
+<p><strong>Part A: Finding Equilibria (25 minutes)</strong></p>
+<ol type="1">
+<li><p>Trivial equilibrium:</p>
+<ul>
+<li>$(K, D) = (0, 0)$ — both species extinct</li>
+<li>Is this realistic for arid Australia?</li>
+</ul></li>
+<li><p>Coexistence equilibrium:</p>
+<ul>
+<li>Set $ = 0$ : $K(0.5 - 0.0015D) = 0$
+<ul>
+<li>Either $K = 0$ or $D = 333.33$ (round to 333)</li>
+</ul></li>
+<li>Set $ = 0$ : $D(-0.25 + 0.0008K) = 0$
+<ul>
+<li>Either $D = 0$ or $K = 312.5$ (round to 313)</li>
+</ul></li>
+<li><strong>Equilibrium:</strong> $(K^*, D^*) = (313, 333)$</li>
+</ul></li>
+<li><p>Stability consideration:</p>
+<ul>
+<li>Are populations close to equilibrium stable?</li>
+<li>Or do they cycle (oscillate)?</li>
+<li>In this model, small perturbations cause oscillations</li>
+</ul></li>
+</ol>
+<p><strong>Part B: Nullclines and Phase Portrait (20
+minutes)</strong></p>
+<ol start="4" type="1">
+<li><p>Nullclines:</p>
+<ul>
+<li>Kangaroo nullcline: $K = 0$ or $D = 333$</li>
+<li>Dingo nullcline: $D = 0$ or $K = 313$</li>
+</ul></li>
+<li><p>Create a phase plane table:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Region</th>
+<th>$K$ vs. 313</th>
+<th>$D$ vs. 333</th>
+<th>$$</th>
+<th>$$</th>
+<th>Trajectory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>$K &lt; 313$</td>
+<td>$D &lt; 333$</td>
+<td>+</td>
+<td>−</td>
+<td>K increases, D decreases</td>
+</tr>
+<tr>
+<td>II</td>
+<td>$K &gt; 313$</td>
+<td>$D &lt; 333$</td>
+<td>+</td>
+<td>+</td>
+<td>Both increase</td>
+</tr>
+<tr>
+<td>III</td>
+<td>$K &gt; 313$</td>
+<td>$D &gt; 333$</td>
+<td>−</td>
+<td>+</td>
+<td>K decreases, D increases</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>$K &lt; 313$</td>
+<td>$D &gt; 333$</td>
+<td>−</td>
+<td>−</td>
+<td>Both decrease</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Sketch the cyclic behavior:</p>
+<ul>
+<li>Trajectories spiral around the equilibrium</li>
+<li>High kangaroos → dingoes increase → kangaroos decline → dingoes
+decline → cycle repeats</li>
+</ul></li>
+</ol>
+<p><strong>Part C: Management Scenarios (15 minutes)</strong></p>
+<ol start="7" type="1">
+<li><p><strong>Dingo culling:</strong> Pastoralists remove 40
+dingoes/year to protect livestock</p>
+<ul>
+<li>New equation: $ = -0.25D + 0.0008KD - 40$</li>
+<li>Find new equilibrium: $-0.25D + 0.0008KD - 40 = 0$</li>
+<li>If $D = 333$ : $-0.25(333) + 0.0008K(333) - 40 = 0$</li>
+<li>Solve for new $K$ equilibrium</li>
+</ul></li>
+<li><p><strong>Effect of culling:</strong></p>
+<ul>
+<li>How much does kangaroo equilibrium increase?</li>
+<li>What are the consequences for rangeland health?</li>
+</ul></li>
+<li><p><strong>Alternative: Dingo protection</strong></p>
+<ul>
+<li>No culling: equilibrium remains at $(313, 333)$</li>
+<li>Lower kangaroo numbers reduce grazing pressure</li>
+<li>Write a brief (3-4 sentence) recommendation on dingo management for
+sustainable rangeland use</li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="deliverables-2">DELIVERABLES</h3>
+<ul>
+<li>Completed worksheet with equilibria and nullclines</li>
+<li>Phase portrait showing cyclic trajectories</li>
+<li><strong>Group 7 (second presentation) in Week 9</strong></li>
+</ul>
+<hr />
+<h3 id="python-template-1">PYTHON TEMPLATE</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the system</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predator_prey(state, t):</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    K, D <span class="op">=</span> state</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    dK_dt <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> K <span class="op">-</span> <span class="fl">0.0015</span> <span class="op">*</span> K <span class="op">*</span> D</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    dD_dt <span class="op">=</span> <span class="op">-</span><span class="fl">0.25</span> <span class="op">*</span> D <span class="op">+</span> <span class="fl">0.0008</span> <span class="op">*</span> K <span class="op">*</span> D</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [dK_dt, dD_dt]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Equilibrium</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>K_star, D_star <span class="op">=</span> <span class="dv">313</span>, <span class="dv">333</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Phase plane</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>K_range <span class="op">=</span> np.linspace(<span class="dv">50</span>, <span class="dv">600</span>, <span class="dv">15</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>D_range <span class="op">=</span> np.linspace(<span class="dv">50</span>, <span class="dv">600</span>, <span class="dv">15</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>K_mesh, D_mesh <span class="op">=</span> np.meshgrid(K_range, D_range)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>dK_dt <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> K_mesh <span class="op">-</span> <span class="fl">0.0015</span> <span class="op">*</span> K_mesh <span class="op">*</span> D_mesh</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>dD_dt <span class="op">=</span> <span class="op">-</span><span class="fl">0.25</span> <span class="op">*</span> D_mesh <span class="op">+</span> <span class="fl">0.0008</span> <span class="op">*</span> K_mesh <span class="op">*</span> D_mesh</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dK_dt<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dD_dt<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>dK_norm <span class="op">=</span> dK_dt <span class="op">/</span> (magnitude <span class="op">+</span> <span class="fl">1e-10</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>dD_norm <span class="op">=</span> dD_dt <span class="op">/</span> (magnitude <span class="op">+</span> <span class="fl">1e-10</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Nullclines</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">333</span>, color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Kangaroo nullcline (D=333)&#39;</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">313</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dingo nullcline (K=313)&#39;</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>plt.plot(K_star, D_star, <span class="st">&#39;go&#39;</span>, markersize<span class="op">=</span><span class="dv">15</span>, label<span class="op">=</span><span class="ss">f&#39;Equilibrium (</span><span class="sc">{</span>K_star<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>D_star<span class="sc">}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector field</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>plt.quiver(K_mesh, D_mesh, dK_norm, dD_norm, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a trajectory</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">1000</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>initial_state <span class="op">=</span> [<span class="dv">350</span>, <span class="dv">250</span>]</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> odeint(predator_prey, initial_state, t)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectory[:, <span class="dv">0</span>], trajectory[:, <span class="dv">1</span>], <span class="st">&#39;purple&#39;</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">&#39;Sample trajectory&#39;</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Kangaroo Population (K)&#39;</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Dingo Population (D)&#39;</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Predator-Prey Dynamics: Kangaroos and Dingoes&#39;</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">650</span>)</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">650</span>)</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+</body>
+</html>

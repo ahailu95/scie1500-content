@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Week 4 Lab Handbook — SCIE1500</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Week 4 Lab Handbook — SCIE1500</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#week-4-derivatives-and-rates-of-change"
+id="toc-week-4-derivatives-and-rates-of-change">Week 4: Derivatives and
+Rates of Change</a></li>
+<li><a href="#presentation-problems-for-groups-presenting-next-week"
+id="toc-presentation-problems-for-groups-presenting-next-week">🎤
+<strong>PRESENTATION PROBLEMS: For Groups Presenting Next
+Week</strong></a></li>
+<li><a href="#problem-brief-w4a-for-group-5-presentation-in-week-5"
+id="toc-problem-brief-w4a-for-group-5-presentation-in-week-5">PROBLEM
+BRIEF: W4A (for Group 5 presentation in Week 5)</a></li>
+<li><a href="#problem-brief-w4b-for-group-6-presentation-in-week-5"
+id="toc-problem-brief-w4b-for-group-6-presentation-in-week-5">PROBLEM
+BRIEF: W4B (for Group 6 presentation in Week 5)</a></li>
+</ul>
+</nav>
+<h2 id="week-4-derivatives-and-rates-of-change">Week 4: Derivatives and
+Rates of Change</h2>
+<h3 id="problem-brief-w4">PROBLEM BRIEF: W4</h3>
+<p><strong>“Optimizing Chemical Reactions in Pharmaceutical
+Manufacturing”</strong></p>
+<hr />
+<h4 id="scenario">SCENARIO</h4>
+<p>A pharmaceutical company is optimizing the production of a critical
+antibiotic. The yield of the drug depends on reaction temperature.
+Chemical engineers have developed an empirical model:</p>
+<p><span class="math display">\[Y(T) = -0.05T^2 + 8T - 200\]</span></p>
+<p>where: - <span class="math inline">\(Y(T)\)</span> = yield (grams of
+product per batch) - <span class="math inline">\(T\)</span> = reaction
+temperature (°C) - Valid range: <span class="math inline">\(50°C \leq T
+\leq 110°C\)</span></p>
+<p>The company wants to maximize yield while staying within safe
+operating temperatures.</p>
+<hr />
+<h4 id="your-task">YOUR TASK</h4>
+<p><strong>Part A: Understanding Rates of Change (20
+minutes)</strong></p>
+<ol type="1">
+<li><p>Calculate the yield at three temperatures:</p>
+<ul>
+<li><span class="math inline">\(T = 60°C\)</span></li>
+<li><span class="math inline">\(T = 80°C\)</span></li>
+<li><span class="math inline">\(T = 100°C\)</span></li>
+</ul>
+<p>Which temperature gives the highest yield?</p></li>
+<li><p>Find the <strong>derivative</strong> <span
+class="math inline">\(Y&#39;(T) = \frac{dY}{dT}\)</span>:</p>
+<ul>
+<li>Use the power rule: <span class="math inline">\((x^n)&#39; =
+nx^{n-1}\)</span></li>
+<li>Interpret: What does <span class="math inline">\(Y&#39;(T)\)</span>
+represent? Include units!</li>
+</ul></li>
+<li><p>Calculate <span class="math inline">\(Y&#39;(70)\)</span> and
+<span class="math inline">\(Y&#39;(90)\)</span>:</p>
+<ul>
+<li>What does the sign tell you about whether yield is increasing or
+decreasing?</li>
+<li>Express each as a rate per degree Celsius</li>
+</ul></li>
+</ol>
+<p><strong>Part B: Finding the Optimal Temperature (20
+minutes)</strong></p>
+<ol start="4" type="1">
+<li>Find the <strong>critical point</strong> by solving <span
+class="math inline">\(Y&#39;(T) = 0\)</span>:
+<ul>
+<li>Set your derivative equal to zero</li>
+<li>Solve for <span class="math inline">\(T\)</span></li>
+<li>This is the candidate for maximum yield</li>
+</ul></li>
+<li>Verify this is a maximum using the <strong>second derivative
+test</strong>:
+<ul>
+<li>Calculate <span class="math inline">\(Y&#39;&#39;(T)\)</span></li>
+<li>Evaluate <span
+class="math inline">\(Y&#39;&#39;(T_{critical})\)</span></li>
+<li>If <span class="math inline">\(Y&#39;&#39; &lt; 0\)</span>: maximum
+✓</li>
+<li>If <span class="math inline">\(Y&#39;&#39; &gt; 0\)</span>: minimum
+✗</li>
+</ul></li>
+<li>Is the optimal temperature within the safe range <span
+class="math inline">\([50, 110]°C\)</span>?
+<ul>
+<li>If YES: use it</li>
+<li>If NO: check the boundary values</li>
+</ul></li>
+</ol>
+<p><strong>Part C: Practical Constraints (15 minutes)</strong></p>
+<ol start="7" type="1">
+<li>The reaction vessel can only maintain temperature within ±3°C of the
+setpoint.
+<ul>
+<li>If the optimal temperature is <span
+class="math inline">\(T_{opt}\)</span>, the actual temperature varies in
+<span class="math inline">\([T_{opt} - 3, T_{opt} + 3]\)</span></li>
+<li>Calculate the yield at both extremes</li>
+<li>What’s the range of possible yields?</li>
+</ul></li>
+<li>A competing process uses <span class="math inline">\(T =
+70°C\)</span> and claims “good enough” yields.
+<ul>
+<li>How much yield is lost compared to the optimum?</li>
+<li>Express as a percentage</li>
+</ul></li>
+</ol>
+<p><strong>Part D: Cost-Benefit Analysis (5 minutes)</strong></p>
+<ol start="9" type="1">
+<li>Higher temperatures require more energy. Energy cost is <span
+class="math inline">\(\$0.50\)</span> per degree above 50°C per batch.
+<ul>
+<li>Calculate the energy cost at the optimal temperature</li>
+<li>If the drug sells for <span class="math inline">\(\$5\)</span> per
+gram, calculate net profit per batch at optimal temperature</li>
+<li>Compare to net profit at <span class="math inline">\(T =
+70°C\)</span></li>
+</ul></li>
+</ol>
+<hr />
+<h4 id="deliverables">DELIVERABLES</h4>
+<p><strong>All groups:</strong> - [ ] Completed group worksheet showing
+derivative calculations - [ ] Graph of <span
+class="math inline">\(Y(T)\)</span> with the critical point and safe
+operating interval marked - [ ] Short recommendation stating the best
+operating temperature and why</p>
+<p><strong>Presenting groups only (Groups 5 &amp; 6):</strong> - [ ]
+Prepare a 10-minute presentation for Week 5</p>
+<hr />
+<h4 id="presentation-guidance-groups-5-6">PRESENTATION GUIDANCE (Groups
+5 &amp; 6)</h4>
+<p>Focus on: 1. The concept of derivative as rate of change 2. How
+optimization works (critical points, second derivative test) 3. The
+difference between mathematical optimum and practical optimum
+(constraints) 4. Your recommendation for the pharmaceutical company</p>
+<hr />
+<h4 id="concept-reminders">CONCEPT REMINDERS</h4>
+<p>Use the notes below if your group needs a quick reminder of how to
+interpret the derivative while solving the task.</p>
+<ul>
+<li>If <span class="math inline">\(Y&#39;(T) &gt; 0\)</span>, yield is
+increasing as temperature increases.</li>
+<li>If <span class="math inline">\(Y&#39;(T) &lt; 0\)</span>, yield is
+decreasing as temperature increases.</li>
+<li>A critical point occurs where <span class="math inline">\(Y&#39;(T)
+= 0\)</span>.</li>
+<li>If <span class="math inline">\(Y&#39;&#39;(T) &lt; 0\)</span>, the
+curve is concave down there, so the critical point is a local
+maximum.</li>
+<li>If the mathematical optimum lies outside the safe range, compare the
+boundary values instead.</li>
+</ul>
+<hr />
+<h4 id="hints-scaffolding">HINTS / SCAFFOLDING</h4>
+<p><strong>Power rule:</strong> - <span class="math inline">\((x^n)&#39;
+= nx^{n-1}\)</span> - <span class="math inline">\((c \cdot f(x))&#39; =
+c \cdot f&#39;(x)\)</span> where <span class="math inline">\(c\)</span>
+is a constant - <span class="math inline">\((f(x) + g(x))&#39; =
+f&#39;(x) + g&#39;(x)\)</span></p>
+<p><strong>For <span class="math inline">\(Y(T) = -0.05T^2 + 8T -
+200\)</span>:</strong> - <span class="math inline">\(Y&#39;(T) = -0.1T +
+8\)</span> - <span class="math inline">\(Y&#39;&#39;(T) =
+-0.1\)</span></p>
+<p><strong>Python template:</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> np.linspace(<span class="dv">50</span>, <span class="dv">110</span>, <span class="dv">500</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> <span class="op">-</span><span class="fl">0.05</span> <span class="op">*</span> T<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">8</span> <span class="op">*</span> T <span class="op">-</span> <span class="dv">200</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Derivative</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>dY_dT <span class="op">=</span> <span class="op">-</span><span class="fl">0.1</span> <span class="op">*</span> T <span class="op">+</span> <span class="dv">8</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Critical point</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>T_crit <span class="op">=</span> <span class="dv">80</span>  <span class="co"># From Y&#39;(T) = 0</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Y_crit <span class="op">=</span> <span class="op">-</span><span class="fl">0.05</span> <span class="op">*</span> T_crit<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">8</span> <span class="op">*</span> T_crit <span class="op">-</span> <span class="dv">200</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.plot(T, Y, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Yield Y(T)&#39;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.plot(T_crit, Y_crit, <span class="st">&#39;ro&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="ss">f&#39;Optimum: T=</span><span class="sc">{</span>T_crit<span class="sc">}</span><span class="ss">°C, Y=</span><span class="sc">{</span>Y_crit<span class="sc">:.1f}</span><span class="ss">g&#39;</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">50</span>, color<span class="op">=</span><span class="st">&#39;gray&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">110</span>, color<span class="op">=</span><span class="st">&#39;gray&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Temperature (°C)&#39;</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Yield (grams/batch)&#39;</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Drug Yield vs Reaction Temperature&#39;</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+<h2 id="presentation-problems-for-groups-presenting-next-week">🎤
+<strong>PRESENTATION PROBLEMS: For Groups Presenting Next
+Week</strong></h2>
+<p><strong>The following problems are for the two groups presenting next
+week. Work on your assigned variation during this week’s lab to prepare
+your presentation.</strong></p>
+<h2 id="problem-brief-w4a-for-group-5-presentation-in-week-5">PROBLEM
+BRIEF: W4A (for Group 5 presentation in Week 5)</h2>
+<p><strong>“Pesticide Degradation: Optimizing Spray Timing”</strong></p>
+<hr />
+<h3 id="scenario-1">SCENARIO</h3>
+<p>You are consulting for a wheat farm in the Wheatbelt. The farm uses a
+systemic pesticide that degrades over time after application. The
+concentration of active ingredient follows:</p>
+<p><span class="katex-display"> $C(t) = 120 e^{-0.15t}$ </span></p>
+<p>where:</p>
+<ul>
+<li>$C(t)$ = concentration (mg/L) in plant tissue</li>
+<li>$t$ = days after application</li>
+<li>Initial concentration: $C(0) = 120$ mg/L</li>
+</ul>
+<p><strong>Agronomic constraints:</strong></p>
+<ul>
+<li>Minimum effective concentration: <strong>30 mg/L</strong> (below
+this, pest control fails)</li>
+<li>Maximum safe concentration: <strong>150 mg/L</strong> (above this,
+phytotoxicity occurs)</li>
+<li>Target pests (aphids) are most vulnerable 5-10 days after wheat head
+emergence</li>
+</ul>
+<hr />
+<h3 id="your-task-1">YOUR TASK</h3>
+<p><strong>Part A: Understanding the Rate of Change (20
+minutes)</strong></p>
+<ol type="1">
+<li><p>Calculate concentration at $t = 0, 5, 10, 15, 20$ days</p>
+<ul>
+<li>Create a table of values</li>
+<li>How quickly is concentration dropping in the first week vs. third
+week?</li>
+</ul></li>
+<li><p>Find the <strong>instantaneous rate of change</strong> $C’(t)$
+using the derivative:</p>
+<ul>
+<li>Use rule: $(e^{kt})’ = k e^{kt}$</li>
+<li>Simplify: $C’(t) = $</li>
+<li>Evaluate $C’(5)$ and interpret (include units!)</li>
+</ul></li>
+<li><p>At what rate is the pesticide concentration decreasing on day
+10?</p>
+<ul>
+<li>Calculate $C’(10)$</li>
+<li>Express as a percentage of $C(10)$ : $ %$</li>
+</ul></li>
+</ol>
+<p><strong>Part B: Effective Protection Window (20 minutes)</strong></p>
+<ol start="4" type="1">
+<li><p>Determine when concentration first drops below the effective
+threshold:</p>
+<ul>
+<li>Solve: $120e^{-0.15t} = 30$</li>
+<li>Take natural log of both sides</li>
+<li>$t_{end} = ?$ days</li>
+</ul></li>
+<li><p>How long is the “protection window” (concentration ≥ 30
+mg/L)?</p>
+<ul>
+<li>Protection duration = $t_{end} - 0$</li>
+<li>Express in days and hours</li>
+</ul></li>
+<li><p>If the farm wants to extend protection to 20 days, what initial
+concentration is needed?</p>
+<ul>
+<li>Solve: $C_0 e^{-0.15 } = 30$</li>
+<li>Would this exceed the phytotoxicity limit of 150 mg/L?</li>
+</ul></li>
+</ol>
+<p><strong>Part C: Re-Application Strategy (15 minutes)</strong></p>
+<ol start="7" type="1">
+<li><p>The farmer wants continuous protection over a 30-day period
+(grain filling stage).</p>
+<ul>
+<li>Strategy: re-apply when concentration drops to 40 mg/L</li>
+<li>How many days between applications?</li>
+<li>How many total applications needed for 30-day coverage?</li>
+</ul></li>
+<li><p>Calculate total pesticide used over 30 days:</p>
+<ul>
+<li>Each application: 120 mg/L × 500L/ha = 60,000 mg/ha = 60 g/ha</li>
+<li>Number of applications × 60 g/ha = total usage</li>
+</ul></li>
+</ol>
+<p><strong>Part D: Half-Life Concept (10 minutes)</strong></p>
+<ol start="9" type="1">
+<li><p>The <strong>half-life</strong> is the time for concentration to
+halve.</p>
+<ul>
+<li>Starting from 120 mg/L, when does it reach 60 mg/L?</li>
+<li>Solve: $120e^{-0.15t} = 60$</li>
+<li>Verify using the formula: $t_{1/2} = $ where $k = 0.15$</li>
+</ul></li>
+<li><p>After two half-lives, what fraction of the original concentration
+remains?</p>
+<ul>
+<li>Calculate using the half-life</li>
+<li>Verify using the exponential formula</li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="deliverables-1">DELIVERABLES</h3>
+<ul>
+<li>Completed Group Worksheet with derivative calculations</li>
+<li>Graph showing $C(t)$ with protection window shaded</li>
+<li><strong>Group 5 ONLY:</strong> Prepare 10-minute presentation for
+Week 5</li>
+</ul>
+<hr />
+<h3 id="python-template">PYTHON TEMPLATE</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">500</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="dv">120</span> <span class="op">*</span> np.exp(<span class="op">-</span><span class="fl">0.15</span> <span class="op">*</span> t)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Derivative</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>dC_dt <span class="op">=</span> <span class="op">-</span><span class="fl">0.15</span> <span class="op">*</span> <span class="dv">120</span> <span class="op">*</span> np.exp(<span class="op">-</span><span class="fl">0.15</span> <span class="op">*</span> t)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Top: Concentration</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>ax1.plot(t, C, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Concentration C(t)&#39;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax1.axhline(y<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">&#39;r&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Minimum effective (30 mg/L)&#39;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ax1.axhline(y<span class="op">=</span><span class="dv">150</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Phytotoxicity limit (150 mg/L)&#39;</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>ax1.fill_between(t, <span class="dv">30</span>, <span class="dv">150</span>, alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">&#39;green&#39;</span>, label<span class="op">=</span><span class="st">&#39;Safe + effective zone&#39;</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">&#39;Days after application&#39;</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">&#39;Concentration (mg/L)&#39;</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">&#39;Pesticide Degradation&#39;</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax1.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Bottom: Rate of change</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ax2.plot(t, dC_dt, linewidth<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">&#39;purple&#39;</span>, label<span class="op">=</span><span class="st">&quot;C&#39;(t) = dC/dt&quot;</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>ax2.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;-&#39;</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;Days after application&#39;</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;Rate of change (mg/L/day)&#39;</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Rate of Pesticide Degradation&#39;</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ax2.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+<h2 id="problem-brief-w4b-for-group-6-presentation-in-week-5">PROBLEM
+BRIEF: W4B (for Group 6 presentation in Week 5)</h2>
+<p><strong>“Drug Pharmacokinetics: Dosing for Diabetes
+Management”</strong></p>
+<hr />
+<h3 id="scenario-2">SCENARIO</h3>
+<p>You are a pharmacologist designing a dosing protocol for metformin, a
+diabetes medication. After oral administration, blood concentration
+follows:</p>
+<p><span class="katex-display"> $C(t) = 85(e^{-0.12t} - e^{-0.45t})$
+</span></p>
+<p>where:</p>
+<ul>
+<li>$C(t)$ = blood concentration (μg/mL)</li>
+<li>$t$ = hours after ingestion</li>
+<li>The double exponential accounts for absorption (fast) and
+elimination (slow)</li>
+</ul>
+<p><strong>Therapeutic constraints:</strong></p>
+<ul>
+<li>Minimum effective concentration: <strong>15 μg/mL</strong> (below
+this, poor glucose control)</li>
+<li>Maximum safe concentration: <strong>100 μg/mL</strong> (above this,
+risk of lactic acidosis)</li>
+<li>Patients must maintain therapeutic levels for 12-hour intervals
+between doses</li>
+</ul>
+<hr />
+<h3 id="your-task-2">YOUR TASK</h3>
+<p><strong>Part A: Concentration Profile Analysis (20
+minutes)</strong></p>
+<ol type="1">
+<li><p>Calculate concentration at $t = 0, 1, 2, 4, 8, 12$ hours</p>
+<ul>
+<li>When does peak concentration occur? (look for the maximum in your
+table)</li>
+<li>What is the peak value?</li>
+</ul></li>
+<li><p>Find the <strong>exact time</strong> of peak concentration using
+calculus:</p>
+<ul>
+<li>Take the derivative: $C’(t) = 85[-0.12e^{-0.12t} -
+(-0.45)e^{-0.45t}]$</li>
+<li>Set $C’(t) = 0$ and solve for $t$</li>
+<li>Hint: $-0.12e^{-0.12t} + 0.45e^{-0.45t} = 0$</li>
+<li>Rearrange: $0.45e^{-0.45t} = 0.12e^{-0.12t}$</li>
+<li>Divide both sides by $e^{-0.45t}$ : $0.45 = 0.12e^{0.33t}$</li>
+<li>Solve for $t$</li>
+</ul></li>
+<li><p>Verify that the peak is safe:</p>
+<ul>
+<li>Calculate $C(t_{peak})$</li>
+<li>Is it below 100 μg/mL?</li>
+</ul></li>
+</ol>
+<p><strong>Part B: Therapeutic Window (20 minutes)</strong></p>
+<ol start="4" type="1">
+<li><p>Determine when concentration drops below therapeutic
+threshold:</p>
+<ul>
+<li>Solve numerically or graphically: $85(e^{-0.12t} - e^{-0.45t}) =
+15$</li>
+<li>Use Python to find the intersection point</li>
+<li>How many hours of therapeutic coverage per dose?</li>
+</ul></li>
+<li><p>Can patients safely use a 12-hour dosing interval?</p>
+<ul>
+<li>Compare therapeutic duration to 12 hours</li>
+<li>If not sufficient, what minimum concentration will they have at 12
+hours?</li>
+</ul></li>
+<li><p>To achieve 12-hour coverage with $C(12) = 15$ μg/mL, what dose
+multiplier is needed?</p>
+<ul>
+<li>New model: $C(t) = D (e^{-0.12t} - e^{-0.45t})$ where $D$ is the
+dose factor</li>
+<li>Solve: $D(e^{-0.12 } - e^{-0.45 }) = 15$</li>
+<li>Does this keep peak concentration safe?</li>
+</ul></li>
+</ol>
+<p><strong>Part C: Multiple Dosing Strategy (15 minutes)</strong></p>
+<ol start="7" type="1">
+<li><p>If a second dose is taken at $t = 12$ hours:</p>
+<ul>
+<li>Residual from first dose: $C_1(12) = 85(e^{-0.12 } - e^{-0.45
+})$</li>
+<li>New dose contribution: $C_2(t) = 85(e^{-0.12(t-12)} -
+e^{-0.45(t-12)})$ for $t $</li>
+<li>Total concentration at $t = 12^+$ : $C_{total}(12) = C_1(12) +
+85$</li>
+<li>Will this cause unsafe accumulation?</li>
+</ul></li>
+<li><p><strong>Steady state:</strong> After many doses, concentration
+oscillates between a minimum and maximum.</p>
+<ul>
+<li>Estimate the steady-state maximum</li>
+<li>Is it safe?</li>
+</ul></li>
+</ol>
+<p><strong>Part D: Rate of Elimination (10 minutes)</strong></p>
+<ol start="9" type="1">
+<li><p>Calculate the rate of change of concentration:</p>
+<ul>
+<li>$C’(t) = 85[-0.12e^{-0.12t} + 0.45e^{-0.45t}]$</li>
+<li>Evaluate at $t = 2$ hours (around peak)</li>
+<li>Evaluate at $t = 10$ hours (late elimination phase)</li>
+<li>Which elimination rate is faster? Why does this make sense
+physiologically?</li>
+</ul></li>
+<li><p>The two exponential terms represent:</p>
+<ul>
+<li>$e^{-0.45t}$ : rapid absorption and distribution</li>
+<li>$e^{-0.12t}$ : slower elimination</li>
+<li>At what time does elimination become the dominant process?</li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="deliverables-2">DELIVERABLES</h3>
+<ul>
+<li>Completed Group Worksheet with derivative work</li>
+<li>Graph showing concentration profile with therapeutic window</li>
+<li><strong>Group 6 ONLY:</strong> Prepare 10-minute presentation for
+Week 5</li>
+</ul>
+<hr />
+<h3 id="python-template-1">PYTHON TEMPLATE</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">24</span>, <span class="dv">500</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="dv">85</span> <span class="op">*</span> (np.exp(<span class="op">-</span><span class="fl">0.12</span><span class="op">*</span>t) <span class="op">-</span> np.exp(<span class="op">-</span><span class="fl">0.45</span><span class="op">*</span>t))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Derivative</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>dC_dt <span class="op">=</span> <span class="dv">85</span> <span class="op">*</span> (<span class="op">-</span><span class="fl">0.12</span><span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.12</span><span class="op">*</span>t) <span class="op">+</span> <span class="fl">0.45</span><span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.45</span><span class="op">*</span>t))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Find peak time</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> derivative(t):</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">85</span> <span class="op">*</span> (<span class="op">-</span><span class="fl">0.12</span><span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.12</span><span class="op">*</span>t) <span class="op">+</span> <span class="fl">0.45</span><span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.45</span><span class="op">*</span>t))</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>t_peak <span class="op">=</span> fsolve(derivative, <span class="dv">2</span>)[<span class="dv">0</span>]</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>C_peak <span class="op">=</span> <span class="dv">85</span> <span class="op">*</span> (np.exp(<span class="op">-</span><span class="fl">0.12</span><span class="op">*</span>t_peak) <span class="op">-</span> np.exp(<span class="op">-</span><span class="fl">0.45</span><span class="op">*</span>t_peak))</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Top: Concentration</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>ax1.plot(t, C, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Blood Concentration C(t)&#39;</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>ax1.axhline(y<span class="op">=</span><span class="dv">15</span>, color<span class="op">=</span><span class="st">&#39;r&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Minimum therapeutic (15 μg/mL)&#39;</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>ax1.axhline(y<span class="op">=</span><span class="dv">100</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Maximum safe (100 μg/mL)&#39;</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>ax1.plot(t_peak, C_peak, <span class="st">&#39;go&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="ss">f&#39;Peak at t=</span><span class="sc">{</span>t_peak<span class="sc">:.2f}</span><span class="ss">h, C=</span><span class="sc">{</span>C_peak<span class="sc">:.1f}</span><span class="ss"> μg/mL&#39;</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>ax1.fill_between(t, <span class="dv">15</span>, <span class="dv">100</span>, alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">&#39;green&#39;</span>, label<span class="op">=</span><span class="st">&#39;Therapeutic window&#39;</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">&#39;Time (hours)&#39;</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">&#39;Concentration (μg/mL)&#39;</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">&#39;Metformin Pharmacokinetics&#39;</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax1.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Bottom: Rate of change</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax2.plot(t, dC_dt, linewidth<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">&#39;purple&#39;</span>, label<span class="op">=</span><span class="st">&quot;C&#39;(t) = dC/dt&quot;</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax2.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;-&#39;</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax2.axvline(x<span class="op">=</span>t_peak, color<span class="op">=</span><span class="st">&#39;g&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="ss">f&#39;Peak at t=</span><span class="sc">{</span>t_peak<span class="sc">:.2f}</span><span class="ss">h&#39;</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;Time (hours)&#39;</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;Rate of change (μg/mL/hour)&#39;</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Rate of Concentration Change&#39;</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>ax2.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<hr />
+</body>
+</html>
