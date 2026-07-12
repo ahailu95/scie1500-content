@@ -1,162 +1,16 @@
 {
-  "version": "2.4.1",
-  "lastUpdated": "2026-04-30T10:15:00+08:00",
+  "version": "3.0.0",
+  "lastUpdated": "2026-07-12T09:00:00+08:00",
   "announcements": [
     {
-      "id": "sciquant-update-v2.1.7",
-      "title": "🚀 SciQuant App Update – Version 2.1.7 is Live!",
-      "message": "The app has been updated with a **much better Markdown editing facility featuring a split window with live view**, alongside a few other quality-of-life improvements to the file editor:\n\n• 📝 **Split Window / Live View:** See your Markdown formatting update in real-time as you type, making it easier than ever to structure your work.\n• 💡 **Help & Guide added directly in the menu:** Tap the **⋮** menu at any time for a quick walkthrough of the editor buttons, step tracking, and how to commit and submit your work.\n• 📋 **Clarified Submission Process:** The \"How to Submit\" guide now clearly distinguishes between individual assignments and group work expectations.\n• 🛠️ **Formatting Fix:** The \"Common Formatting Mistakes\" section in the Markdown Cheat Sheet now displays correctly.\n• 🎯 **Smarter Progress Tracking:** The step tracker at the top of the editor now accurately reflects your live progress in the flow (e.g., *Commit* lights up once you've saved, and *Submit* lights up once a PR is open).\n\n**Action Required:** Please download and install version 2.1.7. No other action is required to keep your work synced.",
-      "publishedAt": "2026-04-30T10:00:00+08:00",
+      "id": "welcome-s2-2026",
+      "title": "Welcome to SCIE1500 \u2014 Semester 2, 2026",
+      "message": "My name is Atakelty Hailu, and I'm excited to guide you through this unit.\n\n\u2022 Teaching begins Monday 20 July. Please read the unit outline in full before Week 1.\n\u2022 Download and install the SciQuant Assistant app \u2014 the link is in the LMS. All lessons, practice questions, and lab notebooks are delivered through the app.\n\u2022 All assignment submissions and grading remain on the LMS.\n\nWhat is new this semester:\n\nThe lab programme has been redesigned around Problem Briefs \u2014 realistic scientific scenarios you work on in permanent groups of 5\u20137. Each week your group submits a completed worksheet, but uploads are batched: worksheets are due in four batches (not weekly), on 11 Aug, 8 Sep, 29 Sep, and 27 Oct (all at 11:59pm). Every student must upload their own copy to LMS by the relevant batch deadline.\n\nFrom Weeks 3 to 9, two groups present the previous week's work at the start of each lab (10 min, all members speak). Each group presents exactly twice. The final three labs (Weeks 10\u201312) replace the standard format with structured exam preparation: a mock exam workshop, a peer review exchange, and a gallery walk capstone.\n\nThe lectures are also new: science and mathematics content is now delivered as a single integrated set of lessons inside the SciQuant app.\n\nWelcome \u2014 I look forward to working with you this semester.\nAtakelty (Unit Coordinator)",
+      "publishedAt": "2026-07-13T09:00:00+08:00",
+      "expiresAt": "2026-08-10T00:00:00+08:00",
       "priority": "important",
       "category": "general",
       "isPinned": true
-    },
-    {
-      "id": "final-exam-study-guide-released",
-      "title": "Final Exam Study Guide Released",
-      "message": "A **Final Exam Study Guide** is now available. It contains:\n\n• An **exam blueprint** — the structure, mark distribution, and timing strategy\n• **Learning outcomes** for each of the 12 weeks — a self-audit checklist\n• **Common traps** markers see (easy marks to secure)\n• A recommended **3-pass study protocol**\n• **Four fully-worked exemplar Part II problems** (with solutions) in the style and difficulty of the actual paper\n\nThe guide is designed to help you study **effectively**, not to memorise. If you can tick every learning outcome, you are ready.\n\nTap the link below to open. (Also accessible from the Course Overview tab.)",
-      "publishedAt": "2026-04-23T18:30:00+08:00",
-      "priority": "important",
-      "category": "assessment",
-      "isPinned": true,
-      "actionUrl": "https://ahailu95.github.io/scie1500-content/SCIE1500Materials/SCIE1500_Study_Guide_S1_2026.html",
-      "actionLabel": "Open Study Guide"
-    },
-    {
-      "id": "final-exam-info-released",
-      "title": "Final Examination Information Released",
-      "message": "Information about the final examination has been released. Check the **Announcements** in the LMS or the new **Final Exam discussion board**. Copies of the announcement were also sent to your emails.",
-      "publishedAt": "2026-04-16T09:00:00+08:00",
-      "priority": "important",
-      "category": "assessment",
-      "actionUrl": "https://lms.uwa.edu.au",
-      "actionLabel": "Go to LMS"
-    },
-    {
-      "id": "github-privacy-reminder",
-      "title": "GitHub Privacy Reminder — No Action Required",
-      "message": "Your assignment and worksheet repositories are **private** — only you, your group members, and teaching staff can see them. You cannot accidentally make them public.\n\nAs good practice (and consistent with UWA's data handling guidelines), please avoid putting your **student ID number** or **full name** in repository files. Your GitHub username is sufficient to identify your submission.\n\nWe have updated the assignment template to reflect this — the Student ID field has been removed. If you have already entered your details, no immediate action is needed, but you are welcome to remove them.",
-      "publishedAt": "2026-03-20T09:00:00+08:00",
-      "expiresAt": "2026-04-05T00:00:00+08:00",
-      "priority": "normal",
-      "category": "general",
-      "relatedWeek": null
-    },
-    {
-      "id": "worksheet2-due-date-correction",
-      "title": "Worksheet 2 Due Date: Tuesday 10 March",
-      "message": "The due date for Worksheet 2 is **Tuesday 10 March**. The 5 March deadline was a typo and has been corrected.",
-      "publishedAt": "2026-03-05T09:00:00+08:00",
-      "expiresAt": "2026-03-11T00:00:00+08:00",
-      "priority": "urgent",
-      "category": "assessment",
-      "relatedWeek": 2
-    },
-    {
-      "id": "github-survey-reminder",
-      "title": "GitHub Username Survey — Complete by Friday 6 March",
-      "message": "Thanks to those who have already completed the Survey in the LMS to provide their GitHub username.\n\nThe rest of you, please go to the LMS and complete the survey by **Friday 06/03/26**.",
-      "publishedAt": "2026-03-05T09:00:00+08:00",
-      "expiresAt": "2026-03-06T23:59:00+08:00",
-      "priority": "important",
-      "category": "general",
-      "relatedWeek": 2,
-      "actionUrl": "https://lms.uwa.edu.au",
-      "actionLabel": "Go to LMS"
-    },
-    {
-      "id": "welcome-2026",
-      "title": "Welcome to SCIE1500 Semester 1 2026!",
-      "message": "Welcome to Analytical Methods for Scientists! We're excited to have you join us this semester.\n\nBefore your first week:\n• Download Miniconda (Python) for lab exercises — see Software section in Course Overview\n• Review the course outline in the app\n• Check your lab schedule — labs run on different days at different campuses\n• Explore the SciQuant app features: AI tutor, weekly lessons, practice questions\n\nTeaching starts Monday 23 February. See you soon!",
-      "publishedAt": "2026-02-16T09:00:00+08:00",
-      "expiresAt": "2026-03-15T00:00:00+08:00",
-      "priority": "important",
-      "category": "general",
-      "isPinned": true
-    },
-    {
-      "id": "lab-schedule-campuses",
-      "title": "Lab Schedule: Multiple Campus Options",
-      "message": "Labs are available at multiple times and campuses:\n\n**Crawley Campus:**\n• Monday 10am-12pm (ENCM 206)\n• Monday 2pm-4pm (ENCM 206)\n• Wednesday 1pm-3pm (ENCM 206)\n• Thursday 2pm-4pm (ENCM 207A)\n\n**Albany Campus:**\n• Wednesday 9am-11am (ALBSCI 302/303)\n\nRegister for ONE lab session through StudentConnect. Labs begin Week 1 (24-28 Feb).",
-      "publishedAt": "2026-02-17T09:00:00+08:00",
-      "priority": "important",
-      "category": "schedule",
-      "relatedWeek": 1,
-      "expiresAt": "2026-03-15T00:00:00+08:00",
-      "actionUrl": "https://lms.uwa.edu.au",
-      "actionLabel": "View LMS"
-    },
-    {
-      "id": "labour-day-notice",
-      "title": "Labour Day: Monday 2 March — Labs Affected",
-      "message": "Monday 2 March is Labour Day (public holiday). Monday lab sessions are cancelled.\n\nStudents in Monday labs should attend a make-up session:\n• Wednesday 1pm lab has capacity\n• Or complete exercises independently and submit on time\n\nLab 1 submission remains due Tuesday 3 March at 11:59pm.",
-      "publishedAt": "2026-02-25T09:00:00+08:00",
-      "expiresAt": "2026-03-03T00:00:00+08:00",
-      "priority": "urgent",
-      "category": "schedule",
-      "relatedWeek": 1
-    },
-    {
-      "id": "mid-sem-break",
-      "title": "Mid-Semester Break: 6-10 April",
-      "message": "There are no lectures or labs during the mid-semester break (6-10 April).\n\nThis is a great time to:\n• Review Weeks 1-6 material using the app's AI tutor\n• Catch up on any incomplete practice questions\n• Get ahead on reading for Act III (Weeks 7-10)\n\nNote: Easter Monday (6 April) falls during the break. Classes resume Monday 14 April.",
-      "publishedAt": "2026-04-01T09:00:00+08:00",
-      "expiresAt": "2026-04-11T00:00:00+08:00",
-      "priority": "normal",
-      "category": "schedule"
-    },
-    {
-      "id": "anzac-day-notice",
-      "title": "Anzac Day: Monday 27 April — Labs Affected",
-      "message": "Monday 27 April is Anzac Day (observed). Monday lab sessions are cancelled.\n\nStudents in Monday labs should attend a make-up session or complete exercises independently.\n\nLab 8 submission remains due Tuesday 28 April at 11:59pm.",
-      "publishedAt": "2026-04-21T09:00:00+08:00",
-      "expiresAt": "2026-04-28T00:00:00+08:00",
-      "priority": "urgent",
-      "category": "schedule",
-      "relatedWeek": 8
-    },
-    {
-      "id": "assignment2-released",
-      "title": "Assignment 2 Now Available on LMS",
-      "message": "Assignment 2 has been released on the LMS.\n\n**Due:** Tuesday 13 May at 11:59 PM\n**Weight:** 15%\n**Covers:** Weeks 7-10 material\n\nDetails and submission portal are on the LMS.",
-      "publishedAt": "2026-04-22T09:00:00+08:00",
-      "expiresAt": "2026-05-14T00:00:00+08:00",
-      "priority": "important",
-      "category": "assessment",
-      "relatedWeek": 8,
-      "relatedAssessmentId": "assignment2",
-      "actionUrl": "https://lms.uwa.edu.au",
-      "actionLabel": "View Assignment"
-    },
-    {
-      "id": "lab12-extended-deadline",
-      "title": "Lab 12 Extended Deadline: Tuesday 2 June",
-      "message": "Lab 12 (Week 12) has an extended submission deadline to avoid SWOTVAC.\n\n**Due:** Tuesday 2 June at 11:59 PM (not Tuesday 26 May)\n\nThis is the only lab with a non-standard deadline. UWA policy prohibits assessment deadlines during SWOTVAC (25-29 May).\n\nYou'll have extra time to polish your final lab work before exams begin.",
-      "publishedAt": "2026-05-11T09:00:00+08:00",
-      "expiresAt": "2026-06-03T00:00:00+08:00",
-      "priority": "important",
-      "category": "assessment",
-      "relatedWeek": 11,
-      "relatedAssessmentId": "lab12"
-    },
-    {
-      "id": "swotvac-reminder",
-      "title": "SWOTVAC: 25-29 May — Study Week",
-      "message": "SWOTVAC (Study WithOut Teaching VACation) runs 25-29 May.\n\n• No lectures or labs\n• No assessment deadlines (Lab 12 extended to 2 June)\n• Use this week to prepare for exams\n• AI tutor and all app resources remain available\n\nExam period: 30 May to 13 June",
-      "publishedAt": "2026-05-15T09:00:00+08:00",
-      "expiresAt": "2026-05-30T00:00:00+08:00",
-      "priority": "important",
-      "category": "schedule"
-    },
-    {
-      "id": "exam-info",
-      "title": "Final Exam: Centrally Scheduled",
-      "message": "The final exam will be scheduled by the UWA Examinations Office during the exam period (30 May — 13 June).\n\n**Weight:** 50%\n**Format:** Written examination\n**Duration:** TBA\n\nExact date, time, and venue will be announced via:\n• StudentConnect\n• LMS\n• Official UWA exam timetable\n\nScientific calculators permitted. Graphing/programmable calculators NOT permitted.\n\nCheck the LMS regularly for updates.",
-      "publishedAt": "2026-05-16T09:00:00+08:00",
-      "priority": "important",
-      "category": "assessment",
-      "actionUrl": "https://www.uwa.edu.au/students/my-course/exams-and-assessment",
-      "actionLabel": "UWA Exam Info"
     }
   ]
 }
