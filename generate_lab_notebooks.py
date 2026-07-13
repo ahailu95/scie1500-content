@@ -120,9 +120,9 @@ The relationship between year and production can be modelled as a function $P(t)
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Function basics — average rate of change, domain and range | ~20 min |
-| B | Interpreting slope — how growth changes across decades | ~15 min |
-| C | Policy application — population growth, mismanagement rates | ~20 min |
+| A | Explore function basics: compute average rates of change, domain and range | ~20 min |
+| B | Interpret slope to explain how growth changes across decades | ~15 min |
+| C | Apply functions to analyse population growth and mismanagement rates | ~20 min |
 
 **By the end of this lab you should be able to:**
 - Define a mathematical function and state its domain and range
@@ -531,8 +531,8 @@ Your team is preparing educational materials comparing **exponential growth** ac
 | Part | Topic | Time |
 |------|-------|------|
 | A | Build exponential models for all three scenarios | ~25 min |
-| B | Doubling time analysis and the Rule of 70 | ~15 min |
-| C | Logarithmic solving — find when thresholds are crossed | ~15 min |
+| B | Calculate doubling times and verify the Rule of 70 | ~15 min |
+| C | Use logarithms to find when thresholds are crossed | ~15 min |
 
 **By the end of today you will be able to:**
 - Write exponential models in both $P_0 e^{kt}$ and $P_0 b^t$ form and convert between them
@@ -852,8 +852,8 @@ You are a consultant for **Royal Perth Hospital's** infection control team. A st
 | Part | Topic | Time |
 |------|-------|------|
 | A | Build growth models in two forms; find shutdown time | ~20 min |
-| B | Effect of refrigeration (4°C, T = 180 min) | ~15 min |
-| C | Sterilization decision — policy recommendation | ~10 min |
+| B | Model the effect of refrigeration on bacterial growth | ~15 min |
+| C | Make a sterilisation decision and write a policy recommendation | ~10 min |
 | D | Verify the Rule of 70 for this scenario | ~10 min |"""),
 
         md("""\
@@ -1092,8 +1092,8 @@ You are advising the **Japanese government** on long-term storage of radioactive
 |------|-------|------|
 | A | Build decay models in two forms; find reclassification year | ~20 min |
 | B | Add Sr-90 isotope; find when activities equalise | ~15 min |
-| C | Storage cost analysis over 150 years | ~10 min |
-| D | Carbon dating — connecting half-life to archaeology | ~10 min |"""),
+| C | Analyse storage costs over 150 years | ~10 min |
+| D | Apply carbon dating to connect half-life to an archaeological question | ~10 min |"""),
 
         md("""\
 ### Getting started — what does the model look like?
@@ -1399,9 +1399,9 @@ $$G(S) = g \\cdot S \\cdot \\left(1 - \\frac{S}{K}\\right)$$
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Schaefer model: growth rates and Maximum Sustainable Yield | ~20 min |
-| B | Sustainability: equilibrium analysis for current and proposed harvest | ~25 min |
-| C | Policy recommendation | ~10 min |
+| A | Use a Schaefer model to compute growth rates and Maximum Sustainable Yield | ~20 min |
+| B | Analyse sustainability by finding equilibria for current and proposed harvest levels | ~25 min |
+| C | Write a policy recommendation based on your analysis | ~10 min |
 
 **By the end of today you will be able to:**
 - Explain bounded growth and Maximum Sustainable Yield (MSY)
@@ -1652,10 +1652,10 @@ $$G(S) = 0.35 \\cdot S \\cdot \\left(1 - \\frac{S}{1200}\\right)$$
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Schaefer model: growth rates and MSY | ~15 min |
-| B | Equilibria for H = 100 and H = 120 | ~20 min |
-| C | Policy recommendation | ~15 min |
-| D | Python visualisation | ~10 min |"""),
+| A | Apply the Schaefer model to compute growth rates and MSY | ~15 min |
+| B | Find and compare equilibria for H = 100 and H = 120 | ~20 min |
+| C | Write a policy recommendation with supporting evidence | ~15 min |
+| D | Build a Python visualisation of the harvest equilibria | ~10 min |"""),
 
         code(LAB_SETUP + """
 
@@ -1774,10 +1774,10 @@ plt.show()"""),
 ---
 ## ✅ Presentation Checklist (Week 4, 10 minutes)
 
-1. **Problem** (~2 min): What is the management question?
-2. **Model** (~3 min): Schaefer equation, what MSY means.
-3. **Results** (~3 min): Equilibria for both harvest levels — use your graph.
-4. **Recommendation** (~2 min): Your harvest advice with numbers."""),
+1. **Problem** (~2 min): State the management question and why MSY matters.
+2. **Model** (~3 min): Present the Schaefer equation and explain what MSY means.
+3. **Results** (~3 min): Show equilibria for both harvest levels and walk through your graph.
+4. **Recommendation** (~2 min): State your harvest advice and back it with numbers."""),
     ])
 
 
@@ -1809,10 +1809,10 @@ $$G(S) = 0.42 \\cdot S \\cdot \\left(1 - \\frac{S}{800}\\right)$$
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Schaefer model: MSY and growth rates | ~15 min |
-| B | Sustainability analysis for H = 70 | ~20 min |
-| C | Climate change impact on sustainability | ~15 min |
-| D | Compare with abalone (Brief W3A) | ~10 min |"""),
+| A | Apply the Schaefer model to find MSY and growth rates | ~15 min |
+| B | Assess sustainability at a harvest rate of H = 70 | ~20 min |
+| C | Evaluate the impact of climate change on sustainability | ~15 min |
+| D | Compare your results with the abalone scenario (Brief W3A) | ~10 min |"""),
 
         code(LAB_SETUP + """
 
@@ -1958,10 +1958,10 @@ print("Abalone H/MSY:", 100 / (0.35 * 1200 / 4) * 100, "%")
 ---
 ## ✅ Presentation Checklist (Week 4, 10 minutes)
 
-1. **Problem** (~2 min): What is the recovery question?
-2. **Model** (~3 min): Schaefer equation, MSY, equilibria for H = 70.
-3. **Climate risk** (~3 min): How does warming affect sustainability? Show comparison plot.
-4. **Recommendation** (~2 min): Harvest level and monitoring plan."""),
+1. **Problem** (~2 min): State the recovery question and what a sustainable harvest means.
+2. **Model** (~3 min): Present the Schaefer equation, explain MSY, and show equilibria for H = 70.
+3. **Climate risk** (~3 min): Show how warming affects sustainability and walk through your comparison plot.
+4. **Recommendation** (~2 min): Recommend a harvest level and outline a monitoring plan."""),
     ])
 
 
@@ -1997,9 +1997,9 @@ where $Y$ is yield (g/batch) and $T$ is temperature (°C), valid for $50 \\leq T
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Derivative as rate of change — interpreting $Y'(T)$ | ~20 min |
-| B | Finding the optimal temperature | ~25 min |
-| C | Practical constraints and cost-benefit | ~15 min |
+| A | Interpret the derivative $Y'(T)$ as a rate of change | ~20 min |
+| B | Find the optimal temperature using calculus | ~25 min |
+| C | Apply practical constraints and conduct a cost-benefit analysis | ~15 min |
 
 **By the end of today you will be able to:**
 - Apply the power rule to find a derivative
@@ -2202,10 +2202,10 @@ where $C$ is concentration (mg/L) and $t$ is days after application.
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Instantaneous rate of change $C'(t)$ | ~20 min |
-| B | Effective protection window | ~20 min |
-| C | Re-application strategy | ~15 min |
-| D | Half-life verification | ~10 min |"""),
+| A | Compute and interpret the instantaneous rate of change $C'(t)$ | ~20 min |
+| B | Determine the effective protection window | ~20 min |
+| C | Design an optimal re-application strategy | ~15 min |
+| D | Verify the half-life algebraically and in Python | ~10 min |"""),
 
         code(LAB_SETUP + """
 
@@ -2382,9 +2382,9 @@ where $C$ is blood concentration (μg/mL) and $t$ is hours after ingestion.
 | Part | Topic | Time |
 |------|-------|------|
 | A | Concentration profile and peak time | ~20 min |
-| B | Therapeutic window analysis | ~20 min |
-| C | Multiple dosing strategy | ~15 min |
-| D | Rate of elimination | ~10 min |"""),
+| B | Analyse the therapeutic window and safe dosing boundaries | ~20 min |
+| C | Design a multiple dosing strategy | ~15 min |
+| D | Calculate and interpret the rate of elimination | ~10 min |"""),
 
         code(LAB_SETUP + """
 from scipy.optimize import fsolve
@@ -2557,9 +2557,9 @@ Ecologists need the corridor to be as wide as possible (minimum 200 m) to preven
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Setting up the constrained optimization problem | ~15 min |
-| B | Finding optimal dimensions using calculus | ~25 min |
-| C | Sensitivity analysis — tighter constraints | ~15 min |
+| A | Set up and formulate the constrained optimisation problem | ~15 min |
+| B | Find optimal dimensions using calculus | ~25 min |
+| C | Conduct a sensitivity analysis with tighter constraints | ~15 min |
 
 **By the end of today you will be able to:**
 - Translate a word problem into a constrained optimization
@@ -2744,9 +2744,9 @@ $$R(x) = -2x^2 + 180x - 1600$$
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Critical point analysis | ~25 min |
-| B | Constraint boundaries and break-even | ~20 min |
-| C | Climate sensitivity and upgrade analysis | ~15 min |"""),
+| A | Find and classify critical points of the revenue function | ~25 min |
+| B | Identify constraint boundaries and find the break-even range | ~20 min |
+| C | Conduct a climate sensitivity and upgrade analysis | ~15 min |"""),
 
         code(LAB_SETUP + """
 
@@ -2887,10 +2887,10 @@ RECOMMENDATION:
 ---
 ## ✅ Presentation Checklist (Week 6, 10 minutes)
 
-1. **Problem** (~2 min): Why spacing affects revenue.
-2. **Model** (~3 min): Revenue function, derivative, critical point.
-3. **Results** (~3 min): Optimal spacing, break-even range, climate scenarios.
-4. **Recommendation** (~2 min): Spacing decision and upgrade advice."""),
+1. **Problem** (~2 min): Explain why tree spacing affects revenue.
+2. **Model** (~3 min): Present the revenue function, derivative, and critical point.
+3. **Results** (~3 min): State optimal spacing, break-even range, and climate scenario outcomes.
+4. **Recommendation** (~2 min): Give a spacing decision and upgrade advice with supporting numbers."""),
     ])
 
 
@@ -2919,9 +2919,9 @@ $$P(d) = -0.5d^2 + 55d - 800$$
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Optimization using calculus | ~25 min |
-| B | Break-even density and marginal profit | ~20 min |
-| C | Disease and aeration scenarios | ~15 min |"""),
+| A | Optimise stocking density using calculus | ~25 min |
+| B | Find break-even density and interpret marginal profit | ~20 min |
+| C | Compare profit outcomes under disease and aeration scenarios | ~15 min |"""),
 
         code(LAB_SETUP + """
 
@@ -3053,10 +3053,10 @@ ADVISORY:
 ---
 ## ✅ Presentation Checklist (Week 6, 10 minutes)
 
-1. **Problem** (~2 min): Trade-off between density, yield, and mortality.
-2. **Model** (~3 min): Profit function; derivative; critical point.
-3. **Results** (~3 min): Optimal density, break-even range, scenario comparison.
-4. **Recommendation** (~2 min): Density decision and risk mitigation."""),
+1. **Problem** (~2 min): Explain the trade-off between stocking density, yield, and mortality.
+2. **Model** (~3 min): Present the profit function, take the derivative, and find the critical point.
+3. **Results** (~3 min): Report optimal density, break-even range, and scenario comparison.
+4. **Recommendation** (~2 min): Recommend a stocking density and propose risk mitigation steps."""),
     ])
 
 
@@ -3091,9 +3091,9 @@ where $t$ is years since planting ($t = 0$ to $t = 40$). Carbon credits sell at 
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Rates vs. totals: what R(t) and F(t) tell us | ~20 min |
-| B | Antiderivatives and the constant of integration | ~20 min |
-| C | Project valuation over 40 years | ~20 min |
+| A | Distinguish rates from totals by interpreting R(t) and F(t) | ~20 min |
+| B | Find antiderivatives and determine the constant of integration | ~20 min |
+| C | Value the carbon project over 40 years | ~20 min |
 
 By the end you should be able to: compute antiderivatives of exponential functions; evaluate definite integrals; interpret the constant of integration; and translate carbon totals into revenue."""),
 
@@ -3377,9 +3377,9 @@ Carbon is reported as CO₂-equivalent (multiply raw soil carbon by **3.67** for
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Antiderivative and initial condition | ~25 min |
-| B | Cumulative carbon and project revenue | ~20 min |
-| C | Sensitivity analysis | ~15 min |"""),
+| A | Derive the antiderivative and apply the initial condition | ~25 min |
+| B | Calculate cumulative carbon capture and total project revenue | ~20 min |
+| C | Conduct a sensitivity analysis on the decay rate | ~15 min |"""),
 
         code(LAB_SETUP + """
 
@@ -3477,10 +3477,10 @@ for k, label in [(0.05, "Slow (k=0.05)"), (0.08, "Baseline (k=0.08)"), (0.12, "F
 ---
 ## ✅ Presentation Checklist (Week 7, 10 minutes)
 
-1. **Problem** (~2 min): Why does sequestration rate decline?
-2. **Model** (~3 min): Derive $F(t) = 187.5(1 - e^{-0.08t})$; interpret the constant $C = 187.5$.
-3. **Results** (~3 min): Total carbon, total revenue, half-life year.
-4. **Policy** (~2 min): Is 25 years the optimal project length?"""),
+1. **Problem** (~2 min): Explain why the sequestration rate declines over time.
+2. **Model** (~3 min): Derive $F(t) = 187.5(1 - e^{-0.08t})$ and interpret the constant $C = 187.5$.
+3. **Results** (~3 min): Report total carbon captured, total revenue, and the half-life year.
+4. **Policy** (~2 min): Argue whether 25 years is the optimal project length."""),
     ])
 
 
@@ -3509,9 +3509,9 @@ where $t$ is days into the recharge season. The scheme runs for a **120-day seas
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Antiderivative and cumulative volume | ~25 min |
-| B | Does the scheme meet its target? | ~20 min |
-| C | Optimal season length | ~15 min |"""),
+| A | Derive the antiderivative and calculate cumulative recharge volume | ~25 min |
+| B | Determine whether the scheme meets its 1,500 ML target | ~20 min |
+| C | Find the optimal season length based on marginal infiltration | ~15 min |"""),
 
         code(LAB_SETUP + """
 
@@ -3602,10 +3602,10 @@ print(f"Volume by then: {V_cutoff:.1f} ML")"""),
 ---
 ## ✅ Presentation Checklist (Week 7, 10 minutes)
 
-1. **Problem** (~2 min): Why does infiltration decline over the season?
-2. **Model** (~3 min): Derive $V(t)$; explain why the long-run limit is 166.7 ML.
-3. **Results** (~3 min): Can the 1,500 ML target be met? Cost analysis.
-4. **Recommendation** (~2 min): What season length is practical?"""),
+1. **Problem** (~2 min): Explain why infiltration declines over the season.
+2. **Model** (~3 min): Derive $V(t)$ and explain why the long-run limit is 166.7 ML.
+3. **Results** (~3 min): Show whether the 1,500 ML target can be met and present the cost analysis.
+4. **Recommendation** (~2 min): Recommend a practical season length with supporting evidence."""),
     ])
 
 
@@ -3643,9 +3643,9 @@ Consumer surplus (CS) is the area between the demand curve and the equilibrium p
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Equilibrium: algebra and Python | ~20 min |
-| B | Consumer and producer surplus (graphical) | ~20 min |
-| C | Surplus via integration | ~20 min |
+| A | Find market equilibrium algebraically and verify with Python | ~20 min |
+| B | Calculate consumer and producer surplus graphically | ~20 min |
+| C | Verify surplus using definite integration | ~20 min |
 
 By the end you should be able to: solve supply-demand systems algebraically; derive inverse functions; compute CS and PS as definite integrals; and interpret welfare measures."""),
 
@@ -3942,9 +3942,9 @@ An export deal is struck: new effective demand becomes $Q_d^{\\text{export}} = 7
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Domestic equilibrium and surplus | ~25 min |
-| B | Export shock: new equilibrium and surplus | ~25 min |
-| C | Welfare comparison | ~10 min |"""),
+| A | Find domestic equilibrium and calculate consumer and producer surplus | ~25 min |
+| B | Determine the effect of an export shock on equilibrium and surplus | ~25 min |
+| C | Compare welfare outcomes before and after the export deal | ~10 min |"""),
 
         code(LAB_SETUP + """
 
@@ -4022,10 +4022,10 @@ DISCUSSION:
 ---
 ## ✅ Presentation Checklist (Week 8, 10 minutes)
 
-1. **Domestic market** (~2 min): Equilibrium, CS, PS — values and interpretation.
-2. **Export shock** (~3 min): New equilibrium; use integration to verify surplus.
-3. **Welfare comparison** (~3 min): Table comparing CS, PS, total before/after.
-4. **Policy** (~2 min): Should government support or restrict the export deal?"""),
+1. **Domestic market** (~2 min): Present equilibrium, CS and PS values, and interpret them.
+2. **Export shock** (~3 min): Show the new equilibrium and use integration to verify surplus.
+3. **Welfare comparison** (~3 min): Present a table comparing CS, PS, and total welfare before and after.
+4. **Policy** (~2 min): Should government support or restrict the export deal? Justify with numbers."""),
     ])
 
 
@@ -4067,9 +4067,9 @@ where $N$ is the numbat population and $C$ is the feral cat population.
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Equilibrium analysis: nullclines | ~20 min |
-| B | Phase plane and vector field | ~20 min |
-| C | Population trajectories over time | ~20 min |
+| A | Find equilibria and derive the nullclines algebraically | ~20 min |
+| B | Plot the phase plane and interpret the vector field | ~20 min |
+| C | Simulate and plot population trajectories over time | ~20 min |
 
 By the end you should be able to: find equilibria of ODE systems algebraically; plot phase planes and nullclines; and simulate predator-prey dynamics numerically."""),
 
@@ -4269,9 +4269,9 @@ Your focus: **deeper phase plane analysis** using `scipy.integrate.odeint` and m
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Equilibria and stability | ~20 min |
-| B | Phase portrait with multiple trajectories | ~25 min |
-| C | Conservation threshold analysis | ~15 min |"""),
+| A | Find equilibria and assess local stability | ~20 min |
+| B | Plot a phase portrait with multiple trajectories using odeint | ~25 min |
+| C | Identify conservation thresholds for population recovery | ~15 min |"""),
 
         code(LAB_SETUP + """
 from scipy.integrate import odeint
@@ -4383,9 +4383,9 @@ where $K$ = kangaroo population and $D$ = dingo population.
 
 | Part | Topic | Time |
 |------|-------|------|
-| A | Equilibrium analysis | ~15 min |
-| B | Phase plane and trajectories with odeint | ~30 min |
-| C | Dingo culling scenario | ~15 min |"""),
+| A | Derive and interpret the coexistence equilibrium | ~15 min |
+| B | Plot the phase plane and simulate trajectories using odeint | ~30 min |
+| C | Simulate a dingo culling scenario and evaluate long-run outcomes | ~15 min |"""),
 
         code(LAB_SETUP + """
 from scipy.integrate import odeint
