@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.1.9",
+  "version": "3.2.0",
   "lastUpdated": "2026-07-13",
   "institution": {
     "id": "uwa",
@@ -139,7 +139,7 @@
       "notebooks": [
         {
           "id": "w1_lab_notebook",
-          "title": "Week1 Functions Complete (Lab Notebook)",
+          "title": "Week 1 Lab Notebook \u2014 Functions and Models",
           "description": "Week 1 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -183,15 +183,6 @@
           "description": "Copyable code examples for Week 1 - functions, graphing, and data analysis",
           "type": "reading",
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
-          "source": "custom",
-          "requiresAuth": false
-        },
-        {
-          "id": "w1_lab_handbook",
-          "title": "Week 1 Lab Problem Brief",
-          "description": "Lab activity \u2014 Functions and scientific modelling",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_01/Week_01_Student.html",
           "source": "custom",
           "requiresAuth": false
         }
@@ -243,7 +234,7 @@
       "notebooks": [
         {
           "id": "w2_lab_notebook",
-          "title": "Week2 Exponential Logarithmic (Lab Notebook)",
+          "title": "Week 2 Lab Notebook \u2014 Exponential and Logarithmic Functions",
           "description": "Week 2 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -315,15 +306,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w2_lab_handbook",
-          "title": "Week 2 Lab Problem Brief",
-          "description": "Lab activity + presentation problems A & B (Weeks 2\u20133 presenting groups)",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_02/Week_02_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -364,7 +346,7 @@
       "notebooks": [
         {
           "id": "w3_lab_notebook",
-          "title": "Week3 Logistic Bounded Growth (Lab Notebook)",
+          "title": "Week 3 Lab Notebook \u2014 The Fishery Manager's Dilemma",
           "description": "Week 3 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -437,15 +419,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w3_lab_handbook",
-          "title": "Week 3 Lab Problem Brief",
-          "description": "Lab activity + presentation problems A & B (Weeks 3\u20134 presenting groups)",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_03/Week_03_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -504,7 +477,7 @@
       "notebooks": [
         {
           "id": "w4_lab_notebook",
-          "title": "Week4 Limits Continuity Derivatives (Lab Notebook)",
+          "title": "Week 4 Lab Notebook \u2014 Limits and Derivatives",
           "description": "Week 4 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -586,15 +559,6 @@
           "url": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/STUDENT_GUIDE_GitHub_and_SciQuant.md",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w4_lab_handbook",
-          "title": "Week 4 Lab Problem Brief",
-          "description": "Lab activity + presentation problems A & B (Weeks 4\u20135 presenting groups)",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_04/Week_04_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -635,7 +599,7 @@
       "notebooks": [
         {
           "id": "w5_lab_notebook",
-          "title": "Week5 Differentiation Optimization (Lab Notebook)",
+          "title": "Week 5 Lab Notebook \u2014 Optimisation",
           "description": "Week 5 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -708,15 +672,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w5_lab_handbook",
-          "title": "Week 5 Lab Problem Brief",
-          "description": "Lab activity + presentation problems A & B (Weeks 5\u20136 presenting groups)",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_05/Week_05_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -748,7 +703,7 @@
       "notebooks": [
         {
           "id": "w6_lab_notebook",
-          "title": "Week6 Introduction to Integration (Lab Notebook)",
+          "title": "Week 6 Lab Notebook \u2014 Carbon Sequestration and Integration",
           "description": "Week 6 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -821,15 +776,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w6_lab_handbook",
-          "title": "Week 6 Lab Problem Brief",
-          "description": "Lab activity + presentation problems A & B (Weeks 6\u20137 presenting groups)",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_06/Week_06_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -870,7 +816,7 @@
       "notebooks": [
         {
           "id": "w7_lab_notebook",
-          "title": "Week7 Definite Integrals Sequences (Lab Notebook)",
+          "title": "Week 7 Lab Notebook \u2014 Consumer and Producer Surplus",
           "description": "Week 7 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -943,15 +889,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w7_lab_handbook",
-          "title": "Week 7 Lab Problem Brief",
-          "description": "Lab activity + presentation problems A & B (Weeks 7\u20138 presenting groups)",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_07/Week_07_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -992,7 +929,7 @@
       "notebooks": [
         {
           "id": "w8_lab_notebook",
-          "title": "Week8 Predator Prey Dynamics (Lab Notebook)",
+          "title": "Week 8 Lab Notebook \u2014 Predator-Prey Dynamics",
           "description": "Week 8 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1065,15 +1002,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w8_lab_handbook",
-          "title": "Week 8 Lab Problem Brief",
-          "description": "Lab activity + presentation problems A & B (Weeks 8\u20139 presenting groups)",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_08/Week_08_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -1123,7 +1051,7 @@
       "notebooks": [
         {
           "id": "w9_lab_notebook",
-          "title": "Week9 Probability Combinatorics (Lab Notebook)",
+          "title": "Week 9 Lab Notebook \u2014 Probability and Bayes' Theorem",
           "description": "Week 9 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1170,15 +1098,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w9_lab_handbook",
-          "title": "Week 9 Lab Problem Brief",
-          "description": "Lab activity \u2014 Probability and combinatorics",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_09/Week_09_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -1210,7 +1129,7 @@
       "notebooks": [
         {
           "id": "w10_lab_notebook",
-          "title": "Week10 Hypothesis Testing (Lab Notebook)",
+          "title": "Week 10 Lab Notebook \u2014 Mock Exam Workshop",
           "description": "Week 10 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1258,15 +1177,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w10_lab_handbook",
-          "title": "Week 10 Lab Problem Brief",
-          "description": "Lab activity \u2014 Statistics and hypothesis testing",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_10/Week_10_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -1288,7 +1198,7 @@
       "notebooks": [
         {
           "id": "w11_lab_notebook",
-          "title": "Week11 Trigonometry Complete (Lab Notebook)",
+          "title": "Week 11 Lab Notebook \u2014 Peer Review: Trigonometric Modelling",
           "description": "Week 11 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1334,15 +1244,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w11_lab_handbook",
-          "title": "Week 11 Lab Problem Brief",
-          "description": "Lab activity \u2014 Trigonometry and sinusoidal models",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_11/Week_11_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -1364,7 +1265,7 @@
       "notebooks": [
         {
           "id": "w12_lab_notebook",
-          "title": "Week12 SES LP Complete (Lab Notebook)",
+          "title": "Week 12 Lab Notebook \u2014 Linear Programming and Gallery Walk",
           "description": "Week 12 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1409,15 +1310,6 @@
           "description": "Copyable code examples for Week 12 - Linear programming and optimization",
           "type": "reading",
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
-          "source": "custom",
-          "requiresAuth": false
-        },
-        {
-          "id": "w12_lab_handbook",
-          "title": "Week 12 Lab Problem Brief",
-          "description": "Lab activity \u2014 Systems of equations and linear programming",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_12/Week_12_Student.html",
           "source": "custom",
           "requiresAuth": false
         }
