@@ -139,6 +139,9 @@ The cell below loads two Python libraries we need today:
 
 Run it now — you should see a short confirmation message. If you see an error instead, raise your hand."""),
 
+        md("""\
+Run this cell first — it loads the libraries we need through."""),
+
         code("""\
 # Run this cell first — it loads the libraries we need throughout the lab
 %matplotlib inline
@@ -174,6 +177,9 @@ So $P(0) = 2$, $P(20) = 35$, $P(65) = 380$, etc."""),
 Python stores sequences of numbers as **arrays** — you can think of them like a column of values in a spreadsheet. We use `np.array([...])` to create them.
 
 Run the cell below. It creates two arrays (one for $t$, one for $P$) and prints them side by side so you can confirm the values match the table above."""),
+
+        md("""\
+The data from the UNEP report."""),
 
         code("""\
 # The data from the UNEP report
@@ -228,6 +234,9 @@ print("Units: million tonnes per year")"""),
 
 Write your answers in the cell below (use `#` to comment them out — Python will skip commented lines)."""),
 
+        md("""\
+A.2 GROUP ANSWERS — replace the ... with your answers."""),
+
         code("""\
 # A.2 GROUP ANSWERS — replace the ... with your answers
 
@@ -255,6 +264,9 @@ Does production grow at the same pace in every decade, or does the rate change o
 
 Before looking at all four periods at once, let's do the 1950–1970 calculation manually so the arithmetic is visible. This is the same formula as A.1, just applied to a shorter window."""),
 
+        md("""\
+Rate of change for 1950–1970 only (t = 0 to t = 20)."""),
+
         code("""\
 # Rate of change for 1950–1970 only (t = 0 to t = 20)
 P_at_0  = P_values[0]    # P(0)  — first element of the array
@@ -274,6 +286,9 @@ Each time through the loop, `t1`, `t2`, and `label` take the next row of values 
 
 The output uses `f"..."` — an *f-string* — to embed the variable values directly in text.
 `:.2f` means "show 2 decimal places". You'll see this format again in later labs."""),
+
+        md("""\
+Calculate average rate of change for all four periods."""),
 
         code("""\
 # Calculate average rate of change for all four periods
@@ -302,6 +317,9 @@ for t1, t2, label in periods:
 
 Write your answers below."""),
 
+        md("""\
+B.1 GROUP ANSWERS."""),
+
         code("""\
 # B.1 GROUP ANSWERS
 
@@ -324,6 +342,9 @@ A graph often reveals patterns that a table of numbers hides. Let's plot the dat
 - `ax.set_xlabel / ylabel / title` — labels the axes and adds a title
 
 Run it, then look at the shape before answering the activity below."""),
+
+        md("""\
+Run the next cell."""),
 
         code("""\
 fig, ax = plt.subplots()
@@ -370,6 +391,9 @@ We'll work in three steps:
 
 Before building a model, let's compute the 2010 starting point in plain arithmetic — no functions yet. We multiply population × plastic per person × mismanagement rate, then convert kg to tonnes."""),
 
+        md("""\
+Given values."""),
+
         code("""\
 # Given values
 population_2010 = 20e6       # 20 million people  (20e6 = 20,000,000)
@@ -393,6 +417,9 @@ $$\\text{Population}(t) = 20{,}000{,}000 \\times 1.015^t$$
 
 In Python, `def` packages a formula under a name. Once defined, calling `W(10)` substitutes $t = 10$ and returns the result. The structure below already has the population formula — your job is to read it and confirm it matches what you expect."""),
 
+        md("""\
+W(0) should match the 2010 value you computed above."""),
+
         code("""\
 def W(t):
     'Annual mismanaged plastic waste (tonnes/year), t years after 2010.'
@@ -412,6 +439,9 @@ The government proposes reducing the mismanagement rate from **2% to 0.5%** by 2
 We define a second function $W_{\\text{policy}}(t)$ — identical to $W(t)$ except for the mismanagement rate.
 
 ✏️ **Activity C.2:** Before running the cell, predict: will the policy bring 2030 waste *below* the 2010 level? Discuss with your group, then check."""),
+
+        md("""\
+Compare at 2030 (t = 20)."""),
 
         code("""\
 def W_policy(t):
@@ -437,6 +467,9 @@ print(f"Policy 2030 is {abs(diff):,.0f} tonnes/year {direction} the 2010 baselin
 Does the 2% → 0.5% reduction fully offset the effect of 1.5%/year population growth?
 What does this suggest about the effectiveness of mismanagement-reduction policies alone?"""),
 
+        md("""\
+GROUP CONCLUSION."""),
+
         code("""\
 # GROUP CONCLUSION
 
@@ -453,6 +486,9 @@ What does this suggest about the effectiveness of mismanagement-reduction polici
 The plot below shows both trajectories from 2010 to 2040. Look for:
 - Where the two lines diverge (the effect of the policy kicks in immediately)
 - Whether the policy line ever drops back to the 2010 baseline (horizontal dashed line)"""),
+
+        md("""\
+Mark the 2010 baseline for reference."""),
 
         code("""\
 t_range = np.linspace(0, 30, 100)
@@ -557,6 +593,9 @@ We know plastic grew at **8.4% per year** since 1950, starting from 2 million to
 
 The conversion is: $k = \\ln(1 + r)$, where $r$ is the decimal rate (0.084 here). Run the cell below, look at the raw value of $k$, then use it to predict production in 2025."""),
 
+        md("""\
+Plastic production: 8.4% annual growth, P0 = 2 M tonnes in 1950."""),
+
         code("""\
 # A.1 — Plastic production: 8.4% annual growth, P0 = 2 M tonnes in 1950
 P0_plastic = 2        # million tonnes in 1950
@@ -595,6 +634,9 @@ For bacteria we're given the **doubling time** directly (every 20 minutes for *E
 - **Continuous-rate form:** $N(t) = N_0 \\, e^{kt}$ where $k = \\ln(2)/T_{\\text{double}}$
 
 Both forms describe exactly the same population at every time $t$. The cell below runs both side by side so you can confirm they agree."""),
+
+        md("""\
+Bacterial growth: N0 = 1000 cells, doubles every 20 minutes."""),
 
         code("""\
 # A.2 — Bacterial growth: N0 = 1000 cells, doubles every 20 minutes
@@ -635,6 +677,9 @@ $$A(t) = A_0 \\, e^{-\\lambda t}$$
 where $\\lambda = \\ln(2)/T_{\\text{half}}$ is the *decay constant* — a positive number. The **negative sign in the exponent** is what makes the function decrease rather than increase.
 
 For Carbon-14 (half-life 5,730 years): after each half-life, exactly 50% remains. We'll check this algebraically and verify with code."""),
+
+        md("""\
+Carbon-14 decay: A0 = 100 units, half-life = 5,730 years."""),
 
         code("""\
 # A.3 — Carbon-14 decay: A0 = 100 units, half-life = 5,730 years
@@ -685,6 +730,9 @@ We'll first check the Rule for our plastic scenario (8.4% growth), then scan a r
 
 **Note on the table below:** The code uses column alignment specifiers like `>9` (right-align in 9 characters). You'll see these again in later labs — for now, just read the output and notice how error grows with rate."""),
 
+        md("""\
+How accurate is Rule of 70 for plastic growth (8.4% per year)?"""),
+
         code("""\
 # B.1 — How accurate is Rule of 70 for plastic growth (8.4% per year)?
 r_pct = 8.4
@@ -732,6 +780,9 @@ $$t = \\frac{\\ln(C / P_0)}{k}$$
 
 We'll apply this to find when global plastic production crosses two major milestones."""),
 
+        md("""\
+When does plastic production reach 1 billion and 10 billion tonnes?"""),
+
         code("""\
 # B.2 — When does plastic production reach 1 billion and 10 billion tonnes?
 def years_to_reach(target_M):
@@ -761,6 +812,9 @@ An invasive carp population is modelled as $P(t) = 50 \\, e^{0.15t}$ (t in month
 Ecologists warn that once the population exceeds **1,000 fish**, manual eradication becomes infeasible.
 We'll find when several thresholds are crossed, then plot the full trajectory to see the window for intervention."""),
 
+        md("""\
+Invasive carp: P(t) = 50 * e^(0.15t), t in months."""),
+
         code("""\
 # C.1 — Invasive carp: P(t) = 50 * e^(0.15t), t in months
 P0_carp = 50
@@ -774,7 +828,12 @@ print("Time to reach each threshold:")
 for target in [500, 1000, 5000]:
     t = t_to_reach(target)
     print(f"  {target:>5} fish:  {t:.1f} months  ({t / 12:.1f} years)")
+        """),
 
+        md("""\
+The chart below shows the growth trajectory."""),
+
+        code("""\
 # Plot the growth trajectory
 t_vals = np.linspace(0, 55, 300)
 fig, ax = plt.subplots(figsize=(8, 4))
@@ -796,6 +855,9 @@ Carbon dating works *backwards* through the decay model: given the fraction of C
 $$f \\cdot A_0 = A_0 \\, e^{-\\lambda t} \\implies t = \\frac{-\\ln(f)}{\\lambda}$$
 
 Note: the $A_0$ cancels — we only need the *fraction* remaining, not the original amount."""),
+
+        md("""\
+A fossil has 25% of its original C-14 remaining. How old is it?"""),
 
         code("""\
 # C.2 — A fossil has 25% of its original C-14 remaining. How old is it?
@@ -869,6 +931,9 @@ $$N(t) = 800 \\, e^{kt}$$
 
 Run the setup cell to define these parameters and check what $k$ looks like numerically."""),
 
+        md("""\
+Setup — run first."""),
+
         code("""\
 # Setup — run first
 %matplotlib inline
@@ -896,6 +961,9 @@ We'll write the growth model in both forms and verify they give identical result
 
 Define both forms as Python functions, then evaluate them at 1, 2, and 3 hours to confirm they agree. Note: at room temperature, each 25-minute interval is one doubling — so after 1 hour (60 min) there are $60/25 = 2.4$ doublings."""),
 
+        md("""\
+Both forms of the growth model."""),
+
         code("""\
 # A.1 — Both forms of the growth model
 def N_v1(t): return N0 * 2**(t / T_room)         # doubling form
@@ -915,6 +983,9 @@ $$800 \\times 2^{t/25} = 1{,}000{,}000$$
 Taking $\\log_2$ of both sides and solving for $t$ gives $t = 25 \\times \\log_2(1{,}000{,}000 / 800)$.
 
 After computing the shutdown time, we'll plot the full growth curve on a **log scale** — this makes exponential growth appear as a straight line and makes the threshold easy to read off."""),
+
+        md("""\
+Time to reach shutdown threshold."""),
 
         code("""\
 # A.2 — Time to reach shutdown threshold
@@ -959,6 +1030,9 @@ At **4°C**, bacterial growth slows significantly — the doubling time increase
 ### B.1 — Comparing room temperature vs refrigerated growth
 
 We'll compute the new $k$ for 4°C, plot both growth curves on the same axes, and calculate the shutdown time for each condition. The ratio of shutdown times tells us directly how much time refrigeration buys."""),
+
+        md("""\
+Cold storage model (4°C, doubling time = 180 min)."""),
 
         code("""\
 # B.1 — Cold storage model (4°C, doubling time = 180 min)
@@ -1105,6 +1179,9 @@ The decay constant $\\lambda$ is always positive; the **negative sign** in the e
 
 Run the setup cell to define $\\lambda$ and inspect its value."""),
 
+        md("""\
+Setup — run first."""),
+
         code("""\
 # Setup — run first
 %matplotlib inline
@@ -1136,6 +1213,9 @@ Just as bacteria can be modelled using either the doubling form or the $e^{kt}$ 
 
 Run the cell and confirm both forms give the same activity at 0, 1, 2, and 3 half-lives."""),
 
+        md("""\
+Two forms of the Cs-137 decay model."""),
+
         code("""\
 # A.1 — Two forms of the Cs-137 decay model
 def A_cs_v1(t): return A0_cs * (0.5)**(t / T_half_cs)     # half-life form
@@ -1153,6 +1233,9 @@ We need to find $t$ such that $A(t) = 10$ TBq. Starting from the decay-constant 
 $$500 \\, e^{-\\lambda t} = 10 \\implies t = \\frac{-\\ln(10/500)}{\\lambda}$$
 
 After finding $t$, we add it to 2011 to get the calendar year of reclassification."""),
+
+        md("""\
+Time to reach the 10 TBq threshold."""),
 
         code("""\
 # A.2 — Time to reach the 10 TBq threshold
@@ -1197,6 +1280,9 @@ The waste also contains **Strontium-90**: half-life **28.8 years**, initial acti
 
 We define a separate decay function for Sr-90 using its own $\\lambda$, then plot both curves together. Notice that despite Cs-137 starting higher, the curves converge — we'll find exactly when they cross in B.2."""),
 
+        md("""\
+Sr-90 decay model."""),
+
         code("""\
 # B.1 — Sr-90 decay model
 A0_sr     = 200
@@ -1228,6 +1314,9 @@ When do the two activities equalise? We set $A_{\\text{Cs}}(t) = A_{\\text{Sr}}(
 $$500 \\, e^{-\\lambda_{\\text{Cs}} t} = 200 \\, e^{-\\lambda_{\\text{Sr}} t}$$
 
 Taking logarithms of both sides and rearranging gives $t = \\ln(500/200) / (\\lambda_{\\text{Cs}} - \\lambda_{\\text{Sr}})$."""),
+
+        md("""\
+Crossover time: when do Cs-137 and Sr-90 have equal activity?"""),
 
         code("""\
 # B.2 — Crossover time: when do Cs-137 and Sr-90 have equal activity?
@@ -1435,6 +1524,9 @@ S_msy = K / 2
 G_msy = G(S_msy)
 print(f"\\nMSY at S = K/2 = {S_msy:.0f} t  →  G_max = {G_msy:.1f} t/yr")"""),
 
+        md("""\
+Plot the Schaefer growth curve."""),
+
         code("""\
 # A.2 — Plot the Schaefer growth curve
 S_vals = np.linspace(0, K, 400)
@@ -1484,6 +1576,9 @@ print(f"G(1200) = {G_current:.1f} t/yr")
 print(f"H       = {H} t/yr")
 print(f"Sustainable? {G_current >= H}  (need G >= H)")"""),
 
+        md("""\
+Equilibrium stock levels for H = 120: quadratic formula."""),
+
         code("""\
 # B.2 — Equilibrium stock levels for H = 120: quadratic formula
 a_coef =  g / K
@@ -1499,6 +1594,9 @@ print(f"  S₁ = {S1:.1f} t  (lower — unstable collapse threshold)")
 print(f"  S₂ = {S2:.1f} t  (upper — stable management target)")
 print(f"  Current stock {S_current} t is {'above' if S_current > S1 else 'below'} collapse threshold.")"""),
 
+        md("""\
+What if harvest increases to 140 t/yr?"""),
+
         code("""\
 # B.3 — What if harvest increases to 140 t/yr?
 H_proposed = 140
@@ -1513,7 +1611,12 @@ else:
     print(f"Equilibria for H = {H_proposed} t/yr:")
     print(f"  S₁ = {S1_new:.1f} t  (collapse threshold rises by {S1_new - S1:.1f} t → riskier)")
     print(f"  S₂ = {S2_new:.1f} t  (stable target falls by {S2 - S2_new:.1f} t → lower stock)")
+        """),
 
+        md("""\
+The chart below shows both scenarios."""),
+
+        code("""\
 # Plot both scenarios
 fig, ax = plt.subplots(figsize=(10, 5))
 ax.plot(S_vals, G(S_vals), "steelblue", lw=2, label="Growth G(S)")
@@ -1703,6 +1806,9 @@ print(f"G(950) = {G(S_current):.2f} t/yr")
 print(f"H      = {H} t/yr")
 print(f"Sustainable? {G(S_current) >= H}")"""),
 
+        md("""\
+Equilibria for H = 100 and H = 120 using quadratic formula."""),
+
         code("""\
 # B.2 — Equilibria for H = 100 and H = 120 using quadratic formula
 def equilibria(H_val):
@@ -1860,6 +1966,9 @@ print(f"H      = {H} t/yr")
 print(f"Sustainable? {G(350) >= H}")
 print(f"Harvest fraction: {H / G(350) * 100:.1f}% of current growth")"""),
 
+        md("""\
+Equilibria for H = 70 using quadratic formula."""),
+
         code("""\
 # B.2 — Equilibria for H = 70 using quadratic formula
 def equilibria(H_val, K_val=K):
@@ -1904,7 +2013,12 @@ if S1_w is None:
 else:
     print(f"  Lower equilibrium S₁ = {S1_w:.1f} t")
     print(f"  Upper equilibrium S₂ = {S2_w:.1f} t")
+        """),
 
+        md("""\
+The chart below compares current and warming scenarios."""),
+
+        code("""\
 # Plot current vs warming
 S_vals = np.linspace(0, 800, 400)
 fig, ax = plt.subplots(figsize=(10, 5))
@@ -2051,6 +2165,9 @@ print("Y'(90) =", dY(90), "g/°C")
 # 3. ...
 ```"""),
 
+        md("""\
+Plot yield and marginal yield side by side."""),
+
         code("""\
 # A.2 — Plot yield and marginal yield side by side
 T_vals = np.linspace(50, 110, 300)
@@ -2099,6 +2216,9 @@ print(f"Y(80) = {Y_opt:.1f} g/batch  (maximum yield)")
 print(f"Y''(80) = {Y2:.1f}  (< 0 → confirmed maximum)")
 print(f"\\nFeasible? 50 ≤ {T_opt:.0f} ≤ 110 → {50 <= T_opt <= 110}")"""),
 
+        md("""\
+Plot yield curve with optimal point and safe range."""),
+
         code("""\
 # B.2 — Plot yield curve with optimal point and safe range
 fig, ax = plt.subplots(figsize=(9, 5))
@@ -2133,6 +2253,9 @@ print(f"Variation: ±{(Y(T_high) - Y(T_low))/2:.1f} g")
 Y_comp = Y(70)
 print(f"\\nCompetitor at T = 70°C: Y = {Y_comp:.1f} g/batch")
 print(f"Yield gain at optimum: {Y_opt - Y_comp:.1f} g ({(Y_opt - Y_comp)/Y_comp*100:.1f}% increase)")"""),
+
+        md("""\
+Cost-benefit analysis."""),
 
         code("""\
 # C.2 — Cost-benefit analysis
@@ -2273,6 +2396,9 @@ t_need = 20
 C0_need = C_min * np.exp(k * t_need)
 print(f"\\nFor 20-day coverage, initial concentration needed: {C0_need:.1f} mg/L")
 print(f"Safe? (< 150 mg/L limit): {C0_need < 150}")"""),
+
+        md("""\
+Plot concentration with protection window."""),
 
         code("""\
 # B.2 — Plot concentration with protection window
@@ -2416,6 +2542,9 @@ for t in [0, 1, 2, 4, 8, 12]:
     trend = "↑ rising" if dC(t) > 0 else "↓ falling"
     print(f"{t:>6} | {C(t):>12.2f} | {dC(t):>10.3f} | {trend}")"""),
 
+        md("""\
+Find exact peak time by solving C'(t) = 0."""),
+
         code("""\
 # A.2 — Find exact peak time by solving C'(t) = 0
 # C'(t) = 85 * (-0.12*exp(-0.12t) + 0.45*exp(-0.45t)) = 0
@@ -2428,6 +2557,9 @@ C_peak = C(t_peak_analytic)
 print(f"Peak time (analytic): t = {t_peak_analytic:.3f} hours = {t_peak_analytic*60:.0f} minutes")
 print(f"Peak concentration:   C = {C_peak:.2f} μg/mL")
 print(f"Safe? (< 100 μg/mL): {C_peak < 100}")"""),
+
+        md("""\
+Full concentration profile plot."""),
 
         code("""\
 # A.3 — Full concentration profile plot
@@ -2630,12 +2762,20 @@ print(f"Second derivative A''(x) = -2 < 0  (confirms maximum)")
 print(f"Optimal dimensions: width = {x_crit:.0f} m, length = {y_crit:.0f} m")
 print(f"Maximum area: A({x_crit:.0f}) = {A_crit:,.0f} m²")"""),
 
+        md("""\
+Check feasibility: is x_crit in [200, 800]?"""),
+
         code("""\
 # B.2 — Check feasibility: is x_crit in [200, 800]?
 feasible = 200 <= x_crit <= 800
 print(f"x_crit = {x_crit:.0f} m  feasible? {feasible}")
 print()
+        """),
 
+        md("""\
+The chart below shows how total border area varies with width."""),
+
+        code("""\
 # Plot area vs width
 x_vals = np.linspace(200, 800, 300)
 
@@ -2782,11 +2922,17 @@ print(f"R'(x) = -4x + 180 = 0  →  x* = {x_crit} metres")
 print(f"R''(x) = {R2}  (< 0 → maximum confirmed)")
 print(f"R({x_crit:.0f}) = ${R_crit:,.0f} thousand/year")"""),
 
+        md("""\
+Check feasibility and compare to boundaries."""),
+
         code("""\
 # A.2 — Check feasibility and compare to boundaries
 for x_s, label in [(x_crit, "Optimal (x=45)"), (8, "Min spacing (x=8)"), (60, "Max spacing (x=60)")]:
     feasible = 8 <= x_s <= 60
     print(f"{label}: R = ${R(x_s):,.0f}k  feasible? {feasible}")"""),
+
+        md("""\
+Plot revenue curve with constraint boundaries."""),
 
         code("""\
 # A.3 — Plot revenue curve with constraint boundaries
@@ -2854,7 +3000,12 @@ def R_upgrade(x):
 for fn, label in [(R, "Baseline"), (R_climate, "Climate (−15%)"), (R_upgrade, "Upgrade (+20%)")]:
     x_opt = 45    # optimal spacing doesn't change (quadratic, same derivative structure)
     print(f"{label:>20}: optimal R = ${fn(x_opt):,.0f}k at x = {x_opt} m")
+        """),
 
+        md("""\
+The chart below shows all three scenarios."""),
+
+        code("""\
 # Plot all three scenarios
 fig, ax = plt.subplots(figsize=(9, 5))
 x_vals = np.linspace(5, 65, 300)
@@ -2956,10 +3107,16 @@ print(f"P({d_crit}) = ${P_crit:,.0f} thousand/year")
 feasible = d_min <= d_crit <= d_max
 print(f"Feasible (within [{d_min}, {d_max}])? {feasible}")"""),
 
+        md("""\
+Compare critical point to boundaries."""),
+
         code("""\
 # A.2 — Compare critical point to boundaries
 for d_s, label in [(d_crit, "Optimal (d=55)"), (d_min, "Min density (d=10)"), (d_max, "Max density (d=80)")]:
     print(f"{label}: P = ${P(d_s):,.0f}k  feasible? {d_min <= d_s <= d_max}")"""),
+
+        md("""\
+Plot profit curve."""),
 
         code("""\
 # A.3 — Plot profit curve
@@ -3140,6 +3297,9 @@ print(f"Rate at t=0 : {R(0):.2f} t CO2/ha/yr")
 print(f"Rate at t=20: {R(20):.2f} t CO2/ha/yr")
 print(f"Rate at t=40: {R(40):.2f} t CO2/ha/yr")"""),
 
+        md("""\
+Numerical approximation of total carbon in first 5 years."""),
+
         code("""\
 # A.2 — Numerical approximation of total carbon in first 5 years
 # Riemann sum (trapezoidal) for ∫₀⁵ R(t) dt
@@ -3181,6 +3341,9 @@ print(f"F(40) = {F(40):.2f} t CO2/ha")
 
 # Long-run limit
 print(f"Long-run limit as t→∞: {240:.0f} t CO2/ha")"""),
+
+        md("""\
+Plot cumulative carbon F(t)."""),
 
         code("""\
 # B.2 — Plot cumulative carbon F(t)
@@ -3228,6 +3391,9 @@ total_carbon = area_ha * F_40
 print(f"Carbon per hectare (0–40 yr): {F_40:.1f} t CO2/ha")
 print(f"Total carbon (500 ha):        {total_carbon:,.0f} t CO2")"""),
 
+        md("""\
+Revenue."""),
+
         code("""\
 # C.2 — Revenue
 total_revenue = total_carbon * price_per_tonne
@@ -3244,6 +3410,9 @@ print(f"Reached at year t = {t_half:.1f}")
 
 # Verify
 print(f"F({t_half:.1f}) = {F(t_half):.1f}  (check ≈ {half_target:.1f})")"""),
+
+        md("""\
+Annual revenue stream."""),
 
         code("""\
 # C.4 — Annual revenue stream
@@ -3421,6 +3590,9 @@ print(f"F(5)  = {F(5):.2f} t CO2-e/ha")
 print(f"F(25) = {F(25):.2f} t CO2-e/ha")
 print(f"Long-run limit = 187.5 t CO2-e/ha")"""),
 
+        md("""\
+Plot rate and cumulative together."""),
+
         code("""\
 # A.2 — Plot rate and cumulative together
 t_vals = np.linspace(0, 25, 200)
@@ -3452,6 +3624,9 @@ total_revenue = total_carbon * price
 print(f"Cumulative carbon per ha (25 yr): {F_25:.2f} t CO2-e/ha")
 print(f"Total carbon (800 ha):            {total_carbon:,.0f} t CO2-e")
 print(f"Total revenue @ $28/t:            ${total_revenue:,.0f}")"""),
+
+        md("""\
+Year at which 50% of 25-year total is reached."""),
 
         code("""\
 # B.2 — Year at which 50% of 25-year total is reached
@@ -3548,6 +3723,9 @@ print(f"V(30)  = {V(30):.1f} ML")
 print(f"V(120) = {V(120):.1f} ML")
 print(f"Long-run limit = {20/0.12:.1f} ML")"""),
 
+        md("""\
+Plot both."""),
+
         code("""\
 # A.2 — Plot both
 t_vals = np.linspace(0, 120, 300)
@@ -3578,6 +3756,9 @@ print(f"Target: {target_ML} ML")
 print(f"Target met? {V_season >= target_ML}")
 print(f"Shortfall/surplus: {V_season - target_ML:+.1f} ML")
 print(f"\\nNote: long-run limit is {20/0.12:.1f} ML — target {target_ML} ML {'can' if 20/0.12 >= target_ML else 'CANNOT'} be met.")"""),
+
+        md("""\
+Cost of water used."""),
 
         code("""\
 # B.2 — Cost of water used
@@ -3694,6 +3875,9 @@ Q_eq = 500 - 4 * P_eq
 print(f"Equilibrium Price:    P* = ${P_eq:.1f}/tonne")
 print(f"Equilibrium Quantity: Q* = {Q_eq:.0f} thousand tonnes")"""),
 
+        md("""\
+Plot supply and demand."""),
+
         code("""\
 # A.2 — Plot supply and demand
 Q_vals = np.linspace(0, 250, 300)
@@ -3780,6 +3964,9 @@ print(f"\\nConsumer Surplus (CS): ${CS:,.1f} thousand")
 print(f"Producer Surplus (PS): ${PS:,.1f} thousand")
 print(f"Total Surplus:         ${CS + PS:,.1f} thousand")"""),
 
+        md("""\
+Analytic check (triangles)."""),
+
         code("""\
 # C.2 — Analytic check (triangles)
 CS_analytic = 0.5 * Q_eq * (demand_P(0) - P_eq)
@@ -3849,6 +4036,15 @@ print(f"P* = ${P_star}, Q* = {Q_star}k litres")
 print(f"Demand intercept: P = {demand_P(0):.0f}")
 print(f"Supply intercept: P = {supply_P(0):.0f}")"""),
 
+        md("""\
+Run the next cell."""),
+
+        code("""\
+        """),
+
+        md("""\
+The chart below plots wine supply and demand curves."""),
+
         code("""\
 # Plot wine supply and demand
 Q_vals = np.linspace(0, 300, 300)
@@ -3869,6 +4065,9 @@ ax.set_title("Australian Wine Market"); ax.legend(fontsize=9)
 ax.set_ylim(0, 200); ax.grid(alpha=0.3)
 plt.tight_layout(); plt.show()"""),
 
+        md("""\
+Triangle formulas."""),
+
         code("""\
 # Triangle formulas
 CS = 0.5 * Q_star * (demand_P(0) - P_star)
@@ -3876,6 +4075,9 @@ PS = 0.5 * Q_star * (P_star - supply_P(0))
 print(f"CS = ½ × {Q_star} × ({demand_P(0):.0f} − {P_star}) = ${CS:,.1f}k")
 print(f"PS = ½ × {Q_star} × ({P_star} − {supply_P(0):.0f}) = ${PS:,.1f}k")
 print(f"Total Surplus = ${CS + PS:,.1f}k")"""),
+
+        md("""\
+Integration verification."""),
 
         code("""\
 # Integration verification
@@ -3885,6 +4087,9 @@ CS_int = trapz(demand_P(Q_fine), Q_fine) - P_star * Q_star
 PS_int = P_star * Q_star - trapz(supply_P(Q_fine), Q_fine)
 print(f"CS (integration): ${CS_int:,.1f}k  — matches triangle? {abs(CS_int - CS) < 1}")
 print(f"PS (integration): ${PS_int:,.1f}k  — matches triangle? {abs(PS_int - PS) < 1}")"""),
+
+        md("""\
+Policy scenario: export price $150/litre."""),
 
         code("""\
 # Policy scenario: export price $150/litre
@@ -3966,6 +4171,9 @@ P_dom = 120
 Q_dom = 120
 print(f"Domestic equilibrium: P*=${P_dom}, Q*={Q_dom}M avocados")"""),
 
+        md("""\
+Domestic CS and PS."""),
+
         code("""\
 # Domestic CS and PS
 CS_dom = 0.5 * Q_dom * (demand_P(0) - P_dom)
@@ -3973,6 +4181,9 @@ PS_dom = 0.5 * Q_dom * (P_dom - supply_P(0))
 print(f"Domestic CS: ${CS_dom:,.1f}M")
 print(f"Domestic PS: ${PS_dom:,.1f}M")
 print(f"Total Surplus: ${CS_dom + PS_dom:,.1f}M")"""),
+
+        md("""\
+Export equilibrium: 720 - 4P = -120 + 2P → 6P = 840 → P*=140."""),
 
         code("""\
 # Export equilibrium: 720 - 4P = -120 + 2P → 6P = 840 → P*=140, Q*=160
@@ -3985,6 +4196,15 @@ PS_exp = 0.5 * Q_exp * (P_exp - supply_P(0))
 print(f"\\nExport CS: ${CS_exp:,.1f}M  (change: ${CS_exp - CS_dom:+,.1f}M)")
 print(f"Export PS: ${PS_exp:,.1f}M  (change: ${PS_exp - PS_dom:+,.1f}M)")
 print(f"Net welfare change: ${(CS_exp + PS_exp) - (CS_dom + PS_dom):+,.1f}M")"""),
+
+        md("""\
+Run the next cell."""),
+
+        code("""\
+        """),
+
+        md("""\
+The chart below shows the domestic vs export equilibrium."""),
 
         code("""\
 # Plot: domestic vs export equilibrium
@@ -4188,6 +4408,9 @@ print(f"Initial:  N={N0}, C={C0}")
 print(f"Year 10:  N={N_traj[int(10/dt)]:.0f}, C={C_traj[int(10/dt)]:.0f}")
 print(f"Year 20:  N={N_traj[int(20/dt)]:.0f}, C={C_traj[int(20/dt)]:.0f}")"""),
 
+        md("""\
+Plot time series."""),
+
         code("""\
 # C.2 — Plot time series
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
@@ -4205,6 +4428,9 @@ ax2.legend(fontsize=9); ax2.grid(alpha=0.3)
 plt.suptitle("Numbat–Feral Cat Population Dynamics (N₀=400, C₀=80)")
 plt.tight_layout()
 plt.show()"""),
+
+        md("""\
+Management scenario: cat culling + numbat translocation."""),
 
         code("""\
 # C.3 — Management scenario: cat culling + numbat translocation
@@ -4288,6 +4514,9 @@ def lotka_volterra(state, t):
     dC = -d*C  + b*N*C
     return [dN, dC]"""),
 
+        md("""\
+Multiple trajectories from different initial conditions."""),
+
         code("""\
 # Multiple trajectories from different initial conditions
 t_span = np.linspace(0, 40, 2000)
@@ -4334,6 +4563,9 @@ axes[1].set_xlabel("Years"); axes[1].set_ylabel("Population")
 axes[1].set_title("Time Series (N₀=400, C₀=80)"); axes[1].legend()
 
 plt.tight_layout(); plt.show()"""),
+
+        md("""\
+Conservation threshold: if N drops below what level do cats."""),
 
         code("""\
 # Conservation threshold: if N drops below what level do cats go extinct?
@@ -4407,6 +4639,9 @@ def dingo_kangaroo(state, t):
     dD = -d_D*D + beta*K*D
     return [dK, dD]"""),
 
+        md("""\
+Phase plane with odeint trajectories."""),
+
         code("""\
 # Phase plane with odeint trajectories
 t_span = np.linspace(0, 50, 3000)
@@ -4443,6 +4678,9 @@ ax2.set_xlabel("Years"); ax2.set_ylabel("Population")
 ax2.set_title("Time Series (K₀=500, D₀=100)"); ax2.legend()
 
 plt.tight_layout(); plt.show()"""),
+
+        md("""\
+Dingo culling scenario: remove 30 dingoes/year."""),
 
         code("""\
 # Dingo culling scenario: remove 30 dingoes/year
@@ -4594,6 +4832,9 @@ print(f"  P(T+ ∩ D̄)   = {false_pos_rate}×{P_Dbar:.2f} = {P_Tplus_and_Dbar:.
 print(f"  P(T+)        = {P_Tplus:.4f}")
 print(f"  PPV = P(D|T+) = {PPV:.4f} ≈ {PPV:.1%}")
 print(f"\\n→ Only {PPV:.1%} of positive tests are truly positive!")"""),
+
+        md("""\
+The 10,000 person table."""),
 
         code("""\
 # A.2 — The 10,000 person table
@@ -4895,7 +5136,12 @@ print(f"Pi''(x) = -4 < 0 → maximum confirmed")
 print(f"Pi(x*) = ${Pi(x_star):,.2f}")
 print(f"Pi(5)  = ${Pi(5):,.2f}")
 print(f"Pi(25) = ${Pi(25):,.2f}")
+        """),
 
+        md("""\
+The chart below shows profit as a function of output."""),
+
+        code("""\
 # Plot
 x_vals = np.linspace(5, 25, 200)
 fig, ax = plt.subplots(figsize=(8, 4))
@@ -5092,6 +5338,15 @@ print("Perth monthly mean max temperatures (model):")
 for m, name in zip(months, month_names):
     print(f"  {name}: {T_perth(m):.1f} °C")"""),
 
+        md("""\
+Run the next cell."""),
+
+        code("""\
+        """),
+
+        md("""\
+The chart below shows the Perth temperature model."""),
+
         code("""\
 # Plot Perth temperature model
 t_fine = np.linspace(1, 13, 300)
@@ -5126,6 +5381,9 @@ plt.tight_layout(); plt.show()"""),
 
 Use the cells below to develop and test your problem:"""),
 
+        md("""\
+--- YOUR PROBLEM DEVELOPMENT ---."""),
+
         code("""\
 # --- YOUR PROBLEM DEVELOPMENT ---
 # Replace the example below with your own scenario
@@ -5148,6 +5406,9 @@ plt.tight_layout(); plt.show()
 print(f"Period: 12.5 hours")
 print(f"Maximum: {h(0):.1f} m at t = 0, 12.5, ... hours")
 print(f"Minimum: {3.2 - 1.8:.1f} m at t = 6.25, 18.75, ... hours")"""),
+
+        md("""\
+Integration over one period (total tidal volume per unit wid."""),
 
         code("""\
 # Integration over one period (total tidal volume per unit width)
@@ -5192,6 +5453,9 @@ Q3: ...
 
 Write your function, plot it, and answer each of their three questions. Show Python calculations for Q3."""),
 
+        md("""\
+--- SOLVING THE OTHER GROUP'S PROBLEM ---."""),
+
         code("""\
 # --- SOLVING THE OTHER GROUP'S PROBLEM ---
 
@@ -5214,6 +5478,9 @@ ax.set_xlabel("t"); ax.set_ylabel("f(t)")
 ax.set_title("Other Group's Function")
 ax.grid(alpha=0.3)
 plt.tight_layout(); plt.show()"""),
+
+        md("""\
+Q1: Period and amplitude."""),
 
         code("""\
 # Q1: Period and amplitude
@@ -5419,6 +5686,9 @@ for c in corners:
           3*x + y >= 24.9 and 0.5*x + 2.5*y <= 20.1 and x >= -0.01 and y >= -0.01)
     print(f"({x:6.2f}, {y:6.2f})          Z = {Z:8.2f}     {'✓' if ok else '✗'}")"""),
 
+        md("""\
+Identify optimal corner."""),
+
         code("""\
 # C.2 — Identify optimal corner
 feasible_corners = []
@@ -5435,6 +5705,9 @@ if feasible_corners:
     print(f"Minimum cost: Z* = ${best[2]:.2f} per patient per day")
 else:
     print("No feasible corners found — check constraint formulation")"""),
+
+        md("""\
+Scipy LP verification."""),
 
         code("""\
 # C.3 — Scipy LP verification
