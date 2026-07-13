@@ -896,7 +896,9 @@ def week2_lab_a():
 **SCIE1500 — Semester 2, 2026 | Group 1 — presenting in Week 3**
 
 > Work through all parts during the Week 2 lab. Your **10-minute Week 3 presentation** should cover: the problem, your model, key results, and policy implications.
-> Do not show raw code in your presentation — show graphs and equations."""),
+> Do not show raw code in your presentation — show graphs and equations.
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -1148,7 +1150,9 @@ def week2_lab_b():
 **SCIE1500 — Semester 2, 2026 | Group 2 — presenting in Week 3**
 
 > Work through all parts during the Week 2 lab. Your **10-minute Week 3 presentation** should cover: the problem, your model, key results, and policy implications.
-> Do not show raw code in your presentation — show graphs and equations."""),
+> Do not show raw code in your presentation — show graphs and equations.
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -1672,7 +1676,9 @@ RECOMMENDATION TO WA FISHERIES AUTHORITY:
 
 > 💡 **Key insight:** There are always *two* equilibria — one stable (recovery target), one unstable (collapse threshold). Higher harvest brings these closer together."""),
 
+
         md("""\
+
 ---
 ---
 ## ✅ Submission Exercise — Batch 1
@@ -1681,6 +1687,18 @@ RECOMMENDATION TO WA FISHERIES AUTHORITY:
 **Covers: Weeks 1–3 (functions, exponential models, logistic growth)**
 
 Submit individually. Show full mathematical working for all calculations.
+Upload your **completed notebook (.ipynb)** to the LMS — do not submit screenshots.
+        """),
+
+        code("""\
+
+# Fill in your details before submitting
+student_name   = "Your full name"
+student_number = "Your student number (e.g. 23456789)"
+print(f"Submission by: {student_name}  |  Student #{student_number}")
+        """),
+
+        md("""\
 
 ---
 ### Q1 — Functions and Rates of Change (Week 1)
@@ -1695,36 +1713,154 @@ Southern bluefin tuna population data:
 | 2015 | 15 | 65 |
 | 2020 | 20 | 61 |
 
-**a)** Calculate the average rate of change of $P$ over each of the four 5-year intervals. Show working.
+**(a)** Calculate the average rate of change of $P$ over each of the four 5-year intervals. Show working.
+        """),
 
-**b)** Is the decline rate constant? Describe the pattern and what it implies about the shape of $P(t)$.
+        md("""\
 
-**c)** [Python] Plot $P(t)$ from $t = 0$ to $t = 20$. Does a linear model fit this data well? Explain.
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
+
+**(b)** Is the decline rate constant? Describe the pattern and what it implies about the shape of $P(t)$.
+        """),
+
+        md("""\
+
+**Answer (b):**
+
+...write your answer here...
+        """),
+
+        md("""\
+
+**(c)** Plot $P(t)$ from $t = 0$ to $t = 20$. Does a linear model fit this data well? Explain.
+        """),
+
+        code("""\
+
+# Q1c — your code here
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+        """),
+
+        md("""\
+
+**Answer (c) — written interpretation:**
+
+...write your answer here...
+        """),
+
+        md("""\
 
 ---
 ### Q2 — Exponential Decay (Week 2)
 
 A marine toxin degrades as $C(t) = 250\\,e^{-0.08t}$ μg/L ($t$ in days).
 
-**a)** Find the half-life algebraically. Show working using logarithms.
+**(a)** Find the half-life algebraically. Show working using logarithms.
+        """),
 
-**b)** Safe-swimming threshold is 5 μg/L. Find the crossing day algebraically, then verify in Python.
+        md("""\
 
-**c)** [Python] Plot $C(t)$ from $t = 0$ to $t = 60$. Mark the threshold as a horizontal dashed line and the crossing day as a vertical marker.
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
+
+**(b)** The safe-swimming threshold is 5 μg/L. Find the crossing day algebraically, then verify in Python.
+        """),
+
+        md("""\
+
+**Answer (b) — algebraic working:**
+
+...write your working here...
+        """),
+
+        code("""\
+
+# Q2b — Python verification
+import numpy as np
+
+def C(t):
+    return 250 * np.exp(-0.08 * t)
+
+# Your code here
+
+        """),
+
+        md("""\
+
+**(c)** Plot $C(t)$ from $t = 0$ to $t = 60$. Mark the threshold as a horizontal dashed line and the crossing day as a vertical marker.
+        """),
+
+        code("""\
+
+# Q2c — your code here
+
+        """),
+
+        md("""\
 
 ---
 ### Q3 — Logistic Fishery (Week 3)
 
 A Carpentaria prawn fishery: $G(S) = 0.5S(1 - S/2000)$.
 
-**a)** Find the MSY and the stock level at which it occurs. Show the algebraic derivation.
+**(a)** Find the MSY and the stock level at which it occurs. Show the algebraic derivation.
+        """),
 
-**b)** Current stock is 1400 t, harvest is 200 t/yr. Is this sustainable? Justify by computing $G(1400)$.
+        md("""\
 
-**c)** Find both equilibrium stock levels for $H = 200$ t/yr using the quadratic formula. Identify which is stable and which is unstable.
+**Answer (a):**
 
-**d)** [Written, no Python] The manager reduces harvest to 150 t/yr while stock is 1400 t. What happens to the stock over time? Justify from the model."""),
-    ])
+...write your working here...
+        """),
+
+        md("""\
+
+**(b)** Current stock is 1400 t, harvest is 200 t/yr. Is this sustainable? Justify by computing $G(1400)$.
+        """),
+
+        md("""\
+
+**Answer (b):**
+
+...write your answer here...
+        """),
+
+        md("""\
+
+**(c)** Find both equilibrium stock levels for $H = 200$ t/yr using the quadratic formula. Identify which is stable and which is unstable.
+        """),
+
+        md("""\
+
+**Answer (c):**
+
+...write your working here...
+        """),
+
+        md("""\
+
+**(d)** [Written] The manager reduces harvest to 150 t/yr while stock is 1400 t. What happens to the stock over time? Justify from the model.
+        """),
+
+        md("""\
+
+**Answer (d):**
+
+...write your answer here...
+        """),
+        ])
 
 
 def week3_lab_a():
@@ -1736,7 +1872,9 @@ def week3_lab_a():
 **SCIE1500 — Semester 2, 2026 | Group 3 — presenting in Week 4**
 
 > Work through all parts during the Week 3 lab. Your **10-minute Week 4 presentation** should cover: the problem, your model, key results, and policy recommendation.
-> Do not show raw code — show graphs and equations."""),
+> Do not show raw code — show graphs and equations.
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -1895,7 +2033,9 @@ def week3_lab_b():
 ## 🦞 Rock Lobster Recovery: From Overfishing to Sustainability
 **SCIE1500 — Semester 2, 2026 | Group 4 — presenting in Week 4**
 
-> Work through all parts during the Week 3 lab. Your **10-minute Week 4 presentation** should cover: the problem, your model, key results, and climate risk."""),
+> Work through all parts during the Week 3 lab. Your **10-minute Week 4 presentation** should cover: the problem, your model, key results, and climate risk
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -2303,7 +2443,9 @@ def week4_lab_a():
 ## 🌾 Pesticide Degradation: Optimizing Spray Timing
 **SCIE1500 — Semester 2, 2026 | Group 5 — presenting in Week 5**
 
-> Work through all parts during the Week 4 lab. Your **10-minute Week 5 presentation** should cover: the problem, your model, key results, and agronomic implications."""),
+> Work through all parts during the Week 4 lab. Your **10-minute Week 5 presentation** should cover: the problem, your model, key results, and agronomic implications
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -2485,7 +2627,9 @@ def week4_lab_b():
 ## 💊 Drug Pharmacokinetics: Dosing for Diabetes Management
 **SCIE1500 — Semester 2, 2026 | Group 6 — presenting in Week 5**
 
-> Work through all parts during the Week 4 lab. Your **10-minute Week 5 presentation** should cover: the problem, your model, key results, and dosing implications."""),
+> Work through all parts during the Week 4 lab. Your **10-minute Week 5 presentation** should cover: the problem, your model, key results, and dosing implications
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -2867,7 +3011,9 @@ def week5_lab_a():
 ## ☀️ Solar Farm Economics: Optimal Panel Configuration
 **SCIE1500 — Semester 2, 2026 | Group 7 — presenting in Week 6**
 
-> Work through all parts during the Week 5 lab. Your **10-minute Week 6 presentation** should cover: the problem, your model, optimal configuration, and climate sensitivity."""),
+> Work through all parts during the Week 5 lab. Your **10-minute Week 6 presentation** should cover: the problem, your model, optimal configuration, and climate sensitivity
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -3053,7 +3199,9 @@ def week5_lab_b():
 ## 🐟 Aquaculture Profit: Optimal Stocking Density for Barramundi
 **SCIE1500 — Semester 2, 2026 | Group 1 (second presentation) — presenting in Week 6**
 
-> Work through all parts during the Week 5 lab. Your **10-minute Week 6 presentation** should cover: the problem, your model, optimal stocking density, and disease risk."""),
+> Work through all parts during the Week 5 lab. Your **10-minute Week 6 presentation** should cover: the problem, your model, optimal stocking density, and disease risk
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -3445,13 +3593,27 @@ DISCUSSION:
 ...
 ```"""),
 
+
         md("""\
+
 ---
 ## ✅ Submission Exercise — Batch 2 (due Tuesday 8 September, 11:59 pm)
 
 **Submit via LMS. Covers Weeks 4–6 (limits, differentiation, integration).**
 
 Work individually. Show all working. Write Python code where indicated.
+Upload your **completed notebook (.ipynb)** to the LMS — do not submit screenshots.
+        """),
+
+        code("""\
+
+# Fill in your details before submitting
+student_name   = "Your full name"
+student_number = "Your student number (e.g. 23456789)"
+print(f"Submission by: {student_name}  |  Student #{student_number}")
+        """),
+
+        md("""\
 
 ---
 ### Q1 — Limits and Continuity (Week 4)
@@ -3461,21 +3623,45 @@ A population model uses:
 $$P(t) = \\frac{1000t}{t + 5}$$
 
 **(a)** Evaluate $\\lim_{t \\to \\infty} P(t)$. Show your working algebraically (divide numerator and denominator by $t$).
+        """),
+
+        md("""\
+
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(b)** Is $P(t)$ continuous for all $t \\geq 0$? Justify briefly.
+        """),
 
-**(c)** Write Python code to verify your limit answer numerically by evaluating $P(t)$ at $t = 100, 1000, 10000$.
+        md("""\
 
-```python
+**Answer (b):**
+
+...write your answer here...
+        """),
+
+        md("""\
+
+**(c)** Verify your limit numerically by evaluating $P(t)$ at $t = 100, 1000, 10000$.
+        """),
+
+        code("""\
+
 # Q1c — numerical limit verification
 import numpy as np
 
 def P(t):
     return 1000*t / (t + 5)
 
-# Evaluate at large t values
-# YOUR CODE HERE
-```
+# Evaluate at large t values — your code here
+
+        """),
+
+        md("""\
 
 ---
 ### Q2 — Differentiation and Optimisation (Week 5)
@@ -3485,17 +3671,57 @@ A timber company's profit (thousands of dollars) as a function of harvest age $a
 $$\\pi(a) = 80a - 2a^2 - 150 \\quad \\text{for } 5 \\leq a \\leq 30$$
 
 **(a)** Find $\\pi'(a)$ using the power rule. Show each step.
+        """),
+
+        md("""\
+
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(b)** Find the harvest age $a^*$ that maximises profit. Use the second derivative to confirm it is a maximum.
+        """),
 
-**(c)** Write Python code to: (i) evaluate $\\pi(a^*)$ and (ii) check the boundary values $\\pi(5)$ and $\\pi(30)$.
+        md("""\
 
-```python
+**Answer (b):**
+
+...write your working here...
+        """),
+
+        md("""\
+
+**(c)** Evaluate $\\pi(a^*)$ and the boundary values $\\pi(5)$ and $\\pi(30)$ in Python.
+        """),
+
+        code("""\
+
 # Q2c — profit at critical point and boundaries
-# YOUR CODE HERE
-```
+import numpy as np
 
-**(d)** Interpret: what does $\\pi'(20) = -0$ (if it were zero) mean in harvesting terms?
+def pi_a(a):
+    return 80*a - 2*a**2 - 150
+
+# Your code here
+
+        """),
+
+        md("""\
+
+**(d)** Interpret: what does $\\pi'(a^*) = 0$ mean in harvesting terms?
+        """),
+
+        md("""\
+
+**Answer (d):**
+
+...write your answer here...
+        """),
+
+        md("""\
 
 ---
 ### Q3 — Integration and Accumulation (Week 6)
@@ -3503,22 +3729,55 @@ $$\\pi(a) = 80a - 2a^2 - 150 \\quad \\text{for } 5 \\leq a \\leq 30$$
 A bushfire recovery site sequesters carbon at rate $R(t) = 8e^{-0.04t}$ tonnes CO₂/ha/yr.
 
 **(a)** Find the antiderivative $F(t)$ with $F(0) = 0$. Show the rule you used.
+        """),
+
+        md("""\
+
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(b)** Calculate the total carbon captured per hectare over 30 years. Give an exact expression and a decimal approximation.
+        """),
 
-**(c)** Write Python code to: plot $R(t)$ for $t \\in [0, 30]$; shade the area under the curve; annotate with the definite integral value from part (b).
+        md("""\
 
-```python
+**Answer (b):**
+
+...write your working here...
+        """),
+
+        md("""\
+
+**(c)** Plot $R(t)$ for $t \\in [0, 30]$, shade the area under the curve, and annotate with the integral value from (b).
+        """),
+
+        code("""\
+
 # Q3c — plot and shade
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
 
-# YOUR CODE HERE
-```
+# Your code here
 
-**(d)** If carbon credits sell at $30/tonne and the site covers 250 ha, calculate total project revenue over 30 years."""),
-    ])
+        """),
+
+        md("""\
+
+**(d)** Carbon credits sell at $30/tonne and the site covers 250 ha. Calculate total project revenue over 30 years.
+        """),
+
+        md("""\
+
+**Answer (d):**
+
+...write your working here...
+        """),
+        ])
 
 
 def week6_lab_a():
@@ -3529,7 +3788,9 @@ def week6_lab_a():
 ## 🌱 Soil Carbon Sequestration: Integration in Agriculture
 **SCIE1500 — Semester 2, 2026 | Group 2 (first presentation) — presenting in Week 7**
 
-> Work through all parts during the Week 6 lab. Your **10-minute Week 7 presentation** should cover: the sequestration model, antiderivative derivation, cumulative carbon estimate, and policy recommendation."""),
+> Work through all parts during the Week 6 lab. Your **10-minute Week 7 presentation** should cover: the sequestration model, antiderivative derivation, cumulative carbon estimate, and policy recommendation
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -3667,7 +3928,9 @@ def week6_lab_b():
 ## 💧 Groundwater Recharge: Cumulative Infiltration
 **SCIE1500 — Semester 2, 2026 | Group 1 (second presentation) — presenting in Week 7**
 
-> Work through all parts during the Week 6 lab. Your **10-minute Week 7 presentation** should cover: the infiltration model, antiderivative, total volume, and whether the seasonal target is met."""),
+> Work through all parts during the Week 6 lab. Your **10-minute Week 7 presentation** should cover: the infiltration model, antiderivative, total volume, and whether the seasonal target is met
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -3997,7 +4260,9 @@ def week7_lab_a():
 ## 🍷 Wine Market Surplus: Integration in Agricultural Economics
 **SCIE1500 — Semester 2, 2026 | Group 2 (first presentation) — presenting in Week 8**
 
-> Work through all parts during the Week 7 lab. Your **10-minute Week 8 presentation** should cover: equilibrium derivation, graphical surplus, integration method, and a policy scenario."""),
+> Work through all parts during the Week 7 lab. Your **10-minute Week 8 presentation** should cover: equilibrium derivation, graphical surplus, integration method, and a policy scenario
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -4129,7 +4394,9 @@ def week7_lab_b():
 ## 🥑 Avocado Market: Surplus and Export Shock
 **SCIE1500 — Semester 2, 2026 | Group 1 (second presentation) — presenting in Week 8**
 
-> Work through all parts during the Week 7 lab. Your **10-minute Week 8 presentation** should cover: equilibrium, CS and PS, export demand shock, and welfare comparison."""),
+> Work through all parts during the Week 7 lab. Your **10-minute Week 8 presentation** should cover: equilibrium, CS and PS, export demand shock, and welfare comparison
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -4478,7 +4745,9 @@ def week8_lab_a():
 ## 🐱 Feral Cats and Numbats: Phase Plane Analysis
 **SCIE1500 — Semester 2, 2026 | Group 2 (first presentation) — presenting in Week 9**
 
-> Work through all parts during the Week 8 lab. Your **10-minute Week 9 presentation** should cover: the ODE model, equilibrium analysis, phase plane interpretation, and conservation implications."""),
+> Work through all parts during the Week 8 lab. Your **10-minute Week 9 presentation** should cover: the ODE model, equilibrium analysis, phase plane interpretation, and conservation implications
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -4596,7 +4865,9 @@ def week8_lab_b():
 ## 🦘 Dingo-Kangaroo Dynamics: Predator-Prey Modelling
 **SCIE1500 — Semester 2, 2026 | Group 1 (second presentation) — presenting in Week 9**
 
-> Work through all parts during the Week 8 lab. Your **10-minute Week 9 presentation** should cover: the ODE model, equilibria, phase plane, and management implications for dingo control."""),
+> Work through all parts during the Week 8 lab. Your **10-minute Week 9 presentation** should cover: the ODE model, equilibria, phase plane, and management implications for dingo control
+> **What to submit:** upload your completed presentation slides (PDF or PowerPoint) to the LMS after your presentation.
+"""),
 
         md("""\
 ---
@@ -4915,13 +5186,27 @@ DISCUSSION:
 ...
 ```"""),
 
+
         md("""\
+
 ---
 ## ✅ Submission Exercise — Batch 3 (due Tuesday 29 September, 11:59 pm)
 
 **Submit via LMS. Covers Weeks 7–9 (definite integrals, ODEs, probability).**
 
 Work individually. Show all working. Write Python code where indicated.
+Upload your **completed notebook (.ipynb)** to the LMS — do not submit screenshots.
+        """),
+
+        code("""\
+
+# Fill in your details before submitting
+student_name   = "Your full name"
+student_number = "Your student number (e.g. 23456789)"
+print(f"Submission by: {student_name}  |  Student #{student_number}")
+        """),
+
+        md("""\
 
 ---
 ### Q1 — Consumer and Producer Surplus (Week 7)
@@ -4931,22 +5216,62 @@ A freshwater prawn market in the Ord River region has:
 - Supply: $Q_s = -60 + 3P$ (kg/week)
 
 **(a)** Find the equilibrium price $P^*$ and quantity $Q^*$ algebraically.
+        """),
+
+        md("""\
+
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(b)** Derive the inverse demand and inverse supply functions.
+        """),
+
+        md("""\
+
+**Answer (b):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(c)** Calculate CS and PS using the triangle formulas. Show all working.
+        """),
 
-**(d)** Write Python code to verify CS and PS using numerical integration (`numpy.trapz`).
+        md("""\
 
-```python
+**Answer (c):**
+
+...write your working here...
+        """),
+
+        md("""\
+
+**(d)** Verify CS and PS using numerical integration (`numpy.trapz`).
+        """),
+
+        code("""\
+
 # Q1d — verify with integration
 import numpy as np
 
-def demand_P(Q): ...
-def supply_P(Q): ...
+def demand_P(Q):
+    # inverse demand: P as a function of Q — your code here
+    pass
 
-# YOUR CODE HERE
-```
+def supply_P(Q):
+    # inverse supply: P as a function of Q — your code here
+    pass
+
+# Your integration code here
+
+        """),
+
+        md("""\
 
 ---
 ### Q2 — Predator-Prey Dynamics (Week 8)
@@ -4958,12 +5283,34 @@ $$\\frac{dR}{dt} = 0.6R - 0.003RQ, \\qquad \\frac{dQ}{dt} = -0.2Q + 0.001RQ$$
 where $R$ = rat population, $Q$ = quoll population.
 
 **(a)** Find the coexistence equilibrium $(R^*, Q^*)$. Show your algebra.
+        """),
+
+        md("""\
+
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(b)** Identify the rat nullcline and quoll nullcline. What does each represent biologically?
+        """),
 
-**(c)** Write Python code to simulate the system for 30 years starting from $R_0 = 500$, $Q_0 = 80$ using Euler's method (dt = 0.01). Plot both populations over time.
+        md("""\
 
-```python
+**Answer (b):**
+
+...write your answer here...
+        """),
+
+        md("""\
+
+**(c)** Simulate the system for 30 years starting from $R_0 = 500$, $Q_0 = 80$ using Euler's method (dt = 0.01). Plot both populations over time.
+        """),
+
+        code("""\
+
 # Q2c — Euler method simulation
 import numpy as np
 import matplotlib.pyplot as plt
@@ -4972,23 +5319,58 @@ import matplotlib.pyplot as plt
 # Parameters
 r_R = 0.6; a = 0.003; d_Q = 0.2; b = 0.001
 
-# YOUR CODE HERE
-```
+# Your code here
 
-**(d)** Interpret: do the populations oscillate or converge? Is the equilibrium reached?
+        """),
+
+        md("""\
+
+**(d)** Do the populations oscillate or converge? Is the equilibrium reached?
+        """),
+
+        md("""\
+
+**Answer (d):**
+
+...write your answer here...
+        """),
+
+        md("""\
 
 ---
 ### Q3 — Bayes' Theorem (Week 9)
 
-A breast cancer screening test has sensitivity 90% and specificity 92%. The background prevalence of breast cancer in the 50–60 age group is 1.5%.
+A breast cancer screening test has sensitivity 90% and specificity 92%. Background prevalence in the 50–60 age group is 1.5%.
 
 **(a)** Calculate $P(T^+)$ — the probability a randomly selected person tests positive.
+        """),
+
+        md("""\
+
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(b)** Calculate the PPV using Bayes' theorem. Show each step.
+        """),
 
-**(c)** Write Python code to plot PPV vs prevalence for prevalence ranging from 0.1% to 20%. Annotate the 1.5% prevalence point.
+        md("""\
 
-```python
+**Answer (b):**
+
+...write your working here...
+        """),
+
+        md("""\
+
+**(c)** Plot PPV vs prevalence for prevalence ranging from 0.1% to 20%. Annotate the 1.5% prevalence point.
+        """),
+
+        code("""\
+
 # Q3c — PPV vs prevalence
 import numpy as np
 import matplotlib.pyplot as plt
@@ -4997,11 +5379,22 @@ import matplotlib.pyplot as plt
 sensitivity = 0.90
 specificity = 0.92
 
-# YOUR CODE HERE
-```
+# Your code here
 
-**(d)** At what prevalence would PPV reach 50%? Solve algebraically or numerically."""),
-    ])
+        """),
+
+        md("""\
+
+**(d)** At what prevalence would PPV reach 50%? Solve algebraically or numerically.
+        """),
+
+        md("""\
+
+**Answer (d):**
+
+...write your working here...
+        """),
+        ])
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -5731,21 +6124,8 @@ print(f"  x* = {result.x[0]:.4f} serves of Food X")
 print(f"  y* = {result.x[1]:.4f} serves of Food Y")
 print(f"  Z* = ${result.fun:.4f} per patient per day")"""),
 
+
         md("""\
----
-## 🖼️ Gallery Walk Instructions (20 minutes)
-
-1. Each group posts their **feasible region diagram** and **corner point table** on the wall.
-2. Rotate through all groups (3–4 minutes per station).
-3. Use sticky notes or write on the sheet:
-   - **Green:** Something correct or clear
-   - **Orange:** A question or concern
-   - **Red:** An error found
-
-**What to look for:**
-- Is the feasible region shaded on the correct side of each constraint?
-- Are all corner points correct (solve the system and check)?
-- Is the minimum at the correct vertex?
 
 ---
 ## ✅ Submission Exercise — Batch 4 (due Tuesday 27 October, 11:59 pm)
@@ -5753,6 +6133,18 @@ print(f"  Z* = ${result.fun:.4f} per patient per day")"""),
 **Submit via LMS. Covers Weeks 10–12 (hypothesis testing, trigonometry, linear programming).**
 
 Work individually. Show all working. Write Python code where indicated.
+Upload your **completed notebook (.ipynb)** to the LMS — do not submit screenshots.
+        """),
+
+        code("""\
+
+# Fill in your details before submitting
+student_name   = "Your full name"
+student_number = "Your student number (e.g. 23456789)"
+print(f"Submission by: {student_name}  |  Student #{student_number}")
+        """),
+
+        md("""\
 
 ---
 ### Q1 — Hypothesis Testing (Week 10)
@@ -5760,18 +6152,54 @@ Work individually. Show all working. Write Python code where indicated.
 A water authority claims average daily water consumption in a suburb is **no more than 180 L per person**. A sample of 36 households gives $\\bar{x} = 191$ L and $s = 42$ L.
 
 **(a)** State $H_0$ and $H_1$ for a one-tailed test.
+        """),
+
+        md("""\
+
+**Answer (a):**
+
+...write your answer here...
+        """),
+
+        md("""\
 
 **(b)** Calculate the $t$-statistic. Show all working.
+        """),
+
+        md("""\
+
+**Answer (b):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(c)** At $\\alpha = 0.05$ ($df = 35$, one-tailed critical value $\\approx 1.690$), state your conclusion.
+        """),
 
-**(d)** Write Python code to compute the exact $p$-value using `scipy.stats.t`.
+        md("""\
 
-```python
-# Q1d
+**Answer (c):**
+
+...write your conclusion here...
+        """),
+
+        md("""\
+
+**(d)** Compute the exact $p$-value using `scipy.stats.t`.
+        """),
+
+        code("""\
+
+# Q1d — exact p-value
 from scipy import stats
-# YOUR CODE HERE
-```
+
+# Your code here
+
+        """),
+
+        md("""\
 
 ---
 ### Q2 — Trigonometric Modelling (Week 11)
@@ -5779,19 +6207,56 @@ from scipy import stats
 Daylight hours in a southern Australian city vary seasonally. The longest day has 14.5 hours (December 22) and the shortest has 9.5 hours (June 21).
 
 **(a)** Find the amplitude $A$ and midline $D$.
+        """),
+
+        md("""\
+
+**Answer (a):**
+
+...write your working here...
+        """),
+
+        md("""\
 
 **(b)** The period is 365 days. Find $B = 2\\pi/365$.
+        """),
 
-**(c)** Write the function $f(t)$ where $t$ = day of year, with $f(1) = 9.5$ (January 1 is near the shortest day). Use an appropriate phase shift.
+        md("""\
 
-**(d)** Write Python code to: (i) plot $f(t)$ for one year; (ii) calculate the total daylight hours over the year using `numpy.trapz`.
+**Answer (b):**
 
-```python
-# Q2d
-import numpy as np, matplotlib.pyplot as plt
+...write your answer here...
+        """),
+
+        md("""\
+
+**(c)** Write the function $f(t)$ where $t$ = day of year, with $f(1) \\approx 9.5$ (January 1 is near the shortest day). Use an appropriate phase shift.
+        """),
+
+        md("""\
+
+**Answer (c):**
+
+...write your function here...
+        """),
+
+        md("""\
+
+**(d)** Plot $f(t)$ for one year and calculate the total daylight hours over the year using `numpy.trapz`.
+        """),
+
+        code("""\
+
+# Q2d — plot and integrate
+import numpy as np
+import matplotlib.pyplot as plt
 %matplotlib inline
-# YOUR CODE HERE
-```
+
+# Your code here
+
+        """),
+
+        md("""\
 
 ---
 ### Q3 — Linear Programming (Week 12)
@@ -5802,22 +6267,56 @@ A farmer grows wheat ($x$ ha) and canola ($y$ ha) on 200 ha. Constraints:
 - Labour: $x + 2y \\leq 300$ (days)
 - Non-negativity: $x \\geq 0$, $y \\geq 0$
 
-Profit: wheat $\\$180$/ha, canola $\\$250$/ha. **Maximise** $Z = 180x + 250y$.
+Profit: wheat $180/ha, canola $250/ha. **Maximise** $Z = 180x + 250y$.
 
 **(a)** Graph the feasible region. Label each constraint line and shade the feasible region.
+        """),
+
+        md("""\
+
+**Answer (a):** *(sketch or description)*
+
+...write your description or attach a sketch here...
+        """),
+
+        md("""\
 
 **(b)** Identify all corner points (intersections of constraint boundaries within the feasible region).
+        """),
+
+        md("""\
+
+**Answer (b):**
+
+...list corner points and show working here...
+        """),
+
+        md("""\
 
 **(c)** Evaluate $Z$ at each corner point. State the optimal solution.
+        """),
 
-**(d)** Write Python code using `scipy.optimize.linprog` to verify your answer. (Note: `linprog` minimises — negate the objective to maximise.)
+        md("""\
 
-```python
-# Q3d
+**Answer (c):**
+
+...write your working and conclusion here...
+        """),
+
+        md("""\
+
+**(d)** Verify your answer using `scipy.optimize.linprog`. (Note: `linprog` minimises — negate the objective to maximise.)
+        """),
+
+        code("""\
+
+# Q3d — linprog verification
 from scipy.optimize import linprog
-# YOUR CODE HERE
-```"""),
-    ])
+
+# Your code here
+
+        """),
+        ])
 
 
 # ─────────────────────────────────────────────────────────────────────────────
