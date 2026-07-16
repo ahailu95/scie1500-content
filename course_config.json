@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "lastUpdated": "2026-07-16",
   "institution": {
     "id": "uwa",
@@ -30,7 +30,7 @@
       "notebooks": [
         {
           "id": "w0_lab_notebook",
-          "title": "Lab Notebook — Python Basics",
+          "title": "Main Lab Notebook — Python Basics",
           "description": "Week 0 lab exercises - Introduction to Python",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -90,15 +90,6 @@
           "url": "asset://SCIE1500Materials/code_snippets_interactive.html",
           "source": "custom",
           "requiresAuth": false
-        },
-        {
-          "id": "w0_lab_handbook",
-          "title": "Lab Problem Brief",
-          "description": "Lab activity — Introduction to Python",
-          "type": "reading",
-          "url": "https://ahailu95.github.io/scie1500-content/S2Y26_handbooks/Week_00/Week_00_Student.html",
-          "source": "custom",
-          "requiresAuth": false
         }
       ]
     },
@@ -130,7 +121,7 @@
       "notebooks": [
         {
           "id": "w1_lab_notebook",
-          "title": "Lab Notebook — Functions and Models",
+          "title": "Main Lab Notebook — Functions and Models",
           "description": "Week 1 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -225,7 +216,7 @@
       "notebooks": [
         {
           "id": "w2_lab_notebook",
-          "title": "Lab Notebook — Exponential and Logarithmic Functions",
+          "title": "Main Lab Notebook — Exponential and Logarithmic Functions",
           "description": "Week 2 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -328,7 +319,7 @@
       "notebooks": [
         {
           "id": "w3_lab_notebook",
-          "title": "Lab Notebook — The Fishery Manager's Dilemma",
+          "title": "Main Lab Notebook — The Fishery Manager's Dilemma",
           "description": "Week 3 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -459,7 +450,7 @@
       "notebooks": [
         {
           "id": "w4_lab_notebook",
-          "title": "Lab Notebook — Limits and Derivatives",
+          "title": "Main Lab Notebook — Limits and Derivatives",
           "description": "Week 4 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -581,7 +572,7 @@
       "notebooks": [
         {
           "id": "w5_lab_notebook",
-          "title": "Lab Notebook — Optimisation",
+          "title": "Main Lab Notebook — Optimisation",
           "description": "Week 5 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -685,7 +676,7 @@
       "notebooks": [
         {
           "id": "w6_lab_notebook",
-          "title": "Lab Notebook — Carbon Sequestration and Integration",
+          "title": "Main Lab Notebook — Carbon Sequestration and Integration",
           "description": "Week 6 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -798,7 +789,7 @@
       "notebooks": [
         {
           "id": "w7_lab_notebook",
-          "title": "Lab Notebook — Consumer and Producer Surplus",
+          "title": "Main Lab Notebook — Consumer and Producer Surplus",
           "description": "Week 7 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -911,7 +902,7 @@
       "notebooks": [
         {
           "id": "w8_lab_notebook",
-          "title": "Lab Notebook — Predator-Prey Dynamics",
+          "title": "Main Lab Notebook — Predator-Prey Dynamics",
           "description": "Week 8 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1033,7 +1024,7 @@
       "notebooks": [
         {
           "id": "w9_lab_notebook",
-          "title": "Lab Notebook — Probability and Bayes' Theorem",
+          "title": "Main Lab Notebook — Probability and Bayes' Theorem",
           "description": "Week 9 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1111,7 +1102,7 @@
       "notebooks": [
         {
           "id": "w10_lab_notebook",
-          "title": "Lab Notebook — Mock Exam Workshop",
+          "title": "Main Lab Notebook — Mock Exam Workshop",
           "description": "Week 10 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1180,7 +1171,7 @@
       "notebooks": [
         {
           "id": "w11_lab_notebook",
-          "title": "Lab Notebook — Peer Review: Trigonometric Modelling",
+          "title": "Main Lab Notebook — Peer Review: Trigonometric Modelling",
           "description": "Week 11 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1247,7 +1238,7 @@
       "notebooks": [
         {
           "id": "w12_lab_notebook",
-          "title": "Lab Notebook — Linear Programming and Gallery Walk",
+          "title": "Main Lab Notebook — Linear Programming and Gallery Walk",
           "description": "Week 12 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
