@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "lastUpdated": "2026-07-16",
   "institution": {
     "id": "uwa",
@@ -30,7 +30,7 @@
       "notebooks": [
         {
           "id": "w0_lab_notebook",
-          "title": "Week 0 Lab Notebook — Python Basics",
+          "title": "Lab Notebook — Python Basics",
           "description": "Week 0 lab exercises - Introduction to Python",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -43,7 +43,7 @@
         },
         {
           "id": "w0_getting_started",
-          "title": "Week 0 — Getting Started with Python & Jupyter",
+          "title": "Getting Started with Python & Jupyter",
           "description": "Setup guide covering installation, Python basics, key packages, and first functions",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -57,7 +57,7 @@
         },
         {
           "id": "w0_lesson_code",
-          "title": "Week 0: Intro to Python & Jupyter — Lesson & Code",
+          "title": "Intro to Python & Jupyter — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -139,7 +139,7 @@
       "notebooks": [
         {
           "id": "w1_lab_notebook",
-          "title": "Week 1 Lab Notebook — Functions and Models",
+          "title": "Lab Notebook — Functions and Models",
           "description": "Week 1 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -152,7 +152,7 @@
         },
         {
           "id": "w1_lesson_code",
-          "title": "Week 1: Functions — Lesson & Code",
+          "title": "Functions — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -234,7 +234,7 @@
       "notebooks": [
         {
           "id": "w2_lab_notebook",
-          "title": "Week 2 Lab Notebook — Exponential and Logarithmic Functions",
+          "title": "Lab Notebook — Exponential and Logarithmic Functions",
           "description": "Week 2 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -247,7 +247,7 @@
         },
         {
           "id": "w2_lesson_code",
-          "title": "Week 2: Exponential & Logarithmic Models — Lesson & Code",
+          "title": "Exponential & Logarithmic Models — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -261,7 +261,7 @@
         },
         {
           "id": "w2_lab_a",
-          "title": "Week 2 Lab — Presentation Brief A",
+          "title": "Lab — Presentation Brief A",
           "description": "Week 2 presentation variant A: Exponential and Logarithmic Functions",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -274,7 +274,7 @@
         },
         {
           "id": "w2_lab_b",
-          "title": "Week 2 Lab — Presentation Brief B",
+          "title": "Lab — Presentation Brief B",
           "description": "Week 2 presentation variant B: Exponential and Logarithmic Functions",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -346,7 +346,7 @@
       "notebooks": [
         {
           "id": "w3_lab_notebook",
-          "title": "Week 3 Lab Notebook — The Fishery Manager's Dilemma",
+          "title": "Lab Notebook — The Fishery Manager's Dilemma",
           "description": "Week 3 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -359,7 +359,7 @@
         },
         {
           "id": "w3_lesson_code",
-          "title": "Week 3: Logistic & Bounded Growth — Lesson & Code",
+          "title": "Logistic & Bounded Growth — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -374,7 +374,7 @@
         },
         {
           "id": "w3_lab_a",
-          "title": "Week 3 Lab — Presentation Brief A",
+          "title": "Lab — Presentation Brief A",
           "description": "Week 3 presentation variant A: Logistic Growth",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -387,7 +387,7 @@
         },
         {
           "id": "w3_lab_b",
-          "title": "Week 3 Lab — Presentation Brief B",
+          "title": "Lab — Presentation Brief B",
           "description": "Week 3 presentation variant B: Logistic Growth",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -477,7 +477,7 @@
       "notebooks": [
         {
           "id": "w4_lab_notebook",
-          "title": "Week 4 Lab Notebook — Limits and Derivatives",
+          "title": "Lab Notebook — Limits and Derivatives",
           "description": "Week 4 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -490,7 +490,7 @@
         },
         {
           "id": "w4_lesson_code",
-          "title": "Week 4: Limits, Continuity & Derivatives — Lesson & Code",
+          "title": "Limits, Continuity & Derivatives — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -505,7 +505,7 @@
         },
         {
           "id": "w4_lab_a",
-          "title": "Week 4 Lab — Presentation Brief A",
+          "title": "Lab — Presentation Brief A",
           "description": "Week 4 presentation variant A: Limits and Derivatives",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -518,7 +518,7 @@
         },
         {
           "id": "w4_lab_b",
-          "title": "Week 4 Lab — Presentation Brief B",
+          "title": "Lab — Presentation Brief B",
           "description": "Week 4 presentation variant B: Limits and Derivatives",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -599,7 +599,7 @@
       "notebooks": [
         {
           "id": "w5_lab_notebook",
-          "title": "Week 5 Lab Notebook — Optimisation",
+          "title": "Lab Notebook — Optimisation",
           "description": "Week 5 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -612,7 +612,7 @@
         },
         {
           "id": "w5_lesson_code",
-          "title": "Week 5: Differentiation & Optimisation — Lesson & Code",
+          "title": "Differentiation & Optimisation — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -627,7 +627,7 @@
         },
         {
           "id": "w5_lab_a",
-          "title": "Week 5 Lab — Presentation Brief A",
+          "title": "Lab — Presentation Brief A",
           "description": "Week 5 presentation variant A: Differentiation and Optimisation",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -640,7 +640,7 @@
         },
         {
           "id": "w5_lab_b",
-          "title": "Week 5 Lab — Presentation Brief B",
+          "title": "Lab — Presentation Brief B",
           "description": "Week 5 presentation variant B: Differentiation and Optimisation",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -703,7 +703,7 @@
       "notebooks": [
         {
           "id": "w6_lab_notebook",
-          "title": "Week 6 Lab Notebook — Carbon Sequestration and Integration",
+          "title": "Lab Notebook — Carbon Sequestration and Integration",
           "description": "Week 6 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -716,7 +716,7 @@
         },
         {
           "id": "w6_lesson_code",
-          "title": "Week 6: Introduction to Integration — Lesson & Code",
+          "title": "Introduction to Integration — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -731,7 +731,7 @@
         },
         {
           "id": "w6_lab_a",
-          "title": "Week 6 Lab — Presentation Brief A",
+          "title": "Lab — Presentation Brief A",
           "description": "Week 6 presentation variant A: Integration",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -744,7 +744,7 @@
         },
         {
           "id": "w6_lab_b",
-          "title": "Week 6 Lab — Presentation Brief B",
+          "title": "Lab — Presentation Brief B",
           "description": "Week 6 presentation variant B: Integration",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -816,7 +816,7 @@
       "notebooks": [
         {
           "id": "w7_lab_notebook",
-          "title": "Week 7 Lab Notebook — Consumer and Producer Surplus",
+          "title": "Lab Notebook — Consumer and Producer Surplus",
           "description": "Week 7 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -829,7 +829,7 @@
         },
         {
           "id": "w7_lesson_code",
-          "title": "Week 7: Definite Integrals & Sequences — Lesson & Code",
+          "title": "Definite Integrals & Sequences — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -844,7 +844,7 @@
         },
         {
           "id": "w7_lab_a",
-          "title": "Week 7 Lab — Presentation Brief A",
+          "title": "Lab — Presentation Brief A",
           "description": "Week 7 presentation variant A: Consumer and Producer Surplus",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -857,7 +857,7 @@
         },
         {
           "id": "w7_lab_b",
-          "title": "Week 7 Lab — Presentation Brief B",
+          "title": "Lab — Presentation Brief B",
           "description": "Week 7 presentation variant B: Consumer and Producer Surplus",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -929,7 +929,7 @@
       "notebooks": [
         {
           "id": "w8_lab_notebook",
-          "title": "Week 8 Lab Notebook — Predator-Prey Dynamics",
+          "title": "Lab Notebook — Predator-Prey Dynamics",
           "description": "Week 8 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -942,7 +942,7 @@
         },
         {
           "id": "w8_lesson_code",
-          "title": "Week 8: Predator-Prey Dynamics — Lesson & Code",
+          "title": "Predator-Prey Dynamics — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -957,7 +957,7 @@
         },
         {
           "id": "w8_lab_a",
-          "title": "Week 8 Lab — Presentation Brief A",
+          "title": "Lab — Presentation Brief A",
           "description": "Week 8 presentation variant A: Predator-Prey Dynamics",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -970,7 +970,7 @@
         },
         {
           "id": "w8_lab_b",
-          "title": "Week 8 Lab — Presentation Brief B",
+          "title": "Lab — Presentation Brief B",
           "description": "Week 8 presentation variant B: Predator-Prey Dynamics",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1051,7 +1051,7 @@
       "notebooks": [
         {
           "id": "w9_lab_notebook",
-          "title": "Week 9 Lab Notebook — Probability and Bayes' Theorem",
+          "title": "Lab Notebook — Probability and Bayes' Theorem",
           "description": "Week 9 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1064,7 +1064,7 @@
         },
         {
           "id": "w9_lesson_code",
-          "title": "Week 9: Probability & Combinatorics — Lesson & Code",
+          "title": "Probability & Combinatorics — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1129,7 +1129,7 @@
       "notebooks": [
         {
           "id": "w10_lab_notebook",
-          "title": "Week 10 Lab Notebook — Mock Exam Workshop",
+          "title": "Lab Notebook — Mock Exam Workshop",
           "description": "Week 10 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1142,7 +1142,7 @@
         },
         {
           "id": "w10_lesson_code",
-          "title": "Week 10: Hypothesis Testing — Lesson & Code",
+          "title": "Hypothesis Testing — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1198,7 +1198,7 @@
       "notebooks": [
         {
           "id": "w11_lab_notebook",
-          "title": "Week 11 Lab Notebook — Peer Review: Trigonometric Modelling",
+          "title": "Lab Notebook — Peer Review: Trigonometric Modelling",
           "description": "Week 11 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1211,7 +1211,7 @@
         },
         {
           "id": "w11_lesson_code",
-          "title": "Week 11: Trigonometry — Lesson & Code",
+          "title": "Trigonometry — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1265,7 +1265,7 @@
       "notebooks": [
         {
           "id": "w12_lab_notebook",
-          "title": "Week 12 Lab Notebook — Linear Programming and Gallery Walk",
+          "title": "Lab Notebook — Linear Programming and Gallery Walk",
           "description": "Week 12 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1278,7 +1278,7 @@
         },
         {
           "id": "w12_lesson_code",
-          "title": "Week 12: Linear Programming & Systems — Lesson & Code",
+          "title": "Linear Programming & Systems — Lesson & Code",
           "description": "Interactive lesson notebook combining lecture notes with runnable Python code",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
