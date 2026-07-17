@@ -99,6 +99,8 @@ def week1_student():
 ---
 ## 🌊 Scientific Scenario: Global Plastic Production
 
+![Global plastic production data with rate of change trends](../images/W1_plastic_production.svg)
+
 The United Nations Environment Programme (UNEP) is preparing a report on plastic waste in oceans. You are part of a team analysing historical data on global plastic production.
 
 **Data: Global plastic production (million tonnes)**
@@ -550,6 +552,8 @@ def week2_student():
 ---
 ## 🌍 Scientific Scenario
 
+![Comparing exponential growth and decay across three domains](../images/W2_doubling_times.svg)
+
 Your team is preparing educational materials comparing **exponential growth** across three domains — to help policymakers understand why percentage growth rates can be deceptive and why early intervention matters.
 
 | Domain | System | Behaviour |
@@ -904,6 +908,8 @@ def week2_lab_a():
 ---
 ## 📋 Scenario
 
+![MRSA bacterial growth curve approaching shutdown threshold](../images/W2A_bacterial_hospital.svg)
+
 You are a consultant for **Royal Perth Hospital's** infection control team. A strain of antibiotic-resistant *Staphylococcus aureus* (MRSA) has been detected on a surgical instrument.
 
 - Doubling time at room temperature: **25 minutes**
@@ -1157,6 +1163,8 @@ def week2_lab_b():
         md("""\
 ---
 ## 📋 Scenario
+
+![Radioactive decay curves for Cs-137 and Sr-90](../images/W2B_radioactive_fukushima.svg)
 
 You are advising the **Japanese government** on long-term storage of radioactive waste from the Fukushima disaster. The primary isotope of concern is **Caesium-137** (half-life: **30.17 years**).
 
@@ -1470,6 +1478,8 @@ def week3_student():
         md("""\
 ---
 ## 🌍 Scientific Scenario
+
+![Schaefer growth curve with harvest lines and MSY point](../images/W3_fishery_schaefer.svg)
 
 You are a scientific advisor to the **Western Australian Fisheries Authority**. The authority manages a sardine fishery showing signs of overfishing.
 
@@ -1880,6 +1890,8 @@ def week3_lab_a():
 ---
 ## 📋 Scenario
 
+![Abalone growth parabola with current and proposed harvest levels](../images/W3A_abalone.svg)
+
 The WA Department of Fisheries manages a commercial abalone (*Haliotis roei*) fishery. Population surveys have produced the Schaefer model:
 
 $$G(S) = 0.35 \\cdot S \\cdot \\left(1 - \\frac{S}{1200}\\right)$$
@@ -2040,6 +2052,8 @@ def week3_lab_b():
         md("""\
 ---
 ## 📋 Scenario
+
+![Rock lobster growth under current vs warming conditions](../images/W3B_rock_lobster.svg)
 
 WA's rock lobster (*Panulirus cygnus*) fishery was severely overfished in the 1990s. After recovery efforts, the Schaefer model is:
 
@@ -2236,6 +2250,8 @@ def week4_student():
         md("""\
 ---
 ## 🌍 Scientific Scenario
+
+![Chemical yield curve showing optimal temperature and derivative](../images/W4_chemical_reaction.svg)
 
 A pharmaceutical company is optimizing production of a critical antibiotic. Drug yield depends on reaction temperature:
 
@@ -2451,6 +2467,8 @@ def week4_lab_a():
 ---
 ## 📋 Scenario
 
+![Pesticide concentration decay with effective zone and vulnerability window](../images/W4A_pesticide.svg)
+
 A wheat farm in the Wheatbelt uses a pesticide that degrades over time:
 
 $$C(t) = 120\\,e^{-0.15t}$$
@@ -2634,6 +2652,8 @@ def week4_lab_b():
         md("""\
 ---
 ## 📋 Scenario
+
+![Drug concentration profile with therapeutic window and dosing](../images/W4B_pharmacokinetics.svg)
 
 A pharmacologist is designing a dosing protocol for metformin (diabetes medication). Blood concentration after oral administration:
 
@@ -2820,6 +2840,8 @@ def week5_student():
         md("""\
 ---
 ## 🌍 Scientific Scenario
+
+![Wildlife corridor layout and area optimisation curve](../images/W5_wildlife_corridor.svg)
 
 The Department of Biodiversity is designing a **rectangular wildlife corridor** to connect two nature reserves. Available fencing: **2000 metres**.
 
@@ -3019,6 +3041,8 @@ def week5_lab_a():
 ---
 ## 📋 Scenario
 
+![Solar farm revenue optimisation curve](../images/W5A_solar_farm.svg)
+
 A renewable energy company designs a 50-ha solar farm near Geraldton. Annual revenue (thousands of dollars) depends on panel row spacing $x$ (metres):
 
 $$R(x) = -2x^2 + 180x - 1600$$
@@ -3207,6 +3231,8 @@ def week5_lab_b():
 ---
 ## 📋 Scenario
 
+![Aquaculture profit as a function of stocking density](../images/W5B_aquaculture.svg)
+
 A barramundi farm in Exmouth optimizes stocking density. Profit (thousands of dollars/year) as a function of stocking density $d$ (fish per 100 m³):
 
 $$P(d) = -0.5d^2 + 55d - 800$$
@@ -3384,6 +3410,8 @@ def week6_student():
         md("""\
 ---
 ## 📋 Scientific Scenario
+
+![Carbon sequestration rate and cumulative capture over time](../images/W6_carbon_sequestration.svg)
 
 A reforestation project in the Wheatbelt plants native trees across 500 ha. The rate of carbon sequestration (tonnes CO₂ per hectare per year) declines over time as trees mature:
 
@@ -3796,6 +3824,8 @@ def week6_lab_a():
 ---
 ## 📋 Scenario
 
+![Soil carbon accumulation rate and cumulative storage](../images/W6A_soil_carbon.svg)
+
 A soil carbon project converts 800 ha of cropland to improved pasture. Lab measurements show the soil carbon sequestration rate declines as soils reach a new equilibrium:
 
 $$R(t) = 15e^{-0.08t} \\quad \\text{(tonnes CO}_2\\text{-e/ha/yr)}$$
@@ -3936,6 +3966,8 @@ def week6_lab_b():
 ---
 ## 📋 Scenario
 
+![Groundwater infiltration rate and cumulative volume vs target](../images/W6B_groundwater.svg)
+
 A managed aquifer recharge (MAR) scheme in the Murray-Darling Basin diverts floodwater. The infiltration rate declines as soil pores fill:
 
 $$I(t) = 20e^{-0.12t} \\quad \\text{(ML/day)}$$
@@ -4072,6 +4104,8 @@ def week7_student():
         md("""\
 ---
 ## 📋 Scientific Scenario
+
+![Supply and demand diagram with consumer and producer surplus](../images/W7_market_welfare.svg)
 
 The Australian domestic wheat market has the following supply and demand functions:
 
@@ -4268,6 +4302,8 @@ def week7_lab_a():
 ---
 ## 📋 Scenario
 
+![Wine market equilibrium with price floor intervention](../images/W7A_wine_market.svg)
+
 The Australian domestic wine market:
 
 - **Demand:** $Q_d = 800 - 5P$ (thousand litres/yr)
@@ -4402,6 +4438,8 @@ def week7_lab_b():
 ---
 ## 📋 Scenario
 
+![Avocado market comparison: domestic only vs with exports](../images/W7B_avocado_market.svg)
+
 The Australian avocado market:
 
 - **Demand:** $Q_d = 600 - 4P$ (million avocados/yr)
@@ -4535,6 +4573,8 @@ def week8_student():
         md("""\
 ---
 ## 📋 Scientific Scenario
+
+![Lotka-Volterra phase plane and population oscillations](../images/W8_predator_prey.svg)
 
 Feral cats threaten numbats in the Western Australian wheatbelt. The population dynamics can be modelled as:
 
@@ -4753,6 +4793,8 @@ def week8_lab_a():
 ---
 ## 📋 Scenario
 
+![Detailed phase portrait with directional field and trajectory](../images/W8A_cat_control.svg)
+
 Same Lotka-Volterra model as the main lab:
 
 $$\\frac{dN}{dt} = 0.4N - 0.002NC, \\qquad \\frac{dC}{dt} = -0.3C + 0.001NC$$
@@ -4872,6 +4914,8 @@ def week8_lab_b():
         md("""\
 ---
 ## 📋 Scenario
+
+![Dingo-kangaroo dynamics: natural balance vs culling scenario](../images/W8B_dingo_kangaroo.svg)
 
 In the Kimberley, dingoes prey on kangaroos. Population dynamics:
 
@@ -5023,6 +5067,8 @@ def week9_student():
         md("""\
 ---
 ## 📋 Scientific Scenario
+
+![Diagnostic testing: population grid and PPV vs prevalence curve](../images/W9_bayes_testing.svg)
 
 During a COVID-19 wave, health authorities use a rapid antigen test with the following properties:
 
@@ -5930,6 +5976,8 @@ def week12_student():
         md("""\
 ---
 ## 📋 Scientific Scenario
+
+![Linear programming feasible region with constraint lines](../images/W12_linear_programming.svg)
 
 A hospital dietitian needs to design a daily meal plan for patients that meets nutritional requirements at minimum cost. Two food types are available:
 
