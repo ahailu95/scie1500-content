@@ -1,11 +1,11 @@
 {
-  "version": "2.2.4",
-  "lastUpdated": "2026-02-16T16:00:00+08:00",
+  "version": "2.3.0",
+  "lastUpdated": "2026-07-17T12:00:00+08:00",
   "courseInfo": {
     "code": "SCIE1500",
     "name": "Analytical Methods for Scientists",
     "year": 2026,
-    "semester": 1,
+    "semester": 2,
     "institution": "University of Western Australia",
     "coordinator": "Dr. Atakelty Hailu",
     "contactEmail": "atakelty.hailu@uwa.edu.au",
@@ -13,44 +13,24 @@
     "outlineUrl": "https://handbooks.uwa.edu.au/unitdetails?code=SCIE1500"
   },
   "semesterDates": {
-    "teachingStart": "2026-02-23",
-    "teachingEnd": "2026-05-22",
-    "swotvacStart": "2026-05-25",
-    "swotvacEnd": "2026-05-29",
-    "examsStart": "2026-05-30",
-    "examsEnd": "2026-06-13",
+    "teachingStart": "2026-07-20",
+    "teachingEnd": "2026-10-16",
+    "swotvacStart": "2026-10-19",
+    "swotvacEnd": "2026-10-23",
+    "examsStart": "2026-10-24",
+    "examsEnd": "2026-11-07",
     "breaks": [
       {
-        "name": "Mid-semester Break",
-        "start": "2026-04-06",
-        "end": "2026-04-10"
+        "name": "Mid-Semester Study Break",
+        "start": "2026-08-31",
+        "end": "2026-09-04"
       }
     ],
     "publicHolidays": [
       {
-        "name": "Labour Day",
-        "date": "2026-03-02",
-        "notes": "Monday labs affected \u2014 make-up sessions will be announced via LMS"
-      },
-      {
-        "name": "Good Friday",
-        "date": "2026-04-03",
-        "notes": "No classes"
-      },
-      {
-        "name": "Easter Monday",
-        "date": "2026-04-06",
-        "notes": "Falls within mid-semester break"
-      },
-      {
-        "name": "Anzac Day (observed)",
-        "date": "2026-04-27",
-        "notes": "Monday labs affected \u2014 make-up sessions will be announced via LMS"
-      },
-      {
-        "name": "Western Australia Day",
-        "date": "2026-06-01",
-        "notes": "Falls within exam period"
+        "name": "King's Birthday",
+        "date": "2026-09-28",
+        "notes": "UWA closed — Monday labs affected. Yadav Padhyoti will organise make-up sessions; details announced via LMS."
       }
     ]
   },
@@ -59,8 +39,8 @@
       "id": "assignment1",
       "name": "Assignment 1",
       "type": "assignment",
-      "weight": 15,
-      "dueDate": "2026-04-01T23:59:00+08:00",
+      "weight": 10,
+      "dueDate": "2026-08-26T23:59:00+08:00",
       "weekNumber": 6,
       "description": "Details available on LMS.",
       "submissionUrl": "https://lms.uwa.edu.au",
@@ -75,8 +55,8 @@
       "id": "assignment2",
       "name": "Assignment 2",
       "type": "assignment",
-      "weight": 15,
-      "dueDate": "2026-05-13T23:59:00+08:00",
+      "weight": 10,
+      "dueDate": "2026-10-07T23:59:00+08:00",
       "weekNumber": 11,
       "description": "Details available on LMS.",
       "submissionUrl": "https://lms.uwa.edu.au",
@@ -88,158 +68,74 @@
       ]
     },
     {
-      "id": "lab1",
-      "name": "Lab 1 \u2014 Week 1",
-      "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-03-03T23:59:00+08:00",
-      "weekNumber": 1,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
-      "submissionUrl": "https://lms.uwa.edu.au",
+      "id": "final_exam",
+      "name": "Final Exam",
+      "type": "exam",
+      "weight": 50,
+      "dueDate": "2026-10-24T00:00:00+08:00",
+      "weekNumber": null,
+      "description": "Face-to-face exam during the official UWA examination period (24 October – 7 November). Exact date, time, and venue via the UWA Exam Timetable.",
+      "submissionUrl": null,
       "reminderDays": [
+        14,
+        7,
+        3,
         1
       ]
     },
     {
-      "id": "lab2",
-      "name": "Lab 2 \u2014 Week 2",
+      "id": "lab_batch1",
+      "name": "Lab Worksheets — Weeks 1–3",
       "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-03-10T23:59:00+08:00",
-      "weekNumber": 2,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
-      "submissionUrl": "https://lms.uwa.edu.au",
-      "reminderDays": [
-        1
-      ]
-    },
-    {
-      "id": "lab3",
-      "name": "Lab 3 \u2014 Week 3",
-      "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-03-17T23:59:00+08:00",
+      "weight": 3,
+      "dueDate": "2026-08-11T23:59:00+08:00",
       "weekNumber": 3,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "description": "Upload Weeks 1–3 lab worksheets to LMS by 11:59pm Tuesday.",
       "submissionUrl": "https://lms.uwa.edu.au",
       "reminderDays": [
+        3,
         1
       ]
     },
     {
-      "id": "lab4",
-      "name": "Lab 4 \u2014 Week 4",
+      "id": "lab_batch2",
+      "name": "Lab Worksheets — Weeks 4–6",
       "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-03-24T23:59:00+08:00",
-      "weekNumber": 4,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
-      "submissionUrl": "https://lms.uwa.edu.au",
-      "reminderDays": [
-        1
-      ]
-    },
-    {
-      "id": "lab5",
-      "name": "Lab 5 \u2014 Week 5",
-      "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-03-31T23:59:00+08:00",
-      "weekNumber": 5,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
-      "submissionUrl": "https://lms.uwa.edu.au",
-      "reminderDays": [
-        1
-      ]
-    },
-    {
-      "id": "lab6",
-      "name": "Lab 6 \u2014 Week 6",
-      "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-04-14T23:59:00+08:00",
+      "weight": 3,
+      "dueDate": "2026-09-08T23:59:00+08:00",
       "weekNumber": 6,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week (note: mid-semester break 6\u201310 Apr).",
+      "description": "Upload Weeks 4–6 lab worksheets to LMS by 11:59pm Tuesday (date adjusted to account for the mid-semester study break).",
       "submissionUrl": "https://lms.uwa.edu.au",
       "reminderDays": [
+        3,
         1
       ]
     },
     {
-      "id": "lab7",
-      "name": "Lab 7 \u2014 Week 7",
+      "id": "lab_batch3",
+      "name": "Lab Worksheets — Weeks 7–9",
       "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-04-21T23:59:00+08:00",
-      "weekNumber": 7,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
-      "submissionUrl": "https://lms.uwa.edu.au",
-      "reminderDays": [
-        1
-      ]
-    },
-    {
-      "id": "lab8",
-      "name": "Lab 8 \u2014 Week 8",
-      "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-04-28T23:59:00+08:00",
-      "weekNumber": 8,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
-      "submissionUrl": "https://lms.uwa.edu.au",
-      "reminderDays": [
-        1
-      ]
-    },
-    {
-      "id": "lab9",
-      "name": "Lab 9 \u2014 Week 9",
-      "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-05-05T23:59:00+08:00",
+      "weight": 3,
+      "dueDate": "2026-09-29T23:59:00+08:00",
       "weekNumber": 9,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
+      "description": "Upload Weeks 7–9 lab worksheets to LMS by 11:59pm Tuesday.",
       "submissionUrl": "https://lms.uwa.edu.au",
       "reminderDays": [
+        3,
         1
       ]
     },
     {
-      "id": "lab10",
-      "name": "Lab 10 \u2014 Week 10",
+      "id": "lab_batch4",
+      "name": "Lab Worksheets — Weeks 10–12",
       "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-05-12T23:59:00+08:00",
-      "weekNumber": 10,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
-      "submissionUrl": "https://lms.uwa.edu.au",
-      "reminderDays": [
-        1
-      ]
-    },
-    {
-      "id": "lab11",
-      "name": "Lab 11 \u2014 Week 11",
-      "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-05-19T23:59:00+08:00",
-      "weekNumber": 11,
-      "description": "Upload completed lab work to LMS by Tuesday 11:59pm after lab week.",
-      "submissionUrl": "https://lms.uwa.edu.au",
-      "reminderDays": [
-        1
-      ]
-    },
-    {
-      "id": "lab12",
-      "name": "Lab 12 \u2014 Week 12",
-      "type": "lab",
-      "weight": 1.67,
-      "dueDate": "2026-06-02T23:59:00+08:00",
+      "weight": 3,
+      "dueDate": "2026-10-27T23:59:00+08:00",
       "weekNumber": 12,
-      "description": "Upload completed lab work to LMS by Tuesday 2 June at 11:59pm (extended to first Tuesday after SWOTVAC).",
+      "description": "Upload Weeks 10–12 lab worksheets to LMS by 11:59pm Tuesday (date adjusted to account for the pre-exam study break).",
       "submissionUrl": "https://lms.uwa.edu.au",
       "reminderDays": [
+        3,
         1
       ]
     }
@@ -258,38 +154,52 @@
     "labs": [
       {
         "day": "Monday",
-        "time": "10:00",
+        "time": "11:00",
         "duration": 120,
-        "location": "Crawley Campus, ENCM 207A",
-        "notes": "Crawley morning session"
+        "location": "Reid Library, Seminar Room 139.106",
+        "notes": "Crawley Campus — Lab Instructor: Yadav Padhyoti"
       },
       {
         "day": "Monday",
-        "time": "14:00",
+        "time": "13:00",
         "duration": 120,
-        "location": "Crawley Campus, ENCM 207A",
-        "notes": "Crawley afternoon session"
+        "location": "Civil & Mechanical Engineering, Room G11 (224.G11)",
+        "notes": "Crawley Campus — Lab Instructor: Yadav Padhyoti"
+      },
+      {
+        "day": "Tuesday",
+        "time": "11:00",
+        "duration": 120,
+        "location": "Business School, Rick Crabb Tutorial Room 441.262",
+        "notes": "Crawley Campus — Lab Instructors: Ariel Nguyen / Dr. Atakelty Hailu"
       },
       {
         "day": "Wednesday",
         "time": "13:00",
         "duration": 120,
-        "location": "Crawley Campus, ENCM 207A",
-        "notes": "Crawley Wednesday session"
+        "location": "EZone Central, Giumelli Learning Studio 1 (275.206)",
+        "notes": "Crawley Campus — Lab Instructors: Ariel Nguyen / Dr. Atakelty Hailu"
       },
       {
-        "day": "Thursday",
-        "time": "14:00",
-        "duration": 120,
-        "location": "Crawley Campus, ENCM 207A",
-        "notes": "Crawley Thursday session"
-      },
-      {
-        "day": "Wednesday",
+        "day": "Friday",
         "time": "09:00",
         "duration": 120,
-        "location": "Albany Campus, ALBSCI 302/303",
-        "notes": "Albany campus session"
+        "location": "Civil & Mechanical Engineering, Room G13 (224.G13)",
+        "notes": "Crawley Campus — Lab Instructor: Yadav Padhyoti"
+      },
+      {
+        "day": "Friday",
+        "time": "11:00",
+        "duration": 120,
+        "location": "Civil & Mechanical Engineering, Room G13 (224.G13)",
+        "notes": "Crawley Campus — Lab Instructor: Yadav Padhyoti"
+      },
+      {
+        "day": "Tuesday",
+        "time": "09:30",
+        "duration": 120,
+        "location": "ALBSCI: [302] Seminar A / [303] Seminar B",
+        "notes": "Albany Campus — Lab Instructor: Dr. Peter Speldewinde"
       }
     ],
     "other": []
@@ -304,7 +214,7 @@
     {
       "id": "software",
       "title": "Required Software",
-      "content": "Python 3.10+ is required for lab exercises. We recommend Miniconda \u2014 a lightweight installer that includes Python, Jupyter Notebook, and the conda package manager. Download the version that matches your operating system and processor chip (e.g. Intel/AMD vs Apple Silicon on Mac). You can also access Python through UniApps or Google Colab.",
+      "content": "Python 3.10+ is required for lab exercises. We recommend Miniconda — a lightweight installer that includes Python, Jupyter Notebook, and the conda package manager. Download the version that matches your operating system and processor chip (e.g. Intel/AMD vs Apple Silicon on Mac). You can also access Python through UniApps or Google Colab.",
       "icon": "computer",
       "links": [
         {
@@ -316,6 +226,12 @@
           "url": "https://colab.research.google.com"
         }
       ]
+    },
+    {
+      "id": "labhandbook",
+      "title": "Lab Handbook",
+      "content": "The Lab Handbook contains important information about lab attendance, participation requirements, and assessment details.",
+      "icon": "menu_book"
     },
     {
       "id": "calculator",
