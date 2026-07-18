@@ -199,7 +199,7 @@ Presentations are assessed on four criteria: problem formulation, mathematical a
 
 The final three labs replace the standard Problem Brief format with activities designed to prepare you directly for the exam:
 
-- **Week 10 — Mock Exam Workshop:** Groups work through timed Part II exam-style questions (hypothesis testing, optimisation, integration, differential equations), then present solutions on the whiteboard for class discussion.
+- **Week 10 — Mock Exam Workshop:** Groups work through timed Part III exam-style questions (hypothesis testing, optimisation, integration, differential equations), then present solutions on the whiteboard for class discussion.
 - **Week 11 — Peer Review Exchange:** Each group *creates* a trigonometry problem for another group (involving sinusoidal modelling with real-world data), then solves the problem they receive. This counts as a double worksheet.
 - **Week 12 — Gallery Walk Capstone:** Groups solve a linear programming problem, set up poster stations, and rotate through each other's stations to explain and compare solutions.
 
@@ -327,12 +327,13 @@ The assessment for the unit includes **ongoing assessments** in the form of **la
 
 ### Final Exam
 
-The final exam is a paper-based or face-to-face exam scheduled and administered by the university during the examination period (24 October – 7 November 2026). The exam covers the mathematical methods and science topics addressed in the unit. It consists of two parts:
+The final exam is a paper-based exam scheduled and administered by the university during the examination period (24 October – 7 November 2026). The exam covers the mathematical methods and scientific applications addressed in the unit. It consists of three parts:
 
-- **Part I — Mathematical Methods and Science Applications** (approximately 42 questions): short-answer and multiple-choice questions on the mathematical concepts and scientific applications covered across all weeks.
-- **Part II — Python as a Mathematical Tool** (approximately 6–8 multiple-choice questions): questions that test your ability to use Python to perform mathematical tasks — such as numerical integration, differentiation, solving equations, and plotting — at a conceptual level. You will not need a computer; questions are designed to be answerable from your understanding of how Python tools work (e.g., identifying the right function, reading a short code snippet, or interpreting a plot).
+- **Part I — Multiple Choice** (36 questions × 2 marks = 72 marks): multiple-choice questions testing recognition and single-step skills across all 12 weeks.
+- **Part II — Python as a Mathematical Tool** (7 questions × 2 marks = 14 marks): multiple-choice questions testing your ability to read and reason about Python code — such as identifying the correct function call, interpreting a short code snippet, or reading a plot. You will not need a computer; questions are answered from your understanding of how Python tools work.
+- **Part III — Long Answer** (answer 2 of 4 questions × 12 marks = 24 marks): extended integrative problems requiring you to set up, solve, and interpret larger problems that draw on skills from multiple weeks. Read all four questions before you start, then commit to your two choices.
 
-A sample exam is available through the **SciQuant app** (under Course Overview → Sample Exam) so you have a clear picture of the question style and difficulty. Additional practice materials are available on the LMS.
+A **sample exam** and a **study guide** are available through the **SciQuant app** (under Course Overview) so you have a clear picture of the question style, difficulty, and recommended time allocation for each part. Additional practice materials are available on the LMS.
 
 ### Assignments
 
