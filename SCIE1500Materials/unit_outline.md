@@ -26,10 +26,13 @@
 - **Labs:** Mon 11:00am–1:00pm, Mon 1:00–3:00pm, Fri 9:00–11:00am, Fri 11:00am–1:00pm  
 - **Venues:** Reid Library, Seminar Room 139.106 (Mon 11am); Civ. & Mech. Eng., Room G11, 224.G11 (Mon 1pm); Civ. & Mech. Eng., Room G13, 224.G13 (Fri)
 
-**Ariel Nguyen / Dr. Atakelty Hailu** (Tuesday & Wednesday, Crawley Campus)  
-- **Email:** atakelty.hailu@uwa.edu.au  
-- **Labs:** Tue 11:00am–1:00pm, Wed 1:00–3:00pm  
-- **Venues:** Business School, Rick Crabb Tutorial Room 441.262 (Tue); EZone Central, Giumelli Learning Studio 1, 275.206 (Wed)
+**Dr. Atakelty Hailu** also teaches a lab (Tuesday, Crawley Campus) — see contact details above under Unit Coordinator.  
+- **Lab:** Tue 11:00am–1:00pm  
+- **Venue:** Business School, Rick Crabb Tutorial Room 441.262
+
+**Dr. Ariel Nguyen** (Wednesday, Crawley Campus)  
+- **Lab:** Wed 1:00–3:00pm  
+- **Venue:** EZone Central, Giumelli Learning Studio 1, 275.206
 
 **Dr. Peter Speldewinde** (Albany Campus)  
 - **Email:** peter.speldewinde@uwa.edu.au  
@@ -172,8 +175,8 @@ Labs run during teaching weeks 1–6 and 7–12, with no labs during the mid-sem
 |------------|-------|---------|----------------|
 | Monday 11:00am–1:00pm | Reid Library, Seminar Room 139.106 | Crawley | Yadav Padhyoti |
 | Monday 1:00–3:00pm | Civ. & Mech. Eng., Room G11, 224.G11 | Crawley | Yadav Padhyoti |
-| Tuesday 11:00am–1:00pm | Business School, Rick Crabb Tutorial Room 441.262 | Crawley | Ariel Nguyen / A. Hailu |
-| Wednesday 1:00–3:00pm | EZone Central, Giumelli Learning Studio 1, 275.206 | Crawley | Ariel Nguyen / A. Hailu |
+| Tuesday 11:00am–1:00pm | Business School, Rick Crabb Tutorial Room 441.262 | Crawley | Dr. Atakelty Hailu |
+| Wednesday 1:00–3:00pm | EZone Central, Giumelli Learning Studio 1, 275.206 | Crawley | Dr. Ariel Nguyen |
 | Friday 9:00–11:00am | Civ. & Mech. Eng., Room G13, 224.G13 | Crawley | Yadav Padhyoti |
 | Friday 11:00am–1:00pm | Civ. & Mech. Eng., Room G13, 224.G13 | Crawley | Yadav Padhyoti |
 | Tuesday 9:30–11:30am | ALBSCI: [302] Seminar A (10), [303] Seminar B (10) | Albany | Dr. Peter Speldewinde |

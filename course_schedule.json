@@ -1,6 +1,6 @@
 {
-  "version": "2.3.1",
-  "lastUpdated": "2026-07-18T12:00:00+08:00",
+  "version": "2.3.2",
+  "lastUpdated": "2026-07-18T13:00:00+08:00",
   "courseInfo": {
     "code": "SCIE1500",
     "name": "Analytical Methods for Scientists",
@@ -178,7 +178,7 @@
         "time": "13:00",
         "duration": 120,
         "location": "EZone Central, Giumelli Learning Studio 1 (275.206)",
-        "notes": "Crawley Campus — Lab Instructor: Ariel Nguyen"
+        "notes": "Crawley Campus — Lab Instructor: Dr. Ariel Nguyen"
       },
       {
         "day": "Friday",
