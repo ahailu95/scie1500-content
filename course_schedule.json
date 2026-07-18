@@ -1,6 +1,6 @@
 {
-  "version": "2.3.0",
-  "lastUpdated": "2026-07-17T12:00:00+08:00",
+  "version": "2.3.1",
+  "lastUpdated": "2026-07-18T12:00:00+08:00",
   "courseInfo": {
     "code": "SCIE1500",
     "name": "Analytical Methods for Scientists",
@@ -171,14 +171,14 @@
         "time": "11:00",
         "duration": 120,
         "location": "Business School, Rick Crabb Tutorial Room 441.262",
-        "notes": "Crawley Campus — Lab Instructors: Ariel Nguyen / Dr. Atakelty Hailu"
+        "notes": "Crawley Campus — Lab Instructor: Dr. Atakelty Hailu"
       },
       {
         "day": "Wednesday",
         "time": "13:00",
         "duration": 120,
         "location": "EZone Central, Giumelli Learning Studio 1 (275.206)",
-        "notes": "Crawley Campus — Lab Instructors: Ariel Nguyen / Dr. Atakelty Hailu"
+        "notes": "Crawley Campus — Lab Instructor: Ariel Nguyen"
       },
       {
         "day": "Friday",

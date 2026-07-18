@@ -184,13 +184,13 @@ In 2026, the lab programme has been redesigned around the theme **"From Problem 
 
 ### Group Work and Presentations (Weeks 1–9)
 
-In Week 1 you will be assigned to a **permanent group of 5–7 students**. Each week your group works together on that week's Problem Brief and submits a group worksheet via LMS by the end of the lab day.
+In Week 1 you will be assigned to a **permanent group of 5–7 students**. Each week your group works together on that week's Problem Brief during the lab session.
 
 From **Weeks 3 to 9**, two groups present the *previous* week's work at the start of each lab session (10 minutes per group, all members speak). Each group presents **exactly twice** during the semester. To keep presentations engaging, Problem Briefs in Weeks 2–8 come in two **variations (A and B)**: both cover the same mathematical techniques but use different real-world contexts and data, so the audience sees two distinct applications each week rather than a repeat.
 
 Presentations are assessed on four criteria: problem formulation, mathematical approach, results and interpretation, and communication quality. The variations are of equivalent difficulty and the same rubric applies to both.
 
-**Individual responsibility:** Although you work in groups, every student must upload their own copy of the completed worksheet each week via LMS. All submissions and grading are handled through LMS.
+**Individual responsibility:** Although you work in groups, every student must upload their own copy of the completed worksheet. Submissions are made once every 3 weeks, not weekly (see **Lab Assessment Breakdown** below and the **Participation** section for exact batch due dates). All submissions and grading are handled through LMS.
 
 ### Exam Preparation Labs (Weeks 10–12)
 
