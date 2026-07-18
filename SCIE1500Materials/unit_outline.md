@@ -201,7 +201,7 @@ The final three labs replace the standard Problem Brief format with activities d
 
 - **Week 10 — Mock Exam Workshop:** Groups work through timed Part III exam-style questions (hypothesis testing, optimisation, integration, differential equations), then present solutions on the whiteboard for class discussion.
 - **Week 11 — Peer Review Exchange:** Each group *creates* a trigonometry problem for another group (involving sinusoidal modelling with real-world data), then solves the problem they receive. This counts as a double worksheet.
-- **Week 12 — Gallery Walk Capstone:** Groups solve a linear programming problem, set up poster stations, and rotate through each other's stations to explain and compare solutions.
+- **Week 12 — Solve LP and Share:** Groups solve their assigned linear programming problem, then share solutions with the class.
 
 No group presentations occur in Weeks 10–12; instead, all groups participate equally in these collaborative activities.
 
