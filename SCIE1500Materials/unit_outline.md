@@ -384,7 +384,7 @@ Put the following dates into your calendar.
 
 Lab work is submitted in batches of three labs, due at 11:59pm on the Tuesday after the third lab in each batch: **11 August** (LABs 1–3), **8 September** (LABs 4–6), **29 September** (LABs 7–9), and **27 October** (LABs 10–12). The September 8 and October 27 dates account for the mid-semester and pre-exam study breaks respectively, as assessment deadlines are not permitted during study breaks. See the due dates table above.
 
-Students should make sure that they are uploading the right file and that their submission has gone through. Do not upload Pages (Mac software) files. Upload Pages files converted into PDF. If you are using Word, convert the Word file into PDF and upload the latter. View your uploaded file in the LMS to be sure it is all as it should be.
+Students should make sure that they are uploading the right file and that their submission has gone through. For triweekly lab submissions, upload your completed **Jupyter Notebook** (the `.ipynb` file) — not a screenshot or any other format. For presentation-related uploads, submit your slides as a **`.pptx` or `.pdf`** file. View your uploaded file in the LMS to be sure it is all as it should be.
 
 ---
 
