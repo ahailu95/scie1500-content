@@ -1,7 +1,7 @@
 # Analytical Methods for Scientists (SCIE1500)
 ## Semester 2, 2026
 
-**Unit Coordinator:** Dr. Atakelty Hailu  
+**Unit Coordinator:** Assoc. Prof. Atakelty Hailu  
 **Schools:** SAgE & PMC  
 **Level:** 1  
 **Credit Units:** 6 points
@@ -14,7 +14,7 @@
 
 ### Unit Coordinator and Instructor
 
-**Dr. Atakelty Hailu**  
+**Assoc. Prof. Atakelty Hailu**  
 - **Email:** atakelty.hailu@uwa.edu.au  
 - **Office:** G.030, North West Wing, Ag. Inst. Bldg  
 - **Consultation:** by appointment (see LMS for office location)
@@ -26,7 +26,7 @@
 - **Labs:** Mon 11:00am–1:00pm, Mon 1:00–3:00pm, Fri 9:00–11:00am, Fri 11:00am–1:00pm  
 - **Venues:** Reid Library, Seminar Room 139.106 (Mon 11am); Civ. & Mech. Eng., Room G11, 224.G11 (Mon 1pm); Civ. & Mech. Eng., Room G13, 224.G13 (Fri)
 
-**Dr. Atakelty Hailu** also teaches a lab (Tuesday, Crawley Campus) — see contact details above under Unit Coordinator.  
+**Assoc. Prof. Atakelty Hailu** also teaches a lab (Tuesday, Crawley Campus) — see contact details above under Unit Coordinator.  
 - **Lab:** Tue 11:00am–1:00pm  
 - **Venue:** Business School, Rick Crabb Tutorial Room 441.262
 
@@ -76,6 +76,8 @@ The overall unit focus is on using modern computational methods to specify and s
 
 This unit is taught using recorded lectures and lab sessions. Each week, students need to attend only one 2-hour lab session. Before coming to the labs, they should work through the recorded video lectures (both science and math) for the week. Recorded lectures for each week will appear mostly as a series of short video recordings. Lecture content is also available through the **SciQuant Assistant app**, which delivers lessons, practice exercises and lab notebooks.
 
+Each lab session begins with a short **warm-up**: students answer a few questions based on their prior preparation, followed by a brief discussion of the week's content, before moving into group work on that week's Problem Brief.
+
 Labs will be held during all teaching weeks of the semester, except during study breaks and UWA public holidays. Students missing labs because of a public holiday will be accommodated in make-up lab sessions organised online or face-to-face.
 
 ---
@@ -92,7 +94,7 @@ The SciQuant Assistant is a purpose-built learning application for this unit. It
 
 - **Practice Questions** — Multiple-choice and open-ended practice problems with progressive hints, step-by-step solutions, and the ability to ask the AI tutor for guidance on any specific question. The system tracks your attempts and encourages you to try before revealing solutions.
 
-- **Jupyter Notebook Integration** — Lab notebooks can be viewed directly in the app, or opened in Google Colab or your local Anaconda installation for interactive coding. When you open a notebook in Google Colab, you are working on a temporary copy—any changes you make (e.g. your code, outputs, and notes) will be lost when you close the tab unless you save. Use **File → Save a copy in Drive** to save your work to your personal Google Drive (this works automatically with your UWA Google account). You can also use **File → Save a copy as a GitHub Gist**, which creates a shareable code snippet on GitHub; this option requires a free GitHub account.
+- **Jupyter Notebook Integration** — Lab notebooks can be viewed directly in the app, or opened in Google Colab or your local Anaconda installation for interactive coding. When you open a notebook in Google Colab, you are working on a temporary copy—any changes you make (e.g. your code, outputs, and notes) will be lost when you close the tab unless you save. Use **File → Save a copy in Drive** to save your work to your personal Google Drive (this works automatically with your UWA Google account). Optionally, you can use **File → Save a copy as a GitHub Gist** to create a shareable code snippet; this requires a free GitHub account and is **not required** for this unit.
 
 - **STEM Tools** — A suite of standalone scientific tools available at any time, including:
   - Scientific calculator with expression history
@@ -175,7 +177,7 @@ Labs run during teaching weeks 1–6 and 7–12, with no labs during the mid-sem
 |------------|-------|---------|----------------|
 | Monday 11:00am–1:00pm | Reid Library, Seminar Room 139.106 | Crawley | Yadav Padhyoti |
 | Monday 1:00–3:00pm | Civ. & Mech. Eng., Room G11, 224.G11 | Crawley | Yadav Padhyoti |
-| Tuesday 11:00am–1:00pm | Business School, Rick Crabb Tutorial Room 441.262 | Crawley | Dr. Atakelty Hailu |
+| Tuesday 11:00am–1:00pm | Business School, Rick Crabb Tutorial Room 441.262 | Crawley | Assoc. Prof. Atakelty Hailu |
 | Wednesday 1:00–3:00pm | EZone Central, Giumelli Learning Studio 1, 275.206 | Crawley | Dr. Ariel Nguyen |
 | Friday 9:00–11:00am | Civ. & Mech. Eng., Room G13, 224.G13 | Crawley | Yadav Padhyoti |
 | Friday 11:00am–1:00pm | Civ. & Mech. Eng., Room G13, 224.G13 | Crawley | Yadav Padhyoti |
@@ -189,7 +191,7 @@ In 2026, the lab programme has been redesigned around the theme **"From Problem 
 
 In Week 1 you will be assigned to a **permanent group of 5–7 students**. Each week your group works together on that week's Problem Brief during the lab session.
 
-From **Weeks 3 to 9**, two groups present the *previous* week's work at the start of each lab session (10 minutes per group, all members speak). Each group presents **exactly twice** during the semester. To keep presentations engaging, Problem Briefs in Weeks 2–8 come in two **variations (A and B)**: both cover the same mathematical techniques but use different real-world contexts and data, so the audience sees two distinct applications each week rather than a repeat.
+From **Weeks 3 to 9**, two groups present the *previous* week's work at the start of each lab session (10 minutes per group, all members speak). Each group presents **exactly twice** during the semester. **No reading from notes** — presenters should speak to the class rather than read a script. To keep presentations engaging, Problem Briefs in Weeks 2–8 come in two **variations (A and B)**: both cover the same mathematical techniques but use different real-world contexts and data, so the audience sees two distinct applications each week rather than a repeat.
 
 Presentations are assessed on four criteria: problem formulation, mathematical approach, results and interpretation, and communication quality. The variations are of equivalent difficulty and the same rubric applies to both.
 
@@ -411,7 +413,7 @@ The unit uses Python for its lab exercises, but no prior knowledge of Python or 
 **Saving your work in Google Colab**: When you open a lab notebook via Google Colab, you are working on a temporary copy hosted on Google's servers. **Your edits, code outputs, and notes are not saved automatically**—if you close the browser tab without saving, your work will be lost. To keep your work:
 
 - **Save a copy in Drive** (recommended): Go to **File → Save a copy in Drive**. This saves the notebook to your Google Drive under a "Colab Notebooks" folder. Since UWA provides you with a Google account, this works immediately with no additional setup. You can return to your saved copy at any time from Google Drive.
-- **Save a copy as a GitHub Gist**: Go to **File → Save a copy as a GitHub Gist**. A Gist is a lightweight way to share code snippets online. This option **requires a free GitHub account** (https://github.com/signup). If you do not have a GitHub account, this option will prompt you to sign in or create one. Gists are useful for sharing specific exercises with classmates or instructors.
+- **Save a copy as a GitHub Gist** (optional — not required for this unit): Go to **File → Save a copy as a GitHub Gist**. A Gist is a lightweight way to share code snippets online. This requires a free GitHub account (https://github.com/signup); if you do not have one, this option will prompt you to sign in or create one. You do **not** need a GitHub account for this unit — use Save a copy in Drive as your primary saving method.
 - **Download**: Go to **File → Download → Download .ipynb** to save the notebook file to your computer. You can reopen it later in Colab, Anaconda, or any Jupyter environment.
 
 ### Communicating with Instructors and Others
