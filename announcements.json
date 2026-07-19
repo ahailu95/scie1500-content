@@ -1,7 +1,16 @@
 {
-  "version": "3.0.0",
-  "lastUpdated": "2026-07-12T09:00:00+08:00",
+  "version": "3.1.0",
+  "lastUpdated": "2026-07-19T09:00:00+08:00",
   "announcements": [
+    {
+      "id": "ai-tutor-access-s2-2026",
+      "title": "AI Tutor Access \u2014 Claude API Key or SciQuant Cloud",
+      "message": "There are two ways to get high-quality AI tutoring inside SciQuant this semester.\n\n1. Your own Claude API key (recommended for the full semester)\nYou are encouraged to get your own personal Claude API key and use Claude as your tutor inside SciQuant. Sign up at console.anthropic.com, then go to Settings \u2192 Billing to add credit (a card or similar payment method is required). About $5\u201310 of credit is typically enough for a full semester of regular use. Full setup steps are in the app under Settings \u2192 AI Backend \u2192 Claude API.\n\n2. SciQuant Cloud AI service (free, unit-provided)\nIf you'd rather not set up your own key, you can use the SciQuant Cloud AI service instead \u2014 during the first couple of weeks of semester, and during lab sessions for the rest of the semester. In the app, go to Settings \u2192 AI Backend \u2192 SciQuant Cloud and enter this Server URL:\n\nhttps://sciquant-tutor-proxy.scie1500.workers.dev\n\nLeave the Auth Token field blank.\n\nPlease keep this URL to yourself \u2014 don't post it publicly or share it outside this unit. The cost of the service depends on how much it is used, so unnecessary sharing could affect availability for everyone in the class.",
+      "publishedAt": "2026-07-19T09:00:00+08:00",
+      "priority": "normal",
+      "category": "resource",
+      "isPinned": false
+    },
     {
       "id": "welcome-s2-2026",
       "title": "Welcome to SCIE1500 \u2014 Semester 2, 2026",
