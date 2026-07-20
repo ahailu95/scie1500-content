@@ -955,12 +955,12 @@ print(f"  One-tailed (upper): {'REJECT H₀' if result_greater.pvalue < alpha el
 print(f"  Two-tailed: {'REJECT H₀' if result_two.pvalue < alpha else 'Fail to reject H₀'}")
 ```
 
-## Q35 Exam Question: Virus Variant Transmissibility
+## Worked Example: One-Tailed vs Two-Tailed Hypothesis Test
 
 ```python
-# Q35: Is the new variant MORE infectious?
+# Worked example: Is the new variant MORE infectious?
 print("="*70)
-print("Q35 EXAM QUESTION: Is the new variant MORE infectious?")
+print("WORKED EXAMPLE: Is the new variant MORE infectious?")
 print("="*70)
 
 # Data

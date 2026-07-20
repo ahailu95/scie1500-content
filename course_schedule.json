@@ -1,5 +1,5 @@
 {
-  "version": "2.3.2",
+  "version": "2.3.3",
   "lastUpdated": "2026-07-18T13:00:00+08:00",
   "courseInfo": {
     "code": "SCIE1500",
@@ -226,12 +226,6 @@
           "url": "https://colab.research.google.com"
         }
       ]
-    },
-    {
-      "id": "labhandbook",
-      "title": "Lab Handbook",
-      "content": "The Lab Handbook contains important information about lab attendance, participation requirements, and assessment details.",
-      "icon": "menu_book"
     },
     {
       "id": "calculator",
