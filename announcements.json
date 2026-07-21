@@ -1,7 +1,17 @@
 {
-  "version": "3.2.1",
-  "lastUpdated": "2026-07-20T01:10:00+08:00",
+  "version": "3.2.2",
+  "lastUpdated": "2026-07-21T17:15:00+08:00",
   "announcements": [
+    {
+      "id": "app-update-2026-07-21",
+      "title": "App Update v2.1.18 — Claude AI Fixed (Desktop & Web), New Lab Instructor",
+      "message": "SciQuant Assistant version 2.1.18 was released today (21 July) and fixes an important AI tutoring issue.\n\nWhat's fixed:\n• Claude AI tutoring was failing for some of you because Anthropic retired the AI model the app was using. This is now fixed — the app connects to the newer, more capable Claude Sonnet 5 model.\n• The web version of the app (https://ahailu95.github.io/sciquant_app/) previously could not connect to Claude AI at all due to a browser security restriction. This is now fixed too — Claude AI tutoring works normally in the web app.\n\nTeaching team update:\n• Elijah Dare has joined the teaching team as a co-instructor for the Tuesday 11:00am–1:00pm Crawley lab, alongside Assoc. Prof. Atakelty Hailu. See the updated unit outline for details.\n\nIf you use the installed desktop app, please download and install version 2.1.18 via the link in the LMS as soon as you can. If you use the web version, no action is needed — just refresh the page.\n\nNot sure which version you're on? Check Settings → About in the app.",
+      "publishedAt": "2026-07-21T17:15:00+08:00",
+      "expiresAt": "2026-08-04T00:00:00+08:00",
+      "priority": "important",
+      "category": "general",
+      "isPinned": true
+    },
     {
       "id": "app-update-2026-07-19",
       "title": "App Update Released — Please Update SciQuant Assistant",
