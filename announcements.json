@@ -1,6 +1,6 @@
 {
-  "version": "3.2.2",
-  "lastUpdated": "2026-07-21T17:15:00+08:00",
+  "version": "3.2.3",
+  "lastUpdated": "2026-07-21T18:00:00+08:00",
   "announcements": [
     {
       "id": "app-update-2026-07-21",
@@ -10,14 +10,14 @@
       "expiresAt": "2026-08-04T00:00:00+08:00",
       "priority": "important",
       "category": "general",
-      "isPinned": true
+      "isPinned": false
     },
     {
       "id": "app-update-2026-07-19",
       "title": "App Update Released — Please Update SciQuant Assistant",
       "message": "The SciQuant Assistant app was updated on 19 July, just after 7pm.\n\nIf you installed the app before then, please update to the latest version as soon as possible — some content and fixes in this update are not available on older versions.\n\nTo update:\n• Get the latest version via the link provided in the LMS\n• Restart the app after installing\n\nNot sure which version you're on? Check Settings → About in the app.\n\nCan't update right away? You can keep learning in the meantime using the web version of the app:\nhttps://ahailu95.github.io/sciquant_app/\n\nNote: the web version has a couple of limitations (no offline/local AI models, no image attachments), but Claude API and SciQuant Cloud tutoring both work normally. Please still update the installed app as soon as you're able to.",
       "publishedAt": "2026-07-20T01:05:00+08:00",
-      "expiresAt": "2026-08-03T00:00:00+08:00",
+      "expiresAt": "2026-07-21T18:00:00+08:00",
       "priority": "important",
       "category": "general",
       "isPinned": true
