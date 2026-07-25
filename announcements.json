@@ -1,7 +1,17 @@
 {
-  "version": "3.2.4",
-  "lastUpdated": "2026-07-25T15:00:00+08:00",
+  "version": "3.2.5",
+  "lastUpdated": "2026-07-25T16:30:00+08:00",
   "announcements": [
+    {
+      "id": "problem-brief-rubric-use-colab-2026-07-25",
+      "title": "Presentation Rubric Added to Problem Briefs — Use \"Open in Colab\" to See It",
+      "message": "We've added the Presentation Marking Rubric to the end of each Week 2–8 Problem Brief notebook (both Variation A and B), along with a clarified submission requirement: every group member must individually upload their own copy of the presentation slides after presenting (not just one upload per group).\n\nImportant: the in-app \"View\" button shows a version of the notebook bundled with the app, which hasn't been updated yet. To see the new rubric and submission notes right now, open the notebook with the \"Open in Colab\" button instead — that always loads the latest version.\n\nThe in-app viewer will show the update automatically once the next app version is released.",
+      "publishedAt": "2026-07-25T16:30:00+08:00",
+      "expiresAt": "2026-09-30T00:00:00+08:00",
+      "priority": "normal",
+      "category": "resource",
+      "isPinned": false
+    },
     {
       "id": "lab-presentation-schedule-2026-07-25",
       "title": "Lab Presentation Schedule (Weeks 3–9) Posted",
