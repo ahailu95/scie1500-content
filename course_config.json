@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.3.9",
-  "lastUpdated": "2026-07-20",
+  "version": "3.4.0",
+  "lastUpdated": "2026-07-25",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -1304,6 +1304,13 @@
       "description": "Exam blueprint, week-by-week learning outcomes checklist, formula sheet suggestions (calculus, models, probability, Python quick-reference), common traps, and 5 fully-worked exemplar problems.",
       "url": "https://ahailu95.github.io/scie1500-content/sample_exam/SCIE1500_Study_Guide_S2_2026.html",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/SCIE1500_Study_Guide_S2_2026.html"
+    },
+    {
+      "id": "lab_presentation_schedule",
+      "title": "Lab Presentation Schedule (Weeks 3–9)",
+      "description": "Which group presents in each lab session for Weeks 3–9, and the title of the Problem Brief (Variation A or B) each group is presenting.",
+      "url": "https://ahailu95.github.io/scie1500-content/Lab_Presentation_Schedule_Weeks3-9.html",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/Lab_Presentation_Schedule_Weeks3-9.html"
     }
   ],
   "github": {
