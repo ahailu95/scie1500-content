@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "lastUpdated": "2026-07-25",
   "institution": {
     "id": "uwa",
@@ -1311,6 +1311,13 @@
       "description": "Which group presents in each lab session for Weeks 3–9, and the title of the Problem Brief (Variation A or B) each group is presenting.",
       "url": "https://ahailu95.github.io/scie1500-content/Lab_Presentation_Schedule_Weeks3-9.html",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/Lab_Presentation_Schedule_Weeks3-9.html"
+    },
+    {
+      "id": "presentation_rubric",
+      "title": "Presentation Marking Rubric",
+      "description": "The 20-mark rubric (Problem Formulation, Mathematical Approach, Results & Interpretation, Communication Quality) used to grade your group presentation.",
+      "url": "https://ahailu95.github.io/scie1500-content/Presentation_Marking_Rubric.html",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/Presentation_Marking_Rubric.html"
     }
   ],
   "github": {
