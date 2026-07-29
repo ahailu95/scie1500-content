@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.2",
-  "lastUpdated": "2026-07-28",
+  "version": "3.4.3",
+  "lastUpdated": "2026-07-29",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -207,7 +207,7 @@
           "title": "Exponential and Logarithmic Functions: Part 3 (Logarithmic Functions)",
           "description": "Lecture recording: logarithmic functions, log laws, and applications",
           "type": "video",
-          "url": "https://echo360.net.au/media/702c030f-85c1-4163-905c-6fe63f1cd7c7/public",
+          "url": "https://echo360.net.au/media/9ce0dee0-b1b1-4e5a-8791-4575c1103166/public",
           "source": "custom",
           "requiresAuth": false
         }
@@ -310,7 +310,7 @@
           "title": "Logistic functions and other topics in lesson 4",
           "description": "Lecture recording: logistic functions and additional topics covered in lesson 4",
           "type": "video",
-          "url": "https://echo360.net.au/media/764ef4d8-e496-4534-a5bb-d41d94cad0b7/public",
+          "url": "https://echo360.net.au/media/d3430fa7-11f5-4025-b18a-5de4d306193b/public",
           "source": "custom",
           "requiresAuth": false
         }
