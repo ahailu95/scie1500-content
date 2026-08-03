@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.3",
-  "lastUpdated": "2026-07-29",
+  "version": "3.4.4",
+  "lastUpdated": "2026-08-03",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -411,37 +411,28 @@
       "videos": [
         {
           "id": "w4_video_1",
-          "title": "Limits, continuity and introduction to derivatives (Part 1)",
-          "description": "Lecture recording: limits, continuity and introduction to derivatives",
+          "title": "Limits (Week 4, Part 1)",
+          "description": "Lecture recording: limits",
           "type": "video",
-          "url": "https://echo360.net.au/media/0e069436-16b4-419d-bdf1-294d1197b9df/public",
+          "url": "https://echo360.net.au/media/602a18f3-3a04-4b67-b972-a9c1b3b9e361/public",
           "source": "custom",
           "requiresAuth": false
         },
         {
           "id": "w4_video_2",
-          "title": "Limits (Part 2, Dr. Hailu)",
-          "description": "Lecture recording: limits",
+          "title": "Continuity and Derivatives (Week 4, Part 2)",
+          "description": "Lecture recording: continuity and introduction to derivatives",
           "type": "video",
-          "url": "https://echo360.net.au/media/8ca9ae0b-badd-47b8-9ec3-8173738a55ea/public",
+          "url": "https://echo360.net.au/media/a4c0ecd9-055c-4559-9cce-8a36539606f4/public",
           "source": "custom",
           "requiresAuth": false
         },
         {
           "id": "w4_video_3",
-          "title": "Continuity (Part 3, Dr. Hailu)",
-          "description": "Lecture recording: continuity",
+          "title": "Derivative Rules and Applications",
+          "description": "Lecture recording: derivative rules and applications",
           "type": "video",
-          "url": "https://echo360.net.au/media/3cb6d115-d7ff-4d0f-b997-38058d812677/public",
-          "source": "custom",
-          "requiresAuth": false
-        },
-        {
-          "id": "w4_video_4",
-          "title": "Derivatives (Part 4, Dr. Hailu)",
-          "description": "Lecture recording: introduction to derivatives",
-          "type": "video",
-          "url": "https://echo360.net.au/media/f8b90f3b-8ef8-4a1b-ba20-ad35af583714/public",
+          "url": "https://echo360.net.au/media/15c997a9-a9e5-4af7-8ba3-caddcdcb19e0/public",
           "source": "custom",
           "requiresAuth": false
         }
