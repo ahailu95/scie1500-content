@@ -1,7 +1,19 @@
 {
-  "version": "3.2.6",
-  "lastUpdated": "2026-08-04T21:30:00+08:00",
+  "version": "3.2.7",
+  "lastUpdated": "2026-08-04T21:45:00+08:00",
   "announcements": [
+    {
+      "id": "app-update-v2.1.20-2026-08-04",
+      "title": "App Update Available (v2.1.20) — Weeks 4–7 Notebooks Updated",
+      "message": "A new version of SciQuant Assistant (v2.1.20) is now available in the LMS, with updates to the Week 4–7 lab notebooks.\n\nHeads up: another update with additional features is planned for the end of Week 3.\n\nIf you'd rather not update the installed app twice in the same week, use the web version instead (tap \"Open Web App\" below) — it's always current, no installation needed. Then update your installed app once, at the start of Week 4, to get everything in one go.\n\nNot sure which version you're on? Check Settings → About in the app.",
+      "publishedAt": "2026-08-04T21:45:00+08:00",
+      "expiresAt": "2026-08-10T00:00:00+08:00",
+      "priority": "normal",
+      "category": "general",
+      "actionUrl": "https://ahailu95.github.io/sciquant_app/",
+      "actionLabel": "Open Web App",
+      "isPinned": false
+    },
     {
       "id": "consultation-sessions-2026-08-04",
       "title": "Consultation Session Times Confirmed",
