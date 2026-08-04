@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.4",
-  "lastUpdated": "2026-08-03",
+  "version": "3.4.5",
+  "lastUpdated": "2026-08-04",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -429,7 +429,7 @@
         },
         {
           "id": "w4_video_3",
-          "title": "Derivative Rules and Applications",
+          "title": "Derivative Rules and Applications (Week 4, Part 3)",
           "description": "Lecture recording: derivative rules and applications",
           "type": "video",
           "url": "https://echo360.net.au/media/15c997a9-a9e5-4af7-8ba3-caddcdcb19e0/public",
