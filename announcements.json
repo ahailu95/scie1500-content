@@ -1,7 +1,19 @@
 {
-  "version": "3.2.5",
-  "lastUpdated": "2026-07-25T16:30:00+08:00",
+  "version": "3.2.6",
+  "lastUpdated": "2026-08-04T21:30:00+08:00",
   "announcements": [
+    {
+      "id": "consultation-sessions-2026-08-04",
+      "title": "Consultation Session Times Confirmed",
+      "message": "The consultation sessions for SCIE1500 have now been booked for the following dates:\n\nMondays (3:15–3:45 pm)\n• 10 August 2026\n• 17 August 2026\n• 24 August 2026\n\nWednesdays (3:15–3:45 pm)\n• 12 August 2026\n• 19 August 2026\n• 26 August 2026\n\nThese sessions provide an opportunity to discuss lecture materials, lab questions, assessment tasks, and any other questions you may have about the unit.\n\nVenue\nMeeting Room – RM-401.G007-CEEP\nBuilding 401, Ground Floor\n\nBuilding 401 is located directly in front of the Barry J. Marshall Science Library. You can find it on the UWA Crawley campus map (tap \"View Campus Map\" below).\n\nIf you have difficulty finding the venue on the day, please feel free to call me on Microsoft Teams, and I will help direct you to the room.\n\nIf you are unable to attend these in-person sessions, email me to arrange an online meeting or an alternative time for in-person meeting.\n\nAtakelty (Unit Coordinator)",
+      "publishedAt": "2026-08-04T21:30:00+08:00",
+      "expiresAt": "2026-08-27T00:00:00+08:00",
+      "priority": "normal",
+      "category": "schedule",
+      "actionUrl": "https://www.uwa.edu.au/about/-/media/project/uwa/uwa/about/docs/campus-management/maps/crawley-site-plan-01122023.pdf",
+      "actionLabel": "View Campus Map",
+      "isPinned": true
+    },
     {
       "id": "problem-brief-rubric-use-colab-2026-07-25",
       "title": "Presentation Rubric Added to Problem Briefs — Use \"Open in Colab\" to See It",
