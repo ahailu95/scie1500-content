@@ -1,11 +1,23 @@
 {
-  "version": "3.2.8",
-  "lastUpdated": "2026-08-10T14:00:00+08:00",
+  "version": "3.2.9",
+  "lastUpdated": "2026-08-10T15:00:00+08:00",
   "announcements": [
     {
+      "id": "app-update-v2.1.24-2026-08-10",
+      "title": "App Update v2.1.24 Available — Claude AI Fixes + Cohort Usage Analytics",
+      "message": "A new version of SciQuant Assistant (v2.1.24) is now available for download from the LMS, in the SciQuant folder.\n\nWhat's included:\n• Continued fixes for Claude AI tutoring reliability issues some of you may have experienced.\n• New: the app can now collect anonymised, cohort-level usage data (e.g. how many students in a lab session have viewed lessons or attempted practice questions in a given week) — never anything tied to your name or student number.\n\nTo make the cohort data accurate, please go to Settings → Learning and select your lab session under \"My Lab Session\" after updating. This is optional — you can turn it off entirely in Settings → Privacy & Data → Usage Analytics.\n\nNot sure which version you're on? Check Settings → About in the app.",
+      "publishedAt": "2026-08-10T15:00:00+08:00",
+      "expiresAt": "2026-08-31T00:00:00+08:00",
+      "priority": "important",
+      "category": "general",
+      "actionUrl": "https://lms.uwa.edu.au",
+      "actionLabel": "Go to LMS",
+      "isPinned": true
+    },
+    {
       "id": "assignment-1-released-2026-08-10",
-      "title": "Assignment 1 Released \u2014 Due 26 August",
-      "message": "Assignment 1 has been released. Due date is 26 August, as shown in the unit outline.\n\nYou can access the assignment file (a Jupyter Notebook) by clicking the Assignment 1 button under Assessments in the LMS. All instructions are inside that notebook \u2014 there's no need for separate Word or PDF files. You start and finish your assignment work inside the notebook.\n\nThe notebook has also been emailed to you as an attachment. If you'd like to work on it in Google Colab, forward that email to your Gmail account, then download the attachment from Gmail straight into your Google Drive \u2014 from there you can open it directly in Colab.\n\nPost any questions in the discussion board. If you need help, let your lab instructors know, or come to the August help sessions on Monday and Wednesday afternoons \u2014 including today.",
+      "title": "Assignment 1 Released — Due 26 August",
+      "message": "Assignment 1 has been released. Due date is 26 August, as shown in the unit outline.\n\nYou can access the assignment file (a Jupyter Notebook) by clicking the Assignment 1 button under Assessments in the LMS. All instructions are inside that notebook — there's no need for separate Word or PDF files. You start and finish your assignment work inside the notebook.\n\nThe notebook has also been emailed to you as an attachment. If you'd like to work on it in Google Colab, forward that email to your Gmail account, then download the attachment from Gmail straight into your Google Drive — from there you can open it directly in Colab.\n\nPost any questions in the discussion board. If you need help, let your lab instructors know, or come to the August help sessions on Monday and Wednesday afternoons — including today.",
       "publishedAt": "2026-08-10T14:00:00+08:00",
       "expiresAt": "2026-08-27T00:00:00+08:00",
       "priority": "important",
@@ -80,8 +92,8 @@
     },
     {
       "id": "ai-tutor-access-s2-2026",
-      "title": "AI Tutor Access \u2014 Claude API Key or SciQuant Cloud",
-      "message": "There are two ways to get high-quality AI tutoring inside SciQuant this semester.\n\n1. Your own Claude API key (recommended for the full semester)\nYou are encouraged to get your own personal Claude API key and use Claude as your tutor inside SciQuant. Sign up at console.anthropic.com, then go to Settings \u2192 Billing to add credit (a card or similar payment method is required). About $5\u201310 of credit is typically enough for a full semester of regular use. Full setup steps are in the app under Settings \u2192 AI Backend \u2192 Claude API.\n\n2. SciQuant Cloud AI service (free, unit-provided)\nIf you'd rather not set up your own key, you can use the SciQuant Cloud AI service instead \u2014 during the first couple of weeks of semester, and during lab sessions for the rest of the semester. In the app, go to Settings \u2192 AI Backend \u2192 SciQuant Cloud and enter the Server URL. The Server URL is posted on the LMS \u2014 see the announcement there for the exact address, then leave the Auth Token field blank.\n\nPlease keep this URL to yourself \u2014 don't post it publicly or share it outside this unit. The cost of the service depends on how much it is used, so unnecessary sharing could affect availability for everyone in the class.",
+      "title": "AI Tutor Access — Claude API Key or SciQuant Cloud",
+      "message": "There are two ways to get high-quality AI tutoring inside SciQuant this semester.\n\n1. Your own Claude API key (recommended for the full semester)\nYou are encouraged to get your own personal Claude API key and use Claude as your tutor inside SciQuant. Sign up at console.anthropic.com, then go to Settings → Billing to add credit (a card or similar payment method is required). About $5–10 of credit is typically enough for a full semester of regular use. Full setup steps are in the app under Settings → AI Backend → Claude API.\n\n2. SciQuant Cloud AI service (free, unit-provided)\nIf you'd rather not set up your own key, you can use the SciQuant Cloud AI service instead — during the first couple of weeks of semester, and during lab sessions for the rest of the semester. In the app, go to Settings → AI Backend → SciQuant Cloud and enter the Server URL. The Server URL is posted on the LMS — see the announcement there for the exact address, then leave the Auth Token field blank.\n\nPlease keep this URL to yourself — don't post it publicly or share it outside this unit. The cost of the service depends on how much it is used, so unnecessary sharing could affect availability for everyone in the class.",
       "publishedAt": "2026-07-19T23:38:00+08:00",
       "priority": "normal",
       "category": "resource",
@@ -89,8 +101,8 @@
     },
     {
       "id": "welcome-s2-2026",
-      "title": "Welcome to SCIE1500 \u2014 Semester 2, 2026",
-      "message": "My name is Atakelty Hailu, and I'm excited to guide you through this unit.\n\n\u2022 Teaching begins Monday 20 July. Please read the unit outline in full before Week 1.\n\u2022 Download and install the SciQuant Assistant app \u2014 the link is in the LMS. All lessons, practice questions, and lab notebooks are delivered through the app.\n\u2022 All assignment submissions and grading remain on the LMS.\n\nWhat is new this semester:\n\nThe lab programme has been redesigned around Problem Briefs \u2014 realistic scientific scenarios you work on in permanent groups of 5\u20137. Each week your group submits a completed worksheet, but uploads are batched: worksheets are due in four batches (not weekly), on 11 Aug, 8 Sep, 29 Sep, and 27 Oct (all at 11:59pm). Every student must upload their own copy to LMS by the relevant batch deadline.\n\nFrom Weeks 3 to 9, two groups present the previous week's work at the start of each lab (10 min, all members speak). Each group presents exactly twice. The final three labs (Weeks 10\u201312) replace the standard format with structured exam preparation: a mock exam workshop, a peer review exchange, and a gallery walk capstone.\n\nThe lectures are also new: science and mathematics content is now delivered as a single integrated set of lessons inside the SciQuant app.\n\nWelcome \u2014 I look forward to working with you this semester.\nAtakelty (Unit Coordinator)",
+      "title": "Welcome to SCIE1500 — Semester 2, 2026",
+      "message": "My name is Atakelty Hailu, and I'm excited to guide you through this unit.\n\n• Teaching begins Monday 20 July. Please read the unit outline in full before Week 1.\n• Download and install the SciQuant Assistant app — the link is in the LMS. All lessons, practice questions, and lab notebooks are delivered through the app.\n• All assignment submissions and grading remain on the LMS.\n\nWhat is new this semester:\n\nThe lab programme has been redesigned around Problem Briefs — realistic scientific scenarios you work on in permanent groups of 5–7. Each week your group submits a completed worksheet, but uploads are batched: worksheets are due in four batches (not weekly), on 11 Aug, 8 Sep, 29 Sep, and 27 Oct (all at 11:59pm). Every student must upload their own copy to LMS by the relevant batch deadline.\n\nFrom Weeks 3 to 9, two groups present the previous week's work at the start of each lab (10 min, all members speak). Each group presents exactly twice. The final three labs (Weeks 10–12) replace the standard format with structured exam preparation: a mock exam workshop, a peer review exchange, and a gallery walk capstone.\n\nThe lectures are also new: science and mathematics content is now delivered as a single integrated set of lessons inside the SciQuant app.\n\nWelcome — I look forward to working with you this semester.\nAtakelty (Unit Coordinator)",
       "publishedAt": "2026-07-13T09:00:00+08:00",
       "expiresAt": "2026-08-10T00:00:00+08:00",
       "priority": "important",
