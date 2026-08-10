@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.6",
-  "lastUpdated": "2026-08-04",
+  "version": "3.4.7",
+  "lastUpdated": "2026-08-10",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -1162,7 +1162,7 @@
       "notebooks": [
         {
           "id": "w11_lab_notebook",
-          "title": "Main Lab Notebook — Peer Review: Trigonometric Modelling",
+          "title": "Main Lab Notebook — Circular Verification: Trigonometric Modelling",
           "description": "Week 11 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
@@ -1229,7 +1229,7 @@
       "notebooks": [
         {
           "id": "w12_lab_notebook",
-          "title": "Main Lab Notebook — Linear Programming and Gallery Walk",
+          "title": "Main Lab Notebook — Linear Programming",
           "description": "Week 12 lab exercises",
           "runtime": "googleColab",
           "githubRepoUrl": "https://github.com/ahailu95/scie1500-content",
