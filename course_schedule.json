@@ -1,5 +1,5 @@
 {
-  "version": "2.3.4",
+  "version": "2.3.5",
   "lastUpdated": "2026-07-21T08:00:00+08:00",
   "courseInfo": {
     "code": "SCIE1500",
@@ -85,12 +85,12 @@
     },
     {
       "id": "lab_batch1",
-      "name": "Lab Worksheets — Weeks 1–3",
+      "name": "Triweekly Lab Worksheet (Batch 1)",
       "type": "lab",
       "weight": 3,
       "dueDate": "2026-08-11T23:59:00+08:00",
       "weekNumber": 3,
-      "description": "Upload Weeks 1–3 lab worksheets to LMS by 11:59pm Tuesday.",
+      "description": "One combined worksheet covering Weeks 1–3, found at the end of the Week 3 lab notebook (not a separate worksheet per week). Upload to LMS by 11:59pm Tuesday.",
       "submissionUrl": "https://lms.uwa.edu.au",
       "reminderDays": [
         3,
@@ -99,12 +99,12 @@
     },
     {
       "id": "lab_batch2",
-      "name": "Lab Worksheets — Weeks 4–6",
+      "name": "Triweekly Lab Worksheet (Batch 2)",
       "type": "lab",
       "weight": 3,
       "dueDate": "2026-09-08T23:59:00+08:00",
       "weekNumber": 6,
-      "description": "Upload Weeks 4–6 lab worksheets to LMS by 11:59pm Tuesday (date adjusted to account for the mid-semester study break).",
+      "description": "One combined worksheet covering Weeks 4–6, found at the end of the Week 6 lab notebook (not a separate worksheet per week). Upload to LMS by 11:59pm Tuesday (date adjusted to account for the mid-semester study break).",
       "submissionUrl": "https://lms.uwa.edu.au",
       "reminderDays": [
         3,
@@ -113,12 +113,12 @@
     },
     {
       "id": "lab_batch3",
-      "name": "Lab Worksheets — Weeks 7–9",
+      "name": "Triweekly Lab Worksheet (Batch 3)",
       "type": "lab",
       "weight": 3,
       "dueDate": "2026-09-29T23:59:00+08:00",
       "weekNumber": 9,
-      "description": "Upload Weeks 7–9 lab worksheets to LMS by 11:59pm Tuesday.",
+      "description": "One combined worksheet covering Weeks 7–9, found at the end of the Week 9 lab notebook (not a separate worksheet per week). Upload to LMS by 11:59pm Tuesday.",
       "submissionUrl": "https://lms.uwa.edu.au",
       "reminderDays": [
         3,
@@ -127,12 +127,12 @@
     },
     {
       "id": "lab_batch4",
-      "name": "Lab Worksheets — Weeks 10–12",
+      "name": "Triweekly Lab Worksheet (Batch 4)",
       "type": "lab",
       "weight": 3,
       "dueDate": "2026-10-27T23:59:00+08:00",
       "weekNumber": 12,
-      "description": "Upload Weeks 10–12 lab worksheets to LMS by 11:59pm Tuesday (date adjusted to account for the pre-exam study break).",
+      "description": "One combined worksheet covering Weeks 10–12, found at the end of the Week 12 lab notebook (not a separate worksheet per week). Upload to LMS by 11:59pm Tuesday (date adjusted to account for the pre-exam study break).",
       "submissionUrl": "https://lms.uwa.edu.au",
       "reminderDays": [
         3,
