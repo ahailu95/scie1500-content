@@ -1,7 +1,17 @@
 {
-  "version": "3.2.7",
-  "lastUpdated": "2026-08-04T21:45:00+08:00",
+  "version": "3.2.8",
+  "lastUpdated": "2026-08-10T14:00:00+08:00",
   "announcements": [
+    {
+      "id": "assignment-1-released-2026-08-10",
+      "title": "Assignment 1 Released \u2014 Due 26 August",
+      "message": "Assignment 1 has been released. Due date is 26 August, as shown in the unit outline.\n\nYou can access the assignment file (a Jupyter Notebook) by clicking the Assignment 1 button under Assessments in the LMS. All instructions are inside that notebook \u2014 there's no need for separate Word or PDF files. You start and finish your assignment work inside the notebook.\n\nThe notebook has also been emailed to you as an attachment. If you'd like to work on it in Google Colab, forward that email to your Gmail account, then download the attachment from Gmail straight into your Google Drive \u2014 from there you can open it directly in Colab.\n\nPost any questions in the discussion board. If you need help, let your lab instructors know, or come to the August help sessions on Monday and Wednesday afternoons \u2014 including today.",
+      "publishedAt": "2026-08-10T14:00:00+08:00",
+      "expiresAt": "2026-08-27T00:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "isPinned": true
+    },
     {
       "id": "app-update-v2.1.20-2026-08-04",
       "title": "App Update Available (v2.1.20) — Weeks 4–7 Notebooks Updated",
