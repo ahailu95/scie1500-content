@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.7",
-  "lastUpdated": "2026-08-10",
+  "version": "3.4.8",
+  "lastUpdated": "2026-08-13",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -551,10 +551,28 @@
         },
         {
           "id": "w5_video_2",
-          "title": "Differentiation techniques and optimisation (Full video)",
-          "description": "Lecture recording: differentiation techniques and optimisation",
+          "title": "Exponential and Logarithmic Derivatives; Product and Quotient Rules (Week 5, Part 1)",
+          "description": "Lecture recording: derivatives of e^x and ln x, plus the product and quotient rules, with worked examples",
           "type": "video",
-          "url": "https://echo360.net.au/media/e0c24978-15ee-4b54-8fd9-7879e22c56c6/public",
+          "url": "https://echo360.net.au/media/eefc15d7-167a-4481-bdef-7bf67b6da881/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w5_video_3",
+          "title": "The Chain Rule and Optimisation (Week 5, Part 2)",
+          "description": "Lecture recording: the chain rule, critical points and the second derivative test, local versus global optima, and an optional look at gradient descent and Newton's method",
+          "type": "video",
+          "url": "https://echo360.net.au/media/07928ace-8478-4827-94df-b60a55767780/public",
+          "source": "custom",
+          "requiresAuth": false
+        },
+        {
+          "id": "w5_video_4",
+          "title": "Constrained Optimisation and the Fishery Model (Week 5, Part 3)",
+          "description": "Lecture recording: constrained optimisation by substitution, the bioeconomic fishery model and Maximum Economic Yield, profit word problems, and symbolic optimisation with SymPy",
+          "type": "video",
+          "url": "https://echo360.net.au/media/5304f9c1-bb31-488d-990c-9b20b106f9c0/public",
           "source": "custom",
           "requiresAuth": false
         }
