@@ -60,15 +60,20 @@ $$y = ax^2 + bx + c$$
 - Opens up if $a > 0$, down if $a < 0$
 
 ## Exponential Function
-$$y = ab^x \quad \text{or} \quad y = ae^{kx}$$
+$$y = ab^x \quad \text{or} \quad P(t) = P_0 e^{kt}$$
+- $P_0$ = initial value (at $t = 0$)
+- $k$ = continuous growth rate
 - Growth if $k > 0$, decay if $k < 0$
-- Doubling time: $t = \frac{\ln 2}{k}$
-- Half-life: $t = \frac{\ln 2}{|k|}$
+- Doubling time: $T = \frac{\ln 2}{k}$
+- Half-life: $T = \frac{\ln 2}{|k|}$
+- Rule of 70: $T \approx \frac{70}{r\%}$ where $r\% = 100k$
 
 ## Logistic Function
-$$P(t) = \frac{L}{1 + Ae^{-kt}}$$
-- $L$ = carrying capacity
-- Inflection at $P = L/2$
+$$P(t) = \frac{K}{1 + Ae^{-\alpha t}}$$
+- $K$ = carrying capacity
+- $\alpha$ = intrinsic growth rate
+- $A = \frac{K}{P(0)} - 1$, so $P(0) = \frac{K}{1 + A}$
+- Inflection at $P = K/2$ (maximum growth rate)
 
 ## Schaefer Model
 $$G(S) = gS\left(1 - \frac{S}{K}\right)$$
@@ -150,12 +155,28 @@ $$\text{PS} = P^* \cdot Q^* - \int_0^{Q^*} S(Q)\,dQ$$
 
 # 🦎 Lotka-Volterra Model
 
-**Prey:** $\frac{dN}{dt} = rN - aNP$
+**Prey:** $\frac{dH}{dt} = \alpha H - \beta HP$
 
-**Predator:** $\frac{dP}{dt} = baNP - mP$
+**Predator:** $\frac{dP}{dt} = \lambda HP - \gamma P$
 
-**Equilibrium (non-trivial):**
-$$N^* = \frac{m}{ba}, \quad P^* = \frac{r}{a}$$
+| Symbol | Meaning |
+|:-------|:--------|
+| $H$ | Prey (host) population |
+| $P$ | Predator population |
+| $\alpha$ | Prey birth rate |
+| $\beta$ | Predation rate |
+| $\lambda$ | Predator efficiency (births per prey eaten) |
+| $\gamma$ | Predator death rate |
+
+**Predator efficiency:** $\epsilon = \frac{\lambda}{\beta}$
+
+**Equilibrium points:**
+$$(H^*, P^*) = (0, 0) \quad \text{(extinction)}$$
+
+$$(H^*, P^*) = \left(\frac{\gamma}{\lambda}, \frac{\alpha}{\beta}\right) \quad \text{(coexistence)}$$
+
+- Prey increasing when $P < \frac{\alpha}{\beta}$
+- Predator increasing when $H > \frac{\gamma}{\lambda}$
 
 ---
 
@@ -270,14 +291,21 @@ $$\sin^2\theta + \cos^2\theta = 1$$
 $$\tan\theta = \frac{\sin\theta}{\cos\theta}$$
 
 ## Sinusoidal Function
-$$y = A\sin(Bx + C) + D$$
+$$y = A\sin(B(x + C)) + D \quad \text{or} \quad y = A\cos(B(x + C)) + D$$
 
-| Parameter | Meaning |
-|:----------|:--------|
-| $\|A\|$ | Amplitude |
-| $\frac{2\pi}{\|B\|}$ | Period |
-| $-\frac{C}{B}$ | Phase shift |
-| $D$ | Vertical shift |
+| Parameter | Meaning | Formula |
+|:----------|:--------|:--------|
+| $A$ | Amplitude | $\|A\| = \frac{\max - \min}{2}$ |
+| $B$ | Angular frequency | Period $T = \frac{2\pi}{\|B\|}$, frequency $f = \frac{\|B\|}{2\pi}$ |
+| $C$ | Phase shift | Horizontal shift $= -C$ (left if $C > 0$); solve from a boundary condition |
+| $D$ | Vertical shift | $D = \frac{\max + \min}{2}$ (midline) |
+
+**Converting between sin and cos** ($A$, $B$, $D$ unchanged):
+
+| Conversion | New phase shift |
+|:-----------|:----------------|
+| sin → cos | $C' = C + \frac{\pi}{2B}$ |
+| cos → sin | $C' = C - \frac{\pi}{2B}$ |
 
 ---
 
