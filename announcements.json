@@ -1,7 +1,19 @@
 {
-  "version": "3.2.9",
-  "lastUpdated": "2026-08-10T15:00:00+08:00",
+  "version": "3.3.0",
+  "lastUpdated": "2026-08-21T22:15:00+08:00",
   "announcements": [
+    {
+      "id": "app-update-v2.2.0-2026-08-21",
+      "title": "App Update v2.2.0 Available — Check Your AI Tutor, Plus Code Snippet and Lab Notebook Fixes",
+      "message": "A new version of SciQuant Assistant (v2.2.0) is now available for download from the LMS, in the SciQuant folder.\n\nMost important — check which AI tutor you are using:\nSome of you have been studying in Demo Mode without realising it. Demo Mode replies with a small set of canned sample answers: it cannot answer your own questions and knows nothing about your work. Go to Settings → AI Backend and check what is listed under \"Current Backend\". If it says Demo Mode, switch to SciQuant Cloud (the address is in the SciQuant folder in the LMS — it ends with workers.dev) or to Claude API with your own key. From this version on, the app shows a warning while Demo Mode is active, and first-time setup asks you to choose properly.\n\nWhat else is included:\n• Code snippets: you can now reach every week. Previously, on a laptop with a mouse rather than a trackpad, the week chips along the top could not be scrolled, so Week 3 onwards was unreachable. There are now arrow buttons and a scrollbar, and the mouse wheel works.\n• Week 6 code snippets: the twelve snippet titles showed as \"Untitled\" and now show their real names (Setup and Imports, Definite Integrals, Area Between Two Curves, and so on).\n• Lab notebooks corrected in Weeks 2, 4, 5, 6, 7, 8 and 12 — mostly wording and worksheet part labels. The Week 2 Lab B cost comparison also had a genuine bug: if the threshold year fell beyond the 150-year horizon it produced a negative cost and saving. That is fixed. These corrections are already live in Colab, so \"Open in Colab\" gives you the corrected notebook even before you update.\n• Setting up SciQuant Cloud is clearer: the app tells you where to find the address and warns you if you paste the LMS page address by mistake.\n• First-time setup now asks for your lab session, so cohort-level usage trends are accurate. As always, this is never tied to your name or student number, and you can turn analytics off in Settings → Privacy & Data.\n\nWeek 5 lecture recordings are also now split into three shorter parts, which you will see without updating.\n\nNot sure which version you're on? Check Settings → About in the app.",
+      "publishedAt": "2026-08-21T22:15:00+08:00",
+      "expiresAt": "2026-09-21T00:00:00+08:00",
+      "priority": "important",
+      "category": "general",
+      "actionUrl": "https://lms.uwa.edu.au",
+      "actionLabel": "Go to LMS",
+      "isPinned": true
+    },
     {
       "id": "app-update-v2.1.24-2026-08-10",
       "title": "App Update v2.1.24 Available — Claude AI Fixes + Cohort Usage Analytics",
@@ -12,7 +24,7 @@
       "category": "general",
       "actionUrl": "https://lms.uwa.edu.au",
       "actionLabel": "Go to LMS",
-      "isPinned": true
+      "isPinned": false
     },
     {
       "id": "assignment-1-released-2026-08-10",
