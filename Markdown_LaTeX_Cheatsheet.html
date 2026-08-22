@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing Maths in Markdown — One-Page Cheat Sheet | SCIE1500</title>
+</head>
+<body style="margin:0; padding:0; background:#ffffff;">
+
+<!-- ================================================================
+     Also pasteable into the LMS: copy everything between this comment
+     and the matching one at the bottom. All styling is inline, so it
+     survives editors that strip <style> blocks. Prints on one page.
+     ================================================================ -->
+
+<div style="max-width:900px; margin:0 auto; padding:18px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:13px; line-height:1.45; color:#1f2933;">
+
+<h2 style="margin:0 0 2px 0; font-size:20px; color:#12365c;">Writing maths in Markdown &mdash; one-page cheat sheet</h2>
+<p style="margin:0 0 12px 0; font-size:12px; color:#52606d;">
+SCIE1500. The same notation works in SciQuant Assistant, in GitHub and GitLab, in Jupyter notebook Markdown cells, and in most Markdown editors that support LaTeX maths.
+</p>
+
+<div style="border:1px solid #2E7BC4; border-left:5px solid #2E7BC4; background:#EEF6FF; padding:9px 14px; margin:0 0 14px 0;">
+  <strong>The two things to remember</strong><br>
+  Inside a line: <code style="background:#fff; padding:1px 4px; border-radius:3px;">$ ... $</code> &rarr; the area is $A = \pi r^2$ here.<br>
+  On its own line: <code style="background:#fff; padding:1px 4px; border-radius:3px;">$$ ... $$</code> &rarr; puts the formula centred on its own line.<br>
+  <span style="color:#7A5C00;"><strong>Money trap:</strong> a bare <code>$</code> starts maths. For dollars, write <code>\$10</code>, not <code>$10</code>.</span>
+</div>
+
+<table style="width:100%; border-collapse:collapse;">
+<tr>
+<td style="width:50%; vertical-align:top; padding:0 12px 0 0;">
+
+  <h3 style="margin:0 0 5px 0; font-size:14px; color:#12365c; border-bottom:2px solid #E0E4E8; padding-bottom:3px;">Powers, fractions, roots</h3>
+  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+    <tr><td style="padding:2px 6px 2px 0;"><code>x^2</code></td><td style="padding:2px 0; color:#52606d;">x squared</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>x^{2n}</code></td><td style="padding:2px 0; color:#52606d;">braces for more than one character</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>x_i</code> &nbsp; <code>a_{ij}</code></td><td style="padding:2px 0; color:#52606d;">subscripts</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>e^{-kt}</code></td><td style="padding:2px 0; color:#52606d;">decay</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\frac{a}{b}</code></td><td style="padding:2px 0; color:#52606d;">a over b</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\sqrt{x}</code> &nbsp; <code>\sqrt[3]{x}</code></td><td style="padding:2px 0; color:#52606d;">&radic;x &nbsp; cube root</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\left( \frac{a}{b} \right)</code></td><td style="padding:2px 0; color:#52606d;">brackets that grow to fit</td></tr>
+  </table>
+
+  <h3 style="margin:12px 0 5px 0; font-size:14px; color:#12365c; border-bottom:2px solid #E0E4E8; padding-bottom:3px;">Comparing and combining</h3>
+  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+    <tr><td style="padding:2px 6px 2px 0;"><code>\leq</code> <code>\geq</code> <code>\neq</code></td><td style="padding:2px 0; color:#52606d;">&le; &ge; &ne;</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\approx</code> <code>\equiv</code> <code>\propto</code></td><td style="padding:2px 0; color:#52606d;">&asymp; &equiv; &prop;</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\times</code> <code>\div</code> <code>\pm</code> <code>\cdot</code></td><td style="padding:2px 0; color:#52606d;">&times; &divide; &plusmn; &middot;</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\infty</code> &nbsp; <code>90^\circ</code> &nbsp; <code>50\%</code></td><td style="padding:2px 0; color:#52606d;">&infin; &nbsp; 90&deg; &nbsp; 50%</td></tr>
+  </table>
+
+  <h3 style="margin:12px 0 5px 0; font-size:14px; color:#12365c; border-bottom:2px solid #E0E4E8; padding-bottom:3px;">Greek letters</h3>
+  <p style="margin:0 0 4px 0; font-size:12.5px;">
+    <code>\alpha</code> &alpha; &nbsp; <code>\beta</code> &beta; &nbsp; <code>\theta</code> &theta; &nbsp; <code>\lambda</code> &lambda; &nbsp; <code>\mu</code> &mu; &nbsp; <code>\pi</code> &pi; &nbsp; <code>\rho</code> &rho; &nbsp; <code>\sigma</code> &sigma; &nbsp; <code>\tau</code> &tau; &nbsp; <code>\phi</code> &phi;
+  </p>
+  <p style="margin:0; font-size:12.5px;">
+    Capitals: <code>\Delta</code> &Delta; &nbsp; <code>\Sigma</code> &Sigma; &nbsp; <code>\Omega</code> &Omega; &nbsp;<span style="color:#52606d;">(capitalise the command)</span>
+  </p>
+
+  <h3 style="margin:12px 0 5px 0; font-size:14px; color:#12365c; border-bottom:2px solid #E0E4E8; padding-bottom:3px;">Named functions</h3>
+  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+    <tr><td style="padding:2px 6px 2px 0;"><code>\ln x</code> &nbsp; <code>\log_{10} x</code></td><td style="padding:2px 0; color:#52606d;">logs</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\exp(x)</code></td><td style="padding:2px 0; color:#52606d;">exponential</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\sin\theta</code> <code>\cos\theta</code> <code>\tan\theta</code></td><td style="padding:2px 0; color:#52606d;">trig</td></tr>
+  </table>
+  <p style="margin:4px 0 0 0; font-size:12px; color:#52606d;">Use the backslash so they appear upright: <code>\sin x</code> not <code>sin x</code>.</p>
+
+</td>
+<td style="width:50%; vertical-align:top; padding:0 0 0 12px; border-left:1px solid #E0E4E8;">
+
+  <h3 style="margin:0 0 5px 0; font-size:14px; color:#12365c; border-bottom:2px solid #E0E4E8; padding-bottom:3px;">Calculus</h3>
+  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+    <tr><td style="padding:2px 6px 2px 0;"><code>\frac{dy}{dx}</code></td><td style="padding:2px 0; color:#52606d;">derivative</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\frac{d^2y}{dx^2}</code></td><td style="padding:2px 0; color:#52606d;">second derivative</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>f'(x)</code> &nbsp; <code>f''(x)</code></td><td style="padding:2px 0; color:#52606d;">prime notation</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\frac{\partial f}{\partial x}</code></td><td style="padding:2px 0; color:#52606d;">partial (&part;)</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\lim_{x \to 0}</code></td><td style="padding:2px 0; color:#52606d;">limit as x &rarr; 0</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\int_a^b f(x)\,dx</code></td><td style="padding:2px 0; color:#52606d;">definite integral</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\int_0^\infty e^{-x}\,dx</code></td><td style="padding:2px 0; color:#52606d;">to infinity</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\sum_{i=1}^{n} x_i</code></td><td style="padding:2px 0; color:#52606d;">sum (&Sigma;)</td></tr>
+  </table>
+  <p style="margin:4px 0 0 0; font-size:12px; color:#52606d;">The <code>\,</code> before <code>dx</code> is a thin space &mdash; it just looks better.</p>
+
+  <h3 style="margin:12px 0 5px 0; font-size:14px; color:#12365c; border-bottom:2px solid #E0E4E8; padding-bottom:3px;">Probability, statistics, sets</h3>
+  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+    <tr><td style="padding:2px 6px 2px 0;"><code>\bar{x}</code> &nbsp; <code>\hat{y}</code></td><td style="padding:2px 0; color:#52606d;">mean, estimate</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\sigma^2</code> &nbsp; <code>\mu</code></td><td style="padding:2px 0; color:#52606d;">variance, mean</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>P(A \mid B)</code></td><td style="padding:2px 0; color:#52606d;">conditional probability</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\binom{n}{k}</code></td><td style="padding:2px 0; color:#52606d;">n choose k</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>x \in \mathbb{R}</code></td><td style="padding:2px 0; color:#52606d;">x &isin; &#8477;</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\cup</code> <code>\cap</code> <code>\subset</code></td><td style="padding:2px 0; color:#52606d;">&cup; &cap; &sub;</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\vec{v}</code> &nbsp; <code>\mathbf{v}</code></td><td style="padding:2px 0; color:#52606d;">vectors</td></tr>
+  </table>
+
+  <h3 style="margin:12px 0 5px 0; font-size:14px; color:#12365c; border-bottom:2px solid #E0E4E8; padding-bottom:3px;">Several lines, matrices, cases</h3>
+  <p style="margin:0 0 3px 0; font-size:12.5px;">Working shown line by line (align on the <code>=</code>):</p>
+  <pre style="margin:0 0 7px 0; padding:7px 9px; background:#F5F7FA; border:1px solid #E0E4E8; border-radius:4px; font-size:11.5px; overflow-x:auto;">$$\begin{aligned}
+y &amp;= mx + b \\
+  &amp;= 2x + 1
+\end{aligned}$$</pre>
+  <p style="margin:0 0 3px 0; font-size:12.5px;">A piecewise function:</p>
+  <pre style="margin:0 0 7px 0; padding:7px 9px; background:#F5F7FA; border:1px solid #E0E4E8; border-radius:4px; font-size:11.5px; overflow-x:auto;">$$\begin{cases}
+x &amp; x \ge 0 \\
+-x &amp; x &lt; 0
+\end{cases}$$</pre>
+  <p style="margin:0; font-size:12.5px;">A matrix: <code>pmatrix</code> ( ), <code>bmatrix</code> [ ], <code>vmatrix</code> | | &mdash; same pattern, <code>&amp;</code> between entries and <code>\\</code> between rows.</p>
+
+  <h3 style="margin:12px 0 5px 0; font-size:14px; color:#12365c; border-bottom:2px solid #E0E4E8; padding-bottom:3px;">Words and units inside maths</h3>
+  <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+    <tr><td style="padding:2px 6px 2px 0;"><code>\text{if } x &gt; 0</code></td><td style="padding:2px 0; color:#52606d;">ordinary words</td></tr>
+    <tr><td style="padding:2px 6px 2px 0;"><code>\mathrm{m/s}</code></td><td style="padding:2px 0; color:#52606d;">units stay upright</td></tr>
+  </table>
+
+</td>
+</tr>
+</table>
+
+<div style="border:1px solid #E0A800; border-left:5px solid #E0A800; background:#FFF9E6; padding:9px 14px; margin:14px 0 0 0; font-size:12.5px;">
+  <strong>If something doesn't appear</strong>
+  <ul style="margin:5px 0 0 0; padding-left:20px;">
+    <li>Check your <code>$</code> signs come in pairs, and that you meant maths &mdash; a stray <code>$</code> swallows the rest of the line.</li>
+    <li><strong>Stick to <code>\begin{aligned}</code> for multi-line working.</strong> It is the one that works everywhere. Some tools also accept <code>\begin{gather}</code> and <code>\begin{align}</code>, but not all of them do, so your working may look fine in one place and vanish in another.</li>
+    <li>Keep links and images out of the maths &mdash; <code>\href</code> and <code>\includegraphics</code> are not widely supported. Write them as ordinary Markdown outside the <code>$ ... $</code>.</li>
+    <li>Everything on this sheet is deliberately in the common subset, so it renders the same wherever you paste it.</li>
+    <li>Stuck on a symbol you can't name? Draw it at <strong>detexify.kirelabs.org</strong> and it tells you the command.</li>
+  </ul>
+</div>
+
+<p style="margin:10px 0 0 0; font-size:11.5px; color:#7B8794;">
+Want more than this page covers? <strong>katex.org/docs/supported.html</strong> lists the full set of commands available in KaTeX-based renderers (which includes SciQuant Assistant), and <strong>overleaf.com/learn/latex/Mathematics</strong> is a fuller tutorial for LaTeX proper.
+</p>
+
+</div>
+
+<!-- ================================================================
+     END OF LMS PASTE
+     ================================================================ -->
+
+</body>
+</html>

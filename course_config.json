@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.9",
-  "lastUpdated": "2026-08-21",
+  "version": "3.4.10",
+  "lastUpdated": "2026-08-22",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -1327,6 +1327,13 @@
       "description": "The 20-mark rubric (Problem Formulation, Mathematical Approach, Results & Interpretation, Communication Quality) used to grade your group presentation.",
       "url": "https://ahailu95.github.io/scie1500-content/Presentation_Marking_Rubric.html",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/Presentation_Marking_Rubric.html"
+    },
+    {
+      "id": "markdown_latex_cheatsheet",
+      "title": "Markdown & LaTeX Cheatsheet",
+      "description": "One page on writing maths in Markdown: inline and block delimiters, fractions, powers, Greek letters, calculus, statistics, matrices and multi-line working. Deliberately limited to notation that renders the same in SciQuant, GitHub and Jupyter.",
+      "url": "https://ahailu95.github.io/scie1500-content/Markdown_LaTeX_Cheatsheet.html",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/Markdown_LaTeX_Cheatsheet.html"
     }
   ],
   "github": {
