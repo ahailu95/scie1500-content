@@ -78,7 +78,7 @@ The **sample space** $S$ is the set of all possible outcomes.
 | Two coin tosses  | $S = \{HH, HT, TH, TT\}$            |
 | Five coin tosses | $S = \{HHHHH, HHHHT, ...\}$, with $ | S | = 2^5 = 32$ |
 
-**Key insight for Q32:** For $n$ coin tosses, the sample space size is $|S| = 2^n$.
+**Key insight:** For $n$ coin tosses, the sample space size is $|S| = 2^n$.
 
 ### 2.2 Events
 
@@ -179,7 +179,7 @@ $$P((A \cup B)^c) = 1 - P(A \cup B) = 1 - 0.6 = 0.4$$
 
 ---
 
-## 4. Exam-Style Application: Coin Tosses (Q32)
+## 4. Exam-Style Application: Coin Tosses
 
 ### 4.1 Sample Space for Multiple Coin Tosses
 
@@ -250,7 +250,7 @@ $$\binom{5}{5} = \frac{5!}{5! \cdot 0!} = 1$$
 > - **W9-CS06** — *Listing Combinations with itertools*: Enumerate subsets without order.
 > - **W9-CS07** — *Committee Assignment Problem*: Apply combinations to a real selection task.
 > - **W9-CS12** — *Exercise A: Specific Sequence Probability*: Compute $P(\text{exact sequence})$.
-> - **W9-CS22** — *Q32 Connection: Sample Space*: Tie code back to the exam-style question.
+> - **W9-CS22** — *Exam Connection: Sample Space*: Tie code back to the exam-style question.
 >
 > Find these under **Notes → Python Code Snippets** for this week.
 
@@ -542,7 +542,7 @@ $$P(D | \text{confirmed}+) = \frac{0.01881}{0.02077} \approx 0.906$$
 > - **W9-CS17 – CS19** — *Exercise B: Infection Analysis*: Compare $p = 0.45$ vs $p = 0.60$.
 > - **W9-CS20** — *Comparing Distributions Side-by-Side*: Two PMFs in one figure.
 > - **W9-CS21** — *Distribution Observations Summary*: Summarise mean, mode, spread.
-> - **W9-CS23** — *Q35 Connection: Hypothesis Testing*: Bridge to next week's content.
+> - **W9-CS23** — *Exam Connection: Hypothesis Testing*: Bridge to next week's content.
 > - **W9-CS24** — *Complete Lab Template*: End-to-end starter for the lab notebook.
 >
 > Find these under **Notes → Python Code Snippets** for this week.

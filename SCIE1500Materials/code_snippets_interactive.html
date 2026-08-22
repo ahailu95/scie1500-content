@@ -1340,7 +1340,7 @@ print(f"Final height h(∞) = {h_max} m")</code></pre>
             <div class="snippet-description"></div>
             <div class="code-container">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code># From exam Q23: f(x) = -e^(-2x+1), g(x) = -(1/2)x^2
+                <pre><code># Exam-style composition: f(x) = -e^(-2x+1), g(x) = -(1/2)x^2
 
 def f(x):
     return -np.exp(-2*x + 1)
@@ -2321,7 +2321,7 @@ print("dN/dt = 0.05 × N(t) — the derivative is a constant multiple of the fun
             <div class="snippet-description">Verify derivatives of the Schaefer growth model G(S) = gS(1 - S/K)</div>
             <div class="code-container">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code># Schaefer model parameters (from exam Q13)
+                <pre><code># Schaefer model parameters (exam style)
 g = 0.1   # intrinsic growth rate
 K = 1000  # carrying capacity
 
@@ -2382,7 +2382,7 @@ ax2.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.show()
 
-print("\nExam Q13 insight: The derivative tells us at what stock level")
+print("\nExam insight: The derivative tells us at what stock level")
 print("growth is maximized (MSY). This occurs where dG/dS = 0.")</code></pre>
             </div>
         </div>
@@ -3032,7 +3032,7 @@ print(f"Area''(x) = {Area_double_prime} (negative → maximum confirmed)")</code
                 <span class="snippet-title">10. Profit Maximization: Livestock Problem</span>
                 <span class="snippet-section">optimization</span>
             </div>
-            <div class="snippet-description">Solve the deer fattening problem (Exam Q38 style)</div>
+            <div class="snippet-description">Solve the deer fattening problem (exam style)</div>
             <div class="code-container">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <pre><code>import sympy as sp
@@ -3771,7 +3771,7 @@ print(f'S_∞ = a1/(1-r) = {a1_decay}/(1-{r_decay}) = {S_inf}')</code></pre>
 
         <div class="snippet">
             <div class="snippet-header">
-                <span class="snippet-title">7. Counting Terms in a Range (Q29 Style)</span>
+                <span class="snippet-title">7. Counting Terms in a Range</span>
                 <span class="snippet-section">sequence_count</span>
             </div>
             <div class="snippet-description">Find how many terms of a sequence fall within a given range</div>
@@ -3803,7 +3803,7 @@ def count_terms_in_range(a1, d, lower, upper):
     
     return count, i_min, i_max
 
-# Example from Q29: a_i = 3 + 5(i-1), count terms in [10, 150]
+# Example: a_i = 3 + 5(i-1), count terms in [10, 150]
 a1, d = 3, 5
 lower, upper = 10, 150
 
@@ -5108,7 +5108,7 @@ for p in [0.45, 0.60]:
 
         <div class="snippet">
             <div class="snippet-header">
-                <span class="snippet-title">22. Q32 Connection: Sample Space</span>
+                <span class="snippet-title">22. Exam Connection: Sample Space</span>
                 <span class="snippet-section">General</span>
             </div>
             <div class="snippet-description">Verify sample space size for coin toss experiment</div>
@@ -5116,7 +5116,7 @@ for p in [0.45, 0.60]:
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <pre><code>from scipy.stats import binom
 
-# Q32: Fair coin tossed 5 times
+# Exam-style: Fair coin tossed 5 times
 n_tosses = 5
 sample_space_size = 2**n_tosses
 print(f"Sample space size: |S| = {sample_space_size}")
@@ -5130,7 +5130,7 @@ print(f"Is this 0.60? {abs(prob_3_heads - 0.60) &lt; 0.001}")</code></pre>
 
         <div class="snippet">
             <div class="snippet-header">
-                <span class="snippet-title">23. Q35 Connection: Hypothesis Testing</span>
+                <span class="snippet-title">23. Exam Connection: Hypothesis Testing</span>
                 <span class="snippet-section">General</span>
             </div>
             <div class="snippet-description">Calculate p-value for testing infection rate hypothesis</div>
@@ -5138,7 +5138,7 @@ print(f"Is this 0.60? {abs(prob_3_heads - 0.60) &lt; 0.001}")</code></pre>
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <pre><code>from scipy.stats import binom
 
-# Q35: 9 of 11 contacts infected
+# Exam-style: 9 of 11 contacts infected
 # H0: p = 0.5, H1: p &gt; 0.5
 n = 11
 observed_k = 9
@@ -5238,10 +5238,10 @@ print("Libraries loaded successfully!")</code></pre>
                 <span class="snippet-title">2. Expected Value Calculation</span>
                 <span class="snippet-section">General</span>
             </div>
-            <div class="snippet-description">Calculate expected value from a probability distribution table (Q33 style)</div>
+            <div class="snippet-description">Calculate expected value from a probability distribution table (exam style)</div>
             <div class="code-container">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code># Expected Value Calculation (Q33 Style)
+                <pre><code># Expected Value Calculation (exam style)
 # Given probability distribution:
 # X:    0    3    4    6
 # P(X): 0.2  0.4  0.3  0.1
@@ -5477,14 +5477,14 @@ print(f"  Two-tailed: {'Reject H₀' if result_two_sided.pvalue &lt; alpha else 
 
         <div class="snippet">
             <div class="snippet-header">
-                <span class="snippet-title">8. Q35 Exam Question - Complete Solution</span>
+                <span class="snippet-title">8. Exam Question - Complete Solution</span>
                 <span class="snippet-section">General</span>
             </div>
             <div class="snippet-description">Solve the exact exam question about virus variant transmissibility</div>
             <div class="code-container">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code># Q35 Exam Question: New Virus Variant Transmissibility
-print("Q35: Is the new variant more infectious?")
+                <pre><code># Exam Question: New Virus Variant Transmissibility
+print("Is the new variant more infectious?")
 print("="*60)
 
 # Given data
@@ -6872,7 +6872,7 @@ print(f"Calcium:   {y:.2f} &gt;= 5 ✓" if y &gt;= 5 - 0.01 else "✗")</code></
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 
-# Market data (Q39 style)
+# Market data (exam style)
 # Demand: Qd = 100 - 2P
 # Supply: Qs = -100 + 3P
 
@@ -6957,7 +6957,7 @@ for bar, val in zip(bars, surplus_values):
     ax3.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 2, 
              f'${val:.1f}', ha='center', fontsize=10, fontweight='bold')
 
-plt.suptitle('SCIE1500 Week 12: Complete Market Analysis (Q39 Style)', fontsize=16, y=1.02)
+plt.suptitle('SCIE1500 Week 12: Complete Market Analysis (exam style)', fontsize=16, y=1.02)
 plt.tight_layout()
 plt.show()</code></pre>
             </div>

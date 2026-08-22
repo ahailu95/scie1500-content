@@ -335,7 +335,7 @@ With the same observed rate of 60 % but five times as many patients, the evidenc
 > **📓 Try it in Python**
 >
 > Apply the full hypothesis-testing workflow:
-> - **W10-CS08** — *Q35 Exam Solution*: Walk through the exam-style question step by step.
+> - **W10-CS08** — *Exam Solution*: Walk through the exam-style question step by step.
 > - **W10-CS12** — *Disease Transmission Analysis*: End-to-end real-world application.
 >
 > Find these under **Notes → Python Code Snippets** for this week.

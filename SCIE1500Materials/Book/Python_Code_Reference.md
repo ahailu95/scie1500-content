@@ -890,7 +890,7 @@ plt.show()
 ## Expected Value Calculation
 
 ```python
-# Expected Value from probability distribution (Q33 style)
+# Expected Value from probability distribution (exam style)
 x_values = np.array([0, 3, 4, 6])
 probabilities = np.array([0.2, 0.4, 0.3, 0.1])
 
