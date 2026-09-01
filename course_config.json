@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.10",
-  "lastUpdated": "2026-08-22",
+  "version": "3.4.11",
+  "lastUpdated": "2026-09-01",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -780,7 +780,7 @@
           "title": "Definite Integrals and Applications (Part A)",
           "description": "Lecture covering definite integrals and applications - Part A",
           "type": "video",
-          "url": "https://echo360.net.au/media/cdc9e00d-fb71-4a9b-b99f-7039bb09ca72/public",
+          "url": "https://echo360.net.au/media/7623597c-1298-4dea-b94a-9adc9069615a/public",
           "source": "custom",
           "requiresAuth": false
         },
@@ -789,7 +789,7 @@
           "title": "Definite Integrals and Applications (Part B)",
           "description": "Lecture covering definite integrals and applications - Part B",
           "type": "video",
-          "url": "https://echo360.net.au/media/2bc4e78f-4785-4e9b-9788-21137eb4149e/public",
+          "url": "https://echo360.net.au/media/6b0ed573-152e-4e23-b464-63c829e9fe52/public",
           "source": "custom",
           "requiresAuth": false
         }
