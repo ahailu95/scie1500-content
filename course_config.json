@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.11",
-  "lastUpdated": "2026-09-01",
+  "version": "3.4.12",
+  "lastUpdated": "2026-09-02",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -893,7 +893,7 @@
           "title": "Predator-prey dynamics (Part A)",
           "description": "Lecture video: Predator-prey dynamics and the Lotka-Volterra model (Part A)",
           "type": "video",
-          "url": "https://echo360.net.au/media/0cbba367-7d68-4821-aaed-a5ee20d3d280/public",
+          "url": "https://echo360.net.au/media/9ed2e5c3-4a9b-4a52-b928-26329c843484/public",
           "source": "custom",
           "requiresAuth": false
         },
@@ -902,7 +902,7 @@
           "title": "Predator-prey dynamics (Part B)",
           "description": "Lecture video: Predator-prey dynamics and the Lotka-Volterra model (Part B)",
           "type": "video",
-          "url": "https://echo360.net.au/media/446a584b-af54-4098-8cc2-96acbe49e968/public",
+          "url": "https://echo360.net.au/media/e3208af4-f906-4853-bdc6-dd17ef4778fe/public",
           "source": "custom",
           "requiresAuth": false
         }
