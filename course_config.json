@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.12",
-  "lastUpdated": "2026-09-02",
+  "version": "3.4.13",
+  "lastUpdated": "2026-09-15",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -1334,6 +1334,13 @@
       "description": "One page on writing maths in Markdown: inline and block delimiters, fractions, powers, Greek letters, calculus, statistics, matrices and multi-line working. Deliberately limited to notation that renders the same in SciQuant, GitHub and Jupyter.",
       "url": "https://ahailu95.github.io/scie1500-content/Markdown_LaTeX_Cheatsheet.html",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/Markdown_LaTeX_Cheatsheet.html"
+    },
+    {
+      "id": "course_reader",
+      "title": "SCIE1500 Course Reader",
+      "description": "The full course reader: Prologue plus Chapters 1\u201312, each with worked definitions, examples, a Python lab walkthrough matching that week's notebook, a summary, self-check and exercises with answers. Includes appendices on Python/Jupyter setup and the formula reference, plus an index.",
+      "url": "https://ahailu95.github.io/scie1500-content/course_reader/SCIE1500_Course_Reader.pdf",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/course_reader/SCIE1500_Course_Reader.pdf"
     }
   ],
   "github": {
