@@ -5,6 +5,8 @@
 
 **Analytical Methods for Scientists · Semester 2, 2026**
 
+**Last updated: 22 September 2026.** This revision corrects some notation and the description of the Python section so they match the exam paper. **The exam blueprint, mark allocation and structure are unchanged.** A summary is in [What changed in this revision](#what-changed-in-this-revision) at the end of this guide.
+
 This guide is designed to help you study **effectively**, not to memorise. It does not include practice questions from the paper, because the exam rewards *understanding*, not recall. If you can confidently tick every Learning Outcome below, you are ready.
 
 ---
@@ -32,7 +34,7 @@ MCQs cover **all 12 weeks**, with a mix of single-topic and integrative question
 
 Part II has 7 multiple-choice questions that test your ability to **read and reason about Python code** — not write it. You will see short code snippets drawn from the course, and be asked what the code computes, which call performs a given mathematical task, or how to interpret the output. No computer is needed.
 
-The snippets use the same libraries and patterns as the course labs: SymPy for symbolic calculus (`sp.diff`, `sp.integrate`, `sp.solve`), NumPy and Matplotlib for numerical work and plotting, and SciPy for probability (`binom.cdf`, `binomtest`). The best preparation is simply to understand the code you wrote in the lab notebooks, not to memorise function signatures from a list.
+The snippets use the same libraries and patterns as the course labs: SymPy for symbolic calculus (`sp.diff`, `sp.integrate`, `sp.solve`), NumPy and Matplotlib for numerical work and plotting (including `np.linspace`, array slicing, and stepping a differential equation forward with `np.zeros` and a `for` loop, as in the Week 8 labs); exact binomial probabilities built by hand with `math.comb`, exactly as you wrote them in the Week 10 and Week 12 labs; and `scipy.optimize` (`linprog` for linear programming in Week 12, `fsolve` and `minimize_scalar` in Week 4). The best preparation is simply to understand the code you wrote in the lab notebooks, not to memorise function signatures from a list.
 
 ### What Part III looks like
 
@@ -76,7 +78,7 @@ Here is a prioritised list of what most students find useful to record. You do *
 
 - Logistic model $\dfrac{dP}{dt} = rP\!\left(1 - \dfrac{P}{K}\right)$, solution form $P(t) = \dfrac{K}{1 + A e^{-rt}}$ where $A = (K - P_0)/P_0$
 - Schaefer model: growth $G(S) = gS(1 - S/K)$; MSY $= gK/4$ at $S = K/2$
-- Lotka–Volterra equilibrium: $(N^*, P^*) = (\gamma/\delta,\ \alpha/\beta)$
+- Lotka–Volterra equilibrium: $(H^*, P^*) = (\gamma/\lambda,\ \alpha/\beta)$
 - Doubling time: $t_d = \ln 2 / r$; half-life: $t_{1/2} = \ln 2 / |r|$ (with $r < 0$)
 - Probability axioms, $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
 - Conditional probability and Bayes' formula (the diagnostic-testing version is worth rewriting in your own words)
@@ -123,11 +125,11 @@ For each week below, ask yourself: *Can I do this from scratch, without notes, i
 - [ ] Solve exponential equations by taking logarithms of both sides
 
 ### Week 3 — Bounded Growth (Logistic and Schaefer)
-- [ ] Recognise the **logistic** model $dP/dt = rP(1 - P/K)$ and identify $r$, $K$
+- [ ] Recognise the **logistic** model $dN/dt = rN(1 - N/K)$ and identify $r$, $K$
 - [ ] State the **equilibria** of the logistic model and classify them (stable / unstable)
 - [ ] Recognise the **Schaefer** model $G(S) = gS(1 - S/K)$ and interpret $g$, $K$
 - [ ] Explain why growth slows as the population approaches carrying capacity
-- [ ] **Invert a function** — both a simple linear function, and a logistic solution $P(t)$ to solve for the **time** $t$ at which a given population level is reached
+- [ ] **Invert a function** — both a simple linear function, and a logistic solution $N(t)$ to solve for the **time** $t$ at which a given population level is reached
 - [ ] Identify the **vertical and horizontal asymptotes** of a rational or shifted-rational function (e.g., $f(x) = \tfrac{3}{x-2} + 5$)
 
 ### Week 4 — Limits, Continuity and the Derivative
@@ -151,6 +153,7 @@ For each week below, ask yourself: *Can I do this from scratch, without notes, i
 - [ ] Integrate $e^{ax}$, $1/x$, $x^n$ (for $n \neq -1$)
 - [ ] Use an **initial condition** to determine $C$ and state the particular antiderivative
 - [ ] Recognise integration as the reverse of differentiation
+- [ ] **Check a proposed antiderivative by differentiating it** — if $F'(x) = f(x)$ then $F$ is an antiderivative of $f$. This lets you confirm (or reject) a candidate answer even when the integral itself is awkward to derive
 
 ### Week 7 — Definite Integrals, Area, and Sequences
 - [ ] Evaluate a definite integral $\int_a^b f(x)\,dx$ and interpret it as a **net area**
@@ -160,10 +163,10 @@ For each week below, ask yourself: *Can I do this from scratch, without notes, i
 - [ ] Recognise when a "total over $n$ periods" problem is a geometric series
 
 ### Week 8 — Predator–Prey (Lotka–Volterra) Dynamics
-- [ ] Write the Lotka–Volterra system $dN/dt = \alpha N - \beta N P$, $dP/dt = \delta N P - \gamma P$
-- [ ] Identify the parameters $\alpha, \beta, \gamma, \delta$ biologically (prey growth, predation, predator death, conversion efficiency)
-- [ ] Find the non-trivial **equilibrium** $(N^*, P^*) = (\gamma/\delta,\ \alpha/\beta)$
-- [ ] Perform **comparative statics**: if $\alpha$ increases, what happens to $N^*$ and $P^*$?
+- [ ] Write the Lotka–Volterra system $dH/dt = \alpha H - \beta H P$, $dP/dt = \lambda H P - \gamma P$ ($H$ = prey, $P$ = predator)
+- [ ] Identify the parameters $\alpha, \beta, \gamma, \lambda$ biologically (prey growth, predation, predator death, conversion efficiency)
+- [ ] Find the non-trivial **equilibrium** $(H^*, P^*) = (\gamma/\lambda,\ \alpha/\beta)$
+- [ ] Perform **comparative statics**: if a parameter such as $\alpha$ or $\gamma$ changes, what happens to $H^*$ and $P^*$? (Note which parameters each equilibrium does *not* depend on.)
 - [ ] Explain why prey and predator populations oscillate
 
 ### Week 9 — Probability and Combinatorics
@@ -178,7 +181,7 @@ For each week below, ask yourself: *Can I do this from scratch, without notes, i
 - [ ] Compute the **expected value** $E[X] = \sum x\,P(X=x)$
 - [ ] Compute the **variance** and **standard deviation** of a discrete random variable
 - [ ] Recognise the **binomial** distribution and use $X \sim \text{Bin}(n, p)$
-- [ ] Compute tail probabilities such as $P(X \ge k)$ for a binomial variable
+- [ ] Compute tail probabilities for a binomial variable — either tail, $P(X \ge k)$ or $P(X \le k)$
 - [ ] State a null and alternative hypothesis correctly
 - [ ] Given a **$p$-value** and a significance level $\alpha$, state the correct conclusion and what it means in context
 
@@ -261,9 +264,9 @@ Good luck. You have done the work this semester — this exam gives you a chance
 
 ---
 
-# Appendix — Exemplar Part II Problems (with full solutions)
+# Appendix — Exemplar Part III Problems (with full solutions)
 
-These five problems are written in the **style, scope and difficulty** of Part II of the paper. They are **not** from the exam. They are designed to let you practise the full workflow:
+These five problems are written in the **style, scope and difficulty** of Part III of the paper. They are **not** from the exam. They are designed to let you practise the full workflow:
 
 > **set up → solve → verify → interpret**
 
@@ -817,3 +820,23 @@ $$-0.05\,t_{90} = \ln(0.1) = -\ln 10 \;\Longrightarrow\; t_{90} = \frac{\ln 10}{
 </svg>
 <figcaption>Lake nutrient concentration C(t) = 0.05(1 − e<sup>−0.05t</sup>) approaching equilibrium C<sub>eq</sub> = 0.05 mg/L. The red dot marks t₉₀ ≈ 46 hours, when C reaches 90% of the long-run value.</figcaption>
 </figure>
+
+---
+
+## What changed in this revision
+
+*22 September 2026.* Nothing about the **format, marks or timing** of the exam has changed. The edits
+below align this guide with the exam paper and close two small gaps in the outcomes lists. If you have
+not read the guide yet, simply read it as it now stands — there is nothing to un-learn.
+
+| Section | What it said before | What it says now | Why |
+| :--- | :--- | :--- | :--- |
+| What Part II looks like | Python probability uses SciPy (`binom.cdf`, `binomtest`) | Binomial probabilities are built by hand with `math.comb`; also names `np.zeros` + `for` loops for stepping an ODE, and `scipy.optimize` (`linprog`, `fsolve`, `minimize_scalar`) | These are the tools you actually used in the lab notebooks. SciPy's statistics module never appeared in the labs, so the old sentence would have sent you to the wrong library. |
+| Week 3 — Bounded Growth | Logistic written as $dP/dt = rP(1-P/K)$ | Logistic written as $dN/dt = rN(1-N/K)$ | Matches the symbol used in the exam and the sample exam. |
+| Week 8 — Lotka–Volterra | Prey $N$, conversion $\delta$; equilibrium $(N^*,P^*)=(\gamma/\delta,\ \alpha/\beta)$ | Prey $H$, conversion $\lambda$; equilibrium $(H^*,P^*)=(\gamma/\lambda,\ \alpha/\beta)$ | Same maths, same formula — only the letters change, to match the exam and sample exam. |
+| Week 8 — comparative statics | "if $\alpha$ increases…" | "if a parameter such as $\alpha$ or $\gamma$ changes…", with a prompt to notice which parameters an equilibrium does *not* depend on | The exam may ask about any of the parameters, not only $\alpha$. |
+| Week 6 — Integration | (not listed) | **New outcome:** check a proposed antiderivative by differentiating it | Lets you confirm or reject a candidate answer even when the integral is awkward to derive. |
+| Week 10 — Random Variables | Tail probabilities "such as $P(X \ge k)$" | Either tail — $P(X \ge k)$ **or** $P(X \le k)$ | Lower-tail questions are equally fair game. |
+| Appendix | "Exemplar **Part II** Problems" | "Exemplar **Part III** Problems" | These are long-answer exemplars. Under the current three-part structure the long-answer section is Part III; the label was left over from an earlier format. |
+
+The formula-sheet suggestions in Part 1 were updated to match the Lotka–Volterra notation above.

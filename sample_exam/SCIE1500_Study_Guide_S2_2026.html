@@ -178,8 +178,8 @@
 .katex, .katex-display, .katex-display * { color: #1d4ed8 !important; }
 .katex .boxed, .katex .fbox, .katex .colorbox { border-color: #1d4ed8 !important; }
 </style>
-<p><strong>Analytical Methods for Scientists · Semester 2,
-2026</strong></p>
+<p><strong>Analytical Methods for Scientists · Semester 2, 2026</strong></p>
+<p><strong>Last updated: 22 September 2026.</strong> This revision corrects some notation and the description of the Python section so they match the exam paper. <strong>The exam blueprint, mark allocation and structure are unchanged.</strong> A summary is in <a href="#what-changed-in-this-revision">What changed in this revision</a> at the end of this guide.</p>
 <p>This guide is designed to help you study
 <strong>effectively</strong>, not to memorise. It does not include
 practice questions from the paper, because the exam rewards
@@ -265,9 +265,7 @@ the code computes, which call performs a given mathematical task, or how
 to interpret the output. No computer is needed.</p>
 <p>The snippets use the same libraries and patterns as the course labs:
 SymPy for symbolic calculus (<code>sp.diff</code>,
-<code>sp.integrate</code>, <code>sp.solve</code>), NumPy and Matplotlib
-for numerical work and plotting, and SciPy for probability
-(<code>binom.cdf</code>, <code>binomtest</code>). The best preparation
+<code>sp.integrate</code>, <code>sp.solve</code>), NumPy and Matplotlib for numerical work and plotting (including <code>np.linspace</code>, array slicing, and stepping a differential equation forward with <code>np.zeros</code> and a <code>for</code> loop, as in the Week 8 labs); exact binomial probabilities built by hand with <code>math.comb</code>, exactly as you wrote them in the Week 10 and Week 12 labs; and <code>scipy.optimize</code> (<code>linprog</code> for linear programming in Week 12, <code>fsolve</code> and <code>minimize_scalar</code> in Week 4). The best preparation
 is simply to understand the code you wrote in the lab notebooks, not to
 memorise function signatures from a list.</p>
 <h3 id="what-part-iii-looks-like">What Part III looks like</h3>
@@ -347,8 +345,7 @@ class="math inline">\(P(t) = \dfrac{K}{1 + A e^{-rt}}\)</span> where
 <li>Schaefer model: growth <span class="math inline">\(G(S) = gS(1 -
 S/K)\)</span>; MSY <span class="math inline">\(= gK/4\)</span> at <span
 class="math inline">\(S = K/2\)</span></li>
-<li>Lotka–Volterra equilibrium: <span class="math inline">\((N^*, P^*) =
-(\gamma/\delta,\ \alpha/\beta)\)</span></li>
+<li>Lotka–Volterra equilibrium: <span class="math inline">\((H^*, P^*) = (\gamma/\lambda,\ \alpha/\beta)\)</span></li>
 <li>Doubling time: <span class="math inline">\(t_d = \ln 2 / r\)</span>;
 half-life: <span class="math inline">\(t_{1/2} = \ln 2 / |r|\)</span>
 (with <span class="math inline">\(r &lt; 0\)</span>)</li>
@@ -438,8 +435,7 @@ taking logarithms of both sides</label></li>
 Growth (Logistic and Schaefer)</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" />Recognise the
-<strong>logistic</strong> model <span class="math inline">\(dP/dt = rP(1
-- P/K)\)</span> and identify <span class="math inline">\(r\)</span>,
+<strong>logistic</strong> model <span class="math inline">\(dN/dt = rN(1 - N/K)\)</span> and identify <span class="math inline">\(r\)</span>,
 <span class="math inline">\(K\)</span></label></li>
 <li><label><input type="checkbox" />State the
 <strong>equilibria</strong> of the logistic model and classify them
@@ -451,8 +447,7 @@ Growth (Logistic and Schaefer)</h3>
 <li><label><input type="checkbox" />Explain why growth slows as the
 population approaches carrying capacity</label></li>
 <li><label><input type="checkbox" /><strong>Invert a function</strong> —
-both a simple linear function, and a logistic solution <span
-class="math inline">\(P(t)\)</span> to solve for the
+both a simple linear function, and a logistic solution <span class="math inline">\(N(t)\)</span> to solve for the
 <strong>time</strong> <span class="math inline">\(t\)</span> at which a
 given population level is reached</label></li>
 <li><label><input type="checkbox" />Identify the <strong>vertical and
@@ -514,8 +509,8 @@ class="math inline">\(x^n\)</span> (for <span class="math inline">\(n
 <li><label><input type="checkbox" />Use an <strong>initial
 condition</strong> to determine <span class="math inline">\(C\)</span>
 and state the particular antiderivative</label></li>
-<li><label><input type="checkbox" />Recognise integration as the reverse
-of differentiation</label></li>
+<li><label><input type="checkbox" />Recognise integration as the reverse of differentiation</label></li>
+<li><label><input type="checkbox" /><strong>Check a proposed antiderivative by differentiating it</strong> — if <span class="math inline">\(F'(x) = f(x)\)</span> then <span class="math inline">\(F\)</span> is an antiderivative of <span class="math inline">\(f\)</span>. This lets you confirm (or reject) a candidate answer even when the integral itself is awkward to derive</label></li>
 </ul>
 <h3 id="week-7-definite-integrals-area-and-sequences">Week 7 — Definite
 Integrals, Area, and Sequences</h3>
@@ -540,20 +535,15 @@ series</label></li>
 Predator–Prey (Lotka–Volterra) Dynamics</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" />Write the Lotka–Volterra system
-<span class="math inline">\(dN/dt = \alpha N - \beta N P\)</span>, <span
-class="math inline">\(dP/dt = \delta N P - \gamma
-P\)</span></label></li>
+<span class="math inline">\(dH/dt = \alpha H - \beta H P\)</span>, <span class="math inline">\(dP/dt = \lambda H P - \gamma P\)</span></label></li>
 <li><label><input type="checkbox" />Identify the parameters <span
-class="math inline">\(\alpha, \beta, \gamma, \delta\)</span>
+class="math inline">\(\alpha, \beta, \gamma, \lambda\)</span>
 biologically (prey growth, predation, predator death, conversion
 efficiency)</label></li>
 <li><label><input type="checkbox" />Find the non-trivial
-<strong>equilibrium</strong> <span class="math inline">\((N^*, P^*) =
-(\gamma/\delta,\ \alpha/\beta)\)</span></label></li>
+<strong>equilibrium</strong> <span class="math inline">\((H^*, P^*) = (\gamma/\lambda,\ \alpha/\beta)\)</span></label></li>
 <li><label><input type="checkbox" />Perform <strong>comparative
-statics</strong>: if <span class="math inline">\(\alpha\)</span>
-increases, what happens to <span class="math inline">\(N^*\)</span> and
-<span class="math inline">\(P^*\)</span>?</label></li>
+statics</strong>: if a parameter such as <span class="math inline">\(\alpha\)</span> or <span class="math inline">\(\gamma\)</span> changes, what happens to <span class="math inline">\(H^*\)</span> and <span class="math inline">\(P^*\)</span>? (Note which parameters each equilibrium does <em>not</em> depend on.)</label></li>
 <li><label><input type="checkbox" />Explain why prey and predator
 populations oscillate</label></li>
 </ul>
@@ -591,8 +581,7 @@ discrete random variable</label></li>
 <strong>binomial</strong> distribution and use <span
 class="math inline">\(X \sim \text{Bin}(n, p)\)</span></label></li>
 <li><label><input type="checkbox" />Compute tail probabilities such as
-<span class="math inline">\(P(X \ge k)\)</span> for a binomial
-variable</label></li>
+<span class="math inline">\(P(X \ge k)\)</span> or <span class="math inline">\(P(X \le k)\)</span> for a binomial variable</label></li>
 <li><label><input type="checkbox" />State a null and alternative
 hypothesis correctly</label></li>
 <li><label><input type="checkbox" />Given a <strong><span
@@ -750,10 +739,8 @@ confident of the final answer. Setup marks are real.</li>
 <p>Good luck. You have done the work this semester — this exam gives you
 a chance to show what you now understand.</p>
 <hr />
-<h1 id="appendix-exemplar-part-ii-problems-with-full-solutions">Appendix
-— Exemplar Part II Problems (with full solutions)</h1>
-<p>These five problems are written in the <strong>style, scope and
-difficulty</strong> of Part II of the paper. They are
+<h1 id="appendix-exemplar-part-ii-problems-with-full-solutions">Appendix — Exemplar Part III Problems (with full solutions)</h1>
+<p>These five problems are written in the <strong>style, scope and difficulty</strong> of Part III of the paper. They are
 <strong>not</strong> from the exam. They are designed to let you
 practise the full workflow:</p>
 <blockquote>
@@ -1722,5 +1709,65 @@ approaching equilibrium C<sub>eq</sub> = 0.05 mg/L. The red dot marks
 t₉₀ ≈ 46 hours, when C reaches 90% of the long-run value.
 </figcaption>
 </figure>
+<hr />
+<h2 id="what-changed-in-this-revision">What changed in this revision</h2>
+<p><em>22 September 2026.</em> Nothing about the <strong>format, marks or timing</strong> of the exam has
+changed. The edits below align this guide with the exam paper and close two small gaps in the outcomes
+lists. If you have not read the guide yet, simply read it as it now stands — there is nothing to
+un-learn.</p>
+<table>
+<colgroup>
+<col style="width: 16%" /><col style="width: 26%" /><col style="width: 28%" /><col style="width: 30%" />
+</colgroup>
+<thead>
+<tr><th style="text-align: left;">Section</th><th style="text-align: left;">What it said before</th>
+<th style="text-align: left;">What it says now</th><th style="text-align: left;">Why</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">What Part II looks like</td>
+<td style="text-align: left;">Python probability uses SciPy (<code>binom.cdf</code>, <code>binomtest</code>)</td>
+<td style="text-align: left;">Binomial probabilities are built by hand with <code>math.comb</code>; also names <code>np.zeros</code> + <code>for</code> loops for stepping an ODE, and <code>scipy.optimize</code> (<code>linprog</code>, <code>fsolve</code>, <code>minimize_scalar</code>)</td>
+<td style="text-align: left;">These are the tools you actually used in the lab notebooks. SciPy’s statistics module never appeared in the labs, so the old sentence would have sent you to the wrong library.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Week 3 — Bounded Growth</td>
+<td style="text-align: left;">Logistic written as <span class="math inline">\(dP/dt = rP(1-P/K)\)</span></td>
+<td style="text-align: left;">Logistic written as <span class="math inline">\(dN/dt = rN(1-N/K)\)</span></td>
+<td style="text-align: left;">Matches the symbol used in the exam and the sample exam.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Week 8 — Lotka–Volterra</td>
+<td style="text-align: left;">Prey <span class="math inline">\(N\)</span>, conversion <span class="math inline">\(\delta\)</span>; equilibrium <span class="math inline">\((N^*,P^*)=(\gamma/\delta,\ \alpha/\beta)\)</span></td>
+<td style="text-align: left;">Prey <span class="math inline">\(H\)</span>, conversion <span class="math inline">\(\lambda\)</span>; equilibrium <span class="math inline">\((H^*,P^*)=(\gamma/\lambda,\ \alpha/\beta)\)</span></td>
+<td style="text-align: left;">Same maths, same formula — only the letters change, to match the exam and sample exam.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Week 8 — comparative statics</td>
+<td style="text-align: left;">“if <span class="math inline">\(\alpha\)</span> increases…”</td>
+<td style="text-align: left;">“if a parameter such as <span class="math inline">\(\alpha\)</span> or <span class="math inline">\(\gamma\)</span> changes…”, with a prompt to notice which parameters an equilibrium does <em>not</em> depend on</td>
+<td style="text-align: left;">The exam may ask about any of the parameters, not only <span class="math inline">\(\alpha\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Week 6 — Integration</td>
+<td style="text-align: left;">(not listed)</td>
+<td style="text-align: left;"><strong>New outcome:</strong> check a proposed antiderivative by differentiating it</td>
+<td style="text-align: left;">Lets you confirm or reject a candidate answer even when the integral is awkward to derive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Week 10 — Random Variables</td>
+<td style="text-align: left;">Tail probabilities “such as <span class="math inline">\(P(X \ge k)\)</span>”</td>
+<td style="text-align: left;">Either tail — <span class="math inline">\(P(X \ge k)\)</span> <strong>or</strong> <span class="math inline">\(P(X \le k)\)</span></td>
+<td style="text-align: left;">Lower-tail questions are equally fair game.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Appendix</td>
+<td style="text-align: left;">“Exemplar <strong>Part II</strong> Problems”</td>
+<td style="text-align: left;">“Exemplar <strong>Part III</strong> Problems”</td>
+<td style="text-align: left;">These are long-answer exemplars. Under the current three-part structure the long-answer section is Part III; the label was left over from an earlier format.</td>
+</tr>
+</tbody>
+</table>
+<p>The formula-sheet suggestions in Part 1 were updated to match the Lotka–Volterra notation above.</p>
 </body>
 </html>
