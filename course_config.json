@@ -1,8 +1,8 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.4.13",
-  "lastUpdated": "2026-09-15",
+  "version": "3.5.0",
+  "lastUpdated": "2026-09-29",
   "institution": {
     "id": "uwa",
     "name": "University of Western Australia",
@@ -1302,10 +1302,31 @@
   "referenceMaterials": [
     {
       "id": "sample_exam",
-      "title": "Sample Final Exam",
+      "title": "Sample Final Exam 1",
       "description": "Sample final exam based on the previous semester’s paper: Part I (36 MCQ — mathematical methods), Part II (7 MCQ — Python as a mathematical tool), Part III (answer 2 of 4 long-answer questions). No computer needed.",
       "url": "https://ahailu95.github.io/scie1500-content/sample_exam/FinalexamSAMPLE_S2Y26.pdf",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/FinalexamSAMPLE_S2Y26.pdf"
+    },
+    {
+      "id": "sample_exam_answers",
+      "title": "Sample Final Exam 1 — Answer Key",
+      "description": "Answers to Sample Final Exam 1. Parts I and II give the correct option for all 43 multiple-choice questions with a brief justification for each. Part III gives answer keys only for the four long-answer questions — the final results, not full worked solutions, so you still have to produce the working yourself.",
+      "url": "https://ahailu95.github.io/scie1500-content/sample_exam/FinalexamSAMPLE_S2Y26_ANSWERS.pdf",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/FinalexamSAMPLE_S2Y26_ANSWERS.pdf"
+    },
+    {
+      "id": "sample_exam_2",
+      "title": "Sample Final Exam 2",
+      "description": "A second sample paper, added in response to requests for more practice. Same three-part structure, mark allocation and timing as Sample Final Exam 1: Part I (36 MCQ), Part II (7 Python MCQ), Part III (answer 2 of 4 long-answer questions). No question repeats one from Sample Final Exam 1.",
+      "url": "https://ahailu95.github.io/scie1500-content/sample_exam/FinalexamSAMPLE2_S2Y26.pdf",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/FinalexamSAMPLE2_S2Y26.pdf"
+    },
+    {
+      "id": "sample_exam_2_answers",
+      "title": "Sample Final Exam 2 — Answer Key",
+      "description": "Answers to Sample Final Exam 2. Parts I and II give the correct option for all 43 multiple-choice questions with a brief justification for each. Part III gives answer keys only for the four long-answer questions — the final results, not full worked solutions, so you still have to produce the working yourself.",
+      "url": "https://ahailu95.github.io/scie1500-content/sample_exam/FinalexamSAMPLE2_S2Y26_ANSWERS.pdf",
+      "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/FinalexamSAMPLE2_S2Y26_ANSWERS.pdf"
     },
     {
       "id": "exam_study_guide",
@@ -1338,7 +1359,7 @@
     {
       "id": "course_reader",
       "title": "SCIE1500 Course Reader",
-      "description": "The full course reader: Prologue plus Chapters 1\u201312, each with worked definitions, examples, a Python lab walkthrough matching that week's notebook, a summary, self-check and exercises with answers. Includes appendices on Python/Jupyter setup and the formula reference, plus an index.",
+      "description": "The full course reader: Prologue plus Chapters 1–12, each with worked definitions, examples, a Python lab walkthrough matching that week's notebook, a summary, self-check and exercises with answers. Includes appendices on Python/Jupyter setup and the formula reference, plus an index.",
       "url": "https://ahailu95.github.io/scie1500-content/course_reader/SCIE1500_Course_Reader.pdf",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/course_reader/SCIE1500_Course_Reader.pdf"
     }
