@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "lastUpdated": "2026-09-29",
   "institution": {
     "id": "uwa",
@@ -1331,7 +1331,7 @@
     {
       "id": "exam_study_guide",
       "title": "Final Exam Study Guide",
-      "description": "Exam blueprint, week-by-week learning outcomes checklist, formula sheet suggestions (calculus, models, probability, Python quick-reference), common traps, and 5 fully-worked exemplar problems.",
+      "description": "Exam blueprint, week-by-week learning outcomes checklist, formula sheet suggestions (calculus, models, probability, Python quick-reference), common traps, and 5 fully-worked exemplar problems. Revised 22 September 2026: notation aligned with the exam paper and the Python section description corrected — see “What changed in this revision” at the end of the guide. Exam blueprint, marks and structure are unchanged.",
       "url": "https://ahailu95.github.io/scie1500-content/sample_exam/SCIE1500_Study_Guide_S2_2026.html",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/SCIE1500_Study_Guide_S2_2026.html"
     },
