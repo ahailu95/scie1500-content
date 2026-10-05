@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "lastUpdated": "2026-09-29",
   "institution": {
     "id": "uwa",
@@ -1175,7 +1175,17 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w11_echo360",
+          "title": "Trigonometric Functions and Periodic Models",
+          "description": "Lecture video for Week 11: Trigonometric Functions and Periodic Models",
+          "type": "video",
+          "url": "https://echo360.net.au/media/54ba80ee-4e01-42a4-8633-db6b26c6882d/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
@@ -1242,7 +1252,17 @@
           "requiresAuth": false
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "id": "w12_echo360",
+          "title": "Simultaneous Equations and Linear Programming (LP)",
+          "description": "Lecture video for Week 12: Simultaneous Equations and Linear Programming (LP)",
+          "type": "video",
+          "url": "https://echo360.net.au/media/eb43a197-b2a0-4b8d-a425-76cc6e27da75/public",
+          "source": "custom",
+          "requiresAuth": false
+        }
+      ],
       "audios": [],
       "notebooks": [
         {
