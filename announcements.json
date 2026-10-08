@@ -1,7 +1,43 @@
 {
-  "version": "3.3.1",
-  "lastUpdated": "2026-08-22T09:00:00+08:00",
+  "version": "3.3.2",
+  "lastUpdated": "2026-10-08T23:00:00+08:00",
   "announcements": [
+    {
+      "id": "app-update-v2.2.1-2026-10-08",
+      "title": "App Update v2.2.1 Available — Week 11 Lesson Display Fix and Week 7 Correction",
+      "message": "A new version of SciQuant Assistant (v2.2.1) was posted today. Please install it — you will find it in the LMS, in the SciQuant folder.\n\nWhat's fixed:\n• Week 11 lesson: some tables did not display properly. Absolute-value bars such as |x| were being read as table column breaks, which split formulas across cells. The tables now render correctly (the same fix applies to a few tables in the Week 7 and Week 9 lessons).\n• Week 7, Example 7.6: the degraded-land area has been corrected to 4,157 km². The lesson previously gave 4,560 km².\n\nThe lessons are built into the app, so you need to install v2.2.1 to see these fixes. On macOS, drag the new app into Applications and choose Replace; on Windows, extract the new ZIP over your existing folder. Your profile, conversations and progress are kept.\n\nUsing the web version? It is already up to date — just refresh the page.\n\nNot sure which version you're on? Check Settings → About in the app.",
+      "publishedAt": "2026-10-08T23:00:00+08:00",
+      "expiresAt": "2026-11-08T00:00:00+08:00",
+      "priority": "important",
+      "category": "general",
+      "actionUrl": "https://lms.uwa.edu.au",
+      "actionLabel": "Go to LMS",
+      "isPinned": true
+    },
+    {
+      "id": "assignment-2-released-2026-09-24",
+      "title": "Assignment 2 Now Available — Due Wednesday 7 October",
+      "message": "Assignment 2 is now available in the LMS, and is due on Wednesday 7 October at 11:59 pm.\n\nYou can access the assignment file (a Jupyter Notebook) by clicking the Assignment 2 link under Assessments in the LMS. All instructions are inside that notebook — there are no separate Word or PDF files. You start and finish your work inside the notebook.\n\nWhat it covers: Weeks 5 to 10 — differentiation techniques and optimisation; antiderivatives and initial conditions; definite integrals and market applications; predator-prey dynamics; and probability, random variables and hypothesis testing. There are five questions worth 20 marks each, 100 marks in total, and the assignment is worth 10% of your unit grade.\n\nHow to submit: upload a single .ipynb file to the Assignment 2 submission link in the LMS. No GitHub and no share links for this one — the notebook file itself.\n\nBefore you upload, run every cell (in Colab: Runtime → Run all; in Jupyter: Kernel → Restart Kernel and Run All Cells) so that every plot and printed value is visible in the saved file. A Python part with correct code but no visible output, or output showing an error, loses up to half the marks for that part.\n\nThe full marking rubric is in the last cell of the notebook. It is worth reading before you start, not just before you submit.\n\nAs with Assignment 1, this is individual work and no AI tools are to be used — there is a short declaration at the top of the notebook to complete.\n\nPost any questions in the discussion board, or raise them with your lab instructors.",
+      "publishedAt": "2026-09-24T08:00:00+08:00",
+      "expiresAt": "2026-10-08T00:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "actionUrl": "https://lms.uwa.edu.au",
+      "actionLabel": "Go to LMS",
+      "isPinned": false
+    },
+    {
+      "id": "study-guide-updated-2026-09-22",
+      "title": "Study Guide Updated — Small Corrections Only, Exam Format Unchanged",
+      "message": "The Final Exam Study Guide on the Course Overview page has been updated. Most of you have not opened it yet — if that's you, just read it as it now stands. There is nothing to un-learn.\n\nNothing about the exam itself has changed. Same three parts, same marks, same timing: Part I 36 MCQ (72 marks), Part II 7 Python MCQ (14 marks), Part III answer 2 of 4 long-answer (24 marks). Total 110 marks, 2 hours.\n\nSeven small edits, and only the first is worth re-reading:\n\n• PYTHON SECTION — the guide said probability questions use SciPy (binom.cdf, binomtest). They do not. Binomial probabilities are built by hand with math.comb, exactly as you wrote them in the Week 10 and Week 12 labs. The guide now also names np.zeros with a for loop for stepping a differential equation (Week 8), and scipy.optimize (linprog in Week 12; fsolve and minimize_scalar in Week 4). If you had started revising scipy.stats, stop — revise your own lab notebooks instead.\n\n• LOGISTIC MODEL — now written dN/dt = rN(1 − N/K) rather than dP/dt = rP(1 − P/K). Same model, different letter.\n\n• LOTKA–VOLTERRA — prey is now H and the conversion parameter λ, so the equilibrium reads (H*, P*) = (γ/λ, α/β). Identical formula; the letters now match the exam and the sample exam.\n\n• LOTKA–VOLTERRA COMPARATIVE STATICS — now says “if a parameter such as α or γ changes” rather than α alone, and prompts you to notice which parameters an equilibrium does not depend on.\n\n• WEEK 6 INTEGRATION — new outcome: check a proposed antiderivative by differentiating it. Handy when an integral is awkward to derive but you have candidate answers in front of you.\n\n• WEEK 10 — tail probabilities now say either tail, P(X ≥ k) or P(X ≤ k), not just the upper tail.\n\n• APPENDIX — the worked exemplars were labelled “Part II Problems”. They are long-answer exemplars, so they are now labelled Part III. The problems themselves are unchanged.\n\nA summary table is at the end of the guide under “What changed in this revision”.",
+      "publishedAt": "2026-09-22T13:00:00+08:00",
+      "expiresAt": "2026-11-30T00:00:00+08:00",
+      "priority": "important",
+      "category": "resource",
+      "actionUrl": "https://ahailu95.github.io/scie1500-content/sample_exam/SCIE1500_Study_Guide_S2_2026.html",
+      "actionLabel": "Open Study Guide",
+      "isPinned": true
+    },
     {
       "id": "coordinator-update-2026-08-22",
       "title": "Cheat Sheet, App Update, Assignment 1 Reminder, and Help Sessions",
@@ -12,7 +48,7 @@
       "category": "general",
       "actionUrl": "https://lms.uwa.edu.au",
       "actionLabel": "Go to LMS",
-      "isPinned": true
+      "isPinned": false
     },
     {
       "id": "app-update-v2.2.0-2026-08-21",
@@ -24,7 +60,7 @@
       "category": "general",
       "actionUrl": "https://lms.uwa.edu.au",
       "actionLabel": "Go to LMS",
-      "isPinned": true
+      "isPinned": false
     },
     {
       "id": "app-update-v2.1.24-2026-08-10",
@@ -46,7 +82,7 @@
       "expiresAt": "2026-08-27T00:00:00+08:00",
       "priority": "important",
       "category": "assessment",
-      "isPinned": true
+      "isPinned": false
     },
     {
       "id": "app-update-v2.1.20-2026-08-04",
@@ -70,7 +106,7 @@
       "category": "schedule",
       "actionUrl": "https://www.uwa.edu.au/about/-/media/project/uwa/uwa/about/docs/campus-management/maps/crawley-site-plan-01122023.pdf",
       "actionLabel": "View Campus Map",
-      "isPinned": true
+      "isPinned": false
     },
     {
       "id": "problem-brief-rubric-use-colab-2026-07-25",
@@ -112,7 +148,7 @@
       "expiresAt": "2026-07-21T18:00:00+08:00",
       "priority": "important",
       "category": "general",
-      "isPinned": true
+      "isPinned": false
     },
     {
       "id": "ai-tutor-access-s2-2026",
@@ -131,7 +167,7 @@
       "expiresAt": "2026-08-10T00:00:00+08:00",
       "priority": "important",
       "category": "general",
-      "isPinned": true
+      "isPinned": false
     }
   ]
 }
