@@ -1,7 +1,19 @@
 {
-  "version": "3.3.2",
-  "lastUpdated": "2026-10-08T23:00:00+08:00",
+  "version": "3.3.3",
+  "lastUpdated": "2026-10-27T12:00:00+08:00",
   "announcements": [
+    {
+      "id": "calculator-sticker-reminder-2026-10-27",
+      "title": "Final Exam: Get a UWA Approval Sticker for Your Calculator",
+      "message": "Dear All,\n\nPlease get UWA approval stickers for the calculator you bring to the SCIE1500 exam.\n\nSee the link below: Getting a sticker for the calculator (https://ipoint.uwa.edu.au/app/answers/detail/a_id/535/~/calculators-in-your-exam).\n\nAnd please get the sticker ahead of the exam time.\n\nAtakelty",
+      "publishedAt": "2026-10-27T12:00:00+08:00",
+      "expiresAt": "2026-11-08T00:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "actionUrl": "https://ipoint.uwa.edu.au/app/answers/detail/a_id/535/~/calculators-in-your-exam",
+      "actionLabel": "Getting a calculator sticker",
+      "isPinned": true
+    },
     {
       "id": "app-update-v2.2.1-2026-10-08",
       "title": "App Update v2.2.1 Available — Week 11 Lesson Display Fix and Week 7 Correction",
