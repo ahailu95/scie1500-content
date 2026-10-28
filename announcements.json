@@ -1,7 +1,19 @@
 {
-  "version": "3.4.1",
+  "version": "3.4.2",
   "lastUpdated": "2026-10-28T12:00:00+08:00",
   "announcements": [
+    {
+      "id": "pre-exam-review-videos-2026-10-28",
+      "title": "Pre-Exam Review Videos Now in the App",
+      "message": "Dear All,\n\nThe pre-exam review is now available as eight short videos, from the exam overview through each week's key ideas, to Python, the long-answer questions and final exam advice. Each part works through sample exam questions.\n\nIn the app, go to Course Overview → Reference Materials and look for \"Pre-Exam Review 1/8\" to \"8/8\". You'll find them just below the Final Exam Study Guide. Each opens in Echo360 in your browser. You can watch them in order or go straight to the topics you want to revise.\n\nAtakelty",
+      "publishedAt": "2026-10-28T12:00:00+08:00",
+      "expiresAt": "2026-11-08T00:00:00+08:00",
+      "priority": "important",
+      "category": "assessment",
+      "actionUrl": "https://echo360.net.au/media/6792ff3e-4736-4f46-8057-32ab5b6e336c/public",
+      "actionLabel": "Watch Part 1",
+      "isPinned": true
+    },
     {
       "id": "calculator-sticker-reminder-2026-10-27",
       "title": "Final Exam: Get a UWA Approval Sticker for Your Calculator",
