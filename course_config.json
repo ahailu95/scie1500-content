@@ -1,7 +1,7 @@
 {
   "courseId": "scie1500_2026_sem1",
   "courseName": "Analytical Methods for Scientists",
-  "version": "3.6.0",
+  "version": "3.6.1",
   "lastUpdated": "2026-10-28",
   "institution": {
     "id": "uwa",
@@ -1354,54 +1354,6 @@
       "description": "Exam blueprint, week-by-week learning outcomes checklist, formula sheet suggestions (calculus, models, probability, Python quick-reference), common traps, and 5 fully-worked exemplar problems. Revised 22 September 2026: notation aligned with the exam paper and the Python section description corrected — see “What changed in this revision” at the end of the guide. Exam blueprint, marks and structure are unchanged.",
       "url": "https://ahailu95.github.io/scie1500-content/sample_exam/SCIE1500_Study_Guide_S2_2026.html",
       "fallbackUrl": "https://raw.githubusercontent.com/ahailu95/scie1500-content/main/sample_exam/SCIE1500_Study_Guide_S2_2026.html"
-    },
-    {
-      "id": "pre_exam_review_1",
-      "title": "Pre-Exam Review 1/8 — Exam Overview & Functions",
-      "description": "How the final exam is structured, then the key ideas and sample exam questions for Week 1 (functions). Video (Echo360) — opens in your browser.",
-      "url": "https://echo360.net.au/media/6792ff3e-4736-4f46-8057-32ab5b6e336c/public"
-    },
-    {
-      "id": "pre_exam_review_2",
-      "title": "Pre-Exam Review 2/8 — Exponentials, Logistic Growth & Limits",
-      "description": "Weeks 2–4: exponential and logarithmic functions, bounded (logistic) growth, and limits, continuity and the derivative, with sample exam questions. Video (Echo360) — opens in your browser.",
-      "url": "https://echo360.net.au/media/a291ad8b-fb6f-4f53-aa37-d7843b100100/public"
-    },
-    {
-      "id": "pre_exam_review_3",
-      "title": "Pre-Exam Review 3/8 — Differentiation, Optimisation & Integration",
-      "description": "Weeks 5–7: differentiation rules and optimisation, introduction to integration, and definite integrals, area and sequences, with sample exam questions. Video (Echo360) — opens in your browser.",
-      "url": "https://echo360.net.au/media/afa0e1b2-806f-473f-9457-80a4168042e7/public"
-    },
-    {
-      "id": "pre_exam_review_4",
-      "title": "Pre-Exam Review 4/8 — Predator–Prey & Probability",
-      "description": "Weeks 8–9: predator–prey (Lotka–Volterra) models, and probability and combinatorics, with sample exam questions. Video (Echo360) — opens in your browser.",
-      "url": "https://echo360.net.au/media/f1d9cc7c-40cc-4d20-ab84-e7a853dd028d/public"
-    },
-    {
-      "id": "pre_exam_review_5",
-      "title": "Pre-Exam Review 5/8 — Random Variables & Hypothesis Testing",
-      "description": "Week 10: expected value and variance, the binomial distribution, and hypothesis testing, with sample exam questions. Video (Echo360) — opens in your browser.",
-      "url": "https://echo360.net.au/media/3601df20-2a6a-4b41-94d7-49a5be266709/public"
-    },
-    {
-      "id": "pre_exam_review_6",
-      "title": "Pre-Exam Review 6/8 — Trigonometry & Sinusoidal Models",
-      "description": "Week 11: exact trig values, radians, sinusoidal models and differentiating trig functions, with sample exam questions. Video (Echo360) — opens in your browser.",
-      "url": "https://echo360.net.au/media/25125f66-7107-4a86-ad0b-4debea5335a0/public"
-    },
-    {
-      "id": "pre_exam_review_7",
-      "title": "Pre-Exam Review 7/8 — Simultaneous Equations & Linear Programming",
-      "description": "Week 12: simultaneous equations and linear programming, with sample exam questions. Video (Echo360) — opens in your browser.",
-      "url": "https://echo360.net.au/media/bef96639-f51f-4119-af9b-ebb6e9238537/public"
-    },
-    {
-      "id": "pre_exam_review_8",
-      "title": "Pre-Exam Review 8/8 — Python, Long Answers & Exam Advice",
-      "description": "Exam Part II (Python as a mathematical tool) and Part III (long-answer questions), plus final exam advice. Video (Echo360) — opens in your browser.",
-      "url": "https://echo360.net.au/media/efb3aa7f-19b2-42d8-8a59-332109a7a320/public"
     },
     {
       "id": "lab_presentation_schedule",
